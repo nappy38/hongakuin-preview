@@ -854,11 +854,10 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 /* 新着：本文の写真はすべて同じ幅で表示（microCMSの新しい記事と旧サイトの記事をそろえる） */
 .news-card-body img{width:100% !important;max-width:560px !important;height:auto !important;}
 
-/* 「詳しく見る」ボタン：下に四角いボタンで */
+/* 「詳しく見る」ボタン：恵光院のような、細い枠だけの控えめなボタン */
 .more-box-wrap{text-align:center;margin-top:40px;writing-mode:horizontal-tb;}
-.more-box{display:inline-block;min-width:260px;padding:16px 36px;border:1px solid var(--sumi);background:rgba(255,255,255,.35);
-  font-family:'Shippori Mincho B1',serif;font-size:15px;letter-spacing:.15em;color:var(--sumi);transition:background .3s,color .3s;}
-.more-box::after{content:'　→';}
+.more-box{display:inline-block;width:280px;max-width:100%;padding:10px 20px;border:1px solid var(--sumi);background:transparent;
+  font-family:'Shippori Mincho B1',serif;font-size:15px;letter-spacing:.1em;color:var(--sumi);text-align:center;transition:background .3s,color .3s;}
 .more-box:hover{background:var(--sumi);color:#fff;}
 </style>
 </head>
@@ -959,7 +958,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
       <p class="about-desc">当院では毎朝の勤行と住職の法話を行っており、ご宿泊の方はご自由にご参拝いただけます。</p>
     </div>
   </div>
-  <div class="more-box-wrap"><a href="about.html" class="more-box">本覚院について詳しく見る</a></div>
+  <div class="more-box-wrap"><a href="about.html" class="more-box" aria-label="本覚院について詳しく見る">詳しく見る</a></div>
 </section>
 
 <!-- ========================================
@@ -1081,7 +1080,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
         </div>
         </div>
         <button class="priest-more-btn" type="button" onclick="togglePriest(this)">略歴・聲明CDを見る ＋</button>
-        <div class="more-box-wrap"><a href="priest.html" class="more-box">住職・僧侶について詳しく見る</a></div>
+        <div class="more-box-wrap"><a href="priest.html" class="more-box" aria-label="住職・僧侶について詳しく見る">詳しく見る</a></div>
       </div>
     </div>
   </div>
@@ -1109,7 +1108,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     <div class="kuyo-cta">
       <p>ご廻向・永代供養・ご祈祷のご相談は、お電話でお気軽にどうぞ。</p>
       <a href="tel:0736562711" class="kuyo-tel">0736-56-2711</a>
-      <div class="more-box-wrap"><a href="kuyo.html" class="more-box">お参り・ご供養について詳しく見る</a></div>
+      <div class="more-box-wrap"><a href="kuyo.html" class="more-box" aria-label="お参り・ご供養について詳しく見る">詳しく見る</a></div>
     </div>
   </div>
 </section>
