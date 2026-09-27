@@ -799,6 +799,38 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
   .nb-more{display:inline-block;margin-top:10px;padding:6px 0;background:none;border:0;border-bottom:1px solid var(--gold);
     font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:.12em;color:var(--ink);cursor:pointer;}
 }
+
+/* ══ 新着情報：和紙トーンに合わせて、白いカード・枠・太線をやめ、細い罫線だけの一覧に ══ */
+.news-sec{background:var(--washi) var(--paper);}
+.news-sec .sec-title{font-weight:400;color:var(--sumi);letter-spacing:.2em;}
+.news-cards,.news-archive.show{gap:0;border-top:1px solid rgba(43,38,33,.18);}
+.news-card{background:none;border-left:0;border-bottom:1px solid rgba(43,38,33,.18);}
+.news-card.open{border-left:0;}
+.news-card-header{padding:22px 4px;gap:16px;}
+.news-card-header:hover{background:rgba(255,255,255,.25);}
+.news-card-meta{display:block;}
+.news-card-date{font-family:'Shippori Mincho B1',serif !important;font-size:13px;color:rgba(43,38,33,.6);letter-spacing:.12em;display:inline;}
+.news-card-tag{border:0;padding:0 0 0 14px;font-family:'Shippori Mincho B1',serif;font-size:11px;letter-spacing:.2em;color:var(--gold);display:inline;}
+.news-card-meta .news-card-date + .news-card-tag{margin-left:0;}
+.news-card-title{font-size:16px;color:var(--sumi);letter-spacing:.08em;margin-top:2px;}
+.news-card-excerpt{font-family:'Shippori Mincho B1',serif;font-size:13px;color:rgba(43,38,33,.7);}
+.news-arrow{font-size:0;padding-left:8px;}
+.news-arrow::before{content:'＋';font-size:14px;color:var(--gold);}
+.news-card.open .news-arrow{transform:none;}
+.news-card.open .news-arrow::before{content:'－';}
+.news-card-body{border-top:0;padding:0 4px 28px;font-family:'Shippori Mincho B1',serif;font-size:15px;line-height:2.1;color:var(--sumi);}
+.news-card-body p,.news-card-body div{color:var(--sumi);}
+.news-card-body img{max-width:min(100%,520px) !important;margin:4px 0 18px;}
+.news-more-btn{border:0;border-bottom:1px solid var(--gold);width:auto;margin:28px auto 0;padding:8px 4px;color:var(--sumi);}
+.news-more-btn:hover{background:none;color:var(--gold);}
+.nb-more{color:var(--sumi);}
+@media(min-width:769px){
+  .news-card-header{padding:26px 8px;grid-template-columns:120px 1fr auto;gap:28px;}
+  .news-card-body{padding:0 8px 36px;}
+}
+
+/* 開いた記事はサムネイルが消えるので、見出しを横いっぱいに */
+.news-card.open .news-card-header{grid-template-columns:1fr auto !important;}
 </style>
 </head>
 <body>
