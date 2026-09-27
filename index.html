@@ -790,6 +790,15 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
   .room-item{flex:0 0 84%;scroll-snap-align:center;}
   .rooms-swipe-hint{display:block;text-align:right;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.15em;color:rgba(255,255,255,.6);margin:-8px 0 12px;}
 }
+
+/* 新着：スマホでは最初の段落だけ見せて「続きを読む」 */
+.nb-more{display:none;}
+@media(max-width:768px){
+  .news-card-body .nb-rest{display:none;}
+  .news-card-body.nb-open .nb-rest{display:block;}
+  .nb-more{display:inline-block;margin-top:10px;padding:6px 0;background:none;border:0;border-bottom:1px solid var(--gold);
+    font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:.12em;color:var(--ink);cursor:pointer;}
+}
 </style>
 </head>
 <body>
@@ -1456,10 +1465,43 @@ function toggleArchive() {
       img.removeAttribute('height');
     });
 
+    // スマホ用：最初の段落（最初の改行）までを見せて、残りは「続きを読む」でひらく
+    splitFirstParagraph(body);
+
     card.appendChild(header);
     card.appendChild(body);
     return card;
   }
+
+  function splitFirstParagraph(body) {
+    // 本文を頭から順にたどり、文字が出てきたあとの最初の改行（<br>）か次の段落（div/p）で切る
+    const hasText = function (n) { return (n.textContent || '').replace(/[\s ]/g, '') !== ''; };
+    const walker = document.createTreeWalker(body, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+    let seenText = false, cutNode = null, before = false;
+    while (walker.nextNode()) {
+      const n = walker.currentNode;
+      if (!seenText) { if (n.nodeType === 3 && hasText(n)) seenText = true; continue; }
+      if (n.nodeName === 'BR') { cutNode = n; break; }
+      if ((n.nodeName === 'DIV' || n.nodeName === 'P') && hasText(n)) { cutNode = n; before = true; break; }
+    }
+    if (!cutNode) return;
+    const range = document.createRange();
+    if (before) range.setStartBefore(cutNode); else range.setStartAfter(cutNode);
+    range.setEndAfter(body.lastChild);
+    const frag = range.extractContents();
+    const rest = document.createElement('div');
+    rest.className = 'nb-rest';
+    rest.appendChild(frag);
+    if (!hasText(rest)) { body.appendChild(rest.firstChild ? rest : document.createTextNode('')); rest.className = ''; return; }
+    body.appendChild(rest);
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'nb-more';
+    btn.textContent = '続きを読む ＋';
+    btn.onclick = function (e) { e.stopPropagation(); const o = body.classList.toggle('nb-open'); btn.textContent = o ? '閉じる －' : '続きを読む ＋'; };
+    body.appendChild(btn);
+  }
+
 
   // microCMSの記事（新しい投稿）＋旧サイトから移した過去記事（news-archive.json）を日付順にまとめて表示
   function getJSON(url, opts) {
