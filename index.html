@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高野山 別格本山 本覚院｜宿坊・修行体験</title>
+<meta name="description" content="世界遺産・高野山の別格本山「本覚院」の宿坊。江戸期の極彩色天井絵と狩野派の襖絵、重森三玲による庭園。朝の勤行・写経・精進料理で心を整える一夜を。ご宿泊・ご祈祷を受け付けております。">
+<meta name="robots" content="noindex, nofollow"><!-- 確認用。本番公開時に削除 -->
+<link rel="canonical" href="https://www.hongakuin.jp/">
+<link rel="alternate" hreflang="ja" href="https://www.hongakuin.jp/">
+<link rel="alternate" hreflang="en" href="https://www.hongakuin.jp/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.hongakuin.jp/">
+<!-- OGP / Twitter Card -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="高野山 別格本山 本覚院">
+<meta property="og:title" content="高野山 別格本山 本覚院｜宿坊・修行体験">
+<meta property="og:description" content="世界遺産・高野山の別格本山「本覚院」の宿坊。朝の勤行・写経・精進料理で心を整える一夜を。">
+<meta property="og:url" content="https://www.hongakuin.jp/">
+<meta property="og:image" content="https://www.hongakuin.jp/ogp.jpg">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<!-- 構造化データ（Schema.org: BuddhistTemple + LodgingBusiness） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["BuddhistTemple", "LodgingBusiness"],
+  "name": "高野山 別格本山 本覚院",
+  "alternateName": "Koyasan Bettakuhonzan Hongakuin",
+  "url": "https://www.hongakuin.jp/",
+  "image": "https://www.hongakuin.jp/ogp.jpg",
+  "telephone": "+81-736-56-2711",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "648-0211",
+    "addressRegion": "和歌山県",
+    "addressLocality": "伊都郡高野町",
+    "streetAddress": "高野山618",
+    "addressCountry": "JP"
+  },
+  "religiousAffiliation": "高野山真言宗",
+  "checkinTime": "15:00",
+  "checkoutTime": "10:00",
+  "sameAs": [
+    "https://www.instagram.com/koyasan_hongakuin/"
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Hina+Mincho&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════
+   本覚院 統合レスポンシブページ
+   モバイルファースト：既定値=スマホ（SP案ベース）
+   768px以上でPC案（jp案）のレイアウトへ拡張
+════════════════════════════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --black:#0a0905;
+  --ink:#1a1610;
+  --gold:#b8924a;
+  --gold-l:#d4a855;
+  --gold-pale:#f0e0b8;
+  --cream:#faf7f0;
+  --stone:#8a7e6e;
+  --border:rgba(184,146,74,0.2);
+  --white:#ffffff;
+}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  font-weight:300;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;}
+a{text-decoration:none;color:inherit;}
+
+/* ── HEADER ── */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 20px;height:56px;
+  background:rgba(10,9,5,0.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.header-logo{display:flex;flex-direction:column;text-decoration:none;line-height:1;gap:4px;}
+.logo-brush{
+  font-family:'Hina Mincho','Shippori Mincho B1',serif;
+  font-size:20px;color:#fff;letter-spacing:0.2em;line-height:1;
+  text-shadow:2px 2px 4px rgba(0,0,0,0.5),0 0 20px rgba(184,146,74,0.3);
+  display:block;position:relative;
+}
+.logo-en{
+  font-family:'Cormorant Garamond',serif;
+  font-size:8px;letter-spacing:0.3em;
+  color:rgba(255,255,255,0.4);display:block;
+}
+.header-nav{display:none;}
+.header-right{display:none;}
+.menu-btn{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+.menu-btn span{display:block;width:24px;height:1px;background:rgba(255,255,255,0.7);transition:all 0.3s;}
+
+/* ドロワー（モバイル用ナビ） */
+.drawer{
+  position:fixed;top:0;right:-100%;
+  width:75%;max-width:320px;height:100%;
+  background:rgba(10,9,5,0.97);
+  z-index:2000;transition:right 0.4s ease;
+  padding:80px 32px 32px;
+  border-left:1px solid var(--border);
+}
+.drawer.open{right:0;}
+.drawer-close{
+  position:absolute;top:20px;right:20px;
+  font-size:24px;color:rgba(255,255,255,0.5);
+  cursor:pointer;background:none;border:none;line-height:1;
+}
+.drawer nav a{
+  display:block;
+  font-family:'Shippori Mincho B1',serif;
+  font-size:18px;color:rgba(255,255,255,0.8);
+  letter-spacing:0.15em;padding:16px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.drawer-reserve{
+  display:block;margin-top:32px;
+  background:var(--gold);color:var(--ink);
+  text-align:center;padding:16px;
+  font-size:14px;letter-spacing:0.2em;
+  font-family:'Shippori Mincho B1',serif;
+}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1999;display:none;}
+.overlay.show{display:block;}
+
+@media(min-width:900px){
+  .site-header{padding:0 40px;height:64px;}
+  .logo-brush{font-size:28px;}
+  .logo-en{font-size:9px;}
+  .header-nav{
+    display:flex;align-items:center;gap:0;
+  }
+  .header-nav a{
+    font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.65);
+    padding:8px 18px;transition:color 0.3s;
+  }
+  .header-nav a:hover{color:var(--gold-l);}
+  .header-right{display:flex;align-items:center;gap:12px;}
+  .lang-btn{
+    font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.5);
+    padding:5px 8px;transition:all 0.3s;
+  }
+  .lang-btn:hover{color:var(--gold);}
+  .reserve-btn{
+    font-size:11px;letter-spacing:0.15em;background:var(--gold);color:var(--ink);
+    padding:10px 20px;font-weight:500;transition:background 0.3s;
+  }
+  .reserve-btn:hover{background:var(--gold-l);}
+  .menu-btn{display:none;}
+}
+
+/* ── HERO ── */
+.hero{height:100svh;min-height:600px;position:relative;overflow:hidden;background:var(--black);}
+.hero-slides{position:absolute;inset:0;}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease;}
+.slide.active{opacity:1;}
+@media(min-width:768px){
+  .slide{transform:scale(1.04);}
+  .slide.active{animation:heroZoom 7s ease-out both;}
+  @keyframes heroZoom{from{transform:scale(1.04);}to{transform:scale(1.14);}}
+}
+@media(prefers-reduced-motion:reduce){.slide.active{animation:none;}}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(160deg,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.68) 100%);
+}
+@media(min-width:768px){
+  .hero-overlay{background:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.1) 40%,rgba(0,0,0,0.6) 100%);}
+}
+
+/* モバイル：中央縦書きコピー（SP案） */
+.hero-body{position:absolute;inset:0;z-index:2;}
+.hero-text{
+  position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);
+  max-width:none;text-align:center;
+}
+.hero-eyebrow{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;letter-spacing:0.45em;color:var(--gold-l);
+  display:none;margin-bottom:20px;
+  opacity:0;animation:fadeUp 1s ease 0.3s forwards;
+}
+.hero-title{
+  font-family:'Shippori Mincho B1',serif;
+  font-size:clamp(30px,7.5vw,48px);
+  font-weight:400;color:#fff;
+  writing-mode:vertical-rl;text-orientation:upright;
+  line-height:1.2;letter-spacing:0.18em;white-space:nowrap;
+  text-shadow:0 0 40px rgba(0,0,0,0.6),2px 2px 0 rgba(0,0,0,0.2);
+  opacity:0;animation:fadeIn 1.6s ease 0.4s forwards;
+  margin:0 auto;
+}
+.hero-title em{color:var(--gold-l);font-style:normal;}
+.hero-sub{
+  display:none;
+  font-size:clamp(12px,1.8vw,15px);color:rgba(255,255,255,0.75);
+  line-height:2.1;margin-bottom:36px;
+  opacity:0;animation:fadeUp 1s ease 0.9s forwards;
+}
+.hero-actions{
+  display:none;gap:12px;flex-wrap:wrap;
+  opacity:0;animation:fadeUp 1s ease 1.2s forwards;
+}
+.hero-actions .btn-main{
+  font-size:12px;letter-spacing:0.2em;background:var(--gold);color:var(--ink);
+  padding:14px 32px;font-weight:500;transition:background 0.3s;
+}
+.hero-actions .btn-main:hover{background:var(--gold-l);}
+.hero-actions .btn-ghost{
+  font-size:12px;letter-spacing:0.2em;border:1px solid rgba(255,255,255,0.5);
+  color:#fff;padding:14px 32px;transition:all 0.3s;
+}
+.hero-actions .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+.hero-brand{
+  position:absolute;bottom:10%;right:8%;z-index:2;text-align:right;
+  opacity:0;animation:fadeUp 1.4s ease 1.3s forwards;
+}
+.hero-brand .en{
+  font-family:'Cormorant Garamond',serif;font-size:9px;letter-spacing:0.3em;
+  color:rgba(255,255,255,0.45);display:block;margin-bottom:6px;
+}
+.hero-brand .jp{
+  font-family:'Shippori Mincho B1',serif;font-size:clamp(30px,9vw,48px);
+  color:#fff;letter-spacing:0.2em;text-shadow:0 2px 20px rgba(0,0,0,0.7);
+  display:block;line-height:1.1;
+}
+.hero-brand .tel{
+  font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.15em;
+  color:var(--gold-l);display:block;margin-top:8px;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+/* デスクトップ：縦書き・余白のあるヒーロー（枠やボタンは置かない） */
+@media(min-width:768px){
+  .hero-body{position:absolute;inset:0;}
+  .hero-text{
+    position:absolute;top:50%;right:12%;left:auto;transform:translateY(-50%);
+    display:flex;flex-direction:row-reverse;align-items:flex-start;gap:36px;text-align:left;
+  }
+  .hero-eyebrow{
+    display:block;writing-mode:vertical-rl;margin:0;
+    font-size:11px;letter-spacing:0.5em;color:rgba(255,255,255,0.6);
+  }
+  .hero-title{
+    font-size:clamp(34px,3.6vw,56px);letter-spacing:0.28em;line-height:1.5;
+    text-shadow:0 0 40px rgba(0,0,0,0.55);
+  }
+  .hero-sub{
+    display:block;writing-mode:vertical-rl;margin:0;padding-top:4em;
+    font-size:14px;line-height:2.4;letter-spacing:0.2em;color:rgba(255,255,255,0.8);
+    text-shadow:0 0 20px rgba(0,0,0,0.6);
+  }
+  .hero-actions{display:none;}
+  .hero-brand{bottom:56px;left:60px;right:auto;text-align:left;}
+  .hero-brand .jp{font-size:clamp(24px,2.4vw,34px);}
+  .hero-brand .tel{font-size:14px;margin-top:10px;color:rgba(255,255,255,0.75);}
+}
+
+/* スライドドット */
+.slide-dots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
+.dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.35);cursor:pointer;transition:all 0.4s;}
+.dot.active{background:var(--gold);width:22px;border-radius:3px;}
+
+/* ── NOTICE ── */
+.notice-bar{
+  background:var(--ink);padding:12px 20px;
+  display:flex;align-items:center;gap:12px;
+  border-bottom:1px solid var(--border);
+}
+.notice-tag{
+  font-size:9px;letter-spacing:0.25em;color:var(--gold);
+  border:1px solid var(--gold);padding:3px 8px;white-space:nowrap;flex-shrink:0;
+}
+.notice-bar p{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6;}
+@media(min-width:768px){
+  .notice-bar{padding:14px 40px;gap:20px;}
+  .notice-tag{padding:4px 10px;}
+}
+
+/* ── セクション共通 ── */
+.sec-eyebrow{
+  font-family:'Cormorant Garamond',serif;
+  font-size:10px;letter-spacing:0.45em;color:var(--gold);
+  display:block;margin-bottom:10px;
+}
+.sec-title{
+  font-family:'Shippori Mincho B1',serif;
+  font-size:clamp(24px,6vw,44px);
+  line-height:1.4;letter-spacing:0.06em;margin-bottom:18px;
+}
+.gold-bar{width:32px;height:1px;background:var(--gold);margin-bottom:28px;}
+.sec-desc{font-size:14px;color:var(--stone);line-height:2.1;}
+@media(min-width:768px){
+  .sec-eyebrow{font-size:11px;margin-bottom:12px;}
+  .gold-bar{width:36px;margin-bottom:32px;}
+  .sec-desc{font-size:15px;line-height:2.2;}
+}
+
+/* ── ABOUT ── */
+.about-sec{background:var(--cream);padding:64px 24px;}
+.about-inner{max-width:1100px;margin:0 auto;}
+.about-img-wrap{position:relative;margin-bottom:32px;}
+.about-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;}
+.about-badge{
+  display:inline-block;background:var(--gold);color:var(--ink);
+  padding:10px 16px;font-family:'Shippori Mincho B1',serif;
+  font-size:12px;letter-spacing:0.1em;margin-bottom:24px;
+}
+.about-lead{font-size:15px;color:var(--stone);line-height:2.3;margin-bottom:20px;}
+@media(min-width:900px){
+  .about-sec{padding:100px 40px;}
+  .about-inner{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:0;
+  }
+  .about-img-wrap{margin-bottom:0;}
+  .about-badge{position:absolute;bottom:-20px;right:-20px;line-height:1.7;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.2);}
+}
+
+/* ── DALAI/帯 予備 ── */
+.dalai-band{background:var(--ink);padding:24px 20px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.dalai-band p{font-family:'Shippori Mincho B1',serif;font-size:clamp(13px,2vw,17px);color:var(--gold-l);letter-spacing:0.2em;}
+
+/* ── NEWS ── */
+.news-sec{background:var(--cream);padding:64px 24px;}
+.news-inner{max-width:900px;margin:0 auto;}
+.news-cards{display:flex;flex-direction:column;gap:2px;}
+.news-card{background:#fff;border-left:3px solid transparent;transition:border-color 0.3s;}
+.news-card.open{border-left-color:var(--gold);}
+.news-card-header{
+  display:grid;grid-template-columns:80px 1fr auto;gap:12px;align-items:center;
+  padding:16px;cursor:pointer;transition:background 0.2s;
+}
+.news-card-header:hover{background:rgba(184,146,74,0.04);}
+.news-card-img{width:80px;height:56px;object-fit:cover;display:block;flex-shrink:0;}
+.news-card-meta{display:flex;flex-direction:column;gap:6px;}
+.news-card-date{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--stone);letter-spacing:0.1em;}
+.news-card-tag{
+  font-size:9px;letter-spacing:0.2em;color:var(--gold);border:1px solid var(--gold);
+  padding:2px 7px;display:inline-block;width:fit-content;
+}
+.news-card-title{
+  font-family:'Shippori Mincho B1',serif;font-size:13px;color:var(--ink);
+  line-height:1.6;letter-spacing:0.05em;margin-top:4px;
+}
+.news-card-excerpt{
+  font-size:12px;color:var(--stone);line-height:1.7;margin-top:4px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.news-arrow{font-size:10px;color:var(--gold);flex-shrink:0;transition:transform 0.3s;padding-left:8px;}
+.news-card.open .news-arrow{transform:rotate(180deg);}
+.news-card-body{display:none;padding:0 16px 20px;border-top:1px solid rgba(184,146,74,0.15);}
+.news-card.open .news-card-body{display:block;}
+.news-card-body-img{width:100%;max-width:360px;display:block;margin:16px 0;}
+.news-card-body p{font-size:14px;color:var(--stone);line-height:2.2;margin-bottom:12px;}
+.news-archive{display:none;}
+.news-archive.show{display:flex;flex-direction:column;gap:2px;}
+.news-more-btn{
+  display:block;width:100%;margin-top:16px;padding:14px;background:none;
+  border:1px solid var(--border);color:var(--gold);font-family:'Shippori Mincho B1',serif;
+  font-size:13px;letter-spacing:0.2em;cursor:pointer;transition:all 0.3s;text-align:center;
+}
+.news-more-btn:hover{background:rgba(184,146,74,0.08);}
+@media(min-width:641px){
+  .news-card-header{grid-template-columns:120px 1fr auto;gap:20px;padding:20px 24px;}
+  .news-card-img{width:120px;height:80px;}
+  .news-card-title{font-size:15px;}
+  .news-card-body{padding:0 24px 24px;}
+}
+@media(min-width:768px){.news-sec{padding:72px 40px;}}
+
+/* ── FEATURES（3つの魅力） ── */
+.features-sec{background:#fff;padding:64px 20px;}
+.features-inner{max-width:1100px;margin:0 auto;}
+.features-header{text-align:center;margin-bottom:48px;}
+.features-header .gold-bar{margin:0 auto 28px;}
+.feature-grid{display:grid;grid-template-columns:1fr;gap:2px;}
+.feature-card{background:var(--cream);padding:0;position:relative;overflow:hidden;transition:transform 0.3s;}
+.feature-card:hover{transform:translateY(-6px);}
+.f-img{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;}
+.f-body{padding:28px 24px;}
+.f-num{font-family:'Cormorant Garamond',serif;font-size:44px;color:rgba(184,146,74,0.15);line-height:1;margin-bottom:12px;display:block;}
+.feature-card h3{font-family:'Shippori Mincho B1',serif;font-size:18px;color:var(--ink);margin-bottom:12px;line-height:1.4;letter-spacing:0.05em;}
+.feature-card p{font-size:14px;color:var(--stone);line-height:1.9;}
+@media(min-width:768px){
+  .features-sec{padding:100px 40px;}
+  .features-header{margin-bottom:64px;}
+  .feature-grid{grid-template-columns:repeat(3,1fr);}
+  .f-body{padding:32px;}
+  .feature-card h3{font-size:19px;}
+}
+
+/* ── ROOMS ── */
+.rooms-sec{background:var(--ink);padding:64px 0;}
+.rooms-inner{max-width:1100px;margin:0 auto;padding:0 20px;}
+.rooms-header{margin-bottom:40px;}
+.rooms-header .sec-title{color:#fff;}
+.room-list{display:flex;flex-direction:column;gap:2px;}
+.room-item{background:rgba(255,255,255,0.03);}
+.room-photo{aspect-ratio:16/10;overflow:hidden;}
+.room-photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
+.room-item:hover .room-photo img{transform:scale(1.04);}
+.room-detail{padding:28px 24px;display:flex;flex-direction:column;justify-content:center;}
+.room-tag{
+  font-size:9px;letter-spacing:0.3em;color:var(--gold);
+  border-bottom:1px solid var(--border);padding-bottom:10px;margin-bottom:16px;display:inline-block;
+}
+.room-detail h3{font-family:'Shippori Mincho B1',serif;font-size:18px;color:#fff;margin-bottom:12px;letter-spacing:0.06em;}
+.room-detail p{font-size:13px;color:rgba(255,255,255,0.6);line-height:2;}
+.room-note{margin-top:12px;font-size:11px;color:var(--gold);letter-spacing:0.1em;}
+@media(min-width:769px){
+  .rooms-sec{padding:100px 0;}
+  .rooms-inner{padding:0 40px;}
+  .rooms-header{margin-bottom:56px;}
+  .room-item{display:grid;grid-template-columns:1fr 1fr;}
+  .room-item:nth-child(even) .room-photo{order:2;}
+  .room-item:nth-child(even) .room-detail{order:1;}
+  .room-detail{padding:48px 40px;}
+  .room-detail h3{font-size:clamp(20px,2.5vw,28px);}
+  .room-detail p{font-size:14px;line-height:2.1;}
+  .room-note{font-size:12px;}
+}
+
+/* ── GALLERY（院内のご案内） ── */
+.gallery-sec{background:var(--black);padding:64px 20px;}
+.gallery-inner{max-width:1100px;margin:0 auto;}
+.gallery-header{text-align:center;margin-bottom:40px;}
+.gallery-header .sec-title{color:#fff;}
+.gallery-header .gold-bar{margin:0 auto 28px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
+.g-item{position:relative;overflow:hidden;aspect-ratio:4/3;}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
+.g-item:hover img{transform:scale(1.06);}
+.g-label{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(transparent,rgba(0,0,0,0.75));
+  padding:16px 12px 10px;font-family:'Shippori Mincho B1',serif;
+  font-size:12px;color:#fff;letter-spacing:0.08em;
+}
+@media(min-width:900px){
+  .gallery-sec{padding:100px 40px;}
+  .gallery-header{margin-bottom:56px;}
+  .gallery-grid{grid-template-columns:repeat(4,1fr);}
+  .g-label{padding:20px 16px 14px;font-size:13px;letter-spacing:0.1em;opacity:0;transition:opacity 0.3s;}
+  .g-item:hover .g-label{opacity:1;}
+}
+
+/* ── EXPERIENCE ── */
+.exp-sec{background:var(--cream);padding:64px 20px;}
+.exp-inner{max-width:1100px;margin:0 auto;}
+.exp-header{text-align:center;margin-bottom:40px;}
+.exp-header .gold-bar{margin:0 auto 28px;}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.exp-card{background:#fff;padding:28px 18px;text-align:center;transition:all 0.3s;border-bottom:2px solid transparent;}
+.exp-card:hover{border-bottom-color:var(--gold);transform:translateY(-4px);}
+.exp-icon{font-size:26px;margin-bottom:10px;display:block;}
+.exp-card h3{font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--ink);margin-bottom:8px;letter-spacing:0.06em;}
+.exp-card p{font-size:12px;color:var(--stone);line-height:1.8;}
+@media(min-width:768px){
+  .exp-sec{padding:100px 40px;}
+  .exp-header{margin-bottom:64px;}
+  .exp-grid{grid-template-columns:repeat(3,1fr);}
+  .exp-card{padding:40px 28px;}
+  .exp-icon{font-size:32px;margin-bottom:14px;}
+  .exp-card h3{font-size:17px;margin-bottom:12px;}
+  .exp-card p{font-size:13px;line-height:1.9;}
+}
+
+/* ── PRIEST ── */
+.priest-sec{background:#fff;padding:64px 24px;}
+.priest-inner{max-width:1100px;margin:0 auto;}
+.priest-img{width:100%;max-height:360px;object-fit:cover;object-position:center top;display:block;margin-bottom:32px;}
+.priest-body{display:flex;flex-direction:column;gap:32px;}
+.priest-label .sec-title{font-size:clamp(22px,3vw,36px);}
+.priest-msg p{font-size:14px;color:var(--stone);line-height:2.3;margin-bottom:16px;}
+.priest-sig{font-family:'Shippori Mincho B1',serif;font-size:13px;color:var(--gold);letter-spacing:0.15em;}
+.priest-history{margin-top:32px;padding-top:28px;border-top:1px solid var(--border);}
+.history-title{
+  font-family:'Shippori Mincho B1',serif;font-size:14px;color:var(--stone);
+  letter-spacing:0.2em;margin-bottom:18px;padding-left:10px;border-left:2px solid var(--gold);
+}
+.history-table{width:100%;border-collapse:collapse;}
+.history-table td{padding:10px 0;font-size:12px;color:var(--stone);line-height:1.9;vertical-align:top;border-bottom:1px solid rgba(184,146,74,0.1);}
+.history-table td:first-child{width:70px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.05em;white-space:nowrap;padding-right:14px;}
+@media(min-width:768px){
+  .priest-sec{padding:100px 40px;}
+  .priest-img{max-height:480px;margin-bottom:48px;}
+  .priest-body{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start;}
+  .priest-msg p{font-size:15px;line-height:2.4;margin-bottom:20px;}
+  .priest-sig{font-size:14px;}
+  .history-table td{font-size:13px;}
+  .history-table td:first-child{width:80px;}
+}
+
+/* ── ACCESS ── */
+.access-sec{background:var(--ink);padding:64px 24px;}
+.access-inner{max-width:1100px;margin:0 auto;}
+.access-header{margin-bottom:40px;}
+.access-header .sec-title{color:#fff;}
+.access-grid{display:flex;flex-direction:column;gap:24px;}
+.access-box{border:1px solid var(--border);padding:24px;}
+.access-box h3{font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:0.2em;color:var(--gold);margin-bottom:20px;}
+.access-box table{width:100%;border-collapse:collapse;}
+.access-box td{padding:10px 0;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.75);vertical-align:top;line-height:1.8;}
+.access-box td:first-child{color:var(--gold);font-size:11px;letter-spacing:0.1em;width:80px;padding-right:12px;white-space:nowrap;}
+.directions{background:rgba(255,255,255,0.03);border-left:2px solid var(--gold);padding:20px;}
+.directions p{font-size:13px;color:rgba(255,255,255,0.65);line-height:2;margin-bottom:10px;}
+.directions p:last-child{margin-bottom:0;}
+.directions strong{color:var(--gold-l);}
+@media(min-width:900px){
+  .access-sec{padding:100px 40px;}
+  .access-header{margin-bottom:56px;}
+  .access-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .access-box{padding:40px;}
+  .access-box td{font-size:14px;}
+  .directions{padding:28px 32px;}
+  .directions p{font-size:14px;line-height:2.1;}
+}
+
+/* ── FAQ ── */
+.faq-sec{background:var(--cream);padding:64px 24px;}
+.faq-inner{max-width:820px;margin:0 auto;}
+.faq-list{margin-top:8px;}
+.faq-item{border-bottom:1px solid rgba(184,146,74,0.25);}
+.faq-q{
+  list-style:none;cursor:pointer;padding:20px 40px 20px 0;position:relative;
+  font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--ink);
+  line-height:1.6;letter-spacing:0.04em;
+}
+.faq-q::-webkit-details-marker{display:none;}
+.faq-q::after{content:'＋';position:absolute;right:4px;top:18px;color:var(--gold);font-size:18px;font-weight:300;}
+.faq-item[open] .faq-q::after{content:'－';}
+.faq-a{padding:0 0 22px;color:var(--stone);font-size:14px;line-height:2;letter-spacing:0.03em;}
+@media(min-width:768px){
+  .faq-sec{padding:100px 40px;}
+  .faq-q{padding:22px 40px 22px 0;font-size:17px;}
+  .faq-q::after{top:20px;}
+  .faq-a{padding:0 0 24px;}
+}
+
+/* ── CTA ── */
+.cta-sec{background:var(--gold);padding:56px 24px;text-align:center;}
+.cta-sec h2{font-family:'Shippori Mincho B1',serif;font-size:clamp(22px,6vw,40px);color:var(--ink);margin-bottom:8px;letter-spacing:0.06em;}
+.cta-sec p{color:rgba(30,26,16,0.65);font-size:14px;margin-bottom:24px;}
+.cta-tel{
+  display:block;font-family:'Shippori Mincho B1',serif;font-size:clamp(28px,8vw,56px);
+  color:var(--ink);margin-bottom:8px;letter-spacing:0.1em;
+}
+.cta-hours{font-size:12px;color:rgba(30,26,16,0.55);margin-bottom:24px;}
+.btn-dark{
+  font-size:12px;letter-spacing:0.2em;background:var(--ink);color:var(--gold-l);
+  padding:14px 32px;display:inline-block;transition:opacity 0.3s;
+}
+.btn-dark:hover{opacity:0.8;}
+@media(min-width:768px){
+  .cta-sec{padding:80px 40px;}
+  .cta-sec p{font-size:15px;margin-bottom:32px;}
+  .cta-hours{margin-bottom:28px;}
+  .btn-dark{padding:16px 36px;}
+}
+
+/* ── SNS ── */
+.sns-bar{background:var(--black);padding:28px 24px;text-align:center;border-top:1px solid var(--border);}
+.sns-bar p{font-size:9px;letter-spacing:0.3em;color:rgba(255,255,255,0.3);margin-bottom:16px;}
+.sns-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+.sns-link{
+  font-size:10px;letter-spacing:0.15em;color:rgba(255,255,255,0.5);
+  border:1px solid rgba(255,255,255,0.15);padding:8px 16px;transition:all 0.3s;
+}
+.sns-link:hover{color:var(--gold);border-color:var(--gold);}
+@media(min-width:768px){
+  .sns-bar{padding:40px;}
+  .sns-bar p{font-size:10px;letter-spacing:0.35em;margin-bottom:20px;}
+  .sns-links{gap:16px;}
+  .sns-link{font-size:11px;letter-spacing:0.2em;padding:8px 22px;}
+}
+
+/* ── FOOTER ── */
+footer{background:var(--black);padding:28px 24px;text-align:center;border-top:1px solid rgba(255,255,255,0.06);}
+footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.15em;color:rgba(255,255,255,0.2);line-height:2;}
+@media(min-width:768px){footer{padding:36px 40px;}footer p{font-size:11px;letter-spacing:0.2em;line-height:2.2;}}
+
+/* ── FLOAT ── */
+.float-btn{
+  position:fixed;bottom:20px;right:16px;z-index:500;background:var(--gold);color:var(--ink);
+  font-size:10px;letter-spacing:0.2em;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:background 0.3s;
+}
+.float-btn:hover{background:var(--gold-l);}
+@media(min-width:768px){.float-btn{bottom:28px;right:28px;font-size:11px;padding:14px 22px;}}
+
+/* ══ 貴船神社を参考にした和紙トーン（トップ＋本覚院について） ══ */
+:root{--washi:#f3ece1;--sumi:#2b2621;
+  --paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");}
+.hero-overlay{background:linear-gradient(to bottom,rgba(0,0,0,0.25),rgba(0,0,0,0) 35%,rgba(0,0,0,0) 65%,rgba(0,0,0,0.3));}
+.hero-panel{position:absolute;top:0;right:0;z-index:3;padding:84px 22px 0;}
+.hero-name{writing-mode:vertical-rl;font-family:'Shippori Mincho B1',serif;font-weight:400;color:#fff;
+  display:flex;gap:10px;align-items:flex-start;text-shadow:0 0 24px rgba(0,0,0,0.5);
+  opacity:0;animation:fadeIn 1.6s ease .4s forwards;}
+.hero-name-main{font-size:44px;letter-spacing:0.3em;}
+.hero-name-sub{font-size:13px;letter-spacing:0.4em;padding-top:6px;}
+.hero-nav,.hero-util,.hero-scroll{display:none;}
+
+.about-sec{background:var(--washi) var(--paper);}
+.about-title{font-family:'Shippori Mincho B1',serif;font-weight:400;font-size:26px;letter-spacing:0.2em;color:var(--sumi);margin-bottom:24px;}
+.about-lead,.about-desc{font-family:'Shippori Mincho B1',serif;font-size:15px;line-height:2.2;color:var(--sumi);letter-spacing:0.05em;}
+.about-lead{margin-bottom:1em;}
+
+@media(min-width:900px){
+  .site-header{transition:transform .5s ease;}
+  body.at-top .site-header{transform:translateY(-100%);}
+  .hero-slides{left:24%;}
+  .hero-overlay{left:24%;}
+  .slide-dots{left:62%;}
+  .hero-panel{left:0;right:auto;bottom:0;width:24%;padding:0;background:var(--washi) var(--paper);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px;}
+  .hero-name{color:var(--sumi);text-shadow:none;gap:14px;}
+  .hero-name-main{font-size:clamp(36px,3.2vw,52px);}
+  .hero-nav{display:block;writing-mode:vertical-rl;opacity:0;animation:fadeIn 1.4s ease 1s forwards;}
+  .hero-nav a{display:block;margin-left:20px;white-space:nowrap;font-family:'Shippori Mincho B1',serif;font-size:15px;letter-spacing:0.25em;color:var(--sumi);transition:color .3s;}
+  .hero-nav a:hover{color:var(--gold);}
+  .hero-util{display:flex;gap:24px;position:absolute;top:28px;right:40px;z-index:3;}
+  .hero-util a{font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:0.2em;color:#fff;text-shadow:0 0 12px rgba(0,0,0,.6);}
+  .hero-scroll{display:block;position:absolute;right:40px;bottom:32px;z-index:3;writing-mode:vertical-rl;
+    font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.4em;color:rgba(255,255,255,.8);
+    padding-bottom:64px;background:linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)) no-repeat center bottom/1px 52px;}
+
+  .about-sec{padding:120px 60px;}
+  .about-inner{grid-template-columns:1.15fr 1fr;gap:72px;align-items:start;max-width:1160px;}
+  .about-img{aspect-ratio:4/5;}
+  .about-text{writing-mode:vertical-rl;height:min(78vh,640px);margin-left:auto;display:block;}
+  .about-title{font-size:30px;margin:0 0 0 48px;}
+  .about-lead,.about-desc{font-size:15px;line-height:2.1;}
+  .about-lead{margin:0 0 0 1.2em;}
+}
+
+/* 数字を読みやすく：細い欧文書体の数字をやめ、明朝の数字に統一 */
+.news-card-date,.hero-brand .tel,.history-table td:first-child,.f-num,footer p,.hero-eyebrow{
+  font-family:'Shippori Mincho B1',serif !important;font-variant-numeric:lining-nums tabular-nums;}
+.news-card-date{font-size:13px;}
+
+/* スマホ：寺名を写真の真ん中に */
+@media(max-width:899px){
+  .hero-panel{left:0;right:0;bottom:0;padding:0;display:flex;align-items:center;justify-content:center;}
+  .hero-name-main{font-size:52px;}
+}
+
+/* ══ スマホだけB案（真如堂型）：和紙色のオープニング → 全画面写真の中央に寺名 ══ */
+.opening,.hero-name-en{display:none;}
+@media(max-width:899px){
+  .opening{position:fixed;inset:0;z-index:5000;background:var(--washi) var(--paper);display:flex;align-items:center;justify-content:center;
+    animation:openingOut 1s ease 2.4s forwards;pointer-events:none;}
+  .opening-name{writing-mode:vertical-rl;font-family:'Shippori Mincho B1',serif;color:var(--sumi);display:flex;gap:12px;align-items:flex-start;
+    opacity:0;animation:fadeIn 1.4s ease .3s forwards;}
+  .opening-name .m{font-size:52px;letter-spacing:0.3em;}
+  .opening-name .s{font-size:13px;letter-spacing:0.4em;padding-top:8px;}
+  .hero-panel{flex-direction:column;}
+  .hero-name{animation-delay:2.8s;}
+  .hero-name-en{display:block;margin-top:22px;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.45em;color:rgba(255,255,255,0.85);
+    text-shadow:0 0 12px rgba(0,0,0,.5);opacity:0;animation:fadeIn 1.4s ease 3.2s forwards;}
+  .hero-overlay{background:radial-gradient(ellipse at center,rgba(0,0,0,0.28) 0%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.25) 100%);}
+  .hero-scroll{display:block;position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:3;writing-mode:vertical-rl;
+    font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.4em;color:rgba(255,255,255,.85);
+    padding-bottom:56px;background:linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)) no-repeat center bottom/1px 44px;}
+  .slide-dots{display:none;}
+}
+@keyframes openingOut{to{opacity:0;visibility:hidden;}}
+@media(prefers-reduced-motion:reduce){.opening{display:none !important;}}
+
+/* 真如堂のように、肩書きを寺名の右に少し下げて添える */
+.hero-name-sub,.opening-name .s{padding-top:1.6em !important;}
+.hero-name,.opening-name{flex-direction:column;align-items:flex-start;}
+
+/* 寺紋：寺名の上の真ん中。和紙色の上は墨色、写真の上は白 */
+.hero-mon{width:52px;height:52px;display:block;opacity:0;animation:fadeIn 1.4s ease .2s forwards;}
+.hero-mon-sumi{display:none;}
+.hero-mon-white{margin-bottom:22px;filter:drop-shadow(0 0 14px rgba(0,0,0,.45));}
+.opening-mon{display:none;}
+@media(max-width:899px){
+  .hero-mon-white{animation-delay:2.6s;}
+  .opening{flex-direction:column;}
+  .opening-mon{display:block;width:56px;height:56px;margin-bottom:26px;opacity:0;animation:fadeIn 1.2s ease .1s forwards;}
+}
+@media(min-width:900px){
+  .hero-mon-white{display:none;}
+  .hero-mon-sumi{display:block;width:58px;height:58px;margin-bottom:-30px;}
+}
+
+/* ══ スマホ：真如堂と同じ配置（寺紋→寺名を中央、肩書きは右に添える→英字2行→scroll） ══ */
+@media(max-width:899px){
+  .hero-mon-white{width:64px;height:64px;margin-bottom:30px;}
+  .hero-name,.opening-name{display:block !important;position:relative;}
+  .hero-name-main,.opening-name .m{display:block;font-size:54px !important;letter-spacing:0.06em !important;line-height:1;}
+  .hero-name-sub,.opening-name .s{position:absolute;top:0;left:100%;margin-left:12px;padding-top:0.3em !important;
+    font-size:14px !important;letter-spacing:0.12em !important;line-height:1;white-space:nowrap;}
+  .hero-name-en{margin-top:26px;text-align:center;font-size:15px;letter-spacing:0.3em;line-height:1.9;}
+  .hero-scroll{writing-mode:horizontal-tb;padding-bottom:0;background:none;font-size:20px;letter-spacing:0.08em;bottom:36px;}
+  /* 最初の画面ではヘッダーの帯とご予約ボタンを消して、写真と寺名だけに */
+  .site-header{transition:background .4s,border-color .4s;}
+  body.at-top .site-header{background:transparent;border-bottom-color:transparent;backdrop-filter:none;}
+  body.at-top .header-logo{opacity:0;pointer-events:none;}
+  .float-btn{transition:opacity .4s;}
+  body.at-top .float-btn{opacity:0;pointer-events:none;}
+}
+
+
+
+/* スマホでは3段落目（勤行・法話）を省いて短く。内容は「宿坊ならではの体験」と重なるため */
+@media(max-width:899px){.about-desc{display:none;}}
+
+/* PC：寺紋を「本覚院」の文字の真上の真ん中に（肩書きは右にぶら下げて、寺名の位置をずらさない） */
+@media(min-width:900px){
+  .hero-name{display:block !important;position:relative;}
+  .hero-name-main{display:block;}
+  .hero-name-sub{position:absolute;top:0;left:100%;margin-left:12px;white-space:nowrap;}
+  .hero-mon-sumi{margin-bottom:-28px;}
+}
+
+@media(max-width:899px){br.pc-only{display:none;}}
+
+
+/* 予約サイトへのメインボタン */
+.btn-reserve-main{display:inline-block;margin:8px 0 28px;padding:16px 44px;background:var(--gold);color:var(--ink);
+  font-family:'Shippori Mincho B1',serif;font-size:16px;letter-spacing:.2em;transition:background .3s;}
+.btn-reserve-main:hover{background:var(--gold-l);}
+
+.room-detail h3 small{display:block;margin-top:6px;font-size:.62em;letter-spacing:.08em;opacity:.75;font-weight:400;}
+.room-book{display:inline-block;margin-top:14px;font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:.12em;color:var(--gold-l);border-bottom:1px solid currentColor;padding-bottom:2px;}
+.room-book:hover{color:#fff;}
+
+/* 特別室：大きい写真1枚＋小さい写真2枚 */
+.room-photo-trio{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:4px;}
+.room-photo-trio img{width:100%;height:100%;object-fit:cover;min-height:0;}
+.room-photo-trio .main{grid-row:1 / 3;}
+
+/* ── お参り・ご供養 ── */
+.kuyo-sec{background:var(--washi) var(--paper);padding:72px 24px;}
+.kuyo-inner{max-width:1100px;margin:0 auto;}
+.kuyo-sec .sec-title{color:var(--sumi);}
+.kuyo-grid{display:grid;gap:40px;margin-top:8px;}
+.kuyo-card img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;margin-bottom:20px;}
+.kuyo-card h3{font-family:'Shippori Mincho B1',serif;font-weight:400;font-size:22px;letter-spacing:.2em;color:var(--sumi);margin-bottom:14px;}
+.kuyo-card p{font-size:14px;line-height:2.1;color:var(--sumi);margin-bottom:12px;}
+.kuyo-cta{margin-top:40px;text-align:center;}
+.kuyo-cta p{font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--sumi);margin-bottom:12px;}
+.kuyo-tel{display:inline-block;font-family:'Shippori Mincho B1',serif;font-size:24px;letter-spacing:.12em;color:var(--sumi);border-bottom:1px solid var(--gold);padding-bottom:4px;}
+@media(min-width:900px){.kuyo-sec{padding:110px 60px;}.kuyo-grid{grid-template-columns:1fr 1fr;gap:64px;}.kuyo-card p{font-size:15px;}}
+/* ── 住職の聲明CD ── */
+.priest-cd{display:flex;gap:24px;align-items:flex-start;margin-top:36px;padding-top:28px;border-top:1px solid var(--border);}
+.priest-cd img{width:110px;height:auto;flex:none;box-shadow:0 6px 20px rgba(0,0,0,.18);}
+.priest-cd p{font-size:13px;line-height:2;color:var(--stone);margin-bottom:8px;}
+.priest-cd .cd-title{font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--ink);}
+.priest-cd .cd-note{font-size:12px;}
+
+/* 記事を開いたときは、小さいサムネイルと抜粋を隠して本文の写真だけにする（同じ写真が2枚並ばないように） */
+.news-card.open .news-card-img,.news-card.open .news-card-excerpt{display:none;}
+
+.priest-cd .cd-listen{margin-top:14px;font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:.12em;color:var(--ink);}
+.cd-player{display:block;border:0;border-radius:12px;margin-top:6px;}
+
+.priest-cd .cd-links{margin-top:10px;font-size:13px;}
+.priest-cd .cd-links a{color:var(--ink);border-bottom:1px solid var(--gold);margin:0 4px;}
+
+/* 住職：スマホでは略歴とCDをたたむ */
+.priest-more-btn{display:none;}
+@media(max-width:899px){
+  .priest-more{display:none;}
+  .priest-more.show{display:block;}
+  .priest-more-btn{display:block;margin:20px auto 0;padding:12px 28px;background:none;border:1px solid var(--gold);color:var(--ink);
+    font-family:'Shippori Mincho B1',serif;font-size:14px;letter-spacing:.15em;cursor:pointer;}
+}
+
+/* スマホ：お部屋・施設は横スワイプ */
+.rooms-swipe-hint{display:none;}
+@media(max-width:768px){
+  .room-list{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;
+    margin:0 -20px;padding:0 20px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .room-list::-webkit-scrollbar{display:none;}
+  .room-item{flex:0 0 84%;scroll-snap-align:center;}
+  .rooms-swipe-hint{display:block;text-align:right;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.15em;color:rgba(255,255,255,.6);margin:-8px 0 12px;}
+}
+</style>
+</head>
+<body>
+
+<div class="opening" aria-hidden="true"><img class="opening-mon" src="images/mon-sumi.png" alt="" width="400" height="400"><div class="opening-name"><span class="s">高野山 別格本山</span><span class="m">本覚院</span></div></div>
+<!-- HEADER -->
+<header class="site-header">
+  <a href="#" class="header-logo">
+    <span class="logo-brush">本覚院</span>
+    <span class="logo-en">KOYASAN HONGAKUIN</span>
+  </a>
+  <nav class="header-nav">
+    <a href="#about">当院について</a>
+    <a href="#kuyo">ご供養</a>
+    <a href="#rooms">お部屋</a>
+    <a href="#experience">体験</a>
+    <a href="#access">アクセス</a>
+  </nav>
+  <div class="header-right">
+    <a href="en.html" class="lang-btn" lang="en">EN</a>
+    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="reserve-btn" target="_blank" rel="noopener">ご予約</a>
+  </div>
+  <button class="menu-btn" onclick="openMenu()" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ドロワー（モバイル用） -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" onclick="closeMenu()" aria-label="メニューを閉じる">✕</button>
+  <nav>
+    <a href="#about" onclick="closeMenu()">当院について</a>
+    <a href="#kuyo" onclick="closeMenu()">お参り・ご供養</a>
+    <a href="#rooms" onclick="closeMenu()">お部屋・施設</a>
+    <a href="#experience" onclick="closeMenu()">体験</a>
+    <a href="#access" onclick="closeMenu()">アクセス</a>
+  </nav>
+  <a href="#cta" class="drawer-reserve" onclick="closeMenu()">ご予約・お問合せ</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-slides">
+    <div class="slide active" style="background-image:url('images/hero-1.jpg')"></div>
+    <div class="slide" style="background-image:url('images/hero-4.jpg')"></div>
+    <div class="slide" style="background-image:url('images/photos/soryo-fusuma-2.jpg');background-position:40% center"></div>
+    <div class="slide" style="background-image:url('images/photos/kyakushitsu-toro-2.jpg');background-position:55% center"></div>
+    <div class="slide" style="background-image:url('images/photos/sanmon-yoru.jpg')"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-panel">
+    <img class="hero-mon hero-mon-sumi" src="images/mon-sumi.png" alt="本覚院の寺紋" width="400" height="400">
+    <img class="hero-mon hero-mon-white" src="images/mon-white.png" alt="" width="400" height="400">
+    <h1 class="hero-name"><span class="hero-name-sub">高野山 別格本山</span><span class="hero-name-main">本覚院</span></h1>
+    <span class="hero-name-en">Koyasan<br>Hongakuin</span>
+    <nav class="hero-nav" aria-label="メインメニュー">
+      <a href="#about">本覚院について</a>
+      <a href="#kuyo">お参り・ご供養</a>
+      <a href="#news">新着情報</a>
+      <a href="#rooms">お部屋・施設</a>
+      <a href="#experience">宿坊の体験</a>
+      <a href="#access">交通アクセス</a>
+      <a href="#cta">ご予約・お問合せ</a>
+    </nav>
+  </div>
+  <div class="hero-util"><span aria-current="page">JP</span>・<a href="en.html" lang="en">EN</a><a href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">ご予約</a></div>
+  <div class="hero-scroll" aria-hidden="true">scroll</div>
+  <div class="slide-dots">
+    <span class="dot active" onclick="goSlide(0)"></span>
+    <span class="dot" onclick="goSlide(1)"></span>
+    <span class="dot" onclick="goSlide(2)"></span>
+    <span class="dot" onclick="goSlide(3)"></span>
+    <span class="dot" onclick="goSlide(4)"></span>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<div class="notice-bar">
+  <span class="notice-tag">お知らせ</span>
+  <p id="notice-text">ご宿泊・ご祈祷のご予約を受け付けております。予約サイトまたはお電話でどうぞ。</p>
+</div>
+
+<!-- ABOUT -->
+<section class="about-sec" id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <img src="images/about-1.jpg" alt="本覚院 本堂内、狩野派による襖絵（江戸期）" class="about-img" width="1000" height="750">
+    </div>
+    <div class="about-text">
+      <h2 class="about-title">本覚院について</h2>
+      <p class="about-lead">高野山真言宗 総本山金剛峯寺の塔頭寺院、別格本山です。智証大師作の不動明王像をご本尊に、建久年間（一一九〇年）の創建以来の歴史を伝えます。</p>
+      <p class="about-lead">本覚院が建つのは、弘法大師がこの地で祈られていたとき、六地蔵菩薩（六体のお地蔵さま）が現れるのを感じとられた、という言い伝えの残る場所です。平安時代の建久年間、ある歌人の願いを受けて高野山に登った行空上人がここでお経を唱え続けていると、光とともに地蔵菩薩が現れ、<br class="pc-only">「ここに住みなさい」と告げられました。上人はこの地に庵を結ばれ、それが本覚院のはじまりとなりました。</p>
+      <p class="about-desc">当院では毎朝の勤行と住職の法話を行っており、ご宿泊の方はご自由にご参拝いただけます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================
+  新着情報
+  ★更新方法：news-cardをコピーして追加
+  最新2件が常に表示、それ以降は「過去の記事」ボタンで表示
+  （microCMSから取得できた場合はJSで自動的に置き換わります）
+======================================== -->
+<section class="news-sec" id="news">
+  <div class="news-inner">
+    <span class="sec-eyebrow">NEWS</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title">新着情報</h2>
+
+    <div class="news-cards">
+
+      <!-- 記事1：最新 -->
+      <div class="news-card">
+        <div class="news-card-header" onclick="toggleCard(this)">
+          <img src="images/news-bear.jpg" alt="お知らせ「野生動物にご注意ください」の記事写真" class="news-card-img" loading="lazy" width="120" height="80">
+          <div class="news-card-meta">
+            <span class="news-card-date">2026.06.10</span>
+            <span class="news-card-tag">お知らせ</span>
+            <p class="news-card-title">お参りの皆さまへ — 野生動物にご注意ください</p>
+            <p class="news-card-excerpt">当山は深い自然に囲まれており、近隣では野生動物の姿が見られます。昨日も熊の目撃情報がございました。</p>
+          </div>
+          <span class="news-arrow">▼</span>
+        </div>
+        <div class="news-card-body">
+          <img src="images/news-bear.jpg" alt="お知らせ「野生動物にご注意ください」の記事写真" class="news-card-body-img" loading="lazy" width="360" height="254">
+          <p>当山は深い自然に囲まれており、近隣では野生動物の姿が見られます。昨日も観光エリアからは少し離れた場所で熊の目撃情報がございました。</p>
+          <p>ご参拝の際は鈴を鳴らすなど、音で人の存在をお知らせください。もし出会ってしまったときは、決して大声を出さず、静かにゆっくりと後退してお離れください。</p>
+          <p>自然の聖地です。互いに息災でありますよう、お気をつけてお参りください。</p>
+        </div>
+      </div>
+
+      <!-- 記事2 -->
+      <div class="news-card">
+        <div class="news-card-header" onclick="toggleCard(this)">
+          <img src="images/news-mandala.jpg" alt="コラム「信じる力と祈る力」の記事写真（光の曼荼羅）" class="news-card-img" loading="lazy" width="120" height="80">
+          <div class="news-card-meta">
+            <span class="news-card-date">2026.06.09</span>
+            <span class="news-card-tag">コラム</span>
+            <p class="news-card-title">信じる力と祈る力</p>
+            <p class="news-card-excerpt">つらいとき、くじけそうなとき——弘法大師・空海は、私たちの内にも外にも、仏のはたらきが満ちていると説きました。</p>
+          </div>
+          <span class="news-arrow">▼</span>
+        </div>
+        <div class="news-card-body">
+          <img src="images/news-mandala.jpg" alt="コラム「信じる力と祈る力」の記事写真（光の曼荼羅）" class="news-card-body-img" loading="lazy" width="360" height="270">
+          <p>つらいとき、くじけそうなとき——</p>
+          <p>故郷の親が、今も自分を案じてくれていると信じるだけで、もう少し頑張れることがあります。弘法大師・空海は、私たちの内にも外にも、仏のはたらきが満ちていると説きました。</p>
+          <p>祈りとは、仏のはたらきに心を向け、言葉と身体を調えていくことです。</p>
+          <p>「見守られている」「ひとりではない」——そう感じるとき、人は静かな力を取り戻します。</p>
+        </div>
+      </div>
+
+      <!-- ★新しい記事はここに追加（上のnews-cardをコピーして使う）
+           3件目以降は自動的に「過去の記事」に入ります -->
+
+    </div>
+
+    <!-- 過去の記事（3件目以降） -->
+    <div class="news-archive" id="newsArchive">
+      <!-- ★3件目以降の記事をここに追加 -->
+    </div>
+
+    <button class="news-more-btn" id="newsMoreBtn" onclick="toggleArchive()">
+      過去の記事を見る ＋
+    </button>
+
+  </div>
+</section>
+<!-- ======================================== -->
+
+<section class="priest-sec" id="priest">
+  <div class="priest-inner">
+    <img src="images/priest-1.jpg" alt="本覚院 住職" class="priest-img" loading="lazy" width="800" height="645">
+    <div class="priest-body">
+      <div class="priest-label">
+        <span class="sec-eyebrow">CHIEF PRIEST</span>
+        <div class="gold-bar"></div>
+        <h2 class="sec-title" style="color:var(--ink);">住職より<br>ご挨拶</h2>
+      </div>
+      <div class="priest-msg">
+        <p>本覚院は、高野山真言宗の別格本山として、皆様の心の拠り所となるよう努めております。</p>
+        <p>日々の喧騒を離れ、弘法大師のお膝元で静かなひとときをお過ごしください。朝の勤行、写経、精進料理——心と体を整える時間が、ここにあります。</p>
+        <p>皆様のお越しを、心よりお待ち申し上げております。</p>
+        <p class="priest-sig">高野山 別格本山 本覚院　住職</p>
+        <div class="priest-more" id="priestMore">
+        <div class="priest-history">
+          <h3 class="history-title">住職　略歴</h3>
+          <table class="history-table">
+            <tr><td>1945年</td><td>福岡県出身</td></tr>
+            <tr><td>1954年</td><td>9歳の時、誤診による腹膜炎をおこし生死をさまよう。意識不明の中、父が「高野山に息子を差し上げますので、命を助けてほしい」と弘法大師様に祈願。翌日、奇跡的に回復。</td></tr>
+            <tr><td>1960年</td><td>15歳　高野山入山</td></tr>
+            <tr><td>1967年</td><td>22歳　高野山大学 密教学科卒業　学長賞受賞</td></tr>
+            <tr><td>1974年</td><td>29歳　高野山 本覚院 西生院住職就任</td></tr>
+            <tr><td>1980年〜</td><td>高野山金剛峯寺　各課課長職　歴任</td></tr>
+            <tr><td>1998年</td><td>53歳　高野山 大本山 寶寿院専修学院監事　声明能化を2期8年務める。毎年約80名　計約640名の僧侶を送り出し、南山進流声明の徹底した指導にあたる。</td></tr>
+            <tr><td>2005年</td><td>権大僧正補任</td></tr>
+            <tr><td>2010年</td><td>高野山 別格本山 本覚院　住職就任</td></tr>
+            <tr><td>2013年</td><td>高野山金剛峯寺執行　真言宗法会部長に就任。その他、全国に点在する寺院の兼務住職を務める。高野山真言宗宗会議員・高野山住職会代議員など宗内外多数の重責を歴任。</td></tr>
+          </table>
+        </div>
+        <div class="priest-cd">
+          <img src="images/photos/shomyo-cd.jpg" alt="住職 稲葉法研による聲明CD『THE 聲明（SHO-MYO）～高野山 南山進流～』" loading="lazy" width="240" height="360">
+          <div>
+            <h3 class="history-title">住職の聲明CD</h3>
+            <p class="cd-title">『THE 聲明（SHO-MYO）～高野山 南山進流～』</p>
+            <p>ビクターエンタテインメントより発売された、住職・稲葉法研上綱による聲明独唱CD。本覺院では特別仕様の2枚組をご用意しております。南山進流の独特なお経にふれ、高野山でのお勤めを思いおこしていただけたら幸いです。</p>
+            <p class="cd-note">当時の高野山真言宗管長・総本山金剛峯寺座主 松長有慶猊下 推薦　／　お問い合わせは本覺院まで</p>
+            <p class="cd-listen">Spotifyで聴く</p>
+            <iframe class="cd-player" title="THE 聲明～高野山 南山進流～ 奮（Spotify）" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe class="cd-player" title="THE 聲明～高野山 南山進流～ 癒（Spotify）" src="https://open.spotify.com/embed/album/4cJB2d2ujV5scHqgsuw3Ld?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <p class="cd-links">Apple Musicで聴く：<a href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-furui/1828860466" target="_blank" rel="noopener">奮</a>／<a href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-iyashi/1828860904" target="_blank" rel="noopener">癒</a></p>
+          </div>
+        </div>
+        </div>
+        <button class="priest-more-btn" type="button" onclick="togglePriest(this)">略歴・聲明CDを見る ＋</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kuyo-sec" id="kuyo">
+  <div class="kuyo-inner">
+    <span class="sec-eyebrow">PRAYER &amp; MEMORIAL</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title">お参り・ご供養</h2>
+    <div class="kuyo-grid">
+      <article class="kuyo-card">
+        <img src="images/photos/hondo-kigan.jpg" alt="ろうそくの灯る本堂で、ご廻向をおつとめする僧侶" loading="lazy" width="1600" height="1200">
+        <h3>ご廻向</h3>
+        <p>金剛峯寺で行われる法要と同じく、前讃から各種のお経、後讃までをおつとめし、最後にご法楽として般若心経とご真言を参列の皆さまとご一緒にお唱えします。所要はおよそ1時間です。</p>
+        <p>僧侶が朗々と唱える聲明（しょうみょう）は、ご先祖さまだけでなく、参列される方の心も清々しく癒してくれることでしょう。ご先祖さまにはお霊供膳をお供えし、お参りの後にはお施主さまに証文・領標・御供物をお渡しいたします。</p>
+      </article>
+      <article class="kuyo-card">
+        <img src="images/photos/gongyo-hondo.jpg" alt="本堂でお経を唱える僧侶たち" loading="lazy" width="1600" height="1067">
+        <h3>永代供養</h3>
+        <p>「お墓をみてくれる後継者がいない」「分家なのでお仏壇がない」——そのようなお悩みが、お寺にはたくさん寄せられます。</p>
+        <p>当院では住職をはじめ僧侶が親身にご相談をうかがい、それぞれのご家庭に沿った永代供養の方法をご案内しております。お位牌を建立し、本堂で勤行したのち、位牌堂にて永代におまつりいたします。毎朝、お仏飯とお茶をお供えし、お燈明をあげてお参りしております。</p>
+      </article>
+    </div>
+    <div class="kuyo-cta">
+      <p>ご廻向・永代供養・ご祈祷のご相談は、お電話でお気軽にどうぞ。</p>
+      <a href="tel:0736562711" class="kuyo-tel">0736-56-2711</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES：本覚院ならではの3つの魅力（jp案より統合） -->
+<section class="features-sec" id="features">
+  <div class="features-inner">
+    <div class="features-header">
+      <span class="sec-eyebrow">THREE HIGHLIGHTS</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:var(--ink);">本覚院ならではの3つの魅力</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/tenjoue.jpg')" role="img" aria-label="本堂天井に残る250年前の極彩色天井絵"></div>
+        <div class="f-body">
+          <span class="f-num">I</span>
+          <h3>250年を超える<br>江戸の芸術</h3>
+          <p>本堂天井には250年前の絵師による極彩色の天井絵が残り、大広間には狩野派の貴重な障壁画をご覧いただけます。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/teien-mado-1.jpg')" role="img" aria-label="重森三玲設計の石庭"></div>
+        <div class="f-body">
+          <span class="f-num">II</span>
+          <h3>重森三玲設計の<br>5つの庭園</h3>
+          <p>昭和の名作庭家・重森三玲による石庭を含む5つの庭園。季節ごとに表情を変える苔と岩の世界をお楽しみください。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/hondo-kigan.jpg')" role="img" aria-label="高野山の聖地に佇む本覚院本堂"></div>
+        <div class="f-body">
+          <span class="f-num">III</span>
+          <h3>弘法大師の<br>聖地に宿る</h3>
+          <p>高野山の中心部に位置する別格本山。朝の勤行、写経、精進料理——本物の修行体験がここにあります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+
+
+<section class="rooms-sec" id="rooms">
+  <div class="rooms-inner">
+    <div class="rooms-header">
+      <span class="sec-eyebrow" style="color:var(--gold);">ROOMS &amp; FACILITIES</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:#fff;">お部屋・施設のご案内</h2>
+    </div>
+    <p class="rooms-swipe-hint" aria-hidden="true">横にスワイプ →</p>
+    <div class="room-list">
+      <div class="room-item">
+        <div class="room-photo"><img src="images/photos/ohiroma.jpg" alt="狩野派の襖絵に囲まれた大広間と「獅子吼」の額" loading="lazy" width="1600" height="1067"></div>
+        <div class="room-detail">
+          <span class="room-tag">GRAND HALL</span>
+          <h3>大広間・狩野派の襖絵</h3>
+          <p>江戸時代の狩野派絵師による障壁画が残る大広間。夕暮れの陽光が生む陰影の中、たおやかな時間が流れます。仏前結婚式の宴席にも。</p>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo"><img src="images/photos/fusuma-shojin.jpg" alt="金地の襖絵の前に並ぶ精進料理のお膳" loading="lazy" width="1600" height="1200"></div>
+        <div class="room-detail">
+          <span class="room-tag">SHOJIN CUISINE</span>
+          <h3>精進料理のお座席</h3>
+          <p>弘法大師・空海が伝えた精進料理。旬のもの、地のもの。お膳のしきたりに沿って丁寧に作りあげる一品を、高野山ならではの空間でお楽しみください。</p>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo"><img src="images/photos/daiyokujo-onna.jpg" alt="本覚院の大浴場（女湯）。石張りの床と広い浴槽、洗い場" loading="lazy" width="1600" height="1200"></div>
+        <div class="room-detail">
+          <span class="room-tag">BATH</span>
+          <h3>大浴場・中浴場</h3>
+          <p>ゆったりくつろげる大・中の浴場。ボディソープ・シャンプー・リンス・ドライヤー・バスタオル・フェイスタオル・歯ブラシセット完備。</p>
+          <p class="room-note">利用時間 17:00〜21:00</p>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo room-photo-trio">
+          <img class="main" src="images/rooms/tenporin.jpg" alt="特別室「転法輪」。格天井の和室と、重森三玲の庭を望む窓" loading="lazy" width="1000" height="750">
+          <img src="images/rooms/hokaigu.jpg" alt="和モダンスイート「法界宮」。大きな窓の向こうに庭の緑" loading="lazy" width="1000" height="750">
+          <img src="images/rooms/kutenbo.jpg" alt="一棟貸しの特別客室「空点房」から見る苔と石組の庭" loading="lazy" width="1000" height="750">
+        </div>
+        <div class="room-detail">
+          <span class="room-tag">SPECIAL ROOMS</span>
+          <h3>特別室<br><small>庭を望む、3つの特別なお部屋</small></h3>
+          <p>重森三玲の庭を望む最高格の特別室「転法輪」、伝統と現代が調和する和モダンスイート「法界宮」、茶室付きの一棟貸し「空点房」。どれも1階の庭側で、静かな時間をお過ごしいただけます。</p>
+          <p class="room-note">転法輪・法界宮は専用バスルーム付き</p>
+          <a class="room-book" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">空室・料金を見る →</a>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo"><img src="images/rooms/wakasugi.jpg" alt="お風呂・トイレ付きの和室「若杉」。広縁のソファ越しに庭の緑" loading="lazy" width="1000" height="750"></div>
+        <div class="room-detail">
+          <span class="room-tag">WITH BATH</span>
+          <h3>若杉・花梨（わかすぎ・かりん）<br><small>お風呂・トイレ付きの和室</small></h3>
+          <p>お風呂とトイレを備えた、本館の和室です。重森三玲が手がけた庭を眺めながらおくつろぎいただけます。若杉は1階で館内の移動もしやすく、花梨は2階のお部屋です。</p>
+          <p class="room-note">和室8畳＋3畳　定員3名　大浴場もご利用いただけます</p>
+          <a class="room-book" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">空室・料金を見る →</a>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo"><img src="images/rooms/hokusuikan.jpg" alt="新館「北翠観」の和室。床の間に掛軸、障子の先に広縁と庭" loading="lazy" width="1000" height="750"></div>
+        <div class="room-detail">
+          <span class="room-tag">NEW WING</span>
+          <h3>北翠観（ほくすいかん）<br><small>新館の和室</small></h3>
+          <p>四季折々の庭を眺めながらおくつろぎいただける、新館の和室です。1階・2階に全10部屋。お部屋にお風呂・トイレはなく、大浴場をご利用いただきます。</p>
+          <p class="room-note">和室10畳　定員4名</p>
+          <a class="room-book" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">空室・料金を見る →</a>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo"><img src="images/photos/kyakushitsu-standard.jpg" alt="本館の昔ながらの和室。床の間に山水画の掛軸、障子の先に広縁" loading="lazy" width="1600" height="1200"></div>
+        <div class="room-detail">
+          <span class="room-tag">MAIN BUILDING</span>
+          <h3>本館の和室</h3>
+          <p>昔から変わらない、落ち着いた畳の和室です。2階のお部屋からは庭園を望めます。隣室との続き部屋としてもご利用いただけます。</p>
+          <p class="room-note">テレビ・エアコン完備　続き部屋対応</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY：院内のご案内（jp案より統合） -->
+<section class="gallery-sec" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-header">
+      <span class="sec-eyebrow" style="color:var(--gold);">GALLERY</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:#fff;">院内のご案内</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item">
+        <img src="images/photos/tenjoue.jpg" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" loading="lazy" width="1600" height="1067">
+        <div class="g-label">本堂天井絵</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/fusuma-kanoha.jpg" alt="狩野派による金地の襖絵（唐人物図）" loading="lazy" width="1600" height="1200">
+        <div class="g-label">狩野派の襖絵</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/teien-mado-3.jpg" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="1200">
+        <div class="g-label">重森三玲の石庭</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/koi-niwa.jpg" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200">
+        <div class="g-label">池泉庭</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/gongyo-hondo.jpg" alt="本堂でお経を唱える僧侶たち（朝の勤行）" loading="lazy" width="1600" height="1067">
+        <div class="g-label">本堂</div>
+      </div>
+      <div class="g-item">
+        <img src="images/gallery-jizo.jpg" alt="院内に佇むお地蔵様" loading="lazy" width="800" height="600">
+        <div class="g-label">院内のお地蔵様</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/mon-tobira-jimon.jpg" alt="寺紋が金色に輝く山門の扉と、奥へ続く石畳" loading="lazy" width="1600" height="1200">
+        <div class="g-label">本堂への道</div>
+      </div>
+      <div class="g-item">
+        <img src="images/gallery-mado.jpg" alt="窓越しに見る庭園の眺め" loading="lazy" width="900" height="1200">
+        <div class="g-label">窓越しの庭園</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp-sec" id="experience">
+  <div class="exp-inner">
+    <div class="exp-header">
+      <span class="sec-eyebrow">EXPERIENCES</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:var(--ink);">宿坊ならではの体験</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <span class="exp-icon">🕯</span>
+        <h3>朝の勤行</h3>
+        <p>荘厳な本堂で行われる朝のお勤め。声明の響きが心を清め、一日の始まりを整えます。</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🖌</span>
+        <h3>写経体験</h3>
+        <p>仏さまのお言葉である経典を、ひと文字ずつ願いを込めて書き写します。初めての方にも取り組みやすいよう、般若心経をなぞる形です。用紙・筆・筆ペン・墨・硯はご用意していますので、いつでもお申し付けください。</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🌿</span>
+        <h3>庭園散策</h3>
+        <p>重森三玲設計の石庭を含む5つの庭園。四季折々の風情と静寂をお楽しみください。</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🍱</span>
+        <h3>精進料理</h3>
+        <p>弘法大師が伝えた精進料理を、本来の形で。旬の素材と伝統の技が織りなす一椀。</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🎋</span>
+        <h3>奥の院参拝</h3>
+        <p>高野山の聖域・奥の院へ。弘法大師の御廟を詣で、千年の歴史に触れる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIEST -->
+
+<!-- ACCESS -->
+<section class="access-sec" id="access">
+  <div class="access-inner">
+    <div class="access-header">
+      <span class="sec-eyebrow" style="color:var(--gold);">ACCESS</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:#fff;">アクセス</h2>
+    </div>
+    <div class="access-grid">
+      <div class="access-box">
+        <h3>TEMPLE INFO</h3>
+        <table>
+          <tr><td>寺院名</td><td>高野山 別格本山 本覚院</td></tr>
+          <tr><td>宗派</td><td>高野山真言宗</td></tr>
+          <tr><td>住所</td><td>〒648-0211<br>和歌山県伊都郡高野町高野山618</td></tr>
+          <tr><td>電話</td><td><a href="tel:0736562711" style="color:var(--gold);">0736-56-2711</a></td></tr>
+          <tr><td>チェックイン</td><td>15:00〜</td></tr>
+          <tr><td>チェックアウト</td><td>〜10:00</td></tr>
+        </table>
+      </div>
+      <div class="directions">
+        <p><strong>電車でお越しの場合：</strong>南海電鉄高野線「極楽橋」駅でケーブルカーに乗り換え「高野山」駅へ</p>
+        <p><strong>バスでお越しの場合：</strong>南海りんかんバス「奥の院行」または「大門行」→「警察署前」バス停下車（約10分）</p>
+        <p><strong>徒歩：</strong>バス停から2〜3分。木々に囲まれた参道を進むと山門が見えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+  <div class="faq-inner">
+    <span class="sec-eyebrow" style="color:var(--gold);">FAQ</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title" style="color:var(--ink);">よくあるご質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">お一人でも宿泊できますか？</summary>
+        <div class="faq-a"><p>お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">予約方法を教えてください。</summary>
+        <div class="faq-a"><p>ご宿泊は予約サイト（ページ内の「宿坊のご予約はこちら」から）で24時間承っております。お電話（0736-56-2711／受付9:00〜17:00）でもご予約いただけます。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">チェックイン・チェックアウトは何時ですか？</summary>
+        <div class="faq-a"><p>チェックインは15:00から、チェックアウトは10:00まででございます。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">門限はありますか？</summary>
+        <div class="faq-a"><p>門限は22:00でございます。夜は山内が静かになりますので、それまでにお戻りくださいますようお願いいたします。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">食事は精進料理ですか？アレルギーの対応はできますか？</summary>
+        <div class="faq-a"><p>高野豆腐や胡麻豆腐をはじめとする精進料理をご用意しております。なお、個別の食物アレルギーへの対応は行っておりませんので、あらかじめご了承ください。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">朝の勤行には誰でも参加できますか？必須ですか？</summary>
+        <div class="faq-a"><p>ご宿泊の方はどなたでもご参加いただけます。参加は自由で、必須ではございません。所要時間は45分〜1時間ほどです。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">外国人でも宿泊できますか？英語の対応はありますか？</summary>
+        <div class="faq-a"><p>海外からのお客様もご宿泊いただけます。簡単な英語でしたらご対応いたします。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "お一人でも宿泊できますか？", "acceptedAnswer": { "@type": "Answer", "text": "お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。" } },
+    { "@type": "Question", "name": "予約方法を教えてください。", "acceptedAnswer": { "@type": "Answer", "text": "ご宿泊は予約サイト（ページ内の「宿坊のご予約はこちら」から）で24時間承っております。お電話（0736-56-2711／受付9:00〜17:00）でもご予約いただけます。" } },
+    { "@type": "Question", "name": "チェックイン・チェックアウトは何時ですか？", "acceptedAnswer": { "@type": "Answer", "text": "チェックインは15:00から、チェックアウトは10:00まででございます。" } },
+    { "@type": "Question", "name": "門限はありますか？", "acceptedAnswer": { "@type": "Answer", "text": "門限は22:00でございます。夜は山内が静かになりますので、それまでにお戻りくださいますようお願いいたします。" } },
+    { "@type": "Question", "name": "食事は精進料理ですか？アレルギーの対応はできますか？", "acceptedAnswer": { "@type": "Answer", "text": "高野豆腐や胡麻豆腐をはじめとする精進料理をご用意しております。なお、個別の食物アレルギーへの対応は行っておりませんので、あらかじめご了承ください。" } },
+    { "@type": "Question", "name": "朝の勤行には誰でも参加できますか？必須ですか？", "acceptedAnswer": { "@type": "Answer", "text": "ご宿泊の方はどなたでもご参加いただけます。参加は自由で、必須ではございません。所要時間は45分〜1時間ほどです。" } },
+    { "@type": "Question", "name": "外国人でも宿泊できますか？英語の対応はありますか？", "acceptedAnswer": { "@type": "Answer", "text": "海外からのお客様もご宿泊いただけます。簡単な英語でしたらご対応いたします。" } }
+  ]
+}
+</script>
+
+<!-- CTA -->
+<section class="cta-sec" id="cta">
+  <h2>ご予約・お問合せ</h2>
+  <p>ご宿泊は予約サイトから、ご祈祷・ご供養などはお電話でお気軽にどうぞ</p>
+  <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn-reserve-main" target="_blank" rel="noopener">宿坊のご予約はこちら</a>
+  <a href="tel:0736562711" class="cta-tel">0736-56-2711</a>
+  <p class="cta-hours">受付時間 9:00〜17:00</p>
+</section>
+
+<!-- SNS -->
+<div class="sns-bar">
+  <p>FOLLOW US</p>
+  <div class="sns-links">
+    <a href="https://www.instagram.com/koyasan_hongakuin/" class="sns-link" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</div>
+
+<footer>
+  <p>高野山 別格本山 本覚院　KOYASAN BETTAKUHONZAN HONGAKUIN</p>
+  <p>〒648-0211 和歌山県伊都郡高野町高野山618　Tel: 0736-56-2711</p>
+  <p style="margin-top:12px;">© 2026 Hongakuin All Rights Reserved.</p>
+</footer>
+
+<a href="https://tabichat.jp/engine/hotels/hongakuin" class="float-btn" target="_blank" rel="noopener">宿坊のご予約はこちら</a>
+
+<script>
+function openMenu(){
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+}
+function closeMenu(){
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+}
+
+/* ヒーロー・スライドショー */
+let cur=0;
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.dot');
+function goSlide(n){
+  if(!slides.length) return;
+  slides[cur].classList.remove('active');
+  dots[cur].classList.remove('active');
+  cur=n;
+  slides[cur].classList.add('active');
+  dots[cur].classList.add('active');
+}
+if(slides.length>1){
+  setInterval(()=>goSlide((cur+1)%slides.length),5500);
+}
+
+function toggleCard(el) {
+  const card = el.parentElement;
+  card.classList.toggle('open');
+}
+
+function toggleArchive() {
+  const archive = document.getElementById('newsArchive');
+  const btn = document.getElementById('newsMoreBtn');
+  const isOpen = archive.classList.contains('show');
+  archive.classList.toggle('show');
+  btn.textContent = isOpen ? '過去の記事を見る ＋' : '閉じる －';
+}
+
+/* ── 新着情報：microCMS連携 ──
+   microCMSの「お知らせ」APIから記事を取得し、
+   news-cards（最新2件）と newsArchive（3件目以降）を自動生成。
+   取得に失敗した場合はHTMLに書かれた既存の記事をそのまま表示。 */
+(function () {
+  const API_URL = 'https://0ztuzy03pk.microcms.io/api/v1/news?limit=20&orders=-publishedAt';
+  const API_KEY = 'oCsUkaPU8myVaSnfNkXndXvHPJeb1PTtY4ID';
+
+  function fmtDate(iso) {
+    const d = new Date(iso);
+    return d.getFullYear() + '.' +
+      String(d.getMonth() + 1).padStart(2, '0') + '.' +
+      String(d.getDate()).padStart(2, '0');
+  }
+
+  function makeCard(item) {
+    const card = document.createElement('div');
+    card.className = 'news-card';
+
+    // 本文HTMLから最初の画像をサムネイルに使う
+    const tmp = document.createElement('div');
+    tmp.innerHTML = item.content || '';
+    const firstImg = tmp.querySelector('img');
+    const excerpt = (tmp.textContent || '').trim().slice(0, 60);
+
+    const header = document.createElement('div');
+    header.className = 'news-card-header';
+    header.onclick = function () { toggleCard(this); };
+
+    if (firstImg) {
+      const thumb = document.createElement('img');
+      thumb.className = 'news-card-img';
+      thumb.src = firstImg.src;
+      thumb.alt = '';
+      header.appendChild(thumb);
+    }
+
+    const meta = document.createElement('div');
+    meta.className = 'news-card-meta';
+    meta.innerHTML =
+      '<span class="news-card-date"></span>' +
+      '<span class="news-card-tag"></span>' +
+      '<p class="news-card-title"></p>' +
+      '<p class="news-card-excerpt"></p>';
+    meta.querySelector('.news-card-date').textContent = fmtDate(item.publishedAt);
+    meta.querySelector('.news-card-tag').textContent = (item.category && item.category.name) ? item.category.name : 'お知らせ';
+    meta.querySelector('.news-card-title').textContent = item.title;
+    meta.querySelector('.news-card-excerpt').textContent = excerpt;
+    header.appendChild(meta);
+
+    const arrow = document.createElement('span');
+    arrow.className = 'news-arrow';
+    arrow.textContent = '▼';
+    header.appendChild(arrow);
+
+    const body = document.createElement('div');
+    body.className = 'news-card-body';
+    body.innerHTML = item.content || '';
+    // 本文内の画像がはみ出さないように
+    body.querySelectorAll('img').forEach(function (img) {
+      img.style.maxWidth = '100%';
+      img.style.height = 'auto';
+      img.removeAttribute('width');
+      img.removeAttribute('height');
+    });
+
+    card.appendChild(header);
+    card.appendChild(body);
+    return card;
+  }
+
+  // microCMSの記事（新しい投稿）＋旧サイトから移した過去記事（news-archive.json）を日付順にまとめて表示
+  function getJSON(url, opts) {
+    return fetch(url, opts).then(function (r) {
+      if (!r.ok) throw new Error(url + ' ' + r.status);
+      return r.json();
+    });
+  }
+  Promise.allSettled([
+    getJSON(API_URL, { headers: { 'X-MICROCMS-API-KEY': API_KEY } }),
+    getJSON('news-archive.json')
+  ]).then(function (res) {
+    const cms = res[0].status === 'fulfilled' ? (res[0].value.contents || []) : [];
+    const old = res[1].status === 'fulfilled' ? res[1].value : [];
+    if (res[0].status === 'rejected') console.warn('microCMS読み込み失敗:', res[0].reason);
+    if (res[1].status === 'rejected') console.warn('過去記事の読み込み失敗:', res[1].reason);
+
+    const seen = {};
+    const items = cms.concat(old).filter(function (it) {
+      if (/^無題|^（サンプル）|^\(サンプル\)/.test(it.title || '')) return false; // microCMSの練習・サンプル記事は出さない
+      if (seen[it.title]) return false; // 同じタイトルは1本だけ
+      seen[it.title] = true;
+      return true;
+    }).sort(function (x, y) { return new Date(y.publishedAt) - new Date(x.publishedAt); });
+    if (items.length === 0) return; // 記事ゼロなら既存HTMLのまま
+
+    // お知らせバーに最新タイトル
+    const noticeText = document.getElementById('notice-text');
+    if (noticeText) noticeText.textContent = items[0].title;
+
+    // 既存のハードコード記事を消して差し替え
+    const cards = document.querySelector('.news-cards');
+    const archive = document.getElementById('newsArchive');
+    cards.innerHTML = '';
+    archive.innerHTML = '';
+
+    // 最新3本は最初から本文まで開いた状態で表示、4本目以降は「過去の記事」に
+    items.forEach(function (item, i) {
+      const card = makeCard(item);
+      if (i < 3) card.classList.add('open');
+      (i < 3 ? cards : archive).appendChild(card);
+    });
+
+    // 3件目以降がなければ「過去の記事」ボタンを隠す
+    const btn = document.getElementById('newsMoreBtn');
+    if (btn && items.length <= 3) btn.style.display = 'none';
+  });
+})();
+</script>
+<script>
+(function(){var h=document.querySelector('.hero');function f(){document.body.classList.toggle('at-top',window.scrollY<h.offsetHeight-80);}
+window.addEventListener('scroll',f,{passive:true});f();})();
+</script>
+<script>
+function togglePriest(btn){var m=document.getElementById('priestMore');var o=m.classList.toggle('show');btn.textContent=o?'閉じる －':'略歴・聲明CDを見る ＋';if(!o)document.getElementById('priest').scrollIntoView({behavior:'smooth'});}
+</script>
+</body>
+</html>
