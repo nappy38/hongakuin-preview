@@ -843,6 +843,10 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 
 /* 新着：本文中の写真と文章の間に余白 */
 .news-card-body img{display:block;margin:4px 0 24px !important;}
+
+/* 年号：PCの縦書きは漢数字、スマホの横書きは算用数字 */
+.num-yoko{display:none;}
+@media(max-width:899px){.num-tate{display:none;}.num-yoko{display:inline;}}
 </style>
 </head>
 <body>
@@ -934,7 +938,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     </div>
     <div class="about-text">
       <h2 class="about-title">本覚院について</h2>
-      <p class="about-lead">高野山真言宗 総本山金剛峯寺の塔頭寺院、別格本山です。智証大師作の不動明王像をご本尊に、建久年間（一一九〇年）の創建以来の歴史を伝えます。</p>
+      <p class="about-lead">高野山真言宗 総本山金剛峯寺の塔頭寺院、別格本山です。智証大師作の不動明王像をご本尊に、建久年間（<span class="num-tate">一一九〇</span><span class="num-yoko">1190</span>年）の創建以来の歴史を伝えます。</p>
       <p class="about-lead">本覚院が建つのは、弘法大師がこの地で祈られていたとき、六地蔵菩薩（六体のお地蔵さま）が現れるのを感じとられた、という言い伝えの残る場所です。平安時代の建久年間、ある歌人の願いを受けて高野山に登った行空上人がここでお経を唱え続けていると、光とともに地蔵菩薩が現れ、<br class="pc-only">「ここに住みなさい」と告げられました。上人はこの地に庵を結ばれ、それが本覚院のはじまりとなりました。</p>
       <p class="about-desc">当院では毎朝の勤行と住職の法話を行っており、ご宿泊の方はご自由にご参拝いただけます。</p>
     </div>
