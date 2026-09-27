@@ -1537,7 +1537,8 @@ function toggleArchive() {
     if (firstImg) {
       const thumb = document.createElement('img');
       thumb.className = 'news-card-img';
-      thumb.src = firstImg.src;
+      const fsrc = firstImg.getAttribute('src') || '';
+      thumb.src = (fsrc.indexOf('images.microcms-assets.io') !== -1 && fsrc.indexOf('?') === -1) ? fsrc + '?w=300&q=75&auto=format' : firstImg.src;
       thumb.alt = '';
       header.appendChild(thumb);
     }
@@ -1550,7 +1551,10 @@ function toggleArchive() {
       '<p class="news-card-title"></p>' +
       '<p class="news-card-excerpt"></p>';
     meta.querySelector('.news-card-date').textContent = fmtDate(item.publishedAt);
-    meta.querySelector('.news-card-tag').textContent = (item.category && item.category.name) ? item.category.name : 'お知らせ';
+    // カテゴリ：参照型（{name}）でもセレクト型（['コラム']）でも文字でも読めるように。空なら「お知らせ」
+    const cat = item.category;
+    meta.querySelector('.news-card-tag').textContent =
+      (cat && cat.name) || (Array.isArray(cat) && cat[0]) || (typeof cat === 'string' && cat) || 'お知らせ';
     meta.querySelector('.news-card-title').textContent = item.title;
     meta.querySelector('.news-card-excerpt').textContent = excerpt;
     header.appendChild(meta);
@@ -1563,8 +1567,11 @@ function toggleArchive() {
     const body = document.createElement('div');
     body.className = 'news-card-body';
     body.innerHTML = item.content || '';
-    // 本文内の画像がはみ出さないように
+    // 本文内の画像がはみ出さないように。microCMSの写真は表示用に縮小して読み込む（元が大きくても重くならない）
     body.querySelectorAll('img').forEach(function (img) {
+      const src = img.getAttribute('src') || '';
+      if (src.indexOf('images.microcms-assets.io') !== -1 && src.indexOf('?') === -1) img.setAttribute('src', src + '?w=1000&q=80&auto=format');
+      img.setAttribute('loading', 'lazy');
       img.style.maxWidth = '100%';
       img.style.height = 'auto';
       img.removeAttribute('width');
