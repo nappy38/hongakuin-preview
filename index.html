@@ -853,6 +853,13 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 
 /* 新着：本文の写真はすべて同じ幅で表示（microCMSの新しい記事と旧サイトの記事をそろえる） */
 .news-card-body img{width:100% !important;max-width:560px !important;height:auto !important;}
+
+/* 「詳しく見る」ボタン：下に四角いボタンで */
+.more-box-wrap{text-align:center;margin-top:40px;writing-mode:horizontal-tb;}
+.more-box{display:inline-block;min-width:260px;padding:16px 36px;border:1px solid var(--sumi);background:rgba(255,255,255,.35);
+  font-family:'Shippori Mincho B1',serif;font-size:15px;letter-spacing:.15em;color:var(--sumi);transition:background .3s,color .3s;}
+.more-box::after{content:'　→';}
+.more-box:hover{background:var(--sumi);color:#fff;}
 </style>
 </head>
 <body>
@@ -950,9 +957,9 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
       <p class="about-lead">高野山真言宗 総本山金剛峯寺の塔頭寺院、別格本山です。智証大師作の不動明王像をご本尊に、建久年間（<span class="num-tate">一一九〇</span><span class="num-yoko">1190</span>年）の創建以来の歴史を伝えます。</p>
       <p class="about-lead">本覚院が建つのは、弘法大師がこの地で祈られていたとき、六地蔵菩薩（六体のお地蔵さま）が現れるのを感じとられた、という言い伝えの残る場所です。平安時代の建久年間、ある歌人の願いを受けて高野山に登った行空上人がここでお経を唱え続けていると、光とともに地蔵菩薩が現れ、<br class="pc-only">「ここに住みなさい」と告げられました。上人はこの地に庵を結ばれ、それが本覚院のはじまりとなりました。昭和<span class="num-tate">五十五</span><span class="num-yoko">55</span>年（<span class="num-tate">一九八〇</span><span class="num-yoko">1980</span>年）には、ダライ・ラマ<span class="num-tate">十四</span><span class="num-yoko">14</span>世法王もご宿泊されています。</p>
       <p class="about-desc">当院では毎朝の勤行と住職の法話を行っており、ご宿泊の方はご自由にご参拝いただけます。</p>
-      <a href="about.html" class="room-book">本覚院について詳しく →</a>
     </div>
   </div>
+  <div class="more-box-wrap"><a href="about.html" class="more-box">本覚院について詳しく見る</a></div>
 </section>
 
 <!-- ========================================
@@ -1074,7 +1081,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
         </div>
         </div>
         <button class="priest-more-btn" type="button" onclick="togglePriest(this)">略歴・聲明CDを見る ＋</button>
-        <p style="margin-top:16px;"><a href="priest.html" class="room-book">住職・僧侶について詳しく →</a></p>
+        <div class="more-box-wrap"><a href="priest.html" class="more-box">住職・僧侶について詳しく見る</a></div>
       </div>
     </div>
   </div>
@@ -1102,7 +1109,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     <div class="kuyo-cta">
       <p>ご廻向・永代供養・ご祈祷のご相談は、お電話でお気軽にどうぞ。</p>
       <a href="tel:0736562711" class="kuyo-tel">0736-56-2711</a>
-      <p style="margin-top:16px;"><a href="kuyo.html" class="room-book">お参り・ご供養について詳しく →</a></p>
+      <div class="more-box-wrap"><a href="kuyo.html" class="more-box">お参り・ご供養について詳しく見る</a></div>
     </div>
   </div>
 </section>
