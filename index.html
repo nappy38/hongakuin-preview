@@ -822,7 +822,16 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 
 /* 本覚院についての写真の説明 */
 .about-img{object-position:center 40%;}
-.about-cap{margin-top:10px;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.12em;color:rgba(43,38,33,.65);text-align:right;}
+.about-cap{margin-top:10px;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.12em;color:rgba(43,38,33,.65);text-align:center;}
+
+/* スマホ：「本覚院について」の見出し → 写真 → 本文 の順に */
+@media(max-width:899px){
+  .about-inner{display:flex;flex-direction:column;}
+  .about-text{display:contents;}
+  .about-title{order:1;}
+  .about-img-wrap{order:2;margin-bottom:28px;}
+  .about-text p{order:3;}
+}
 </style>
 </head>
 <body>
