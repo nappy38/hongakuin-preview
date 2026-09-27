@@ -815,6 +815,10 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 
 /* 写真のない記事は、見出しを横いっぱいに */
 .news-card-header.no-img{grid-template-columns:1fr auto !important;}
+
+/* 窓越しの庭のスライド：スマホでは窓の縦枠が真ん中に来ないよう左寄せ */
+.slide-mado{background-position:center 60%;}
+@media(max-width:768px){.slide-mado{background-position:22% center;}}
 </style>
 </head>
 <body>
@@ -862,7 +866,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     <div class="slide active" style="background-image:url('images/insta-nenki.jpg');background-position:65% center"></div>
     <div class="slide" style="background-image:url('images/photos/kyakushitsu-toro-2.jpg');background-position:55% center"></div>
     <div class="slide" style="background-image:url('images/photos/soryo-fusuma-2.jpg');background-position:40% center"></div>
-    <div class="slide" style="background-image:url('images/hero-1.jpg')"></div>
+    <div class="slide slide-mado" style="background-image:url('images/photos/teien-mado-slide.jpg')"></div>
     <div class="slide" style="background-image:url('images/photos/sanmon-yoru.jpg')"></div>
   </div>
   <div class="hero-overlay"></div>
