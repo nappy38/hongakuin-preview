@@ -832,6 +832,9 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
   .about-img-wrap{order:2;margin-bottom:28px;}
   .about-text p{order:3;}
 }
+
+.news-more-mobile{display:block;margin:0 auto;padding:12px 32px;background:none;border:1px solid var(--gold);color:var(--ink);
+  font-family:'Shippori Mincho B1',serif;font-size:14px;letter-spacing:.15em;cursor:pointer;}
 </style>
 </head>
 <body>
@@ -1424,16 +1427,13 @@ function toggleCard(el) {
   card.classList.toggle('open');
 }
 
-const NEWS_PER_PAGE = 5;
+const NEWS_PER_PAGE = 5;       // PC：1ページ5本＋ページ番号
+const NEWS_MOBILE_FIRST = 3;   // スマホ：最初は3本
+const NEWS_MOBILE_STEP = 5;    // スマホ：「もっと見る」で5本ずつ
+let newsMobileShown = NEWS_MOBILE_FIRST;
+const isNewsMobile = () => window.matchMedia('(max-width:768px)').matches;
 function newsPage(p) {
   const list = [...document.querySelectorAll('.news-cards .news-card')];
-  const pages = Math.max(1, Math.ceil(list.length / NEWS_PER_PAGE));
-  p = Math.min(Math.max(1, p), pages);
-  list.forEach(function (c, i) {
-    const on = i >= (p - 1) * NEWS_PER_PAGE && i < p * NEWS_PER_PAGE;
-    c.classList.toggle('nb-hide', !on);
-    if (!on) c.classList.remove('open');
-  });
   let nav = document.getElementById('newsPager');
   if (!nav) {
     nav = document.createElement('nav');
@@ -1441,6 +1441,24 @@ function newsPage(p) {
     document.querySelector('.news-cards').after(nav);
   }
   nav.innerHTML = '';
+  if (isNewsMobile()) {
+    // スマホ：最初の3本、そのあと「もっと見る」で5本ずつ
+    list.forEach(function (c, i) { c.classList.toggle('nb-hide', i >= newsMobileShown); });
+    if (newsMobileShown < list.length) {
+      const more = document.createElement('button');
+      more.type = 'button'; more.className = 'news-more-mobile'; more.textContent = 'もっと見る ＋';
+      more.onclick = function () { newsMobileShown += NEWS_MOBILE_STEP; newsPage(1); };
+      nav.appendChild(more);
+    }
+    return;
+  }
+  const pages = Math.max(1, Math.ceil(list.length / NEWS_PER_PAGE));
+  p = Math.min(Math.max(1, p), pages);
+  list.forEach(function (c, i) {
+    const on = i >= (p - 1) * NEWS_PER_PAGE && i < p * NEWS_PER_PAGE;
+    c.classList.toggle('nb-hide', !on);
+    if (!on) c.classList.remove('open');
+  });
   if (pages <= 1) return;
   // 表示する番号：1〜5、今のページの前後、最後。間は「…」
   const show = new Set([1, pages, p - 1, p, p + 1]);
@@ -1456,6 +1474,7 @@ function newsPage(p) {
     nav.appendChild(a); last = i;
   }
 }
+window.matchMedia('(max-width:768px)').addEventListener('change', function () { newsPage(1); });
 
 function toggleArchive() {
   // 「もっと見る」を押すたびに、過去の記事を5本ずつ表示
