@@ -781,13 +781,13 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     font-family:'Shippori Mincho B1',serif;font-size:14px;letter-spacing:.15em;cursor:pointer;}
 }
 
-/* スマホ：お部屋・施設は横スワイプ */
+/* スマホ：施設だけ横スワイプ（お部屋は縦に並べる） */
 .rooms-swipe-hint{display:none;}
 @media(max-width:768px){
-  .room-list{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;
+  .room-list-fac{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;
     margin:0 -20px;padding:0 20px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-  .room-list::-webkit-scrollbar{display:none;}
-  .room-item{flex:0 0 84%;scroll-snap-align:center;}
+  .room-list-fac::-webkit-scrollbar{display:none;}
+  .room-list-fac .room-item{flex:0 0 84%;scroll-snap-align:center;}
   .rooms-swipe-hint{display:block;text-align:right;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.15em;color:rgba(255,255,255,.6);margin:-8px 0 12px;}
 }
 
@@ -847,6 +847,9 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 /* 年号：PCの縦書きは漢数字、スマホの横書きは算用数字 */
 .num-yoko{display:none;}
 @media(max-width:899px){.num-tate{display:none;}.num-yoko{display:inline;}}
+
+.room-sub{font-family:'Shippori Mincho B1',serif;font-weight:400;font-size:20px;letter-spacing:.2em;color:#fff;margin:48px 0 20px;}
+@media(max-width:768px){.room-list-rooms{gap:20px;}}
 </style>
 </head>
 <body>
@@ -1142,7 +1145,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
       <h2 class="sec-title" style="color:#fff;">お部屋・施設のご案内</h2>
     </div>
     <p class="rooms-swipe-hint" aria-hidden="true">横にスワイプ →</p>
-    <div class="room-list">
+    <div class="room-list room-list-fac">
       <div class="room-item">
         <div class="room-photo"><img src="images/photos/ohiroma.jpg" alt="狩野派の襖絵に囲まれた大広間と「獅子吼」の額" loading="lazy" width="1600" height="1067"></div>
         <div class="room-detail">
@@ -1168,6 +1171,9 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
           <p class="room-note">利用時間 17:00〜21:00</p>
         </div>
       </div>
+    </div>
+    <h3 class="room-sub">お部屋</h3>
+    <div class="room-list room-list-rooms">
       <div class="room-item">
         <div class="room-photo room-photo-trio">
           <img class="main" src="images/rooms/tenporin.jpg" alt="特別室「転法輪」。格天井の和室と、重森三玲の庭を望む窓" loading="lazy" width="1000" height="750">

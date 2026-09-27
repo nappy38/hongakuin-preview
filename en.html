@@ -719,13 +719,13 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.15em;cursor:pointer;}
 }
 
-/* スマホ：お部屋・施設は横スワイプ */
+/* スマホ：施設だけ横スワイプ（お部屋は縦に並べる） */
 .rooms-swipe-hint{display:none;}
 @media(max-width:768px){
-  .room-list{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;
+  .room-list-fac{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;
     margin:0 -20px;padding:0 20px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-  .room-list::-webkit-scrollbar{display:none;}
-  .room-item{flex:0 0 84%;scroll-snap-align:center;}
+  .room-list-fac::-webkit-scrollbar{display:none;}
+  .room-list-fac .room-item{flex:0 0 84%;scroll-snap-align:center;}
   .rooms-swipe-hint{display:block;text-align:right;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.15em;color:rgba(255,255,255,.6);margin:-8px 0 12px;}
 }
 
@@ -760,6 +760,9 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
   .about-img-wrap{order:2;margin-bottom:28px;}
   .about-text p{order:3;}
 }
+
+.room-sub{font-family:'Shippori Mincho B1',serif;font-weight:400;font-size:20px;letter-spacing:.2em;color:#fff;margin:48px 0 20px;}
+@media(max-width:768px){.room-list-rooms{gap:20px;}}
 </style>
 </head>
 <body>
@@ -974,7 +977,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
       <h2 class="sec-title" style="color:#fff;">Rooms &amp; Facilities</h2>
     </div>
     <p class="rooms-swipe-hint" aria-hidden="true">Swipe &rarr;</p>
-    <div class="room-list">
+    <div class="room-list room-list-fac">
       <div class="room-item">
         <div class="room-photo"><img src="images/photos/ohiroma.jpg" alt="The great hall, lined with Kanō-school sliding-door paintings, beneath a framed calligraphy reading 'Lion's Roar'" loading="lazy" width="1600" height="1067"></div>
         <div class="room-detail">
@@ -1000,6 +1003,9 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
           <p class="room-note">Open 5:00 pm – 9:00 pm</p>
         </div>
       </div>
+    </div>
+    <h3 class="room-sub">Guest Rooms</h3>
+    <div class="room-list room-list-rooms">
       <div class="room-item">
         <div class="room-photo room-photo-trio">
           <img class="main" src="images/rooms/tenporin.jpg" alt="Tenpōrin, a special room with a coffered ceiling and a window overlooking a garden by Shigemori Mirei" loading="lazy" width="1000" height="750">
