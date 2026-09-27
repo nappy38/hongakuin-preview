@@ -800,37 +800,21 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:.12em;color:var(--ink);cursor:pointer;}
 }
 
-/* ══ 新着情報：和紙トーンに合わせて、白いカード・枠・太線をやめ、細い罫線だけの一覧に ══ */
-.news-sec{background:var(--washi) var(--paper);}
-.news-sec .sec-title{font-weight:400;color:var(--sumi);letter-spacing:.2em;}
-.news-cards,.news-archive.show{gap:0;border-top:1px solid rgba(43,38,33,.18);}
-.news-card{background:none;border-left:0;border-bottom:1px solid rgba(43,38,33,.18);}
-.news-card.open{border-left:0;}
-.news-card-header{padding:22px 4px;gap:16px;}
-.news-card-header:hover{background:rgba(255,255,255,.25);}
-.news-card-meta{display:block;}
-.news-card-date{font-family:'Shippori Mincho B1',serif !important;font-size:13px;color:rgba(43,38,33,.6);letter-spacing:.12em;display:inline;}
-.news-card-tag{border:0;padding:0 0 0 14px;font-family:'Shippori Mincho B1',serif;font-size:11px;letter-spacing:.2em;color:var(--gold);display:inline;}
-.news-card-meta .news-card-date + .news-card-tag{margin-left:0;}
-.news-card-title{font-size:16px;color:var(--sumi);letter-spacing:.08em;margin-top:2px;}
-.news-card-excerpt{font-family:'Shippori Mincho B1',serif;font-size:13px;color:rgba(43,38,33,.7);}
-.news-arrow{font-size:0;padding-left:8px;}
-.news-arrow::before{content:'＋';font-size:14px;color:var(--gold);}
-.news-card.open .news-arrow{transform:none;}
-.news-card.open .news-arrow::before{content:'－';}
-.news-card-body{border-top:0;padding:0 4px 28px;font-family:'Shippori Mincho B1',serif;font-size:15px;line-height:2.1;color:var(--sumi);}
-.news-card-body p,.news-card-body div{color:var(--sumi);}
-.news-card-body img{max-width:min(100%,520px) !important;margin:4px 0 18px;}
-.news-more-btn{border:0;border-bottom:1px solid var(--gold);width:auto;margin:28px auto 0;padding:8px 4px;color:var(--sumi);}
-.news-more-btn:hover{background:none;color:var(--gold);}
-.nb-more{color:var(--sumi);}
-@media(min-width:769px){
-  .news-card-header{padding:26px 8px;grid-template-columns:120px 1fr auto;gap:28px;}
-  .news-card-body{padding:0 8px 36px;}
-}
-
 /* 開いた記事はサムネイルが消えるので、見出しを横いっぱいに */
 .news-card.open .news-card-header{grid-template-columns:1fr auto !important;}
+
+.news-card.nb-hide{display:none;}
+
+/* 新着：ページ番号（1ページ5本） */
+.news-pager{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:36px;}
+.news-pager .pg{background:none;border:0;padding:6px 10px;font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--sumi);cursor:pointer;
+  font-variant-numeric:lining-nums;position:relative;}
+.news-pager .pg.is-current::before{content:'';position:absolute;left:50%;top:0;width:10px;height:1px;background:var(--sumi);transform:translateX(-50%);}
+.news-pager .pg:hover{color:var(--gold);}
+.news-pager .pg-dots{padding:6px 6px;color:rgba(43,38,33,.6);}
+
+/* 写真のない記事は、見出しを横いっぱいに */
+.news-card-header.no-img{grid-template-columns:1fr auto !important;}
 </style>
 </head>
 <body>
@@ -995,7 +979,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     </div>
 
     <button class="news-more-btn" id="newsMoreBtn" onclick="toggleArchive()">
-      過去の記事を見る ＋
+      もっと見る ＋
     </button>
 
   </div>
@@ -1423,12 +1407,47 @@ function toggleCard(el) {
   card.classList.toggle('open');
 }
 
+const NEWS_PER_PAGE = 5;
+function newsPage(p) {
+  const list = [...document.querySelectorAll('.news-cards .news-card')];
+  const pages = Math.max(1, Math.ceil(list.length / NEWS_PER_PAGE));
+  p = Math.min(Math.max(1, p), pages);
+  list.forEach(function (c, i) {
+    const on = i >= (p - 1) * NEWS_PER_PAGE && i < p * NEWS_PER_PAGE;
+    c.classList.toggle('nb-hide', !on);
+    if (!on) c.classList.remove('open');
+  });
+  let nav = document.getElementById('newsPager');
+  if (!nav) {
+    nav = document.createElement('nav');
+    nav.id = 'newsPager'; nav.className = 'news-pager'; nav.setAttribute('aria-label', '新着情報のページ');
+    document.querySelector('.news-cards').after(nav);
+  }
+  nav.innerHTML = '';
+  if (pages <= 1) return;
+  // 表示する番号：1〜5、今のページの前後、最後。間は「…」
+  const show = new Set([1, pages, p - 1, p, p + 1]);
+  for (let i = 1; i <= Math.min(5, pages); i++) show.add(i);
+  let last = 0;
+  for (let i = 1; i <= pages; i++) {
+    if (!show.has(i)) continue;
+    if (i - last > 1) { const d = document.createElement('span'); d.className = 'pg-dots'; d.textContent = '…'; nav.appendChild(d); }
+    const a = document.createElement('button');
+    a.type = 'button'; a.textContent = i; a.className = 'pg' + (i === p ? ' is-current' : '');
+    if (i === p) a.setAttribute('aria-current', 'page');
+    a.onclick = function () { newsPage(i); document.getElementById('news').scrollIntoView({ behavior: 'smooth' }); };
+    nav.appendChild(a); last = i;
+  }
+}
+
 function toggleArchive() {
+  // 「もっと見る」を押すたびに、過去の記事を5本ずつ表示
   const archive = document.getElementById('newsArchive');
   const btn = document.getElementById('newsMoreBtn');
-  const isOpen = archive.classList.contains('show');
-  archive.classList.toggle('show');
-  btn.textContent = isOpen ? '過去の記事を見る ＋' : '閉じる －';
+  archive.classList.add('show');
+  const hidden = archive.querySelectorAll('.news-card.nb-hide');
+  for (let i = 0; i < Math.min(5, hidden.length); i++) hidden[i].classList.remove('nb-hide');
+  if (hidden.length <= 5) btn.style.display = 'none';
 }
 
 /* ── 新着情報：microCMS連携 ──
@@ -1460,6 +1479,7 @@ function toggleArchive() {
     header.className = 'news-card-header';
     header.onclick = function () { toggleCard(this); };
 
+    if (!firstImg) header.classList.add('no-img');
     if (firstImg) {
       const thumb = document.createElement('img');
       thumb.className = 'news-card-img';
@@ -1570,16 +1590,13 @@ function toggleArchive() {
     cards.innerHTML = '';
     archive.innerHTML = '';
 
-    // 最新3本は最初から本文まで開いた状態で表示、4本目以降は「過去の記事」に
-    items.forEach(function (item, i) {
-      const card = makeCard(item);
-      if (i < 3) card.classList.add('open');
-      (i < 3 ? cards : archive).appendChild(card);
-    });
+    // 貴船神社のような一覧：1ページ5本、下にページ番号
+    items.forEach(function (item) { cards.appendChild(makeCard(item)); });
+    newsPage(1);
 
     // 3件目以降がなければ「過去の記事」ボタンを隠す
     const btn = document.getElementById('newsMoreBtn');
-    if (btn && items.length <= 3) btn.style.display = 'none';
+    if (btn) btn.style.display = 'none';
   });
 })();
 </script>
