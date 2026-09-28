@@ -995,6 +995,11 @@ body{font-size:16px;line-height:2.0;}
 .access-sec .access-box td:first-child{color:#d9b877 !important;}
 .gallery-sec .g-label,.gallery-sec p{color:rgba(250,243,232,.9) !important;}
 .kuyo-sec-home p,.kuyo-sec-home li,.kuyo-sec-home h3{color:rgba(250,243,232,.9) !important;}
+
+.info-list{display:grid;grid-template-columns:7.5em 1fr;border-top:1px solid rgba(43,38,33,.18);margin-top:8px;}
+.info-list dt,.info-list dd{padding:14px 4px;border-bottom:1px solid rgba(43,38,33,.18);margin:0;font-size:15px;line-height:1.9;color:var(--sumi);}
+.info-list dt{font-family:'Shippori Mincho B1',serif;color:#a9824a;letter-spacing:.1em;}
+@media(max-width:540px){.info-list{grid-template-columns:1fr;}.info-list dt{border-bottom:0;padding-bottom:0;}}
 </style>
 <body>
 <!-- HEADER -->
@@ -1287,6 +1292,28 @@ body{font-size:16px;line-height:2.0;}
   </div>
 </section>
 
+<!-- ご利用案内（旧サイト「施設詳細」より） -->
+<section class="page-sec info-sec" id="info">
+  <div class="page-inner" style="max-width:900px;">
+    <span class="sec-eyebrow">INFORMATION</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title" style="color:var(--ink);">ご利用案内</h2>
+    <dl class="info-list">
+      <dt>サービス</dt><dd>お一人でのご宿泊・団体グループのご宿泊を承っております。宅配サービスの手配、仏前結婚式も謹んでお受けいたします。</dd>
+      <dt>ペット</dt><dd>ペットご同伴のご宿泊は、現在ご遠慮いただいております。</dd>
+      <dt>お部屋</dt><dd>全室、落ち着きのある和室です。冷暖房・テレビ完備。院内には<strong>段差がございます</strong>ので、お気軽にお声がけください。</dd>
+      <dt>客室設備</dt><dd>テレビ、お湯ポット、お茶セット、机、冷暖房</dd>
+      <dt>アメニティ</dt><dd>タオル、バスタオル、ドライヤー、歯ブラシ、スリッパ、ボディソープ、シャンプー、リンス</dd>
+      <dt>部屋着</dt><dd>浴衣（ワンサイズ・LLサイズのみ）</dd>
+      <dt>お風呂</dt><dd>大浴場・中浴場（ご利用時間 17:00〜21:00）</dd>
+      <dt>駐車場</dt><dd>一般駐車場 15台（先着順・無料）</dd>
+      <dt>バリアフリー</dt><dd>車椅子用トイレ 1か所。車椅子の貸し出しがございます。</dd>
+      <dt>トイレ</dt><dd>洗浄機能付き洋式トイレ</dd>
+      <dt>喫煙所</dt><dd>あり</dd>
+    </dl>
+  </div>
+</section>
+
 <section class="faq-sec" id="faq">
   <div class="faq-inner">
     <span class="sec-eyebrow" style="color:var(--gold);">FAQ</span>
@@ -1321,22 +1348,119 @@ body{font-size:16px;line-height:2.0;}
         <summary class="faq-q">外国人でも宿泊できますか？英語の対応はありますか？</summary>
         <div class="faq-a"><p>海外からのお客様もご宿泊いただけます。簡単な英語でしたらご対応いたします。</p></div>
       </details>
+      <details class="faq-item">
+        <summary class="faq-q">駐車場はありますか？</summary>
+        <div class="faq-a"><p>一般駐車場が15台分ございます。先着順で、無料でご利用いただけます。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">ペットと一緒に泊まれますか？</summary>
+        <div class="faq-a"><p>ペットご同伴のご宿泊は、現在ご遠慮いただいております。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">車椅子でも利用できますか？</summary>
+        <div class="faq-a"><p>車椅子用トイレが1か所あり、車椅子の貸し出しもございます。院内には段差がございますので、お気軽にお声がけください。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">団体でも宿泊できますか？</summary>
+        <div class="faq-a"><p>団体グループでのご宿泊も承っております。人数やご希望をお電話でご相談ください。</p></div>
+      </details>
     </div>
   </div>
 </section>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "お一人でも宿泊できますか？", "acceptedAnswer": { "@type": "Answer", "text": "お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。" } },
-    { "@type": "Question", "name": "予約方法を教えてください。", "acceptedAnswer": { "@type": "Answer", "text": "ご宿泊は予約サイト（ページ内の「宿坊のご予約はこちら」から）で24時間承っております。お電話（0736-56-2711／受付9:00〜17:00）でもご予約いただけます。" } },
-    { "@type": "Question", "name": "チェックイン・チェックアウトは何時ですか？", "acceptedAnswer": { "@type": "Answer", "text": "チェックインは15:00から、チェックアウトは10:00まででございます。" } },
-    { "@type": "Question", "name": "門限はありますか？", "acceptedAnswer": { "@type": "Answer", "text": "門限は22:00でございます。夜は山内が静かになりますので、それまでにお戻りくださいますようお願いいたします。" } },
-    { "@type": "Question", "name": "食事は精進料理ですか？アレルギーの対応はできますか？", "acceptedAnswer": { "@type": "Answer", "text": "高野豆腐や胡麻豆腐をはじめとする精進料理をご用意しております。なお、個別の食物アレルギーへの対応は行っておりませんので、あらかじめご了承ください。" } },
-    { "@type": "Question", "name": "朝の勤行には誰でも参加できますか？必須ですか？", "acceptedAnswer": { "@type": "Answer", "text": "ご宿泊の方はどなたでもご参加いただけます。参加は自由で、必須ではございません。所要時間は45分〜1時間ほどです。" } },
-    { "@type": "Question", "name": "外国人でも宿泊できますか？英語の対応はありますか？", "acceptedAnswer": { "@type": "Answer", "text": "海外からのお客様もご宿泊いただけます。簡単な英語でしたらご対応いたします。" } }
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "お一人でも宿泊できますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "予約方法を教えてください。",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "ご宿泊は予約サイト（ページ内の「宿坊のご予約はこちら」から）で24時間承っております。お電話（0736-56-2711／受付9:00〜17:00）でもご予約いただけます。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "チェックイン・チェックアウトは何時ですか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "チェックインは15:00から、チェックアウトは10:00まででございます。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "門限はありますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "門限は22:00でございます。夜は山内が静かになりますので、それまでにお戻りくださいますようお願いいたします。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "食事は精進料理ですか？アレルギーの対応はできますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "高野豆腐や胡麻豆腐をはじめとする精進料理をご用意しております。なお、個別の食物アレルギーへの対応は行っておりませんので、あらかじめご了承ください。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "朝の勤行には誰でも参加できますか？必須ですか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "ご宿泊の方はどなたでもご参加いただけます。参加は自由で、必須ではございません。所要時間は45分〜1時間ほどです。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "外国人でも宿泊できますか？英語の対応はありますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "海外からのお客様もご宿泊いただけます。簡単な英語でしたらご対応いたします。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "駐車場はありますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "一般駐車場が15台分ございます。先着順で、無料でご利用いただけます。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "ペットと一緒に泊まれますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "ペットご同伴のご宿泊は、現在ご遠慮いただいております。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "車椅子でも利用できますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "車椅子用トイレが1か所あり、車椅子の貸し出しもございます。院内には段差がございますので、お気軽にお声がけください。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "団体でも宿泊できますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "団体グループでのご宿泊も承っております。人数やご希望をお電話でご相談ください。"
+   }
+  }
+ ]
 }
 </script>
 

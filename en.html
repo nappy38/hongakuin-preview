@@ -763,10 +763,34 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 
 .room-sub{font-family:'Shippori Mincho B1',serif;font-weight:400;font-size:20px;letter-spacing:.2em;color:#fff;margin:48px 0 20px;}
 @media(max-width:768px){.room-list-rooms{gap:20px;}}
+
+/* ── STAY teaser (soujiin-style intro, reused pattern from index.html) ── */
+.stay-teaser-sec{background:#fff;padding:64px 24px;}
+.stay-teaser-inner{max-width:1000px;margin:0 auto;text-align:center;}
+.stay-teaser-main{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;margin-bottom:6px;}
+.stay-teaser-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:28px;}
+.stay-teaser-thumbs img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;}
+.stay-teaser-sec>.stay-teaser-inner>p{font-size:15px;line-height:2.1;color:var(--stone);margin:0 auto 28px;max-width:600px;}
+.stay-teaser-btns{display:flex;flex-direction:column;gap:14px;align-items:center;}
+.btn-reserve-outline{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 32px;
+  border:1px solid var(--gold);color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.15em;
+  transition:background .3s,color .3s;}
+.btn-reserve-outline:hover{background:var(--gold);color:#fff;}
+@media(min-width:768px){
+  .stay-teaser-sec{padding:100px 40px;}
+  .stay-teaser-main{aspect-ratio:21/8;}
+}
+
+/* ── Highlights: compact gallery grid, 3 columns on mobile ── */
+@media(max-width:899px){.gallery-grid{grid-template-columns:repeat(3,1fr);gap:2px;}}
+
+.info-list{display:grid;grid-template-columns:8.5em 1fr;border-top:1px solid rgba(43,38,33,.18);margin-top:8px;}
+.info-list dt,.info-list dd{padding:14px 4px;border-bottom:1px solid rgba(43,38,33,.18);margin:0;font-size:16px;line-height:1.8;color:var(--sumi);}
+.info-list dt{font-family:'Cormorant Garamond',serif;font-size:17px;color:#a9824a;letter-spacing:.06em;}
+@media(max-width:540px){.info-list{grid-template-columns:1fr;}.info-list dt{border-bottom:0;padding-bottom:0;}}
 </style>
 </head>
 <body>
-
 <div class="opening" aria-hidden="true"><img class="opening-mon" src="images/mon-sumi.png" alt="" width="400" height="400"><div class="opening-name"><span class="s">高野山 別格本山</span><span class="m">本覚院</span></div></div>
 <!-- HEADER -->
 <header class="site-header">
@@ -775,15 +799,16 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     <span class="logo-en">KOYASAN HONGAKUIN</span>
   </a>
   <nav class="header-nav">
+    <a href="#stay">Stay</a>
+    <a href="#experience">Experiences</a>
     <a href="#about">About</a>
-    <a href="#kuyo">Memorial</a>
-    <a href="#rooms">Rooms</a>
-    <a href="#experience">Experience</a>
+    <a href="#priest">Monks</a>
     <a href="#access">Access</a>
+    <a href="#faq">FAQ</a>
   </nav>
   <div class="header-right">
     <a href="index.html" class="lang-btn" lang="ja">JP</a>
-    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="reserve-btn" target="_blank" rel="noopener">Reserve</a>
+    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="reserve-btn" target="_blank" rel="noopener">Book</a>
   </div>
   <button class="menu-btn" onclick="openMenu()" aria-label="Open menu">
     <span></span><span></span><span></span>
@@ -795,13 +820,15 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 <div class="drawer" id="drawer">
   <button class="drawer-close" onclick="closeMenu()" aria-label="Close menu">✕</button>
   <nav>
+    <a href="#stay" onclick="closeMenu()">Stay</a>
+    <a href="#experience" onclick="closeMenu()">Experiences</a>
     <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#kuyo" onclick="closeMenu()">Prayer &amp; Memorial</a>
-    <a href="#rooms" onclick="closeMenu()">Rooms &amp; Facilities</a>
-    <a href="#experience" onclick="closeMenu()">Experience</a>
+    <a href="#priest" onclick="closeMenu()">Monks</a>
     <a href="#access" onclick="closeMenu()">Access</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="index.html" onclick="closeMenu()" lang="ja">JP</a>
   </nav>
-  <a href="#cta" class="drawer-reserve" onclick="closeMenu()">Reservations &amp; Inquiries</a>
+  <a href="#cta" class="drawer-reserve" onclick="closeMenu()">Book Your Stay</a>
 </div>
 
 <!-- HERO -->
@@ -820,12 +847,13 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     <h1 class="hero-name"><span class="hero-name-sub">高野山 別格本山</span><span class="hero-name-main">本覚院</span></h1>
     <span class="hero-name-en">Koyasan<br>Hongakuin</span>
     <nav class="hero-nav" aria-label="Main menu">
-      <a href="#about">About Hongakuin</a>
-      <a href="#kuyo">Prayer &amp; Memorial</a>
-      <a href="#rooms">Rooms &amp; Facilities</a>
-      <a href="#experience">Shukubo Experience</a>
+      <a href="#stay">Stay</a>
+      <a href="#experience">Experiences</a>
+      <a href="#about">About</a>
+      <a href="#priest">Monks</a>
       <a href="#access">Access</a>
-      <a href="#cta">Reservations &amp; Inquiries</a>
+      <a href="#faq">FAQ</a>
+      <a href="#cta">Book</a>
     </nav>
   </div>
   <div class="hero-util"><a href="index.html" lang="ja">JP</a>&#12539;<span aria-current="page" style="opacity:.55">EN</span><a href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">Reserve</a></div>
@@ -839,136 +867,24 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about-sec" id="about">
-  <div class="about-inner">
-    <div class="about-img-wrap">
-      <img src="images/gallery-jizo.jpg" alt="A row of stone Jizō bodhisattva statues in the temple, wearing knitted caps and bibs" class="about-img" width="800" height="600">
+<!-- STAY (teaser) -->
+<section class="stay-teaser-sec" id="stay">
+  <div class="stay-teaser-inner">
+    <span class="sec-eyebrow" style="color:var(--gold);">STAY</span>
+    <div class="gold-bar" style="margin-left:auto;margin-right:auto;"></div>
+    <h2 class="sec-title" style="color:var(--ink);">Stay at Hongakuin</h2>
+    <img src="images/rooms/tenporin.jpg" alt="Tenpōrin, a special room with a coffered ceiling and a window overlooking a garden by Shigemori Mirei" class="stay-teaser-main" loading="lazy" width="1000" height="750">
+    <div class="stay-teaser-thumbs">
+      <img src="images/rooms/wakasugi.jpg" alt="Wakasugi, a Japanese-style room with private bath and toilet, facing the garden" loading="lazy" width="1000" height="750">
+      <img src="images/rooms/hokusuikan.jpg" alt="A Japanese-style room in the new wing, Hokusuikan" loading="lazy" width="1000" height="750">
+      <img src="images/photos/ohiroma.jpg" alt="The great hall, lined with Kanō-school sliding-door paintings" loading="lazy" width="1600" height="1067">
     </div>
-    <div class="about-text">
-      <h2 class="about-title">About Hongakuin</h2>
-      <p class="about-lead">Hongakuin is a sub-temple of Kongōbuji, the head temple of Kōyasan Shingon Buddhism, holding the rank of special head temple (bekkaku honzan). Its principal image is a statue of Fudō Myōō (Acala) carved by the priest Chishō Daishi, and its history reaches back to its founding in the Kenkyū era (1190).</p>
-      <p class="about-lead">Hongakuin stands on ground said to be where Kōbō Daishi, praying here long ago, sensed the presence of the Six Jizō Bodhisattvas. During the Kenkyū era of the Heian period, the priest Gyōkū climbed Kōyasan at a poet's request and chanted sutras here without pause. Amid a burst of light, Jizō Bodhisattva appeared and told him,<br class="pc-only"> "Dwell here." The priest built a hermitage on this spot, and that hermitage became the beginning of Hongakuin. In 1980, His Holiness the 14th Dalai Lama also stayed at Hongakuin.</p>
-      <p class="about-desc">Every morning we hold a prayer service with a dharma talk by the head priest, which guests are welcome to attend freely.</p>
-    </div>
-  </div>
-</section>
-
-
-<section class="priest-sec" id="priest">
-  <div class="priest-inner">
-    <img src="images/priest-1.jpg" alt="Hongakuin head priest" class="priest-img" loading="lazy" width="800" height="645">
-    <div class="priest-body">
-      <div class="priest-label">
-        <span class="sec-eyebrow">CHIEF PRIEST</span>
-        <div class="gold-bar"></div>
-        <h2 class="sec-title" style="color:var(--ink);">A Greeting from<br>the Head Priest</h2>
-      </div>
-      <div class="priest-msg">
-        <p>I hope this message finds you in good health.</p>
-        <p>More than half a century has passed since I began serving the Buddha and Kōbō Daishi. Even now, I ask myself every day: Am I worthy as a priest and as a member of our order? Have I acted wrongly in any way?</p>
-        <p>Today, Mount Kōya calls on each and every priest to show his character and resolve. What should a priest's conduct be? I wish to show that conduct: to help set right hearts caught up in material desire, and above all to keep the precepts that are the foundation of a priest's life, spreading Kōbō Daishi's spirit of saving the world and benefiting all people.</p>
-        <p>Yet no one can accomplish anything alone. With your support, I hope to protect the Dharma light of Hongakuin, to contribute to the growth of Kōyasan Shingon Buddhism, and to put into practice Kōbō Daishi's teaching of bringing salvation to all beings. With this, I offer you my greeting.</p>
-        <p class="priest-sig">Head Priest, Koyasan Hongakuin (Bekkaku Honzan)</p>
-        <div class="priest-more" id="priestMore">
-        <div class="priest-history">
-          <h3 class="history-title">Biography of the Head Priest</h3>
-          <table class="history-table">
-            <tr><td>1945</td><td>Born in Fukuoka Prefecture</td></tr>
-            <tr><td>1954</td><td>At age nine, suffered peritonitis from a misdiagnosis and nearly died. While he was unconscious, his father prayed to Kōbō Daishi, "Please save my son's life, and I will give him to Kōyasan." He recovered miraculously the next day.</td></tr>
-            <tr><td>1960</td><td>Age 15 — entered Kōyasan</td></tr>
-            <tr><td>1967</td><td>Age 22 — graduated from the Department of Esoteric Buddhist Studies, Koyasan University, and received the president's award</td></tr>
-            <tr><td>1974</td><td>Age 29 — became head priest of Saishō-in, Hongakuin, Kōyasan</td></tr>
-            <tr><td>1980–</td><td>Held a succession of department-head posts at Kongōbuji, Kōyasan</td></tr>
-            <tr><td>1998</td><td>Age 53 — served two terms (8 years) as director of shōmyō chanting instruction at Hōjuin Senshū Gakuin, a great head temple of Kōyasan, training roughly 80 monks each year (about 640 in total) in the Nanzanshin school of shōmyō chant</td></tr>
-            <tr><td>2005</td><td>Appointed Gon-Daisōjō (senior clerical rank)</td></tr>
-            <tr><td>2010</td><td>Became head priest of Hongakuin, special head temple of Kōyasan</td></tr>
-            <tr><td>2013</td><td>Appointed executive of Kongōbuji and head of the Shingon sect's Dharma Assembly Department; also serves as concurrent head priest of temples across Japan, and has held numerous posts within and beyond the sect, including member of the Kōyasan Shingon assembly and delegate of the Kōyasan Head Priests' Council</td></tr>
-          </table>
-        </div>
-        <div class="priest-cd">
-          <img src="images/photos/shomyo-cd.jpg" alt="Shōmyō chant CD by Head Priest Inaba Hōken, 'THE SHŌMYŌ (SHO-MYO) — Kōyasan Nanzanshin School'" loading="lazy" width="240" height="360">
-          <div>
-            <h3 class="history-title">The Head Priest's Shōmyō CD</h3>
-            <p class="cd-title">"THE SHŌMYŌ (SHO-MYO) — Kōyasan Nanzanshin School"</p>
-            <p>A solo shōmyō recording by Head Priest Inaba Hōken, released by Victor Entertainment. Hongakuin offers a special two-disc edition. We hope this encounter with the distinctive chant of the Nanzanshin school brings back memories of a stay at Kōyasan.</p>
-            <p class="cd-note">Recommended at the time by the late Matsunaga Yūkei, then head of Kōyasan Shingon Buddhism and abbot of Kongōbuji. / For inquiries, please contact Hongakuin.</p>
-            <p class="cd-listen">Listen on Spotify</p>
-            <iframe class="cd-player" title="THE SHŌMYŌ — Kōyasan Nanzanshin School, 'Furui' (Spotify)" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <iframe class="cd-player" title="THE SHŌMYŌ — Kōyasan Nanzanshin School, 'Iyashi' (Spotify)" src="https://open.spotify.com/embed/album/4cJB2d2ujV5scHqgsuw3Ld?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <p class="cd-links">Listen on Apple Music: <a href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-furui/1828860466" target="_blank" rel="noopener">Furui</a> / <a href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-iyashi/1828860904" target="_blank" rel="noopener">Iyashi</a></p>
-          </div>
-        </div>
-        </div>
-        <button class="priest-more-btn" type="button" onclick="togglePriest(this)">Biography &amp; CD +</button>
-      </div>
+    <p>Sleep in a temple founded over 800 years ago — from quiet tatami rooms in the main hall to a special room overlooking a garden by Shigemori Mirei. Every stay includes shōjin ryōri and the morning prayer service, at the heart of Kōyasan’s UNESCO World Heritage precinct.</p>
+    <div class="stay-teaser-btns">
+      <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn-reserve-outline" target="_blank" rel="noopener">Check Availability &amp; Rates</a>
     </div>
   </div>
 </section>
-
-<section class="kuyo-sec" id="kuyo">
-  <div class="kuyo-inner">
-    <span class="sec-eyebrow">PRAYER &amp; MEMORIAL</span>
-    <div class="gold-bar"></div>
-    <h2 class="sec-title">Prayer &amp; Memorial Services</h2>
-    <div class="kuyo-grid">
-      <article class="kuyo-card">
-        <img src="images/photos/hondo-kigan.jpg" alt="A priest performing a memorial service (ekō) in the candlelit main hall" loading="lazy" width="1600" height="1200">
-        <h3>Memorial Service (Ekō)</h3>
-        <p>A memorial service in the tradition of Kongōbuji: sutras are chanted with those in attendance and the service closes together with the Heart Sutra and a mantra, in about one hour.</p>
-      </article>
-      <article class="kuyo-card">
-        <img src="images/photos/gongyo-hondo.jpg" alt="Priests chanting sutras in the main hall" loading="lazy" width="1600" height="1067">
-        <h3>Perpetual Memorial (Eitai Kuyō)</h3>
-        <p>For those without an heir to tend a grave or family altar, we offer perpetual memorial: a memorial tablet is enshrined after a formal service, with daily offerings and prayers on your behalf.</p>
-      </article>
-    </div>
-    <div class="kuyo-cta">
-      <p>Please contact us by phone or email for consultation regarding memorial services, perpetual memorial, or prayer requests.</p>
-      <a href="tel:+81736562711" class="kuyo-tel">+81-736-56-2711</a>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURES：本覚院ならではの3つの魅力（jp案より統合） -->
-<section class="features-sec" id="features">
-  <div class="features-inner">
-    <div class="features-header">
-      <span class="sec-eyebrow">THREE HIGHLIGHTS</span>
-      <div class="gold-bar"></div>
-      <h2 class="sec-title" style="color:var(--ink);">Three Hallmarks of Hongakuin</h2>
-    </div>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="f-img" style="background-image:url('images/photos/tenjoue.jpg')" role="img" aria-label="The main hall's vividly painted ceiling, dating back 250 years"></div>
-        <div class="f-body">
-          <span class="f-num">I</span>
-          <h3>Over 250 Years<br>of Edo-Period Art</h3>
-          <p>The ceiling of the main hall still bears vivid, multicolored work by an Edo-period painter from 250 years ago, and the great hall holds rare screen paintings by artists of the Kanō school.</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="f-img" style="background-image:url('images/photos/teien-mado-1.jpg')" role="img" aria-label="Rock garden designed by Shigemori Mirei"></div>
-        <div class="f-body">
-          <span class="f-num">II</span>
-          <h3>Five Gardens Designed<br>by Shigemori Mirei</h3>
-          <p>Five gardens, including a rock garden by the celebrated Shōwa-era landscape designer Shigemori Mirei. Enjoy a world of moss and stone that changes its expression with the seasons.</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="f-img" style="background-image:url('images/photos/hondo-kigan.jpg')" role="img" aria-label="Hongakuin's main hall, standing in the sacred precincts of Kōyasan"></div>
-        <div class="f-body">
-          <span class="f-num">III</span>
-          <h3>Dwelling in the<br>Sacred Ground of Kōbō Daishi</h3>
-          <p>A special head temple at the heart of Kōyasan. Morning prayer, sutra copying, shōjin ryōri — genuine practice and training await here.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ROOMS -->
-
 
 <section class="rooms-sec" id="rooms">
   <div class="rooms-inner">
@@ -1054,6 +970,81 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
   </div>
 </section>
 
+<!-- EXPERIENCE -->
+<section class="exp-sec" id="experience">
+  <div class="exp-inner">
+    <div class="exp-header">
+      <span class="sec-eyebrow">EXPERIENCES</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:var(--ink);">The Shukubo Experience</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <span class="exp-icon">🕯</span>
+        <h3>Morning Prayer</h3>
+        <p>A solemn morning service in the main hall. The resonance of shōmyō chant clears the mind and sets the tone for the day.</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🖌</span>
+        <h3>Sutra Copying</h3>
+        <p>Copy the words of the Buddha, character by character, with a wish in your heart. For beginners, we offer a tracing version of the Heart Sutra. Paper, brush, brush pen, ink stick and inkstone are all provided — just ask.</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🌿</span>
+        <h3>Garden Walks</h3>
+        <p>Five gardens, including a rock garden by Shigemori Mirei. Enjoy their seasonal beauty and quiet.</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🍱</span>
+        <h3>Shōjin Ryōri</h3>
+        <p>Shōjin ryōri as handed down by Kōbō Daishi, in its original form. Seasonal ingredients and traditional technique, in every bowl.</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🎋</span>
+        <h3>Visit to Okunoin</h3>
+        <p>Visit Okunoin, the sacred inner sanctuary of Kōyasan, and pay respects at the mausoleum of Kōbō Daishi — a thousand years of history.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES：本覚院ならではの3つの魅力（jp案より統合） -->
+<section class="features-sec" id="features">
+  <div class="features-inner">
+    <div class="features-header">
+      <span class="sec-eyebrow">THREE HIGHLIGHTS</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:var(--ink);">Three Hallmarks of Hongakuin</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/tenjoue.jpg')" role="img" aria-label="The main hall's vividly painted ceiling, dating back 250 years"></div>
+        <div class="f-body">
+          <span class="f-num">I</span>
+          <h3>Over 250 Years<br>of Edo-Period Art</h3>
+          <p>The ceiling of the main hall still bears vivid, multicolored work by an Edo-period painter from 250 years ago, and the great hall holds rare screen paintings by artists of the Kanō school.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/teien-mado-1.jpg')" role="img" aria-label="Rock garden designed by Shigemori Mirei"></div>
+        <div class="f-body">
+          <span class="f-num">II</span>
+          <h3>Five Gardens Designed<br>by Shigemori Mirei</h3>
+          <p>Five gardens, including a rock garden by the celebrated Shōwa-era landscape designer Shigemori Mirei. Enjoy a world of moss and stone that changes its expression with the seasons.</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/hondo-kigan.jpg')" role="img" aria-label="Hongakuin's main hall, standing in the sacred precincts of Kōyasan"></div>
+        <div class="f-body">
+          <span class="f-num">III</span>
+          <h3>Dwelling in the<br>Sacred Ground of Kōbō Daishi</h3>
+          <p>A special head temple at the heart of Kōyasan. Morning prayer, sutra copying, shōjin ryōri — genuine practice and training await here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- GALLERY：院内のご案内（jp案より統合） -->
 <section class="gallery-sec" id="gallery">
   <div class="gallery-inner">
@@ -1099,47 +1090,61 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="exp-sec" id="experience">
-  <div class="exp-inner">
-    <div class="exp-header">
-      <span class="sec-eyebrow">EXPERIENCES</span>
-      <div class="gold-bar"></div>
-      <h2 class="sec-title" style="color:var(--ink);">The Shukubo Experience</h2>
+<!-- ABOUT -->
+<section class="about-sec" id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap">
+      <img src="images/gallery-jizo.jpg" alt="A row of stone Jizō bodhisattva statues in the temple, wearing knitted caps and bibs" class="about-img" width="800" height="600">
     </div>
-    <div class="exp-grid">
-      <div class="exp-card">
-        <span class="exp-icon">🕯</span>
-        <h3>Morning Prayer</h3>
-        <p>A solemn morning service in the main hall. The resonance of shōmyō chant clears the mind and sets the tone for the day.</p>
+    <div class="about-text">
+      <h2 class="about-title">About Hongakuin</h2>
+      <p class="about-lead">Hongakuin is a sub-temple of Kongōbuji, the head temple of Kōyasan Shingon Buddhism, holding the rank of special head temple (bekkaku honzan). Its principal image is a statue of Fudō Myōō (Acala) carved by the priest Chishō Daishi, and its history reaches back to its founding in the Kenkyū era (1190).</p>
+      <p class="about-lead">Hongakuin stands on ground said to be where Kōbō Daishi, praying here long ago, sensed the presence of the Six Jizō Bodhisattvas. During the Kenkyū era of the Heian period, the priest Gyōkū climbed Kōyasan at a poet's request and chanted sutras here without pause. Amid a burst of light, Jizō Bodhisattva appeared and told him,<br class="pc-only"> "Dwell here." The priest built a hermitage on this spot, and that hermitage became the beginning of Hongakuin. In 1980, His Holiness the 14th Dalai Lama also stayed at Hongakuin.</p>
+      <p class="about-desc">Every morning we hold a prayer service with a dharma talk by the head priest, which guests are welcome to attend freely.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="priest-sec" id="priest">
+  <div class="priest-inner">
+    <img src="images/priest-1.jpg" alt="Hongakuin head priest Inaba Hōken" class="priest-img" loading="lazy" width="800" height="645">
+    <div class="priest-body">
+      <div class="priest-label">
+        <span class="sec-eyebrow">THE MONKS</span>
+        <div class="gold-bar"></div>
+        <h2 class="sec-title" style="color:var(--ink);">A Greeting from<br>the Head Priest</h2>
       </div>
-      <div class="exp-card">
-        <span class="exp-icon">🖌</span>
-        <h3>Sutra Copying</h3>
-        <p>Copy the words of the Buddha, character by character, with a wish in your heart. For beginners, we offer a tracing version of the Heart Sutra. Paper, brush, brush pen, ink stick and inkstone are all provided — just ask.</p>
-      </div>
-      <div class="exp-card">
-        <span class="exp-icon">🌿</span>
-        <h3>Garden Walks</h3>
-        <p>Five gardens, including a rock garden by Shigemori Mirei. Enjoy their seasonal beauty and quiet.</p>
-      </div>
-      <div class="exp-card">
-        <span class="exp-icon">🍱</span>
-        <h3>Shōjin Ryōri</h3>
-        <p>Shōjin ryōri as handed down by Kōbō Daishi, in its original form. Seasonal ingredients and traditional technique, in every bowl.</p>
-      </div>
-      <div class="exp-card">
-        <span class="exp-icon">🎋</span>
-        <h3>Visit to Okunoin</h3>
-        <p>Visit Okunoin, the sacred inner sanctuary of Kōyasan, and pay respects at the mausoleum of Kōbō Daishi — a thousand years of history.</p>
+      <div class="priest-msg">
+        <p>I hope this message finds you in good health.</p>
+        <p>More than half a century has passed since I began serving the Buddha and Kōbō Daishi.</p>
+        <p class="priest-sig">Head Priest, Koyasan Hongakuin (Bekkaku Honzan)</p>
+        <div class="priest-cd" style="border-top:1px solid var(--border);margin-top:28px;padding-top:24px;">
+          <div>
+            <p>Head Priest Inaba Hōken is also a master of shōmyō, the Buddhist chant of Kōyasan’s Nanzanshin school, recorded here for Victor Entertainment.</p>
+            <p class="cd-listen">Listen on Spotify</p>
+            <iframe class="cd-player" title="THE SHŌMYŌ — Kōyasan Nanzanshin School, 'Furui' (Spotify)" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe class="cd-player" title="THE SHŌMYŌ — Kōyasan Nanzanshin School, 'Iyashi' (Spotify)" src="https://open.spotify.com/embed/album/4cJB2d2ujV5scHqgsuw3Ld?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          </div>
+        </div>
+        <p style="margin-top:24px;font-size:14px;color:var(--stone);line-height:2.2;">Vice head priest Koga Hōken welcomes guests to the morning service, which anyone may attend.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRIEST -->
+<section class="kuyo-sec" id="kuyo">
+  <div class="kuyo-inner">
+    <span class="sec-eyebrow">PRAYER &amp; MEMORIAL</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title">Prayer &amp; Memorial Services</h2>
+    <p style="font-size:15px;line-height:2.2;color:var(--sumi);max-width:640px;">Memorial services (ekō) and prayers, including perpetual memorial for those without an heir to tend a grave, can be arranged at Hongakuin. Please contact us by phone to discuss your request.</p>
+    <div class="kuyo-cta">
+      <a href="tel:+81736562711" class="kuyo-tel">+81-736-56-2711</a>
+    </div>
+  </div>
+</section>
 
-<!-- ACCESS -->
 <section class="access-sec" id="access">
   <div class="access-inner">
     <div class="access-header">
@@ -1165,6 +1170,28 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
         <p><strong>On foot:</strong> About 2–3 minutes from the bus stop. Follow the tree-lined approach and the temple gate comes into view.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Information -->
+<section class="page-info" id="info" style="background:var(--washi) var(--paper);padding:64px 24px;">
+  <div style="max-width:900px;margin:0 auto;">
+    <span class="sec-eyebrow">INFORMATION</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title" style="color:var(--ink);">Guest Information</h2>
+    <dl class="info-list">
+      <dt>Services</dt><dd>Solo travelers and groups are welcome. We can arrange luggage delivery, and Buddhist wedding ceremonies are also available.</dd>
+      <dt>Pets</dt><dd>We are currently unable to accommodate pets.</dd>
+      <dt>Rooms</dt><dd>All rooms are Japanese-style with heating, air conditioning and TV. Please note there are steps within the temple buildings — feel free to ask our staff for help.</dd>
+      <dt>In-room</dt><dd>TV, electric kettle, tea set, desk, heating and air conditioning</dd>
+      <dt>Amenities</dt><dd>Towel, bath towel, hair dryer, toothbrush, slippers, body soap, shampoo, conditioner</dd>
+      <dt>Loungewear</dt><dd>Yukata (one size, LL only)</dd>
+      <dt>Baths</dt><dd>Large and medium shared baths (17:00–21:00)</dd>
+      <dt>Parking</dt><dd>15 spaces, free, first come first served</dd>
+      <dt>Accessibility</dt><dd>One wheelchair-accessible toilet. Wheelchairs available to borrow.</dd>
+      <dt>Toilets</dt><dd>Western-style toilets with bidet function</dd>
+      <dt>Smoking</dt><dd>Designated smoking area available</dd>
+    </dl>
   </div>
 </section>
 
@@ -1250,9 +1277,6 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 <script>
 (function(){var h=document.querySelector('.hero');function f(){document.body.classList.toggle('at-top',window.scrollY<h.offsetHeight-80);}
 window.addEventListener('scroll',f,{passive:true});f();})();
-</script>
-<script>
-function togglePriest(btn){var m=document.getElementById('priestMore');var o=m.classList.toggle('show');btn.textContent=o?'Close \u2212':'Biography & CD +';if(!o)document.getElementById('priest').scrollIntoView({behavior:'smooth'});}
 </script>
 </body>
 </html>
