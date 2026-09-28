@@ -985,6 +985,16 @@ h2.sec-title,.page-hero h1{color:#150c15;}
 .cta-sec,.page-cta{background:#150c15 !important;color:#f3ead8 !important;}
 .cta-sec h2,.page-cta h2,.cta-sec p,.page-cta p,.cta-sec a.cta-tel,.page-cta a.cta-tel{color:#f3ead8 !important;}
 .page-cta .page-cta-links a{color:#c9b183 !important;}
+
+/* スマホ：最初の和紙色の画面をやめて、すぐ写真から。寺名もすぐ出す */
+.opening{display:none !important;}
+@media(max-width:899px){
+  .hero-mon-white{animation-delay:.1s !important;}
+  .hero-name{animation-delay:.2s !important;animation-duration:1s !important;}
+  .hero-name-en{animation-delay:.5s !important;animation-duration:1s !important;}
+}
+/* 写真の上ではヘッダーの黒い帯を出さない（配色変更で出てしまっていたのを修正） */
+body.at-top .site-header{background:transparent !important;border-bottom-color:transparent !important;backdrop-filter:none !important;}
 </style>
 </head>
 <body>
