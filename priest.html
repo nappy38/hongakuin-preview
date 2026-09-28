@@ -1039,6 +1039,25 @@ body{font-size:16px;line-height:2.0;}
 .access-sec .access-box td:first-child{color:#d9b877 !important;}
 .gallery-sec .g-label,.gallery-sec p{color:rgba(250,243,232,.9) !important;}
 .kuyo-sec-home p,.kuyo-sec-home li,.kuyo-sec-home h3{color:rgba(250,243,232,.9) !important;}
+
+/* ══ 配色：漆黒と金（＋朱をほんの少し）で格を上げる ══ */
+:root{--gold:#917c50;--gold-l:#b9a276;--ink:#150c15;--black:#150c15;--shu:#9a1117;}
+/* 見出し・線・注記の金を渋い金に */
+.sec-eyebrow,.room-tag,.news-card-tag,.f-num,.fuku-role,.info-list dt{color:#917c50 !important;}
+.gold-bar,.page-hero .gold-bar{background:#917c50 !important;}
+h2.sec-title,.page-hero h1{color:#150c15;}
+/* 暗い欄は漆黒に、その上の金は明るめにして読みやすく */
+.rooms-sec,.access-sec,.gallery-sec,.kuyo-sec-home,.site-header,.drawer{background-color:#150c15 !important;}
+.rooms-sec .sec-eyebrow,.access-sec .sec-eyebrow,.gallery-sec .sec-eyebrow,.kuyo-sec-home .sec-eyebrow,
+.rooms-sec .room-tag,.rooms-sec .room-note,.access-sec .access-box td:first-child{color:#c9b183 !important;}
+.rooms-sec .gold-bar,.access-sec .gold-bar,.gallery-sec .gold-bar,.kuyo-sec-home .gold-bar{background:#b9a276 !important;}
+/* 予約など「押してほしい」ボタンだけ朱色に */
+.float-btn,.reserve-btn,.btn-reserve-main,.drawer-reserve,.cta-sec .btn-dark,.page-cta .btn-dark{background:#9a1117 !important;color:#fff !important;border-color:#9a1117 !important;}
+.float-btn:hover,.reserve-btn:hover,.btn-reserve-main:hover,.drawer-reserve:hover,.cta-sec .btn-dark:hover,.page-cta .btn-dark:hover{background:#7d0d12 !important;}
+/* 予約・相談の帯は漆黒に金の文字 */
+.cta-sec,.page-cta{background:#150c15 !important;color:#f3ead8 !important;}
+.cta-sec h2,.page-cta h2,.cta-sec p,.page-cta p,.cta-sec a.cta-tel,.page-cta a.cta-tel{color:#f3ead8 !important;}
+.page-cta .page-cta-links a{color:#c9b183 !important;}
 </style>
 </head>
 <body>
