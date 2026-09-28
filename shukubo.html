@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>住職・僧侶｜高野山 別格本山 本覚院</title>
-<meta name="description" content="高野山 別格本山 本覚院 住職・稲葉法研によるご挨拶と、南山進流聲明の継承、住職の略歴をご紹介します。">
+<title>宿坊｜高野山 別格本山 本覚院</title>
+<meta name="description" content="高野山 別格本山 本覚院の宿坊。重森三玲の庭を望む特別室から本館の和室まで、精進料理と朝のお勤めで過ごす一夜。院内のご案内・アクセス・よくあるご質問まとめてご紹介します。">
 <meta name="robots" content="noindex, nofollow"><!-- 確認用。本番公開時に削除 -->
-<link rel="canonical" href="https://www.hongakuin.jp/priest.html">
+<link rel="canonical" href="https://www.hongakuin.jp/shukubo.html">
 <!-- OGP / Twitter Card -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="高野山 別格本山 本覚院">
-<meta property="og:title" content="住職・僧侶｜高野山 別格本山 本覚院">
-<meta property="og:description" content="高野山 別格本山 本覚院 住職・稲葉法研によるご挨拶と、南山進流聲明の継承、住職の略歴をご紹介します。">
-<meta property="og:url" content="https://www.hongakuin.jp/priest.html">
+<meta property="og:title" content="宿坊｜高野山 別格本山 本覚院">
+<meta property="og:description" content="重森三玲の庭を望む特別室から本館の和室まで。精進料理と朝のお勤めで過ごす、高野山 本覚院の宿坊での一夜。">
+<meta property="og:url" content="https://www.hongakuin.jp/shukubo.html">
 <meta property="og:image" content="https://www.hongakuin.jp/ogp.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -30,8 +30,8 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "住職・僧侶",
-      "item": "https://www.hongakuin.jp/priest.html"
+      "name": "宿坊",
+      "item": "https://www.hongakuin.jp/shukubo.html"
     }
   ]
 }
@@ -39,14 +39,26 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "稲葉法研",
-  "jobTitle": "住職",
-  "worksFor": {
-    "@type": "BuddhistTemple",
-    "name": "高野山 別格本山 本覚院",
-    "url": "https://www.hongakuin.jp/"
-  }
+  "@type": ["BuddhistTemple", "LodgingBusiness"],
+  "name": "高野山 別格本山 本覚院",
+  "alternateName": "Koyasan Bettakuhonzan Hongakuin",
+  "url": "https://www.hongakuin.jp/shukubo.html",
+  "image": "https://www.hongakuin.jp/ogp.jpg",
+  "telephone": "+81-736-56-2711",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "648-0211",
+    "addressRegion": "和歌山県",
+    "addressLocality": "伊都郡高野町",
+    "streetAddress": "高野山618",
+    "addressCountry": "JP"
+  },
+  "religiousAffiliation": "高野山真言宗",
+  "checkinTime": "15:00",
+  "checkoutTime": "10:00",
+  "sameAs": [
+    "https://www.instagram.com/koyasan_hongakuin/"
+  ]
 }
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Hina+Mincho&display=swap" rel="stylesheet">
@@ -904,62 +916,6 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 .yukari-list{margin:8px 0 8px;padding-left:1.3em;}
 .yukari-list li{font-size:14px;color:var(--sumi);line-height:2.2;margin-bottom:10px;}
 
-/* ══ 住職・僧侶ページ 専用スタイル ══ */
-
-/* 静かな冒頭：住職の言葉を一行だけ */
-.quiet-open{background:var(--washi) var(--paper);padding:56px 24px;text-align:center;}
-.quiet-quote{font-family:'Shippori Mincho B1',serif;font-weight:400;font-size:19px;line-height:2.1;
-  letter-spacing:.1em;color:var(--sumi);}
-.quiet-cap{display:block;margin-top:18px;font-size:11px;letter-spacing:.2em;color:var(--stone);}
-@media(min-width:900px){
-  .quiet-open{padding:120px 40px;min-height:64vh;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;}
-  .quiet-quote{writing-mode:vertical-rl;font-size:26px;line-height:2.3;letter-spacing:.16em;height:min(56vh,520px);}
-  .quiet-cap{margin-top:0;margin-right:28px;}
-}
-
-/* 横スクロールの写真帯 */
-.photo-strip-sec{background:#fff;}
-.photo-strip{display:flex;gap:2px;overflow-x:auto;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;scrollbar-width:none;}
-.photo-strip::-webkit-scrollbar{display:none;}
-.photo-strip img{flex:0 0 76%;min-width:0;scroll-snap-align:center;width:100%;height:auto;
-  aspect-ratio:4/5;object-fit:cover;}
-@media(min-width:900px){
-  .photo-strip{overflow-x:visible;}
-  .photo-strip img{flex:0 0 20%;min-width:0;}
-}
-
-/* 住職紹介：みょうしゅ寺型（右に大きな写真、左に縦書き） */
-.priest-intro-sec{background:#fff;display:flex;flex-direction:column;}
-.priest-intro-text{padding:56px 24px 0;}
-.priest-intro-title{margin-top:14px;}
-.pi-line1{display:block;font-family:'Shippori Mincho B1',serif;font-size:14px;letter-spacing:.1em;
-  color:var(--stone);line-height:1.9;margin-bottom:10px;}
-.pi-name{display:block;font-family:'Shippori Mincho B1',serif;font-size:26px;letter-spacing:.2em;color:var(--ink);}
-.priest-intro-img{margin-top:28px;}
-.priest-intro-img img{width:100%;height:auto;aspect-ratio:800/645;object-fit:cover;display:block;}
-@media(min-width:900px){
-  .priest-intro-sec{flex-direction:row;align-items:stretch;min-height:600px;}
-  .priest-intro-text{flex:0 0 34%;display:flex;flex-direction:column;justify-content:center;padding:0 0 0 60px;}
-  .priest-intro-title{display:flex;gap:20px;margin-top:0;}
-  .pi-line1,.pi-name{writing-mode:vertical-rl;display:inline-block;height:420px;}
-  .pi-line1{font-size:14px;}
-  .pi-name{font-size:30px;}
-  .priest-intro-img{flex:1 1 66%;margin-top:0;}
-  .priest-intro-img img{height:100%;aspect-ratio:auto;object-position:center 15%;}
-}
-
-.fuku-card{max-width:760px;}
-.fuku-card p{font-size:15px;line-height:2.1;color:var(--ink);margin-bottom:14px;}
-.fuku-name{font-family:'Shippori Mincho B1',serif;font-size:26px !important;letter-spacing:.15em;margin-bottom:22px !important;}
-.fuku-role{display:block;font-size:13px;letter-spacing:.2em;color:var(--gold);margin-bottom:6px;}
-.fuku-src{font-size:12px !important;color:var(--stone) !important;}
-ruby rt{font-size:.4em;letter-spacing:.1em;}
-
-.photo-single{margin:0 auto;max-width:760px;}
-.photo-single img{display:block;width:100%;height:auto;}
-
 /* ══ ひとこと（縦書き） ══ */
 .kotoba-sec{background:var(--washi) var(--paper);padding:56px 24px;text-align:center;}
 .kotoba-tate{writing-mode:vertical-rl;font-family:'Shippori Mincho B1',serif;font-weight:500;
@@ -1030,7 +986,6 @@ body{font-size:16px;line-height:2.0;}
 .drawer-phone a{color:var(--gold-l);}
 @media(min-width:768px){body{font-size:17px;}}
 </style>
-</head>
 <body>
 <!-- HEADER -->
 <header class="site-header">
@@ -1071,114 +1026,309 @@ body{font-size:16px;line-height:2.0;}
   <a href="#cta" class="drawer-reserve" onclick="closeMenu()">ご予約・お問合せ</a>
   <a href="tel:0736562711" class="drawer-phone">☎ 0736-56-2711</a>
 </div>
+
 <!-- ページタイトル -->
 <section class="page-hero">
-  <span class="sec-eyebrow">MONKS</span>
-  <h1>住職・僧侶</h1>
+  <span class="sec-eyebrow">STAY</span>
+  <h1>宿坊</h1>
 </section>
 <nav class="breadcrumb" aria-label="パンくずリスト">
-  <a href="index.html">トップ</a> ＞ 住職・僧侶
+  <a href="index.html">トップ</a> ＞ 宿坊
 </nav>
 
-<!-- 1. 静かな冒頭：住職の言葉より一行 -->
-<section class="quiet-open">
-  <p class="quiet-quote">「お大師さまの済世利人の精神を弘めていく」</p>
-  <span class="quiet-cap">住職のご挨拶より</span>
-</section>
-
-<!-- 2. 横スクロールの写真帯 -->
-<section class="photo-strip-sec">
-  <figure class="photo-single"><img src="images/insta-kuyo-roka.jpg" alt="法衣をまとい、本堂へ続く廊下を進む僧侶" loading="lazy" width="1280" height="1127"></figure>
-</section>
-
-<!-- 3. 住職のご挨拶 -->
-<section class="page-sec" id="greeting">
+<!-- 宿坊のご案内（イントロ） -->
+<section class="page-sec" id="intro">
   <div class="page-inner">
-    <span class="sec-eyebrow">GREETING</span>
+    <span class="sec-eyebrow">STAY AT HONGAKUIN</span>
     <div class="gold-bar"></div>
-    <h2 class="sec-title" style="color:var(--ink);">住職のご挨拶</h2>
-    <div class="priest-msg">
-      <p>皆様におかれましては、益々ご健勝のこととお慶び申し上げます。</p>
-      <p>私が仏様、お大師様にお仕えするようになってから早いもので半世紀が過ぎました。いまだに、僧侶として宗団のひとりとして資質は如何に？間違った行いはないか？と自問自答する毎日です。</p>
-      <p>今、高野山には僧侶一人ひとりの資質と覚悟が問われています。僧侶の姿勢とはなんぞや？その姿勢を示してまいりたい、物欲にまみれた人心を正し、特に、僧侶の基本である戒律を遵守して、お大師さまの済世利人の精神を弘めていく所存です。</p>
-      <p>しかしながら、一人の力では何事をも成せません。みなさまのお力をお借りして、本覺院の法灯護持、高野山真言宗の発展、お大師様の御教えである衆生済度を実践してまいりたく、ご挨拶申し上げます。</p>
-      <p class="priest-sig">高野山 別格本山 本覚院　住職</p>
-    </div>
+    <h2 class="sec-title" style="color:var(--ink);">宿坊のご案内</h2>
+    <p>高野山 別格本山 本覚院では、宿坊として一般の方のご宿泊をお受けしております。昔ながらの和室から、重森三玲の庭を望む特別室まで、お好みに合わせてお選びいただけます。</p>
+    <p>精進料理と朝のお勤めをはじめ、写経や庭園散策など、高野山ならではの静かな時間をお過ごしください。</p>
   </div>
 </section>
 
-<!-- 4. 聲明（しょうみょう）の継承 -->
-<section class="page-sec alt" id="shomyo">
-  <div class="page-inner">
-    <span class="sec-eyebrow">SHOMYO</span>
-    <div class="gold-bar"></div>
-    <h2 class="sec-title" style="color:var(--ink);">聲明（しょうみょう）の継承</h2>
-    <p>住職・稲葉法研上綱は、元高野山真言宗管長で南山聲明の泰斗・稲葉義猛猊下に若年より師事し、その奥義を継承しました。真言密教の中院流法要の儀式ならびに聲明の継承者であり、高野山専修学院の監事を長年にわたり務め、学院生に中院流の法要の儀礼と聲明を指導してまいりました。声明能化を2期8年つとめ、毎年約80名、計約640名の僧侶を送り出し、南山進流声明の徹底した指導にあたりました。</p>
-    <p style="font-size:12px;color:var(--stone);">（聲明CD推薦文・略歴より）</p>
-    <div class="priest-cd">
-      <img src="images/photos/shomyo-cd.jpg" alt="住職 稲葉法研による聲明CD『THE 聲明（SHO-MYO）～高野山 南山進流～』" loading="lazy" width="240" height="360">
-      <div>
-        <h3 class="history-title">住職の聲明CD</h3>
-        <p class="cd-title">『THE 聲明（SHO-MYO）～高野山 南山進流～』</p>
-        <p>ビクターエンタテインメントより発売された、住職・稲葉法研上綱による聲明独唱CD。本覺院では特別仕様の2枚組をご用意しております。南山進流の独特なお経にふれ、高野山でのお勤めを思いおこしていただけたら幸いです。</p>
-        <p class="cd-note">当時の高野山真言宗管長・総本山金剛峯寺座主 松長有慶猊下 推薦　／　お問い合わせは本覺院まで</p>
-        <p class="cd-listen">Spotifyで聴く</p>
-        <iframe class="cd-player" title="THE 聲明～高野山 南山進流～ 奮（Spotify）" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <iframe class="cd-player" title="THE 聲明～高野山 南山進流～ 癒（Spotify）" src="https://open.spotify.com/embed/album/4cJB2d2ujV5scHqgsuw3Ld?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <p class="cd-links">Apple Musicで聴く：<a href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-furui/1828860466" target="_blank" rel="noopener">奮</a>／<a href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-iyashi/1828860904" target="_blank" rel="noopener">癒</a></p>
+<section class="features-sec" id="features">
+  <div class="features-inner">
+    <div class="features-header">
+      <span class="sec-eyebrow">THREE HIGHLIGHTS</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:var(--ink);">宿坊の見どころ</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/tenjoue.jpg')" role="img" aria-label="本堂天井に残る250年前の極彩色天井絵"></div>
+        <div class="f-body">
+          <span class="f-num">I</span>
+          <h3>250年を超える<br>江戸の芸術</h3>
+          <p>本堂天井には250年前の絵師による極彩色の天井絵が残り、大広間には狩野派の貴重な障壁画をご覧いただけます。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/teien-mado-1.jpg')" role="img" aria-label="重森三玲設計の石庭"></div>
+        <div class="f-body">
+          <span class="f-num">II</span>
+          <h3>重森三玲設計の<br>5つの庭園</h3>
+          <p>昭和の名作庭家・重森三玲による石庭を含む5つの庭園。季節ごとに表情を変える苔と岩の世界をお楽しみください。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/hondo-kigan.jpg')" role="img" aria-label="高野山の聖地に佇む本覚院本堂"></div>
+        <div class="f-body">
+          <span class="f-num">III</span>
+          <h3>弘法大師の<br>聖地に宿る</h3>
+          <p>高野山の中心部に位置する別格本山。朝の勤行、写経、精進料理——本物の修行体験がここにあります。</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 5. 住職紹介 -->
-<section class="priest-intro-sec" id="profile">
-  <div class="priest-intro-text">
-    <span class="sec-eyebrow">PROFILE</span>
-    <div class="gold-bar"></div>
-    <div class="priest-intro-title">
-      <span class="pi-line1">高野山 別格本山<br class="pc-only">本覚院　住職</span>
-      <span class="pi-name"><ruby>稲葉<rt>いなば</rt></ruby>　<ruby>法研<rt>ほうけん</rt></ruby></span>
+<section class="rooms-sec" id="rooms">
+  <div class="rooms-inner">
+    <div class="rooms-header">
+      <span class="sec-eyebrow" style="color:var(--gold);">ROOMS &amp; FACILITIES</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:#fff;">お部屋・施設のご案内</h2>
     </div>
-  </div>
-  <div class="priest-intro-img">
-    <img src="images/priest-1.jpg" alt="朱色の袈裟をまとい、本堂の内陣でお勤めをする住職" width="800" height="645">
-  </div>
-</section>
-<section class="page-sec alt">
-  <div class="page-inner">
-    <div class="priest-history" style="margin-top:0;padding-top:0;border-top:none;">
-      <h3 class="history-title">住職　略歴</h3>
-      <table class="history-table">
-        <tr><td>1945年</td><td>福岡県出身</td></tr>
-        <tr><td>1954年</td><td>9歳の時、誤診による腹膜炎をおこし生死をさまよう。意識不明の中、父が「高野山に息子を差し上げますので、命を助けてほしい」と弘法大師様に祈願。翌日、奇跡的に回復。</td></tr>
-        <tr><td>1960年</td><td>15歳　高野山入山</td></tr>
-        <tr><td>1967年</td><td>22歳　高野山大学 密教学科卒業　学長賞受賞</td></tr>
-        <tr><td>1974年</td><td>29歳　高野山 本覚院 西生院住職就任</td></tr>
-        <tr><td>1980年〜</td><td>高野山金剛峯寺　各課課長職　歴任</td></tr>
-        <tr><td>1998年</td><td>53歳　高野山 大本山 寶寿院専修学院監事　声明能化を2期8年務める。毎年約80名　計約640名の僧侶を送り出し、南山進流声明の徹底した指導にあたる。</td></tr>
-        <tr><td>2005年</td><td>権大僧正補任</td></tr>
-        <tr><td>2010年</td><td>高野山 別格本山 本覚院　住職就任</td></tr>
-        <tr><td>2013年</td><td>高野山金剛峯寺執行　真言宗法会部長に就任。その他、全国に点在する寺院の兼務住職を務める。高野山真言宗宗会議員・高野山住職会代議員など宗内外多数の重責を歴任。</td></tr>
-      </table>
+    <p class="rooms-swipe-hint" aria-hidden="true">横にスワイプ →</p>
+    <div class="room-list room-list-fac">
+      <div class="room-item">
+        <div class="room-photo"><img src="images/photos/ohiroma.jpg" alt="狩野派の襖絵に囲まれた大広間と「獅子吼」の額" loading="lazy" width="1600" height="1067"></div>
+        <div class="room-detail">
+          <span class="room-tag">GRAND HALL</span>
+          <h3>大広間・狩野派の襖絵</h3>
+          <p>江戸時代の狩野派絵師による障壁画が残る大広間。夕暮れの陽光が生む陰影の中、たおやかな時間が流れます。仏前結婚式の宴席にも。</p>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo"><img src="images/photos/fusuma-shojin.jpg" alt="金地の襖絵の前に並ぶ精進料理のお膳" loading="lazy" width="1600" height="1200"></div>
+        <div class="room-detail">
+          <span class="room-tag">SHOJIN CUISINE</span>
+          <h3>精進料理のお座席</h3>
+          <p>弘法大師・空海が伝えた精進料理。旬のもの、地のもの。お膳のしきたりに沿って丁寧に作りあげる一品を、高野山ならではの空間でお楽しみください。</p>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo"><img src="images/photos/daiyokujo-onna.jpg" alt="本覚院の大浴場（女湯）。石張りの床と広い浴槽、洗い場" loading="lazy" width="1600" height="1200"></div>
+        <div class="room-detail">
+          <span class="room-tag">BATH</span>
+          <h3>大浴場・中浴場</h3>
+          <p>ゆったりくつろげる大・中の浴場。ボディソープ・シャンプー・リンス・ドライヤー・バスタオル・フェイスタオル・歯ブラシセット完備。</p>
+          <p class="room-note">利用時間 17:00〜21:00</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="room-sub">お部屋</h3>
+    <div class="room-list room-list-rooms">
+      <div class="room-item">
+        <div class="room-photo room-photo-trio">
+          <img class="main" src="images/rooms/tenporin.jpg" alt="特別室「転法輪」。格天井の和室と、重森三玲の庭を望む窓" loading="lazy" width="1000" height="750">
+          <img src="images/rooms/hokaigu.jpg" alt="和モダンスイート「法界宮」。大きな窓の向こうに庭の緑" loading="lazy" width="1000" height="750">
+          <img src="images/rooms/kutenbo.jpg" alt="一棟貸しの特別客室「空点房」から見る苔と石組の庭" loading="lazy" width="1000" height="750">
+        </div>
+        <div class="room-detail">
+          <span class="room-tag">SPECIAL ROOMS</span>
+          <h3>特別室<br><small>庭を望む、3つの特別なお部屋</small></h3>
+          <p>重森三玲の庭を望む最高格の特別室「転法輪」、伝統と現代が調和する和モダンスイート「法界宮」、茶室付きの一棟貸し「空点房」。どれも1階の庭側で、静かな時間をお過ごしいただけます。</p>
+          <p class="room-note">転法輪・法界宮は専用バスルーム付き</p>
+          <a class="room-book" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">空室・料金を見る →</a>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo"><img src="images/rooms/wakasugi.jpg" alt="お風呂・トイレ付きの和室「若杉」。広縁のソファ越しに庭の緑" loading="lazy" width="1000" height="750"></div>
+        <div class="room-detail">
+          <span class="room-tag">WITH BATH</span>
+          <h3>若杉・花梨（わかすぎ・かりん）<br><small>お風呂・トイレ付きの和室</small></h3>
+          <p>お風呂とトイレを備えた、本館の和室です。重森三玲が手がけた庭を眺めながらおくつろぎいただけます。若杉は1階で館内の移動もしやすく、花梨は2階のお部屋です。</p>
+          <p class="room-note">和室8畳＋3畳　定員3名　大浴場もご利用いただけます</p>
+          <a class="room-book" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">空室・料金を見る →</a>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo"><img src="images/rooms/hokusuikan.jpg" alt="新館「北翠観」の和室。床の間に掛軸、障子の先に広縁と庭" loading="lazy" width="1000" height="750"></div>
+        <div class="room-detail">
+          <span class="room-tag">NEW WING</span>
+          <h3>北翠観（ほくすいかん）<br><small>新館の和室</small></h3>
+          <p>四季折々の庭を眺めながらおくつろぎいただける、新館の和室です。1階・2階に全10部屋。お部屋にお風呂・トイレはなく、大浴場をご利用いただきます。</p>
+          <p class="room-note">和室10畳　定員4名</p>
+          <a class="room-book" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">空室・料金を見る →</a>
+        </div>
+      </div>
+      <div class="room-item">
+        <div class="room-photo"><img src="images/photos/kyakushitsu-standard.jpg" alt="本館の昔ながらの和室。床の間に山水画の掛軸、障子の先に広縁" loading="lazy" width="1600" height="1200"></div>
+        <div class="room-detail">
+          <span class="room-tag">MAIN BUILDING</span>
+          <h3>本館の和室</h3>
+          <p>昔から変わらない、落ち着いた畳の和室です。2階のお部屋からは庭園を望めます。隣室との続き部屋としてもご利用いただけます。</p>
+          <p class="room-note">テレビ・エアコン完備　続き部屋対応</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="page-sec" id="fuku">
-  <div class="page-inner" style="max-width:1080px;">
-    <span class="sec-eyebrow">VICE HEAD PRIEST</span>
-    <div class="gold-bar"></div>
-    <h2 class="sec-title" style="color:var(--ink);">副住職</h2>
-    <div class="fuku-card">
-      <p class="fuku-name"><span class="fuku-role">副住職</span><ruby>古賀<rt>こが</rt></ruby>　<ruby>法顕<rt>ほうけん</rt></ruby></p>
-      <p>副住職が大切にしているのは、本覚院で過ごす時間そのものを味わっていただくことです。江戸時代中期に建てられた本堂をはじめ、明治・大正・昭和の建物が重なり合う院内には、江戸時代の襖絵や、室町時代にさかのぼる掛軸も伝わっています。昭和28年に重森三玲が手がけた石庭とあわせて、ゆっくりと歩きながら歴史を感じていただけたらと話します。</p>
-      <p>朝のお勤めは、どなたでもご参加いただけます。僧侶の読経に耳を傾けるひとときは、気持ちが切り替わるような体験になるはずです。</p>
-      <p class="fuku-src">（和歌山県観光サイト「聖地リゾート!!!!! 和歌山」掲載の副住職インタビューより）</p>
+<!-- 院内のご案内 -->
+<section class="gallery-sec" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-header">
+      <span class="sec-eyebrow" style="color:var(--gold);">GALLERY</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:#fff;">院内のご案内</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item">
+        <img src="images/photos/tenjoue.jpg" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" loading="lazy" width="1600" height="1067">
+        <div class="g-label">本堂天井絵</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/fusuma-kanoha.jpg" alt="狩野派による金地の襖絵（唐人物図）" loading="lazy" width="1600" height="1200">
+        <div class="g-label">狩野派の襖絵</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/teien-mado-3.jpg" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="1200">
+        <div class="g-label">重森三玲の石庭</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/koi-niwa.jpg" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200">
+        <div class="g-label">池泉庭</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/gongyo-hondo.jpg" alt="本堂でお経を唱える僧侶たち（朝の勤行）" loading="lazy" width="1600" height="1067">
+        <div class="g-label">本堂</div>
+      </div>
+      <div class="g-item">
+        <img src="images/fudo-myoo.jpg" alt="護摩堂にお祀りする修身不動明王" loading="lazy" width="1600" height="1200">
+        <div class="g-label">護摩堂の修身不動明王</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/mon-tobira-jimon.jpg" alt="寺紋が金色に輝く山門の扉と、奥へ続く石畳" loading="lazy" width="1600" height="1200">
+        <div class="g-label">本堂への道</div>
+      </div>
+      <div class="g-item">
+        <img src="images/gallery-mado.jpg" alt="窓越しに見る庭園の眺め" loading="lazy" width="900" height="1200">
+        <div class="g-label">窓越しの庭園</div>
+      </div>
     </div>
   </div>
 </section>
-<!-- 尼僧：ご本人の了承と情報がそろったら表示（お名前・ひとこと・写真） -->
+
+<section class="exp-sec" id="experience">
+  <div class="exp-inner">
+    <div class="exp-header">
+      <span class="sec-eyebrow">EXPERIENCES</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:var(--ink);">宿坊ならではの体験</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <span class="exp-icon">🕯</span>
+        <h3>朝の勤行</h3>
+        <p>荘厳な本堂で行われる朝のお勤め。声明の響きが心を清め、一日の始まりを整えます。</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🖌</span>
+        <h3>写経体験</h3>
+        <p>仏さまのお言葉である経典を、ひと文字ずつ願いを込めて書き写します。初めての方にも取り組みやすいよう、般若心経をなぞる形です。用紙・筆・筆ペン・墨・硯はご用意していますので、いつでもお申し付けください。</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🌿</span>
+        <h3>庭園散策</h3>
+        <p>重森三玲設計の石庭を含む5つの庭園。四季折々の風情と静寂をお楽しみください。</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🍱</span>
+        <h3>精進料理</h3>
+        <p>弘法大師が伝えた精進料理を、本来の形で。旬の素材と伝統の技が織りなす一椀。</p>
+      </div>
+      <div class="exp-card">
+        <span class="exp-icon">🎋</span>
+        <h3>奥の院参拝</h3>
+        <p>高野山の聖域・奥の院へ。弘法大師の御廟を詣で、千年の歴史に触れる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="access-sec" id="access">
+  <div class="access-inner">
+    <div class="access-header">
+      <span class="sec-eyebrow" style="color:var(--gold);">ACCESS</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:#fff;">アクセス</h2>
+    </div>
+    <div class="access-grid">
+      <div class="access-box">
+        <h3>TEMPLE INFO</h3>
+        <table>
+          <tr><td>寺院名</td><td>高野山 別格本山 本覚院</td></tr>
+          <tr><td>宗派</td><td>高野山真言宗</td></tr>
+          <tr><td>住所</td><td>〒648-0211<br>和歌山県伊都郡高野町高野山618</td></tr>
+          <tr><td>電話</td><td><a href="tel:0736562711" style="color:var(--gold);">0736-56-2711</a></td></tr>
+          <tr><td>チェックイン</td><td>15:00〜</td></tr>
+          <tr><td>チェックアウト</td><td>〜10:00</td></tr>
+        </table>
+      </div>
+      <div class="directions">
+        <p><strong>電車でお越しの場合：</strong>南海電鉄高野線「極楽橋」駅でケーブルカーに乗り換え「高野山」駅へ</p>
+        <p><strong>バスでお越しの場合：</strong>南海りんかんバス「奥の院行」または「大門行」→「警察署前」バス停下車（約10分）</p>
+        <p><strong>徒歩：</strong>バス停から2〜3分。木々に囲まれた参道を進むと山門が見えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-sec" id="faq">
+  <div class="faq-inner">
+    <span class="sec-eyebrow" style="color:var(--gold);">FAQ</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title" style="color:var(--ink);">よくあるご質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">お一人でも宿泊できますか？</summary>
+        <div class="faq-a"><p>お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">予約方法を教えてください。</summary>
+        <div class="faq-a"><p>ご宿泊は予約サイト（ページ内の「宿坊のご予約はこちら」から）で24時間承っております。お電話（0736-56-2711／受付9:00〜17:00）でもご予約いただけます。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">チェックイン・チェックアウトは何時ですか？</summary>
+        <div class="faq-a"><p>チェックインは15:00から、チェックアウトは10:00まででございます。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">門限はありますか？</summary>
+        <div class="faq-a"><p>門限は22:00でございます。夜は山内が静かになりますので、それまでにお戻りくださいますようお願いいたします。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">食事は精進料理ですか？アレルギーの対応はできますか？</summary>
+        <div class="faq-a"><p>高野豆腐や胡麻豆腐をはじめとする精進料理をご用意しております。なお、個別の食物アレルギーへの対応は行っておりませんので、あらかじめご了承ください。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">朝の勤行には誰でも参加できますか？必須ですか？</summary>
+        <div class="faq-a"><p>ご宿泊の方はどなたでもご参加いただけます。参加は自由で、必須ではございません。所要時間は45分〜1時間ほどです。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">外国人でも宿泊できますか？英語の対応はありますか？</summary>
+        <div class="faq-a"><p>海外からのお客様もご宿泊いただけます。簡単な英語でしたらご対応いたします。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "お一人でも宿泊できますか？", "acceptedAnswer": { "@type": "Answer", "text": "お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。" } },
+    { "@type": "Question", "name": "予約方法を教えてください。", "acceptedAnswer": { "@type": "Answer", "text": "ご宿泊は予約サイト（ページ内の「宿坊のご予約はこちら」から）で24時間承っております。お電話（0736-56-2711／受付9:00〜17:00）でもご予約いただけます。" } },
+    { "@type": "Question", "name": "チェックイン・チェックアウトは何時ですか？", "acceptedAnswer": { "@type": "Answer", "text": "チェックインは15:00から、チェックアウトは10:00まででございます。" } },
+    { "@type": "Question", "name": "門限はありますか？", "acceptedAnswer": { "@type": "Answer", "text": "門限は22:00でございます。夜は山内が静かになりますので、それまでにお戻りくださいますようお願いいたします。" } },
+    { "@type": "Question", "name": "食事は精進料理ですか？アレルギーの対応はできますか？", "acceptedAnswer": { "@type": "Answer", "text": "高野豆腐や胡麻豆腐をはじめとする精進料理をご用意しております。なお、個別の食物アレルギーへの対応は行っておりませんので、あらかじめご了承ください。" } },
+    { "@type": "Question", "name": "朝の勤行には誰でも参加できますか？必須ですか？", "acceptedAnswer": { "@type": "Answer", "text": "ご宿泊の方はどなたでもご参加いただけます。参加は自由で、必須ではございません。所要時間は45分〜1時間ほどです。" } },
+    { "@type": "Question", "name": "外国人でも宿泊できますか？英語の対応はありますか？", "acceptedAnswer": { "@type": "Answer", "text": "海外からのお客様もご宿泊いただけます。簡単な英語でしたらご対応いたします。" } }
+  ]
+}
+</script>
 
 <!-- CTA -->
 <section class="page-cta" id="cta">

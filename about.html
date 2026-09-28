@@ -913,6 +913,76 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 /* ゆかりの人々：リストのみのシンプル表示 */
 .yukari-list{margin:8px 0 8px;padding-left:1.3em;}
 .yukari-list li{font-size:14px;color:var(--sumi);line-height:2.2;margin-bottom:10px;}
+
+/* ══ ひとこと（縦書き） ══ */
+.kotoba-sec{background:var(--washi) var(--paper);padding:56px 24px;text-align:center;}
+.kotoba-tate{writing-mode:vertical-rl;font-family:'Shippori Mincho B1',serif;font-weight:500;
+  font-size:clamp(22px,6vw,32px);color:var(--sumi);letter-spacing:.26em;line-height:1.9;
+  margin:0 auto;display:inline-block;}
+.kotoba-cap{display:block;margin-top:18px;font-family:'Shippori Mincho B1',serif;font-size:12px;
+  letter-spacing:.2em;color:var(--stone);}
+.kotoba-lines{margin-top:28px;max-width:560px;margin-left:auto;margin-right:auto;}
+.kotoba-lines p{font-size:14px;line-height:2.1;color:var(--sumi);}
+@media(min-width:768px){
+  .kotoba-sec{padding:96px 40px;display:flex;align-items:flex-start;justify-content:center;gap:64px;text-align:left;}
+  .kotoba-tate{font-size:clamp(26px,2.6vw,36px);}
+  .kotoba-cap{writing-mode:vertical-rl;margin-top:0;margin-left:16px;padding-top:.4em;}
+  .kotoba-lines{margin-top:6px;max-width:300px;}
+}
+
+/* 住職名（トップの簡易表示） */
+.pi-name{display:inline-block;font-family:'Shippori Mincho B1',serif;font-size:16px;letter-spacing:.15em;color:var(--gold);margin-top:6px;}
+
+/* ── お参り・ご供養（トップの帯）：深い墨色で厳かに ── */
+.kuyo-sec-home{background:#2b2621;}
+.kuyo-sec-home .sec-title,.kuyo-sec-home .kuyo-card h3,.kuyo-sec-home .kuyo-card p,
+.kuyo-sec-home .kuyo-cta p,.kuyo-sec-home .kuyo-offer{color:var(--washi);}
+.kuyo-sec-home .kuyo-tel{color:var(--washi);border-bottom-color:var(--gold);}
+.kuyo-sec-home .gold-bar{background:var(--gold);margin-left:0;}
+.kuyo-offer{font-size:14px;line-height:2.1;color:var(--washi);margin:24px 0 0;text-align:center;letter-spacing:.04em;}
+.kuyo-phone-block{margin:32px auto 0;max-width:420px;padding:28px;border:1px solid var(--gold);text-align:center;}
+.kuyo-phone-block .kuyo-phone-label{font-family:'Shippori Mincho B1',serif;font-size:14px;letter-spacing:.15em;color:var(--washi);margin-bottom:10px;}
+.kuyo-phone-block .kuyo-tel-big{display:block;font-family:'Shippori Mincho B1',serif;font-size:clamp(28px,7vw,42px);color:var(--gold-l);letter-spacing:.08em;margin-bottom:8px;}
+.kuyo-phone-block .kuyo-hours{font-size:12px;color:rgba(243,236,225,0.6);}
+
+/* ── 宿坊（トップの帯） ── */
+.stay-teaser-sec{background:#fff;padding:64px 24px;}
+.stay-teaser-inner{max-width:1000px;margin:0 auto;text-align:center;}
+.stay-teaser-main{width:100%;aspect-ratio:16/10;object-fit:cover;margin-bottom:6px;}
+.stay-teaser-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:32px;}
+.stay-teaser-thumbs img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+.stay-teaser-sec > .stay-teaser-inner > p{font-size:14px;line-height:2.1;color:var(--stone);margin:0 auto 28px;max-width:560px;}
+.stay-teaser-btns{display:flex;flex-direction:column;gap:14px;align-items:center;}
+.btn-reserve-outline{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 32px;
+  border:1px solid var(--gold);color:var(--ink);font-family:'Shippori Mincho B1',serif;font-size:14px;letter-spacing:.15em;
+  transition:background .3s,color .3s;}
+.btn-reserve-outline:hover{background:var(--gold);color:#fff;}
+@media(min-width:768px){
+  .stay-teaser-sec{padding:100px 40px;}
+  .stay-teaser-main{aspect-ratio:21/8;}
+  .stay-teaser-btns{flex-direction:row;justify-content:center;gap:24px;}
+}
+
+/* ══ 厳か・可読性オーバーライド（全ページ共通） ══ */
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}}
+body{font-size:16px;line-height:2.0;}
+.sec-desc,.about-lead,.about-desc,.page-inner p,.kuyo-card p,.priest-msg p,.faq-a,.directions p,
+.access-box td,.mido-item p,.room-detail p,.exp-card p,.f-body p,.news-card-body p{color:#4a4038;}
+.sec-title,.page-hero h1{font-weight:500;letter-spacing:.1em;color:#a9824a;}
+.more-box,.reserve-btn,.btn-dark,.btn-reserve-main,.room-book,.news-more-btn,.drawer-reserve,
+.btn-reserve-outline{min-height:48px;}
+.more-box{min-height:46px;display:inline-flex;align-items:center;justify-content:center;}
+.faq-q{min-height:48px;display:flex;align-items:center;}
+.header-phone{display:none;}
+@media(min-width:900px){
+  .header-phone{display:inline-flex;align-items:center;font-family:'Shippori Mincho B1',serif;
+    font-size:13px;letter-spacing:.08em;color:rgba(255,255,255,.8);margin-right:16px;}
+  .header-phone a{color:inherit;}
+}
+.drawer-phone{display:block;margin-top:18px;text-align:center;font-family:'Shippori Mincho B1',serif;
+  font-size:18px;letter-spacing:.08em;color:#fff;}
+.drawer-phone a{color:var(--gold-l);}
+@media(min-width:768px){body{font-size:17px;}}
 </style>
 </head>
 <body>
@@ -923,14 +993,15 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
     <span class="logo-en">KOYASAN HONGAKUIN</span>
   </a>
   <nav class="header-nav">
-    <a href="about.html">当院について</a>
+    <a href="about.html">本覚院について</a>
     <a href="priest.html">住職・僧侶</a>
-    <a href="kuyo.html">ご供養</a>
-    <a href="index.html#rooms">お部屋</a>
-    <a href="index.html#experience">体験</a>
+    <a href="kuyo.html">お参り・ご供養</a>
+    <a href="shukubo.html">宿坊</a>
+    <a href="index.html#news">新着情報</a>
     <a href="index.html#access">アクセス</a>
   </nav>
   <div class="header-right">
+    <span class="header-phone">☎ <a href="tel:0736562711">0736-56-2711</a></span>
     <a href="en.html" class="lang-btn" lang="en">EN</a>
     <a href="https://tabichat.jp/engine/hotels/hongakuin" class="reserve-btn" target="_blank" rel="noopener">ご予約</a>
   </div>
@@ -944,14 +1015,15 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 <div class="drawer" id="drawer">
   <button class="drawer-close" onclick="closeMenu()" aria-label="メニューを閉じる">✕</button>
   <nav>
-    <a href="about.html" onclick="closeMenu()">当院について</a>
+    <a href="about.html" onclick="closeMenu()">本覚院について</a>
     <a href="priest.html" onclick="closeMenu()">住職・僧侶</a>
     <a href="kuyo.html" onclick="closeMenu()">お参り・ご供養</a>
-    <a href="index.html#rooms" onclick="closeMenu()">お部屋・施設</a>
-    <a href="index.html#experience" onclick="closeMenu()">体験</a>
+    <a href="shukubo.html" onclick="closeMenu()">宿坊</a>
+    <a href="index.html#news" onclick="closeMenu()">新着情報</a>
     <a href="index.html#access" onclick="closeMenu()">アクセス</a>
   </nav>
   <a href="#cta" class="drawer-reserve" onclick="closeMenu()">ご予約・お問合せ</a>
+  <a href="tel:0736562711" class="drawer-phone">☎ 0736-56-2711</a>
 </div>
 
 <!-- ページタイトル -->
