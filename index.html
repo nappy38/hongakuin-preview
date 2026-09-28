@@ -995,6 +995,11 @@ h2.sec-title,.page-hero h1{color:#150c15;}
 }
 /* 写真の上ではヘッダーの黒い帯を出さない（配色変更で出てしまっていたのを修正） */
 body.at-top .site-header{background:transparent !important;border-bottom-color:transparent !important;backdrop-filter:none !important;}
+
+/* 暗い欄の「詳しく見る」ボタンは、明るい枠と文字に */
+.kuyo-sec-home .more-box,.rooms-sec .more-box,.access-sec .more-box,.gallery-sec .more-box,.cta-sec .more-box,.page-cta .more-box{
+  border-color:#c9b183 !important;color:#f3ead8 !important;}
+.kuyo-sec-home .more-box:hover,.rooms-sec .more-box:hover,.access-sec .more-box:hover,.gallery-sec .more-box:hover{background:#c9b183 !important;color:#150c15 !important;}
 </style>
 </head>
 <body>
