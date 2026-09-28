@@ -49,7 +49,7 @@
   }
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap&text=%E3%80%8C%E3%81%8A%E5%A4%A7%E5%B8%AB%E3%81%95%E3%81%BE%E3%81%AE%E6%B8%88%E4%B8%96%E5%88%A9%E4%BA%BA%E7%B2%BE%E7%A5%9E%E3%82%92%E5%BC%98%E3%82%81%E3%81%A6%E3%81%84%E3%81%8F%E3%80%8D" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap&text=%E7%9C%9E%E8%A8%80%E5%A4%A7%E6%88%91%E3%81%AF%E3%80%81%E6%9C%AC%E3%82%88%E3%82%8A%E5%BF%83%E8%93%AE%E3%81%AB%E4%BD%8F%E3%81%99%E2%80%95%E2%80%95%E5%BC%98%E6%B3%95%E5%A4%A7%E5%B8%AB%E3%80%8E%E6%80%A7%E9%9C%8A%E9%9B%86%E3%80%8F" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Hina+Mincho&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════════════════════
@@ -1080,6 +1080,12 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
 /* 住職の言葉：毛筆の楷書体で */
 .quiet-quote{font-family:'Yuji Syuku','Shippori Mincho B1',serif !important;font-weight:400 !important;font-size:21px !important;line-height:2 !important;letter-spacing:.1em !important;color:#150c15 !important;white-space:nowrap;}
 @media(min-width:900px){.quiet-quote{font-size:32px !important;line-height:2.2 !important;height:auto !important;}}
+
+/* 住職・僧侶ページ冒頭：住職の写真と書 */
+.jushoku-visual{background:#150c15;padding:0;}
+.jushoku-visual figure{margin:0;max-width:1400px;margin:0 auto;}
+.jushoku-visual img{display:block;width:100%;height:auto;}
+.jushoku-visual figcaption{text-align:center;padding:14px 16px 20px;font-family:'Yuji Syuku','Shippori Mincho B1',serif;font-size:15px;letter-spacing:.14em;color:#e9dcc2;}
 </style>
 </head>
 <body>
@@ -1132,9 +1138,11 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
 </nav>
 
 <!-- 1. 静かな冒頭：住職の言葉より一行 -->
-<section class="quiet-open">
-  <p class="quiet-quote">「お大師さまの済世利人の<br>精神を弘めていく」</p>
-  <span class="quiet-cap">住職のご挨拶より</span>
+<section class="jushoku-visual">
+  <figure>
+    <img src="images/photos/jushoku-shinnyo.jpg" alt="本覚院 住職 稲葉法研。左に弘法大師『性霊集』の言葉「眞言大我 本住心蓮」の書" width="1800" height="1200">
+    <figcaption>眞言大我は、本より心蓮に住す ―― 弘法大師『性霊集』</figcaption>
+  </figure>
 </section>
 
 <!-- 2. 横スクロールの写真帯 -->
