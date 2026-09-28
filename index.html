@@ -957,6 +957,15 @@ body{font-size:16px;line-height:2.0;}
 @media(min-width:900px){
   .hero-nav a{line-height:1.5 !important;margin-left:6px !important;font-size:15px !important;letter-spacing:.22em;}
 }
+
+/* スマホ：3つの魅力は横スワイプ、院内のご案内は3列の小さな写真で短く */
+@media(max-width:768px){
+  #features .feature-grid{display:flex !important;flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -20px;padding:0 20px 8px;scrollbar-width:none;}
+  #features .feature-grid::-webkit-scrollbar{display:none;}
+  #features .feature-card{flex:0 0 82%;scroll-snap-align:center;}
+  .gallery-sec .gallery-grid{grid-template-columns:repeat(3,1fr) !important;gap:3px !important;}
+  .gallery-sec .g-label{font-size:10px !important;padding:4px !important;}
+}
 </style>
 </head>
 <body>
@@ -1066,6 +1075,44 @@ body{font-size:16px;line-height:2.0;}
     </div>
   </div>
   <div class="more-box-wrap"><a href="about.html" class="more-box" aria-label="本覚院について詳しく見る">詳しく見る</a></div>
+</section>
+
+<!-- 本覚院ならではの3つの魅力 -->
+<section class="features-sec" id="features">
+  <div class="features-inner">
+    <div class="features-header">
+      <span class="sec-eyebrow">THREE HIGHLIGHTS</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:var(--ink);">本覚院ならではの3つの魅力</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/tenjoue.jpg')" role="img" aria-label="本堂天井に残る250年前の極彩色天井絵"></div>
+        <div class="f-body">
+          <span class="f-num">I</span>
+          <h3>250年を超える<br>江戸の芸術</h3>
+          <p>本堂天井には250年前の絵師による極彩色の天井絵が残り、大広間には狩野派の貴重な障壁画をご覧いただけます。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/teien-mado-1.jpg')" role="img" aria-label="重森三玲設計の石庭"></div>
+        <div class="f-body">
+          <span class="f-num">II</span>
+          <h3>重森三玲設計の<br>5つの庭園</h3>
+          <p>昭和の名作庭家・重森三玲による石庭を含む5つの庭園。季節ごとに表情を変える苔と岩の世界をお楽しみください。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="f-img" style="background-image:url('images/photos/hondo-kigan.jpg')" role="img" aria-label="高野山の聖地に佇む本覚院本堂"></div>
+        <div class="f-body">
+          <span class="f-num">III</span>
+          <h3>弘法大師の<br>聖地に宿る</h3>
+          <p>高野山の中心部に位置する別格本山。朝の勤行、写経、精進料理——本物の修行体験がここにあります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="more-box-wrap"><a href="about.html" class="more-box" aria-label="本覚院の見どころを詳しく見る">詳しく見る</a></div>
 </section>
 
 <!-- お参り・ご供養 -->
@@ -1206,6 +1253,51 @@ body{font-size:16px;line-height:2.0;}
     <div class="stay-teaser-btns">
       <a href="shukubo.html" class="more-box" aria-label="宿坊について詳しく見る">詳しく見る</a>
       <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn-reserve-outline" target="_blank" rel="noopener">宿坊のご予約</a>
+    </div>
+  </div>
+</section>
+
+<!-- 院内のご案内 -->
+<section class="gallery-sec" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-header">
+      <span class="sec-eyebrow" style="color:var(--gold);">GALLERY</span>
+      <div class="gold-bar"></div>
+      <h2 class="sec-title" style="color:#fff;">院内のご案内</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item">
+        <img src="images/photos/tenjoue.jpg" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" loading="lazy" width="1600" height="1067">
+        <div class="g-label">本堂天井絵</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/fusuma-kanoha.jpg" alt="狩野派による金地の襖絵（唐人物図）" loading="lazy" width="1600" height="1200">
+        <div class="g-label">狩野派の襖絵</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/teien-mado-3.jpg" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="1200">
+        <div class="g-label">重森三玲の石庭</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/koi-niwa.jpg" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200">
+        <div class="g-label">池泉庭</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/gongyo-hondo.jpg" alt="本堂でお経を唱える僧侶たち（朝の勤行）" loading="lazy" width="1600" height="1067">
+        <div class="g-label">本堂</div>
+      </div>
+      <div class="g-item">
+        <img src="images/fudo-myoo.jpg" alt="護摩堂にお祀りする修身不動明王" loading="lazy" width="1600" height="1200">
+        <div class="g-label">護摩堂の修身不動明王</div>
+      </div>
+      <div class="g-item">
+        <img src="images/photos/mon-tobira-jimon.jpg" alt="寺紋が金色に輝く山門の扉と、奥へ続く石畳" loading="lazy" width="1600" height="1200">
+        <div class="g-label">本堂への道</div>
+      </div>
+      <div class="g-item">
+        <img src="images/gallery-mado.jpg" alt="窓越しに見る庭園の眺め" loading="lazy" width="900" height="1200">
+        <div class="g-label">窓越しの庭園</div>
+      </div>
     </div>
   </div>
 </section>
