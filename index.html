@@ -960,9 +960,6 @@ body{font-size:16px;line-height:2.0;}
 
 /* スマホ：3つの魅力は横スワイプ、院内のご案内は3列の小さな写真で短く */
 @media(max-width:768px){
-  #features .feature-grid{display:flex !important;flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -20px;padding:0 20px 8px;scrollbar-width:none;}
-  #features .feature-grid::-webkit-scrollbar{display:none;}
-  #features .feature-card{flex:0 0 82%;scroll-snap-align:center;}
   .gallery-sec .gallery-grid{grid-template-columns:repeat(3,1fr) !important;gap:3px !important;}
   .gallery-sec .g-label{font-size:10px !important;padding:4px !important;}
 }
@@ -1013,6 +1010,18 @@ body.at-top .site-header{background:transparent !important;border-bottom-color:t
 .ig-lead{font-family:'Shippori Mincho B1',serif;font-size:15px !important;letter-spacing:.12em !important;color:#f3ead8 !important;margin-bottom:18px;}
 /* フッターの文字を読める明るさに */
 footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
+
+/* スマホ：3つの魅力はスワイプをやめ、写真＋文の横並びカードを縦に3つ */
+@media(max-width:768px){
+  .feature-grid{display:flex !important;flex-direction:column !important;gap:14px !important;overflow:visible !important;margin:0 !important;padding:0 !important;}
+  .feature-card{display:grid !important;grid-template-columns:38% 1fr;align-items:stretch;flex:none !important;}
+  .feature-card .f-img{aspect-ratio:auto !important;height:100%;min-height:150px;}
+  .feature-card .f-body{padding:14px 14px !important;}
+  .feature-card .f-num{font-size:18px !important;margin-bottom:2px !important;}
+  .feature-card h3{font-size:16px !important;line-height:1.5 !important;margin-bottom:6px !important;}
+  .feature-card h3 br{display:none;}
+  .feature-card p{font-size:13.5px !important;line-height:1.8 !important;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+}
 </style>
 </head>
 <body>
