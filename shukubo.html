@@ -1048,6 +1048,12 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
   .feature-card h3 br{display:none;}
   .feature-card p{font-size:13.5px !important;line-height:1.8 !important;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
 }
+
+/* 本館の和室：1階・2階の写真を並べる */
+.room-photo-pair{display:grid !important;grid-template-columns:1fr 1fr;gap:4px;}
+.room-photo-pair figure{position:relative;margin:0;overflow:hidden;}
+.room-photo-pair img{width:100%;height:100%;object-fit:cover;}
+.room-photo-pair figcaption{position:absolute;left:8px;bottom:6px;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.1em;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.8);}
 </style>
 <body>
 <!-- HEADER -->
@@ -1218,7 +1224,7 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
         </div>
       </div>
       <div class="room-item">
-        <div class="room-photo"><img src="images/photos/kyakushitsu-honkan-2f.jpg" alt="本館2階の和室。床の間に書の掛軸、障子の先に椅子とテーブルの広縁と緑" loading="lazy" width="1600" height="1200"></div>
+        <div class="room-photo room-photo-pair"><figure><img src="images/photos/kyakushitsu-honkan-1f.jpg" alt="本館1階の和室。床の間に書の掛軸、広縁の窓の外に緑" loading="lazy" width="1600" height="1200"><figcaption>1階</figcaption></figure><figure><img src="images/photos/kyakushitsu-honkan-2f.jpg" alt="本館2階の和室。床の間に書の掛軸、障子の先に椅子とテーブルの広縁と緑" loading="lazy" width="1600" height="1200"><figcaption>2階</figcaption></figure></div>
         <div class="room-detail">
           <span class="room-tag">MAIN BUILDING</span>
           <h3>本館の和室</h3>

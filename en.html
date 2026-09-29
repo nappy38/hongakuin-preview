@@ -837,6 +837,12 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
   .feature-card h3 br{display:none;}
   .feature-card p{font-size:13.5px !important;line-height:1.8 !important;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
 }
+
+/* 本館の和室：1階・2階の写真を並べる */
+.room-photo-pair{display:grid !important;grid-template-columns:1fr 1fr;gap:4px;}
+.room-photo-pair figure{position:relative;margin:0;overflow:hidden;}
+.room-photo-pair img{width:100%;height:100%;object-fit:cover;}
+.room-photo-pair figcaption{position:absolute;left:8px;bottom:6px;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.1em;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.8);}
 </style>
 </head>
 <body>
@@ -1007,7 +1013,7 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
         </div>
       </div>
       <div class="room-item">
-        <div class="room-photo"><img src="images/photos/kyakushitsu-honkan-2f.jpg" alt="A second-floor Japanese-style room in the main building, with a calligraphy scroll in the alcove and a veranda overlooking greenery" loading="lazy" width="1600" height="1200"></div>
+        <div class="room-photo room-photo-pair"><figure><img src="images/photos/kyakushitsu-honkan-1f.jpg" alt="A first-floor Japanese-style room in the main building, with a calligraphy scroll and greenery beyond the veranda" loading="lazy" width="1600" height="1200"><figcaption>1F</figcaption></figure><figure><img src="images/photos/kyakushitsu-honkan-2f.jpg" alt="A second-floor Japanese-style room in the main building, with a calligraphy scroll in the alcove and a veranda overlooking greenery" loading="lazy" width="1600" height="1200"><figcaption>2F</figcaption></figure></div>
         <div class="room-detail">
           <span class="room-tag">MAIN BUILDING</span>
           <h3>Rooms in the Main Building</h3>
