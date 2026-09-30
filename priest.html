@@ -963,6 +963,11 @@ ruby rt{font-size:.4em;letter-spacing:.1em;}
 
 .photo-single{margin:0 auto;max-width:760px;}
 .photo-single img{display:block;width:100%;height:auto;}
+/* 下の写真：スマホは1枚、PCは3枚横並び */
+.photo-row{display:grid;grid-template-columns:1fr;margin:0 auto;max-width:760px;}
+.photo-row img{display:block;width:100%;height:auto;}
+.photo-row .pc-photo{display:none;}
+@media(min-width:768px){.photo-row{grid-template-columns:repeat(3,1fr);gap:4px;max-width:none;}.photo-row .pc-photo{display:block;}.photo-row img{height:100%;aspect-ratio:1/1.08;object-fit:cover;}}
 
 /* ══ ひとこと（縦書き） ══ */
 .kotoba-sec{background:var(--washi) var(--paper);padding:56px 24px;text-align:center;}
@@ -1327,7 +1332,11 @@ p.cd-listen:has(+ .am-btns){margin-top:28px !important;}
 <!-- 尼僧：お名前・ひとこと・写真は、ご本人の了承がとれたら追加 -->
 
 <section class="photo-strip-sec">
-  <figure class="photo-single"><img src="images/insta-kuyo-roka.jpg" alt="法衣をまとい、本堂へ続く廊下を進む僧侶" loading="lazy" width="1280" height="1127"></figure>
+  <div class="photo-row">
+    <img class="pc-photo" src="images/insta-gongyo.jpg" alt="灯明のともる内陣で、法衣の僧侶がお勤めをする後ろ姿" loading="lazy" width="1280" height="1397">
+    <img class="pc-photo" src="images/insta-mandala.jpg" alt="灯明と樒に囲まれて掛けられた曼荼羅の掛軸" loading="lazy" width="1280" height="1277">
+    <img src="images/insta-kuyo-roka.jpg" alt="法衣をまとい、本堂へ続く廊下を進む僧侶" loading="lazy" width="1280" height="1127">
+  </div>
 </section>
 
 <!-- CTA -->
