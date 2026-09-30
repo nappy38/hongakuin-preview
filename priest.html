@@ -1103,6 +1103,20 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
 /* Apple Musicボタン：金色に */
 .am-btn{background:linear-gradient(135deg,#917c50,#b9a276) !important;}
 .am-btn:hover{filter:brightness(1.08);}
+
+/* 推薦文 */
+.suisen{margin-top:28px;border-top:1px solid rgba(145,124,80,.4);border-bottom:1px solid rgba(145,124,80,.4);padding:20px 4px;}
+.suisen summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:8px;}
+.suisen summary::-webkit-details-marker{display:none;}
+.suisen-h{font-family:'Shippori Mincho B1',serif;font-size:17px;letter-spacing:.12em;color:#150c15;}
+.suisen-role{font-size:12px;color:#917c50;letter-spacing:.06em;}
+.suisen-lead{font-family:'Shippori Mincho B1',serif;font-size:15px;line-height:2;color:#2b2621;}
+.suisen-more{align-self:flex-start;margin-top:4px;padding-bottom:2px;border-bottom:1px solid #917c50;font-family:'Shippori Mincho B1',serif;font-size:13px;color:#150c15;}
+.suisen[open] .suisen-more,.suisen[open] .suisen-lead{display:none;}
+.suisen-body{margin-top:14px;}
+.suisen-body p{font-family:'Shippori Mincho B1',serif;font-size:15px;line-height:2.1;color:#2b2621;margin-bottom:12px;}
+.suisen-title{font-size:16px !important;color:#150c15 !important;}
+.suisen-sign{text-align:right;color:#150c15 !important;}
 </style>
 </head>
 <body>
@@ -1237,6 +1251,23 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
           <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-furui/1828860466" target="_blank" rel="noopener"><span class="am-t">THE 聲明 奮</span><span class="am-s">Apple Musicで開く →</span></a>
           <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-iyashi/1828860904" target="_blank" rel="noopener"><span class="am-t">THE 聲明 癒</span><span class="am-s">Apple Musicで開く →</span></a>
         </div>
+        <details class="suisen">
+          <summary>
+            <span class="suisen-h">松長有慶猊下 推薦文</span>
+            <span class="suisen-role">当時 高野山真言宗管長・総本山金剛峯寺座主</span>
+            <span class="suisen-lead">「上綱の積年の研鑽と教育活動の成果の結集であり、真言密教の伝統的な儀礼である理趣三昧法要を厳修するために不可欠の規範といってよいでしょう。」</span>
+            <span class="suisen-more">推薦文の全文を読む ＋</span>
+          </summary>
+          <div class="suisen-body">
+            <p class="suisen-title">南山進流　法要付中曲理趣三昧の聲明の発売を祝す</p>
+            <p>このたび高野山本覺院住職・稲葉法研上綱が監修し、録音された「THE 聲明（SHO-MYO)～高野山　南山進流～」が発売されることになりました。</p>
+            <p>稲葉法研上綱は元高野山真言宗管長であり、南山聲明の泰斗であらせられる稲葉義猛猊下に若年より師事し、その奥義をあますところなく継承され、真言密教の中院流法要の儀式ならびに聲明の継承者の重鎮であります。</p>
+            <p>法研上綱は高野山専修学院の監事を長年にわたりお勤めになり、その間、学院生に中院流の法要の儀礼と聲明を指導されてこられました。</p>
+            <p>このたび上梓された「THE　聲明（SHO-MYO)～高野山　南山進流～」は、上綱の積年の研鑽と教育活動の成果の結集であり、真言密教の伝統的な儀礼である理趣三昧法要を厳修するために不可欠の規範といってよいでしょう。</p>
+            <p>南山進流の聲明を学ぶためにも、基本的な資料であることは申すまでもありません。<br>皆さまのお手元に常に備えていただきたいと願って、推薦の辞を連ねさせていただきました。</p>
+            <p class="suisen-sign">高野山真言宗管長<br>総本山金剛峯寺座主　大僧正　松長有慶</p>
+          </div>
+        </details>
       </div>
     </div>
   </div>
