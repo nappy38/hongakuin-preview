@@ -1090,6 +1090,15 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
 /* スマホだけ改行 */
 .sp-only{display:none;}
 @media(max-width:768px){.sp-only{display:inline;}}
+
+/* Apple Music：Spotifyのプレーヤーと同じ重さのボタンに */
+.am-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;}
+.am-btn{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:72px;padding:12px 16px;border-radius:12px;
+  background:linear-gradient(135deg,#fa233b,#fb5c74);color:#fff !important;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.12);}
+.am-btn:hover{filter:brightness(1.05);}
+.am-t{font-family:'Shippori Mincho B1',serif;font-size:16px;letter-spacing:.08em;}
+.am-s{font-size:12px;opacity:.9;}
+@media(max-width:480px){.am-btns{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -1219,7 +1228,11 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
         <p class="cd-listen">Spotifyで聴く</p>
         <iframe class="cd-player" title="THE 聲明～高野山 南山進流～ 奮（Spotify）" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         <iframe class="cd-player" title="THE 聲明～高野山 南山進流～ 癒（Spotify）" src="https://open.spotify.com/embed/album/4cJB2d2ujV5scHqgsuw3Ld?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <p class="cd-links">Apple Musicで聴く：<a href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-furui/1828860466" target="_blank" rel="noopener">奮</a>／<a href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-iyashi/1828860904" target="_blank" rel="noopener">癒</a></p>
+        <p class="cd-listen">Apple Musicで聴く</p>
+        <div class="am-btns">
+          <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-furui/1828860466" target="_blank" rel="noopener"><span class="am-t">THE 聲明 奮</span><span class="am-s">Apple Musicで開く →</span></a>
+          <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-iyashi/1828860904" target="_blank" rel="noopener"><span class="am-t">THE 聲明 癒</span><span class="am-s">Apple Musicで開く →</span></a>
+        </div>
       </div>
     </div>
   </div>
