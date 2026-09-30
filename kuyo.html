@@ -1044,6 +1044,18 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
 @media(min-width:768px){.about-sec,.news-sec,.features-sec,.rooms-sec,.gallery-sec,.exp-sec,.priest-sec,.access-sec,.faq-sec,.kuyo-sec,.stay-teaser-sec,.page-sec{padding-top:140px !important;padding-bottom:140px !important;}}
 .cta-sec,.page-cta{padding-top:64px !important;padding-bottom:64px !important;}
 @media(min-width:768px){.cta-sec,.page-cta{padding-top:110px !important;padding-bottom:110px !important;}}
+
+/* 色を4色に：背景は和紙色の濃淡（--w1 明・--w2 濃）と黒、アクセントは金と赤（予約ボタンのみ） */
+:root{--w1:#f3ece1;--w2:#e8dfce;--cloud:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.011' numOctaves='3' seed='23' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0 0 .55 .9'/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23c%29' opacity='.55'/%3E%3C/svg%3E");}
+body{background:var(--w1) var(--paper);}
+/* ご予約・お問合せ：濃い和紙色に雲の模様（貴船神社風） */
+.cta-sec,.page-cta{background:var(--cloud),var(--paper),var(--w2) !important;background-color:var(--w2) !important;color:var(--ink) !important;}
+.cta-sec h2,.page-cta h2,.cta-sec p,.page-cta p,.cta-sec a.cta-tel,.page-cta a.cta-tel,.cta-sec .cta-hours,.page-cta .cta-hours{color:var(--ink) !important;}
+.cta-sec p,.page-cta p{color:#3a322a !important;}
+.cta-sec .more-box,.page-cta .more-box{border-color:var(--ink) !important;color:var(--ink) !important;}
+.cta-sec .sec-eyebrow,.page-cta .sec-eyebrow{color:#917c50 !important;}
+.page-hero,#kaie,#gomakito,#faq{background:var(--w1) var(--paper) !important;background-color:var(--w1) !important;}
+#intro,#eitai,#nenchu{background:var(--w2) var(--paper) !important;background-color:var(--w2) !important;}
 </style>
 </head>
 <body>
