@@ -852,6 +852,11 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
 .am-t{font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:.06em;}
 .am-s{font-size:12px;opacity:.9;}
 @media(max-width:480px){.am-btns{grid-template-columns:1fr;}}
+
+/* Apple Musicで聴く の上に余白 */
+.am-btns{margin-bottom:4px;}
+.cd-listen + .am-btns{margin-top:6px;}
+p.cd-listen:has(+ .am-btns){margin-top:28px !important;}
 </style>
 </head>
 <body>
