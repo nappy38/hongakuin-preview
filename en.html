@@ -843,6 +843,15 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
 .room-photo-pair figure{position:relative;margin:0;overflow:hidden;}
 .room-photo-pair img{width:100%;height:100%;object-fit:cover;}
 .room-photo-pair figcaption{position:absolute;left:8px;bottom:6px;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.1em;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.8);}
+
+/* Apple Music：Spotifyのプレーヤーと同じ重さのボタンに */
+.am-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;}
+.am-btn{display:flex;flex-direction:column;justify-content:center;gap:4px;min-height:72px;padding:12px 16px;border-radius:12px;
+  background:linear-gradient(135deg,#917c50,#b9a276);color:#fff !important;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.12);}
+.am-btn:hover{filter:brightness(1.08);}
+.am-t{font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:.06em;}
+.am-s{font-size:12px;opacity:.9;}
+@media(max-width:480px){.am-btns{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -1180,6 +1189,11 @@ footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
             <p class="cd-listen">Listen on Spotify</p>
             <iframe class="cd-player" title="THE SHŌMYŌ — Kōyasan Nanzanshin School, 'Furui' (Spotify)" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             <iframe class="cd-player" title="THE SHŌMYŌ — Kōyasan Nanzanshin School, 'Iyashi' (Spotify)" src="https://open.spotify.com/embed/album/4cJB2d2ujV5scHqgsuw3Ld?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <p class="cd-listen">Listen on Apple Music</p>
+            <div class="am-btns">
+              <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-furui/1828860466" target="_blank" rel="noopener"><span class="am-t">THE SHŌMYŌ — Furui</span><span class="am-s">Open in Apple Music →</span></a>
+              <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-iyashi/1828860904" target="_blank" rel="noopener"><span class="am-t">THE SHŌMYŌ — Iyashi</span><span class="am-s">Open in Apple Music →</span></a>
+            </div>
           </div>
         </div>
         <p style="margin-top:24px;font-size:14px;color:var(--stone);line-height:2.2;">Vice head priest Koga Hōken welcomes guests to the morning service, which anyone may attend.</p>
