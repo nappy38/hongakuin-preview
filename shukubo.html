@@ -2,6 +2,10 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#150c15">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>宿坊｜高野山 別格本山 本覚院</title>
 <meta name="description" content="高野山 別格本山 本覚院の宿坊。重森三玲の庭を望む特別室から本館の和室まで、精進料理と朝のお勤めで過ごす一夜。院内のご案内・アクセス・よくあるご質問まとめてご紹介します。">
@@ -1207,6 +1211,12 @@ body{background:var(--w1) var(--paper);}
 .cta-sec .sec-eyebrow,.page-cta .sec-eyebrow{color:#917c50 !important;}
 .page-hero,#features,#access,#faq{background:var(--w1) var(--paper) !important;background-color:var(--w1) !important;}
 #intro,#experience,#info{background:var(--w2) var(--paper) !important;background-color:var(--w2) !important;}
+
+/* 仕上げ：ボタン・リンクの反応をそろえる */
+a,button,summary{-webkit-tap-highlight-color:transparent;}
+.more-box,.reserve-btn,.btn-reserve-main,.float-btn,.drawer-reserve,.btn-dark,.room-book,.am-btn,.news-more-mobile,.priest-more-btn{transition:background-color .3s ease,color .3s ease,border-color .3s ease,opacity .3s ease !important;}
+.more-box:active,.reserve-btn:active,.btn-reserve-main:active,.float-btn:active,.drawer-reserve:active,.btn-dark:active,.am-btn:active{opacity:.8;}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #917c50;outline-offset:3px;}
 </style>
 <body>
 <!-- HEADER -->
@@ -1273,21 +1283,21 @@ body{background:var(--w1) var(--paper);}
     </div>
     <div class="feature-grid">
       <div class="feature-card">
-        <div class="f-img" style="background-image:url('images/photos/tenjoue.jpg')" role="img" aria-label="本堂天井に残る250年前の極彩色天井絵"></div>
+        <div class="f-img" style="background-image:url('images/photos/tenjoue.webp')" role="img" aria-label="本堂天井に残る250年前の極彩色天井絵"></div>
         <div class="f-body">
           <h3>250年を超える<br>江戸の芸術</h3>
           <p>本堂天井には250年前の絵師による極彩色の天井絵が残り、大広間には狩野派の貴重な障壁画をご覧いただけます。</p>
         </div>
       </div>
       <div class="feature-card">
-        <div class="f-img" style="background-image:url('images/photos/teien-mado-1.jpg')" role="img" aria-label="重森三玲設計の石庭"></div>
+        <div class="f-img" style="background-image:url('images/photos/teien-mado-1.webp')" role="img" aria-label="重森三玲設計の石庭"></div>
         <div class="f-body">
           <h3>重森三玲設計の<br>5つの庭園</h3>
           <p>昭和の名作庭家・重森三玲による石庭を含む5つの庭園。季節ごとに表情を変える苔と岩の世界をお楽しみください。</p>
         </div>
       </div>
       <div class="feature-card">
-        <div class="f-img" style="background-image:url('images/photos/gongyo-hondo.jpg')" role="img" aria-label="本堂で読経する僧侶たち（朝のお勤め）"></div>
+        <div class="f-img" style="background-image:url('images/photos/gongyo-hondo.webp')" role="img" aria-label="本堂で読経する僧侶たち（朝のお勤め）"></div>
         <div class="f-body">
           <h3>祈りの声に<br>包まれる朝</h3>
           <p>毎朝、本堂で副住職をはじめ僧侶がお勤めをいたします。どなたでもご参加いただけ、高野山に受け継がれる読経の響きに包まれるひとときをお過ごしいただけます。</p>
@@ -1305,7 +1315,7 @@ body{background:var(--w1) var(--paper);}
     <p class="rooms-swipe-hint" aria-hidden="true">横にスワイプ →</p>
     <div class="room-list room-list-fac">
       <div class="room-item">
-        <div class="room-photo"><img src="images/photos/ohiroma.jpg" alt="狩野派の襖絵に囲まれた大広間と「獅子吼」の額" loading="lazy" width="1600" height="1067"></div>
+        <div class="room-photo"><img src="images/photos/ohiroma.webp" alt="狩野派の襖絵に囲まれた大広間と「獅子吼」の額" loading="lazy" width="1600" height="1067"></div>
         <div class="room-detail">
           <span class="room-tag">GRAND HALL</span>
           <h3>大広間・狩野派の襖絵</h3>
@@ -1313,7 +1323,7 @@ body{background:var(--w1) var(--paper);}
         </div>
       </div>
       <div class="room-item">
-        <div class="room-photo"><img src="images/photos/fusuma-shojin.jpg" alt="金地の襖絵の前に並ぶ精進料理のお膳" loading="lazy" width="1600" height="1200"></div>
+        <div class="room-photo"><img src="images/photos/fusuma-shojin.webp" alt="金地の襖絵の前に並ぶ精進料理のお膳" loading="lazy" width="1600" height="1200"></div>
         <div class="room-detail">
           <span class="room-tag">SHOJIN CUISINE</span>
           <h3>精進料理のお座席</h3>
@@ -1321,7 +1331,7 @@ body{background:var(--w1) var(--paper);}
         </div>
       </div>
       <div class="room-item">
-        <div class="room-photo"><img src="images/photos/daiyokujo-onna.jpg" alt="本覚院の大浴場（女湯）。石張りの床と広い浴槽、洗い場" loading="lazy" width="1600" height="1200"></div>
+        <div class="room-photo"><img src="images/photos/daiyokujo-onna.webp" alt="本覚院の大浴場（女湯）。石張りの床と広い浴槽、洗い場" loading="lazy" width="1600" height="1200"></div>
         <div class="room-detail">
           <span class="room-tag">BATH</span>
           <h3>大浴場・中浴場</h3>
@@ -1334,9 +1344,9 @@ body{background:var(--w1) var(--paper);}
     <div class="room-list room-list-rooms">
       <div class="room-item">
         <div class="room-photo room-photo-trio">
-          <img class="main" src="images/rooms/tenporin.jpg" alt="特別室「転法輪」。格天井の和室と、重森三玲の庭を望む窓" loading="lazy" width="1000" height="750">
-          <img src="images/rooms/hokaigu.jpg" alt="和モダンスイート「法界宮」。大きな窓の向こうに庭の緑" loading="lazy" width="1000" height="750">
-          <img src="images/rooms/kutenbo.jpg" alt="一棟貸しの特別客室「空点房」から見る苔と石組の庭" loading="lazy" width="1000" height="750">
+          <img class="main" src="images/rooms/tenporin.webp" alt="特別室「転法輪」。格天井の和室と、重森三玲の庭を望む窓" loading="lazy" width="1000" height="750">
+          <img src="images/rooms/hokaigu.webp" alt="和モダンスイート「法界宮」。大きな窓の向こうに庭の緑" loading="lazy" width="1000" height="750">
+          <img src="images/rooms/kutenbo.webp" alt="一棟貸しの特別客室「空点房」から見る苔と石組の庭" loading="lazy" width="1000" height="750">
         </div>
         <div class="room-detail">
           <span class="room-tag">SPECIAL ROOMS</span>
@@ -1347,7 +1357,7 @@ body{background:var(--w1) var(--paper);}
         </div>
       </div>
       <div class="room-item">
-        <div class="room-photo"><img src="images/rooms/wakasugi.jpg" alt="お風呂・トイレ付きの和室「若杉」。広縁のソファ越しに庭の緑" loading="lazy" width="1000" height="750"></div>
+        <div class="room-photo"><img src="images/rooms/wakasugi.webp" alt="お風呂・トイレ付きの和室「若杉」。広縁のソファ越しに庭の緑" loading="lazy" width="1000" height="750"></div>
         <div class="room-detail">
           <span class="room-tag">WITH BATH</span>
           <h3>若杉・花梨（わかすぎ・かりん）<br><small>お風呂・トイレ付きの和室</small></h3>
@@ -1357,7 +1367,7 @@ body{background:var(--w1) var(--paper);}
         </div>
       </div>
       <div class="room-item">
-        <div class="room-photo"><img src="images/rooms/hokusuikan.jpg" alt="新館「北翠観」の和室。床の間に掛軸、障子の先に広縁と庭" loading="lazy" width="1000" height="750"></div>
+        <div class="room-photo"><img src="images/rooms/hokusuikan.webp" alt="新館「北翠観」の和室。床の間に掛軸、障子の先に広縁と庭" loading="lazy" width="1000" height="750"></div>
         <div class="room-detail">
           <span class="room-tag">NEW WING</span>
           <h3>北翠観（ほくすいかん）<br><small>新館の和室</small></h3>
@@ -1367,7 +1377,7 @@ body{background:var(--w1) var(--paper);}
         </div>
       </div>
       <div class="room-item">
-        <div class="room-photo room-photo-pair"><figure><img src="images/photos/kyakushitsu-honkan-1f.jpg" alt="本館1階の和室。床の間に書の掛軸、広縁の窓の外に緑" loading="lazy" width="1600" height="1200"><figcaption>1階</figcaption></figure><figure><img src="images/photos/kyakushitsu-honkan-2f.jpg" alt="本館2階の和室。床の間に書の掛軸、障子の先に椅子とテーブルの広縁と緑" loading="lazy" width="1600" height="1200"><figcaption>2階</figcaption></figure></div>
+        <div class="room-photo room-photo-pair"><figure><img src="images/photos/kyakushitsu-honkan-1f.webp" alt="本館1階の和室。床の間に書の掛軸、広縁の窓の外に緑" loading="lazy" width="1600" height="1200"><figcaption>1階</figcaption></figure><figure><img src="images/photos/kyakushitsu-honkan-2f.webp" alt="本館2階の和室。床の間に書の掛軸、障子の先に椅子とテーブルの広縁と緑" loading="lazy" width="1600" height="1200"><figcaption>2階</figcaption></figure></div>
         <div class="room-detail">
           <span class="room-tag">MAIN BUILDING</span>
           <h3>本館の和室</h3>
@@ -1387,35 +1397,35 @@ body{background:var(--w1) var(--paper);}
     </div>
     <div class="gallery-grid">
       <div class="g-item">
-        <img src="images/photos/tenjoue.jpg" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" loading="lazy" width="1600" height="1067">
+        <img src="images/photos/tenjoue.webp" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" loading="lazy" width="1600" height="1067">
         <div class="g-label">本堂天井絵</div>
       </div>
       <div class="g-item">
-        <img src="images/photos/fusuma-kanoha.jpg" alt="狩野派による金地の襖絵（唐人物図）" loading="lazy" width="1600" height="1200">
+        <img src="images/photos/fusuma-kanoha.webp" alt="狩野派による金地の襖絵（唐人物図）" loading="lazy" width="1600" height="1200">
         <div class="g-label">狩野派の襖絵</div>
       </div>
       <div class="g-item">
-        <img src="images/photos/teien-mado-3.jpg" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="1200">
+        <img src="images/photos/teien-mado-3.webp" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="1200">
         <div class="g-label">重森三玲の石庭</div>
       </div>
       <div class="g-item">
-        <img src="images/photos/koi-niwa-2.jpg" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200">
+        <img src="images/photos/koi-niwa-2.webp" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200">
         <div class="g-label">池泉庭</div>
       </div>
       <div class="g-item">
-        <img src="images/photos/gongyo-hondo.jpg" alt="本堂でお経を唱える僧侶たち（朝の勤行）" loading="lazy" width="1600" height="1067">
+        <img src="images/photos/gongyo-hondo.webp" alt="本堂でお経を唱える僧侶たち（朝の勤行）" loading="lazy" width="1600" height="1067">
         <div class="g-label">本堂</div>
       </div>
       <div class="g-item">
-        <img src="images/fudo-myoo.jpg" alt="護摩堂にお祀りする修身不動明王" loading="lazy" width="1600" height="1200">
+        <img src="images/fudo-myoo.webp" alt="護摩堂にお祀りする修身不動明王" loading="lazy" width="1600" height="1200">
         <div class="g-label">護摩堂の修身不動明王</div>
       </div>
       <div class="g-item">
-        <img src="images/photos/mon-tobira-jimon.jpg" alt="寺紋が金色に輝く山門の扉と、奥へ続く石畳" loading="lazy" width="1600" height="1200">
+        <img src="images/photos/mon-tobira-jimon.webp" alt="寺紋が金色に輝く山門の扉と、奥へ続く石畳" loading="lazy" width="1600" height="1200">
         <div class="g-label">本堂への道</div>
       </div>
       <div class="g-item">
-        <img src="images/gallery-mado.jpg" alt="窓越しに見る庭園の眺め" loading="lazy" width="900" height="1200">
+        <img src="images/gallery-mado.webp" alt="窓越しに見る庭園の眺め" loading="lazy" width="900" height="1200">
         <div class="g-label">窓越しの庭園</div>
       </div>
     </div>

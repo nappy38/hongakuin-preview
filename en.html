@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#150c15">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Koyasan Hongakuin | Shukubo Temple Lodging at Mount Kōya</title>
 <meta name="description" content="Stay overnight in a temple founded in 1190 on sacred Mount Kōya. Shōjin ryōri dinner and breakfast, morning service with the monks, gardens by Shigemori Mirei, and Edo-period painted ceilings — a night that settles the mind.">
@@ -304,6 +308,12 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.0
 @media(min-width:900px){.float-btn{bottom:28px;right:28px;font-size:14px;padding:14px 24px;}}
 
 .priest-quote{margin:20px 0 24px;padding-left:16px;border-left:1px solid #917c50;font-style:italic;color:#2b2621;line-height:1.8;}
+
+/* 仕上げ：ボタン・リンクの反応をそろえる */
+a,button,summary{-webkit-tap-highlight-color:transparent;}
+.more-box,.reserve-btn,.btn-reserve-main,.float-btn,.drawer-reserve,.btn-dark,.room-book,.am-btn,.news-more-mobile,.priest-more-btn{transition:background-color .3s ease,color .3s ease,border-color .3s ease,opacity .3s ease !important;}
+.more-box:active,.reserve-btn:active,.btn-reserve-main:active,.float-btn:active,.drawer-reserve:active,.btn-dark:active,.am-btn:active{opacity:.8;}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #917c50;outline-offset:3px;}
 </style>
 </head>
 <body>
@@ -343,11 +353,11 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.0
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-slides">
-    <div class="slide active" style="background-image:url('images/photos/teien-mado-slide.jpg');background-position:center 60%"></div>
-    <div class="slide" style="background-image:url('images/photos/fusuma-shojin.jpg')"></div>
-    <div class="slide" style="background-image:url('images/photos/kyakushitsu-toro-2.jpg')"></div>
-    <div class="slide" style="background-image:url('images/photos/soryo-fusuma-2.jpg')"></div>
-    <div class="slide" style="background-image:url('images/photos/sanmon-yoru.jpg')"></div>
+    <div class="slide active" style="background-image:url('images/photos/teien-mado-slide.webp');background-position:center 60%"></div>
+    <div class="slide" style="background-image:url('images/photos/fusuma-shojin.webp')"></div>
+    <div class="slide" style="background-image:url('images/photos/kyakushitsu-toro-2.webp')"></div>
+    <div class="slide" style="background-image:url('images/photos/soryo-fusuma-2.webp')"></div>
+    <div class="slide" style="background-image:url('images/photos/sanmon-yoru.webp')"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-mark">
@@ -374,9 +384,9 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.0
       <div class="hairline"></div>
     </div>
     <div class="stay-photos reveal">
-      <img class="main photo" src="images/rooms/tenporin.jpg" alt="Tenpōrin, a special guest room overlooking a garden by Shigemori Mirei" loading="lazy" width="1000" height="1250">
-      <img class="photo" src="images/photos/fusuma-shojin.jpg" alt="A shōjin ryōri meal set before gilded sliding-door paintings" loading="lazy" width="1600" height="1200">
-      <img class="photo" src="images/photos/gongyo-hondo.jpg" alt="Monks chanting sutras in the main hall during the morning service" loading="lazy" width="1600" height="1067">
+      <img class="main photo" src="images/rooms/tenporin.webp" alt="Tenpōrin, a special guest room overlooking a garden by Shigemori Mirei" loading="lazy" width="1000" height="1250">
+      <img class="photo" src="images/photos/fusuma-shojin.webp" alt="A shōjin ryōri meal set before gilded sliding-door paintings" loading="lazy" width="1600" height="1200">
+      <img class="photo" src="images/photos/gongyo-hondo.webp" alt="Monks chanting sutras in the main hall during the morning service" loading="lazy" width="1600" height="1067">
     </div>
     <p class="lead reveal">A night inside an 830-year-old temple at the heart of Kōyasan's UNESCO World Heritage precinct — quiet tatami rooms, a shōjin ryōri dinner, and a morning service led by the resident monks.</p>
     <p class="lead reveal">Every room looks onto a garden or courtyard. Rates vary by room and season, and every stay includes dinner and breakfast.</p>
@@ -408,29 +418,29 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.0
     <div class="room-grid">
       <div class="room-card reveal">
         <div class="pair">
-          <img class="photo" src="images/rooms/tenporin.jpg" alt="Tenpōrin, a special room with a coffered ceiling overlooking a garden by Shigemori Mirei" loading="lazy" width="1000" height="1000">
-          <img class="photo" src="images/rooms/kutenbo.jpg" alt="Kūtenbō, a private guest house looking onto a garden of moss and stone" loading="lazy" width="1000" height="1000">
+          <img class="photo" src="images/rooms/tenporin.webp" alt="Tenpōrin, a special room with a coffered ceiling overlooking a garden by Shigemori Mirei" loading="lazy" width="1000" height="1000">
+          <img class="photo" src="images/rooms/kutenbo.webp" alt="Kūtenbō, a private guest house looking onto a garden of moss and stone" loading="lazy" width="1000" height="1000">
         </div>
         <h3>Special Rooms</h3>
         <p>Tenpōrin, Hōkaigū and Kūtenbō &mdash; three distinctive rooms on the ground floor, each facing the garden. Tenpōrin and Hōkaigū include a private bath.</p>
         <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">Check availability &rarr;</a>
       </div>
       <div class="room-card reveal">
-        <img class="photo" src="images/rooms/wakasugi.jpg" alt="Wakasugi, a Japanese-style room with private bath and toilet, facing the garden" loading="lazy" width="1000" height="750">
+        <img class="photo" src="images/rooms/wakasugi.webp" alt="Wakasugi, a Japanese-style room with private bath and toilet, facing the garden" loading="lazy" width="1000" height="750">
         <h3>Wakasugi &amp; Karin</h3>
         <p>Japanese-style rooms in the main building, each with its own bath and toilet, overlooking the garden. Sleeps up to three.</p>
         <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">Check availability &rarr;</a>
       </div>
       <div class="room-card reveal">
-        <img class="photo" src="images/rooms/hokusuikan.jpg" alt="A Japanese-style room in the new wing, Hokusuikan, with views of the garden beyond the shoji" loading="lazy" width="1000" height="750">
+        <img class="photo" src="images/rooms/hokusuikan.webp" alt="A Japanese-style room in the new wing, Hokusuikan, with views of the garden beyond the shoji" loading="lazy" width="1000" height="750">
         <h3>Hokusuikan</h3>
         <p>Rooms in the new wing, with views of the garden through every season. Shared baths only; sleeps up to four.</p>
         <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">Check availability &rarr;</a>
       </div>
       <div class="room-card reveal">
         <div class="pair">
-          <img class="photo" src="images/photos/kyakushitsu-honkan-1f.jpg" alt="A first-floor Japanese-style room in the main building" loading="lazy" width="1600" height="1600">
-          <img class="photo" src="images/photos/kyakushitsu-honkan-2f.jpg" alt="A second-floor Japanese-style room in the main building, overlooking greenery" loading="lazy" width="1600" height="1600">
+          <img class="photo" src="images/photos/kyakushitsu-honkan-1f.webp" alt="A first-floor Japanese-style room in the main building" loading="lazy" width="1600" height="1600">
+          <img class="photo" src="images/photos/kyakushitsu-honkan-2f.webp" alt="A second-floor Japanese-style room in the main building, overlooking greenery" loading="lazy" width="1600" height="1600">
         </div>
         <h3>Main Building Rooms</h3>
         <p>Quiet, traditional tatami rooms on the first and second floors, unchanged over the years. Adjoining rooms available for groups.</p>
@@ -449,7 +459,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.0
     </div>
     <div class="exp-grid">
       <div class="exp-card reveal">
-        <img class="photo" src="images/photos/gongyo-hondo.jpg" alt="Monks chanting sutras in the main hall during the morning service" loading="lazy" width="1600" height="1067">
+        <img class="photo" src="images/photos/gongyo-hondo.webp" alt="Monks chanting sutras in the main hall during the morning service" loading="lazy" width="1600" height="1067">
         <h3>Morning Service</h3>
         <p>Open to all guests, led by the vice head priest and the monks in the main hall. Attendance is optional and lasts about 45 minutes.</p>
       </div>
@@ -459,12 +469,12 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.0
         <p>Trace the words of the Heart Sutra, character by character. Paper, brush and ink are all provided &mdash; just ask.</p>
       </div>
       <div class="exp-card reveal">
-        <img class="photo" src="images/photos/fusuma-shojin.jpg" alt="A shōjin ryōri meal set before gilded sliding-door paintings" loading="lazy" width="1600" height="1200">
+        <img class="photo" src="images/photos/fusuma-shojin.webp" alt="A shōjin ryōri meal set before gilded sliding-door paintings" loading="lazy" width="1600" height="1200">
         <h3>Shōjin Ryōri</h3>
         <p>Buddhist vegetarian cuisine handed down by Kōbō Daishi, prepared from seasonal, local ingredients according to tradition.</p>
       </div>
       <div class="exp-card reveal">
-        <img class="photo" src="images/photos/teien-mado-3.jpg" alt="A rock garden designed by Shigemori Mirei, seen through a window" loading="lazy" width="1600" height="1200">
+        <img class="photo" src="images/photos/teien-mado-3.webp" alt="A rock garden designed by Shigemori Mirei, seen through a window" loading="lazy" width="1600" height="1200">
         <h3>The Shigemori Mirei Garden</h3>
         <p>Five gardens, including a rock garden by the celebrated Shōwa-era landscape designer &mdash; a world of moss and stone.</p>
       </div>
@@ -476,7 +486,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.0
 <section class="section about-sec" id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <img class="photo reveal" src="images/photos/jizo-rokutai.jpg" alt="A row of stone Jizō bodhisattva statues in the temple, wearing knitted caps and bibs" loading="lazy" width="1400" height="1750">
+      <img class="photo reveal" src="images/photos/jizo-rokutai.webp" alt="A row of stone Jizō bodhisattva statues in the temple, wearing knitted caps and bibs" loading="lazy" width="1400" height="1750">
       <div class="reveal">
         <div class="section-head" style="margin-bottom:24px;">
           <h2>About Hongakuin</h2>
@@ -494,7 +504,7 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.0
 <section class="section priest-sec" id="priest">
   <div class="section-inner">
     <div class="priest-grid">
-      <img class="photo reveal" src="images/photos/fukujushoku-kigan.jpg" alt="A prayer ceremony conducted by the monks of Hongakuin" loading="lazy" width="1400" height="1750">
+      <img class="photo reveal" src="images/photos/fukujushoku-kigan.webp" alt="A prayer ceremony conducted by the monks of Hongakuin" loading="lazy" width="1400" height="1750">
       <div class="reveal">
         <div class="section-head" style="margin-bottom:24px;">
           <h2>The Monks</h2>

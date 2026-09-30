@@ -2,6 +2,10 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#150c15">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>お参り・ご供養｜高野山 別格本山 本覚院</title>
 <meta name="description" content="高野山別格本山 本覚院のご廻向・永代供養・ご祈祷・護摩供養のご案内。星まつりやお盆などの年中行事、よくあるご質問もあわせてご紹介します。">
@@ -1160,6 +1164,12 @@ body{background:var(--w1) var(--paper);}
 .cta-sec .sec-eyebrow,.page-cta .sec-eyebrow{color:#917c50 !important;}
 .page-hero,#kaie,#gomakito,#faq{background:var(--w1) var(--paper) !important;background-color:var(--w1) !important;}
 #intro,#eitai,#nenchu{background:var(--w2) var(--paper) !important;background-color:var(--w2) !important;}
+
+/* 仕上げ：ボタン・リンクの反応をそろえる */
+a,button,summary{-webkit-tap-highlight-color:transparent;}
+.more-box,.reserve-btn,.btn-reserve-main,.float-btn,.drawer-reserve,.btn-dark,.room-book,.am-btn,.news-more-mobile,.priest-more-btn{transition:background-color .3s ease,color .3s ease,border-color .3s ease,opacity .3s ease !important;}
+.more-box:active,.reserve-btn:active,.btn-reserve-main:active,.float-btn:active,.drawer-reserve:active,.btn-dark:active,.am-btn:active{opacity:.8;}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #917c50;outline-offset:3px;}
 </style>
 </head>
 <body>
@@ -1231,7 +1241,7 @@ body{background:var(--w1) var(--paper);}
 <section class="kuyo-sec" id="kaie" style="padding:56px 24px;">
   <div class="kuyo-inner" style="max-width:880px;">
     <h2 class="sec-title" style="color:var(--sumi);">ご廻向</h2>
-    <img src="images/photos/hondo-kigan.jpg" alt="ろうそくの灯る本堂で、ご廻向をおつとめする僧侶" class="content-img" loading="lazy" width="1600" height="1200">
+    <img src="images/photos/hondo-kigan.webp" alt="ろうそくの灯る本堂で、ご廻向をおつとめする僧侶" class="content-img" loading="lazy" width="1600" height="1200">
     <p>本覚院のご廻向は、高野山の金剛峯寺で行われる法要と同様の流れで、およそ1時間かけておつとめいたします。</p>
     <ol class="step-list">
       <li>前讃</li>
@@ -1247,7 +1257,7 @@ body{background:var(--w1) var(--paper);}
 <section class="kuyo-sec" id="eitai" style="padding:56px 24px;background:#fff;">
   <div class="kuyo-inner" style="max-width:880px;">
     <h2 class="sec-title" style="color:var(--ink);">永代供養</h2>
-    <img src="images/photos/gongyo-hondo.jpg" alt="本堂でお経を唱える僧侶たち" class="content-img" loading="lazy" width="1600" height="1067">
+    <img src="images/photos/gongyo-hondo.webp" alt="本堂でお経を唱える僧侶たち" class="content-img" loading="lazy" width="1600" height="1067">
     <p style="color:var(--stone);">「お墓をみてくれる後継者がいない」「分家なのでお仏壇がない」——そのようなお悩みが、お寺にはたくさん寄せられます。</p>
     <p style="color:var(--stone);">当院では住職をはじめ僧侶が親身にご相談をうかがい、それぞれのご家庭に沿った永代供養の方法をご案内しております。お位牌を建立し、本堂にて勤行したのち、位牌堂にて永代におまつりいたします。毎朝、お仏飯とお茶をお供えし、お燈明をあげてお参りしております。詳しくはお電話でご相談ください。</p>
   </div>
@@ -1257,7 +1267,7 @@ body{background:var(--w1) var(--paper);}
 <section class="page-sec" id="gomakito">
   <div class="page-inner">
     <h2 class="sec-title" style="color:var(--ink);">ご祈祷・護摩</h2>
-    <img src="images/fudo-myoo.jpg" alt="護摩堂の修身不動明王" class="content-img" loading="lazy" width="1600" height="1200">
+    <img src="images/fudo-myoo.webp" alt="護摩堂の修身不動明王" class="content-img" loading="lazy" width="1600" height="1200">
     <p class="img-cap">護摩堂の修身不動明王</p>
     <p>護摩堂では、御護摩による祈祷を随時承っております。中でも毎年2月3日の節分には「星まつり」として、生命あるすべての者の災厄をしりぞけ、幸福を祈る祈祷祭を執り行っております。護摩祈祷により、無病息災・心願成就・交通安全などをご祈願いただけます。</p>
   </div>

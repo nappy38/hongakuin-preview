@@ -2,6 +2,10 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#150c15">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>住職・僧侶｜高野山 別格本山 本覚院</title>
 <meta name="description" content="高野山 別格本山 本覚院 住職・稲葉法研によるご挨拶と、南山進流聲明の継承、住職の略歴をご紹介します。">
@@ -1278,6 +1282,12 @@ body{background:var(--w1) var(--paper);}
 .cta-sec .sec-eyebrow,.page-cta .sec-eyebrow{color:#917c50 !important;}
 .page-hero,#profile,#profile + .page-sec,#fuku,#fuku + .page-sec,.photo-strip-sec{background:var(--w1) var(--paper) !important;background-color:var(--w1) !important;}
 #greeting,#shomyo,#nisou{background:var(--w2) var(--paper) !important;background-color:var(--w2) !important;}
+
+/* 仕上げ：ボタン・リンクの反応をそろえる */
+a,button,summary{-webkit-tap-highlight-color:transparent;}
+.more-box,.reserve-btn,.btn-reserve-main,.float-btn,.drawer-reserve,.btn-dark,.room-book,.am-btn,.news-more-mobile,.priest-more-btn{transition:background-color .3s ease,color .3s ease,border-color .3s ease,opacity .3s ease !important;}
+.more-box:active,.reserve-btn:active,.btn-reserve-main:active,.float-btn:active,.drawer-reserve:active,.btn-dark:active,.am-btn:active{opacity:.8;}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #917c50;outline-offset:3px;}
 </style>
 </head>
 <body>
@@ -1331,7 +1341,7 @@ body{background:var(--w1) var(--paper);}
 <!-- 1. 静かな冒頭：住職の言葉より一行 -->
 <section class="jushoku-visual">
   <figure>
-    <img src="images/photos/jushoku-shinnyo.jpg" alt="本覚院 住職 稲葉法研。左に弘法大師『性霊集』の言葉「眞言大我 本住心蓮」の書" width="1800" height="1200">
+    <img src="images/photos/jushoku-shinnyo.webp" alt="本覚院 住職 稲葉法研。左に弘法大師『性霊集』の言葉「眞言大我 本住心蓮」の書" width="1800" height="1200">
     <figcaption>眞言大我は、本より心蓮に住す<br class="sp-only"> ―― 弘法大師『性霊集』</figcaption>
   </figure>
 </section>
@@ -1358,7 +1368,7 @@ body{background:var(--w1) var(--paper);}
     </div>
   </div>
   <div class="priest-intro-img">
-    <img src="images/priest-1.jpg" alt="朱色の袈裟をまとい、本堂の内陣でお勤めをする住職" width="800" height="645">
+    <img src="images/priest-1.webp" alt="朱色の袈裟をまとい、本堂の内陣でお勤めをする住職" width="800" height="645">
   </div>
 </section>
 <section class="page-sec alt">
@@ -1391,7 +1401,7 @@ body{background:var(--w1) var(--paper);}
     <p>住職・稲葉法研上綱は、元高野山真言宗管長で南山聲明の泰斗・稲葉義猛猊下に若年より師事し、その奥義を継承しました。真言密教の中院流法要の儀式ならびに聲明の継承者であり、高野山専修学院の監事を長年にわたり務め、学院生に中院流の法要の儀礼と聲明を指導してまいりました。声明能化を2期8年つとめ、毎年約80名、計約640名の僧侶を送り出し、南山進流声明の徹底した指導にあたりました。</p>
     <p style="font-size:12px;color:var(--stone);">（聲明CD推薦文・略歴より）</p>
     <div class="priest-cd">
-      <img src="images/photos/shomyo-cd.jpg" alt="住職 稲葉法研による聲明CD『THE 聲明（SHO-MYO）～高野山 南山進流～』" loading="lazy" width="240" height="360">
+      <img src="images/photos/shomyo-cd.webp" alt="住職 稲葉法研による聲明CD『THE 聲明（SHO-MYO）～高野山 南山進流～』" loading="lazy" width="240" height="360">
       <div>
         <h3 class="history-title">住職の聲明CD</h3>
         <p class="cd-title">『THE 聲明（SHO-MYO）～高野山 南山進流～』</p>
@@ -1439,7 +1449,7 @@ body{background:var(--w1) var(--paper);}
     </div>
   </div>
   <div class="priest-intro-img fuku-intro-img">
-    <img src="images/photos/fukujushoku-hoe.jpg" alt="法衣をまとい、灯明の灯るお堂で法会に臨む副住職" width="1280" height="1156">
+    <img src="images/photos/fukujushoku-hoe.webp" alt="法衣をまとい、灯明の灯るお堂で法会に臨む副住職" width="1280" height="1156">
   </div>
 </section>
 <section class="page-sec alt">
@@ -1449,7 +1459,7 @@ body{background:var(--w1) var(--paper);}
       <p>朝のお勤めは、どなたでもご参加いただけます。僧侶の読経に耳を傾けるひとときは、気持ちが切り替わるような体験になるはずです。</p>
       <p class="fuku-src">（和歌山県観光サイト「聖地リゾート!!!!! 和歌山」掲載の副住職インタビューより）</p>
     </div>
-    <figure class="fuku-sub-photo"><img src="images/photos/fukujushoku-kigan.jpg" alt="灯明の前で数珠を手に祈る副住職" loading="lazy" width="1280" height="948"></figure>
+    <figure class="fuku-sub-photo"><img src="images/photos/fukujushoku-kigan.webp" alt="灯明の前で数珠を手に祈る副住職" loading="lazy" width="1280" height="948"></figure>
   </div>
 </section>
 
@@ -1465,9 +1475,9 @@ body{background:var(--w1) var(--paper);}
 
 <section class="photo-strip-sec">
   <div class="photo-row">
-    <img class="pc-photo" src="images/insta-gongyo.jpg" alt="灯明のともる内陣で、法衣の僧侶がお勤めをする後ろ姿" loading="lazy" width="1280" height="1397">
-    <img class="pc-photo" src="images/insta-mandala.jpg" alt="灯明と樒に囲まれて掛けられた曼荼羅の掛軸" loading="lazy" width="1280" height="1277">
-    <img src="images/insta-kuyo-roka.jpg" alt="法衣をまとい、本堂へ続く廊下を進む僧侶" loading="lazy" width="1280" height="1127">
+    <img class="pc-photo" src="images/insta-gongyo.webp" alt="灯明のともる内陣で、法衣の僧侶がお勤めをする後ろ姿" loading="lazy" width="1280" height="1397">
+    <img class="pc-photo" src="images/insta-mandala.webp" alt="灯明と樒に囲まれて掛けられた曼荼羅の掛軸" loading="lazy" width="1280" height="1277">
+    <img src="images/insta-kuyo-roka.webp" alt="法衣をまとい、本堂へ続く廊下を進む僧侶" loading="lazy" width="1280" height="1127">
   </div>
 </section>
 
