@@ -1146,6 +1146,11 @@ p.cd-listen:has(+ .am-btns){margin-top:28px !important;}
 .history-table td{font-size:15px !important;line-height:2 !important;color:#2b2621 !important;}
 .history-table td:first-child{font-size:15px !important;color:#917c50 !important;width:4.6em !important;}
 @media(min-width:769px){.history-table td,.history-table td:first-child{font-size:16px !important;}}
+
+/* 副住職の写真：お名前のすぐ下。PCは2枚並べ、スマホは2枚目（祈り）だけ */
+.fuku-photos-top{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 22px !important;max-width:900px;}
+.fuku-photos-top img{display:block;width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;}
+@media(max-width:768px){.fuku-photos-top{grid-template-columns:1fr;}.fuku-photos-top .fp-1{display:none;}}
 </style>
 </head>
 <body>
@@ -1313,13 +1318,13 @@ p.cd-listen:has(+ .am-btns){margin-top:28px !important;}
     <h2 class="sec-title" style="color:var(--ink);">副住職</h2>
     <div class="fuku-card">
       <p class="fuku-name"><span class="fuku-role">副住職</span><ruby>古賀<rt>こが</rt></ruby>　<ruby>法顕<rt>ほうけん</rt></ruby></p>
+    <div class="fuku-photos fuku-photos-top">
+      <img class="fp-1" src="images/photos/fukujushoku-hoe.jpg" alt="法衣をまとい、灯明の灯るお堂で法会に臨む副住職" loading="lazy" width="1280" height="1156">
+      <img src="images/photos/fukujushoku-kigan.jpg" alt="灯明の前で数珠を手に祈る副住職" loading="lazy" width="1280" height="948">
+    </div>
       <p>副住職が大切にしているのは、本覚院で過ごす時間そのものを味わっていただくことです。江戸時代中期に建てられた本堂をはじめ、明治・大正・昭和の建物が重なり合う院内には、江戸時代の襖絵や、室町時代にさかのぼる掛軸も伝わっています。昭和28年に重森三玲が手がけた石庭とあわせて、ゆっくりと歩きながら歴史を感じていただけたらと話します。</p>
       <p>朝のお勤めは、どなたでもご参加いただけます。僧侶の読経に耳を傾けるひとときは、気持ちが切り替わるような体験になるはずです。</p>
       <p class="fuku-src">（和歌山県観光サイト「聖地リゾート!!!!! 和歌山」掲載の副住職インタビューより）</p>
-    </div>
-    <div class="fuku-photos">
-      <img src="images/photos/fukujushoku-hoe.jpg" alt="法衣をまとい、灯明の灯るお堂で法会に臨む副住職" loading="lazy" width="1280" height="1156">
-      <img src="images/photos/fukujushoku-kigan.jpg" alt="灯明の前で数珠を手に祈る副住職" loading="lazy" width="1280" height="948">
     </div>
   </div>
 </section>
