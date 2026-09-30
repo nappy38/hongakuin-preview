@@ -1217,6 +1217,17 @@ a,button,summary{-webkit-tap-highlight-color:transparent;}
 .more-box,.reserve-btn,.btn-reserve-main,.float-btn,.drawer-reserve,.btn-dark,.room-book,.am-btn,.news-more-mobile,.priest-more-btn{transition:background-color .3s ease,color .3s ease,border-color .3s ease,opacity .3s ease !important;}
 .more-box:active,.reserve-btn:active,.btn-reserve-main:active,.float-btn:active,.drawer-reserve:active,.btn-dark:active,.am-btn:active{opacity:.8;}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #917c50;outline-offset:3px;}
+
+/* ══ 最終：v2ルールを優先（前の「漆黒」指定が後から上書きしていたのを戻す） ══ */
+html body .rooms-sec,html body .access-sec,html body .gallery-sec,html body .features-sec,html body .exp-sec,html body .faq-sec{background-color:#f3ece1 !important;}
+html body .rooms-sec .room-item{background:transparent !important;}
+html body .rooms-sec h2,html body .rooms-sec .sec-title,html body .rooms-sec .room-detail h3,html body .rooms-sec .room-sub,html body .gallery-sec .sec-title,html body .access-sec .sec-title,html body .access-sec h3{color:#150c15 !important;}
+html body .rooms-sec .room-detail p,html body .rooms-sec .room-detail h3 small,html body .rooms-sec .rooms-swipe-hint,html body .access-sec p,html body .access-sec li,html body .access-sec .access-box td,html body .gallery-sec .g-label,html body .gallery-sec p{color:#2b2621 !important;}
+html body .rooms-sec .room-tag,html body .rooms-sec .room-note,html body .access-sec .access-box td:first-child{color:#917c50 !important;}
+html body .rooms-sec .room-detail{border-color:rgba(43,38,33,.15) !important;}
+html body .rooms-sec .more-box,html body .access-sec .more-box,html body .gallery-sec .more-box{border-color:#150c15 !important;color:#150c15 !important;}
+html body .rooms-sec .more-box:hover,html body .access-sec .more-box:hover,html body .gallery-sec .more-box:hover{background:#150c15 !important;color:#f3ece1 !important;}
+html body .rooms-sec .room-book{color:#150c15 !important;border-bottom-color:#917c50 !important;background:transparent !important;}
 </style>
 <body>
 <!-- HEADER -->
