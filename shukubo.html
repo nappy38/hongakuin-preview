@@ -869,6 +869,128 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 
 /* 新着：本文の写真はすべて同じ幅で表示（microCMSの新しい記事と旧サイトの記事をそろえる） */
 .news-card-body img{width:100% !important;max-width:560px !important;height:auto !important;}
+
+/* ══════════════════════════════════════════════════════════
+   DESIGN SYSTEM v2 —（shukubo-v2.html のみ）
+   index-v2.html と同じ和紙(washi)・墨(sumi)・金(gold)＋予約朱に統一。
+   最終カスケードで !important により確定させる。
+════════════════════════════════════════════════════════════ */
+:root{
+  --v2-washi:#f3ece1;
+  --v2-sumi:#2b2621;
+  --v2-ink:#150c15;
+  --v2-gold:#917c50;
+  --v2-shu:#9a1117;
+}
+
+/* ---- 1. 配色：通常セクションはすべて和紙色に統一 ---- */
+body,
+.page-hero,
+.page-sec,
+.features-sec,
+.rooms-sec,
+.gallery-sec,
+.exp-sec,
+.access-sec,
+.faq-sec{
+  background:var(--v2-washi) var(--paper) !important;
+  background-color:var(--v2-washi) !important;
+  background-image:var(--paper) !important;
+}
+
+/* 暗い欄は「ご相談・ご予約」CTA＋フッターの1箇所だけ */
+.page-cta,footer{
+  background-color:var(--v2-ink) !important;
+  background-image:none !important;
+  color:var(--v2-washi) !important;
+}
+.page-cta h2,.page-cta p,.page-cta a.cta-tel,.page-cta .cta-hours{color:var(--v2-washi) !important;}
+.page-cta .page-cta-links a{color:var(--v2-gold) !important;border-bottom-color:rgba(243,236,225,.4) !important;}
+.page-cta .page-cta-links a:hover{color:var(--v2-washi) !important;}
+
+/* 予約系の朱ボタンだけは維持 */
+.float-btn,.reserve-btn,.btn-reserve-main,.drawer-reserve,.page-cta .btn-dark,.room-book{
+  background-color:var(--v2-shu) !important;background-image:none !important;color:#fff !important;border-color:var(--v2-shu) !important;
+}
+.float-btn:hover,.reserve-btn:hover,.btn-reserve-main:hover,.drawer-reserve:hover,.room-book:hover{background-color:#7d0d12 !important;}
+
+/* もとは黒背景だった「お部屋・施設」「院内のご案内」「アクセス」を和紙色に。
+   文字色はすべて墨色に統一（白文字指定を打ち消す） */
+.rooms-sec,.rooms-sec .room-detail h3,.rooms-sec .room-detail p,.rooms-sec .room-sub,
+.rooms-sec .rooms-swipe-hint,
+.gallery-sec,.gallery-sec .g-label,.gallery-sec p,
+.access-sec,.access-sec .access-box td,.access-sec p,.access-sec li{
+  color:var(--v2-sumi) !important;
+}
+.room-tag,.room-note,.access-box td:first-child,.access-box h3,.directions strong{color:var(--v2-gold) !important;}
+.access-box{border-color:rgba(43,38,33,.18) !important;background:transparent !important;}
+.access-box td{border-bottom-color:rgba(43,38,33,.14) !important;}
+.directions{background:rgba(43,38,33,.05) !important;border-left-color:var(--v2-gold) !important;}
+.room-item .room-detail{background:transparent !important;}
+
+/* ---- 2. タイポグラフィ：見出し・本文とも明朝体に統一 ---- */
+body,input,button,select,textarea,
+.page-inner p,.kuyo-card p,.priest-msg p,.room-detail p,.exp-card p,
+.access-box td,.directions p,.f-body p,.faq-a{
+  font-family:'Shippori Mincho B1',serif !important;
+}
+.logo-en,footer p,.hero-scroll,.hero-util,.notice-bar p,.breadcrumb{font-family:'Noto Sans JP',sans-serif !important;}
+
+/* 見出しは全ページ共通のスタイルに統一 */
+h2.sec-title{
+  font-family:'Shippori Mincho B1',serif !important;
+  font-size:clamp(22px,4.4vw,32px) !important;
+  font-weight:500 !important;
+  letter-spacing:.16em !important;
+  line-height:1.5 !important;
+  color:var(--v2-sumi) !important;
+  text-align:center !important;
+  margin:0 0 40px !important;
+  position:relative;
+}
+.page-cta h2{color:var(--v2-washi) !important;}
+h2.sec-title::after{
+  content:'';display:block;width:24px;height:1px;background-color:var(--v2-gold);
+  margin:16px auto 0;
+}
+.features-header,.gallery-header,.access-header,.rooms-header,.exp-header{margin-bottom:0 !important;}
+.features-header .sec-title,.gallery-header .sec-title,.access-header .sec-title,
+.rooms-header .sec-title,.exp-header .sec-title{margin-bottom:40px !important;}
+
+/* h1（ページタイトル）も同系統の落ち着いた書体に */
+.page-hero h1{
+  font-family:'Shippori Mincho B1',serif !important;
+  font-weight:500 !important;
+  letter-spacing:.14em !important;
+  color:var(--v2-sumi) !important;
+}
+/* パンくずは控えめに */
+.breadcrumb{opacity:.6 !important;font-size:11px !important;}
+
+/* ---- 3. 余白：スマホ96px・PC144px、幅1040px ---- */
+.page-hero,.page-sec,.kuyo-sec,.faq-sec,.features-sec,.exp-sec,.rooms-sec,.gallery-sec,.access-sec,
+.priest-intro-sec,.photo-strip-sec,.page-cta{
+  padding-top:96px !important;padding-bottom:96px !important;
+}
+@media(min-width:900px){
+  .page-hero,.page-sec,.kuyo-sec,.faq-sec,.features-sec,.exp-sec,.rooms-sec,.gallery-sec,.access-sec,
+  .priest-intro-sec,.photo-strip-sec,.page-cta{
+    padding-top:144px !important;padding-bottom:144px !important;
+  }
+}
+.page-inner,.kuyo-inner,.faq-inner,.features-inner,.exp-inner,.rooms-inner,.gallery-inner,.access-inner{max-width:1040px !important;}
+.page-inner p,.kuyo-card p,.priest-msg p{max-width:36em;margin-left:auto;margin-right:auto;}
+
+/* ---- 4. 写真：影・角丸をやめ、横位置3:2に統一（Apple Music/Spotify要素は対象外） ---- */
+.content-img,.f-img,.kuyo-card img,.room-photo img,.g-item img{border-radius:0 !important;box-shadow:none !important;}
+.content-img,.room-photo,.g-item{aspect-ratio:3/2 !important;}
+
+/* ---- 5. スクロールでのフェードアップ ---- */
+.v2-reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+.v2-reveal.v2-in{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){
+  .v2-reveal,.v2-reveal.v2-in{opacity:1 !important;transform:none !important;transition:none !important;}
+}
 </style>
 <style>
 /* ══ サブページ共通：ページタイトル帯・パンくず・本文セクション ══ */
@@ -1129,7 +1251,6 @@ body{background:var(--w1) var(--paper);}
 
 <!-- ページタイトル -->
 <section class="page-hero">
-  <span class="sec-eyebrow">STAY</span>
   <h1>宿坊</h1>
 </section>
 <nav class="breadcrumb" aria-label="パンくずリスト">
@@ -1139,8 +1260,6 @@ body{background:var(--w1) var(--paper);}
 <!-- 宿坊のご案内（イントロ） -->
 <section class="page-sec" id="intro">
   <div class="page-inner">
-    <span class="sec-eyebrow">STAY AT HONGAKUIN</span>
-    <div class="gold-bar"></div>
     <h2 class="sec-title" style="color:var(--ink);">宿坊のご案内</h2>
     <p>高野山 別格本山 本覚院では、宿坊として一般の方のご宿泊をお受けしております。昔ながらの和室から、重森三玲の庭を望む特別室まで、お好みに合わせてお選びいただけます。</p>
     <p>精進料理と朝のお勤めをはじめ、写経や庭園散策など、高野山ならではの静かな時間をお過ごしください。</p>
@@ -1150,15 +1269,12 @@ body{background:var(--w1) var(--paper);}
 <section class="features-sec" id="features">
   <div class="features-inner">
     <div class="features-header">
-      <span class="sec-eyebrow">THREE HIGHLIGHTS</span>
-      <div class="gold-bar"></div>
       <h2 class="sec-title" style="color:var(--ink);">宿坊の見どころ</h2>
     </div>
     <div class="feature-grid">
       <div class="feature-card">
         <div class="f-img" style="background-image:url('images/photos/tenjoue.jpg')" role="img" aria-label="本堂天井に残る250年前の極彩色天井絵"></div>
         <div class="f-body">
-          <span class="f-num">I</span>
           <h3>250年を超える<br>江戸の芸術</h3>
           <p>本堂天井には250年前の絵師による極彩色の天井絵が残り、大広間には狩野派の貴重な障壁画をご覧いただけます。</p>
         </div>
@@ -1166,7 +1282,6 @@ body{background:var(--w1) var(--paper);}
       <div class="feature-card">
         <div class="f-img" style="background-image:url('images/photos/teien-mado-1.jpg')" role="img" aria-label="重森三玲設計の石庭"></div>
         <div class="f-body">
-          <span class="f-num">II</span>
           <h3>重森三玲設計の<br>5つの庭園</h3>
           <p>昭和の名作庭家・重森三玲による石庭を含む5つの庭園。季節ごとに表情を変える苔と岩の世界をお楽しみください。</p>
         </div>
@@ -1174,7 +1289,6 @@ body{background:var(--w1) var(--paper);}
       <div class="feature-card">
         <div class="f-img" style="background-image:url('images/photos/gongyo-hondo.jpg')" role="img" aria-label="本堂で読経する僧侶たち（朝のお勤め）"></div>
         <div class="f-body">
-          <span class="f-num">III</span>
           <h3>祈りの声に<br>包まれる朝</h3>
           <p>毎朝、本堂で副住職をはじめ僧侶がお勤めをいたします。どなたでもご参加いただけ、高野山に受け継がれる読経の響きに包まれるひとときをお過ごしいただけます。</p>
         </div>
@@ -1186,8 +1300,6 @@ body{background:var(--w1) var(--paper);}
 <section class="rooms-sec" id="rooms">
   <div class="rooms-inner">
     <div class="rooms-header">
-      <span class="sec-eyebrow" style="color:var(--gold);">ROOMS &amp; FACILITIES</span>
-      <div class="gold-bar"></div>
       <h2 class="sec-title" style="color:#fff;">お部屋・施設のご案内</h2>
     </div>
     <p class="rooms-swipe-hint" aria-hidden="true">横にスワイプ →</p>
@@ -1271,8 +1383,6 @@ body{background:var(--w1) var(--paper);}
 <section class="gallery-sec" id="gallery">
   <div class="gallery-inner">
     <div class="gallery-header">
-      <span class="sec-eyebrow" style="color:var(--gold);">GALLERY</span>
-      <div class="gold-bar"></div>
       <h2 class="sec-title" style="color:#fff;">院内のご案内</h2>
     </div>
     <div class="gallery-grid">
@@ -1315,8 +1425,6 @@ body{background:var(--w1) var(--paper);}
 <section class="exp-sec" id="experience">
   <div class="exp-inner">
     <div class="exp-header">
-      <span class="sec-eyebrow">EXPERIENCES</span>
-      <div class="gold-bar"></div>
       <h2 class="sec-title" style="color:var(--ink);">宿坊ならではの体験</h2>
     </div>
     <div class="exp-grid">
@@ -1352,8 +1460,6 @@ body{background:var(--w1) var(--paper);}
 <section class="access-sec" id="access">
   <div class="access-inner">
     <div class="access-header">
-      <span class="sec-eyebrow" style="color:var(--gold);">ACCESS</span>
-      <div class="gold-bar"></div>
       <h2 class="sec-title" style="color:#fff;">アクセス</h2>
     </div>
     <div class="access-grid">
@@ -1380,8 +1486,6 @@ body{background:var(--w1) var(--paper);}
 <!-- ご利用案内（旧サイト「施設詳細」より） -->
 <section class="page-sec info-sec" id="info">
   <div class="page-inner" style="max-width:900px;">
-    <span class="sec-eyebrow">INFORMATION</span>
-    <div class="gold-bar"></div>
     <h2 class="sec-title" style="color:var(--ink);">ご利用案内</h2>
     <dl class="info-list">
       <dt>サービス</dt><dd>お一人でのご宿泊・団体グループのご宿泊を承っております。宅配サービスの手配、仏前結婚式も謹んでお受けいたします。</dd>
@@ -1402,8 +1506,6 @@ body{background:var(--w1) var(--paper);}
 
 <section class="faq-sec" id="faq">
   <div class="faq-inner">
-    <span class="sec-eyebrow" style="color:var(--gold);">FAQ</span>
-    <div class="gold-bar"></div>
     <h2 class="sec-title" style="color:var(--ink);">よくあるご質問</h2>
     <div class="faq-list">
       <details class="faq-item">
@@ -1579,5 +1681,28 @@ function closeMenu(){
 }
 </script>
 
+<script>
+/* DESIGN SYSTEM v2：控えめなフェードアップ（見出し・写真・本文のかたまり）
+   prefers-reduced-motion のときは何もしない（CSS側でも無効化済み） */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  var targets = document.querySelectorAll('h2.sec-title, .page-hero h1, .content-img, .page-inner p, .room-photo, .g-item, .exp-card');
+  if (!targets.length) return;
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('v2-reveal', 'v2-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('v2-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(function (el) { el.classList.add('v2-reveal'); io.observe(el); });
+})();
+</script>
 </body>
 </html>

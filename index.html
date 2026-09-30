@@ -1064,6 +1064,153 @@ body{background:var(--w1) var(--paper);}
 .cta-sec .sec-eyebrow,.page-cta .sec-eyebrow{color:#917c50 !important;}
 #about,#priest,#stay,#access{background:var(--w1) var(--paper) !important;background-color:var(--w1) !important;}
 #features,#news{background:var(--w2) var(--paper) !important;background-color:var(--w2) !important;}
+
+/* ══════════════════════════════════════════════════════════
+   DESIGN SYSTEM v2 — トップページ再設計（index-v2.html のみ）
+   目的：白／クリーム／黒が交互に並ぶ配色をやめ、
+   和紙(washi)・墨(sumi)・金(gold)の3色（＋予約ボタンの朱）に統一。
+   見出し・本文はすべて明朝体に統一し、英字の飾り見出し・金の飾り線・
+   数字（I/II/III）を整理して、静かで格のある構成にする。
+   このファイルには上からCSSの上書きが積み重なっているため、
+   ここでは高い詳細度と !important で最終的な見た目を確定させる。
+════════════════════════════════════════════════════════════ */
+:root{
+  --v2-washi:#f3ece1;
+  --v2-sumi:#2b2621;
+  --v2-ink:#150c15;
+  --v2-gold:#917c50;
+  --v2-shu:#9a1117;
+}
+
+/* ---- 1. 配色：通常セクションはすべて和紙色に統一 ---- */
+body,
+.about-sec,.features-sec,#features,.news-sec,#news,.rooms-sec,.gallery-sec,
+.exp-sec,.priest-sec,.access-sec,.faq-sec,.kuyo-sec,.stay-teaser-sec,
+#about,#priest,#stay,#access{
+  background:var(--v2-washi) var(--paper) !important;
+  background-color:var(--v2-washi) !important;
+  background-image:var(--paper) !important;
+}
+
+/* 暗い欄は「お参り・ご供養」と「ご予約・フッター」の2箇所だけに限定 */
+.kuyo-sec-home,.cta-sec,.page-cta,footer,.sns-bar{
+  background-color:var(--v2-ink) !important;
+  background-image:none !important;
+  color:var(--v2-washi) !important;
+}
+.kuyo-sec-home .sec-title,.kuyo-sec-home .kuyo-card h3,.kuyo-sec-home .kuyo-card p,
+.kuyo-sec-home .kuyo-cta p,.kuyo-sec-home .kuyo-offer,.kuyo-sec-home .kuyo-phone-label,
+.cta-sec h2,.cta-sec p,.cta-sec .cta-hours,.cta-sec a.cta-tel{color:var(--v2-washi) !important;}
+.kuyo-sec-home .kuyo-tel,.kuyo-sec-home .kuyo-tel-big{color:var(--v2-washi) !important;border-bottom-color:var(--v2-gold) !important;}
+
+/* もとは黒背景だった「お部屋」「院内のご案内」「アクセス」を和紙色に変更 →
+   その上の文字はすべて墨色に統一（白文字の指定を打ち消す） */
+.rooms-sec,.gallery-sec,.access-sec{background-color:var(--v2-washi) !important;}
+.rooms-sec,.rooms-sec p,.rooms-sec h3,.rooms-sec td,.rooms-sec span,.rooms-sec small,
+.gallery-sec,.gallery-sec p,.gallery-sec h3,.gallery-sec span,.gallery-sec div,
+.access-sec,.access-sec p,.access-sec h3,.access-sec td,.access-sec li,.access-sec strong{
+  color:var(--v2-sumi) !important;
+}
+.rooms-sec .sec-title,.gallery-sec .sec-title,.access-sec .sec-title{color:var(--v2-sumi) !important;}
+.room-tag,.room-note,.access-box td:first-child,.news-card-tag,.directions strong{color:var(--v2-gold) !important;}
+.g-label{background:none !important;color:var(--v2-sumi) !important;padding:10px 0 0 !important;}
+.access-box,.directions{border:0 !important;background:transparent !important;padding-left:0 !important;padding-right:0 !important;}
+.access-box td,.directions p{border-bottom-color:rgba(43,38,33,.14) !important;}
+.rooms-sec .room-item{background:transparent !important;}
+.room-item:nth-child(even) .room-detail,.room-detail{background:transparent !important;}
+
+/* 予約系の朱ボタンだけは維持する（フロート・ヘッダー・CTAの予約導線） */
+.float-btn,.reserve-btn,.btn-reserve-main,.drawer-reserve,.cta-sec .btn-dark,.page-cta .btn-dark{
+  background-color:var(--v2-shu) !important;background-image:none !important;color:#fff !important;border-color:var(--v2-shu) !important;
+}
+.float-btn:hover,.reserve-btn:hover,.btn-reserve-main:hover,.drawer-reserve:hover{background-color:#7d0d12 !important;}
+
+/* 暗い2欄の中の「詳しく見る」ボタンは、和紙色の枠・文字に */
+.kuyo-sec-home .more-box,.cta-sec .more-box{border-color:var(--v2-washi) !important;color:var(--v2-washi) !important;background-color:transparent !important;}
+.kuyo-sec-home .more-box:hover,.cta-sec .more-box:hover{background-color:var(--v2-washi) !important;color:var(--v2-ink) !important;}
+/* 和紙色になった欄の「詳しく見る」は墨色の枠・文字に統一 */
+.rooms-sec .more-box,.access-sec .more-box,.gallery-sec .more-box{border-color:var(--v2-sumi) !important;color:var(--v2-sumi) !important;background-color:transparent !important;}
+.rooms-sec .more-box:hover,.access-sec .more-box:hover,.gallery-sec .more-box:hover{background-color:var(--v2-sumi) !important;color:var(--v2-washi) !important;}
+
+/* ---- 2. タイポグラフィ：見出し・本文とも明朝体（Shippori Mincho B1）に統一 ---- */
+/* Cormorant Garamondはヒーローの英字「Koyasan Hongakuin」だけに残す */
+body,input,button,select,textarea,
+.about-lead,.about-desc,.sec-desc,.kuyo-card p,.priest-msg p,.feature-card p,
+.room-detail p,.exp-card p,.stay-teaser-inner p,.access-box td,.directions p,
+.f-body p,.news-card-body p{
+  font-family:'Shippori Mincho B1',serif !important;
+}
+.logo-en,footer p,.hero-scroll,.hero-util,.notice-bar p{font-family:'Noto Sans JP',sans-serif !important;}
+.hero-name-en{font-family:'Cormorant Garamond',serif !important;}
+
+/* 見出しは全セクション共通のスタイルに統一：
+   clamp(22px,4.4vw,32px)・weight 500・letter-spacing .16em・墨色・中央 */
+h2.sec-title{
+  font-family:'Shippori Mincho B1',serif !important;
+  font-size:clamp(22px,4.4vw,32px) !important;
+  font-weight:500 !important;
+  letter-spacing:.16em !important;
+  line-height:1.5 !important;
+  color:var(--v2-sumi) !important;
+  text-align:center !important;
+  margin:0 0 40px !important;
+  position:relative;
+}
+.kuyo-sec-home h2.sec-title,.cta-sec h2.sec-title,.cta-sec h2{color:var(--v2-washi) !important;}
+
+/* 見出しの下に、控えめな金の細線を1本だけ（どのセクションも同じ幅・太さ） */
+h2.sec-title::after{
+  content:'';display:block;width:24px;height:1px;background-color:var(--v2-gold);
+  margin:16px auto 0;
+}
+
+/* 見出し直下の余白は h2 の margin-bottom(40px) にまとめ、
+   見出しラッパー側の重複した余白は打ち消す */
+.features-header,.gallery-header,.access-header,.rooms-header,.exp-header,
+.priest-label,.about-title,.kuyo-inner>h2.sec-title,.news-inner>h2.sec-title,
+.stay-teaser-inner>h2.sec-title{margin-bottom:0 !important;}
+.features-header .sec-title,.gallery-header .sec-title,.access-header .sec-title,
+.rooms-header .sec-title,.exp-header .sec-title{margin-bottom:40px !important;}
+
+/* ---- 3. 余白（8pxスケール）：セクション上下は スマホ96px・PC144px ---- */
+.about-sec,.news-sec,.features-sec,.rooms-sec,.gallery-sec,.exp-sec,.priest-sec,
+.access-sec,.faq-sec,.kuyo-sec,.stay-teaser-sec,.cta-sec,.page-cta{
+  padding-top:96px !important;padding-bottom:96px !important;
+}
+@media(min-width:900px){
+  .about-sec,.news-sec,.features-sec,.rooms-sec,.gallery-sec,.exp-sec,.priest-sec,
+  .access-sec,.faq-sec,.kuyo-sec,.stay-teaser-sec,.cta-sec,.page-cta{
+    padding-top:144px !important;padding-bottom:144px !important;
+  }
+}
+
+/* コンテンツ幅は最大1040pxに統一、本文段落は全角30〜36字（約36em）で中央寄せ */
+.about-inner,.kuyo-inner,.priest-inner,.news-inner,.features-inner,.gallery-inner,
+.access-inner,.stay-teaser-inner,.exp-inner,.rooms-inner{max-width:1040px !important;}
+.about-lead,.kuyo-card p,.priest-msg p,.stay-teaser-inner>p{
+  max-width:36em;margin-left:auto;margin-right:auto;
+}
+
+/* ---- 4. 装飾の整理：箱型の枠線・影・角丸を、暗い2欄の電話ボックス以外から外す ---- */
+.about-badge{box-shadow:none !important;}
+.priest-cd img{box-shadow:none !important;}
+.cd-player{border-radius:0 !important;}
+.access-box,.directions{border-radius:0 !important;}
+
+/* ---- 5. 写真の縦横比を統一：横位置は3:2、縦位置（住職の写真）は4:5 ---- */
+.about-img,.f-img,.kuyo-card img,.stay-teaser-main,.g-item,.room-photo{aspect-ratio:3/2 !important;}
+.priest-img{aspect-ratio:4/5 !important;max-height:none !important;object-position:center top;}
+.about-img,.f-img,.kuyo-card img,.stay-teaser-main,.g-item img,.room-photo img,.priest-img{
+  border-radius:0 !important;box-shadow:none !important;
+}
+@media(min-width:900px){.about-img{aspect-ratio:4/5 !important;}}
+
+/* ---- 6. スクロールでのフェードアップ（控えめに1回だけ／JSで対象に .v2-reveal を付与） ---- */
+.v2-reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+.v2-reveal.v2-in{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){
+  .v2-reveal,.v2-reveal.v2-in{opacity:1 !important;transform:none !important;transition:none !important;}
+}
 </style>
 </head>
 <body>
@@ -1172,15 +1319,12 @@ body{background:var(--w1) var(--paper);}
 <section class="features-sec" id="features">
   <div class="features-inner">
     <div class="features-header">
-      <span class="sec-eyebrow">THREE HIGHLIGHTS</span>
-      <div class="gold-bar"></div>
       <h2 class="sec-title" style="color:var(--ink);">本覚院ならではの3つの魅力</h2>
     </div>
     <div class="feature-grid">
       <div class="feature-card">
         <div class="f-img" style="background-image:url('images/photos/tenjoue.jpg')" role="img" aria-label="本堂天井に残る250年前の極彩色天井絵"></div>
         <div class="f-body">
-          <span class="f-num">I</span>
           <h3>250年を超える<br>江戸の芸術</h3>
           <p>本堂天井には250年前の絵師による極彩色の天井絵が残り、大広間には狩野派の貴重な障壁画をご覧いただけます。</p>
         </div>
@@ -1188,7 +1332,6 @@ body{background:var(--w1) var(--paper);}
       <div class="feature-card">
         <div class="f-img" style="background-image:url('images/photos/teien-mado-1.jpg')" role="img" aria-label="重森三玲設計の石庭"></div>
         <div class="f-body">
-          <span class="f-num">II</span>
           <h3>重森三玲設計の<br>5つの庭園</h3>
           <p>昭和の名作庭家・重森三玲による石庭を含む5つの庭園。季節ごとに表情を変える苔と岩の世界をお楽しみください。</p>
         </div>
@@ -1196,7 +1339,6 @@ body{background:var(--w1) var(--paper);}
       <div class="feature-card">
         <div class="f-img" style="background-image:url('images/photos/gongyo-hondo.jpg')" role="img" aria-label="本堂で読経する僧侶たち（朝のお勤め）"></div>
         <div class="f-body">
-          <span class="f-num">III</span>
           <h3>祈りの声に<br>包まれる朝</h3>
           <p>毎朝、本堂で副住職をはじめ僧侶がお勤めをいたします。どなたでもご参加いただけ、高野山に受け継がれる読経の響きに包まれるひとときをお過ごしいただけます。</p>
         </div>
@@ -1209,8 +1351,6 @@ body{background:var(--w1) var(--paper);}
 <!-- お参り・ご供養 -->
 <section class="kuyo-sec kuyo-sec-home" id="kuyo">
   <div class="kuyo-inner">
-    <span class="sec-eyebrow">PRAYER &amp; MEMORIAL</span>
-    <div class="gold-bar"></div>
     <h2 class="sec-title">お参り・ご供養</h2>
     <div class="kuyo-grid">
       <article class="kuyo-card">
@@ -1240,8 +1380,6 @@ body{background:var(--w1) var(--paper);}
     <img src="images/priest-1.jpg" alt="本覚院 住職" class="priest-img" loading="lazy" width="800" height="645">
     <div class="priest-body">
       <div class="priest-label">
-        <span class="sec-eyebrow">CHIEF PRIEST</span>
-        <div class="gold-bar"></div>
         <h2 class="sec-title" style="color:var(--ink);">住職より<br>ご挨拶</h2>
       </div>
       <div class="priest-msg">
@@ -1262,8 +1400,6 @@ body{background:var(--w1) var(--paper);}
 ======================================== -->
 <section class="news-sec" id="news">
   <div class="news-inner">
-    <span class="sec-eyebrow">NEWS</span>
-    <div class="gold-bar"></div>
     <h2 class="sec-title">新着情報</h2>
 
     <div class="news-cards">
@@ -1331,8 +1467,6 @@ body{background:var(--w1) var(--paper);}
 <!-- 宿坊 -->
 <section class="stay-teaser-sec" id="stay">
   <div class="stay-teaser-inner">
-    <span class="sec-eyebrow" style="color:var(--gold);">STAY</span>
-    <div class="gold-bar" style="margin-left:auto;margin-right:auto;"></div>
     <h2 class="sec-title" style="color:var(--ink);">宿坊</h2>
     <img src="images/rooms/tenporin.jpg" alt="特別室「転法輪」。格天井の和室と、重森三玲の庭を望む窓" class="stay-teaser-main" loading="lazy" width="1000" height="750">
     <div class="stay-teaser-thumbs">
@@ -1352,8 +1486,6 @@ body{background:var(--w1) var(--paper);}
 <section class="gallery-sec" id="gallery">
   <div class="gallery-inner">
     <div class="gallery-header">
-      <span class="sec-eyebrow" style="color:var(--gold);">GALLERY</span>
-      <div class="gold-bar"></div>
       <h2 class="sec-title" style="color:#fff;">院内のご案内</h2>
     </div>
     <div class="gallery-grid">
@@ -1390,6 +1522,7 @@ body{background:var(--w1) var(--paper);}
         <div class="g-label">窓越しの庭園</div>
       </div>
     </div>
+    <div class="more-box-wrap"><a href="about.html" class="more-box" aria-label="本覚院について詳しく見る">詳しく見る</a></div>
   </div>
 </section>
 
@@ -1397,8 +1530,6 @@ body{background:var(--w1) var(--paper);}
 <section class="access-sec" id="access">
   <div class="access-inner">
     <div class="access-header">
-      <span class="sec-eyebrow" style="color:var(--gold);">ACCESS</span>
-      <div class="gold-bar"></div>
       <h2 class="sec-title" style="color:#fff;">アクセス</h2>
     </div>
     <div class="access-grid">
@@ -1698,6 +1829,32 @@ function toggleArchive() {
 <script>
 (function(){var h=document.querySelector('.hero');function f(){document.body.classList.toggle('at-top',window.scrollY<h.offsetHeight-80);}
 window.addEventListener('scroll',f,{passive:true});f();})();
+</script>
+<script>
+/* DESIGN SYSTEM v2：控えめなフェードアップ（見出し・写真・本文のかたまり）
+   prefers-reduced-motion のときは何もしない（CSS側でも無効化済み） */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  var targets = document.querySelectorAll(
+    'h2.sec-title, .about-img-wrap, .f-img, .kuyo-card, .priest-img, .stay-teaser-main, ' +
+    '.stay-teaser-thumbs, .gallery-grid, .room-photo, .about-text > p, .priest-msg'
+  );
+  if (!targets.length) return;
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('v2-reveal', 'v2-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('v2-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(function (el) { el.classList.add('v2-reveal'); io.observe(el); });
+})();
 </script>
 </body>
 </html>

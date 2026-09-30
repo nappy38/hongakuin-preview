@@ -858,6 +858,110 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 
 /* 新着：本文の写真はすべて同じ幅で表示（microCMSの新しい記事と旧サイトの記事をそろえる） */
 .news-card-body img{width:100% !important;max-width:560px !important;height:auto !important;}
+
+/* ══════════════════════════════════════════════════════════
+   DESIGN SYSTEM v2 —（priest-v2.html のみ）
+   index-v2.html と同じ和紙(washi)・墨(sumi)・金(gold)＋予約朱に統一。
+   最終カスケードで !important により確定させる。
+════════════════════════════════════════════════════════════ */
+:root{
+  --v2-washi:#f3ece1;
+  --v2-sumi:#2b2621;
+  --v2-ink:#150c15;
+  --v2-gold:#917c50;
+  --v2-shu:#9a1117;
+}
+
+/* ---- 1. 配色：通常セクションはすべて和紙色に統一 ---- */
+body,
+.page-hero,
+.page-sec,
+.priest-intro-sec,
+.photo-strip-sec{
+  background:var(--v2-washi) var(--paper) !important;
+  background-color:var(--v2-washi) !important;
+  background-image:var(--paper) !important;
+}
+
+/* 暗い欄は「ご相談・ご予約」CTA＋フッターの1箇所だけ */
+.page-cta,footer{
+  background-color:var(--v2-ink) !important;
+  background-image:none !important;
+  color:var(--v2-washi) !important;
+}
+.page-cta h2,.page-cta p,.page-cta a.cta-tel,.page-cta .cta-hours{color:var(--v2-washi) !important;}
+.page-cta .page-cta-links a{color:var(--v2-gold) !important;border-bottom-color:rgba(243,236,225,.4) !important;}
+.page-cta .page-cta-links a:hover{color:var(--v2-washi) !important;}
+
+/* 予約系の朱ボタンだけは維持 */
+.float-btn,.reserve-btn,.btn-reserve-main,.drawer-reserve,.page-cta .btn-dark,.room-book{
+  background-color:var(--v2-shu) !important;background-image:none !important;color:#fff !important;border-color:var(--v2-shu) !important;
+}
+.float-btn:hover,.reserve-btn:hover,.btn-reserve-main:hover,.drawer-reserve:hover,.room-book:hover{background-color:#7d0d12 !important;}
+
+/* ---- 2. タイポグラフィ：見出し・本文とも明朝体に統一 ---- */
+body,input,button,select,textarea,
+.page-inner p,.kuyo-card p,.priest-msg p,.room-detail p,.exp-card p,
+.access-box td,.directions p,.f-body p,.faq-a{
+  font-family:'Shippori Mincho B1',serif !important;
+}
+.logo-en,footer p,.hero-scroll,.hero-util,.notice-bar p,.breadcrumb{font-family:'Noto Sans JP',sans-serif !important;}
+
+/* 見出しは全ページ共通のスタイルに統一 */
+h2.sec-title{
+  font-family:'Shippori Mincho B1',serif !important;
+  font-size:clamp(22px,4.4vw,32px) !important;
+  font-weight:500 !important;
+  letter-spacing:.16em !important;
+  line-height:1.5 !important;
+  color:var(--v2-sumi) !important;
+  text-align:center !important;
+  margin:0 0 40px !important;
+  position:relative;
+}
+.page-cta h2{color:var(--v2-washi) !important;}
+h2.sec-title::after{
+  content:'';display:block;width:24px;height:1px;background-color:var(--v2-gold);
+  margin:16px auto 0;
+}
+.features-header,.gallery-header,.access-header,.rooms-header,.exp-header{margin-bottom:0 !important;}
+.features-header .sec-title,.gallery-header .sec-title,.access-header .sec-title,
+.rooms-header .sec-title,.exp-header .sec-title{margin-bottom:40px !important;}
+
+/* h1（ページタイトル）も同系統の落ち着いた書体に */
+.page-hero h1{
+  font-family:'Shippori Mincho B1',serif !important;
+  font-weight:500 !important;
+  letter-spacing:.14em !important;
+  color:var(--v2-sumi) !important;
+}
+/* パンくずは控えめに */
+.breadcrumb{opacity:.6 !important;font-size:11px !important;}
+
+/* ---- 3. 余白：スマホ96px・PC144px、幅1040px ---- */
+.page-hero,.page-sec,.kuyo-sec,.faq-sec,.features-sec,.exp-sec,.rooms-sec,.gallery-sec,.access-sec,
+.priest-intro-sec,.photo-strip-sec,.page-cta{
+  padding-top:96px !important;padding-bottom:96px !important;
+}
+@media(min-width:900px){
+  .page-hero,.page-sec,.kuyo-sec,.faq-sec,.features-sec,.exp-sec,.rooms-sec,.gallery-sec,.access-sec,
+  .priest-intro-sec,.photo-strip-sec,.page-cta{
+    padding-top:144px !important;padding-bottom:144px !important;
+  }
+}
+.page-inner,.kuyo-inner,.faq-inner,.features-inner,.exp-inner,.rooms-inner,.gallery-inner,.access-inner{max-width:1040px !important;}
+.page-inner p,.kuyo-card p,.priest-msg p{max-width:36em;margin-left:auto;margin-right:auto;}
+
+/* ---- 4. 写真：影・角丸をやめ、横位置3:2に統一（Apple Music/Spotify要素は対象外） ---- */
+.content-img,.f-img,.kuyo-card img,.room-photo img,.g-item img{border-radius:0 !important;box-shadow:none !important;}
+.content-img,.room-photo,.g-item{aspect-ratio:3/2 !important;}
+
+/* ---- 5. スクロールでのフェードアップ ---- */
+.v2-reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+.v2-reveal.v2-in{opacity:1;transform:translateY(0);}
+@media(prefers-reduced-motion:reduce){
+  .v2-reveal,.v2-reveal.v2-in{opacity:1 !important;transform:none !important;transition:none !important;}
+}
 </style>
 <style>
 /* ══ サブページ共通：ページタイトル帯・パンくず・本文セクション ══ */
@@ -1218,7 +1322,6 @@ body{background:var(--w1) var(--paper);}
 </div>
 <!-- ページタイトル -->
 <section class="page-hero">
-  <span class="sec-eyebrow">MONKS</span>
   <h1>住職・僧侶</h1>
 </section>
 <nav class="breadcrumb" aria-label="パンくずリスト">
@@ -1236,8 +1339,6 @@ body{background:var(--w1) var(--paper);}
 <!-- 3. 住職のご挨拶 -->
 <section class="page-sec" id="greeting">
   <div class="page-inner">
-    <span class="sec-eyebrow">GREETING</span>
-    <div class="gold-bar"></div>
     <h2 class="sec-title" style="color:var(--ink);">住職のご挨拶</h2>
     <div class="priest-msg">
       <p>皆様におかれましては、益々ご健勝のこととお慶び申し上げます。</p>
@@ -1251,8 +1352,6 @@ body{background:var(--w1) var(--paper);}
 
 <section class="priest-intro-sec" id="profile">
   <div class="priest-intro-text">
-    <span class="sec-eyebrow">PROFILE</span>
-    <div class="gold-bar"></div>
     <div class="priest-intro-title">
       <span class="pi-line1">高野山 別格本山<br class="pc-only">本覚院　住職</span>
       <span class="pi-name"><ruby>稲葉<rt>いなば</rt></ruby>　<ruby>法研<rt>ほうけん</rt></ruby></span>
@@ -1288,8 +1387,6 @@ body{background:var(--w1) var(--paper);}
 <!-- 4. 聲明（しょうみょう）の継承 -->
 <section class="page-sec" id="shomyo">
   <div class="page-inner">
-    <span class="sec-eyebrow">SHOMYO</span>
-    <div class="gold-bar"></div>
     <h2 class="sec-title" style="color:var(--ink);">聲明（しょうみょう）の継承</h2>
     <p>住職・稲葉法研上綱は、元高野山真言宗管長で南山聲明の泰斗・稲葉義猛猊下に若年より師事し、その奥義を継承しました。真言密教の中院流法要の儀式ならびに聲明の継承者であり、高野山専修学院の監事を長年にわたり務め、学院生に中院流の法要の儀礼と聲明を指導してまいりました。声明能化を2期8年つとめ、毎年約80名、計約640名の僧侶を送り出し、南山進流声明の徹底した指導にあたりました。</p>
     <p style="font-size:12px;color:var(--stone);">（聲明CD推薦文・略歴より）</p>
@@ -1336,8 +1433,6 @@ body{background:var(--w1) var(--paper);}
 
 <section class="priest-intro-sec" id="fuku">
   <div class="priest-intro-text">
-    <span class="sec-eyebrow">VICE HEAD PRIEST</span>
-    <div class="gold-bar"></div>
     <div class="priest-intro-title">
       <span class="pi-line1">高野山 別格本山<br class="pc-only">本覚院　副住職</span>
       <span class="pi-name"><ruby>古賀<rt>こが</rt></ruby>　<ruby>法顕<rt>ほうけん</rt></ruby></span>
@@ -1360,8 +1455,6 @@ body{background:var(--w1) var(--paper);}
 
 <section class="page-sec" id="nisou">
   <div class="page-inner" style="max-width:1080px;">
-    <span class="sec-eyebrow">NUN</span>
-    <div class="gold-bar"></div>
     <h2 class="sec-title" style="color:var(--ink);">尼僧</h2>
     <div class="fuku-card">
       <p>当院には尼僧もおります。副住職とともに日々のお勤めにあたり、ご参拝・ご宿泊の皆さまをお迎えしております。女性の方も、どうぞ安心してお越しください。</p>
@@ -1407,5 +1500,28 @@ function closeMenu(){
 }
 </script>
 
+<script>
+/* DESIGN SYSTEM v2：控えめなフェードアップ（見出し・写真・本文のかたまり）
+   prefers-reduced-motion のときは何もしない（CSS側でも無効化済み） */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+  var targets = document.querySelectorAll('h2.sec-title, .page-hero h1, .priest-intro-img, .page-inner p, .priest-cd, .photo-row');
+  if (!targets.length) return;
+  if (!('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('v2-reveal', 'v2-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('v2-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(function (el) { el.classList.add('v2-reveal'); io.observe(el); });
+})();
+</script>
 </body>
 </html>

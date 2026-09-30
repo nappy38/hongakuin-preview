@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>本覚院について｜高野山 別格本山 本覚院</title>
-<meta name="description" content="平安時代・建久年間の創建から続く高野山別格本山 本覚院の縁起、ご本尊・寺宝、ゆかりの人々、天井絵や庭園など院内の見どころをご紹介します。">
+<title>お参り・ご供養｜高野山 別格本山 本覚院</title>
+<meta name="description" content="高野山別格本山 本覚院のご廻向・永代供養・ご祈祷・護摩供養のご案内。星まつりやお盆などの年中行事、よくあるご質問もあわせてご紹介します。">
 <meta name="robots" content="noindex, nofollow"><!-- 確認用。本番公開時に削除 -->
-<link rel="canonical" href="https://www.hongakuin.jp/about.html">
+<link rel="canonical" href="https://www.hongakuin.jp/kuyo.html">
 <!-- OGP / Twitter Card -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="高野山 別格本山 本覚院">
-<meta property="og:title" content="本覚院について｜高野山 別格本山 本覚院">
-<meta property="og:description" content="平安時代・建久年間の創建から続く本覚院の縁起と、ご本尊・寺宝、ゆかりの人々、院内の見どころをご紹介します。">
-<meta property="og:url" content="https://www.hongakuin.jp/about.html">
+<meta property="og:title" content="お参り・ご供養｜高野山 別格本山 本覚院">
+<meta property="og:description" content="本覚院のご廻向・永代供養・ご祈祷・護摩供養のご案内。星まつりやお盆などの年中行事もご紹介します。">
+<meta property="og:url" content="https://www.hongakuin.jp/kuyo.html">
 <meta property="og:image" content="https://www.hongakuin.jp/ogp.jpg">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -30,8 +30,8 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "本覚院について",
-      "item": "https://www.hongakuin.jp/about.html"
+      "name": "お参り・ご供養",
+      "item": "https://www.hongakuin.jp/kuyo.html"
     }
   ]
 }
@@ -39,23 +39,32 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BuddhistTemple",
-  "name": "高野山 別格本山 本覚院",
-  "alternateName": "Koyasan Bettakuhonzan Hongakuin",
-  "url": "https://www.hongakuin.jp/about.html",
-  "image": "https://www.hongakuin.jp/ogp.jpg",
-  "telephone": "+81-736-56-2711",
-  "address": {
-    "@type": "PostalAddress",
-    "postalCode": "648-0211",
-    "addressRegion": "和歌山県",
-    "addressLocality": "伊都郡高野町",
-    "streetAddress": "高野山618",
-    "addressCountry": "JP"
-  },
-  "religiousAffiliation": "高野山真言宗",
-  "sameAs": [
-    "https://www.instagram.com/koyasan_hongakuin/"
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ご廻向はどのくらい時間がかかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "およそ1時間です。前讃からはじまり、各種のお経、後讃、最後にご法楽として般若心経・ご真言を参列の皆さまとご一緒にお唱えいただく流れです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "永代供養の相談はどうすればいいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "お電話でご相談ください。住職はじめ僧侶が親身にお話をうかがい、それぞれのご家庭に沿った永代供養の方法をご案内いたします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ご廻向では参列者もお経を唱えますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "最後のご法楽で、般若心経とご真言を参列の皆さまとご一緒にお唱えいただきます。"
+      }
+    }
   ]
 }
 </script>
@@ -867,108 +876,6 @@ footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.
 
 /* 新着：本文の写真はすべて同じ幅で表示（microCMSの新しい記事と旧サイトの記事をそろえる） */
 .news-card-body img{width:100% !important;max-width:560px !important;height:auto !important;}
-
-/* ══════════════════════════════════════════════════════════
-   DESIGN SYSTEM v2 —（about-v2.html のみ）
-   index-v2.html と同じ和紙(washi)・墨(sumi)・金(gold)＋予約朱に統一。
-   最終カスケードで !important により確定させる。
-════════════════════════════════════════════════════════════ */
-:root{
-  --v2-washi:#f3ece1;
-  --v2-sumi:#2b2621;
-  --v2-ink:#150c15;
-  --v2-gold:#917c50;
-  --v2-shu:#9a1117;
-}
-
-/* ---- 1. 配色：通常セクションはすべて和紙色に統一 ---- */
-body,
-.page-hero,
-.page-sec{
-  background:var(--v2-washi) var(--paper) !important;
-  background-color:var(--v2-washi) !important;
-  background-image:var(--paper) !important;
-}
-
-/* 暗い欄は「ご相談・ご予約」CTA＋フッターの1箇所だけ */
-.page-cta,footer{
-  background-color:var(--v2-ink) !important;
-  background-image:none !important;
-  color:var(--v2-washi) !important;
-}
-.page-cta h2,.page-cta p,.page-cta a.cta-tel,.page-cta .cta-hours{color:var(--v2-washi) !important;}
-.page-cta .page-cta-links a{color:var(--v2-gold) !important;border-bottom-color:rgba(243,236,225,.4) !important;}
-.page-cta .page-cta-links a:hover{color:var(--v2-washi) !important;}
-
-/* 予約系の朱ボタンだけは維持 */
-.float-btn,.reserve-btn,.btn-reserve-main,.drawer-reserve,.page-cta .btn-dark,.room-book{
-  background-color:var(--v2-shu) !important;background-image:none !important;color:#fff !important;border-color:var(--v2-shu) !important;
-}
-.float-btn:hover,.reserve-btn:hover,.btn-reserve-main:hover,.drawer-reserve:hover,.room-book:hover{background-color:#7d0d12 !important;}
-
-/* ---- 2. タイポグラフィ：見出し・本文とも明朝体に統一 ---- */
-body,input,button,select,textarea,
-.page-inner p,.kuyo-card p,.priest-msg p,.room-detail p,.exp-card p,
-.access-box td,.directions p,.f-body p,.faq-a{
-  font-family:'Shippori Mincho B1',serif !important;
-}
-.logo-en,footer p,.hero-scroll,.hero-util,.notice-bar p,.breadcrumb{font-family:'Noto Sans JP',sans-serif !important;}
-
-/* 見出しは全ページ共通のスタイルに統一 */
-h2.sec-title{
-  font-family:'Shippori Mincho B1',serif !important;
-  font-size:clamp(22px,4.4vw,32px) !important;
-  font-weight:500 !important;
-  letter-spacing:.16em !important;
-  line-height:1.5 !important;
-  color:var(--v2-sumi) !important;
-  text-align:center !important;
-  margin:0 0 40px !important;
-  position:relative;
-}
-.page-cta h2{color:var(--v2-washi) !important;}
-h2.sec-title::after{
-  content:'';display:block;width:24px;height:1px;background-color:var(--v2-gold);
-  margin:16px auto 0;
-}
-.features-header,.gallery-header,.access-header,.rooms-header,.exp-header{margin-bottom:0 !important;}
-.features-header .sec-title,.gallery-header .sec-title,.access-header .sec-title,
-.rooms-header .sec-title,.exp-header .sec-title{margin-bottom:40px !important;}
-
-/* h1（ページタイトル）も同系統の落ち着いた書体に */
-.page-hero h1{
-  font-family:'Shippori Mincho B1',serif !important;
-  font-weight:500 !important;
-  letter-spacing:.14em !important;
-  color:var(--v2-sumi) !important;
-}
-/* パンくずは控えめに */
-.breadcrumb{opacity:.6 !important;font-size:11px !important;}
-
-/* ---- 3. 余白：スマホ96px・PC144px、幅1040px ---- */
-.page-hero,.page-sec,.kuyo-sec,.faq-sec,.features-sec,.exp-sec,.rooms-sec,.gallery-sec,.access-sec,
-.priest-intro-sec,.photo-strip-sec,.page-cta{
-  padding-top:96px !important;padding-bottom:96px !important;
-}
-@media(min-width:900px){
-  .page-hero,.page-sec,.kuyo-sec,.faq-sec,.features-sec,.exp-sec,.rooms-sec,.gallery-sec,.access-sec,
-  .priest-intro-sec,.photo-strip-sec,.page-cta{
-    padding-top:144px !important;padding-bottom:144px !important;
-  }
-}
-.page-inner,.kuyo-inner,.faq-inner,.features-inner,.exp-inner,.rooms-inner,.gallery-inner,.access-inner{max-width:1040px !important;}
-.page-inner p,.kuyo-card p,.priest-msg p{max-width:36em;margin-left:auto;margin-right:auto;}
-
-/* ---- 4. 写真：影・角丸をやめ、横位置3:2に統一（Apple Music/Spotify要素は対象外） ---- */
-.content-img,.f-img,.kuyo-card img,.room-photo img,.g-item img{border-radius:0 !important;box-shadow:none !important;}
-.content-img,.room-photo,.g-item{aspect-ratio:3/2 !important;}
-
-/* ---- 5. スクロールでのフェードアップ ---- */
-.v2-reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
-.v2-reveal.v2-in{opacity:1;transform:translateY(0);}
-@media(prefers-reduced-motion:reduce){
-  .v2-reveal,.v2-reveal.v2-in{opacity:1 !important;transform:none !important;transition:none !important;}
-}
 </style>
 <style>
 /* ══ サブページ共通：ページタイトル帯・パンくず・本文セクション ══ */
@@ -1147,24 +1054,24 @@ body{background:var(--w1) var(--paper);}
 .cta-sec p,.page-cta p{color:#3a322a !important;}
 .cta-sec .more-box,.page-cta .more-box{border-color:var(--ink) !important;color:var(--ink) !important;}
 .cta-sec .sec-eyebrow,.page-cta .sec-eyebrow{color:#917c50 !important;}
-#intro,#honzon,#midokoro{background:var(--w1) var(--paper) !important;background-color:var(--w1) !important;}
-.page-hero,#engi,#yukari{background:var(--w2) var(--paper) !important;background-color:var(--w2) !important;}
+.page-hero,#kaie,#gomakito,#faq{background:var(--w1) var(--paper) !important;background-color:var(--w1) !important;}
+#intro,#eitai,#nenchu{background:var(--w2) var(--paper) !important;background-color:var(--w2) !important;}
 </style>
 </head>
 <body>
 <!-- HEADER -->
 <header class="site-header">
-  <a href="index-v2.html" class="header-logo">
+  <a href="index.html" class="header-logo">
     <span class="logo-brush">本覚院</span>
     <span class="logo-en">KOYASAN HONGAKUIN</span>
   </a>
   <nav class="header-nav">
-    <a href="about-v2.html">本覚院について</a>
-    <a href="priest-v2.html">住職・僧侶</a>
-    <a href="kuyo-v2.html">お参り・ご供養</a>
-    <a href="shukubo-v2.html">宿坊</a>
-    <a href="index-v2.html#news">新着情報</a>
-    <a href="index-v2.html#access">アクセス</a>
+    <a href="about.html">本覚院について</a>
+    <a href="priest.html">住職・僧侶</a>
+    <a href="kuyo.html">お参り・ご供養</a>
+    <a href="shukubo.html">宿坊</a>
+    <a href="index.html#news">新着情報</a>
+    <a href="index.html#access">アクセス</a>
   </nav>
   <div class="header-right">
     <span class="header-phone">☎ <a href="tel:0736562711">0736-56-2711</a></span>
@@ -1181,12 +1088,12 @@ body{background:var(--w1) var(--paper);}
 <div class="drawer" id="drawer">
   <button class="drawer-close" onclick="closeMenu()" aria-label="メニューを閉じる">✕</button>
   <nav>
-    <a href="about-v2.html" onclick="closeMenu()">本覚院について</a>
-    <a href="priest-v2.html" onclick="closeMenu()">住職・僧侶</a>
-    <a href="kuyo-v2.html" onclick="closeMenu()">お参り・ご供養</a>
-    <a href="shukubo-v2.html" onclick="closeMenu()">宿坊</a>
-    <a href="index-v2.html#news" onclick="closeMenu()">新着情報</a>
-    <a href="index-v2.html#access" onclick="closeMenu()">アクセス</a>
+    <a href="about.html" onclick="closeMenu()">本覚院について</a>
+    <a href="priest.html" onclick="closeMenu()">住職・僧侶</a>
+    <a href="kuyo.html" onclick="closeMenu()">お参り・ご供養</a>
+    <a href="shukubo.html" onclick="closeMenu()">宿坊</a>
+    <a href="index.html#news" onclick="closeMenu()">新着情報</a>
+    <a href="index.html#access" onclick="closeMenu()">アクセス</a>
   </nav>
   <a href="#cta" class="drawer-reserve" onclick="closeMenu()">ご予約・お問合せ</a>
   <a href="tel:0736562711" class="drawer-phone">☎ 0736-56-2711</a>
@@ -1194,100 +1101,105 @@ body{background:var(--w1) var(--paper);}
 
 <!-- ページタイトル -->
 <section class="page-hero">
-  <h1>本覚院について</h1>
+  <span class="sec-eyebrow">PRAYER &amp; MEMORIAL</span>
+  <h1>お参り・ご供養</h1>
 </section>
 <nav class="breadcrumb" aria-label="パンくずリスト">
-  <a href="index-v2.html">トップ</a> ＞ 本覚院について
+  <a href="index.html">トップ</a> ＞ お参り・ご供養
 </nav>
 
-<!-- 1. 本覚院について（概要） -->
+<!-- 1. イントロ -->
 <section class="page-sec" id="intro">
   <div class="page-inner">
-    <h2 class="sec-title" style="color:var(--ink);">高野山 別格本山として</h2>
-    <img src="images/photos/jizo-rokutai.jpg" alt="本覚院の境内に並ぶお地蔵さま。毛糸の帽子と前掛けを身につけた石の地蔵菩薩" class="content-img" width="1400" height="1050">
-    <p>本覚院は、高野山真言宗総本山金剛峯寺の塔頭寺院であり、別格本山です。ご本尊には智証大師の御作という不動明王像を安置し、平安時代・建久年間（1190年）の創建から今日まで法灯を守り続けています。当院では毎朝の勤行と住職の法話を行っており、ご宿泊の方はご自由にご参拝いただけます。</p>
-    <p>また、別供養・永代供養・納骨供養・護摩供養・ご祈祷を随時承っております。供養やおまつりのことでお困りのことがございましたら、お気軽にご相談ください。</p>
-  </div>
-</section>
-
-<!-- 2. 縁起（由緒） -->
-<section class="page-sec alt" id="engi">
-  <div class="page-inner">
-    <h2 class="sec-title" style="color:var(--ink);">縁起（由緒）</h2>
-    <p>本覚院が建つのは、弘法大師空海がこの地で六地蔵菩薩（六体のお地蔵さま）が現れるのを感じとられた、と伝えられる場所です。</p>
-    <p>時は平安時代・後鳥羽院の建久年間（1190年）。歌人「待宵小侍従」（太皇太后宮小侍従）の願いを受けて高野山に登った行空上人が、この地でお経を唱え続けていました。すると光とともに地蔵菩薩が現れ、「ここに住みなさい」と告げられたといいます。上人はこれを喜び、この地に庵を結ばれました。</p>
-    <p>開基・行空上人はやがて十二の坊（講坊十二院）を建立し、常に法華経を講じたことから「講坊」と称されるようになりました。その後、人皇百十二代・東山天皇の御代、元禄年間に、講坊は待宵小侍従の戒名にちなんで「本覺院」と改められ、今日に至っています。</p>
-    <p>待宵小侍従ゆかりの寺として、古くから文人との関わりも深く、江戸時代初期には狩野派絵師の巨匠・狩野探幽が滞在し、名画を残したと伝えられています（寺伝）。昭和55年（1980年）11月10日には、ダライ・ラマ14世法王もご宿泊されました。</p>
-    <div class="quote-block">
-      <span class="quote-label">原文（寺伝）</span>
-      <p>本覺院は霊場高野山において、弘法大師空海上人自らが六地蔵菩薩を感得されたといわれる場所に位置しております。時は平安時代建久年間、歌人「待宵小侍従」（太皇太后宮小侍従）の願により登山した行空上人がこの地に立ち、読経を続けたところ、光を放ち出現した地蔵菩薩が「汝、ここに住せよ。」と告げられ、庵をむすばれました。開基行空上人が十二院を建立し、常に法華経を講じたことから『講坊』と称せられましたが、太皇太后宮小侍従の戒名にちなみ、後の元禄年間に講坊を『本覺院』と改称し、今日に至っております。</p>
-    </div>
-  </div>
-</section>
-
-<!-- 3. ご本尊・寺宝 -->
-<section class="page-sec" id="honzon">
-  <div class="page-inner">
-    <h2 class="sec-title" style="color:var(--ink);">ご本尊・寺宝</h2>
-    <p>ご本尊は、弘法大師の甥にあたる円珍・智証大師の御作と伝わる不動明王です。宝物には、弘法大師御作の愛染明王や、唐の恵果阿闍梨の御自画像（重要文化財）など、著名なものを多数所蔵しております。</p>
+    <span class="sec-eyebrow">CONSULTATION</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title" style="color:var(--ink);">ご供養についてご相談ください</h2>
+    <p>供養やおまつりのことでお困りのことがございましたら、どうぞご相談ください。本覚院では、別供養、永代供養、納骨供養、護摩供養、ご祈祷を随時承っております。</p>
     <ul class="info-list">
-      <li>ご本尊：智証大師（円珍、弘法大師の甥）作の不動明王</li>
-      <li>弘法大師 御作　愛染明王</li>
-      <li>唐の恵果阿闍梨 御自画像（重要文化財）</li>
+      <li>ご廻向</li>
+      <li>永代供養</li>
+      <li>納骨供養</li>
+      <li>護摩供養</li>
+      <li>ご祈祷</li>
+      <li>別供養</li>
     </ul>
   </div>
 </section>
 
-<!-- 4. ゆかりの人々 -->
-<section class="page-sec alt" id="yukari">
+<!-- 2. ご廻向 -->
+<section class="kuyo-sec" id="kaie" style="padding:56px 24px;">
+  <div class="kuyo-inner" style="max-width:880px;">
+    <span class="sec-eyebrow">GOEKO</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title" style="color:var(--sumi);">ご廻向</h2>
+    <img src="images/photos/hondo-kigan.jpg" alt="ろうそくの灯る本堂で、ご廻向をおつとめする僧侶" class="content-img" loading="lazy" width="1600" height="1200">
+    <p>本覚院のご廻向は、高野山の金剛峯寺で行われる法要と同様の流れで、およそ1時間かけておつとめいたします。</p>
+    <ol class="step-list">
+      <li>前讃</li>
+      <li>各種のお経</li>
+      <li>後讃</li>
+      <li>ご法楽（般若心経・ご真言を参列者の方もご一緒にお唱えいただきます）</li>
+    </ol>
+    <p>僧侶が朗々と音階のついたお経（聲明）をおとなえします。ご先祖様のためにお霊供膳を、御位牌や法名を記した証文の前にお供えいたします。お参りが終わりましたら、お施主様におしるしの証文・領標・御供物などをお渡しいたします。</p>
+  </div>
+</section>
+
+<!-- 3. 永代供養 -->
+<section class="kuyo-sec" id="eitai" style="padding:56px 24px;background:#fff;">
+  <div class="kuyo-inner" style="max-width:880px;">
+    <span class="sec-eyebrow">EITAI KUYO</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title" style="color:var(--ink);">永代供養</h2>
+    <img src="images/photos/gongyo-hondo.jpg" alt="本堂でお経を唱える僧侶たち" class="content-img" loading="lazy" width="1600" height="1067">
+    <p style="color:var(--stone);">「お墓をみてくれる後継者がいない」「分家なのでお仏壇がない」——そのようなお悩みが、お寺にはたくさん寄せられます。</p>
+    <p style="color:var(--stone);">当院では住職をはじめ僧侶が親身にご相談をうかがい、それぞれのご家庭に沿った永代供養の方法をご案内しております。お位牌を建立し、本堂にて勤行したのち、位牌堂にて永代におまつりいたします。毎朝、お仏飯とお茶をお供えし、お燈明をあげてお参りしております。詳しくはお電話でご相談ください。</p>
+  </div>
+</section>
+
+<!-- 4. ご祈祷・護摩 -->
+<section class="page-sec" id="gomakito">
   <div class="page-inner">
-    <h2 class="sec-title" style="color:var(--ink);">ゆかりの人々</h2>
-    <p>本覚院は古くより皇族・武家をはじめ、多くの方々の篤い帰依を受けてまいりました。</p>
-    <ul class="yukari-list">
-      <li>伏見宮家の御菩提所</li>
-      <li>源頼朝公の御子息・大友一法師丸以来十九代</li>
-      <li>尾張徳川家、臼杵稲葉家、大洲加藤家、岸和田岡部家等の諸侯</li>
-      <li>狩野探幽（江戸時代初期に滞在し名画を残したと伝えられる／寺伝）</li>
-      <li>ダライ・ラマ14世法王（昭和55年〔1980年〕11月10日ご宿泊）</li>
-    </ul>
+    <span class="sec-eyebrow">GOMA &amp; PRAYER</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title" style="color:var(--ink);">ご祈祷・護摩</h2>
+    <img src="images/fudo-myoo.jpg" alt="護摩堂の修身不動明王" class="content-img" loading="lazy" width="1600" height="1200">
+    <p class="img-cap">護摩堂の修身不動明王</p>
+    <p>護摩堂では、御護摩による祈祷を随時承っております。中でも毎年2月3日の節分には「星まつり」として、生命あるすべての者の災厄をしりぞけ、幸福を祈る祈祷祭を執り行っております。護摩祈祷により、無病息災・心願成就・交通安全などをご祈願いただけます。</p>
   </div>
 </section>
 
-<!-- 5. 院内の見どころ -->
-<section class="page-sec" id="midokoro">
-  <div class="page-inner" style="max-width:1080px;">
-    <h2 class="sec-title" style="color:var(--ink);">院内の見どころ</h2>
-    <div class="mido-grid">
-      <div class="mido-item">
-        <img src="images/photos/tenjoue.jpg" alt="本堂天井に残る江戸期の極彩色天井絵" loading="lazy" width="1600" height="1067">
-        <h3>江戸期の天井絵</h3>
-        <p>本堂天井には250年前の絵師による極彩色の天井絵が残されています。</p>
-      </div>
-      <div class="mido-item">
-        <img src="images/photos/fusuma-kanoha.jpg" alt="狩野派による金地の襖絵" loading="lazy" width="1600" height="1200">
-        <h3>狩野派の襖絵</h3>
-        <p>大広間には、狩野派絵師による貴重な障壁画をご覧いただけます。</p>
-      </div>
-      <div class="mido-item">
-        <img src="images/photos/teien-mado-slide.jpg" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="900">
-        <h3>重森三玲の庭</h3>
-        <p>昭和の名作庭家・重森三玲による庭園。季節ごとに表情を変える苔と岩の世界をお楽しみください。</p>
-      </div>
-      <div class="mido-item">
-        <img src="images/fudo-myoo.jpg" alt="護摩堂にお祀りする修身不動明王" loading="lazy" width="1600" height="1200">
-        <h3>護摩堂の修身不動明王</h3>
-        <p>護摩堂にお祀りする修身不動明王。護摩祈祷はこの護摩堂で執り行われます。</p>
-      </div>
-      <div class="mido-item">
-        <img src="images/photos/sanmon-yoru.jpg" alt="夜の山門。灯りに照らされた本覚院の入口" loading="lazy" width="1600" height="1200">
-        <h3>山門</h3>
-        <p>参道の先に立つ山門。扉には金色の寺紋が入り、本覚院への入口を静かに示しています。</p>
-      </div>
-      <div class="mido-item">
-        <img src="images/photos/mon-tobira-jimon.jpg" alt="寺紋が金色に輝く山門の扉と、奥へ続く石畳" loading="lazy" width="1600" height="1200">
-        <h3>山門の扉と寺紋</h3>
-        <p>山門の扉に金色で入る本覚院の寺紋。奥へ続く石畳が本堂へといざないます。</p>
-      </div>
+<!-- 5. 年中行事 -->
+<section class="page-sec alt" id="nenchu">
+  <div class="page-inner">
+    <span class="sec-eyebrow">ANNUAL EVENTS</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title" style="color:var(--ink);">年中行事</h2>
+    <h3 style="font-family:'Shippori Mincho B1',serif;font-size:17px;color:var(--ink);margin-bottom:10px;letter-spacing:.05em;">星まつり（2月3日 節分）</h3>
+    <p>生命あるすべての者の災厄をしりぞけ、幸福を祈る祈祷祭です。護摩祈祷により、無病息災・心願成就・交通安全などをご祈願いただけます。</p>
+    <h3 style="font-family:'Shippori Mincho B1',serif;font-size:17px;color:var(--ink);margin:28px 0 10px;letter-spacing:.05em;">お盆（8月11日から）</h3>
+    <p>高野山では8月11日からお盆参りが始まります。住職以下僧侶全員が正装し、迎え提灯をさげて、奥の院にある本覚院管理のお墓を一つひとつお参りいたします。千、万を越える経木塔婆に一枚一枚戒名を手書きし、ご供養いたします。お盆の間は毎日30分から1時間ごとに、お水・お茶・お仏飯・みずのこ・お霊供膳をお供えいたします。</p>
+  </div>
+</section>
+
+<!-- 6. FAQ -->
+<section class="faq-sec" id="faq">
+  <div class="faq-inner">
+    <span class="sec-eyebrow" style="color:var(--gold);">FAQ</span>
+    <div class="gold-bar"></div>
+    <h2 class="sec-title" style="color:var(--ink);">よくあるご質問</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">ご廻向はどのくらい時間がかかりますか？</summary>
+        <div class="faq-a"><p>およそ1時間です。前讃からはじまり、各種のお経、後讃、最後にご法楽として般若心経・ご真言を参列の皆さまとご一緒にお唱えいただく流れです。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">永代供養の相談はどうすればいいですか？</summary>
+        <div class="faq-a"><p>お電話でご相談ください。住職はじめ僧侶が親身にお話をうかがい、それぞれのご家庭に沿った永代供養の方法をご案内いたします。</p></div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">ご廻向では参列者もお経を唱えますか？</summary>
+        <div class="faq-a"><p>最後のご法楽で、般若心経とご真言を参列の皆さまとご一緒にお唱えいただきます。</p></div>
+      </details>
     </div>
   </div>
 </section>
@@ -1295,11 +1207,11 @@ body{background:var(--w1) var(--paper);}
 <!-- CTA -->
 <section class="page-cta" id="cta">
   <h2>ご相談・ご予約</h2>
-  <p>ご宿泊は予約サイトから、ご祈祷・ご供養などはお電話でお気軽にどうぞ</p>
+  <p>ご廻向・永代供養・ご祈祷などのご相談はお電話で、ご宿泊は予約サイトからお気軽にどうぞ</p>
   <a href="tel:0736562711" class="cta-tel">0736-56-2711</a>
   <p class="cta-hours">受付時間 9:00〜17:00</p>
   <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn-dark" target="_blank" rel="noopener">宿坊のご予約はこちら</a>
-  <p class="page-cta-links"><a href="priest-v2.html">住職・僧侶について →</a><a href="kuyo-v2.html">お参り・ご供養について詳しく →</a><a href="index-v2.html">トップページへ</a></p>
+  <p class="page-cta-links"><a href="about.html">本覚院について詳しく →</a><a href="priest.html">住職・僧侶について →</a><a href="index.html">トップページへ</a></p>
 </section>
 
 <footer>
@@ -1321,28 +1233,5 @@ function closeMenu(){
 }
 </script>
 
-<script>
-/* DESIGN SYSTEM v2：控えめなフェードアップ（見出し・写真・本文のかたまり）
-   prefers-reduced-motion のときは何もしない（CSS側でも無効化済み） */
-(function () {
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) return;
-  var targets = document.querySelectorAll('h2.sec-title, .page-hero h1, .content-img, .page-inner p');
-  if (!targets.length) return;
-  if (!('IntersectionObserver' in window)) {
-    targets.forEach(function (el) { el.classList.add('v2-reveal', 'v2-in'); });
-    return;
-  }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('v2-in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  targets.forEach(function (el) { el.classList.add('v2-reveal'); io.observe(el); });
-})();
-</script>
 </body>
 </html>
