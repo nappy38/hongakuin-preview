@@ -1267,9 +1267,23 @@ function toggleArchive() {
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -4% 0px' });
     els.forEach(function (el) { io.observe(el); });
   } else { els.forEach(function (el) { el.classList.add('in'); }); }
+  // 念のための保険：画面より上・画面内に来たものは必ず表示（スワイプ枠内や遅延読み込みの写真で出ないことがないように）
+  function sweep() {
+    var h = innerHeight;
+    els.forEach(function (el) {
+      if (el.classList.contains('in')) return;
+      var r = el.getBoundingClientRect();
+      if (r.top < h * 0.98) el.classList.add('in');
+    });
+  }
+  addEventListener('scroll', sweep, { passive: true });
+  addEventListener('resize', sweep);
+  addEventListener('load', sweep);
+  setTimeout(sweep, 1500);
+  document.addEventListener('scroll', sweep, { passive: true, capture: true });
 
   var px = [].slice.call(document.querySelectorAll('[data-px]'));
   var mq = window.matchMedia('(min-width:900px)');
