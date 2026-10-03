@@ -368,6 +368,8 @@ html.motion .shomyo .smoke{animation:smoke 24s ease-in-out infinite alternate;}
 .kiku-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(201,177,131,.7);pointer-events:none;opacity:0;}
 .kiku-ico{position:absolute;left:50%;top:50%;width:0;height:0;margin:-13px 0 0 -8px;border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent var(--ink);}
 .kiku.is-playing .kiku-ico{width:22px;height:26px;margin:-13px 0 0 -11px;border:0;background:linear-gradient(90deg,var(--ink) 0 36%,transparent 36% 64%,var(--ink) 64%);}
+.kiku>div{min-width:0;}
+.kiku-s1{display:inline-block;margin-right:1em;}
 .kiku-t{font-size:26px;font-weight:500;letter-spacing:.2em;color:var(--washi);line-height:1.5;}
 .kiku-s{font-size:15px;letter-spacing:.06em;color:var(--gold-l);margin-top:4px;line-height:1.8;}
 .kiku-wave{display:inline-flex;align-items:flex-end;gap:3px;height:14px;margin-left:10px;vertical-align:middle;opacity:0;transition:opacity .4s;}
@@ -667,7 +669,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
         </button>
         <div>
           <p class="kiku-t">聲明を聴く<span class="kiku-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span></p>
-          <p class="kiku-s">住職・稲葉法研の声　CD『THE 聲明 奮』より</p>
+          <p class="kiku-s"><span class="kiku-s1">住職・稲葉法研の声</span><span class="kiku-s1">CD『THE 聲明 奮』より</span></p>
         </div>
         <div class="kiku-player" id="kiku-player"><iframe title="THE 聲明～高野山 南山進流～ 奮（Spotify）" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
         <p class="kiku-hint">再生が始まらないときは、上のプレーヤーの ▶ を押してください。</p>
