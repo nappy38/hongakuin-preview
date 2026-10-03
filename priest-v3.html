@@ -358,6 +358,35 @@ html.motion .shomyo .smoke{animation:smoke 24s ease-in-out infinite alternate;}
   .suisen-body p{font-size:17px;}
 }
 
+/* 聲明を聴く */
+.kiku{margin-top:48px;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:22px 24px;}
+.kiku-btn{position:relative;width:92px;height:92px;border:0;border-radius:50%;cursor:pointer;
+  background:radial-gradient(circle at 35% 30%,#e3cfa3,#c9b183 45%,#a08955);color:var(--ink);
+  box-shadow:0 18px 40px -16px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .4s var(--ease),filter .3s;}
+.kiku-btn:hover,.kiku-btn:focus-visible{filter:brightness(1.08);transform:scale(1.04);}
+.kiku-btn:focus-visible{outline:2px solid var(--washi);outline-offset:6px;}
+.kiku-ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(201,177,131,.7);pointer-events:none;opacity:0;}
+.kiku-ico{position:absolute;left:50%;top:50%;width:0;height:0;margin:-13px 0 0 -8px;border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent var(--ink);}
+.kiku.is-playing .kiku-ico{width:22px;height:26px;margin:-13px 0 0 -11px;border:0;background:linear-gradient(90deg,var(--ink) 0 36%,transparent 36% 64%,var(--ink) 64%);}
+.kiku-t{font-size:26px;font-weight:500;letter-spacing:.2em;color:var(--washi);line-height:1.5;}
+.kiku-s{font-size:15px;letter-spacing:.06em;color:var(--gold-l);margin-top:4px;line-height:1.8;}
+.kiku-wave{display:inline-flex;align-items:flex-end;gap:3px;height:14px;margin-left:10px;vertical-align:middle;opacity:0;transition:opacity .4s;}
+.kiku-wave i{display:block;width:2px;height:30%;background:var(--gold-l);}
+.kiku.is-playing .kiku-wave{opacity:1;}
+.kiku-player{grid-column:1/-1;min-height:152px;border-radius:12px;background:rgba(243,236,225,.06);}
+.kiku-player iframe{display:block;border-radius:12px;}
+.kiku-hint{grid-column:1/-1;display:none;font-size:15px;color:var(--gold-l);line-height:1.8;margin-top:-8px;}
+.kiku.need-tap .kiku-hint{display:block;}
+html.motion .kiku-ring{animation:breathe 4.5s ease-in-out infinite;}
+html.motion .kiku.is-playing .kiku-ring{animation:ripple 2.8s cubic-bezier(.2,.6,.3,1) infinite;}
+html.motion .kiku.is-playing .kiku-ring.r2{animation-delay:1.4s;}
+html.motion .kiku.is-playing .kiku-wave i{animation:wave 1.6s ease-in-out infinite;}
+.kiku-wave i:nth-child(2){animation-delay:.3s !important;} .kiku-wave i:nth-child(3){animation-delay:.6s !important;} .kiku-wave i:nth-child(4){animation-delay:.15s !important;}
+@keyframes breathe{0%,100%{opacity:0;transform:scale(1);}50%{opacity:.6;transform:scale(1.14);}}
+@keyframes ripple{from{opacity:.8;transform:scale(1);}to{opacity:0;transform:scale(2);}}
+@keyframes wave{0%,100%{height:25%;}50%{height:100%;}}
+@media(min-width:900px){.kiku{margin-top:64px;gap:24px 32px;}.kiku-btn{width:108px;height:108px;}.kiku-t{font-size:30px;}}
+
 /* ══ 四 副住職 ══ */
 .fuku-photos{display:grid;margin:32px calc(-1*var(--gut)) 0;}
 .fuku-photos figure{overflow:hidden;}
@@ -631,6 +660,19 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
       <p class="sm-lead rv">住職・稲葉法研上綱は、元高野山真言宗管長で南山聲明の泰斗・稲葉義猛猊下に若年より師事し、その奥義を継承しました。真言密教の中院流法要の儀式ならびに聲明の継承者であり、高野山専修学院の監事を長年にわたり務め、学院生に中院流の法要の儀礼と聲明を指導してまいりました。声明能化を2期8年つとめ、毎年約80名、計約640名の僧侶を送り出し、南山進流声明の徹底した指導にあたりました。</p>
       <p class="sm-src rv">（聲明CD推薦文・略歴より）</p>
 
+      <div class="kiku rv" id="kiku">
+        <button class="kiku-btn" type="button" aria-label="聲明を聴く" aria-pressed="false">
+          <span class="kiku-ring" aria-hidden="true"></span><span class="kiku-ring r2" aria-hidden="true"></span>
+          <span class="kiku-ico" aria-hidden="true"></span>
+        </button>
+        <div>
+          <p class="kiku-t">聲明を聴く<span class="kiku-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span></p>
+          <p class="kiku-s">住職・稲葉法研の声　CD『THE 聲明 奮』より</p>
+        </div>
+        <div class="kiku-player" id="kiku-player"><iframe title="THE 聲明～高野山 南山進流～ 奮（Spotify）" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <p class="kiku-hint">再生が始まらないときは、上のプレーヤーの ▶ を押してください。</p>
+      </div>
+
       <div class="cd">
         <figure class="cd-fig rv"><img src="images/photos/shomyo-cd.webp" alt="住職 稲葉法研による聲明CD『THE 聲明（SHO-MYO）～高野山 南山進流～』" loading="lazy" width="240" height="360"></figure>
         <div class="cd-info">
@@ -643,8 +685,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
             <p class="cd-note">当時の高野山真言宗管長・総本山金剛峯寺座主 松長有慶猊下 推薦</p>
           </div>
 
-          <p class="listen">Spotifyで聴く</p>
-          <iframe class="cd-player" title="THE 聲明～高野山 南山進流～ 奮（Spotify）" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <p class="listen">もう一枚『癒』をSpotifyで聴く</p>
           <iframe class="cd-player" title="THE 聲明～高野山 南山進流～ 癒（Spotify）" src="https://open.spotify.com/embed/album/4cJB2d2ujV5scHqgsuw3Ld?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
           <p class="listen listen-am">Apple Musicで聴く</p>
@@ -844,6 +885,26 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
   setTimeout(sweep, 1500);
   document.addEventListener('scroll', sweep, { passive: true, capture: true });
   document.querySelectorAll('details').forEach(function (dt) { dt.addEventListener('toggle', sweep); });
+})();
+</script>
+<script>
+/* 聲明を聴く：Spotify iFrame API で大きなボタンから再生 */
+(function(){
+  var box=document.getElementById('kiku'); if(!box) return;
+  var btn=box.querySelector('.kiku-btn'), ctl=null, playing=false, pending=false, loaded=false;
+  function set(){ box.classList.toggle('is-playing',playing); btn.setAttribute('aria-pressed',playing?'true':'false'); btn.setAttribute('aria-label',playing?'聲明を一時停止':'聲明を聴く'); if(playing) box.classList.remove('need-tap'); }
+  function toggle(){ var was=playing; ctl.togglePlay(); setTimeout(function(){ if(!was && !playing) box.classList.add('need-tap'); },2500); }
+  window.onSpotifyIframeApiReady=function(API){
+    var el=document.getElementById('kiku-player'); el.innerHTML='<div></div>';
+    API.createController(el.firstChild,{uri:'spotify:album:1UExgUP38O4lbdstKeMkPf',width:'100%',height:152},function(c){
+      ctl=c;
+      c.addListener('playback_update',function(e){ playing=!e.data.isPaused; set(); });
+      if(pending){ pending=false; toggle(); }
+    });
+  };
+  function load(){ if(loaded) return; loaded=true; var s=document.createElement('script'); s.src='https://open.spotify.com/embed/iframe-api/v1'; s.async=true; document.body.appendChild(s); }
+  btn.addEventListener('click',function(){ if(ctl) toggle(); else { pending=true; load(); } });
+  if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ load(); io.disconnect(); } },{rootMargin:'600px 0px'}); io.observe(box); } else load();
 })();
 </script>
 </body>
