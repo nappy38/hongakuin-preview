@@ -600,6 +600,10 @@ html.static .sec-grid>.sh{position:relative !important;top:0 !important;}
   html{scroll-behavior:auto;}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
 }
+
+/* スマホは住職の縦写真（顔が切れないように） */
+@media(max-width:899px){html body .priest-img{aspect-ratio:4/5 !important;max-height:none !important;object-position:center 35% !important;}}
+picture{display:block;}
 </style>
 </head>
 <body class="at-top">
@@ -802,7 +806,7 @@ html.static .sec-grid>.sh{position:relative !important;top:0 !important;}
   <div class="sec-in sec-grid">
     <header class="sh rv"><span class="sh-num" aria-hidden="true">四</span><span class="sh-line"></span><h2 class="sh-title">住職より<br class="pc">ご挨拶</h2></header>
     <div class="body">
-      <figure class="priest-fig rv-img"><img src="images/priest-1.webp" alt="本覚院 住職" class="priest-img" loading="lazy" width="800" height="645"></figure>
+      <figure class="priest-fig rv-img"><picture><source media="(max-width:899px)" srcset="images/priest-tate.webp" width="850" height="1276"><img src="images/priest-1.webp" alt="本覚院 住職 稲葉法研" class="priest-img" loading="lazy" width="800" height="645"></picture></figure>
       <div class="priest-msg rv">
         <p>皆様におかれましては、益々ご健勝のこととお慶び申し上げます。</p>
         <p>私が仏様、お大師様にお仕えするようになってから早いもので半世紀が過ぎました。いまだに、僧侶として宗団のひとりとして資質は如何に？間違った行いはないか？と自問自答する毎日です。</p>
