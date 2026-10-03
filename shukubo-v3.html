@@ -364,6 +364,8 @@ figure{margin:0;}
   body.on-ink .sidx a{color:rgba(243,236,225,.75);} body.on-ink .sidx a.on{color:var(--washi);} body.on-ink .sidx a span{background:rgba(21,12,21,.8);}
 }
 
+
+
 @media(max-width:899px){.ph-toc a{font-size:14px;letter-spacing:.02em;padding:8px 0;}}
 /* ══ 扉の一枚（窓越しの庭） ══ */
 .ph{padding-bottom:32px;}
@@ -516,14 +518,13 @@ html.motion .ph-yoru::before{animation:twinkle 7s ease-in-out infinite alternate
 .mido figure:hover img{transform:scale(1.03);}
 .mido figcaption{margin-top:12px;}
 .mido figcaption b{display:block;font-weight:500;font-size:17px;letter-spacing:.12em;color:var(--washi);line-height:1.6;}
-.mido figcaption span{display:block;font-size:14px;line-height:1.9;color:rgba(243,236,225,.82);margin-top:4px;}
+.mido figcaption span{display:block;font-size:15px;line-height:2;color:rgba(243,236,225,.82);margin-top:4px;}
 .mido-lead{font-size:17px;line-height:2.15;color:rgba(243,236,225,.92);margin-bottom:48px;}
 @media(min-width:900px){
-  .mido{grid-template-columns:repeat(6,1fr);gap:56px 20px;}
-  .mido figure{grid-column:span 2;}
-  .mido figure.w{grid-column:span 4;}
-  .mido figure.w img{aspect-ratio:3/2;}
-  .mido figure.t img{aspect-ratio:3/4;}
+  .mido{grid-template-columns:1fr 1fr;gap:72px 32px;}
+  .mido figure.w img{aspect-ratio:21/9;}
+  .mido img{aspect-ratio:4/3;}
+  .mido figure.w figcaption{max-width:44em;}
   .mido figcaption b{font-size:18px;}
   .mido-lead{font-size:18px;margin-bottom:72px;max-width:36em;}
 }
@@ -662,6 +663,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
 }
 </style>
 </head>
+
 <body>
 <a class="skip" href="#main">本文へ移動</a>
 
@@ -963,15 +965,16 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
   <div class="sec-in sec-grid">
     <header class="sh rv"><span class="sh-num" aria-hidden="true">四</span><span class="sh-line"></span><h2 class="sh-title">院内の見どころ</h2></header>
     <div class="body">
-      <p class="mido-lead rv">ご宿泊の方は、院内をゆっくりとご覧いただけます。江戸の絵師たちの筆と、昭和の作庭家の庭。泊まるからこそ出会える景色です。</p>
+      <p class="mido-lead rv">ご宿泊の方は、院内をゆっくりとご覧いただけます。山門から本堂、江戸の絵師たちの筆、そして昭和の作庭家の庭へ。泊まるからこそ出会える景色です。</p>
       <div class="mido">
-        <figure class="w rv-img"><img src="images/photos/tenjoue.webp" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" width="1600" height="1067" loading="lazy"><figcaption class="rv"><b>本堂の天井絵</b><span>250年前の絵師による、極彩色の天井絵が今も残ります。</span></figcaption></figure>
-        <figure class="t rv-img"><img src="images/photos/fusuma-kanoha.webp" alt="狩野派による金地の襖絵（唐人物図）" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>狩野派の襖絵</b><span>大広間に残る、江戸時代の狩野派絵師による障壁画。</span></figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/ohiroma.webp" alt="狩野派の襖絵に囲まれた大広間と「獅子吼」の額" width="1600" height="1067" loading="lazy"><figcaption class="rv"><b>大広間</b><span>夕暮れの陽光が生む陰影の中、たおやかな時間が流れます。</span></figcaption></figure>
-        <figure class="w rv-img"><img src="images/photos/teien-mado-3.webp" alt="窓越しに眺める重森三玲設計の石庭" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>重森三玲の石庭</b><span>昭和の名作庭家による石庭を含む、5つの庭園。</span></figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/koi-niwa-2.webp" alt="錦鯉が泳ぐ池と石橋のある庭" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>池泉庭</b><span>錦鯉の泳ぐ池と、石橋のある庭。</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/sanmon-naka.webp" alt="寺紋の入った山門の扉と、境内へ続く石畳" width="1600" height="2133" loading="lazy" style="aspect-ratio:4/3;object-position:center 60%"><figcaption class="rv"><b>山門</b><span>バス通りから歩いて2〜3分。御門までの道のりには木々が整い、静寂の中へ引き込まれていくようです。</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/hondo-gaikan.webp" alt="本覚院の本堂の外観" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>本堂</b><span>高野山真言宗 総本山金剛峯寺の塔頭寺院、別格本山。智証大師作の不動明王像をご本尊としてお祀りしています。朝のお勤めもこちらで行います。</span></figcaption></figure>
+        <figure class="w rv-img"><img src="images/photos/tenjoue.webp" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" width="1600" height="1067" loading="lazy" style="object-position:center 15%"><figcaption class="rv"><b>本堂の天井絵</b><span>江戸時代のものが色彩豊かに残る、貴重な天井絵です。一枚一枚すべてに趣向を凝らした絵のはめ込み板が、本覚院の本堂を特徴づけています。建立から250年を経た今も、豊かな彩色を留めております。</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/fusuma-kanoha.webp" alt="狩野派による金地の襖絵（唐人物図）" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>狩野派の襖絵</b><span>江戸時代に当院に滞在していた、狩野派の絵師による貴重な襖絵です。狩野派は、室町時代から江戸時代にかけて幕府の御用絵師を務めた、日本美術史を代表する絵師の一派です。</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/ohiroma.webp" alt="狩野派の襖絵に囲まれた大広間と「獅子吼」の額" width="1600" height="1067" loading="lazy"><figcaption class="rv"><b>大広間</b><span>重厚な歴史物語が刻まれた広間は、仏前挙式のあとの宴席に使われることもあります。夕暮れの陽光がうむ陰影と、たおやかな時間の流れをお楽しみください。</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/koi-niwa-2.webp" alt="錦鯉が泳ぐ池と石橋のある庭" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>池泉庭</b><span>本覚院の5つの庭園のひとつ。作庭の形式美が各所に息づき、四季折々の風情が楽しめます。静寂のなかに流れる水の音、鳥や虫の声に心が癒されます。</span></figcaption></figure>
         <figure class="rv-img"><img src="images/fudo-myoo.webp" alt="護摩堂にお祀りする修身不動明王" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>護摩堂の修身不動明王</b><span>護摩堂にお祀りしている不動明王さまです。</span></figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/hondo-gaikan.webp" alt="本覚院の本堂の外観" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>本堂</b><span>朝のお勤めが行われる本堂。</span></figcaption></figure>
+        <figure class="w rv-img"><img src="images/photos/teien-mado-3.webp" alt="窓越しに眺める重森三玲設計の苔の石庭" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>重森三玲の石庭と茶室</b><span>苔の石庭は、東福寺方丈庭園などで知られる昭和の作庭家・重森三玲（1896〜1975）によるものです。回廊を巡りながら眺めると、石が左右に、さらには上下にも動くかのような錯覚を覚えるよう、複雑に配置されています。この庭を見下ろすように、離れの茶室が佇んでいます。</span></figcaption></figure>
       </div>
     </div>
   </div>
@@ -1064,7 +1067,6 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
 
 </main>
 
-
 <!-- SNS -->
 <div class="sns">
   <p class="sns-eyebrow">FOLLOW US</p>
@@ -1090,6 +1092,8 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
   <a href="tel:0736562711" class="d-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.6 20.1 3.9 13.4 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></svg>お電話</a>
   <a href="https://tabichat.jp/engine/hotels/hongakuin" class="float-btn" target="_blank" rel="noopener">宿坊のご予約はこちら</a>
 </div>
+
+
 
 <script>
 /* ── メニュー（ドロワー） ── */
