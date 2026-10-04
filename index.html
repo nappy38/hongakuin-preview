@@ -202,7 +202,7 @@ body.at-top .hd .hd-ic,body.at-top .hd .menu-btn{filter:drop-shadow(0 0 6px rgba
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s var(--ease);}
 .slide img{width:100%;height:100%;object-fit:cover;transform-origin:50% 60%;}
 .slide.active{opacity:1;}
-html.motion .slide.active img{animation:kenburns 9s linear both;}
+html.motion .slide.active img{animation:kenburns 7s linear both;}
 @keyframes kenburns{from{transform:scale(1.02);}to{transform:scale(1.1);}}
 .hero-shade{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 45%,rgba(0,0,0,.32),rgba(0,0,0,.05) 70%),linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,0) 22%,rgba(0,0,0,0) 62%,rgba(0,0,0,.5));pointer-events:none;}
 .hero-panel{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:40px;pointer-events:none;}
@@ -222,7 +222,7 @@ html.motion .slide.active img{animation:kenburns 9s linear both;}
 .hero-pause svg{width:14px;height:14px;filter:drop-shadow(0 0 4px rgba(0,0,0,.6));}
 .hero-prog{position:absolute;left:0;bottom:0;height:2px;width:100%;background:rgba(255,255,255,.18);z-index:3;}
 .hero-prog i{display:block;height:100%;width:100%;background:rgba(255,255,255,.85);transform:scaleX(0);transform-origin:left;}
-.hero-prog i.run{animation:prog 6.5s linear forwards;}
+.hero-prog i.run{animation:prog 5s linear forwards;}
 .hero.paused .hero-prog i{animation-play-state:paused;}
 @keyframes prog{to{transform:scaleX(1);}}
 .hero-scroll{position:absolute;right:var(--gut);bottom:24px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:10px;font-family:var(--latin);font-size:12px;letter-spacing:.3em;writing-mode:vertical-rl;text-shadow:0 0 8px rgba(0,0,0,.6);}
@@ -1043,7 +1043,7 @@ function goSlide(n) {
   countEl.textContent = KANJI[cur] + ' ／ ' + KANJI[slides.length - 1];
   runProg();
 }
-function startHero() { clearInterval(heroTimer); heroTimer = setInterval(function () { goSlide(cur + 1); }, 6500); runProg(); }
+function startHero() { clearInterval(heroTimer); heroTimer = setInterval(function () { goSlide(cur + 1); }, 5000); runProg(); }
 function setPaused(p) {
   heroPaused = p; heroEl.classList.toggle('paused', p);
   pauseBtn.setAttribute('aria-pressed', p ? 'true' : 'false');
