@@ -486,6 +486,26 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
   html{scroll-behavior:auto;}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
 }
+
+/* ── 章のしおり（スマホ・タブレット）：いま読んでいる章を上部に出し、押すと章の一覧 ── */
+.shiori{position:fixed;left:0;right:0;top:64px;z-index:880;transform:translateY(-120%);opacity:0;transition:transform .45s var(--ease),opacity .3s;pointer-events:none;}
+body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
+.shiori-btn{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:0 var(--gut);background:rgba(243,236,225,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);font-size:15px;letter-spacing:.1em;color:var(--sumi);text-align:left;}
+.shiori-btn b{font-weight:500;color:var(--gold-d);min-width:1.2em;}
+.shiori-btn span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.shiori-btn small{font-size:13px;letter-spacing:.08em;color:var(--text-2);}
+.shiori-btn i{flex:none;width:9px;height:9px;border-right:1px solid var(--sumi);border-bottom:1px solid var(--sumi);transform:rotate(45deg) translate(-2px,-2px);transition:transform .35s var(--ease);}
+.shiori.open .shiori-btn i{transform:rotate(-135deg);}
+.shiori-list{list-style:none;display:none;background:var(--washi);background-image:var(--fiber),var(--paper);border-bottom:1px solid var(--sumi);box-shadow:0 18px 30px -18px rgba(21,12,21,.45);max-height:calc(100vh - 140px);overflow-y:auto;}
+.shiori.open .shiori-list{display:block;}
+.shiori-list a{display:flex;align-items:center;gap:14px;min-height:52px;padding:0 var(--gut);border-top:1px solid var(--line);font-size:16px;letter-spacing:.1em;color:var(--sumi);}
+.shiori-list a b{font-weight:500;color:var(--gold-d);min-width:1.2em;}
+.shiori-list a.on{background:rgba(145,124,80,.1);}
+.shiori-list a.top{color:var(--text-2);font-size:15px;}
+@media(min-width:900px){.shiori{top:72px;}}
+@media(min-width:1280px){.shiori{display:none;}}
+@media(max-width:1279px){html{scroll-padding-top:124px;}}
 </style>
 </head>
 
@@ -827,6 +847,45 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
     items.forEach(function (li, k) { li.classList.toggle('lit', p >= k / items.length + 0.02); });
   }
   addEventListener('scroll', f, { passive: true }); addEventListener('resize', f); f();
+})();
+</script>
+<script>
+/* 章のしおり：.sidx の章をもとに作る */
+(function () {
+  var src = document.querySelectorAll('.sidx a'); if (!src.length) return;
+  var box = document.createElement('div'); box.className = 'shiori'; box.id = 'shiori';
+  var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'shiori-btn';
+  btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'shioriList');
+  btn.innerHTML = '<b></b><span>目次</span><small>このページの章</small><i aria-hidden="true"></i>';
+  var list = document.createElement('ol'); list.className = 'shiori-list'; list.id = 'shioriList'; list.setAttribute('aria-label', 'このページの章');
+  var items = [];
+  src.forEach(function (a) {
+    var li = document.createElement('li'), x = document.createElement('a');
+    x.href = a.getAttribute('href'); var n = a.querySelector('b'), s = a.querySelector('span');
+    x.innerHTML = '<b>' + (n ? n.textContent : '') + '</b>' + (s ? s.textContent : '');
+    li.appendChild(x); list.appendChild(li); items.push({ id: x.getAttribute('href').slice(1), a: x, n: n ? n.textContent : '', s: s ? s.textContent : '' });
+  });
+  var li0 = document.createElement('li'), top = document.createElement('a'); top.href = '#'; top.className = 'top'; top.textContent = '↑ ページの先頭へ';
+  top.addEventListener('click', function (e) { e.preventDefault(); scrollTo({ top: 0, behavior: 'smooth' }); });
+  li0.appendChild(top); list.appendChild(li0);
+  box.appendChild(btn); box.appendChild(list); document.body.appendChild(box);
+  function close() { box.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+  btn.addEventListener('click', function () { var o = box.classList.toggle('open'); btn.setAttribute('aria-expanded', o ? 'true' : 'false'); });
+  list.addEventListener('click', function (e) { if (e.target.closest('a')) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  document.addEventListener('click', function (e) { if (!box.contains(e.target)) close(); });
+  var bN = btn.querySelector('b'), bS = btn.querySelector('span'), bM = btn.querySelector('small');
+  function set(it) {
+    items.forEach(function (x) { x.a.classList.toggle('on', x === it); });
+    if (it) { bN.textContent = it.n; bS.textContent = it.s; bM.textContent = ''; }
+    else { bN.textContent = ''; bS.textContent = '目次'; bM.textContent = 'このページの章'; }
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { var it = items.filter(function (x) { return x.id === e.target.id; })[0]; set(it); } });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    items.forEach(function (x) { var el = document.getElementById(x.id); if (el) io.observe(el); });
+  }
 })();
 </script>
 </body>
