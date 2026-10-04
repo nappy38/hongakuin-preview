@@ -604,6 +604,22 @@ html.static .sec-grid>.sh{position:relative !important;top:0 !important;}
 /* スマホは住職の縦写真（顔が切れないように） */
 @media(max-width:899px){html body .priest-img{aspect-ratio:4/5 !important;max-height:none !important;object-position:center 35% !important;}}
 picture{display:block;}
+
+/* 朝のお勤めまでのカウントダウン（高野山の時刻＝日本時間） */
+.otsu{margin-top:22px;padding-top:14px;position:relative;text-align:center;color:#fff;text-shadow:0 0 10px rgba(0,0,0,.65);line-height:1.6;}
+.otsu::before{content:'';position:absolute;top:0;left:50%;width:32px;height:1px;background:rgba(255,255,255,.75);transform:translateX(-50%);}
+.otsu-k{display:block;font-size:13px;letter-spacing:.16em;opacity:.92;}
+.otsu-m{display:block;font-size:16px;letter-spacing:.12em;margin-top:2px;font-variant-numeric:lining-nums;}
+.otsu.now .otsu-m{color:#f1dfb4;}
+html.motion .otsu{opacity:0;animation:rise 1.4s var(--ease) forwards;animation-delay:.75s;}
+html.intro.motion .otsu{animation-delay:1.45s;}
+@media(min-width:900px){
+  .otsu{margin-top:-8px;color:var(--sumi);text-shadow:none;}
+  .otsu::before{background:var(--gold);}
+  .otsu-k{color:var(--text-2);}
+  .otsu-m{font-size:17px;}
+  .otsu.now .otsu-m{color:var(--gold-d);}
+}
 </style>
 </head>
 <body class="at-top">
@@ -670,6 +686,7 @@ picture{display:block;}
       <h1 class="hero-name"><span class="hero-name-sub">高野山 別格本山</span><span class="hero-name-main">本覚院</span></h1>
       <span class="hero-name-en" lang="en">Koyasan<br>Hongakuin</span>
     </div>
+    <p class="otsu" id="otsu"><span class="otsu-k">朝のお勤め　毎朝6:30〜 本堂にて</span><span class="otsu-m" id="otsuMsg">&nbsp;</span></p>
     <nav class="hero-nav" aria-label="メインメニュー（トップ）">
       <a href="about.html">本覚院について</a>
       <a href="priest.html">住職・僧侶</a>
@@ -1311,6 +1328,22 @@ function toggleArchive() {
   if (!document.documentElement.classList.contains('static')) return;
   var h = innerWidth < 900 ? 844 : 900;
   document.querySelector('.hero').style.height = h + 'px';
+})();
+</script>
+<script>
+/* 朝のお勤め（毎朝6:30〜 本堂）まで、あと何時間何分か。お勤め中（6:30〜7:30）はその旨を表示 */
+(function () {
+  var box = document.getElementById('otsu'), m = document.getElementById('otsuMsg'); if (!box) return;
+  var q = location.search.match(/[?&]jst=(\d+)(?::(\d+))?/); // 確認用：?jst=6:45 など
+  function tick() {
+    var now = new Date(Date.now() + (new Date().getTimezoneOffset() + 540) * 60000);
+    var tm = q ? (+q[1] % 24) * 60 + (+q[2] || 0) : now.getHours() * 60 + now.getMinutes();
+    if (tm >= 390 && tm < 450) { box.classList.add('now'); m.textContent = 'ただいま、朝のお勤めの最中です'; return; }
+    box.classList.remove('now');
+    var d = (390 - tm + 1440) % 1440, h = Math.floor(d / 60), mi = d % 60;
+    m.textContent = '次のお勤めまで　あと ' + (h ? h + '時間' : '') + mi + '分';
+  }
+  tick(); setInterval(tick, 20000);
 })();
 </script>
 </body>
