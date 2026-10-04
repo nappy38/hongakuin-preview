@@ -59,7 +59,7 @@
     { "@type": "Question", "name": "What are check-in and check-out times?", "acceptedAnswer": { "@type": "Answer", "text": "Check-in is from 3:00 pm, and check-out is by 10:00 am." } },
     { "@type": "Question", "name": "Is there a curfew?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the gate closes at 10:00 pm. The mountain grows quiet in the evening, so please return by then." } },
     { "@type": "Question", "name": "Is the food shōjin ryōri? Can you accommodate food allergies?", "acceptedAnswer": { "@type": "Answer", "text": "We serve shōjin ryōri, including dishes such as kōya-dōfu (freeze-dried tofu) and goma-dōfu (sesame tofu). Please note that we are unable to accommodate individual food allergies." } },
-    { "@type": "Question", "name": "Can anyone join the morning prayer service? Is it required?", "acceptedAnswer": { "@type": "Answer", "text": "All guests are welcome to join. Attendance is optional, not required. It lasts roughly 45 minutes to an hour." } },
+    { "@type": "Question", "name": "Can anyone join the morning prayer service? Is it required?", "acceptedAnswer": { "@type": "Answer", "text": "The morning service begins at 6:30 am in the main hall. All guests are welcome to join. Attendance is optional, not required. It lasts roughly 45 minutes to an hour." } },
     { "@type": "Question", "name": "Can international guests stay? Is English support available?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, guests from overseas are warmly welcome. Our staff can assist you in simple English." } }
   ]
 }
@@ -837,7 +837,7 @@ footer p{letter-spacing:.04em;}
   <ul class="incl rv">
     <li>Japanese-style tatami room</li>
     <li>Shōjin ryōri dinner &amp; breakfast</li>
-    <li>Morning service with the monks (optional)</li>
+    <li>Morning service with the monks, 6:30 am (optional)</li>
     <li>Shared baths, 17:00–21:00</li>
     <li>Yukata &amp; amenities</li>
     <li>Simple English spoken</li>
@@ -914,10 +914,10 @@ footer p{letter-spacing:.04em;}
       <article class="moment">
         <figure class="rv-img"><img src="images/photos/gongyo-hondo.webp" alt="Monks chanting sutras in the main hall during the morning service" width="1600" height="1067" loading="lazy"></figure>
         <div class="rv">
-          <p class="m-time"><b>Early morning</b></p>
+          <p class="m-time"><b>6:30 am</b><small>Morning service</small></p>
           <h3 class="m-title">Morning service</h3>
           <p class="m-text">The vice head priest and the monks chant in the main hall. Sit with them and let the voices of a thousand-year tradition begin your day.</p>
-          <p class="m-note">Optional · about 45 minutes to an hour</p>
+          <p class="m-note">Every morning at 6:30 · optional · about 45 minutes to an hour</p>
         </div>
       </article>
       <article class="moment rev">
@@ -1104,7 +1104,7 @@ footer p{letter-spacing:.04em;}
         <details><summary>What are check-in and check-out times?</summary><p class="a">Check-in is from 3:00 pm, and check-out is by 10:00 am.</p></details>
         <details><summary>Is there a curfew?</summary><p class="a">Yes, the gate closes at 10:00 pm. The mountain grows quiet in the evening, so please return by then.</p></details>
         <details><summary>Is the food shōjin ryōri? Can you accommodate food allergies?</summary><p class="a">We serve shōjin ryōri, including dishes such as kōya-dōfu (freeze-dried tofu) and goma-dōfu (sesame tofu). We are unable to accommodate individual food allergies.</p></details>
-        <details><summary>Can anyone join the morning prayer service? Is it required?</summary><p class="a">All guests are welcome to join. Attendance is optional, not required. It lasts roughly 45 minutes to an hour.</p></details>
+        <details><summary>Can anyone join the morning prayer service? Is it required?</summary><p class="a">The morning service begins at 6:30 am in the main hall. All guests are welcome to join. Attendance is optional, not required. It lasts roughly 45 minutes to an hour.</p></details>
         <details><summary>Can international guests stay? Is English support available?</summary><p class="a">Yes, guests from overseas are warmly welcome. Our staff can assist you in simple English.</p></details>
       </div>
     </div>
@@ -1232,28 +1232,30 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
 (function () {
   var hero = document.getElementById('top'), t = document.getElementById('ktTime'), m = document.getElementById('ktMsg');
   if (!hero || !t) return;
+  // [開始(分), 終了(分), 色, 文]  高野山の時刻（日本時間）
   var lines = [
-    [0, 4, 't-night', 'The gate has closed. The mountain is silent.'],
-    [4, 6, 't-dawn', 'Dawn is breaking. Soon the monks will gather in the main hall.'],
-    [6, 8, 't-dawn', 'Morning has come. In the main hall, the day begins with chanting.'],
-    [8, 10, 't-day', 'Morning light in the garden. Guests set out for Okunoin.'],
-    [10, 15, 't-day', 'Midday. The temple rests, waiting for tonight’s guests.'],
-    [15, 17, 't-dusk', 'Guests are arriving. Beyond the gate, the town falls away.'],
-    [17, 19, 't-dusk', 'Evening falls. The baths are open, and dinner awaits.'],
-    [19, 21, 't-night', 'Night has come. Lanterns glow along the corridors.'],
-    [21, 22, 't-night', 'The gate closes at ten. The mountain grows still.'],
-    [22, 24, 't-night', 'The gate has closed. The mountain is silent.']
+    [0, 240, 't-night', 'The gate has closed. The mountain is silent.'],
+    [240, 360, 't-dawn', 'Dawn is breaking. At 6:30, the monks will gather in the main hall.'],
+    [360, 390, 't-dawn', 'The morning service begins at 6:30 in the main hall.'],
+    [390, 450, 't-dawn', 'The morning service is under way. Chanting fills the main hall.'],
+    [450, 600, 't-day', 'Morning light in the garden. Check-out is at ten.'],
+    [600, 900, 't-day', 'Midday. The temple rests, waiting for tonight\u2019s guests.'],
+    [900, 1020, 't-dusk', 'Guests are arriving. Beyond the gate, the town falls away.'],
+    [1020, 1140, 't-dusk', 'Evening falls. The baths are open, and dinner awaits.'],
+    [1140, 1260, 't-night', 'Night has come. Lanterns glow along the corridors.'],
+    [1260, 1320, 't-night', 'The gate closes at ten. The mountain grows still.'],
+    [1320, 1440, 't-night', 'The gate has closed. The mountain is silent.']
   ];
-  var q = location.search.match(/[?&]jst=(\d+)/); // 確認用：?jst=21 でその時刻の表示を見られる
+  var q = location.search.match(/[?&]jst=(\d+)(?::(\d+))?/); // 確認用：?jst=21 や ?jst=6:45 でその時刻の表示を見られる
   var last = '';
   function tick() {
     var now = new Date(Date.now() + (new Date().getTimezoneOffset() + 540) * 60000);
-    var h = q ? +q[1] % 24 : now.getHours(), mi = q ? 0 : now.getMinutes();
+    var h = q ? +q[1] % 24 : now.getHours(), mi = q ? (+q[2] || 0) : now.getMinutes(), tm = h * 60 + mi;
     var ap = h < 12 ? 'am' : 'pm', h12 = h % 12 || 12;
     t.textContent = h12 + ':' + (mi < 10 ? '0' : '') + mi + ' ' + ap;
     for (var i = 0; i < lines.length; i++) {
       var L = lines[i];
-      if (h >= L[0] && h < L[1]) {
+      if (tm >= L[0] && tm < L[1]) {
         if (last !== L[3]) {
           hero.classList.remove('t-dawn', 't-day', 't-dusk', 't-night'); hero.classList.add(L[2]);
           if (!last) { m.textContent = L[3]; }
