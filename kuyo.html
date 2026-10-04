@@ -87,8 +87,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600&family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/photos/hondo-kigan.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500&family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/photos/hondo-kigan.webp" imagesrcset="images/photos/hondo-kigan-960.webp 960w, images/photos/hondo-kigan.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <style>
 /* ══════════════════════════════════════════════════════════
    本覚院 お参り・ご供養 v3 ──「祈りの巻」
@@ -104,8 +104,8 @@
   --brush:'Yuji Syuku','Shippori Mincho B1',serif;
   --gut:20px; --max:1180px;
   --ease:cubic-bezier(.22,.61,.36,1); --ease-io:cubic-bezier(.65,0,.35,1);
-  --paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0.28 0'/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix values='0 0 0 0 .42  0 0 0 0 .36  0 0 0 0 .27  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23n%29'/%3E%3C/svg%3E");
-  --fiber:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .06' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .27  0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E");
+  --paper:url("images/tex-paper.webp");
+  --fiber:url("images/tex-fiber.webp");
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px;}
@@ -631,7 +631,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
 
 <!-- 扉の一枚：灯明の本堂 -->
 <figure class="mado">
-  <img src="images/photos/hondo-kigan.webp" alt="ろうそくの灯る本堂で、ご廻向をおつとめする僧侶" width="1600" height="1200" fetchpriority="high">
+  <img src="images/photos/hondo-kigan.webp" srcset="images/photos/hondo-kigan-960.webp 960w, images/photos/hondo-kigan.webp 1600w" sizes="100vw" alt="ろうそくの灯る本堂で、ご廻向をおつとめする僧侶" width="1600" height="1200" fetchpriority="high">
   <figcaption>ご先祖さまへの想いを、高野山で。<small>ご廻向・永代供養・ご祈祷を承っております</small></figcaption>
 </figure>
 
@@ -654,7 +654,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
     <header class="sh rv"><span class="sh-num" aria-hidden="true">一</span><span class="sh-line"></span><h2 class="sh-title">縁起</h2></header>
     <div class="body">
       <div class="engi">
-        <figure class="engi-fig rv-img"><img src="images/photos/jizo-zushi.webp" alt="金色の厨子にお祀りされた地蔵菩薩" width="1600" height="1200" loading="lazy" style="object-position:center 40%"></figure>
+        <figure class="engi-fig rv-img"><img src="images/photos/jizo-zushi.webp" srcset="images/photos/jizo-zushi-960.webp 960w, images/photos/jizo-zushi.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="金色の厨子にお祀りされた地蔵菩薩" width="1600" height="1200" loading="lazy" style="object-position:center 40%"></figure>
         <div class="engi-text">
           <p class="engi-year rv"><b>1190</b><span>建久年間の開創</span></p>
           <div class="rv">
@@ -686,7 +686,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
   <div class="sec-in sec-grid">
     <header class="sh rv"><span class="sh-num" aria-hidden="true">二</span><span class="sh-line"></span><h2 class="sh-title">ご廻向</h2></header>
     <div class="body">
-      <figure class="ekou-fig rv-img"><img src="images/insta-nenki.webp" alt="花と灯明に囲まれた本堂で、ご法要を勤める僧侶" width="1280" height="1273" loading="lazy" style="object-position:center 80%"></figure>
+      <figure class="ekou-fig rv-img"><img src="images/insta-nenki.webp" srcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" sizes="100vw" alt="花と灯明に囲まれた本堂で、ご法要を勤める僧侶" width="1280" height="1273" loading="lazy" style="object-position:center 80%"></figure>
       <p class="ekou-lead rv">本覚院のご廻向は、高野山の金剛峯寺で行われる法要と同様の流れで、およそ1時間かけておつとめいたします。僧侶が朗々と音階のついたお経（聲明）をおとなえする姿や声は、ご先祖さまだけでなく、参列される方の心も清々しく癒してくれることでしょう。</p>
       <ol class="flow" id="flow">
         <li class="prog" aria-hidden="true"></li>
@@ -716,7 +716,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
         <p>分家なので、お仏壇がない。</p>
       </div>
       <div class="eitai">
-        <figure class="eitai-fig rv-img"><img src="images/photos/fukujushoku-kigan.webp" alt="位牌の並ぶお堂で、灯明を前に手を合わせる僧侶" width="1280" height="948" loading="lazy"><figcaption class="cap">位牌堂でのおつとめ</figcaption></figure>
+        <figure class="eitai-fig rv-img"><img src="images/photos/fukujushoku-kigan.webp" srcset="images/photos/fukujushoku-kigan-960.webp 960w, images/photos/fukujushoku-kigan.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="位牌の並ぶお堂で、灯明を前に手を合わせる僧侶" width="1280" height="948" loading="lazy"><figcaption class="cap">位牌堂でのおつとめ</figcaption></figure>
         <div class="eitai-text rv">
           <p>このようなお悩みが、お寺にはたくさん寄せられます。当院では、住職をはじめ僧侶が親身にご相談をうかがい、それぞれのご家庭に沿った永代供養の方法をご案内しております。</p>
           <p>お位牌を建立し、本堂にて勤行したのち、位牌堂にて永代におまつりいたします。永代供養をされた方には、皆さまご安心いただいております。ご不安なことや詳しいことは、お電話でお問い合わせください。</p>
@@ -739,7 +739,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
     <header class="sh rv"><span class="sh-num" aria-hidden="true">四</span><span class="sh-line"></span><h2 class="sh-title">ご祈祷・護摩</h2></header>
     <div class="body">
       <div class="goma">
-        <figure class="goma-fig rv-img"><img src="images/fudo-myoo.webp" alt="護摩堂にお祀りする修身不動明王" width="1600" height="1200" loading="lazy"><figcaption class="cap">護摩堂の修身不動明王</figcaption></figure>
+        <figure class="goma-fig rv-img"><img src="images/fudo-myoo.webp" srcset="images/fudo-myoo-960.webp 960w, images/fudo-myoo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="護摩堂にお祀りする修身不動明王" width="1600" height="1200" loading="lazy"><figcaption class="cap">護摩堂の修身不動明王</figcaption></figure>
         <div class="goma-text rv">
           <p>護摩堂では、御護摩による祈祷を随時承っております。護摩祈祷により、さまざまな願いをご祈願いただけます。</p>
           <ul class="wish"><li>無病息災</li><li>心願成就</li><li>交通安全</li></ul>
@@ -809,10 +809,10 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
   <p class="sns-eyebrow">FOLLOW US</p>
   <p class="ig-lead">本覚院の日々を、Instagramでお届けしています</p>
   <div class="ig-grid">
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-gongyo.webp" alt="灯明のともる内陣でお勤めをする僧侶" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-mandala.webp" alt="灯明に照らされた曼荼羅の掛軸" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-kuyo-roka.webp" alt="法衣をまとい廊下を進む僧侶" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-nenki.webp" alt="花と灯明に囲まれた本堂で、ご法要を勤める僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-gongyo.webp" srcset="images/insta-gongyo-960.webp 960w, images/insta-gongyo.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明のともる内陣でお勤めをする僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-mandala.webp" srcset="images/insta-mandala-960.webp 960w, images/insta-mandala.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明に照らされた曼荼羅の掛軸" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-kuyo-roka.webp" srcset="images/insta-kuyo-roka-960.webp 960w, images/insta-kuyo-roka.webp 1280w" sizes="100vw" alt="法衣をまとい廊下を進む僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-nenki.webp" srcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" sizes="100vw" alt="花と灯明に囲まれた本堂で、ご法要を勤める僧侶" loading="lazy" width="1280" height="1280"></a>
   </div>
   <a href="https://www.instagram.com/koyasan_hongakuin/" class="sns-link ig-big" target="_blank" rel="noopener"><span class="ig-row"><svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagramを見る</span><span class="ig-handle">@koyasan_hongakuin</span></a>
 </div>

@@ -78,8 +78,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600&family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/photos/rokujizo-ushiro.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500&family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/photos/rokujizo-ushiro.webp" imagesrcset="images/photos/rokujizo-ushiro-960.webp 960w, images/photos/rokujizo-ushiro.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <style>
 /* ══════════════════════════════════════════════════════════
    本覚院 本覚院について v3 ──「由緒の巻」
@@ -95,8 +95,8 @@
   --brush:'Yuji Syuku','Shippori Mincho B1',serif;
   --gut:20px; --max:1180px;
   --ease:cubic-bezier(.22,.61,.36,1); --ease-io:cubic-bezier(.65,0,.35,1);
-  --paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0.28 0'/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix values='0 0 0 0 .42  0 0 0 0 .36  0 0 0 0 .27  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23n%29'/%3E%3C/svg%3E");
-  --fiber:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .06' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .27  0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E");
+  --paper:url("images/tex-paper.webp");
+  --fiber:url("images/tex-fiber.webp");
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px;}
@@ -569,7 +569,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
 
 <!-- 扉の一枚：六地蔵 -->
 <figure class="mado">
-  <img src="images/photos/rokujizo-ushiro.webp" alt="お堂の内側から見る、境内に並ぶ六体のお地蔵さま" width="1600" height="1200" fetchpriority="high">
+  <img src="images/photos/rokujizo-ushiro.webp" srcset="images/photos/rokujizo-ushiro-960.webp 960w, images/photos/rokujizo-ushiro.webp 1600w" sizes="100vw" alt="お堂の内側から見る、境内に並ぶ六体のお地蔵さま" width="1600" height="1200" fetchpriority="high">
   <figcaption>六地蔵の地に、八百年。<small>建久年間（1190年）の開創から、法灯を守り続けています</small></figcaption>
 </figure>
 
@@ -594,7 +594,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
     <header class="sh rv"><span class="sh-num" aria-hidden="true">一</span><span class="sh-line"></span><h2 class="sh-title">縁起</h2></header>
     <div class="body">
       <div class="engi">
-        <figure class="engi-fig rv-img"><img src="images/photos/jizo-rokutai.webp" alt="毛糸の帽子と前掛けを身につけた、境内のお地蔵さま" width="1400" height="1050" loading="lazy"></figure>
+        <figure class="engi-fig rv-img"><img src="images/photos/jizo-rokutai.webp" srcset="images/photos/jizo-rokutai-960.webp 960w, images/photos/jizo-rokutai.webp 1400w" sizes="(max-width: 899px) 100vw, 60vw" alt="毛糸の帽子と前掛けを身につけた、境内のお地蔵さま" width="1400" height="1050" loading="lazy"></figure>
         <div class="engi-text rv">
           <p>本覚院が建つのは、弘法大師空海がこの地で六地蔵菩薩（六体のお地蔵さま）が現れるのを感じとられた、と伝えられる場所です。</p>
           <p>時は平安時代・後鳥羽院の建久年間（1190年）。歌人「待宵小侍従」（太皇太后宮小侍従）の願いを受けて高野山に登った行空上人が、この地でお経を唱え続けていました。すると光とともに地蔵菩薩が現れ、こう告げられたといいます。</p>
@@ -671,9 +671,9 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
     <header class="sh rv"><span class="sh-num" aria-hidden="true">五</span><span class="sh-line"></span><h2 class="sh-title">院内の見どころ</h2></header>
     <div class="body">
       <div class="teaser">
-        <figure class="rv-img"><img src="images/photos/tenjoue.webp" alt="本堂に残る江戸時代の極彩色の天井絵" width="1600" height="1067" loading="lazy" style="object-position:center 20%"><figcaption>本堂の天井絵</figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/fusuma-kanoha.webp" alt="狩野派による金地の襖絵" width="1600" height="1200" loading="lazy"><figcaption>狩野派の襖絵</figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/teien-mado-3.webp" alt="窓越しに眺める重森三玲の苔の石庭" width="1600" height="1200" loading="lazy"><figcaption>重森三玲の石庭</figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂に残る江戸時代の極彩色の天井絵" width="1600" height="1067" loading="lazy" style="object-position:center 20%"><figcaption>本堂の天井絵</figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/fusuma-kanoha.webp" srcset="images/photos/fusuma-kanoha-960.webp 960w, images/photos/fusuma-kanoha.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="狩野派による金地の襖絵" width="1600" height="1200" loading="lazy"><figcaption>狩野派の襖絵</figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/teien-mado-3.webp" srcset="images/photos/teien-mado-3-960.webp 960w, images/photos/teien-mado-3.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="窓越しに眺める重森三玲の苔の石庭" width="1600" height="1200" loading="lazy"><figcaption>重森三玲の石庭</figcaption></figure>
       </div>
       <p class="teaser-more rv"><a class="btn" href="shukubo.html#mido">院内の見どころを見る<span class="arw"></span></a></p>
     </div>
@@ -714,10 +714,10 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
   <p class="sns-eyebrow">FOLLOW US</p>
   <p class="ig-lead">本覚院の日々を、Instagramでお届けしています</p>
   <div class="ig-grid">
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-gongyo.webp" alt="灯明のともる内陣でお勤めをする僧侶" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-mandala.webp" alt="灯明に照らされた曼荼羅の掛軸" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-kuyo-roka.webp" alt="法衣をまとい廊下を進む僧侶" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-nenki.webp" alt="花と灯明に囲まれた本堂で、ご法要を勤める僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-gongyo.webp" srcset="images/insta-gongyo-960.webp 960w, images/insta-gongyo.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明のともる内陣でお勤めをする僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-mandala.webp" srcset="images/insta-mandala-960.webp 960w, images/insta-mandala.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明に照らされた曼荼羅の掛軸" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-kuyo-roka.webp" srcset="images/insta-kuyo-roka-960.webp 960w, images/insta-kuyo-roka.webp 1280w" sizes="100vw" alt="法衣をまとい廊下を進む僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-nenki.webp" srcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" sizes="100vw" alt="花と灯明に囲まれた本堂で、ご法要を勤める僧侶" loading="lazy" width="1280" height="1280"></a>
   </div>
   <a href="https://www.instagram.com/koyasan_hongakuin/" class="sns-link ig-big" target="_blank" rel="noopener"><span class="ig-row"><svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagramを見る</span><span class="ig-handle">@koyasan_hongakuin</span></a>
 </div>

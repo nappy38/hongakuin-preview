@@ -79,7 +79,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/photos/teien-mado-4.webp" fetchpriority="high">
+<link rel="preload" as="image" href="images/photos/teien-mado-4.webp" imagesrcset="images/photos/teien-mado-4-960.webp 960w, images/photos/teien-mado-4.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <style>
 /* Koyasan Hongakuin — English v3. Same design language as the Japanese v3 pages (washi, sumi, gold; vermilion only for booking). */
 :root{
@@ -91,8 +91,8 @@
   --brush:'Yuji Syuku','Shippori Mincho B1',serif;
   --gut:20px; --max:1180px;
   --ease:cubic-bezier(.22,.61,.36,1); --ease-io:cubic-bezier(.65,0,.35,1);
-  --paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0.28 0'/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix values='0 0 0 0 .42  0 0 0 0 .36  0 0 0 0 .27  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23n%29'/%3E%3C/svg%3E");
-  --fiber:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .06' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .27  0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E");
+  --paper:url("images/tex-paper.webp");
+  --fiber:url("images/tex-fiber.webp");
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px;}
@@ -837,7 +837,7 @@ footer p{letter-spacing:.04em;}
 <!-- HERO -->
 <section class="en-hero on-dark" id="top">
   <div class="en-tint" aria-hidden="true"></div>
-  <img class="en-hero-img" src="images/photos/teien-mado-4.webp" alt="A moss-and-stone garden by Shigemori Mirei, framed by the temple's wooden window" width="1600" height="1200" fetchpriority="high">
+  <img class="en-hero-img" src="images/photos/teien-mado-4.webp" srcset="images/photos/teien-mado-4-960.webp 960w, images/photos/teien-mado-4.webp 1600w" sizes="100vw" alt="A moss-and-stone garden by Shigemori Mirei, framed by the temple's wooden window" width="1600" height="1200" fetchpriority="high">
   <div class="en-hero-mark">
     <img class="en-crest" src="images/mon-white.png" alt="" width="64" height="64">
     <p class="en-jp" lang="ja">高野山 別格本山 本覚院</p>
@@ -891,7 +891,7 @@ footer p{letter-spacing:.04em;}
         </div>
       </article>
       <article class="moment rev">
-        <figure class="rv-img"><img src="images/photos/teien-mado-slide.webp" alt="A garden of moss and stone seen through a window frame" width="1400" height="1050" loading="lazy"></figure>
+        <figure class="rv-img"><img src="images/photos/teien-mado-slide.webp" srcset="images/photos/teien-mado-slide-960.webp 960w, images/photos/teien-mado-slide.webp 1400w" sizes="100vw" alt="A garden of moss and stone seen through a window frame" width="1400" height="1050" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>Late afternoon</b></p>
           <h3 class="m-title">Gaze at the garden</h3>
@@ -907,7 +907,7 @@ footer p{letter-spacing:.04em;}
     <div class="phase-in">
       <p class="phase-k rv">Evening</p>
       <article class="moment">
-        <figure class="rv-img"><img src="images/photos/fusuma-shojin.webp" alt="Shōjin ryōri trays set before gilded sliding-door paintings" width="1600" height="1200" loading="lazy"></figure>
+        <figure class="rv-img"><img src="images/photos/fusuma-shojin.webp" srcset="images/photos/fusuma-shojin-960.webp 960w, images/photos/fusuma-shojin.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Shōjin ryōri trays set before gilded sliding-door paintings" width="1600" height="1200" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>Dinner</b></p>
           <h3 class="m-title">Shōjin ryōri</h3>
@@ -916,7 +916,7 @@ footer p{letter-spacing:.04em;}
         </div>
       </article>
       <article class="moment rev">
-        <figure class="rv-img"><img src="images/photos/daiyokujo-onna.webp" alt="The large shared bath, with stone floor and a wide tub" width="1600" height="1200" loading="lazy"></figure>
+        <figure class="rv-img"><img src="images/photos/daiyokujo-onna.webp" srcset="images/photos/daiyokujo-onna-960.webp 960w, images/photos/daiyokujo-onna.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The large shared bath, with stone floor and a wide tub" width="1600" height="1200" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>5:00 – 9:00 pm</b></p>
           <h3 class="m-title">The bath</h3>
@@ -940,7 +940,7 @@ footer p{letter-spacing:.04em;}
     <div class="phase-in">
       <p class="phase-k rv">Morning</p>
       <article class="moment">
-        <figure class="rv-img"><img src="images/photos/gongyo-hondo.webp" alt="Monks chanting sutras in the main hall during the morning service" width="1600" height="1067" loading="lazy"></figure>
+        <figure class="rv-img"><img src="images/photos/gongyo-hondo.webp" srcset="images/photos/gongyo-hondo-960.webp 960w, images/photos/gongyo-hondo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Monks chanting sutras in the main hall during the morning service" width="1600" height="1067" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>6:30 am</b><small>Morning service</small></p>
           <h3 class="m-title">Morning service</h3>
@@ -949,7 +949,7 @@ footer p{letter-spacing:.04em;}
         </div>
       </article>
       <article class="moment rev">
-        <figure class="rv-img"><img src="images/photos/roka-niwa.webp" alt="A long wooden corridor lined with glass doors facing the garden" width="1600" height="2133" loading="lazy" style="aspect-ratio:3/2;object-position:center 60%"></figure>
+        <figure class="rv-img"><img src="images/photos/roka-niwa.webp" srcset="images/photos/roka-niwa-960.webp 960w, images/photos/roka-niwa.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A long wooden corridor lined with glass doors facing the garden" width="1600" height="2133" loading="lazy" style="aspect-ratio:3/2;object-position:center 60%"></figure>
         <div class="rv">
           <p class="m-time"><b>Morning</b></p>
           <h3 class="m-title">Sutra copying</h3>
@@ -957,7 +957,7 @@ footer p{letter-spacing:.04em;}
         </div>
       </article>
       <article class="moment">
-        <figure class="rv-img"><img src="images/photos/sando-hiru.webp" alt="A stone path through the temple garden, lined with lanterns and shrubs" width="1500" height="1125" loading="lazy"></figure>
+        <figure class="rv-img"><img src="images/photos/sando-hiru.webp" srcset="images/photos/sando-hiru-960.webp 960w, images/photos/sando-hiru.webp 1500w" sizes="(max-width: 899px) 100vw, 60vw" alt="A stone path through the temple garden, lined with lanterns and shrubs" width="1500" height="1125" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>10:00 am</b><small>Check-out</small></p>
           <h3 class="m-title">On to Okunoin</h3>
@@ -1014,8 +1014,8 @@ footer p{letter-spacing:.04em;}
       <article class="room rev">
         <div class="room-media">
           <div class="pair rv-img">
-            <figure><img src="images/photos/kyakushitsu-honkan-1f.webp" alt="A ground-floor tatami room in the main building" width="1600" height="1200" loading="lazy"><figcaption>1F</figcaption></figure>
-            <figure><img src="images/photos/kyakushitsu-honkan-2f.webp" alt="An upstairs tatami room in the main building, with chairs by the window" width="1600" height="1200" loading="lazy"><figcaption>2F</figcaption></figure>
+            <figure><img src="images/photos/kyakushitsu-honkan-1f.webp" srcset="images/photos/kyakushitsu-honkan-1f-960.webp 960w, images/photos/kyakushitsu-honkan-1f.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A ground-floor tatami room in the main building" width="1600" height="1200" loading="lazy"><figcaption>1F</figcaption></figure>
+            <figure><img src="images/photos/kyakushitsu-honkan-2f.webp" srcset="images/photos/kyakushitsu-honkan-2f-960.webp 960w, images/photos/kyakushitsu-honkan-2f.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="An upstairs tatami room in the main building, with chairs by the window" width="1600" height="1200" loading="lazy"><figcaption>2F</figcaption></figure>
           </div>
         </div>
         <div class="room-head rv">
@@ -1042,10 +1042,10 @@ footer p{letter-spacing:.04em;}
         </div>
       </div>
       <div class="mido">
-        <figure class="w rv-img"><img src="images/photos/tenjoue.webp" alt="Painted ceiling panels in the main hall" width="1600" height="1067" loading="lazy" style="object-position:center 15%"><figcaption class="rv"><b>Painted ceiling</b><span>Richly colored panels in the main hall, still vivid some 250 years after they were painted.</span></figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/fusuma-kanoha.webp" alt="Gold-leaf sliding-door paintings by Kanō-school artists" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Kanō-school screens</b><span>Sliding-door paintings by artists of the Kanō school, official painters to the shoguns.</span></figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/koi-niwa-2.webp" alt="A pond garden with koi and a stone bridge" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Pond garden</b><span>Water, birdsong and koi — one of the temple's five gardens.</span></figcaption></figure>
-        <figure class="w rv-img"><img src="images/photos/teien-mado-3.webp" alt="The moss and rock garden by Shigemori Mirei, seen through a window" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Shigemori Mirei's rock garden</b><span>Walk the corridor and the stones seem to shift left and right, up and down — an illusion built into the design. A tea house looks down over the garden.</span></figcaption></figure>
+        <figure class="w rv-img"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Painted ceiling panels in the main hall" width="1600" height="1067" loading="lazy" style="object-position:center 15%"><figcaption class="rv"><b>Painted ceiling</b><span>Richly colored panels in the main hall, still vivid some 250 years after they were painted.</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/fusuma-kanoha.webp" srcset="images/photos/fusuma-kanoha-960.webp 960w, images/photos/fusuma-kanoha.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Gold-leaf sliding-door paintings by Kanō-school artists" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Kanō-school screens</b><span>Sliding-door paintings by artists of the Kanō school, official painters to the shoguns.</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/koi-niwa-2.webp" srcset="images/photos/koi-niwa-2-960.webp 960w, images/photos/koi-niwa-2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A pond garden with koi and a stone bridge" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Pond garden</b><span>Water, birdsong and koi — one of the temple's five gardens.</span></figcaption></figure>
+        <figure class="w rv-img"><img src="images/photos/teien-mado-3.webp" srcset="images/photos/teien-mado-3-960.webp 960w, images/photos/teien-mado-3.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The moss and rock garden by Shigemori Mirei, seen through a window" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Shigemori Mirei's rock garden</b><span>Walk the corridor and the stones seem to shift left and right, up and down — an illusion built into the design. A tea house looks down over the garden.</span></figcaption></figure>
       </div>
     </div>
   </div>
@@ -1188,10 +1188,10 @@ footer p{letter-spacing:.04em;}
   <p class="sns-eyebrow">FOLLOW US</p>
   <p class="ig-lead">Daily life at Hongakuin on Instagram</p>
   <div class="ig-grid">
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-gongyo.webp" alt="A monk chanting in the lamp-lit inner sanctuary" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-mandala.webp" alt="A mandala scroll lit by votive lamps" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-kuyo-roka.webp" alt="Monks in robes walking along a corridor" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-nenki.webp" alt="A memorial service in the main hall, surrounded by flowers and lamps" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-gongyo.webp" srcset="images/insta-gongyo-960.webp 960w, images/insta-gongyo.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="A monk chanting in the lamp-lit inner sanctuary" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-mandala.webp" srcset="images/insta-mandala-960.webp 960w, images/insta-mandala.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="A mandala scroll lit by votive lamps" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-kuyo-roka.webp" srcset="images/insta-kuyo-roka-960.webp 960w, images/insta-kuyo-roka.webp 1280w" sizes="100vw" alt="Monks in robes walking along a corridor" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-nenki.webp" srcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" sizes="100vw" alt="A memorial service in the main hall, surrounded by flowers and lamps" loading="lazy" width="1280" height="1280"></a>
   </div>
   <a href="https://www.instagram.com/koyasan_hongakuin/" class="sns-link ig-big" target="_blank" rel="noopener"><span class="ig-row"><svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagram</span><span class="ig-handle">@koyasan_hongakuin</span></a>
 </div>
@@ -1381,7 +1381,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
       if (t.getAttribute('aria-selected') === 'true') return;
       tabs.forEach(function (x) { x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
       main.classList.add('fade');
-      setTimeout(function () { main.src = t.dataset.src; main.alt = t.dataset.alt; desc.textContent = t.dataset.desc; main.classList.remove('fade'); }, 250);
+      setTimeout(function () { main.removeAttribute('srcset'); main.src = t.dataset.src; main.alt = t.dataset.alt; desc.textContent = t.dataset.desc; main.classList.remove('fade'); }, 250);
     });
   });
 })();

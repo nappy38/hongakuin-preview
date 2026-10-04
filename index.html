@@ -69,8 +69,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600&family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="images/insta-nenki.webp" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500&family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/insta-nenki.webp" imagesrcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" imagesizes="100vw" fetchpriority="high">
 <style>
 /* ══════════════════════════════════════════════════════════
    本覚院 トップページ v3 ── 「右から開く経巻」
@@ -85,8 +85,8 @@
   --latin:'Cormorant Garamond',serif;
   --gut:20px; --max:1180px;
   --ease:cubic-bezier(.22,.61,.36,1); --ease-io:cubic-bezier(.65,0,.35,1);
-  --paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0.28 0'/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix values='0 0 0 0 .42  0 0 0 0 .36  0 0 0 0 .27  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23n%29'/%3E%3C/svg%3E");
-  --fiber:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .06' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .27  0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E");
+  --paper:url("images/tex-paper.webp");
+  --fiber:url("images/tex-fiber.webp");
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px;}
@@ -672,10 +672,10 @@ html.intro.motion .otsu{animation-delay:1.45s;}
 <!-- HERO -->
 <section class="hero" id="top" aria-label="本覚院">
   <div class="hero-media">
-    <div class="slide active" data-cap="本堂のご法要"><img src="images/insta-nenki.webp" alt="" width="1280" height="1273" fetchpriority="high" style="object-position:65% center"></div>
-    <div class="slide" data-cap="客室から望む庭"><img src="images/photos/kyakushitsu-toro-2.webp" alt="" width="1600" height="1066" loading="lazy" style="object-position:55% center"></div>
-    <div class="slide" data-cap="襖絵の間"><img src="images/photos/soryo-fusuma-2.webp" alt="" width="1600" height="1014" loading="lazy" style="object-position:40% center"></div>
-    <div class="slide" data-cap="窓越しの庭"><img src="images/photos/teien-mado-slide.webp" alt="" width="1400" height="1050" loading="lazy" class="mado"></div>
+    <div class="slide active" data-cap="本堂のご法要"><img src="images/insta-nenki.webp" srcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" sizes="100vw" alt="" width="1280" height="1273" fetchpriority="high" style="object-position:65% center"></div>
+    <div class="slide" data-cap="客室から望む庭"><img src="images/photos/kyakushitsu-toro-2.webp" srcset="images/photos/kyakushitsu-toro-2-960.webp 960w, images/photos/kyakushitsu-toro-2.webp 1600w" sizes="100vw" alt="" width="1600" height="1066" loading="lazy" style="object-position:55% center"></div>
+    <div class="slide" data-cap="襖絵の間"><img src="images/photos/soryo-fusuma-2.webp" srcset="images/photos/soryo-fusuma-2-960.webp 960w, images/photos/soryo-fusuma-2.webp 1600w" sizes="100vw" alt="" width="1600" height="1014" loading="lazy" style="object-position:40% center"></div>
+    <div class="slide" data-cap="窓越しの庭"><img src="images/photos/teien-mado-slide.webp" srcset="images/photos/teien-mado-slide-960.webp 960w, images/photos/teien-mado-slide.webp 1400w" sizes="100vw" alt="" width="1400" height="1050" loading="lazy" class="mado"></div>
     <div class="slide" data-cap="夜の山門"><img src="images/photos/sanmon-yoru.webp" alt="" width="1600" height="1067" loading="lazy"></div>
     <div class="hero-shade"></div>
   </div>
@@ -740,7 +740,7 @@ html.intro.motion .otsu{animation-delay:1.45s;}
         <p>本覚院が建つのは、弘法大師がこの地で祈られていたとき、六地蔵菩薩（六体のお地蔵さま）が現れるのを感じとられた、という言い伝えの残る場所です。昭和<span class="num-tate">五十五</span><span class="num-yoko">55</span>年（<span class="num-tate">一九八〇</span><span class="num-yoko">1980</span>年）には、ダライ・ラマ<span class="num-tate">十四</span><span class="num-yoko">14</span>世法王もご宿泊されています。</p>
       </div>
       <figure class="about-fig">
-        <div class="rv-img" style="overflow:hidden;flex:1"><img src="images/photos/jizo-rokutai.webp" alt="院内に並ぶお地蔵さま。毛糸の帽子と前掛けを身につけた石の地蔵菩薩" class="about-img" width="1400" height="1050" loading="lazy"></div>
+        <div class="rv-img" style="overflow:hidden;flex:1"><img src="images/photos/jizo-rokutai.webp" srcset="images/photos/jizo-rokutai-960.webp 960w, images/photos/jizo-rokutai.webp 1400w" sizes="(max-width: 899px) 100vw, 60vw" alt="院内に並ぶお地蔵さま。毛糸の帽子と前掛けを身につけた石の地蔵菩薩" class="about-img" width="1400" height="1050" loading="lazy"></div>
         <figcaption class="cap">院内のお地蔵さま</figcaption>
       </figure>
     </div>
@@ -754,7 +754,7 @@ html.intro.motion .otsu{animation-delay:1.45s;}
     <header class="sh rv"><span class="sh-num" aria-hidden="true">二</span><span class="sh-line"></span><h2 class="sh-title">本覚院ならではの<br class="pc"><span class="num-yoko">3</span><span class="num-tate">三</span>つの魅力</h2></header>
     <div class="body ft-list">
       <article class="ft">
-        <figure class="ft-fig rv-img"><img src="images/photos/tenjoue.webp" alt="本堂天井に残る250年前の極彩色天井絵" width="1600" height="1067" loading="lazy"></figure>
+        <figure class="ft-fig rv-img"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂天井に残る250年前の極彩色天井絵" width="1600" height="1067" loading="lazy"></figure>
         <div class="ft-text rv">
           <span class="ft-n" aria-hidden="true">一</span>
           <h3>250年を超える<br class="pc">江戸の芸術</h3>
@@ -762,7 +762,7 @@ html.intro.motion .otsu{animation-delay:1.45s;}
         </div>
       </article>
       <article class="ft">
-        <figure class="ft-fig rv-img"><img src="images/photos/teien-mado-1.webp" alt="重森三玲設計の石庭" width="1600" height="1200" loading="lazy"></figure>
+        <figure class="ft-fig rv-img"><img src="images/photos/teien-mado-1.webp" srcset="images/photos/teien-mado-1-960.webp 960w, images/photos/teien-mado-1.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="重森三玲設計の石庭" width="1600" height="1200" loading="lazy"></figure>
         <div class="ft-text rv">
           <span class="ft-n" aria-hidden="true">二</span>
           <h3>重森三玲設計の<br class="pc">5つの庭園</h3>
@@ -770,7 +770,7 @@ html.intro.motion .otsu{animation-delay:1.45s;}
         </div>
       </article>
       <article class="ft">
-        <figure class="ft-fig rv-img"><img src="images/photos/gongyo-hondo.webp" alt="本堂で読経する僧侶たち（朝のお勤め）" width="1600" height="1067" loading="lazy"></figure>
+        <figure class="ft-fig rv-img"><img src="images/photos/gongyo-hondo.webp" srcset="images/photos/gongyo-hondo-960.webp 960w, images/photos/gongyo-hondo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂で読経する僧侶たち（朝のお勤め）" width="1600" height="1067" loading="lazy"></figure>
         <div class="ft-text rv">
           <span class="ft-n" aria-hidden="true">三</span>
           <h3>祈りの声に<br class="pc">包まれる朝</h3>
@@ -794,14 +794,14 @@ html.intro.motion .otsu{animation-delay:1.45s;}
       </dl>
       <div class="kuyo-grid">
         <article class="kuyo-card">
-          <figure class="rv-img"><img src="images/photos/hondo-kigan.webp" alt="ろうそくの灯る本堂で、ご廻向をおつとめする僧侶" loading="lazy" width="1600" height="1200"></figure>
+          <figure class="rv-img"><img src="images/photos/hondo-kigan.webp" srcset="images/photos/hondo-kigan-960.webp 960w, images/photos/hondo-kigan.webp 1600w" sizes="100vw" alt="ろうそくの灯る本堂で、ご廻向をおつとめする僧侶" loading="lazy" width="1600" height="1200"></figure>
           <div class="rv">
             <h3>ご廻向</h3>
             <p>金剛峯寺で行われる法要と同じく、前讃から各種のお経、後讃までをおつとめし、最後にご法楽として般若心経とご真言を参列の皆さまとご一緒にお唱えします。所要はおよそ1時間です。</p>
           </div>
         </article>
         <article class="kuyo-card">
-          <figure class="rv-img"><img src="images/photos/gongyo-hondo.webp" alt="本堂でお経を唱える僧侶たち" loading="lazy" width="1600" height="1067"></figure>
+          <figure class="rv-img"><img src="images/photos/gongyo-hondo.webp" srcset="images/photos/gongyo-hondo-960.webp 960w, images/photos/gongyo-hondo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂でお経を唱える僧侶たち" loading="lazy" width="1600" height="1067"></figure>
           <div class="rv">
             <h3>永代供養</h3>
             <p>お位牌を建立し、本堂で勤行したのち、位牌堂にて永代におまつりいたします。毎朝、お仏飯とお茶をお供えし、お燈明をあげてお参りしております。</p>
@@ -899,7 +899,7 @@ html.intro.motion .otsu{animation-delay:1.45s;}
     <div class="stay-thumbs rv">
       <figure><img src="images/rooms/wakasugi.webp" alt="お風呂・トイレ付きの和室「若杉」" loading="lazy" width="1000" height="750"><figcaption class="cap">和室「若杉」</figcaption></figure>
       <figure><img src="images/rooms/hokusuikan.webp" alt="新館「北翠観」の和室" loading="lazy" width="1000" height="750"><figcaption class="cap">新館「北翠観」</figcaption></figure>
-      <figure><img src="images/photos/ohiroma.webp" alt="狩野派の襖絵に囲まれた大広間" loading="lazy" width="1600" height="1067"><figcaption class="cap">大広間</figcaption></figure>
+      <figure><img src="images/photos/ohiroma.webp" srcset="images/photos/ohiroma-960.webp 960w, images/photos/ohiroma.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="狩野派の襖絵に囲まれた大広間" loading="lazy" width="1600" height="1067"><figcaption class="cap">大広間</figcaption></figure>
     </div>
   </div>
 </section>
@@ -910,12 +910,12 @@ html.intro.motion .otsu{animation-delay:1.45s;}
     <header class="sh rv"><span class="sh-num" aria-hidden="true">七</span><span class="sh-line"></span><h2 class="sh-title">院内のご案内</h2></header>
     <div class="body">
       <div class="gl">
-        <figure class="g1 wide"><div class="im rv-img"><img src="images/photos/tenjoue.webp" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" loading="lazy" width="1600" height="1067"></div><figcaption>本堂天井絵</figcaption></figure>
-        <figure class="g2"><div class="im rv-img"><img src="images/photos/fusuma-kanoha.webp" alt="狩野派による金地の襖絵（唐人物図）" loading="lazy" width="1600" height="1200"></div><figcaption>狩野派の襖絵</figcaption></figure>
-        <figure class="g3"><div class="im rv-img"><img src="images/photos/teien-mado-3.webp" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="1200"></div><figcaption>重森三玲の石庭</figcaption></figure>
-        <figure class="g4"><div class="im rv-img"><img src="images/photos/koi-niwa-2.webp" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200"></div><figcaption>池泉庭</figcaption></figure>
-        <figure class="g5"><div class="im rv-img"><img src="images/photos/gongyo-hondo.webp" alt="本堂でお経を唱える僧侶たち（朝の勤行）" loading="lazy" width="1600" height="1067"></div><figcaption>本堂</figcaption></figure>
-        <figure class="g6 wide"><div class="im rv-img"><img src="images/fudo-myoo.webp" alt="護摩堂にお祀りする修身不動明王" loading="lazy" width="1600" height="1200"></div><figcaption>護摩堂の修身不動明王</figcaption></figure>
+        <figure class="g1 wide"><div class="im rv-img"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" loading="lazy" width="1600" height="1067"></div><figcaption>本堂天井絵</figcaption></figure>
+        <figure class="g2"><div class="im rv-img"><img src="images/photos/fusuma-kanoha.webp" srcset="images/photos/fusuma-kanoha-960.webp 960w, images/photos/fusuma-kanoha.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="狩野派による金地の襖絵（唐人物図）" loading="lazy" width="1600" height="1200"></div><figcaption>狩野派の襖絵</figcaption></figure>
+        <figure class="g3"><div class="im rv-img"><img src="images/photos/teien-mado-3.webp" srcset="images/photos/teien-mado-3-960.webp 960w, images/photos/teien-mado-3.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="1200"></div><figcaption>重森三玲の石庭</figcaption></figure>
+        <figure class="g4"><div class="im rv-img"><img src="images/photos/koi-niwa-2.webp" srcset="images/photos/koi-niwa-2-960.webp 960w, images/photos/koi-niwa-2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200"></div><figcaption>池泉庭</figcaption></figure>
+        <figure class="g5"><div class="im rv-img"><img src="images/photos/gongyo-hondo.webp" srcset="images/photos/gongyo-hondo-960.webp 960w, images/photos/gongyo-hondo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂でお経を唱える僧侶たち（朝の勤行）" loading="lazy" width="1600" height="1067"></div><figcaption>本堂</figcaption></figure>
+        <figure class="g6 wide"><div class="im rv-img"><img src="images/fudo-myoo.webp" srcset="images/fudo-myoo-960.webp 960w, images/fudo-myoo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="護摩堂にお祀りする修身不動明王" loading="lazy" width="1600" height="1200"></div><figcaption>護摩堂の修身不動明王</figcaption></figure>
         <figure class="g7"><div class="im rv-img"><img src="images/photos/mon-tobira-jimon.webp" alt="寺紋が金色に輝く山門の扉と、奥へ続く石畳" loading="lazy" width="1600" height="1200"></div><figcaption>本堂への道</figcaption></figure>
         <figure class="g8"><div class="im rv-img"><img src="images/gallery-mado.webp" alt="窓越しに見る庭園の眺め" loading="lazy" width="900" height="1200"></div><figcaption>窓越しの庭園</figcaption></figure>
       </div>
@@ -971,10 +971,10 @@ html.intro.motion .otsu{animation-delay:1.45s;}
   <p class="sns-eyebrow">FOLLOW US</p>
   <p class="ig-lead">本覚院の日々を、Instagramでお届けしています</p>
   <div class="ig-grid">
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-gongyo.webp" alt="灯明のともる内陣でお勤めをする僧侶" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-mandala.webp" alt="灯明に照らされた曼荼羅の掛軸" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-kuyo-roka.webp" alt="法衣をまとい廊下を進む僧侶" loading="lazy" width="1280" height="1280"></a>
-    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-nenki.webp" alt="花と灯明に囲まれた本堂で、ご法要を勤める僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-gongyo.webp" srcset="images/insta-gongyo-960.webp 960w, images/insta-gongyo.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明のともる内陣でお勤めをする僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-mandala.webp" srcset="images/insta-mandala-960.webp 960w, images/insta-mandala.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明に照らされた曼荼羅の掛軸" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-kuyo-roka.webp" srcset="images/insta-kuyo-roka-960.webp 960w, images/insta-kuyo-roka.webp 1280w" sizes="100vw" alt="法衣をまとい廊下を進む僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-nenki.webp" srcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" sizes="100vw" alt="花と灯明に囲まれた本堂で、ご法要を勤める僧侶" loading="lazy" width="1280" height="1280"></a>
   </div>
   <a href="https://www.instagram.com/koyasan_hongakuin/" class="sns-link ig-big" target="_blank" rel="noopener"><span class="ig-row"><svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagramを見る</span><span class="ig-handle">@koyasan_hongakuin</span></a>
 </div>
@@ -1145,8 +1145,8 @@ function toggleArchive() {
     card.className = 'news-card';
 
     // 本文HTMLから最初の画像をサムネイルに使う
-    const tmp = document.createElement('div');
-    tmp.innerHTML = item.content || '';
+    // DOMParser で読むと、この時点では画像を読み込まない（元サイズの写真を無駄に落とさない）
+    const tmp = new DOMParser().parseFromString(item.content || '', 'text/html').body;
     const firstImg = tmp.querySelector('img');
     const excerpt = (tmp.textContent || '').trim().slice(0, 60);
 
@@ -1191,7 +1191,14 @@ function toggleArchive() {
 
     const body = document.createElement('div');
     body.className = 'news-card-body';
-    body.innerHTML = item.content || '';
+    // 本文も、画像のURLを縮小版に書き換えてからページに入れる
+    const parsed = new DOMParser().parseFromString(item.content || '', 'text/html').body;
+    parsed.querySelectorAll('img').forEach(function (img) {
+      const src = img.getAttribute('src') || '';
+      if (src.indexOf('images.microcms-assets.io') !== -1 && src.indexOf('?') === -1) img.setAttribute('src', src + '?w=1000&q=80&auto=format');
+      img.setAttribute('loading', 'lazy');
+    });
+    while (parsed.firstChild) body.appendChild(parsed.firstChild);
     // 本文内の画像がはみ出さないように。microCMSの写真は表示用に縮小して読み込む
     body.querySelectorAll('img').forEach(function (img) {
       const src = img.getAttribute('src') || '';
