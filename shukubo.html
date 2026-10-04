@@ -6,9 +6,9 @@
 <link rel="icon" type="image/png" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#150c15">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>宿坊｜高野山 別格本山 本覚院</title>
-<meta name="description" content="高野山 別格本山 本覚院の宿坊。重森三玲の庭を望む特別室から本館の和室まで、精進料理と朝のお勤めで過ごす一夜。院内のご案内・アクセス・よくあるご質問まとめてご紹介します。">
+<meta name="description" content="高野山 別格本山 本覚院の宿坊。重森三玲の庭を望む特別室から本館の和室まで、精進料理と朝のお勤めで過ごす一夜。お部屋・院内の見どころ・ご利用案内・アクセス・よくあるご質問をご紹介します。">
 <meta name="robots" content="noindex, nofollow"><!-- 確認用。本番公開時に削除 -->
 <link rel="canonical" href="https://www.hongakuin.jp/shukubo.html">
 <!-- OGP / Twitter Card -->
@@ -65,1517 +65,6 @@
   ]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Hina+Mincho&display=swap" rel="stylesheet">
-<style>
-/* ══════════════════════════════════════════════════════════
-   本覚院 統合レスポンシブページ
-   モバイルファースト：既定値=スマホ（SP案ベース）
-   768px以上でPC案（jp案）のレイアウトへ拡張
-════════════════════════════════════════════════════════════ */
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-:root{
-  --black:#0a0905;
-  --ink:#1a1610;
-  --gold:#b8924a;
-  --gold-l:#d4a855;
-  --gold-pale:#f0e0b8;
-  --cream:#faf7f0;
-  --stone:#8a7e6e;
-  --border:rgba(184,146,74,0.2);
-  --white:#ffffff;
-}
-body{
-  font-family:'Noto Sans JP',sans-serif;
-  background:var(--cream);
-  color:var(--ink);
-  font-weight:300;
-  overflow-x:hidden;
-}
-img{display:block;max-width:100%;}
-a{text-decoration:none;color:inherit;}
-
-/* ── HEADER ── */
-.site-header{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:0 20px;height:56px;
-  background:rgba(10,9,5,0.88);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-}
-.header-logo{display:flex;flex-direction:column;text-decoration:none;line-height:1;gap:4px;}
-.logo-brush{
-  font-family:'Hina Mincho','Shippori Mincho B1',serif;
-  font-size:20px;color:#fff;letter-spacing:0.2em;line-height:1;
-  text-shadow:2px 2px 4px rgba(0,0,0,0.5),0 0 20px rgba(184,146,74,0.3);
-  display:block;position:relative;
-}
-.logo-en{
-  font-family:'Cormorant Garamond',serif;
-  font-size:8px;letter-spacing:0.3em;
-  color:rgba(255,255,255,0.4);display:block;
-}
-.header-nav{display:none;}
-.header-right{display:none;}
-.menu-btn{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
-.menu-btn span{display:block;width:24px;height:1px;background:rgba(255,255,255,0.7);transition:all 0.3s;}
-
-/* ドロワー（モバイル用ナビ） */
-.drawer{
-  position:fixed;top:0;right:-100%;
-  width:75%;max-width:320px;height:100%;
-  background:rgba(10,9,5,0.97);
-  z-index:2000;transition:right 0.4s ease;
-  padding:80px 32px 32px;
-  border-left:1px solid var(--border);
-}
-.drawer.open{right:0;}
-.drawer-close{
-  position:absolute;top:20px;right:20px;
-  font-size:24px;color:rgba(255,255,255,0.5);
-  cursor:pointer;background:none;border:none;line-height:1;
-}
-.drawer nav a{
-  display:block;
-  font-family:'Shippori Mincho B1',serif;
-  font-size:18px;color:rgba(255,255,255,0.8);
-  letter-spacing:0.15em;padding:16px 0;
-  border-bottom:1px solid rgba(255,255,255,0.06);
-}
-.drawer-reserve{
-  display:block;margin-top:32px;
-  background:var(--gold);color:var(--ink);
-  text-align:center;padding:16px;
-  font-size:14px;letter-spacing:0.2em;
-  font-family:'Shippori Mincho B1',serif;
-}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1999;display:none;}
-.overlay.show{display:block;}
-
-@media(min-width:900px){
-  .site-header{padding:0 40px;height:64px;}
-  .logo-brush{font-size:28px;}
-  .logo-en{font-size:9px;}
-  .header-nav{
-    display:flex;align-items:center;gap:0;
-  }
-  .header-nav a{
-    font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.65);
-    padding:8px 18px;transition:color 0.3s;
-  }
-  .header-nav a:hover{color:var(--gold-l);}
-  .header-right{display:flex;align-items:center;gap:12px;}
-  .lang-btn{
-    font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.5);
-    padding:5px 8px;transition:all 0.3s;
-  }
-  .lang-btn:hover{color:var(--gold);}
-  .reserve-btn{
-    font-size:11px;letter-spacing:0.15em;background:var(--gold);color:var(--ink);
-    padding:10px 20px;font-weight:500;transition:background 0.3s;
-  }
-  .reserve-btn:hover{background:var(--gold-l);}
-  .menu-btn{display:none;}
-}
-
-/* ── HERO ── */
-.hero{height:100svh;min-height:600px;position:relative;overflow:hidden;background:var(--black);}
-.hero-slides{position:absolute;inset:0;}
-.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.8s ease;}
-.slide.active{opacity:1;}
-@media(min-width:768px){
-  .slide{transform:scale(1.04);}
-  .slide.active{animation:heroZoom 7s ease-out both;}
-  @keyframes heroZoom{from{transform:scale(1.04);}to{transform:scale(1.14);}}
-}
-@media(prefers-reduced-motion:reduce){.slide.active{animation:none;}}
-.hero-overlay{
-  position:absolute;inset:0;z-index:1;
-  background:linear-gradient(160deg,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.35) 50%,rgba(0,0,0,0.68) 100%);
-}
-@media(min-width:768px){
-  .hero-overlay{background:linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.1) 40%,rgba(0,0,0,0.6) 100%);}
-}
-
-/* モバイル：中央縦書きコピー（SP案） */
-.hero-body{position:absolute;inset:0;z-index:2;}
-.hero-text{
-  position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);
-  max-width:none;text-align:center;
-}
-.hero-eyebrow{
-  font-family:'Cormorant Garamond',serif;
-  font-size:11px;letter-spacing:0.45em;color:var(--gold-l);
-  display:none;margin-bottom:20px;
-  opacity:0;animation:fadeUp 1s ease 0.3s forwards;
-}
-.hero-title{
-  font-family:'Shippori Mincho B1',serif;
-  font-size:clamp(30px,7.5vw,48px);
-  font-weight:400;color:#fff;
-  writing-mode:vertical-rl;text-orientation:upright;
-  line-height:1.2;letter-spacing:0.18em;white-space:nowrap;
-  text-shadow:0 0 40px rgba(0,0,0,0.6),2px 2px 0 rgba(0,0,0,0.2);
-  opacity:0;animation:fadeIn 1.6s ease 0.4s forwards;
-  margin:0 auto;
-}
-.hero-title em{color:var(--gold-l);font-style:normal;}
-.hero-sub{
-  display:none;
-  font-size:clamp(12px,1.8vw,15px);color:rgba(255,255,255,0.75);
-  line-height:2.1;margin-bottom:36px;
-  opacity:0;animation:fadeUp 1s ease 0.9s forwards;
-}
-.hero-actions{
-  display:none;gap:12px;flex-wrap:wrap;
-  opacity:0;animation:fadeUp 1s ease 1.2s forwards;
-}
-.hero-actions .btn-main{
-  font-size:12px;letter-spacing:0.2em;background:var(--gold);color:var(--ink);
-  padding:14px 32px;font-weight:500;transition:background 0.3s;
-}
-.hero-actions .btn-main:hover{background:var(--gold-l);}
-.hero-actions .btn-ghost{
-  font-size:12px;letter-spacing:0.2em;border:1px solid rgba(255,255,255,0.5);
-  color:#fff;padding:14px 32px;transition:all 0.3s;
-}
-.hero-actions .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
-
-.hero-brand{
-  position:absolute;bottom:10%;right:8%;z-index:2;text-align:right;
-  opacity:0;animation:fadeUp 1.4s ease 1.3s forwards;
-}
-.hero-brand .en{
-  font-family:'Cormorant Garamond',serif;font-size:9px;letter-spacing:0.3em;
-  color:rgba(255,255,255,0.45);display:block;margin-bottom:6px;
-}
-.hero-brand .jp{
-  font-family:'Shippori Mincho B1',serif;font-size:clamp(30px,9vw,48px);
-  color:#fff;letter-spacing:0.2em;text-shadow:0 2px 20px rgba(0,0,0,0.7);
-  display:block;line-height:1.1;
-}
-.hero-brand .tel{
-  font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.15em;
-  color:var(--gold-l);display:block;margin-top:8px;
-}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-
-/* デスクトップ：縦書き・余白のあるヒーロー（枠やボタンは置かない） */
-@media(min-width:768px){
-  .hero-body{position:absolute;inset:0;}
-  .hero-text{
-    position:absolute;top:50%;right:12%;left:auto;transform:translateY(-50%);
-    display:flex;flex-direction:row-reverse;align-items:flex-start;gap:36px;text-align:left;
-  }
-  .hero-eyebrow{
-    display:block;writing-mode:vertical-rl;margin:0;
-    font-size:11px;letter-spacing:0.5em;color:rgba(255,255,255,0.6);
-  }
-  .hero-title{
-    font-size:clamp(34px,3.6vw,56px);letter-spacing:0.28em;line-height:1.5;
-    text-shadow:0 0 40px rgba(0,0,0,0.55);
-  }
-  .hero-sub{
-    display:block;writing-mode:vertical-rl;margin:0;padding-top:4em;
-    font-size:14px;line-height:2.4;letter-spacing:0.2em;color:rgba(255,255,255,0.8);
-    text-shadow:0 0 20px rgba(0,0,0,0.6);
-  }
-  .hero-actions{display:none;}
-  .hero-brand{bottom:56px;left:60px;right:auto;text-align:left;}
-  .hero-brand .jp{font-size:clamp(24px,2.4vw,34px);}
-  .hero-brand .tel{font-size:14px;margin-top:10px;color:rgba(255,255,255,0.75);}
-}
-
-/* スライドドット */
-.slide-dots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
-.dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.35);cursor:pointer;transition:all 0.4s;}
-.dot.active{background:var(--gold);width:22px;border-radius:3px;}
-
-/* ── NOTICE ── */
-.notice-bar{
-  background:var(--ink);padding:12px 20px;
-  display:flex;align-items:center;gap:12px;
-  border-bottom:1px solid var(--border);
-}
-.notice-tag{
-  font-size:9px;letter-spacing:0.25em;color:var(--gold);
-  border:1px solid var(--gold);padding:3px 8px;white-space:nowrap;flex-shrink:0;
-}
-.notice-bar p{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6;}
-@media(min-width:768px){
-  .notice-bar{padding:14px 40px;gap:20px;}
-  .notice-tag{padding:4px 10px;}
-}
-
-/* ── セクション共通 ── */
-.sec-eyebrow{
-  font-family:'Cormorant Garamond',serif;
-  font-size:10px;letter-spacing:0.45em;color:var(--gold);
-  display:block;margin-bottom:10px;
-}
-.sec-title{
-  font-family:'Shippori Mincho B1',serif;
-  font-size:clamp(24px,6vw,44px);
-  line-height:1.4;letter-spacing:0.06em;margin-bottom:18px;
-}
-.gold-bar{width:32px;height:1px;background:var(--gold);margin-bottom:28px;}
-.sec-desc{font-size:14px;color:var(--stone);line-height:2.1;}
-@media(min-width:768px){
-  .sec-eyebrow{font-size:11px;margin-bottom:12px;}
-  .gold-bar{width:36px;margin-bottom:32px;}
-  .sec-desc{font-size:15px;line-height:2.2;}
-}
-
-/* ── ABOUT ── */
-.about-sec{background:var(--cream);padding:64px 24px;}
-.about-inner{max-width:1100px;margin:0 auto;}
-.about-img-wrap{position:relative;margin-bottom:32px;}
-.about-img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;}
-.about-badge{
-  display:inline-block;background:var(--gold);color:var(--ink);
-  padding:10px 16px;font-family:'Shippori Mincho B1',serif;
-  font-size:12px;letter-spacing:0.1em;margin-bottom:24px;
-}
-.about-lead{font-size:15px;color:var(--stone);line-height:2.3;margin-bottom:20px;}
-@media(min-width:900px){
-  .about-sec{padding:100px 40px;}
-  .about-inner{
-    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;padding:0;
-  }
-  .about-img-wrap{margin-bottom:0;}
-  .about-badge{position:absolute;bottom:-20px;right:-20px;line-height:1.7;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.2);}
-}
-
-/* ── DALAI/帯 予備 ── */
-.dalai-band{background:var(--ink);padding:24px 20px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.dalai-band p{font-family:'Shippori Mincho B1',serif;font-size:clamp(13px,2vw,17px);color:var(--gold-l);letter-spacing:0.2em;}
-
-/* ── NEWS ── */
-.news-sec{background:var(--cream);padding:64px 24px;}
-.news-inner{max-width:900px;margin:0 auto;}
-.news-cards{display:flex;flex-direction:column;gap:2px;}
-.news-card{background:#fff;border-left:3px solid transparent;transition:border-color 0.3s;}
-.news-card.open{border-left-color:var(--gold);}
-.news-card-header{
-  display:grid;grid-template-columns:80px 1fr auto;gap:12px;align-items:center;
-  padding:16px;cursor:pointer;transition:background 0.2s;
-}
-.news-card-header:hover{background:rgba(184,146,74,0.04);}
-.news-card-img{width:80px;height:56px;object-fit:cover;display:block;flex-shrink:0;}
-.news-card-meta{display:flex;flex-direction:column;gap:6px;}
-.news-card-date{font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--stone);letter-spacing:0.1em;}
-.news-card-tag{
-  font-size:9px;letter-spacing:0.2em;color:var(--gold);border:1px solid var(--gold);
-  padding:2px 7px;display:inline-block;width:fit-content;
-}
-.news-card-title{
-  font-family:'Shippori Mincho B1',serif;font-size:13px;color:var(--ink);
-  line-height:1.6;letter-spacing:0.05em;margin-top:4px;
-}
-.news-card-excerpt{
-  font-size:12px;color:var(--stone);line-height:1.7;margin-top:4px;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-}
-.news-arrow{font-size:10px;color:var(--gold);flex-shrink:0;transition:transform 0.3s;padding-left:8px;}
-.news-card.open .news-arrow{transform:rotate(180deg);}
-.news-card-body{display:none;padding:0 16px 20px;border-top:1px solid rgba(184,146,74,0.15);}
-.news-card.open .news-card-body{display:block;}
-.news-card-body-img{width:100%;max-width:360px;display:block;margin:16px 0;}
-.news-card-body p{font-size:14px;color:var(--stone);line-height:2.2;margin-bottom:12px;}
-.news-archive{display:none;}
-.news-archive.show{display:flex;flex-direction:column;gap:2px;}
-.news-more-btn{
-  display:block;width:100%;margin-top:16px;padding:14px;background:none;
-  border:1px solid var(--border);color:var(--gold);font-family:'Shippori Mincho B1',serif;
-  font-size:13px;letter-spacing:0.2em;cursor:pointer;transition:all 0.3s;text-align:center;
-}
-.news-more-btn:hover{background:rgba(184,146,74,0.08);}
-@media(min-width:641px){
-  .news-card-header{grid-template-columns:120px 1fr auto;gap:20px;padding:20px 24px;}
-  .news-card-img{width:120px;height:80px;}
-  .news-card-title{font-size:15px;}
-  .news-card-body{padding:0 24px 24px;}
-}
-@media(min-width:768px){.news-sec{padding:72px 40px;}}
-
-/* ── FEATURES（3つの魅力） ── */
-.features-sec{background:#fff;padding:64px 20px;}
-.features-inner{max-width:1100px;margin:0 auto;}
-.features-header{text-align:center;margin-bottom:48px;}
-.features-header .gold-bar{margin:0 auto 28px;}
-.feature-grid{display:grid;grid-template-columns:1fr;gap:2px;}
-.feature-card{background:var(--cream);padding:0;position:relative;overflow:hidden;transition:transform 0.3s;}
-.feature-card:hover{transform:translateY(-6px);}
-.f-img{width:100%;aspect-ratio:16/9;background-size:cover;background-position:center;}
-.f-body{padding:28px 24px;}
-.f-num{font-family:'Cormorant Garamond',serif;font-size:44px;color:rgba(184,146,74,0.15);line-height:1;margin-bottom:12px;display:block;}
-.feature-card h3{font-family:'Shippori Mincho B1',serif;font-size:18px;color:var(--ink);margin-bottom:12px;line-height:1.4;letter-spacing:0.05em;}
-.feature-card p{font-size:14px;color:var(--stone);line-height:1.9;}
-@media(min-width:768px){
-  .features-sec{padding:100px 40px;}
-  .features-header{margin-bottom:64px;}
-  .feature-grid{grid-template-columns:repeat(3,1fr);}
-  .f-body{padding:32px;}
-  .feature-card h3{font-size:19px;}
-}
-
-/* ── ROOMS ── */
-.rooms-sec{background:var(--ink);padding:64px 0;}
-.rooms-inner{max-width:1100px;margin:0 auto;padding:0 20px;}
-.rooms-header{margin-bottom:40px;}
-.rooms-header .sec-title{color:#fff;}
-.room-list{display:flex;flex-direction:column;gap:2px;}
-.room-item{background:rgba(255,255,255,0.03);}
-.room-photo{aspect-ratio:16/10;overflow:hidden;}
-.room-photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
-.room-item:hover .room-photo img{transform:scale(1.04);}
-.room-detail{padding:28px 24px;display:flex;flex-direction:column;justify-content:center;}
-.room-tag{
-  font-size:9px;letter-spacing:0.3em;color:var(--gold);
-  border-bottom:1px solid var(--border);padding-bottom:10px;margin-bottom:16px;display:inline-block;
-}
-.room-detail h3{font-family:'Shippori Mincho B1',serif;font-size:18px;color:#fff;margin-bottom:12px;letter-spacing:0.06em;}
-.room-detail p{font-size:13px;color:rgba(255,255,255,0.6);line-height:2;}
-.room-note{margin-top:12px;font-size:11px;color:var(--gold);letter-spacing:0.1em;}
-@media(min-width:769px){
-  .rooms-sec{padding:100px 0;}
-  .rooms-inner{padding:0 40px;}
-  .rooms-header{margin-bottom:56px;}
-  .room-item{display:grid;grid-template-columns:1fr 1fr;}
-  .room-item:nth-child(even) .room-photo{order:2;}
-  .room-item:nth-child(even) .room-detail{order:1;}
-  .room-detail{padding:48px 40px;}
-  .room-detail h3{font-size:clamp(20px,2.5vw,28px);}
-  .room-detail p{font-size:14px;line-height:2.1;}
-  .room-note{font-size:12px;}
-}
-
-/* ── GALLERY（院内のご案内） ── */
-.gallery-sec{background:var(--black);padding:64px 20px;}
-.gallery-inner{max-width:1100px;margin:0 auto;}
-.gallery-header{text-align:center;margin-bottom:40px;}
-.gallery-header .sec-title{color:#fff;}
-.gallery-header .gold-bar{margin:0 auto 28px;}
-.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
-.g-item{position:relative;overflow:hidden;aspect-ratio:4/3;}
-.g-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s ease;}
-.g-item:hover img{transform:scale(1.06);}
-.g-label{
-  position:absolute;bottom:0;left:0;right:0;
-  background:linear-gradient(transparent,rgba(0,0,0,0.75));
-  padding:16px 12px 10px;font-family:'Shippori Mincho B1',serif;
-  font-size:12px;color:#fff;letter-spacing:0.08em;
-}
-@media(min-width:900px){
-  .gallery-sec{padding:100px 40px;}
-  .gallery-header{margin-bottom:56px;}
-  .gallery-grid{grid-template-columns:repeat(4,1fr);}
-  .g-label{padding:20px 16px 14px;font-size:13px;letter-spacing:0.1em;opacity:0;transition:opacity 0.3s;}
-  .g-item:hover .g-label{opacity:1;}
-}
-
-/* ── EXPERIENCE ── */
-.exp-sec{background:var(--cream);padding:64px 20px;}
-.exp-inner{max-width:1100px;margin:0 auto;}
-.exp-header{text-align:center;margin-bottom:40px;}
-.exp-header .gold-bar{margin:0 auto 28px;}
-.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
-.exp-card{background:#fff;padding:28px 18px;text-align:center;transition:all 0.3s;border-bottom:2px solid transparent;}
-.exp-card:hover{border-bottom-color:var(--gold);transform:translateY(-4px);}
-.exp-icon{font-size:26px;margin-bottom:10px;display:block;}
-.exp-card h3{font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--ink);margin-bottom:8px;letter-spacing:0.06em;}
-.exp-card p{font-size:12px;color:var(--stone);line-height:1.8;}
-@media(min-width:768px){
-  .exp-sec{padding:100px 40px;}
-  .exp-header{margin-bottom:64px;}
-  .exp-grid{grid-template-columns:repeat(3,1fr);}
-  .exp-card{padding:40px 28px;}
-  .exp-icon{font-size:32px;margin-bottom:14px;}
-  .exp-card h3{font-size:17px;margin-bottom:12px;}
-  .exp-card p{font-size:13px;line-height:1.9;}
-}
-
-/* ── PRIEST ── */
-.priest-sec{background:#fff;padding:64px 24px;}
-.priest-inner{max-width:1100px;margin:0 auto;}
-.priest-img{width:100%;max-height:360px;object-fit:cover;object-position:center top;display:block;margin-bottom:32px;}
-.priest-body{display:flex;flex-direction:column;gap:32px;}
-.priest-label .sec-title{font-size:clamp(22px,3vw,36px);}
-.priest-msg p{font-size:14px;color:var(--stone);line-height:2.3;margin-bottom:16px;}
-.priest-sig{font-family:'Shippori Mincho B1',serif;font-size:13px;color:var(--gold);letter-spacing:0.15em;}
-.priest-history{margin-top:32px;padding-top:28px;border-top:1px solid var(--border);}
-.history-title{
-  font-family:'Shippori Mincho B1',serif;font-size:14px;color:var(--stone);
-  letter-spacing:0.2em;margin-bottom:18px;padding-left:10px;border-left:2px solid var(--gold);
-}
-.history-table{width:100%;border-collapse:collapse;}
-.history-table td{padding:10px 0;font-size:12px;color:var(--stone);line-height:1.9;vertical-align:top;border-bottom:1px solid rgba(184,146,74,0.1);}
-.history-table td:first-child{width:70px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.05em;white-space:nowrap;padding-right:14px;}
-@media(min-width:768px){
-  .priest-sec{padding:100px 40px;}
-  .priest-img{max-height:480px;margin-bottom:48px;}
-  .priest-body{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start;}
-  .priest-msg p{font-size:15px;line-height:2.4;margin-bottom:20px;}
-  .priest-sig{font-size:14px;}
-  .history-table td{font-size:13px;}
-  .history-table td:first-child{width:80px;}
-}
-
-/* ── ACCESS ── */
-.access-sec{background:var(--ink);padding:64px 24px;}
-.access-inner{max-width:1100px;margin:0 auto;}
-.access-header{margin-bottom:40px;}
-.access-header .sec-title{color:#fff;}
-.access-grid{display:flex;flex-direction:column;gap:24px;}
-.access-box{border:1px solid var(--border);padding:24px;}
-.access-box h3{font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:0.2em;color:var(--gold);margin-bottom:20px;}
-.access-box table{width:100%;border-collapse:collapse;}
-.access-box td{padding:10px 0;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.06);color:rgba(255,255,255,0.75);vertical-align:top;line-height:1.8;}
-.access-box td:first-child{color:var(--gold);font-size:11px;letter-spacing:0.1em;width:80px;padding-right:12px;white-space:nowrap;}
-.directions{background:rgba(255,255,255,0.03);border-left:2px solid var(--gold);padding:20px;}
-.directions p{font-size:13px;color:rgba(255,255,255,0.65);line-height:2;margin-bottom:10px;}
-.directions p:last-child{margin-bottom:0;}
-.directions strong{color:var(--gold-l);}
-@media(min-width:900px){
-  .access-sec{padding:100px 40px;}
-  .access-header{margin-bottom:56px;}
-  .access-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
-  .access-box{padding:40px;}
-  .access-box td{font-size:14px;}
-  .directions{padding:28px 32px;}
-  .directions p{font-size:14px;line-height:2.1;}
-}
-
-/* ── FAQ ── */
-.faq-sec{background:var(--cream);padding:64px 24px;}
-.faq-inner{max-width:820px;margin:0 auto;}
-.faq-list{margin-top:8px;}
-.faq-item{border-bottom:1px solid rgba(184,146,74,0.25);}
-.faq-q{
-  list-style:none;cursor:pointer;padding:20px 40px 20px 0;position:relative;
-  font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--ink);
-  line-height:1.6;letter-spacing:0.04em;
-}
-.faq-q::-webkit-details-marker{display:none;}
-.faq-q::after{content:'＋';position:absolute;right:4px;top:18px;color:var(--gold);font-size:18px;font-weight:300;}
-.faq-item[open] .faq-q::after{content:'－';}
-.faq-a{padding:0 0 22px;color:var(--stone);font-size:14px;line-height:2;letter-spacing:0.03em;}
-@media(min-width:768px){
-  .faq-sec{padding:100px 40px;}
-  .faq-q{padding:22px 40px 22px 0;font-size:17px;}
-  .faq-q::after{top:20px;}
-  .faq-a{padding:0 0 24px;}
-}
-
-/* ── CTA ── */
-.cta-sec{background:var(--gold);padding:56px 24px;text-align:center;}
-.cta-sec h2{font-family:'Shippori Mincho B1',serif;font-size:clamp(22px,6vw,40px);color:var(--ink);margin-bottom:8px;letter-spacing:0.06em;}
-.cta-sec p{color:rgba(30,26,16,0.65);font-size:14px;margin-bottom:24px;}
-.cta-tel{
-  display:block;font-family:'Shippori Mincho B1',serif;font-size:clamp(28px,8vw,56px);
-  color:var(--ink);margin-bottom:8px;letter-spacing:0.1em;
-}
-.cta-hours{font-size:12px;color:rgba(30,26,16,0.55);margin-bottom:24px;}
-.btn-dark{
-  font-size:12px;letter-spacing:0.2em;background:var(--ink);color:var(--gold-l);
-  padding:14px 32px;display:inline-block;transition:opacity 0.3s;
-}
-.btn-dark:hover{opacity:0.8;}
-@media(min-width:768px){
-  .cta-sec{padding:80px 40px;}
-  .cta-sec p{font-size:15px;margin-bottom:32px;}
-  .cta-hours{margin-bottom:28px;}
-  .btn-dark{padding:16px 36px;}
-}
-
-/* ── SNS ── */
-.sns-bar{background:var(--black);padding:28px 24px;text-align:center;border-top:1px solid var(--border);}
-.sns-bar p{font-size:9px;letter-spacing:0.3em;color:rgba(255,255,255,0.3);margin-bottom:16px;}
-.sns-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
-.sns-link{
-  font-size:10px;letter-spacing:0.15em;color:rgba(255,255,255,0.5);
-  border:1px solid rgba(255,255,255,0.15);padding:8px 16px;transition:all 0.3s;
-}
-.sns-link:hover{color:var(--gold);border-color:var(--gold);}
-@media(min-width:768px){
-  .sns-bar{padding:40px;}
-  .sns-bar p{font-size:10px;letter-spacing:0.35em;margin-bottom:20px;}
-  .sns-links{gap:16px;}
-  .sns-link{font-size:11px;letter-spacing:0.2em;padding:8px 22px;}
-}
-
-/* ── FOOTER ── */
-footer{background:var(--black);padding:28px 24px;text-align:center;border-top:1px solid rgba(255,255,255,0.06);}
-footer p{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.15em;color:rgba(255,255,255,0.2);line-height:2;}
-@media(min-width:768px){footer{padding:36px 40px;}footer p{font-size:11px;letter-spacing:0.2em;line-height:2.2;}}
-
-/* ── FLOAT ── */
-.float-btn{
-  position:fixed;bottom:20px;right:16px;z-index:500;background:var(--gold);color:var(--ink);
-  font-size:10px;letter-spacing:0.2em;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:background 0.3s;
-}
-.float-btn:hover{background:var(--gold-l);}
-@media(min-width:768px){.float-btn{bottom:28px;right:28px;font-size:11px;padding:14px 22px;}}
-
-/* ══ 貴船神社を参考にした和紙トーン（トップ＋本覚院について） ══ */
-:root{--washi:#f3ece1;--sumi:#2b2621;
-  --paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0.28 0'/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix values='0 0 0 0 .42  0 0 0 0 .36  0 0 0 0 .27  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23n%29'/%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23w%29' opacity='.35'/%3E%3C/svg%3E");}
-.hero-overlay{background:linear-gradient(to bottom,rgba(0,0,0,0.25),rgba(0,0,0,0) 35%,rgba(0,0,0,0) 65%,rgba(0,0,0,0.3));}
-.hero-panel{position:absolute;top:0;right:0;z-index:3;padding:84px 22px 0;}
-.hero-name{writing-mode:vertical-rl;font-family:'Shippori Mincho B1',serif;font-weight:400;color:#fff;
-  display:flex;gap:10px;align-items:flex-start;text-shadow:0 0 24px rgba(0,0,0,0.5);
-  opacity:0;animation:fadeIn 1.6s ease .4s forwards;}
-.hero-name-main{font-size:44px;letter-spacing:0.3em;}
-.hero-name-sub{font-size:13px;letter-spacing:0.4em;padding-top:6px;}
-.hero-nav,.hero-util,.hero-scroll{display:none;}
-
-.about-sec{background:var(--washi) var(--paper);}
-.about-title{font-family:'Shippori Mincho B1',serif;font-weight:400;font-size:26px;letter-spacing:0.2em;color:var(--sumi);margin-bottom:24px;}
-.about-lead,.about-desc{font-family:'Shippori Mincho B1',serif;font-size:15px;line-height:2.2;color:var(--sumi);letter-spacing:0.05em;}
-.about-lead{margin-bottom:1em;}
-
-@media(min-width:900px){
-  .site-header{transition:transform .5s ease;}
-  body.at-top .site-header{transform:translateY(-100%);}
-  .hero-slides{left:24%;}
-  .hero-overlay{left:24%;}
-  .slide-dots{left:62%;}
-  .hero-panel{left:0;right:auto;bottom:0;width:24%;padding:0;background:var(--washi) var(--paper);
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px;}
-  .hero-name{color:var(--sumi);text-shadow:none;gap:14px;}
-  .hero-name-main{font-size:clamp(36px,3.2vw,52px);}
-  .hero-nav{display:block;writing-mode:vertical-rl;opacity:0;animation:fadeIn 1.4s ease 1s forwards;}
-  .hero-nav a{display:block;margin-left:20px;white-space:nowrap;font-family:'Shippori Mincho B1',serif;font-size:15px;letter-spacing:0.25em;color:var(--sumi);transition:color .3s;}
-  .hero-nav a:hover{color:var(--gold);}
-  .hero-util{display:flex;gap:24px;position:absolute;top:28px;right:40px;z-index:3;}
-  .hero-util a{font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:0.2em;color:#fff;text-shadow:0 0 12px rgba(0,0,0,.6);}
-  .hero-scroll{display:block;position:absolute;right:40px;bottom:32px;z-index:3;writing-mode:vertical-rl;
-    font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.4em;color:rgba(255,255,255,.8);
-    padding-bottom:64px;background:linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)) no-repeat center bottom/1px 52px;}
-
-  .about-sec{padding:120px 60px;}
-  .about-inner{grid-template-columns:1.15fr 1fr;gap:72px;align-items:start;max-width:1160px;}
-  .about-img{aspect-ratio:4/5;}
-  .about-text{writing-mode:vertical-rl;height:min(78vh,640px);margin-left:auto;display:block;}
-  .about-title{font-size:30px;margin:0 0 0 48px;}
-  .about-lead,.about-desc{font-size:15px;line-height:2.1;}
-  .about-lead{margin:0 0 0 1.2em;}
-}
-
-/* 数字を読みやすく：細い欧文書体の数字をやめ、明朝の数字に統一 */
-.news-card-date,.hero-brand .tel,.history-table td:first-child,.f-num,footer p,.hero-eyebrow{
-  font-family:'Shippori Mincho B1',serif !important;font-variant-numeric:lining-nums tabular-nums;}
-.news-card-date{font-size:13px;}
-
-/* スマホ：寺名を写真の真ん中に */
-@media(max-width:899px){
-  .hero-panel{left:0;right:0;bottom:0;padding:0;display:flex;align-items:center;justify-content:center;}
-  .hero-name-main{font-size:52px;}
-}
-
-/* ══ スマホだけB案（真如堂型）：和紙色のオープニング → 全画面写真の中央に寺名 ══ */
-.opening,.hero-name-en{display:none;}
-@media(max-width:899px){
-  .opening{position:fixed;inset:0;z-index:5000;background:var(--washi) var(--paper);display:flex;align-items:center;justify-content:center;
-    animation:openingOut 1s ease 2.4s forwards;pointer-events:none;}
-  .opening-name{writing-mode:vertical-rl;font-family:'Shippori Mincho B1',serif;color:var(--sumi);display:flex;gap:12px;align-items:flex-start;
-    opacity:0;animation:fadeIn 1.4s ease .3s forwards;}
-  .opening-name .m{font-size:52px;letter-spacing:0.3em;}
-  .opening-name .s{font-size:13px;letter-spacing:0.4em;padding-top:8px;}
-  .hero-panel{flex-direction:column;}
-  .hero-name{animation-delay:2.8s;}
-  .hero-name-en{display:block;margin-top:22px;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.45em;color:rgba(255,255,255,0.85);
-    text-shadow:0 0 12px rgba(0,0,0,.5);opacity:0;animation:fadeIn 1.4s ease 3.2s forwards;}
-  .hero-overlay{background:radial-gradient(ellipse at center,rgba(0,0,0,0.28) 0%,rgba(0,0,0,0.08) 60%,rgba(0,0,0,0.25) 100%);}
-  .hero-scroll{display:block;position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:3;writing-mode:vertical-rl;
-    font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:0.4em;color:rgba(255,255,255,.85);
-    padding-bottom:56px;background:linear-gradient(rgba(255,255,255,.8),rgba(255,255,255,.8)) no-repeat center bottom/1px 44px;}
-  .slide-dots{display:none;}
-}
-@keyframes openingOut{to{opacity:0;visibility:hidden;}}
-@media(prefers-reduced-motion:reduce){.opening{display:none !important;}}
-
-/* 真如堂のように、肩書きを寺名の右に少し下げて添える */
-.hero-name-sub,.opening-name .s{padding-top:1.6em !important;}
-.hero-name,.opening-name{flex-direction:column;align-items:flex-start;}
-
-/* 寺紋：寺名の上の真ん中。和紙色の上は墨色、写真の上は白 */
-.hero-mon{width:52px;height:52px;display:block;opacity:0;animation:fadeIn 1.4s ease .2s forwards;}
-.hero-mon-sumi{display:none;}
-.hero-mon-white{margin-bottom:22px;filter:drop-shadow(0 0 14px rgba(0,0,0,.45));}
-.opening-mon{display:none;}
-@media(max-width:899px){
-  .hero-mon-white{animation-delay:2.6s;}
-  .opening{flex-direction:column;}
-  .opening-mon{display:block;width:56px;height:56px;margin-bottom:26px;opacity:0;animation:fadeIn 1.2s ease .1s forwards;}
-}
-@media(min-width:900px){
-  .hero-mon-white{display:none;}
-  .hero-mon-sumi{display:block;width:58px;height:58px;margin-bottom:-30px;}
-}
-
-/* ══ スマホ：真如堂と同じ配置（寺紋→寺名を中央、肩書きは右に添える→英字2行→scroll） ══ */
-@media(max-width:899px){
-  .hero-mon-white{width:64px;height:64px;margin-bottom:30px;}
-  .hero-name,.opening-name{display:block !important;position:relative;}
-  .hero-name-main,.opening-name .m{display:block;font-size:54px !important;letter-spacing:0.06em !important;line-height:1;}
-  .hero-name-sub,.opening-name .s{position:absolute;top:0;left:100%;margin-left:12px;padding-top:0.3em !important;
-    font-size:14px !important;letter-spacing:0.12em !important;line-height:1;white-space:nowrap;}
-  .hero-name-en{margin-top:26px;text-align:center;font-size:15px;letter-spacing:0.3em;line-height:1.9;}
-  .hero-scroll{writing-mode:horizontal-tb;padding-bottom:0;background:none;font-size:20px;letter-spacing:0.08em;bottom:36px;}
-  /* 最初の画面ではヘッダーの帯とご予約ボタンを消して、写真と寺名だけに */
-  .site-header{transition:background .4s,border-color .4s;}
-  body.at-top .site-header{background:transparent;border-bottom-color:transparent;backdrop-filter:none;}
-  body.at-top .header-logo{opacity:0;pointer-events:none;}
-  .float-btn{transition:opacity .4s;}
-  body.at-top .float-btn{opacity:0;pointer-events:none;}
-}
-
-
-
-/* スマホでは3段落目（勤行・法話）を省いて短く。内容は「宿坊ならではの体験」と重なるため */
-@media(max-width:899px){.about-desc{display:none;}}
-
-/* PC：寺紋を「本覚院」の文字の真上の真ん中に（肩書きは右にぶら下げて、寺名の位置をずらさない） */
-@media(min-width:900px){
-  .hero-name{display:block !important;position:relative;}
-  .hero-name-main{display:block;}
-  .hero-name-sub{position:absolute;top:0;left:100%;margin-left:12px;white-space:nowrap;}
-  .hero-mon-sumi{margin-bottom:-28px;}
-}
-
-@media(max-width:899px){br.pc-only{display:none;}}
-
-
-/* 予約サイトへのメインボタン */
-.btn-reserve-main{display:inline-block;margin:8px 0 28px;padding:16px 44px;background:var(--gold);color:var(--ink);
-  font-family:'Shippori Mincho B1',serif;font-size:16px;letter-spacing:.2em;transition:background .3s;}
-.btn-reserve-main:hover{background:var(--gold-l);}
-
-.room-detail h3 small{display:block;margin-top:6px;font-size:.62em;letter-spacing:.08em;opacity:.75;font-weight:400;}
-.room-book{display:inline-block;margin-top:14px;font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:.12em;color:var(--gold-l);border-bottom:1px solid currentColor;padding-bottom:2px;}
-.room-book:hover{color:#fff;}
-
-/* 特別室：大きい写真1枚＋小さい写真2枚 */
-.room-photo-trio{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:4px;}
-.room-photo-trio img{width:100%;height:100%;object-fit:cover;min-height:0;}
-.room-photo-trio .main{grid-row:1 / 3;}
-
-/* ── お参り・ご供養 ── */
-.kuyo-sec{background:var(--washi) var(--paper);padding:72px 24px;}
-.kuyo-inner{max-width:1100px;margin:0 auto;}
-.kuyo-sec .sec-title{color:var(--sumi);}
-.kuyo-grid{display:grid;gap:40px;margin-top:8px;}
-.kuyo-card img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;margin-bottom:20px;}
-.kuyo-card h3{font-family:'Shippori Mincho B1',serif;font-weight:400;font-size:22px;letter-spacing:.2em;color:var(--sumi);margin-bottom:14px;}
-.kuyo-card p{font-size:14px;line-height:2.1;color:var(--sumi);margin-bottom:12px;}
-.kuyo-cta{margin-top:40px;text-align:center;}
-.kuyo-cta p{font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--sumi);margin-bottom:12px;}
-.kuyo-tel{display:inline-block;font-family:'Shippori Mincho B1',serif;font-size:24px;letter-spacing:.12em;color:var(--sumi);border-bottom:1px solid var(--gold);padding-bottom:4px;}
-@media(min-width:900px){.kuyo-sec{padding:110px 60px;}.kuyo-grid{grid-template-columns:1fr 1fr;gap:64px;}.kuyo-card p{font-size:15px;}}
-/* ── 住職の聲明CD ── */
-.priest-cd{display:flex;gap:24px;align-items:flex-start;margin-top:36px;padding-top:28px;border-top:1px solid var(--border);}
-.priest-cd img{width:110px;height:auto;flex:none;box-shadow:0 6px 20px rgba(0,0,0,.18);}
-.priest-cd p{font-size:13px;line-height:2;color:var(--stone);margin-bottom:8px;}
-.priest-cd .cd-title{font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--ink);}
-.priest-cd .cd-note{font-size:12px;}
-
-/* 記事を開いたときは、小さいサムネイルと抜粋を隠して本文の写真だけにする（同じ写真が2枚並ばないように） */
-.news-card.open .news-card-img,.news-card.open .news-card-excerpt{display:none;}
-
-.priest-cd .cd-listen{margin-top:14px;font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:.12em;color:var(--ink);}
-.cd-player{display:block;border:0;border-radius:12px;margin-top:6px;}
-
-.priest-cd .cd-links{margin-top:10px;font-size:13px;}
-.priest-cd .cd-links a{color:var(--ink);border-bottom:1px solid var(--gold);margin:0 4px;}
-
-/* 住職：スマホでは略歴とCDをたたむ */
-.priest-more-btn{display:none;}
-@media(max-width:899px){
-  .priest-more{display:none;}
-  .priest-more.show{display:block;}
-  .priest-more-btn{display:block;margin:20px auto 0;padding:12px 28px;background:none;border:1px solid var(--gold);color:var(--ink);
-    font-family:'Shippori Mincho B1',serif;font-size:14px;letter-spacing:.15em;cursor:pointer;}
-}
-
-/* スマホ：施設だけ横スワイプ（お部屋は縦に並べる） */
-.rooms-swipe-hint{display:none;}
-@media(max-width:768px){
-  .room-list-fac{flex-direction:row;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;
-    margin:0 -20px;padding:0 20px 12px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-  .room-list-fac::-webkit-scrollbar{display:none;}
-  .room-list-fac .room-item{flex:0 0 84%;scroll-snap-align:center;}
-  .rooms-swipe-hint{display:block;text-align:right;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.15em;color:rgba(255,255,255,.6);margin:-8px 0 12px;}
-}
-
-/* 新着：スマホでは最初の段落だけ見せて「続きを読む」 */
-.nb-more{display:none;}
-@media(max-width:768px){
-  .news-card-body .nb-rest{display:none;}
-  .news-card-body.nb-open .nb-rest{display:block;}
-  .nb-more{display:inline-block;margin-top:10px;padding:6px 0;background:none;border:0;border-bottom:1px solid var(--gold);
-    font-family:'Shippori Mincho B1',serif;font-size:13px;letter-spacing:.12em;color:var(--ink);cursor:pointer;}
-}
-
-/* 開いた記事はサムネイルが消えるので、見出しを横いっぱいに */
-.news-card.open .news-card-header{grid-template-columns:1fr auto !important;}
-
-.news-card.nb-hide{display:none;}
-
-/* 新着：ページ番号（1ページ5本） */
-.news-pager{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:36px;}
-.news-pager .pg{background:none;border:0;padding:6px 10px;font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--sumi);cursor:pointer;
-  font-variant-numeric:lining-nums;position:relative;}
-.news-pager .pg.is-current::before{content:'';position:absolute;left:50%;top:0;width:10px;height:1px;background:var(--sumi);transform:translateX(-50%);}
-.news-pager .pg:hover{color:var(--gold);}
-.news-pager .pg-dots{padding:6px 6px;color:rgba(43,38,33,.6);}
-
-/* 写真のない記事は、見出しを横いっぱいに */
-.news-card-header.no-img{grid-template-columns:1fr auto !important;}
-
-/* 窓越しの庭のスライド：スマホでは窓の縦枠が真ん中に来ないよう左寄せ */
-.slide-mado{background-position:center 60%;}
-@media(max-width:768px){.slide-mado{background-position:22% center;}}
-
-/* 本覚院についての写真の説明 */
-.about-img{object-position:center 40%;}
-.about-cap{margin-top:10px;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.12em;color:rgba(43,38,33,.65);text-align:center;}
-
-/* スマホ：「本覚院について」の見出し → 写真 → 本文 の順に */
-@media(max-width:899px){
-  .about-inner{display:flex;flex-direction:column;}
-  .about-text{display:contents;}
-  .about-title{order:1;}
-  .about-img-wrap{order:2;margin-bottom:28px;}
-  .about-text p{order:3;}
-}
-
-.news-more-mobile{display:block;margin:0 auto;padding:12px 32px;background:none;border:1px solid var(--gold);color:var(--ink);
-  font-family:'Shippori Mincho B1',serif;font-size:14px;letter-spacing:.15em;cursor:pointer;}
-
-/* 新着：開いた本文の文字を、閉じているときの抜粋と同じ書体・色にそろえる */
-.news-card-body,.news-card-body *{font-family:'Noto Sans JP',sans-serif !important;font-weight:300 !important;color:var(--stone) !important;}
-.news-card-body{font-size:14px;line-height:2.1;padding-top:14px;}
-.news-card-body div,.news-card-body p,.news-card-body span{font-size:inherit !important;line-height:inherit !important;}
-
-/* 新着：本文中の写真と文章の間に余白 */
-.news-card-body img{display:block;margin:4px 0 24px !important;}
-
-/* 年号：PCの縦書きは漢数字、スマホの横書きは算用数字 */
-.num-yoko{display:none;}
-@media(max-width:899px){.num-tate{display:none;}.num-yoko{display:inline;}}
-
-.room-sub{font-family:'Shippori Mincho B1',serif;font-weight:400;font-size:20px;letter-spacing:.2em;color:#fff;margin:48px 0 20px;}
-@media(max-width:768px){.room-list-rooms{gap:20px;}}
-
-/* 新着：本文の写真はすべて同じ幅で表示（microCMSの新しい記事と旧サイトの記事をそろえる） */
-.news-card-body img{width:100% !important;max-width:560px !important;height:auto !important;}
-
-/* ══════════════════════════════════════════════════════════
-   DESIGN SYSTEM v2 —（shukubo-v2.html のみ）
-   index-v2.html と同じ和紙(washi)・墨(sumi)・金(gold)＋予約朱に統一。
-   最終カスケードで !important により確定させる。
-════════════════════════════════════════════════════════════ */
-:root{
-  --v2-washi:#f3ece1;
-  --v2-sumi:#2b2621;
-  --v2-ink:#150c15;
-  --v2-gold:#917c50;
-  --v2-shu:#9a1117;
-}
-
-/* ---- 1. 配色：通常セクションはすべて和紙色に統一 ---- */
-body,
-.page-hero,
-.page-sec,
-.features-sec,
-.rooms-sec,
-.gallery-sec,
-.exp-sec,
-.access-sec,
-.faq-sec{
-  background:var(--v2-washi) var(--paper) !important;
-  background-color:var(--v2-washi) !important;
-  background-image:var(--paper) !important;
-}
-
-/* 暗い欄は「ご相談・ご予約」CTA＋フッターの1箇所だけ */
-.page-cta,footer{
-  background-color:var(--v2-ink) !important;
-  background-image:none !important;
-  color:var(--v2-washi) !important;
-}
-.page-cta h2,.page-cta p,.page-cta a.cta-tel,.page-cta .cta-hours{color:var(--v2-washi) !important;}
-.page-cta .page-cta-links a{color:var(--v2-gold) !important;border-bottom-color:rgba(243,236,225,.4) !important;}
-.page-cta .page-cta-links a:hover{color:var(--v2-washi) !important;}
-
-/* 予約系の朱ボタンだけは維持 */
-.float-btn,.reserve-btn,.btn-reserve-main,.drawer-reserve,.page-cta .btn-dark,.room-book{
-  background-color:var(--v2-shu) !important;background-image:none !important;color:#fff !important;border-color:var(--v2-shu) !important;
-}
-.float-btn:hover,.reserve-btn:hover,.btn-reserve-main:hover,.drawer-reserve:hover,.room-book:hover{background-color:#7d0d12 !important;}
-
-/* もとは黒背景だった「お部屋・施設」「院内のご案内」「アクセス」を和紙色に。
-   文字色はすべて墨色に統一（白文字指定を打ち消す） */
-.rooms-sec,.rooms-sec .room-detail h3,.rooms-sec .room-detail p,.rooms-sec .room-sub,
-.rooms-sec .rooms-swipe-hint,
-.gallery-sec,.gallery-sec .g-label,.gallery-sec p,
-.access-sec,.access-sec .access-box td,.access-sec p,.access-sec li{
-  color:var(--v2-sumi) !important;
-}
-.room-tag,.room-note,.access-box td:first-child,.access-box h3,.directions strong{color:var(--v2-gold) !important;}
-.access-box{border-color:rgba(43,38,33,.18) !important;background:transparent !important;}
-.access-box td{border-bottom-color:rgba(43,38,33,.14) !important;}
-.directions{background:rgba(43,38,33,.05) !important;border-left-color:var(--v2-gold) !important;}
-.room-item .room-detail{background:transparent !important;}
-
-/* ---- 2. タイポグラフィ：見出し・本文とも明朝体に統一 ---- */
-body,input,button,select,textarea,
-.page-inner p,.kuyo-card p,.priest-msg p,.room-detail p,.exp-card p,
-.access-box td,.directions p,.f-body p,.faq-a{
-  font-family:'Shippori Mincho B1',serif !important;
-}
-.logo-en,footer p,.hero-scroll,.hero-util,.notice-bar p,.breadcrumb{font-family:'Noto Sans JP',sans-serif !important;}
-
-/* 見出しは全ページ共通のスタイルに統一 */
-h2.sec-title{
-  font-family:'Shippori Mincho B1',serif !important;
-  font-size:clamp(22px,4.4vw,32px) !important;
-  font-weight:500 !important;
-  letter-spacing:.16em !important;
-  line-height:1.5 !important;
-  color:var(--v2-sumi) !important;
-  text-align:center !important;
-  margin:0 0 40px !important;
-  position:relative;
-}
-.page-cta h2{color:var(--v2-washi) !important;}
-h2.sec-title::after{
-  content:'';display:block;width:24px;height:1px;background-color:var(--v2-gold);
-  margin:16px auto 0;
-}
-.features-header,.gallery-header,.access-header,.rooms-header,.exp-header{margin-bottom:0 !important;}
-.features-header .sec-title,.gallery-header .sec-title,.access-header .sec-title,
-.rooms-header .sec-title,.exp-header .sec-title{margin-bottom:40px !important;}
-
-/* h1（ページタイトル）も同系統の落ち着いた書体に */
-.page-hero h1{
-  font-family:'Shippori Mincho B1',serif !important;
-  font-weight:500 !important;
-  letter-spacing:.14em !important;
-  color:var(--v2-sumi) !important;
-}
-/* パンくずは控えめに */
-.breadcrumb{opacity:.6 !important;font-size:11px !important;}
-
-/* ---- 3. 余白：スマホ96px・PC144px、幅1040px ---- */
-.page-hero,.page-sec,.kuyo-sec,.faq-sec,.features-sec,.exp-sec,.rooms-sec,.gallery-sec,.access-sec,
-.priest-intro-sec,.photo-strip-sec,.page-cta{
-  padding-top:96px !important;padding-bottom:96px !important;
-}
-@media(min-width:900px){
-  .page-hero,.page-sec,.kuyo-sec,.faq-sec,.features-sec,.exp-sec,.rooms-sec,.gallery-sec,.access-sec,
-  .priest-intro-sec,.photo-strip-sec,.page-cta{
-    padding-top:144px !important;padding-bottom:144px !important;
-  }
-}
-.page-inner,.kuyo-inner,.faq-inner,.features-inner,.exp-inner,.rooms-inner,.gallery-inner,.access-inner{max-width:1040px !important;}
-.page-inner p,.kuyo-card p,.priest-msg p{max-width:36em;margin-left:auto;margin-right:auto;}
-
-/* ---- 4. 写真：影・角丸をやめ、横位置3:2に統一（Apple Music/Spotify要素は対象外） ---- */
-.content-img,.f-img,.kuyo-card img,.room-photo img,.g-item img{border-radius:0 !important;box-shadow:none !important;}
-.content-img,.room-photo,.g-item{aspect-ratio:3/2 !important;}
-
-/* ---- 5. スクロールでのフェードアップ ---- */
-.v2-reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
-.v2-reveal.v2-in{opacity:1;transform:translateY(0);}
-@media(prefers-reduced-motion:reduce){
-  .v2-reveal,.v2-reveal.v2-in{opacity:1 !important;transform:none !important;transition:none !important;}
-}
-</style>
-<style>
-/* ══ サブページ共通：ページタイトル帯・パンくず・本文セクション ══ */
-.page-hero{background:var(--washi) var(--paper);padding:128px 24px 44px;text-align:center;}
-.page-hero .sec-eyebrow{display:block;}
-.page-hero h1{font-family:'Shippori Mincho B1',serif;font-weight:400;font-size:clamp(26px,6vw,42px);
-  letter-spacing:.12em;color:var(--sumi);margin:6px 0 0;line-height:1.4;}
-.breadcrumb{max-width:900px;margin:18px auto 0;padding:0 24px;font-size:12px;color:var(--stone);letter-spacing:.03em;}
-.breadcrumb a{color:var(--stone);border-bottom:1px solid transparent;}
-.breadcrumb a:hover{border-color:var(--gold);color:var(--ink);}
-@media(min-width:768px){.page-hero{padding:156px 40px 60px;}}
-
-.page-sec{background:var(--cream);padding:56px 24px;}
-.page-sec.alt{background:#fff;}
-.page-sec.dark{background:var(--washi) var(--paper);}
-.page-inner{max-width:880px;margin:0 auto;}
-.page-inner p{font-size:15px;color:var(--sumi);line-height:2.2;margin-bottom:16px;}
-.page-sec.alt .page-inner p,.page-sec:not(.dark) .page-inner p{color:var(--stone);}
-.page-sec.dark .page-inner p{color:var(--sumi);}
-.content-img{width:100%;height:auto;display:block;margin:24px 0 8px;object-fit:cover;}
-.img-cap{font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.1em;color:var(--stone);text-align:center;margin-bottom:20px;}
-.quote-block{background:rgba(184,146,74,0.07);border-left:3px solid var(--gold);padding:22px 24px;margin:28px 0;}
-.quote-block .quote-label{display:block;font-family:'Shippori Mincho B1',serif;font-size:12px;color:var(--gold);letter-spacing:.2em;margin-bottom:12px;}
-.quote-block p{font-size:13px;color:var(--stone);line-height:2.1;margin-bottom:0;}
-.info-list{margin:8px 0 24px;padding-left:1.3em;}
-.info-list li{font-size:14px;color:var(--stone);line-height:2.1;margin-bottom:8px;}
-.step-list{margin:16px 0 24px;padding-left:1.4em;counter-reset:step;}
-.step-list li{font-size:14px;color:var(--stone);line-height:2.1;margin-bottom:10px;}
-.mido-grid,.yukari-grid{display:grid;grid-template-columns:1fr;gap:32px;margin-top:8px;}
-.mido-item img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;margin-bottom:14px;}
-.mido-item h3{font-family:'Shippori Mincho B1',serif;font-size:17px;color:var(--ink);margin-bottom:8px;letter-spacing:.05em;}
-.mido-item p{font-size:13px;color:var(--stone);line-height:1.9;}
-@media(min-width:768px){.page-sec{padding:88px 40px;}.mido-grid{grid-template-columns:repeat(2,1fr);gap:40px;}}
-
-.page-cta{background:var(--gold);padding:56px 24px;text-align:center;}
-.page-cta h2{font-family:'Shippori Mincho B1',serif;font-size:clamp(22px,6vw,36px);color:var(--ink);margin-bottom:10px;letter-spacing:.06em;}
-.page-cta p{color:rgba(30,26,16,0.65);font-size:14px;margin-bottom:20px;}
-.page-cta .cta-tel{display:block;font-family:'Shippori Mincho B1',serif;font-size:clamp(26px,7vw,48px);color:var(--ink);margin-bottom:8px;letter-spacing:.1em;}
-.page-cta .cta-hours{font-size:12px;color:rgba(30,26,16,0.55);margin-bottom:22px;}
-.page-cta-links{margin-top:22px;font-size:13px;}
-.page-cta-links a{color:var(--ink);border-bottom:1px solid rgba(30,26,16,.4);margin:0 10px;padding-bottom:2px;}
-@media(min-width:768px){.page-cta{padding:80px 40px;}}
-
-/* ゆかりの人々：リストのみのシンプル表示 */
-.yukari-list{margin:8px 0 8px;padding-left:1.3em;}
-.yukari-list li{font-size:14px;color:var(--sumi);line-height:2.2;margin-bottom:10px;}
-
-/* ══ ひとこと（縦書き） ══ */
-.kotoba-sec{background:var(--washi) var(--paper);padding:56px 24px;text-align:center;}
-.kotoba-tate{writing-mode:vertical-rl;font-family:'Shippori Mincho B1',serif;font-weight:500;
-  font-size:clamp(22px,6vw,32px);color:var(--sumi);letter-spacing:.26em;line-height:1.9;
-  margin:0 auto;display:inline-block;}
-.kotoba-cap{display:block;margin-top:18px;font-family:'Shippori Mincho B1',serif;font-size:12px;
-  letter-spacing:.2em;color:var(--stone);}
-.kotoba-lines{margin-top:28px;max-width:560px;margin-left:auto;margin-right:auto;}
-.kotoba-lines p{font-size:14px;line-height:2.1;color:var(--sumi);}
-@media(min-width:768px){
-  .kotoba-sec{padding:96px 40px;display:flex;align-items:flex-start;justify-content:center;gap:64px;text-align:left;}
-  .kotoba-tate{font-size:clamp(26px,2.6vw,36px);}
-  .kotoba-cap{writing-mode:vertical-rl;margin-top:0;margin-left:16px;padding-top:.4em;}
-  .kotoba-lines{margin-top:6px;max-width:300px;}
-}
-
-/* 住職名（トップの簡易表示） */
-.pi-name{display:inline-block;font-family:'Shippori Mincho B1',serif;font-size:16px;letter-spacing:.15em;color:var(--gold);margin-top:6px;}
-
-/* ── お参り・ご供養（トップの帯）：深い墨色で厳かに ── */
-.kuyo-sec-home{background:#2b2621;}
-.kuyo-sec-home .sec-title,.kuyo-sec-home .kuyo-card h3,.kuyo-sec-home .kuyo-card p,
-.kuyo-sec-home .kuyo-cta p,.kuyo-sec-home .kuyo-offer{color:var(--washi);}
-.kuyo-sec-home .kuyo-tel{color:var(--washi);border-bottom-color:var(--gold);}
-.kuyo-sec-home .gold-bar{background:var(--gold);margin-left:0;}
-.kuyo-offer{font-size:14px;line-height:2.1;color:var(--washi);margin:24px 0 0;text-align:center;letter-spacing:.04em;}
-.kuyo-phone-block{margin:32px auto 0;max-width:420px;padding:28px;border:1px solid var(--gold);text-align:center;}
-.kuyo-phone-block .kuyo-phone-label{font-family:'Shippori Mincho B1',serif;font-size:14px;letter-spacing:.15em;color:var(--washi);margin-bottom:10px;}
-.kuyo-phone-block .kuyo-tel-big{display:block;font-family:'Shippori Mincho B1',serif;font-size:clamp(28px,7vw,42px);color:var(--gold-l);letter-spacing:.08em;margin-bottom:8px;}
-.kuyo-phone-block .kuyo-hours{font-size:12px;color:rgba(243,236,225,0.6);}
-
-/* ── 宿坊（トップの帯） ── */
-.stay-teaser-sec{background:#fff;padding:64px 24px;}
-.stay-teaser-inner{max-width:1000px;margin:0 auto;text-align:center;}
-.stay-teaser-main{width:100%;aspect-ratio:16/10;object-fit:cover;margin-bottom:6px;}
-.stay-teaser-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:32px;}
-.stay-teaser-thumbs img{width:100%;aspect-ratio:1/1;object-fit:cover;}
-.stay-teaser-sec > .stay-teaser-inner > p{font-size:14px;line-height:2.1;color:var(--stone);margin:0 auto 28px;max-width:560px;}
-.stay-teaser-btns{display:flex;flex-direction:column;gap:14px;align-items:center;}
-.btn-reserve-outline{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 32px;
-  border:1px solid var(--gold);color:var(--ink);font-family:'Shippori Mincho B1',serif;font-size:14px;letter-spacing:.15em;
-  transition:background .3s,color .3s;}
-.btn-reserve-outline:hover{background:var(--gold);color:#fff;}
-@media(min-width:768px){
-  .stay-teaser-sec{padding:100px 40px;}
-  .stay-teaser-main{aspect-ratio:21/8;}
-  .stay-teaser-btns{flex-direction:row;justify-content:center;gap:24px;}
-}
-
-/* ══ 厳か・可読性オーバーライド（全ページ共通） ══ */
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}}
-body{font-size:16px;line-height:2.0;}
-.sec-desc,.about-lead,.about-desc,.page-inner p,.kuyo-card p,.priest-msg p,.faq-a,.directions p,
-.access-box td,.mido-item p,.room-detail p,.exp-card p,.f-body p,.news-card-body p{color:#4a4038;}
-.sec-title,.page-hero h1{font-weight:500;letter-spacing:.1em;color:#a9824a;}
-.more-box,.reserve-btn,.btn-dark,.btn-reserve-main,.room-book,.news-more-btn,.drawer-reserve,
-.btn-reserve-outline{min-height:48px;}
-.more-box{min-height:46px;display:inline-flex;align-items:center;justify-content:center;}
-.faq-q{min-height:48px;display:flex;align-items:center;}
-.header-phone{display:none;}
-@media(min-width:900px){
-  .header-phone{display:inline-flex;align-items:center;font-family:'Shippori Mincho B1',serif;
-    font-size:13px;letter-spacing:.08em;color:rgba(255,255,255,.8);margin-right:16px;}
-  .header-phone a{color:inherit;}
-}
-.drawer-phone{display:block;margin-top:18px;text-align:center;font-family:'Shippori Mincho B1',serif;
-  font-size:18px;letter-spacing:.08em;color:#fff;}
-.drawer-phone a{color:var(--gold-l);}
-@media(min-width:768px){body{font-size:17px;}}
-
-/* 暗い背景の欄（お部屋・施設など）は、文字を明るく読みやすく */
-.rooms-sec .room-detail p{color:rgba(250,243,232,.86) !important;}
-.rooms-sec .room-note{color:#d9b877 !important;opacity:1 !important;}
-.rooms-sec .room-detail h3 small{color:rgba(250,243,232,.8) !important;opacity:1 !important;}
-.rooms-sec .rooms-swipe-hint{color:rgba(250,243,232,.75) !important;}
-.access-sec .access-box td,.access-sec p,.access-sec li{color:rgba(250,243,232,.86) !important;}
-.access-sec .access-box td:first-child{color:#d9b877 !important;}
-.gallery-sec .g-label,.gallery-sec p{color:rgba(250,243,232,.9) !important;}
-.kuyo-sec-home p,.kuyo-sec-home li,.kuyo-sec-home h3{color:rgba(250,243,232,.9) !important;}
-
-.info-list{display:grid;grid-template-columns:7.5em 1fr;border-top:1px solid rgba(43,38,33,.18);margin-top:8px;}
-.info-list dt,.info-list dd{padding:14px 4px;border-bottom:1px solid rgba(43,38,33,.18);margin:0;font-size:15px;line-height:1.9;color:var(--sumi);}
-.info-list dt{font-family:'Shippori Mincho B1',serif;color:#a9824a;letter-spacing:.1em;}
-@media(max-width:540px){.info-list{grid-template-columns:1fr;}.info-list dt{border-bottom:0;padding-bottom:0;}}
-
-/* ══ 配色：漆黒と金（＋朱をほんの少し）で格を上げる ══ */
-:root{--gold:#917c50;--gold-l:#b9a276;--ink:#150c15;--black:#150c15;--shu:#9a1117;}
-/* 見出し・線・注記の金を渋い金に */
-.sec-eyebrow,.room-tag,.news-card-tag,.f-num,.fuku-role,.info-list dt{color:#917c50 !important;}
-.gold-bar,.page-hero .gold-bar{background:#917c50 !important;}
-h2.sec-title,.page-hero h1{color:#150c15;}
-/* 暗い欄は漆黒に、その上の金は明るめにして読みやすく */
-.rooms-sec,.access-sec,.gallery-sec,.kuyo-sec-home,.site-header,.drawer{background-color:#150c15 !important;}
-.rooms-sec .sec-eyebrow,.access-sec .sec-eyebrow,.gallery-sec .sec-eyebrow,.kuyo-sec-home .sec-eyebrow,
-.rooms-sec .room-tag,.rooms-sec .room-note,.access-sec .access-box td:first-child{color:#c9b183 !important;}
-.rooms-sec .gold-bar,.access-sec .gold-bar,.gallery-sec .gold-bar,.kuyo-sec-home .gold-bar{background:#b9a276 !important;}
-/* 予約など「押してほしい」ボタンだけ朱色に */
-.float-btn,.reserve-btn,.btn-reserve-main,.drawer-reserve,.cta-sec .btn-dark,.page-cta .btn-dark{background:#9a1117 !important;color:#fff !important;border-color:#9a1117 !important;}
-.float-btn:hover,.reserve-btn:hover,.btn-reserve-main:hover,.drawer-reserve:hover,.cta-sec .btn-dark:hover,.page-cta .btn-dark:hover{background:#7d0d12 !important;}
-/* 予約・相談の帯は漆黒に金の文字 */
-.cta-sec,.page-cta{background:#150c15 !important;color:#f3ead8 !important;}
-.cta-sec h2,.page-cta h2,.cta-sec p,.page-cta p,.cta-sec a.cta-tel,.page-cta a.cta-tel{color:#f3ead8 !important;}
-.page-cta .page-cta-links a{color:#c9b183 !important;}
-
-/* 暗い欄の「詳しく見る」ボタンは、明るい枠と文字に */
-.kuyo-sec-home .more-box,.rooms-sec .more-box,.access-sec .more-box,.gallery-sec .more-box,.cta-sec .more-box,.page-cta .more-box{
-  border-color:#c9b183 !important;color:#f3ead8 !important;}
-.kuyo-sec-home .more-box:hover,.rooms-sec .more-box:hover,.access-sec .more-box:hover,.gallery-sec .more-box:hover{background:#c9b183 !important;color:#150c15 !important;}
-
-/* Instagram：目立たせる */
-.sns-links{display:flex;justify-content:center;}
-.sns-link.ig-big{display:inline-flex;flex-direction:column;align-items:center;gap:6px;padding:18px 36px;border:1px solid #c9b183 !important;
-  color:#f3ead8 !important;min-width:260px;transition:background .3s,color .3s;}
-.sns-link.ig-big:hover{background:#c9b183;color:#150c15 !important;}
-.ig-row{display:inline-flex;align-items:center;gap:10px;font-family:'Shippori Mincho B1',serif;font-size:16px;letter-spacing:.12em;}
-.ig-icon{width:24px;height:24px;}
-.ig-handle{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.1em;opacity:.85;}
-.ig-lead{font-family:'Shippori Mincho B1',serif;font-size:15px !important;letter-spacing:.12em !important;color:#f3ead8 !important;margin-bottom:18px;}
-/* フッターの文字を読める明るさに */
-footer p{color:rgba(243,234,216,.62) !important;font-size:12px !important;}
-
-/* スマホ：3つの魅力はスワイプをやめ、写真＋文の横並びカードを縦に3つ */
-@media(max-width:768px){
-  .feature-grid{display:flex !important;flex-direction:column !important;gap:14px !important;overflow:visible !important;margin:0 !important;padding:0 !important;}
-  .feature-card{display:grid !important;grid-template-columns:38% 1fr;align-items:stretch;flex:none !important;}
-  .feature-card .f-img{aspect-ratio:auto !important;height:100%;min-height:150px;}
-  .feature-card .f-body{padding:14px 14px !important;}
-  .feature-card .f-num{font-size:18px !important;margin-bottom:2px !important;}
-  .feature-card h3{font-size:16px !important;line-height:1.5 !important;margin-bottom:6px !important;}
-  .feature-card h3 br{display:none;}
-  .feature-card p{font-size:13.5px !important;line-height:1.8 !important;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
-}
-
-/* 本館の和室：1階・2階の写真を並べる */
-.room-photo-pair{display:grid !important;grid-template-columns:1fr 1fr;gap:4px;}
-.room-photo-pair figure{position:relative;margin:0;overflow:hidden;}
-.room-photo-pair img{width:100%;height:100%;object-fit:cover;}
-.room-photo-pair figcaption{position:absolute;left:8px;bottom:6px;font-family:'Shippori Mincho B1',serif;font-size:12px;letter-spacing:.1em;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.8);}
-
-/* 余白を広げる（清水寺サイトを参考に）：各欄の上下 スマホ72px・PC140px */
-.about-sec,.news-sec,.features-sec,.rooms-sec,.gallery-sec,.exp-sec,.priest-sec,.access-sec,.faq-sec,.kuyo-sec,.stay-teaser-sec,.page-sec{padding-top:72px !important;padding-bottom:72px !important;}
-@media(min-width:768px){.about-sec,.news-sec,.features-sec,.rooms-sec,.gallery-sec,.exp-sec,.priest-sec,.access-sec,.faq-sec,.kuyo-sec,.stay-teaser-sec,.page-sec{padding-top:140px !important;padding-bottom:140px !important;}}
-.cta-sec,.page-cta{padding-top:64px !important;padding-bottom:64px !important;}
-@media(min-width:768px){.cta-sec,.page-cta{padding-top:110px !important;padding-bottom:110px !important;}}
-
-/* アクセスは明るい和紙色に（黒い欄が続かないように） */
-.access-sec{background:var(--washi) var(--paper) !important;background-color:var(--washi) !important;}
-.access-sec .sec-title{color:var(--ink) !important;}
-.access-sec .sec-eyebrow,.access-sec .access-box td:first-child,.access-sec .access-box h3{color:#917c50 !important;}
-.access-sec .gold-bar{background:#b9a276 !important;}
-.access-sec .access-box{border-color:rgba(26,22,16,.18) !important;}
-.access-sec .access-box td{color:#3a322a !important;border-bottom-color:rgba(26,22,16,.1) !important;}
-.access-sec p,.access-sec li{color:#3a322a !important;}
-.access-sec .directions{background:rgba(255,255,255,.45) !important;}
-.access-sec .directions strong{color:#7a6337 !important;}
-.access-sec .more-box{border-color:var(--ink) !important;color:var(--ink) !important;}
-.access-sec .more-box:hover{background:var(--ink) !important;color:#f3ead8 !important;}
-
-/* 色を4色に：背景は和紙色の濃淡（--w1 明・--w2 濃）と黒、アクセントは金と赤（予約ボタンのみ） */
-:root{--w1:#f3ece1;--w2:#e8dfce;--cloud:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.011' numOctaves='3' seed='23' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0 0 .55 .9'/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23c%29' opacity='.55'/%3E%3C/svg%3E");}
-body{background:var(--w1) var(--paper);}
-/* ご予約・お問合せ：濃い和紙色に雲の模様（貴船神社風） */
-.cta-sec,.page-cta{background:var(--cloud),var(--paper),var(--w2) !important;background-color:var(--w2) !important;color:var(--ink) !important;}
-.cta-sec h2,.page-cta h2,.cta-sec p,.page-cta p,.cta-sec a.cta-tel,.page-cta a.cta-tel,.cta-sec .cta-hours,.page-cta .cta-hours{color:var(--ink) !important;}
-.cta-sec p,.page-cta p{color:#3a322a !important;}
-.cta-sec .more-box,.page-cta .more-box{border-color:var(--ink) !important;color:var(--ink) !important;}
-.cta-sec .sec-eyebrow,.page-cta .sec-eyebrow{color:#917c50 !important;}
-.page-hero,#features,#access,#faq{background:var(--w1) var(--paper) !important;background-color:var(--w1) !important;}
-#intro,#experience,#info{background:var(--w2) var(--paper) !important;background-color:var(--w2) !important;}
-
-/* 仕上げ：ボタン・リンクの反応をそろえる */
-a,button,summary{-webkit-tap-highlight-color:transparent;}
-.more-box,.reserve-btn,.btn-reserve-main,.float-btn,.drawer-reserve,.btn-dark,.room-book,.am-btn,.news-more-mobile,.priest-more-btn{transition:background-color .3s ease,color .3s ease,border-color .3s ease,opacity .3s ease !important;}
-.more-box:active,.reserve-btn:active,.btn-reserve-main:active,.float-btn:active,.drawer-reserve:active,.btn-dark:active,.am-btn:active{opacity:.8;}
-a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid #917c50;outline-offset:3px;}
-
-/* ══ 最終：v2ルールを優先（前の「漆黒」指定が後から上書きしていたのを戻す） ══ */
-html body .rooms-sec,html body .access-sec,html body .gallery-sec,html body .features-sec,html body .exp-sec,html body .faq-sec{background-color:#f3ece1 !important;}
-html body .rooms-sec .room-item{background:transparent !important;}
-html body .rooms-sec h2,html body .rooms-sec .sec-title,html body .rooms-sec .room-detail h3,html body .rooms-sec .room-sub,html body .gallery-sec .sec-title,html body .access-sec .sec-title,html body .access-sec h3{color:#150c15 !important;}
-html body .rooms-sec .room-detail p,html body .rooms-sec .room-detail h3 small,html body .rooms-sec .rooms-swipe-hint,html body .access-sec p,html body .access-sec li,html body .access-sec .access-box td,html body .gallery-sec .g-label,html body .gallery-sec p{color:#2b2621 !important;}
-html body .rooms-sec .room-tag,html body .rooms-sec .room-note,html body .access-sec .access-box td:first-child{color:#917c50 !important;}
-html body .rooms-sec .room-detail{border-color:rgba(43,38,33,.15) !important;}
-html body .rooms-sec .more-box,html body .access-sec .more-box,html body .gallery-sec .more-box{border-color:#150c15 !important;color:#150c15 !important;}
-html body .rooms-sec .more-box:hover,html body .access-sec .more-box:hover,html body .gallery-sec .more-box:hover{background:#150c15 !important;color:#f3ece1 !important;}
-html body .rooms-sec .room-book{color:#150c15 !important;border-bottom-color:#917c50 !important;background:transparent !important;}
-</style>
-<body>
-<!-- HEADER -->
-<header class="site-header">
-  <a href="index.html" class="header-logo">
-    <span class="logo-brush">本覚院</span>
-    <span class="logo-en">KOYASAN HONGAKUIN</span>
-  </a>
-  <nav class="header-nav">
-    <a href="about.html">本覚院について</a>
-    <a href="priest.html">住職・僧侶</a>
-    <a href="kuyo.html">お参り・ご供養</a>
-    <a href="shukubo.html">宿坊</a>
-    <a href="index.html#news">新着情報</a>
-    <a href="index.html#access">アクセス</a>
-  </nav>
-  <div class="header-right">
-    <span class="header-phone">☎ <a href="tel:0736562711">0736-56-2711</a></span>
-    <a href="en.html" class="lang-btn" lang="en">EN</a>
-    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="reserve-btn" target="_blank" rel="noopener">ご予約</a>
-  </div>
-  <button class="menu-btn" onclick="openMenu()" aria-label="メニューを開く">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-
-<!-- ドロワー（モバイル用） -->
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-<div class="drawer" id="drawer">
-  <button class="drawer-close" onclick="closeMenu()" aria-label="メニューを閉じる">✕</button>
-  <nav>
-    <a href="about.html" onclick="closeMenu()">本覚院について</a>
-    <a href="priest.html" onclick="closeMenu()">住職・僧侶</a>
-    <a href="kuyo.html" onclick="closeMenu()">お参り・ご供養</a>
-    <a href="shukubo.html" onclick="closeMenu()">宿坊</a>
-    <a href="index.html#news" onclick="closeMenu()">新着情報</a>
-    <a href="index.html#access" onclick="closeMenu()">アクセス</a>
-  </nav>
-  <a href="#cta" class="drawer-reserve" onclick="closeMenu()">ご予約・お問合せ</a>
-  <a href="tel:0736562711" class="drawer-phone">☎ 0736-56-2711</a>
-</div>
-
-<!-- ページタイトル -->
-<section class="page-hero">
-  <h1>宿坊</h1>
-</section>
-<nav class="breadcrumb" aria-label="パンくずリスト">
-  <a href="index.html">トップ</a> ＞ 宿坊
-</nav>
-
-<!-- 宿坊のご案内（イントロ） -->
-<section class="page-sec" id="intro">
-  <div class="page-inner">
-    <h2 class="sec-title" style="color:var(--ink);">宿坊のご案内</h2>
-    <p>高野山 別格本山 本覚院では、宿坊として一般の方のご宿泊をお受けしております。昔ながらの和室から、重森三玲の庭を望む特別室まで、お好みに合わせてお選びいただけます。</p>
-    <p>精進料理と朝のお勤めをはじめ、写経や庭園散策など、高野山ならではの静かな時間をお過ごしください。</p>
-  </div>
-</section>
-
-<section class="features-sec" id="features">
-  <div class="features-inner">
-    <div class="features-header">
-      <h2 class="sec-title" style="color:var(--ink);">宿坊の見どころ</h2>
-    </div>
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="f-img" style="background-image:url('images/photos/tenjoue.webp')" role="img" aria-label="本堂天井に残る250年前の極彩色天井絵"></div>
-        <div class="f-body">
-          <h3>250年を超える<br>江戸の芸術</h3>
-          <p>本堂天井には250年前の絵師による極彩色の天井絵が残り、大広間には狩野派の貴重な障壁画をご覧いただけます。</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="f-img" style="background-image:url('images/photos/teien-mado-1.webp')" role="img" aria-label="重森三玲設計の石庭"></div>
-        <div class="f-body">
-          <h3>重森三玲設計の<br>5つの庭園</h3>
-          <p>昭和の名作庭家・重森三玲による石庭を含む5つの庭園。季節ごとに表情を変える苔と岩の世界をお楽しみください。</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="f-img" style="background-image:url('images/photos/gongyo-hondo.webp')" role="img" aria-label="本堂で読経する僧侶たち（朝のお勤め）"></div>
-        <div class="f-body">
-          <h3>祈りの声に<br>包まれる朝</h3>
-          <p>毎朝、本堂で副住職をはじめ僧侶がお勤めをいたします。どなたでもご参加いただけ、高野山に受け継がれる読経の響きに包まれるひとときをお過ごしいただけます。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="rooms-sec" id="rooms">
-  <div class="rooms-inner">
-    <div class="rooms-header">
-      <h2 class="sec-title" style="color:#fff;">お部屋・施設のご案内</h2>
-    </div>
-    <p class="rooms-swipe-hint" aria-hidden="true">横にスワイプ →</p>
-    <div class="room-list room-list-fac">
-      <div class="room-item">
-        <div class="room-photo"><img src="images/photos/ohiroma.webp" alt="狩野派の襖絵に囲まれた大広間と「獅子吼」の額" loading="lazy" width="1600" height="1067"></div>
-        <div class="room-detail">
-          <span class="room-tag">GRAND HALL</span>
-          <h3>大広間・狩野派の襖絵</h3>
-          <p>江戸時代の狩野派絵師による障壁画が残る大広間。夕暮れの陽光が生む陰影の中、たおやかな時間が流れます。仏前結婚式の宴席にも。</p>
-        </div>
-      </div>
-      <div class="room-item">
-        <div class="room-photo"><img src="images/photos/fusuma-shojin.webp" alt="金地の襖絵の前に並ぶ精進料理のお膳" loading="lazy" width="1600" height="1200"></div>
-        <div class="room-detail">
-          <span class="room-tag">SHOJIN CUISINE</span>
-          <h3>精進料理のお座席</h3>
-          <p>弘法大師・空海が伝えた精進料理。旬のもの、地のもの。お膳のしきたりに沿って丁寧に作りあげる一品を、高野山ならではの空間でお楽しみください。</p>
-        </div>
-      </div>
-      <div class="room-item">
-        <div class="room-photo"><img src="images/photos/daiyokujo-onna.webp" alt="本覚院の大浴場（女湯）。石張りの床と広い浴槽、洗い場" loading="lazy" width="1600" height="1200"></div>
-        <div class="room-detail">
-          <span class="room-tag">BATH</span>
-          <h3>大浴場・中浴場</h3>
-          <p>ゆったりくつろげる大・中の浴場。ボディソープ・シャンプー・リンス・ドライヤー・バスタオル・フェイスタオル・歯ブラシセット完備。</p>
-          <p class="room-note">利用時間 17:00〜21:00</p>
-        </div>
-      </div>
-    </div>
-    <h3 class="room-sub">お部屋</h3>
-    <div class="room-list room-list-rooms">
-      <div class="room-item">
-        <div class="room-photo room-photo-trio">
-          <img class="main" src="images/rooms/tenporin.webp" alt="特別室「転法輪」。格天井の和室と、重森三玲の庭を望む窓" loading="lazy" width="1000" height="750">
-          <img src="images/rooms/hokaigu.webp" alt="和モダンスイート「法界宮」。大きな窓の向こうに庭の緑" loading="lazy" width="1000" height="750">
-          <img src="images/rooms/kutenbo.webp" alt="一棟貸しの特別客室「空点房」から見る苔と石組の庭" loading="lazy" width="1000" height="750">
-        </div>
-        <div class="room-detail">
-          <span class="room-tag">SPECIAL ROOMS</span>
-          <h3>特別室<br><small>庭を望む、3つの特別なお部屋</small></h3>
-          <p>重森三玲の庭を望む最高格の特別室「転法輪」、伝統と現代が調和する和モダンスイート「法界宮」、茶室付きの一棟貸し「空点房」。どれも1階の庭側で、静かな時間をお過ごしいただけます。</p>
-          <p class="room-note">転法輪・法界宮は専用バスルーム付き</p>
-          <a class="room-book" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">空室・料金を見る →</a>
-        </div>
-      </div>
-      <div class="room-item">
-        <div class="room-photo"><img src="images/rooms/wakasugi.webp" alt="お風呂・トイレ付きの和室「若杉」。広縁のソファ越しに庭の緑" loading="lazy" width="1000" height="750"></div>
-        <div class="room-detail">
-          <span class="room-tag">WITH BATH</span>
-          <h3>若杉・花梨（わかすぎ・かりん）<br><small>お風呂・トイレ付きの和室</small></h3>
-          <p>お風呂とトイレを備えた、本館の和室です。重森三玲が手がけた庭を眺めながらおくつろぎいただけます。若杉は1階で館内の移動もしやすく、花梨は2階のお部屋です。</p>
-          <p class="room-note">和室8畳＋3畳　定員3名　大浴場もご利用いただけます</p>
-          <a class="room-book" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">空室・料金を見る →</a>
-        </div>
-      </div>
-      <div class="room-item">
-        <div class="room-photo"><img src="images/rooms/hokusuikan.webp" alt="新館「北翠観」の和室。床の間に掛軸、障子の先に広縁と庭" loading="lazy" width="1000" height="750"></div>
-        <div class="room-detail">
-          <span class="room-tag">NEW WING</span>
-          <h3>北翠観（ほくすいかん）<br><small>新館の和室</small></h3>
-          <p>四季折々の庭を眺めながらおくつろぎいただける、新館の和室です。1階・2階に全10部屋。お部屋にお風呂・トイレはなく、大浴場をご利用いただきます。</p>
-          <p class="room-note">和室10畳　定員4名</p>
-          <a class="room-book" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">空室・料金を見る →</a>
-        </div>
-      </div>
-      <div class="room-item">
-        <div class="room-photo room-photo-pair"><figure><img src="images/photos/kyakushitsu-honkan-1f.webp" alt="本館1階の和室。床の間に書の掛軸、広縁の窓の外に緑" loading="lazy" width="1600" height="1200"><figcaption>1階</figcaption></figure><figure><img src="images/photos/kyakushitsu-honkan-2f.webp" alt="本館2階の和室。床の間に書の掛軸、障子の先に椅子とテーブルの広縁と緑" loading="lazy" width="1600" height="1200"><figcaption>2階</figcaption></figure></div>
-        <div class="room-detail">
-          <span class="room-tag">MAIN BUILDING</span>
-          <h3>本館の和室</h3>
-          <p>昔から変わらない、落ち着いた畳の和室です。2階のお部屋からは庭園を望めます。隣室との続き部屋としてもご利用いただけます。</p>
-          <p class="room-note">テレビ・エアコン完備　続き部屋対応</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 院内のご案内 -->
-<section class="gallery-sec" id="gallery">
-  <div class="gallery-inner">
-    <div class="gallery-header">
-      <h2 class="sec-title" style="color:#fff;">院内のご案内</h2>
-    </div>
-    <div class="gallery-grid">
-      <div class="g-item">
-        <img src="images/photos/tenjoue.webp" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" loading="lazy" width="1600" height="1067">
-        <div class="g-label">本堂天井絵</div>
-      </div>
-      <div class="g-item">
-        <img src="images/photos/fusuma-kanoha.webp" alt="狩野派による金地の襖絵（唐人物図）" loading="lazy" width="1600" height="1200">
-        <div class="g-label">狩野派の襖絵</div>
-      </div>
-      <div class="g-item">
-        <img src="images/photos/teien-mado-3.webp" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="1200">
-        <div class="g-label">重森三玲の石庭</div>
-      </div>
-      <div class="g-item">
-        <img src="images/photos/koi-niwa-2.webp" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200">
-        <div class="g-label">池泉庭</div>
-      </div>
-      <div class="g-item">
-        <img src="images/photos/gongyo-hondo.webp" alt="本堂でお経を唱える僧侶たち（朝の勤行）" loading="lazy" width="1600" height="1067">
-        <div class="g-label">本堂</div>
-      </div>
-      <div class="g-item">
-        <img src="images/fudo-myoo.webp" alt="護摩堂にお祀りする修身不動明王" loading="lazy" width="1600" height="1200">
-        <div class="g-label">護摩堂の修身不動明王</div>
-      </div>
-      <div class="g-item">
-        <img src="images/photos/mon-tobira-jimon.webp" alt="寺紋が金色に輝く山門の扉と、奥へ続く石畳" loading="lazy" width="1600" height="1200">
-        <div class="g-label">本堂への道</div>
-      </div>
-      <div class="g-item">
-        <img src="images/gallery-mado.webp" alt="窓越しに見る庭園の眺め" loading="lazy" width="900" height="1200">
-        <div class="g-label">窓越しの庭園</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="exp-sec" id="experience">
-  <div class="exp-inner">
-    <div class="exp-header">
-      <h2 class="sec-title" style="color:var(--ink);">宿坊ならではの体験</h2>
-    </div>
-    <div class="exp-grid">
-      <div class="exp-card">
-        <span class="exp-icon">🕯</span>
-        <h3>朝の勤行</h3>
-        <p>荘厳な本堂で行われる朝のお勤め。声明の響きが心を清め、一日の始まりを整えます。</p>
-      </div>
-      <div class="exp-card">
-        <span class="exp-icon">🖌</span>
-        <h3>写経体験</h3>
-        <p>仏さまのお言葉である経典を、ひと文字ずつ願いを込めて書き写します。初めての方にも取り組みやすいよう、般若心経をなぞる形です。用紙・筆・筆ペン・墨・硯はご用意していますので、いつでもお申し付けください。</p>
-      </div>
-      <div class="exp-card">
-        <span class="exp-icon">🌿</span>
-        <h3>庭園散策</h3>
-        <p>重森三玲設計の石庭を含む5つの庭園。四季折々の風情と静寂をお楽しみください。</p>
-      </div>
-      <div class="exp-card">
-        <span class="exp-icon">🍱</span>
-        <h3>精進料理</h3>
-        <p>弘法大師が伝えた精進料理を、本来の形で。旬の素材と伝統の技が織りなす一椀。</p>
-      </div>
-      <div class="exp-card">
-        <span class="exp-icon">🎋</span>
-        <h3>奥の院参拝</h3>
-        <p>高野山の聖域・奥の院へ。弘法大師の御廟を詣で、千年の歴史に触れる。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="access-sec" id="access">
-  <div class="access-inner">
-    <div class="access-header">
-      <h2 class="sec-title" style="color:#fff;">アクセス</h2>
-    </div>
-    <div class="access-grid">
-      <div class="access-box">
-        <h3>TEMPLE INFO</h3>
-        <table>
-          <tr><td>寺院名</td><td>高野山 別格本山 本覚院</td></tr>
-          <tr><td>宗派</td><td>高野山真言宗</td></tr>
-          <tr><td>住所</td><td>〒648-0211<br>和歌山県伊都郡高野町高野山618</td></tr>
-          <tr><td>電話</td><td><a href="tel:0736562711" style="color:var(--gold);">0736-56-2711</a></td></tr>
-          <tr><td>チェックイン</td><td>15:00〜</td></tr>
-          <tr><td>チェックアウト</td><td>〜10:00</td></tr>
-        </table>
-      </div>
-      <div class="directions">
-        <p><strong>電車でお越しの場合：</strong>南海電鉄高野線「極楽橋」駅でケーブルカーに乗り換え「高野山」駅へ</p>
-        <p><strong>バスでお越しの場合：</strong>南海りんかんバス「奥の院行」または「大門行」→「警察署前」バス停下車（約10分）</p>
-        <p><strong>徒歩：</strong>バス停から2〜3分。木々に囲まれた参道を進むと山門が見えます。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ご利用案内（旧サイト「施設詳細」より） -->
-<section class="page-sec info-sec" id="info">
-  <div class="page-inner" style="max-width:900px;">
-    <h2 class="sec-title" style="color:var(--ink);">ご利用案内</h2>
-    <dl class="info-list">
-      <dt>サービス</dt><dd>お一人でのご宿泊・団体グループのご宿泊を承っております。宅配サービスの手配、仏前結婚式も謹んでお受けいたします。</dd>
-      <dt>ペット</dt><dd>ペットご同伴のご宿泊は、現在ご遠慮いただいております。</dd>
-      <dt>お部屋</dt><dd>全室、落ち着きのある和室です。冷暖房・テレビ完備。院内には<strong>段差がございます</strong>ので、お気軽にお声がけください。</dd>
-      <dt>客室設備</dt><dd>テレビ、お湯ポット、お茶セット、机、冷暖房</dd>
-      <dt>アメニティ</dt><dd>タオル、バスタオル、ドライヤー、歯ブラシ、スリッパ、ボディソープ、シャンプー、リンス</dd>
-      <dt>部屋着</dt><dd>浴衣（ワンサイズ・LLサイズのみ）</dd>
-      <dt>お風呂</dt><dd>大浴場・中浴場（ご利用時間 17:00〜21:00）</dd>
-      <dt>駐車場</dt><dd>一般駐車場 15台（先着順・無料）</dd>
-      <dt>バリアフリー</dt><dd>車椅子用トイレ 1か所。車椅子の貸し出しがございます。</dd>
-      <dt>トイレ</dt><dd>暖房便座・洗浄機能付きの洋式トイレ</dd>
-      <dt>洗面所</dt><dd>お湯が出ます</dd>
-      <dt>喫煙所</dt><dd>あり</dd>
-    </dl>
-  </div>
-</section>
-
-<section class="faq-sec" id="faq">
-  <div class="faq-inner">
-    <h2 class="sec-title" style="color:var(--ink);">よくあるご質問</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary class="faq-q">お一人でも宿泊できますか？</summary>
-        <div class="faq-a"><p>お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">予約方法を教えてください。</summary>
-        <div class="faq-a"><p>ご宿泊は予約サイト（ページ内の「宿坊のご予約はこちら」から）で24時間承っております。お電話（0736-56-2711／受付9:00〜17:00）でもご予約いただけます。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">チェックイン・チェックアウトは何時ですか？</summary>
-        <div class="faq-a"><p>チェックインは15:00から、チェックアウトは10:00まででございます。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">門限はありますか？</summary>
-        <div class="faq-a"><p>門限は22:00でございます。夜は山内が静かになりますので、それまでにお戻りくださいますようお願いいたします。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">食事は精進料理ですか？アレルギーの対応はできますか？</summary>
-        <div class="faq-a"><p>高野豆腐や胡麻豆腐をはじめとする精進料理をご用意しております。なお、個別の食物アレルギーへの対応は行っておりませんので、あらかじめご了承ください。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">朝の勤行には誰でも参加できますか？必須ですか？</summary>
-        <div class="faq-a"><p>朝のお勤めは、毎朝6時30分から本堂で行います。ご宿泊の方はどなたでもご参加いただけます。参加は自由で、必須ではございません。所要時間は45分〜1時間ほどです。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">外国人でも宿泊できますか？英語の対応はありますか？</summary>
-        <div class="faq-a"><p>海外からのお客様もご宿泊いただけます。簡単な英語でしたらご対応いたします。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">駐車場はありますか？</summary>
-        <div class="faq-a"><p>一般駐車場が15台分ございます。先着順で、無料でご利用いただけます。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">ペットと一緒に泊まれますか？</summary>
-        <div class="faq-a"><p>ペットご同伴のご宿泊は、現在ご遠慮いただいております。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">車椅子でも利用できますか？</summary>
-        <div class="faq-a"><p>車椅子用トイレが1か所あり、車椅子の貸し出しもございます。院内には段差がございますので、お気軽にお声がけください。</p></div>
-      </details>
-      <details class="faq-item">
-        <summary class="faq-q">団体でも宿泊できますか？</summary>
-        <div class="faq-a"><p>団体グループでのご宿泊も承っております。人数やご希望をお電話でご相談ください。</p></div>
-      </details>
-    </div>
-  </div>
-</section>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -1672,57 +161,1087 @@ html body .rooms-sec .room-book{color:#150c15 !important;border-bottom-color:#91
  ]
 }
 </script>
+<script>
+/* 表示モードの判定（CSSより先に実行して、ちらつきを防ぐ）
+   ?static=1 … 確認用：演出をすべて止めて全部表示
+   動きを減らす設定 … 演出なし */
+(function () {
+  var d = document.documentElement;
+  d.classList.add('js');
+  if (/[?&]static=1/.test(location.search)) { d.classList.add('static'); return; }
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  d.classList.add('motion');
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600&family=Cormorant+Garamond:wght@400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="images/photos/teien-mado-4.webp" fetchpriority="high">
+<style>
+/* ══════════════════════════════════════════════════════════
+   本覚院 宿坊 v3 ──「一夜の巻」
+   和紙・墨・金（＋予約だけ朱）。index-v3 / priest-v3 と同じ設計言語。
+   一の章は 昼 → 夜 → 朝 と背景の色が移ろう、宿坊の一夜の時間割。
+════════════════════════════════════════════════════════════ */
+:root{
+  --washi:#f3ece1; --washi-d:#ebe2d2; --sumi:#2b2621; --ink:#150c15;
+  --gold:#917c50; --gold-d:#6f5d36; --gold-l:#c9b183; --shu:#9a1117; --shu-d:#7d0d12;
+  --text:#2b2621; --text-2:#4a4038; --line:rgba(43,38,33,.16);
+  --mincho:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;
+  --latin:'Cormorant Garamond',serif;
+  --brush:'Yuji Syuku','Shippori Mincho B1',serif;
+  --gut:20px; --max:1180px;
+  --ease:cubic-bezier(.22,.61,.36,1); --ease-io:cubic-bezier(.65,0,.35,1);
+  --paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0 0.28 0'/%3E%3C/feComponentTransfer%3E%3CfeColorMatrix values='0 0 0 0 .42  0 0 0 0 .36  0 0 0 0 .27  0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23n%29'/%3E%3C/svg%3E");
+  --fiber:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .06' numOctaves='2' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .45  0 0 0 0 .38  0 0 0 0 .27  0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23f%29'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:72px;}
+body{font-family:var(--mincho);font-size:16px;line-height:2;font-weight:400;color:var(--text);
+  background:var(--washi) var(--paper);background-image:var(--fiber),var(--paper);overflow-x:hidden;
+  font-feature-settings:"pkna" 0;letter-spacing:.04em;-webkit-font-smoothing:antialiased;}
+@media(min-width:768px){body{font-size:17px;}}
+img{display:block;max-width:100%;height:auto;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
+ruby rt{font-size:.5em;letter-spacing:.1em;}
+h1,h2,h3,.cap,figcaption,.cta-lead,.ig-lead,.phone-label,.name-title{word-break:auto-phrase;}
+.skip{position:absolute;left:12px;top:-60px;z-index:9999;background:var(--ink);color:var(--washi);padding:12px 18px;}
+.skip:focus{top:12px;}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+.on-dark :focus-visible{outline-color:var(--gold-l);}
+.pc{display:none;} @media(min-width:900px){.pc{display:initial;} .sp{display:none;}}
+.sp-br{display:inline;} @media(min-width:769px){.sp-br{display:none;}}
 
-<!-- CTA -->
-<section class="page-cta" id="cta">
-  <h2>ご相談・ご予約</h2>
-  <p>ご宿泊は予約サイトから、ご祈祷・ご供養などはお電話でお気軽にどうぞ</p>
-  <a href="tel:0736562711" class="cta-tel">0736-56-2711</a>
-  <p class="cta-hours">受付時間 9:00〜17:00</p>
-  <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn-dark" target="_blank" rel="noopener">宿坊のご予約はこちら</a>
-  <p class="page-cta-links"><a href="about.html">本覚院について →</a><a href="kuyo.html">お参り・ご供養について →</a><a href="index.html">トップページへ</a></p>
+/* ── 墨の下線（リンク） ── */
+.ink{background:linear-gradient(var(--sumi),var(--sumi)) no-repeat 0 100%/0 1px,linear-gradient(var(--gold),var(--gold)) no-repeat 0 100%/100% 1px;
+  padding-bottom:3px;transition:background-size .6s var(--ease);}
+.ink:hover,.ink:focus-visible{background-size:100% 1px,100% 1px;}
+
+/* ── ボタン ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:56px;min-width:260px;padding:0 28px;
+  border:1px solid var(--sumi);font-size:16px;letter-spacing:.14em;color:var(--sumi);position:relative;overflow:hidden;
+  transition:color .45s var(--ease);z-index:0;}
+.btn::before{content:'';position:absolute;inset:0;background:var(--sumi);transform:scaleX(0);transform-origin:right;transition:transform .55s var(--ease);z-index:-1;}
+.btn:hover,.btn:focus-visible{color:var(--washi);}
+.btn:hover::before,.btn:focus-visible::before{transform:scaleX(1);transform-origin:left;}
+.btn .arw{display:inline-block;width:28px;height:1px;background:currentColor;position:relative;transition:width .45s var(--ease);}
+.btn .arw::after{content:'';position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);}
+.btn:hover .arw{width:40px;}
+.btn-shu{background:var(--shu);border-color:var(--shu);color:#fff;}
+.btn-shu::before{background:var(--shu-d);}
+.btn-shu:hover,.btn-shu:focus-visible{color:#fff;}
+
+/* ══ HEADER（index-v3 と同じ。このページは最初から和紙の帯） ══ */
+.hd{position:fixed;inset:0 0 auto 0;z-index:900;height:64px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 8px 0 var(--gut);color:var(--sumi);
+  background:rgba(243,236,225,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);}
+.hd-logo{display:flex;align-items:center;gap:10px;min-height:48px;}
+.hd-logo img{width:30px;height:30px;}
+.hd-logo b{font-weight:500;font-size:21px;letter-spacing:.24em;line-height:1;}
+.hd-logo small{display:none;}
+.hd-nav,.hd-tel-pc,.hd-lang,.hd-book{display:none;}
+.hd-actions{display:flex;align-items:center;}
+.hd-ic{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;}
+.hd-ic svg{width:22px;height:22px;}
+.menu-btn{width:52px;height:48px;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
+.menu-btn i{display:block;width:24px;height:1px;background:currentColor;}
+.menu-btn i:nth-child(2){width:16px;margin-left:8px;}
+.menu-btn em{font-style:normal;font-size:12px;letter-spacing:.04em;white-space:nowrap;line-height:1;margin-top:3px;}
+@media(min-width:900px){
+  .hd{height:72px;padding:0 32px 0 40px;}
+  .hd-logo small{display:block;font-family:var(--latin);font-size:11px;letter-spacing:.3em;color:var(--text-2);margin-top:6px;}
+  .hd-logo span{display:flex;flex-direction:column;}
+  .hd-nav{display:flex;gap:4px;margin-left:auto;margin-right:20px;}
+  .hd-nav a{font-size:15px;letter-spacing:.12em;padding:12px 12px;}
+  .hd-nav a span{background:linear-gradient(var(--gold),var(--gold)) no-repeat 0 100%/0 1px;padding-bottom:4px;transition:background-size .5s var(--ease);}
+  .hd-nav a:hover span,.hd-nav a[aria-current] span{background-size:100% 1px;}
+  .hd-nav a[aria-current]{color:var(--gold-d);}
+  .hd-tel-pc{display:inline-flex;align-items:center;min-height:48px;gap:6px;font-size:16px;letter-spacing:.06em;margin-right:14px;font-variant-numeric:lining-nums;}
+  .hd-lang{display:inline-flex;align-items:center;justify-content:center;min-width:48px;min-height:48px;font-family:var(--latin);font-size:15px;letter-spacing:.2em;}
+  .hd-book{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;margin-left:8px;background:var(--shu);color:#fff;font-size:15px;letter-spacing:.16em;transition:background .3s;}
+  .hd-book:hover{background:var(--shu-d);}
+  .hd .hd-ic,.menu-btn{display:none;}
+}
+@media(min-width:900px) and (max-width:1199px){.hd-nav a{padding:12px 8px;font-size:14px;letter-spacing:.06em;}.hd-tel-pc{display:none;}}
+
+/* ── ドロワー ── */
+.drawer{position:fixed;inset:0;z-index:1000;visibility:hidden;}
+.drawer.open{visibility:visible;}
+.drawer-bg{position:absolute;inset:0;background:rgba(21,12,21,.45);opacity:0;transition:opacity .4s;}
+.drawer.open .drawer-bg{opacity:1;}
+.drawer-panel{position:absolute;top:0;right:0;bottom:0;width:min(88vw,380px);background:var(--washi);background-image:var(--fiber),var(--paper);
+  padding:76px 28px 32px;overflow-y:auto;transform:translateX(100%);transition:transform .5s var(--ease);}
+.drawer.open .drawer-panel{transform:none;}
+.drawer-close{position:absolute;top:8px;right:8px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;}
+.drawer-close::before{content:'';width:22px;height:22px;background:linear-gradient(45deg,transparent 48%,currentColor 48%,currentColor 52%,transparent 52%),linear-gradient(-45deg,transparent 48%,currentColor 48%,currentColor 52%,transparent 52%);}
+.drawer nav a{display:flex;align-items:baseline;gap:16px;min-height:56px;padding:12px 0;border-bottom:1px solid var(--line);font-size:19px;letter-spacing:.14em;}
+.drawer nav a i{font-style:normal;font-size:14px;color:var(--gold-d);width:1.4em;}
+.drawer nav a[aria-current]{color:var(--gold-d);}
+.drawer-reserve{display:flex;align-items:center;justify-content:center;min-height:56px;margin-top:28px;background:var(--shu);color:#fff;font-size:17px;letter-spacing:.16em;}
+.drawer-phone{display:flex;flex-direction:column;align-items:center;margin-top:16px;min-height:56px;justify-content:center;border:1px solid var(--sumi);font-size:22px;letter-spacing:.06em;font-variant-numeric:lining-nums;line-height:1.4;padding:10px;}
+.drawer-phone small{font-size:13px;letter-spacing:.1em;color:var(--text-2);}
+.drawer-lang{display:block;text-align:center;margin-top:20px;font-family:var(--latin);font-size:16px;letter-spacing:.2em;min-height:48px;line-height:48px;}
+
+/* ══ ページの扉（題・パンくず・章の目次） ══ */
+.ph{padding:96px var(--gut) 40px;}
+.ph-in{max-width:var(--max);margin:0 auto;}
+.crumb{font-size:14px;letter-spacing:.12em;color:var(--text-2);display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.crumb a{display:inline-flex;align-items:center;min-height:48px;}
+.crumb .sep{width:18px;height:1px;background:var(--gold);}
+.ph-title{margin-top:8px;}
+.ph-en{display:block;font-family:var(--latin);font-size:14px;letter-spacing:.36em;color:var(--gold-d);text-transform:uppercase;margin-bottom:6px;}
+.ph h1{font-size:34px;font-weight:500;letter-spacing:.2em;line-height:1.4;color:var(--sumi);font-feature-settings:"palt";}
+.ph-sub{display:block;font-size:15px;letter-spacing:.2em;color:var(--text-2);margin-top:8px;}
+.ph-toc{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);margin-top:32px;border-top:1px solid var(--sumi);border-bottom:1px solid var(--line);}
+.ph-toc li+li{border-left:1px solid var(--line);}
+.ph-toc a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:72px;padding:8px 2px;font-size:15px;letter-spacing:.08em;line-height:1.4;text-align:center;}
+.ph-toc b{font-weight:500;font-size:14px;color:var(--gold-d);}
+@media(min-width:900px){
+  .ph{padding:128px 56px 64px;}
+  .ph-in{border-bottom:1px solid var(--line);padding-bottom:56px;}
+  .ph-in{display:grid;grid-template-columns:1fr auto;column-gap:clamp(48px,6vw,96px);align-items:start;}
+  .ph-meta{grid-column:1;grid-row:1;display:flex;flex-direction:column;justify-content:space-between;align-self:stretch;}
+  .ph-title{grid-column:2;grid-row:1;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:20px;writing-mode:vertical-rl;}
+  .ph h1{font-size:clamp(44px,3.6vw,54px);letter-spacing:.3em;line-height:1.2;}
+  .ph-en{writing-mode:vertical-rl;margin:0;font-size:13px;letter-spacing:.4em;padding-top:.3em;}
+  .ph-sub{margin:0;padding-top:1.4em;font-size:15px;letter-spacing:.34em;}
+  .ph-toc{display:flex;flex-direction:row-reverse;justify-content:flex-start;gap:0;margin-top:48px;border:0;border-top:1px solid var(--gold);padding-top:8px;align-self:flex-end;}
+  .ph-toc li+li{border-left:0;}
+  .ph-toc a{writing-mode:vertical-rl;flex-direction:row;align-items:center;gap:14px;min-height:0;min-width:56px;padding:16px 14px;font-size:17px;letter-spacing:.24em;position:relative;transition:color .3s;}
+  .ph-toc a::after{content:'';position:absolute;left:50%;top:0;width:1px;height:0;background:var(--gold);transition:height .5s var(--ease);}
+  .ph-toc a:hover{color:var(--gold-d);}
+  .ph-toc a:hover::after{height:100%;}
+  .ph-toc b{font-size:16px;}
+}
+
+/* ══ 冒頭：はがきの一枚（墨の帯） ══ */
+.hagaki{background:#150c15;color:#e9dcc2;}
+.hagaki figure{max-width:1400px;margin:0 auto;}
+.hagaki img{width:100%;height:auto;}
+.hagaki figcaption{text-align:center;padding:18px 16px 26px;font-family:var(--brush);font-size:17px;line-height:1.9;letter-spacing:.14em;color:#e9dcc2;}
+@media(min-width:900px){.hagaki figcaption{font-size:20px;padding:28px 16px 40px;letter-spacing:.2em;}}
+
+/* ══ 章（セクション）共通 ══ */
+.sec{position:relative;padding:96px var(--gut);}
+.sec-in{max-width:var(--max);margin:0 auto;}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:40px;}
+.sh-num{font-size:16px;color:var(--gold-d);letter-spacing:0;line-height:1;flex:none;}
+.sh-line{flex:none;width:36px;height:1px;background:var(--gold);}
+.sh-title{font-size:28px;font-weight:500;letter-spacing:.14em;line-height:1.5;color:var(--sumi);font-feature-settings:"palt";}
+.on-dark{background:var(--ink);color:var(--washi);}
+.on-dark .sh-title{color:var(--washi);} .on-dark .sh-num{color:var(--gold-l);} .on-dark .sh-line{background:var(--gold-l);}
+.tone{background:var(--washi-d);background-image:var(--fiber),var(--paper);}
+figure{margin:0;}
+.cap{font-size:14px;letter-spacing:.14em;color:var(--text-2);margin-top:12px;line-height:1.6;}
+.h3{display:flex;align-items:center;gap:16px;font-size:20px;font-weight:500;letter-spacing:.2em;color:var(--sumi);margin-bottom:24px;}
+.h3::after{content:'';flex:1;height:1px;background:var(--line);}
+@media(min-width:900px){
+  .sec{padding:160px 56px;}
+  .sec-grid{display:grid;grid-template-columns:1fr auto;column-gap:clamp(48px,6vw,96px);align-items:start;}
+  .sec-grid>.sh{grid-column:2;grid-row:1 / span 3;writing-mode:vertical-rl;flex-direction:row;align-items:center;gap:22px;margin:0;position:sticky;top:120px;}
+  .sec-grid>.sh .sh-line{width:1px;height:64px;}
+  .sec-grid>.sh .sh-num{font-size:18px;}
+  .sec-grid>.sh .sh-title{font-size:clamp(34px,2.9vw,42px);letter-spacing:.3em;line-height:1.6;white-space:nowrap;}
+  .sec-grid>.body{grid-column:1;grid-row:1;min-width:0;}
+  .h3{font-size:22px;}
+}
+
+/* ── 章の目次（PCのみ・右端） ── */
+.sidx{display:none;}
+@media(min-width:1280px){
+  .sidx{display:block;position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:800;opacity:0;pointer-events:none;transition:opacity .5s;}
+  body.past-hero .sidx{opacity:1;pointer-events:auto;}
+  .sidx ol{list-style:none;position:relative;padding-right:14px;}
+  .sidx ol::before{content:'';position:absolute;right:0;top:6px;bottom:6px;width:1px;background:var(--line);}
+  .sidx .bar{position:absolute;right:0;top:6px;width:1px;height:calc(100% - 12px);background:var(--gold);transform-origin:top;transform:scaleY(var(--p,0));}
+  .sidx a{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-height:40px;font-size:14px;color:var(--text-2);letter-spacing:.1em;}
+  .sidx a span{opacity:0;transform:translateX(6px);transition:opacity .4s,transform .4s var(--ease);font-size:13px;white-space:nowrap;background:rgba(243,236,225,.9);padding:0 4px;}
+  .sidx a:hover span,.sidx a:focus-visible span,.sidx a.on span{opacity:1;transform:none;}
+  .sidx a.on{color:var(--sumi);} .sidx a.on b{color:var(--gold-d);}
+  .sidx b{font-weight:500;width:1.2em;text-align:center;}
+  body.on-ink .sidx a{color:rgba(243,236,225,.75);} body.on-ink .sidx a.on{color:var(--washi);} body.on-ink .sidx a span{background:rgba(21,12,21,.8);}
+}
+
+
+
+@media(max-width:899px){.ph-toc a{font-size:14px;letter-spacing:.02em;padding:8px 0;}}
+/* ══ 扉の一枚（窓越しの庭） ══ */
+.ph{padding-bottom:32px;}
+.mado{position:relative;margin:0;overflow:hidden;background:var(--ink);}
+.mado img{width:100%;aspect-ratio:4/3.4;object-fit:cover;object-position:center 60%;}
+.mado figcaption{position:absolute;left:0;right:0;bottom:0;padding:56px var(--gut) 22px;color:#f3ece1;font-size:17px;letter-spacing:.2em;line-height:1.9;
+  background:linear-gradient(rgba(21,12,21,0),rgba(21,12,21,.62));}
+.mado figcaption small{display:block;font-size:13px;letter-spacing:.16em;opacity:.85;}
+.intro{max-width:var(--max);margin:0 auto;padding:56px var(--gut) 8px;}
+.intro p{font-size:17px;line-height:2.2;}
+.intro p+p{margin-top:1em;}
+.facts{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);margin-top:40px;border-top:1px solid var(--sumi);}
+.facts li{padding:16px 4px;border-bottom:1px solid var(--line);}
+.facts li:nth-child(odd){border-right:1px solid var(--line);padding-right:12px;}
+.facts li:nth-child(even){padding-left:16px;}
+.facts b{display:block;font-weight:500;font-size:14px;letter-spacing:.14em;color:var(--gold-d);}
+.facts span{display:block;font-size:20px;letter-spacing:.06em;line-height:1.6;font-variant-numeric:lining-nums;}
+.intro-btns{display:flex;flex-direction:column;gap:14px;margin-top:40px;}
+@media(min-width:900px){
+  .mado img{aspect-ratio:auto;height:min(82vh,820px);object-position:center 58%;}
+  .mado figcaption{padding:96px 56px 36px;font-size:21px;}
+  .intro{display:grid;grid-template-columns:7fr 5fr;gap:clamp(48px,6vw,96px);align-items:start;padding:112px 56px 24px;}
+  .intro p{font-size:18px;line-height:2.3;}
+  .facts{margin-top:0;}
+  .intro-btns{grid-column:1;flex-direction:row;margin-top:16px;}
+  .intro-btns .btn{min-width:0;}
+}
+
+/* ══ 一 一夜の流れ（昼 → 夜 → 朝） ══ */
+.night{padding:0;}
+.night .sec-in{padding:96px var(--gut) 0;}
+.ichiya-lead{font-size:17px;line-height:2.15;color:var(--text);max-width:36em;}
+.phase{position:relative;padding:24px var(--gut) 72px;}
+.phase-in{max-width:var(--max);margin:0 auto;}
+.phase-k{display:flex;align-items:center;gap:14px;font-size:15px;letter-spacing:.3em;color:var(--gold-d);margin-bottom:32px;}
+.phase-k::after{content:'';flex:1;height:1px;background:currentColor;opacity:.4;}
+.ph-day{background:transparent;}
+.ph-yoru{background:var(--ink);color:var(--washi);}
+.ph-yoru .phase-k{color:var(--gold-l);}
+.ph-asa{background:linear-gradient(#e9e3d8,var(--washi));}
+/* 夕暮れ・夜明けのグラデーション */
+.dusk,.dawn{height:160px;}
+.dusk{background:linear-gradient(rgba(21,12,21,0),#4a3a35 45%,var(--ink));}
+.dawn{background:linear-gradient(var(--ink),#4c4650 45%,#e9e3d8);}
+.moment{display:grid;gap:22px;}
+.moment+.moment{margin-top:72px;}
+.moment figure{margin:0 calc(-1*var(--gut));overflow:hidden;}
+.moment img{width:100%;aspect-ratio:3/2;object-fit:cover;}
+.m-time{display:flex;align-items:baseline;gap:14px;}
+.m-time b{font-weight:500;font-size:30px;letter-spacing:.04em;line-height:1;color:var(--gold-d);font-variant-numeric:lining-nums;}
+.m-time small{font-size:14px;letter-spacing:.2em;color:var(--text-2);}
+.m-title{font-size:22px;font-weight:500;letter-spacing:.16em;line-height:1.6;margin-top:10px;color:var(--sumi);}
+.m-text{font-size:16px;line-height:2.1;margin-top:12px;color:var(--text);}
+.m-note{font-size:14px;letter-spacing:.08em;color:var(--text-2);margin-top:8px;line-height:1.8;}
+.ph-yoru .m-time b{color:var(--gold-l);} .ph-yoru .m-time small,.ph-yoru .m-note{color:rgba(243,236,225,.78);}
+.ph-yoru .m-title{color:var(--washi);} .ph-yoru .m-text{color:rgba(243,236,225,.92);}
+.ph-yoru .moment img{filter:brightness(.92);}
+/* 夜空の星（ごく控えめ） */
+.ph-yoru::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:radial-gradient(1px 1px at 12% 18%,rgba(243,236,225,.7),transparent),radial-gradient(1px 1px at 76% 9%,rgba(243,236,225,.55),transparent),
+  radial-gradient(1px 1px at 42% 36%,rgba(243,236,225,.4),transparent),radial-gradient(1px 1px at 88% 52%,rgba(243,236,225,.5),transparent),
+  radial-gradient(1px 1px at 22% 71%,rgba(243,236,225,.35),transparent),radial-gradient(1px 1px at 63% 84%,rgba(243,236,225,.45),transparent);}
+html.motion .ph-yoru::before{animation:twinkle 7s ease-in-out infinite alternate;}
+@keyframes twinkle{from{opacity:.25;}to{opacity:.6;}}
+@media(min-width:900px){
+  .night .sec-in{padding:160px 56px 24px;}
+  .ichiya-lead{font-size:18px;line-height:2.3;}
+  .phase{padding:40px 56px 120px;}
+  .moment{grid-template-columns:7fr 5fr;gap:clamp(40px,5vw,80px);align-items:center;}
+  .moment+.moment{margin-top:120px;}
+  .moment figure{margin:0;}
+  .moment.rev figure{order:2;}
+  .m-time b{font-size:40px;}
+  .m-title{font-size:26px;}
+  .m-text{font-size:17px;line-height:2.25;}
+  .dusk,.dawn{height:240px;}
+}
+
+/* ══ 二 修行体験 ══ */
+.sg-lead p{font-size:17px;line-height:2.2;}
+.sg-lead p+p{margin-top:1em;}
+.sg-card{position:relative;margin-top:48px;padding:40px 24px;background:var(--washi);background-image:var(--fiber),var(--paper);border:1px solid rgba(145,124,80,.5);}
+.sg-card::before,.sg-card::after{content:'';position:absolute;width:14px;height:14px;border:1px solid var(--gold);}
+.sg-card::before{top:-6px;left:-6px;border-right:0;border-bottom:0;} .sg-card::after{bottom:-6px;right:-6px;border-left:0;border-top:0;}
+.sg-words{font-size:22px;letter-spacing:.2em;line-height:1.9;color:var(--gold-d);margin-bottom:24px;}
+.sg-title{font-size:24px;font-weight:500;letter-spacing:.16em;color:var(--sumi);margin-bottom:16px;}
+.sg-title ruby rt{font-size:.4em;color:var(--text-2);}
+.sg-body p{font-size:16px;line-height:2.15;}
+.sg-body p+p{margin-top:1em;}
+.sg-notes{margin-top:40px;border-top:1px solid var(--line);}
+.sg-notes p{font-size:16px;line-height:2;padding:18px 0 18px 24px;border-bottom:1px solid var(--line);position:relative;}
+.sg-notes p::before{content:'';position:absolute;left:4px;top:31px;width:7px;height:7px;border:1px solid var(--gold);transform:rotate(45deg);}
+@media(min-width:900px){
+  .sg-lead p{font-size:18px;line-height:2.3;max-width:38em;}
+  .sg-card{display:grid;grid-template-columns:1fr auto;gap:56px;margin-top:72px;padding:64px 64px;}
+  .sg-words{grid-column:2;grid-row:1;writing-mode:vertical-rl;font-size:30px;letter-spacing:.3em;line-height:1.9;margin:0;padding-left:40px;border-left:1px solid rgba(145,124,80,.4);}
+  .sg-body{grid-column:1;grid-row:1;}
+  .sg-title{font-size:28px;}
+  .sg-body p{font-size:17px;line-height:2.25;}
+  .sg-notes{margin-top:56px;}
+  .sg-notes p{font-size:17px;}
+}
+
+/* ══ 三 お部屋 ══ */
+.rooms .body{min-width:0;}
+.room{padding-bottom:64px;margin-bottom:64px;border-bottom:1px solid var(--line);}
+.room:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0;}
+.room-fig{margin:0 calc(-1*var(--gut));overflow:hidden;position:relative;}
+.room-fig img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:opacity .5s var(--ease);}
+.room-fig img.fade{opacity:0;}
+.room-head{margin-top:24px;}
+.room-k{display:block;font-size:14px;letter-spacing:.2em;color:var(--gold-d);}
+.room-name{font-size:26px;font-weight:500;letter-spacing:.14em;line-height:1.6;color:var(--sumi);margin-top:4px;}
+.room-name ruby rt{font-size:.42em;letter-spacing:.14em;color:var(--text-2);}
+.room-text{font-size:16px;line-height:2.1;margin-top:14px;}
+.room-spec{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;list-style:none;}
+.room-spec li{font-size:14px;letter-spacing:.08em;line-height:1.6;padding:5px 12px;border:1px solid rgba(145,124,80,.5);color:var(--text);}
+.room-link{display:inline-flex;align-items:center;gap:14px;min-height:48px;margin-top:18px;font-size:16px;letter-spacing:.12em;}
+.room-link .arw{display:inline-block;width:28px;height:1px;background:var(--gold);position:relative;transition:width .45s var(--ease);}
+.room-link .arw::after{content:'';position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid var(--gold);border-right:1px solid var(--gold);transform:rotate(45deg);}
+.room-link:hover .arw{width:42px;}
+/* 特別室：3部屋の切り替え */
+.sp-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;}
+.sp-tab{display:block;text-align:left;padding:0;}
+.sp-tab img{width:100%;aspect-ratio:4/3;object-fit:cover;opacity:.55;transition:opacity .4s;}
+.sp-tab span{display:block;font-size:14px;letter-spacing:.1em;line-height:1.5;margin-top:6px;color:var(--text-2);padding-bottom:6px;border-bottom:1px solid transparent;transition:color .3s,border-color .3s;}
+.sp-tab[aria-selected="true"] img,.sp-tab:hover img{opacity:1;}
+.sp-tab[aria-selected="true"] span{color:var(--sumi);border-bottom-color:var(--gold);}
+.sp-desc{font-size:15px;line-height:2;margin-top:14px;color:var(--text-2);min-height:4em;}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 calc(-1*var(--gut));}
+.pair figure{position:relative;overflow:hidden;}
+.pair img{width:100%;aspect-ratio:3/4;object-fit:cover;}
+.pair figcaption{position:absolute;left:10px;bottom:8px;font-size:14px;letter-spacing:.14em;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.7);}
+@media(min-width:900px){
+  .room{display:grid;grid-template-columns:7fr 5fr;gap:clamp(40px,4.5vw,72px);align-items:start;padding-bottom:96px;margin-bottom:96px;}
+  .room.rev .room-media{order:2;}
+  .room-fig,.pair{margin:0;}
+  .room-head{margin-top:0;}
+  .room-name{font-size:30px;}
+  .room-text{font-size:17px;line-height:2.25;}
+  .pair img{aspect-ratio:4/5;}
+}
+
+/* ══ 三 院内の見どころ ══ */
+.mido{display:grid;grid-template-columns:1fr 1fr;gap:28px 10px;}
+.mido figure{overflow:hidden;}
+.mido figure.w{grid-column:1/-1;}
+.mido img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform 1.4s var(--ease);}
+.mido figure.w img{aspect-ratio:16/10;}
+.mido figure:hover img{transform:scale(1.03);}
+.mido figcaption{margin-top:12px;}
+.mido figcaption b{display:block;font-weight:500;font-size:17px;letter-spacing:.12em;color:var(--washi);line-height:1.6;}
+.mido figcaption span{display:block;font-size:15px;line-height:2;color:rgba(243,236,225,.82);margin-top:4px;}
+.mido-lead{font-size:17px;line-height:2.15;color:rgba(243,236,225,.92);margin-bottom:48px;}
+@media(min-width:900px){
+  .mido{grid-template-columns:1fr 1fr;gap:72px 32px;}
+  .mido figure.w img{aspect-ratio:21/9;}
+  .mido img{aspect-ratio:4/3;}
+  .mido figure.w figcaption{max-width:44em;}
+  .mido figcaption b{font-size:18px;}
+  .mido-lead{font-size:18px;margin-bottom:72px;max-width:36em;}
+}
+
+/* ══ 四 ご利用案内・アクセス ══ */
+.info{list-style:none;border-top:1px solid var(--sumi);}
+.info div{display:grid;grid-template-columns:6.5em 1fr;gap:12px;padding:16px 2px;border-bottom:1px solid var(--line);}
+.info dt{font-size:15px;letter-spacing:.12em;color:var(--gold-d);line-height:1.9;}
+.info dd{font-size:16px;line-height:1.9;}
+.access{margin-top:72px;}
+.route{list-style:none;counter-reset:r;}
+.route li{position:relative;padding:0 0 28px 30px;font-size:16px;line-height:2;}
+.route li::before{content:'';position:absolute;left:5px;top:12px;width:9px;height:9px;border:1px solid var(--gold);transform:rotate(45deg);background:var(--washi-d);}
+.route li::after{content:'';position:absolute;left:9px;top:26px;bottom:2px;width:1px;background:rgba(145,124,80,.4);}
+.route li:last-child::after{display:none;}
+.route b{display:block;font-weight:500;font-size:17px;letter-spacing:.1em;color:var(--sumi);}
+.addr{margin-top:12px;font-size:16px;line-height:2;}
+.addr a{font-variant-numeric:lining-nums;}
+.map-link{margin-top:24px;}
+@media(min-width:900px){
+  .info-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,5vw,88px);align-items:start;}
+  .info div{grid-template-columns:8em 1fr;padding:18px 4px;}
+  .info dd{font-size:17px;}
+  .access{margin-top:0;}
+}
+
+/* ══ 五 よくあるご質問 ══ */
+.faq{border-top:1px solid var(--sumi);}
+.faq details{border-bottom:1px solid var(--line);}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;min-height:64px;padding:14px 4px;font-size:17px;letter-spacing:.06em;line-height:1.7;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::before{content:'問';flex:none;font-size:15px;color:var(--gold-d);}
+.faq summary::after{content:'';flex:none;margin-left:auto;width:11px;height:11px;border-right:1px solid var(--sumi);border-bottom:1px solid var(--sumi);transform:rotate(45deg) translate(-3px,-3px);transition:transform .4s var(--ease);}
+.faq details[open] summary::after{transform:rotate(-135deg);}
+.faq .a{display:flex;gap:16px;padding:0 4px 24px;font-size:16px;line-height:2.1;color:var(--text);}
+.faq .a::before{content:'答';flex:none;font-size:15px;color:var(--gold-d);line-height:2.1;}
+@media(min-width:900px){.faq summary{font-size:18px;min-height:72px;}.faq .a{font-size:17px;}}
+
+/* ══ ご相談・ご予約（夜の山門） ══ */
+.cta{position:relative;overflow:hidden;color:var(--washi);text-align:center;padding:112px var(--gut);background:var(--ink);isolation:isolate;}
+.cta-bg{position:absolute;inset:-8% 0;z-index:-2;}
+.cta-bg img{width:100%;height:100%;object-fit:cover;}
+.cta::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(21,12,21,.74),rgba(21,12,21,.64) 50%,rgba(21,12,21,.86));}
+.cta-mon{width:44px;height:44px;margin:0 auto 24px;opacity:.9;}
+.cta h2{font-size:30px;font-weight:500;letter-spacing:.2em;margin-bottom:18px;font-feature-settings:"palt";}
+.cta-lead{font-size:17px;line-height:2;color:rgba(243,236,225,.94);max-width:32em;margin:0 auto 40px;}
+.cta-actions{display:flex;flex-direction:column;align-items:center;gap:28px;}
+.cta .btn-shu{min-width:min(100%,320px);min-height:60px;font-size:17px;}
+.cta-tel{display:inline-flex;align-items:center;gap:14px;min-height:56px;font-size:clamp(32px,9vw,52px);letter-spacing:.06em;font-variant-numeric:lining-nums;line-height:1.2;}
+.cta-tel small{font-size:14px;letter-spacing:.16em;writing-mode:vertical-rl;color:var(--gold-l);line-height:1;}
+.cta-hours{font-size:15px;letter-spacing:.12em;color:rgba(243,236,225,.82);margin-top:-14px;}
+@media(min-width:900px){.cta{padding:180px 56px;}.cta h2{font-size:40px;}.cta-lead{font-size:18px;}}
+
+/* ── ほかのページへ ── */
+.next{padding:72px var(--gut);}
+.next-in{max-width:var(--max);margin:0 auto;}
+.next-k{font-size:14px;letter-spacing:.3em;color:var(--gold-d);margin-bottom:16px;}
+.next ul{list-style:none;border-top:1px solid var(--sumi);}
+.next li{border-bottom:1px solid var(--line);}
+.next a{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:8px 4px;font-size:18px;letter-spacing:.14em;transition:color .3s,padding .5s var(--ease);}
+.next a .arw{flex:none;width:28px;height:1px;background:var(--gold);position:relative;transition:width .45s var(--ease);}
+.next a .arw::after{content:'';position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid var(--gold);border-right:1px solid var(--gold);transform:rotate(45deg);}
+.next a:hover{color:var(--gold-d);padding-left:12px;}
+.next a:hover .arw{width:44px;}
+.next a small{font-family:var(--latin);font-size:13px;letter-spacing:.24em;color:var(--text-2);margin-left:12px;}
+@media(min-width:900px){
+  .next{padding:120px 56px;}
+  .next-in{display:grid;grid-template-columns:1fr 3fr;gap:48px;align-items:start;}
+  .next-k{writing-mode:vertical-rl;justify-self:end;font-size:15px;letter-spacing:.4em;margin:0;}
+  .next ul{display:grid;grid-template-columns:1fr 1fr;column-gap:48px;}
+  .next a{min-height:76px;font-size:19px;}
+}
+
+/* ── Instagram・フッター ── */
+.sns{background:var(--ink);color:var(--washi);padding:80px var(--gut) 72px;text-align:center;border-top:1px solid rgba(201,177,131,.2);}
+.sns-eyebrow{font-family:var(--latin);font-size:14px;letter-spacing:.4em;color:var(--gold-l);margin-bottom:8px;}
+.ig-lead{font-size:17px;letter-spacing:.1em;margin-bottom:32px;line-height:1.9;}
+.ig-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:1040px;margin:0 auto 40px;}
+.ig-grid a{display:block;overflow:hidden;}
+.ig-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform 1.2s var(--ease),opacity .4s;}
+.ig-grid a:hover img{transform:scale(1.04);opacity:.88;}
+.ig-big{display:inline-flex;flex-direction:column;align-items:center;gap:4px;padding:16px 36px;border:1px solid var(--gold-l);min-width:280px;min-height:56px;transition:background .4s,color .4s;}
+.ig-big:hover{background:var(--washi);color:var(--ink);}
+.ig-row{display:inline-flex;align-items:center;gap:10px;font-size:17px;letter-spacing:.12em;}
+.ig-icon{width:22px;height:22px;}
+.ig-handle{font-family:var(--latin);font-size:15px;letter-spacing:.1em;opacity:.85;}
+@media(min-width:768px){.ig-grid{grid-template-columns:repeat(4,1fr);gap:12px;}.sns{padding:120px 56px 100px;}}
+footer{background:var(--ink);color:rgba(243,236,225,.75);text-align:center;padding:40px var(--gut) 120px;border-top:1px solid rgba(243,236,225,.08);}
+footer .f-mon{width:36px;height:36px;margin:0 auto 18px;opacity:.7;}
+footer p{font-size:15px;line-height:2;letter-spacing:.1em;}
+footer a{display:inline-block;padding:10px 4px;margin:-10px 0;}
+footer .f-en{font-family:var(--latin);letter-spacing:.24em;font-size:14px;}
+footer .copy{margin-top:14px;font-size:14px;opacity:.85;}
+@media(min-width:900px){footer{padding:56px 40px 64px;}}
+
+/* ── スマホ下部の固定バー（電話／ご予約） ・ PCの予約ボタン ── */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:850;display:grid;grid-template-columns:1fr 1.25fr;gap:1px;background:rgba(43,38,33,.2);
+  padding-bottom:env(safe-area-inset-bottom);transform:translateY(110%);transition:transform .5s var(--ease);}
+body.past-hero .dock{transform:none;}
+.dock a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:58px;font-size:16px;letter-spacing:.1em;}
+.dock .d-tel{background:var(--washi);color:var(--sumi);}
+.dock .d-tel svg{width:18px;height:18px;}
+.dock .float-btn{background:var(--shu);color:#fff;}
+@media(min-width:900px){
+  .dock{left:auto;right:28px;bottom:28px;display:block;background:none;box-shadow:0 10px 30px -10px rgba(21,12,21,.5);transform:translateY(20px);opacity:0;pointer-events:none;transition:transform .5s var(--ease),opacity .5s;}
+  body.past-hero .dock{opacity:1;pointer-events:auto;transform:none;}
+  .dock .d-tel{display:none;}
+  .dock .float-btn{padding:0 28px;min-height:56px;transition:background .3s;}
+  .dock .float-btn:hover{background:var(--shu-d);}
+}
+
+/* ══ スクロールの出現（墨がにじむように・一度だけ） ══ */
+html.motion .rv{opacity:0;transform:translateY(18px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);}
+html.motion .rv.in{opacity:1;transform:none;}
+html.motion .rv-img{clip-path:inset(0 0 100% 0);transition:clip-path 1.4s var(--ease-io);}
+html.motion .rv-img.in{clip-path:inset(0 0 0 0);}
+html.motion .rv-img img{transform:scale(1.08);transition:transform 2s var(--ease);}
+html.motion .rv-img.in img{transform:scale(1);}
+html.motion .rv-d1{transition-delay:.12s;} html.motion .rv-d2{transition-delay:.24s;}
+html.motion .sh.rv .sh-line{transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease) .3s;}
+html.motion .sh.rv.in .sh-line{transform:none;}
+@media(min-width:900px){html.motion .sec-grid>.sh.rv .sh-line{transform:scaleY(0);transform-origin:top;}html.motion .sec-grid>.sh.rv.in .sh-line{transform:none;}}
+/* 冒頭の題と、はがきの一枚は読み込みと同時に静かに */
+html.motion .ph-title,html.motion .ph-meta{animation:rise 1.2s var(--ease) both;}
+html.motion .ph-meta{animation-delay:.2s;}
+html.motion .hagaki img{animation:inkIn 1.6s var(--ease) .1s both;}
+@keyframes rise{from{opacity:0;transform:translateY(10px);filter:blur(4px);}to{opacity:1;transform:none;filter:blur(0);}}
+@keyframes inkIn{from{opacity:0;filter:blur(6px);}to{opacity:1;filter:blur(0);}}
+
+/* 確認用（?static=1）・動きを減らす設定 */
+html.static *,html.static *::before,html.static *::after{animation:none !important;transition:none !important;}
+html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0 !important;}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+}
+
+/* ── 本覚院から歩いて巡る高野山（模式図＋一覧）・おトクなきっぷ ── */
+.walk{margin-top:56px;}
+.walk-map{position:relative;height:120px;margin:8px 4px 24px;}
+.walk-map::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:var(--gold);}
+.walk-map .pt{position:absolute;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;}
+.walk-map .pt::before{content:'';width:9px;height:9px;border:1px solid var(--gold);background:var(--washi-d);transform:rotate(45deg);}
+.walk-map .pt span{position:absolute;bottom:18px;white-space:nowrap;font-size:13px;letter-spacing:.04em;line-height:1.4;color:var(--text);text-align:center;}
+.walk-map .pt.lo span{bottom:auto;top:18px;}
+.walk-map .pt.me::before{width:14px;height:14px;background:var(--shu);border-color:var(--shu);}
+.walk-map .pt.me span{font-weight:500;color:var(--shu);}
+.walk-map .dir{position:absolute;bottom:-4px;font-size:12px;color:var(--text-2);letter-spacing:.06em;}
+.walk-map .dir.w{left:0;} .walk-map .dir.e{right:0;}
+.walk-list{list-style:none;border-top:1px solid var(--sumi);}
+.walk-list li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:16px 2px;border-bottom:1px solid var(--line);}
+.walk-list b{font-weight:500;font-size:18px;letter-spacing:.08em;color:var(--sumi);line-height:1.6;}
+.walk-list .t{font-size:15px;color:var(--gold-d);white-space:nowrap;font-variant-numeric:lining-nums;line-height:1.9;}
+.walk-list p{grid-column:1/-1;font-size:15px;line-height:1.9;color:var(--text);}
+.walk-note{font-size:13px;line-height:1.8;color:var(--text-2);margin-top:12px;}
+.kippu{margin-top:40px;padding:28px 24px;border:1px solid var(--gold);background:rgba(243,236,225,.6);}
+.kippu-k{font-size:13px;letter-spacing:.2em;color:var(--gold-d);}
+.kippu h4{font-size:20px;font-weight:500;letter-spacing:.08em;line-height:1.6;color:var(--sumi);margin:6px 0 12px;}
+.kippu ul{list-style:none;margin:12px 0;}
+.kippu li{position:relative;padding-left:20px;font-size:15px;line-height:1.9;}
+.kippu li::before{content:'';position:absolute;left:2px;top:.8em;width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg);}
+.kippu p{font-size:15px;line-height:1.9;}
+.kippu a.lk{display:inline-flex;align-items:center;min-height:48px;margin-top:6px;font-size:15px;letter-spacing:.08em;}
+@media(max-width:899px){.info-wrap>div+div{margin-top:64px;}}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+
+<!-- HEADER -->
+<header class="hd" id="hd">
+  <a href="index.html" class="hd-logo" aria-label="本覚院 トップへ">
+    <img src="images/mon-sumi.png" alt="" width="30" height="30">
+    <span><b>本覚院</b><small>KOYASAN HONGAKUIN</small></span>
+  </a>
+  <nav class="hd-nav" aria-label="メインメニュー">
+    <a href="about.html"><span>本覚院について</span></a>
+    <a href="priest.html"><span>住職・僧侶</span></a>
+    <a href="kuyo.html"><span>お参り・ご供養</span></a>
+    <a href="#top" aria-current="page"><span>宿坊</span></a>
+    <a href="index.html#news"><span>新着情報</span></a>
+    <a href="index.html#access"><span>アクセス</span></a>
+  </nav>
+  <div class="hd-actions">
+    <a href="tel:0736562711" class="hd-tel-pc">☎ 0736-56-2711</a>
+    <a href="en.html" class="hd-lang" lang="en">EN</a>
+    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="hd-book reserve-btn" target="_blank" rel="noopener">ご予約</a>
+    <a href="tel:0736562711" class="hd-ic" aria-label="電話をかける 0736-56-2711"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.6 20.1 3.9 13.4 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-controls="drawer" aria-expanded="false" aria-label="メニューを開く"><i></i><i></i><em aria-hidden="true">メニュー</em></button>
+  </div>
+</header>
+
+<!-- ドロワー（スマホ用メニュー） -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-bg" data-close></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="メニュー">
+    <button class="drawer-close" data-close aria-label="メニューを閉じる"></button>
+    <nav>
+      <a href="about.html"><i>一</i>本覚院について</a>
+      <a href="priest.html"><i>二</i>住職・僧侶</a>
+      <a href="kuyo.html"><i>三</i>お参り・ご供養</a>
+      <a href="#top" aria-current="page" data-close><i>四</i>宿坊</a>
+      <a href="index.html#news"><i>五</i>新着情報</a>
+      <a href="index.html#access"><i>六</i>アクセス</a>
+    </nav>
+    <a href="#cta" class="drawer-reserve" data-close>ご予約・お問合せ</a>
+    <a href="tel:0736562711" class="drawer-phone">☎ 0736-56-2711<small>受付 9:00〜17:00</small></a>
+    <a href="en.html" class="drawer-lang" lang="en">English</a>
+  </div>
+</div>
+
+<nav class="sidx" aria-label="このページの目次">
+  <ol>
+    <li><a href="#ichiya"><span>一夜の流れ</span><b>一</b></a></li>
+    <li><a href="#shugyo"><span>修行体験</span><b>二</b></a></li>
+    <li><a href="#rooms"><span>お部屋</span><b>三</b></a></li>
+    <li><a href="#mido"><span>院内の見どころ</span><b>四</b></a></li>
+    <li><a href="#info"><span>ご利用案内・アクセス</span><b>五</b></a></li>
+    <li><a href="#faq"><span>よくあるご質問</span><b>六</b></a></li>
+    <li class="bar" aria-hidden="true"></li>
+  </ol>
+</nav>
+
+<main id="main">
+
+<!-- ページの扉 -->
+<div class="ph" id="top">
+  <div class="ph-in">
+    <div class="ph-title">
+      <span class="ph-en" lang="en">Stay</span>
+      <h1>宿坊</h1>
+      <span class="ph-sub">高野山 別格本山 本覚院</span>
+    </div>
+    <div class="ph-meta">
+      <nav class="crumb" aria-label="パンくずリスト"><a href="index.html"><span class="ink">トップ</span></a><span class="sep" aria-hidden="true"></span><span aria-current="page">宿坊</span></nav>
+      <ol class="ph-toc" aria-label="このページの章">
+        <li><a href="#ichiya"><b aria-hidden="true">一</b>一夜</a></li>
+        <li><a href="#shugyo"><b aria-hidden="true">二</b>修行</a></li>
+        <li><a href="#rooms"><b aria-hidden="true">三</b>お部屋</a></li>
+        <li><a href="#mido"><b aria-hidden="true">四</b>見どころ</a></li>
+        <li><a href="#info"><b aria-hidden="true">五</b>ご案内</a></li>
+        <li><a href="#faq"><b aria-hidden="true">六</b>ご質問</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- 扉の一枚：窓越しの庭 -->
+<figure class="mado">
+  <img src="images/photos/teien-mado-4.webp" alt="客殿の窓越しに広がる、重森三玲の手による苔と石組の庭" width="1600" height="1200" fetchpriority="high">
+  <figcaption>窓の外は、重森三玲の庭。<small>山の一夜を、祈りとともに。</small></figcaption>
+</figure>
+
+<section class="intro" aria-label="宿坊のご案内">
+  <div class="rv">
+    <p>高野山 別格本山 本覚院では、宿坊として一般の方のご宿泊をお受けしております。昔ながらの和室から、重森三玲の庭を望む特別室まで、お好みに合わせてお選びいただけます。</p>
+    <p>精進料理と朝のお勤めをはじめ、写経や庭園散策など、高野山ならではの静かな時間をお過ごしください。</p>
+  </div>
+  <ul class="facts rv rv-d1">
+    <li><b>チェックイン</b><span>15:00〜</span></li>
+    <li><b>チェックアウト</b><span>〜10:00</span></li>
+    <li><b>門限</b><span>22:00</span></li>
+    <li><b>駐車場</b><span>15台・無料</span></li>
+  </ul>
+  <div class="intro-btns rv">
+    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn btn-shu" target="_blank" rel="noopener">空室・料金を見る<span class="arw"></span></a>
+    <a href="#rooms" class="btn">お部屋を見る<span class="arw"></span></a>
+  </div>
 </section>
 
+<!-- 一 一夜の流れ -->
+<section class="sec night" id="ichiya">
+  <div class="sec-in">
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">一</span><span class="sh-line"></span><h2 class="sh-title">一夜の流れ</h2></header>
+    <p class="ichiya-lead rv">宿坊での一夜は、旅館とは少し違います。山門をくぐってから、翌朝お発ちになるまで。高野山の時間の流れに、身をあずけてみてください。</p>
+  </div>
+
+  <div class="phase ph-day">
+    <div class="phase-in">
+      <p class="phase-k rv">昼から夕へ</p>
+      <article class="moment">
+        <figure class="rv-img"><img src="images/photos/mon-tobira-jimon.webp" alt="寺紋が金色に輝く山門の扉と、奥へ続く石畳" width="1600" height="1200" loading="lazy"></figure>
+        <div class="rv">
+          <p class="m-time"><b>15:00</b><small>ご到着</small></p>
+          <h3 class="m-title">山門をくぐる</h3>
+          <p class="m-text">山門をくぐると、町の音がすっと遠のきます。お部屋に荷物を置いたら、まずはお茶を一服どうぞ。</p>
+        </div>
+      </article>
+      <article class="moment rev">
+        <figure class="rv-img"><img src="images/photos/teien-mado-slide.webp" alt="窓枠の向こうに広がる苔と石組の庭" width="1400" height="1050" loading="lazy"></figure>
+        <div class="rv">
+          <p class="m-time"><b>夕刻</b><small>ゆうこく</small></p>
+          <h3 class="m-title">庭をながめる</h3>
+          <p class="m-text">昭和の名作庭家・重森三玲が手がけた庭を、窓越しに。苔と石の庭は、時間とともに表情を変えていきます。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="dusk" aria-hidden="true"></div>
+
+  <div class="phase ph-yoru on-dark" id="yoru">
+    <div class="phase-in">
+      <p class="phase-k rv">夜</p>
+      <article class="moment">
+        <figure class="rv-img"><img src="images/photos/fusuma-shojin.webp" alt="金地の襖絵の前に並ぶ精進料理のお膳" width="1600" height="1200" loading="lazy"></figure>
+        <div class="rv">
+          <p class="m-time"><b>夕餉</b><small>ゆうげ</small></p>
+          <h3 class="m-title">精進料理をいただく</h3>
+          <p class="m-text">弘法大師・空海が伝えた精進料理。旬のもの、地のものを、お膳のしきたりに沿って丁寧に。金地の襖絵に囲まれていただく一膳です。</p>
+          <p class="m-note">個別の食物アレルギーへの対応は行っておりません。</p>
+        </div>
+      </article>
+      <article class="moment rev">
+        <figure class="rv-img"><img src="images/photos/daiyokujo-onna.webp" alt="石張りの床と広い浴槽のある大浴場" width="1600" height="1200" loading="lazy"></figure>
+        <div class="rv">
+          <p class="m-time"><b>17:00〜21:00</b></p>
+          <h3 class="m-title">湯で、ほどく</h3>
+          <p class="m-text">大浴場・中浴場で、一日の疲れをゆっくりと。シャンプーやタオル、ドライヤー、歯ブラシなど、ひと通りそろっています。</p>
+        </div>
+      </article>
+      <article class="moment">
+        <figure class="rv-img"><img src="images/photos/sanmon-yoru.webp" alt="夜の闇に灯籠の明かりが浮かぶ山門" width="1600" height="1067" loading="lazy"></figure>
+        <div class="rv">
+          <p class="m-time"><b>22:00</b><small>門限</small></p>
+          <h3 class="m-title">山の静けさ</h3>
+          <p class="m-text">夜の高野山は、驚くほど静かです。門が閉まったあとは、灯籠の明かりだけが残ります。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="dawn" aria-hidden="true"></div>
+
+  <div class="phase ph-asa">
+    <div class="phase-in">
+      <p class="phase-k rv">朝</p>
+      <article class="moment">
+        <figure class="rv-img"><img src="images/photos/gongyo-hondo.webp" alt="本堂でお経を唱える僧侶たち（朝のお勤め）" width="1600" height="1067" loading="lazy"></figure>
+        <div class="rv">
+          <p class="m-time"><b>6:30</b><small>朝のお勤め</small></p>
+          <h3 class="m-title">朝のお勤め</h3>
+          <p class="m-text">本堂で、副住職をはじめ僧侶がお勤めをいたします。高野山に受け継がれる読経の響きに包まれる、一日のはじまりです。</p>
+          <p class="m-note">毎朝6時30分から、45分〜1時間ほど。ご参加は自由です。</p>
+        </div>
+      </article>
+      <article class="moment rev">
+        <figure class="rv-img"><img src="images/photos/roka-niwa.webp" alt="庭に面した、ガラス戸の続く長い廊下" width="1600" height="2133" loading="lazy" style="aspect-ratio:3/2;object-position:center 60%"></figure>
+        <div class="rv">
+          <p class="m-time"><b>朝</b><small>あさ</small></p>
+          <h3 class="m-title">写経と、庭の散策</h3>
+          <p class="m-text">朝の澄んだ空気の中、庭に面した廊下を歩いてみてください。写経をなさる方は、いつでもお申し付けください。</p>
+          <p class="m-note"><a class="ink" href="#shugyo">修行体験について</a></p>
+        </div>
+      </article>
+      <article class="moment">
+        <figure class="rv-img"><img src="images/photos/sando-hiru.webp" alt="石灯籠と植え込みに沿って続く、境内の石畳" width="1500" height="1125" loading="lazy"></figure>
+        <div class="rv">
+          <p class="m-time"><b>10:00</b><small>ご出立</small></p>
+          <h3 class="m-title">奥の院へ</h3>
+          <p class="m-text">チェックアウトは10時まで。お発ちのあとは、弘法大師の御廟がある奥の院へのお参りもおすすめです。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 二 修行体験（旧サイト「修行体験」より） -->
+<section class="sec tone" id="shugyo">
+  <div class="sec-in sec-grid">
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">二</span><span class="sh-line"></span><h2 class="sh-title">修行体験</h2></header>
+    <div class="body">
+      <div class="sg-lead rv">
+        <p>本来、僧侶の修行とは、自身の生命をかけた過酷なものです。忍耐し、真剣に神仏と対峙し、自身の心を磨くこと。本覚院でまなぶ僧侶は、常にこのことを念頭において日々精進いたしております。</p>
+        <p>みなさまも体験とはいえ、日常とはちがった緊張感の中で心を研ぎ澄ましていただけましたら、明日からの活力となるかと存じます。所作や作法など、難しいことは申しません。僧侶が丁寧にご指導いたしますので、ご安心ください。</p>
+      </div>
+      <article class="sg-card rv">
+        <p class="sg-words" aria-hidden="true">ひと文字ひと文字に<br>願いを込めて</p>
+        <div class="sg-body">
+          <h3 class="sg-title"><ruby>写経<rt>しゃきょう</rt></ruby>修行</h3>
+          <p>写経修行とは、経典を書き写すことです。私たちが言葉を話して意思の疎通を図るように、経典は仏さまのお言葉です。ひと文字ひと文字に願いを込めて書き写すことで、私たちは仏さまと会話させていただけるのです。</p>
+          <p>当院では、初心者の方にも取り組みやすいよう、般若心経の経典をなぞっていただいています。写経用紙・筆・筆ペン・墨・硯はご用意しておりますので、いつでもお申し付けください。</p>
+        </div>
+      </article>
+      <div class="sg-notes">
+        <p class="rv">辰巳出版のムック『ハート美人になれる宿坊ガイド』で、とことん「修行」ができる宿坊として紹介されました。</p>
+        <p class="rv">当院には尼僧もおります。女性の方も、気軽に安心して修行体験なさってください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 三 お部屋 -->
+<section class="sec rooms" id="rooms">
+  <div class="sec-in sec-grid">
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">三</span><span class="sh-line"></span><h2 class="sh-title">お部屋</h2></header>
+    <div class="body">
+
+      <article class="room">
+        <div class="room-media">
+          <figure class="room-fig rv-img"><img id="spMain" src="images/rooms/tenporin.webp" alt="特別室「転法輪」。格天井の和室と、庭を望む窓" width="1000" height="750" loading="lazy"></figure>
+          <div class="sp-tabs rv" role="tablist" aria-label="特別室を選ぶ">
+            <button class="sp-tab" role="tab" aria-selected="true" data-src="images/rooms/tenporin.webp" data-alt="特別室「転法輪」。格天井の和室と、庭を望む窓" data-desc="重森三玲の庭を望む、最高格の特別室。専用バスルーム付き。"><img src="images/rooms/tenporin.webp" alt="" width="1000" height="750" loading="lazy"><span>転法輪</span></button>
+            <button class="sp-tab" role="tab" aria-selected="false" data-src="images/rooms/hokaigu.webp" data-alt="和モダンスイート「法界宮」。大きな窓の向こうに庭の緑" data-desc="伝統と現代が調和する、和モダンのスイート。専用バスルーム付き。"><img src="images/rooms/hokaigu.webp" alt="" width="1000" height="750" loading="lazy"><span>法界宮</span></button>
+            <button class="sp-tab" role="tab" aria-selected="false" data-src="images/rooms/kutenbo.webp" data-alt="一棟貸しの特別客室「空点房」から見る苔と石組の庭" data-desc="茶室付きの、一棟貸しの特別客室。"><img src="images/rooms/kutenbo.webp" alt="" width="1000" height="750" loading="lazy"><span>空点房</span></button>
+          </div>
+          <p class="sp-desc" id="spDesc" aria-live="polite">重森三玲の庭を望む、最高格の特別室。専用バスルーム付き。</p>
+        </div>
+        <div class="room-head rv">
+          <span class="room-k">庭を望む、3つの特別なお部屋</span>
+          <h3 class="room-name">特別室</h3>
+          <p class="room-text">最高格の特別室「転法輪」、和モダンスイート「法界宮」、茶室付きの一棟貸し「空点房」。どれも1階の庭側で、静かな時間をお過ごしいただけます。</p>
+          <ul class="room-spec"><li>1階・庭側</li><li>転法輪・法界宮は専用バスルーム付き</li></ul>
+          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">空室・料金を見る</span><span class="arw" aria-hidden="true"></span></a>
+        </div>
+      </article>
+
+      <article class="room rev">
+        <div class="room-media">
+          <figure class="room-fig rv-img"><img src="images/rooms/wakasugi.webp" alt="お風呂・トイレ付きの和室「若杉」。広縁のソファ越しに庭の緑" width="1000" height="750" loading="lazy"></figure>
+        </div>
+        <div class="room-head rv">
+          <span class="room-k">お風呂・トイレ付きの和室</span>
+          <h3 class="room-name"><ruby>若杉<rt>わかすぎ</rt></ruby>・<ruby>花梨<rt>かりん</rt></ruby></h3>
+          <p class="room-text">お風呂とトイレを備えた、本館の和室です。重森三玲が手がけた庭を眺めながらおくつろぎいただけます。若杉は1階で館内の移動もしやすく、花梨は2階のお部屋です。</p>
+          <ul class="room-spec"><li>和室8畳＋3畳</li><li>定員3名</li><li>大浴場もご利用可</li></ul>
+          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">空室・料金を見る</span><span class="arw" aria-hidden="true"></span></a>
+        </div>
+      </article>
+
+      <article class="room">
+        <div class="room-media">
+          <figure class="room-fig rv-img"><img src="images/rooms/hokusuikan.webp" alt="新館「北翠観」の和室。床の間に掛軸、障子の先に広縁と庭" width="1000" height="750" loading="lazy"></figure>
+        </div>
+        <div class="room-head rv">
+          <span class="room-k">新館の和室</span>
+          <h3 class="room-name"><ruby>北翠観<rt>ほくすいかん</rt></ruby></h3>
+          <p class="room-text">四季折々の庭を眺めながらおくつろぎいただける、新館の和室です。1階・2階に全10部屋。お部屋にお風呂・トイレはなく、大浴場をご利用いただきます。</p>
+          <ul class="room-spec"><li>和室10畳</li><li>定員4名</li><li>全10部屋</li></ul>
+          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">空室・料金を見る</span><span class="arw" aria-hidden="true"></span></a>
+        </div>
+      </article>
+
+      <article class="room rev">
+        <div class="room-media">
+          <div class="pair rv-img">
+            <figure><img src="images/photos/kyakushitsu-honkan-1f.webp" alt="本館1階の和室。床の間に書の掛軸、広縁の窓の外に緑" width="1600" height="1200" loading="lazy"><figcaption>1階</figcaption></figure>
+            <figure><img src="images/photos/kyakushitsu-honkan-2f.webp" alt="本館2階の和室。床の間に書の掛軸、障子の先に椅子とテーブルの広縁と緑" width="1600" height="1200" loading="lazy"><figcaption>2階</figcaption></figure>
+          </div>
+        </div>
+        <div class="room-head rv">
+          <span class="room-k">昔ながらの畳の和室</span>
+          <h3 class="room-name">本館の和室</h3>
+          <p class="room-text">昔から変わらない、落ち着いた畳の和室です。2階のお部屋からは庭園を望めます。隣室との続き部屋としてもご利用いただけます。</p>
+          <ul class="room-spec"><li>テレビ・エアコン完備</li><li>続き部屋対応</li></ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 四 院内の見どころ -->
+<section class="sec on-dark" id="mido">
+  <div class="sec-in sec-grid">
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">四</span><span class="sh-line"></span><h2 class="sh-title">院内の見どころ</h2></header>
+    <div class="body">
+      <p class="mido-lead rv">ご宿泊の方は、院内をゆっくりとご覧いただけます。山門から本堂、江戸の絵師たちの筆、そして昭和の作庭家の庭へ。泊まるからこそ出会える景色です。</p>
+      <div class="mido">
+        <figure class="rv-img"><img src="images/photos/sanmon-naka.webp" alt="寺紋の入った山門の扉と、境内へ続く石畳" width="1600" height="2133" loading="lazy" style="aspect-ratio:4/3;object-position:center 60%"><figcaption class="rv"><b>山門</b><span>バス通りから歩いて2〜3分。御門までの道のりには木々が整い、静寂の中へ引き込まれていくようです。</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/hondo-gaikan.webp" alt="本覚院の本堂の外観" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>本堂</b><span>高野山真言宗 総本山金剛峯寺の塔頭寺院、別格本山。智証大師作の不動明王像をご本尊としてお祀りしています。朝のお勤めもこちらで行います。</span></figcaption></figure>
+        <figure class="w rv-img"><img src="images/photos/tenjoue.webp" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" width="1600" height="1067" loading="lazy" style="object-position:center 15%"><figcaption class="rv"><b>本堂の天井絵</b><span>江戸時代のものが色彩豊かに残る、貴重な天井絵です。一枚一枚すべてに趣向を凝らした絵のはめ込み板が、本覚院の本堂を特徴づけています。建立から250年を経た今も、豊かな彩色を留めております。</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/fusuma-kanoha.webp" alt="狩野派による金地の襖絵（唐人物図）" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>狩野派の襖絵</b><span>江戸時代に当院に滞在していた、狩野派の絵師による貴重な襖絵です。狩野派は、室町時代から江戸時代にかけて幕府の御用絵師を務めた、日本美術史を代表する絵師の一派です。</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/ohiroma.webp" alt="狩野派の襖絵に囲まれた大広間と「獅子吼」の額" width="1600" height="1067" loading="lazy"><figcaption class="rv"><b>大広間</b><span>重厚な歴史物語が刻まれた広間は、仏前挙式のあとの宴席に使われることもあります。夕暮れの陽光がうむ陰影と、たおやかな時間の流れをお楽しみください。</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/photos/koi-niwa-2.webp" alt="錦鯉が泳ぐ池と石橋のある庭" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>池泉庭</b><span>本覚院の5つの庭園のひとつ。作庭の形式美が各所に息づき、四季折々の風情が楽しめます。静寂のなかに流れる水の音、鳥や虫の声に心が癒されます。</span></figcaption></figure>
+        <figure class="rv-img"><img src="images/fudo-myoo.webp" alt="護摩堂にお祀りする修身不動明王" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>護摩堂の修身不動明王</b><span>護摩堂にお祀りしている不動明王さまです。</span></figcaption></figure>
+        <figure class="w rv-img"><img src="images/photos/teien-mado-3.webp" alt="窓越しに眺める重森三玲設計の苔の石庭" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>重森三玲の石庭と茶室</b><span>苔の石庭は、東福寺方丈庭園などで知られる昭和の作庭家・重森三玲（1896〜1975）によるものです。回廊を巡りながら眺めると、石が左右に、さらには上下にも動くかのような錯覚を覚えるよう、複雑に配置されています。この庭を見下ろすように、離れの茶室が佇んでいます。</span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 五 ご利用案内・アクセス -->
+<section class="sec tone" id="info">
+  <div class="sec-in sec-grid">
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">五</span><span class="sh-line"></span><h2 class="sh-title">ご利用案内</h2></header>
+    <div class="body info-wrap">
+      <div>
+        <h3 class="h3 rv">設備・サービス</h3>
+        <dl class="info rv">
+          <div><dt>サービス</dt><dd>お一人でのご宿泊・団体グループのご宿泊を承っております。宅配サービスの手配、仏前結婚式も謹んでお受けいたします。</dd></div>
+          <div><dt>お部屋</dt><dd>全室、落ち着きのある和室です。院内には段差がございますので、お気軽にお声がけください。</dd></div>
+          <div><dt>客室設備</dt><dd>テレビ、お湯ポット、お茶セット、机、冷暖房</dd></div>
+          <div><dt>アメニティ</dt><dd>タオル、バスタオル、ドライヤー、歯ブラシ、スリッパ、ボディソープ、シャンプー、リンス</dd></div>
+          <div><dt>部屋着</dt><dd>浴衣（ワンサイズ・LLサイズのみ）</dd></div>
+          <div><dt>お風呂</dt><dd>大浴場・中浴場（17:00〜21:00）</dd></div>
+          <div><dt>トイレ</dt><dd>暖房便座・洗浄機能付きの洋式トイレ</dd></div>
+          <div><dt>洗面所</dt><dd>お湯が出ます</dd></div>
+          <div><dt>バリアフリー</dt><dd>車椅子用トイレ 1か所。車椅子の貸し出しがございます。</dd></div>
+          <div><dt>駐車場</dt><dd>一般駐車場 15台（先着順・無料）</dd></div>
+          <div><dt>ペット</dt><dd>ご同伴のご宿泊は、現在ご遠慮いただいております。</dd></div>
+          <div><dt>喫煙所</dt><dd>あり</dd></div>
+        </dl>
+      </div>
+      <div class="access" id="access">
+        <h3 class="h3 rv">アクセス</h3>
+        <ol class="route rv">
+          <li><b>電車</b>南海電鉄高野線「極楽橋」駅でケーブルカーに乗り換え、「高野山」駅へ</li>
+          <li><b>バス</b>南海りんかんバス「奥の院行」または「大門行」で「警察署前」下車（約10分）</li>
+          <li><b>徒歩</b>バス停から2〜3分。木々に囲まれた参道を進むと山門が見えます。</li>
+        </ol>
+        <p class="addr rv">〒648-0211 和歌山県伊都郡高野町高野山618<br>お電話 <a class="ink" href="tel:0736562711">0736-56-2711</a>（受付 9:00〜17:00）</p>
+        <p class="map-link rv"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E9%87%8E%E5%B1%B1+%E6%9C%AC%E8%A6%9A%E9%99%A2" target="_blank" rel="noopener">地図をひらく<span class="arw"></span></a></p>
+        <div class="walk rv">
+          <h3 class="h3">本覚院から歩いて巡る高野山</h3>
+          <div class="walk-map" aria-hidden="true">
+            <span class="pt lo" style="left:2%"><span>大門</span></span>
+            <span class="pt" style="left:19%"><span>壇上伽藍</span></span>
+            <span class="pt lo" style="left:29%"><span>金剛峯寺</span></span>
+            <span class="pt me" style="left:39%"><span>本覚院</span></span>
+            <span class="pt lo" style="left:60%"><span>一の橋</span></span>
+            <span class="pt" style="left:97%"><span>奥の院</span></span>
+            <span class="dir w">← 西</span><span class="dir e">東 →</span>
+          </div>
+          <ul class="walk-list">
+            <li><b>金剛峯寺</b><span class="t">徒歩 約6分</span><p>高野山真言宗の総本山。</p></li>
+            <li><b>壇上伽藍（根本大塔・金堂）</b><span class="t">徒歩 約12分</span><p>弘法大師が最初に開かれた聖地。朱色の根本大塔は高野山のシンボルです。</p></li>
+            <li><b>奥の院 一の橋</b><span class="t">徒歩 約13分</span><p>奥の院参道の入口。弘法大師御廟までは、杉木立の参道を約2km（約30分）歩きます。</p></li>
+            <li><b>大門</b><span class="t">徒歩 約25分</span><p>高野山の総門。晴れた日には、遠く淡路島まで見渡せることもあります。</p></li>
+          </ul>
+          <p class="walk-note">徒歩の時間は、地図上の距離から割り出した目安です。図は位置関係をあらわした模式図です。奥の院へはバス（奥の院前・奥の院口）も便利です。</p>
+          <div class="kippu">
+            <p class="kippu-k">高野山へは、おトクなきっぷで</p>
+            <h4>高野山・世界遺産デジタルきっぷ（南海電鉄）</h4>
+            <ul>
+              <li>対象駅〜高野山駅の往復乗車券</li>
+              <li>高野山内の南海りんかんバスが2日間乗り放題</li>
+              <li>山内の対象施設で使える割引クーポン</li>
+            </ul>
+            <p>連続2日間使えるので、宿坊に泊まる1泊2日の旅にぴったりです。紙のきっぷ「高野山・世界遺産きっぷ」もあります。料金や購入方法は南海電鉄のページでご確認ください。</p>
+            <a class="lk ink" href="https://www.nankai.co.jp/traffic/digital/koyasan.html" target="_blank" rel="noopener">南海電鉄のページを見る →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 六 よくあるご質問 -->
+<section class="sec" id="faq">
+  <div class="sec-in sec-grid">
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">六</span><span class="sh-line"></span><h2 class="sh-title">よくあるご質問</h2></header>
+    <div class="body">
+      <div class="faq rv">
+        <details><summary>お一人でも宿泊できますか？</summary><p class="a">お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。</p></details>
+        <details><summary>予約方法を教えてください。</summary><p class="a">ご宿泊は予約サイト（ページ内の「宿坊のご予約はこちら」から）で24時間承っております。お電話（0736-56-2711／受付9:00〜17:00）でもご予約いただけます。</p></details>
+        <details><summary>チェックイン・チェックアウトは何時ですか？</summary><p class="a">チェックインは15:00から、チェックアウトは10:00まででございます。</p></details>
+        <details><summary>門限はありますか？</summary><p class="a">門限は22:00でございます。夜は山内が静かになりますので、それまでにお戻りくださいますようお願いいたします。</p></details>
+        <details><summary>食事は精進料理ですか？アレルギーの対応はできますか？</summary><p class="a">高野豆腐や胡麻豆腐をはじめとする精進料理をご用意しております。なお、個別の食物アレルギーへの対応は行っておりませんので、あらかじめご了承ください。</p></details>
+        <details><summary>朝の勤行には誰でも参加できますか？必須ですか？</summary><p class="a">朝のお勤めは、毎朝6時30分から本堂で行います。ご宿泊の方はどなたでもご参加いただけます。参加は自由で、必須ではございません。所要時間は45分〜1時間ほどです。</p></details>
+        <details><summary>外国人でも宿泊できますか？英語の対応はありますか？</summary><p class="a">海外からのお客様もご宿泊いただけます。簡単な英語でしたらご対応いたします。</p></details>
+        <details><summary>駐車場はありますか？</summary><p class="a">一般駐車場が15台分ございます。先着順で、無料でご利用いただけます。</p></details>
+        <details><summary>ペットと一緒に泊まれますか？</summary><p class="a">ペットご同伴のご宿泊は、現在ご遠慮いただいております。</p></details>
+        <details><summary>車椅子でも利用できますか？</summary><p class="a">車椅子用トイレが1か所あり、車椅子の貸し出しもございます。院内には段差がございますので、お気軽にお声がけください。</p></details>
+        <details><summary>団体でも宿泊できますか？</summary><p class="a">団体グループでのご宿泊も承っております。人数やご希望をお電話でご相談ください。</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ご相談・ご予約 -->
+<section class="cta on-dark" id="cta">
+  <div class="cta-bg" aria-hidden="true"><img src="images/photos/sanmon-yoru.webp" alt="" loading="lazy" width="1600" height="1067"></div>
+  <img class="cta-mon rv" src="images/mon-white.png" alt="" width="44" height="44" loading="lazy">
+  <h2 class="rv">ご予約・お問い合わせ</h2>
+  <p class="cta-lead rv">ご宿泊は予約サイトから24時間承っております。<br class="pc">お電話でもお気軽にどうぞ</p>
+  <div class="cta-actions rv">
+    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn btn-shu btn-reserve-main" target="_blank" rel="noopener">宿坊のご予約はこちら<span class="arw"></span></a>
+    <a href="tel:0736562711" class="cta-tel"><small>お電話</small>0736-56-2711</a>
+    <p class="cta-hours">受付時間 9:00〜17:00</p>
+  </div>
+</section>
+
+<!-- ほかのページへ -->
+<nav class="next" aria-label="ほかのページ">
+  <div class="next-in">
+    <p class="next-k">ほかのページ</p>
+    <ul>
+      <li><a href="about.html">本覚院について<span class="arw" aria-hidden="true"></span></a></li>
+      <li><a href="priest.html">住職・僧侶<span class="arw" aria-hidden="true"></span></a></li>
+      <li><a href="kuyo.html">お参り・ご供養について<span class="arw" aria-hidden="true"></span></a></li>
+      <li><a href="en.html"><span><span lang="en">English</span><small>英語のご案内</small></span><span class="arw" aria-hidden="true"></span></a></li>
+      <li><a href="index.html">トップページへ<span class="arw" aria-hidden="true"></span></a></li>
+    </ul>
+  </div>
+</nav>
+
+</main>
+
+<!-- SNS -->
+<div class="sns">
+  <p class="sns-eyebrow">FOLLOW US</p>
+  <p class="ig-lead">本覚院の日々を、Instagramでお届けしています</p>
+  <div class="ig-grid">
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-gongyo.webp" alt="灯明のともる内陣でお勤めをする僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-mandala.webp" alt="灯明に照らされた曼荼羅の掛軸" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-kuyo-roka.webp" alt="法衣をまとい廊下を進む僧侶" loading="lazy" width="1280" height="1280"></a>
+    <a href="https://www.instagram.com/koyasan_hongakuin/" target="_blank" rel="noopener"><img src="images/insta-nenki.webp" alt="花と灯明に囲まれた本堂で、ご法要を勤める僧侶" loading="lazy" width="1280" height="1280"></a>
+  </div>
+  <a href="https://www.instagram.com/koyasan_hongakuin/" class="sns-link ig-big" target="_blank" rel="noopener"><span class="ig-row"><svg class="ig-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagramを見る</span><span class="ig-handle">@koyasan_hongakuin</span></a>
+</div>
+
 <footer>
-  <p>高野山 別格本山 本覚院　KOYASAN BETTAKUHONZAN HONGAKUIN</p>
-  <p>〒648-0211 和歌山県伊都郡高野町高野山618<br>Tel: 0736-56-2711</p>
-  <p style="margin-top:12px;">© 2026 Hongakuin All Rights Reserved.</p>
+  <img class="f-mon" src="images/mon-white.png" alt="" width="36" height="36" loading="lazy">
+  <p>高野山 別格本山 本覚院</p>
+  <p class="f-en">KOYASAN BETTAKUHONZAN HONGAKUIN</p>
+  <p>〒648-0211 和歌山県伊都郡高野町高野山618<br>Tel: <a href="tel:0736562711">0736-56-2711</a></p>
+  <p class="copy">© 2026 Hongakuin All Rights Reserved.</p>
 </footer>
 
-<a href="https://tabichat.jp/engine/hotels/hongakuin" class="float-btn" target="_blank" rel="noopener">宿坊のご予約はこちら</a>
+<div class="dock">
+  <a href="tel:0736562711" class="d-tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.6 20.1 3.9 13.4 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></svg>お電話</a>
+  <a href="https://tabichat.jp/engine/hotels/hongakuin" class="float-btn" target="_blank" rel="noopener">宿坊のご予約はこちら</a>
+</div>
+
+
 
 <script>
-function openMenu(){
-  document.getElementById('drawer').classList.add('open');
-  document.getElementById('overlay').classList.add('show');
+/* ── メニュー（ドロワー） ── */
+var drawer = document.getElementById('drawer'), menuBtn = document.getElementById('menuBtn');
+function openMenu() {
+  drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false');
+  menuBtn.setAttribute('aria-expanded', 'true');
+  setTimeout(function () { var f = drawer.querySelector('.drawer-close'); if (f) f.focus(); }, 60);
 }
-function closeMenu(){
-  document.getElementById('drawer').classList.remove('open');
-  document.getElementById('overlay').classList.remove('show');
+function closeMenu() {
+  if (!drawer.classList.contains('open')) return;
+  drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true');
+  menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.focus({ preventScroll: true });
 }
-</script>
+menuBtn.addEventListener('click', openMenu);
+drawer.querySelectorAll('[data-close]').forEach(function (el) { el.addEventListener('click', closeMenu); });
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
 
-<script>
-/* DESIGN SYSTEM v2：控えめなフェードアップ（見出し・写真・本文のかたまり）
-   prefers-reduced-motion のときは何もしない（CSS側でも無効化済み） */
+/* ── 固定ボタン・目次の状態 ── */
 (function () {
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) return;
-  var targets = document.querySelectorAll('h2.sec-title, .page-hero h1, .content-img, .page-inner p, .room-photo, .g-item, .exp-card');
-  if (!targets.length) return;
-  if (!('IntersectionObserver' in window)) {
-    targets.forEach(function (el) { el.classList.add('v2-reveal', 'v2-in'); });
-    return;
+  var b = document.body, bar = document.querySelector('.sidx .bar');
+  var inks = [document.getElementById('yoru'), document.getElementById('mido'), document.getElementById('cta')];
+  function f() {
+    var y = window.scrollY;
+    b.classList.toggle('past-hero', y > 240);
+    if (bar) {
+      var max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.setProperty('--p', max > 0 ? Math.min(1, y / max).toFixed(4) : 0);
+    }
+    var mid = innerHeight / 2, onInk = false;
+    inks.forEach(function (s) { var r = s.getBoundingClientRect(); if (r.top < mid && r.bottom > mid) onInk = true; });
+    b.classList.toggle('on-ink', onInk);
   }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('v2-in');
-        io.unobserve(entry.target);
-      }
+  window.addEventListener('scroll', f, { passive: true }); window.addEventListener('resize', f); f();
+
+  // 目次：いま読んでいる章に印
+  var links = document.querySelectorAll('.sidx a');
+  if ('IntersectionObserver' in window && links.length) {
+    var map = {}; links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { links.forEach(function (a) { a.classList.remove('on'); }); var a = map[e.target.id]; if (a) a.classList.add('on'); }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
+  }
+})();
+
+/* ── スクロールでの出現（一度だけ） ── */
+(function () {
+  var d = document.documentElement;
+  if (!d.classList.contains('motion')) return;
+  var els = document.querySelectorAll('.rv, .rv-img');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0, rootMargin: '0px 0px -4% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('in'); }); }
+  // 念のための保険：画面より上・画面内に来たものは必ず表示（写真が出ないままにならないように）
+  // 非表示（display:none）の要素は高さ0で top=0 になるので、ここで一緒に表示扱いになる
+  function sweep() {
+    var h = innerHeight;
+    els.forEach(function (el) {
+      if (el.classList.contains('in')) return;
+      var r = el.getBoundingClientRect();
+      if (r.top < h * 0.98) el.classList.add('in');
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  targets.forEach(function (el) { el.classList.add('v2-reveal'); io.observe(el); });
+  }
+  addEventListener('scroll', sweep, { passive: true });
+  addEventListener('resize', sweep);
+  addEventListener('load', sweep);
+  setTimeout(sweep, 1500);
+  document.addEventListener('scroll', sweep, { passive: true, capture: true });
+  document.querySelectorAll('details').forEach(function (dt) { dt.addEventListener('toggle', sweep); });
+})();
+</script>
+<script>
+/* 特別室：3部屋の写真を切り替え */
+(function () {
+  var main = document.getElementById('spMain'), desc = document.getElementById('spDesc');
+  var tabs = document.querySelectorAll('.sp-tab');
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      if (t.getAttribute('aria-selected') === 'true') return;
+      tabs.forEach(function (x) { x.setAttribute('aria-selected', x === t ? 'true' : 'false'); });
+      main.classList.add('fade');
+      setTimeout(function () { main.src = t.dataset.src; main.alt = t.dataset.alt; desc.textContent = t.dataset.desc; main.classList.remove('fade'); }, 250);
+    });
+  });
 })();
 </script>
 </body>
