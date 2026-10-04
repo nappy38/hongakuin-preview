@@ -424,9 +424,12 @@ html.motion .kiku.is-playing .kiku-wave i{animation:wave 1.6s ease-in-out infini
 @media(min-width:900px){.nisou-card{padding:56px 64px;max-width:44em;}.nisou-card p{font-size:18px;}}
 
 /* ══ 結びの一枚 ══ */
-.closing{overflow:hidden;}
+.closing-wrap{padding:0 var(--gut) 96px;background:var(--washi-d);background-image:var(--fiber),var(--paper);}
+.closing{max-width:var(--max);margin:0 auto;}
+.closing-ph{overflow:hidden;}
 .closing img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 12%;}
-@media(min-width:900px){.closing img{aspect-ratio:auto;height:min(78vh,760px);}}
+.closing figcaption{margin-top:14px;font-size:14px;letter-spacing:.14em;color:var(--text-2);text-align:right;}
+@media(min-width:900px){.closing-wrap{padding:0 56px 160px;}.closing img{aspect-ratio:16/8;object-position:center 18%;}}
 
 /* ══ ご相談・ご予約（夜の山門） ══ */
 .cta{position:relative;overflow:hidden;color:var(--washi);text-align:center;padding:112px var(--gut);background:var(--ink);isolation:isolate;}
@@ -766,7 +769,7 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
 <!-- 尼僧：お名前・ひとこと・写真は、ご本人の了承がとれたら追加 -->
 
 <!-- 結びの一枚 -->
-<figure class="closing rv-img"><img src="images/insta-kuyo-roka.webp" alt="法衣をまとい、本堂へ続く廊下を進む僧侶" loading="lazy" width="1280" height="1127"></figure>
+<div class="closing-wrap"><figure class="closing"><div class="closing-ph rv-img"><img src="images/insta-kuyo-roka.webp" alt="法衣をまとい、本堂へ続く廊下を進む僧侶" loading="lazy" width="1280" height="1127"></div><figcaption class="rv">本堂へ向かう僧侶</figcaption></figure></div>
 
 <!-- ご相談・ご予約 -->
 <section class="cta on-dark" id="cta">
