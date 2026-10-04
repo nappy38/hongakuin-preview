@@ -532,9 +532,10 @@ html.motion .sh.rv .sh-line{transform:scaleX(0);transform-origin:left;transition
 html.motion .sh.rv.in .sh-line{transform:none;}
 @media(min-width:900px){html.motion .sec-grid>.sh.rv .sh-line{transform:scaleY(0);transform-origin:top;}html.motion .sec-grid>.sh.rv.in .sh-line{transform:none;}}
 /* 冒頭の題と、はがきの一枚は読み込みと同時に静かに */
-html.motion .ph-title,html.motion .ph-meta{animation:rise 1.2s var(--ease) both;}
+html.motion .ph-title,html.motion .ph-meta{animation:riseL 1.2s var(--ease) both;}
 html.motion .ph-meta{animation-delay:.2s;}
 html.motion .hagaki img{animation:inkIn 1.6s var(--ease) .1s both;}
+@keyframes riseL{from{opacity:.01;transform:translateY(10px);filter:blur(4px);}to{opacity:1;transform:none;filter:blur(0);}}
 @keyframes rise{from{opacity:0;transform:translateY(10px);filter:blur(4px);}to{opacity:1;transform:none;filter:blur(0);}}
 @keyframes inkIn{from{opacity:0;filter:blur(6px);}to{opacity:1;filter:blur(0);}}
 
@@ -545,6 +546,13 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
   html{scroll-behavior:auto;}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
 }
+
+/* 冒頭：灯明のゆらぎ（ごく控えめ・動きを減らす設定では出さない） */
+.mado::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;mix-blend-mode:screen;
+  background:radial-gradient(ellipse 70% 55% at 50% 88%,rgba(255,175,85,.32),rgba(255,175,85,0) 70%),radial-gradient(ellipse 40% 30% at 50% 45%,rgba(255,170,80,.14),rgba(255,170,80,0) 70%);}
+html.motion .mado::before{animation:tomyo 5.5s ease-in-out infinite;}
+.mado figcaption{z-index:2;}
+@keyframes tomyo{0%{opacity:.35;}17%{opacity:.6;}23%{opacity:.42;}41%{opacity:.7;}55%{opacity:.5;}68%{opacity:.66;}79%{opacity:.4;}100%{opacity:.35;}}
 </style>
 </head>
 

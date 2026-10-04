@@ -1059,8 +1059,26 @@ if (slides.length > 1 && !staticMode) { if (reduceMotion) setPaused(true); else 
 window.addEventListener('load', function () { slides.forEach(function (s) { var i = s.querySelector('img'); if (i) i.loading = 'eager'; }); });
 
 /* ── 新着情報 ── */
+// 記事の本文を組み立てる（画像は縮小版のURLにしてから入れる）
+function fillNewsBody(body) {
+  if (body._content === undefined) return;
+  const parsed = new DOMParser().parseFromString(body._content, 'text/html').body;
+  parsed.querySelectorAll('img').forEach(function (img) {
+    const src = img.getAttribute('src') || '';
+    if (src.indexOf('images.microcms-assets.io') !== -1 && src.indexOf('?') === -1) img.setAttribute('src', src + '?w=1000&q=80&auto=format');
+    img.setAttribute('loading', 'lazy');
+    img.style.maxWidth = '100%';
+    img.style.height = 'auto';
+    img.removeAttribute('width');
+    img.removeAttribute('height');
+  });
+  while (parsed.firstChild) body.appendChild(parsed.firstChild);
+  body._content = undefined;
+}
 function toggleCard(el) {
   const card = el.parentElement;
+  const body = card.querySelector('.news-card-body');
+  if (body) fillNewsBody(body);
   const o = card.classList.toggle('open');
   el.setAttribute('aria-expanded', o ? 'true' : 'false');
 }
@@ -1194,24 +1212,8 @@ function toggleArchive() {
 
     const body = document.createElement('div');
     body.className = 'news-card-body';
-    // 本文も、画像のURLを縮小版に書き換えてからページに入れる
-    const parsed = new DOMParser().parseFromString(item.content || '', 'text/html').body;
-    parsed.querySelectorAll('img').forEach(function (img) {
-      const src = img.getAttribute('src') || '';
-      if (src.indexOf('images.microcms-assets.io') !== -1 && src.indexOf('?') === -1) img.setAttribute('src', src + '?w=1000&q=80&auto=format');
-      img.setAttribute('loading', 'lazy');
-    });
-    while (parsed.firstChild) body.appendChild(parsed.firstChild);
-    // 本文内の画像がはみ出さないように。microCMSの写真は表示用に縮小して読み込む
-    body.querySelectorAll('img').forEach(function (img) {
-      const src = img.getAttribute('src') || '';
-      if (src.indexOf('images.microcms-assets.io') !== -1 && src.indexOf('?') === -1) img.setAttribute('src', src + '?w=1000&q=80&auto=format');
-      img.setAttribute('loading', 'lazy');
-      img.style.maxWidth = '100%';
-      img.style.height = 'auto';
-      img.removeAttribute('width');
-      img.removeAttribute('height');
-    });
+    // 本文は、▼で開いたときに初めて組み立てる（最初の表示を軽くするため）
+    body._content = item.content || '';
 
     // ▼で開いたら全文を表示（スマホでも「続きを読む」は挟まない）
     card.appendChild(header);
@@ -1225,6 +1227,7 @@ function toggleArchive() {
       return r.json();
     });
   }
+  function loadNews() {
   Promise.allSettled([
     getJSON(API_URL, { headers: { 'X-MICROCMS-API-KEY': API_KEY } }),
     getJSON('news-archive.json')
@@ -1257,6 +1260,10 @@ function toggleArchive() {
     const btn = document.getElementById('newsMoreBtn');
     if (btn) btn.style.display = 'none';
   });
+  }
+  // 最初の表示を優先し、記事はページの読み込みが終わってから取りにいく
+  if (document.readyState === 'complete') loadNews();
+  else window.addEventListener('load', function () { setTimeout(loadNews, 0); });
 })();
 
 /* ── ヘッダー・固定ボタン・目次の状態 ── */
