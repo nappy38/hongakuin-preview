@@ -661,6 +661,34 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
   html{scroll-behavior:auto;}
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
 }
+
+/* ── 本覚院から歩いて巡る高野山（模式図＋一覧）・おトクなきっぷ ── */
+.walk{margin-top:56px;}
+.walk-map{position:relative;height:120px;margin:8px 4px 24px;}
+.walk-map::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:var(--gold);}
+.walk-map .pt{position:absolute;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;}
+.walk-map .pt::before{content:'';width:9px;height:9px;border:1px solid var(--gold);background:var(--washi-d);transform:rotate(45deg);}
+.walk-map .pt span{position:absolute;bottom:18px;white-space:nowrap;font-size:13px;letter-spacing:.04em;line-height:1.4;color:var(--text);text-align:center;}
+.walk-map .pt.lo span{bottom:auto;top:18px;}
+.walk-map .pt.me::before{width:14px;height:14px;background:var(--shu);border-color:var(--shu);}
+.walk-map .pt.me span{font-weight:500;color:var(--shu);}
+.walk-map .dir{position:absolute;bottom:-4px;font-size:12px;color:var(--text-2);letter-spacing:.06em;}
+.walk-map .dir.w{left:0;} .walk-map .dir.e{right:0;}
+.walk-list{list-style:none;border-top:1px solid var(--sumi);}
+.walk-list li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:16px 2px;border-bottom:1px solid var(--line);}
+.walk-list b{font-weight:500;font-size:18px;letter-spacing:.08em;color:var(--sumi);line-height:1.6;}
+.walk-list .t{font-size:15px;color:var(--gold-d);white-space:nowrap;font-variant-numeric:lining-nums;line-height:1.9;}
+.walk-list p{grid-column:1/-1;font-size:15px;line-height:1.9;color:var(--text);}
+.walk-note{font-size:13px;line-height:1.8;color:var(--text-2);margin-top:12px;}
+.kippu{margin-top:40px;padding:28px 24px;border:1px solid var(--gold);background:rgba(243,236,225,.6);}
+.kippu-k{font-size:13px;letter-spacing:.2em;color:var(--gold-d);}
+.kippu h4{font-size:20px;font-weight:500;letter-spacing:.08em;line-height:1.6;color:var(--sumi);margin:6px 0 12px;}
+.kippu ul{list-style:none;margin:12px 0;}
+.kippu li{position:relative;padding-left:20px;font-size:15px;line-height:1.9;}
+.kippu li::before{content:'';position:absolute;left:2px;top:.8em;width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg);}
+.kippu p{font-size:15px;line-height:1.9;}
+.kippu a.lk{display:inline-flex;align-items:center;min-height:48px;margin-top:6px;font-size:15px;letter-spacing:.08em;}
+@media(max-width:899px){.info-wrap>div+div{margin-top:64px;}}
 </style>
 </head>
 
@@ -1011,6 +1039,36 @@ html.static .sec-grid>.sh,html.static .cd-fig{position:relative !important;top:0
         </ol>
         <p class="addr rv">〒648-0211 和歌山県伊都郡高野町高野山618<br>お電話 <a class="ink" href="tel:0736562711">0736-56-2711</a>（受付 9:00〜17:00）</p>
         <p class="map-link rv"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E9%87%8E%E5%B1%B1+%E6%9C%AC%E8%A6%9A%E9%99%A2" target="_blank" rel="noopener">地図をひらく<span class="arw"></span></a></p>
+        <div class="walk rv">
+          <h3 class="h3">本覚院から歩いて巡る高野山</h3>
+          <div class="walk-map" aria-hidden="true">
+            <span class="pt lo" style="left:2%"><span>大門</span></span>
+            <span class="pt" style="left:19%"><span>壇上伽藍</span></span>
+            <span class="pt lo" style="left:29%"><span>金剛峯寺</span></span>
+            <span class="pt me" style="left:39%"><span>本覚院</span></span>
+            <span class="pt lo" style="left:60%"><span>一の橋</span></span>
+            <span class="pt" style="left:97%"><span>奥の院</span></span>
+            <span class="dir w">← 西</span><span class="dir e">東 →</span>
+          </div>
+          <ul class="walk-list">
+            <li><b>金剛峯寺</b><span class="t">徒歩 約6分</span><p>高野山真言宗の総本山。</p></li>
+            <li><b>壇上伽藍（根本大塔・金堂）</b><span class="t">徒歩 約12分</span><p>弘法大師が最初に開かれた聖地。朱色の根本大塔は高野山のシンボルです。</p></li>
+            <li><b>奥の院 一の橋</b><span class="t">徒歩 約13分</span><p>奥の院参道の入口。弘法大師御廟までは、杉木立の参道を約2km（約30分）歩きます。</p></li>
+            <li><b>大門</b><span class="t">徒歩 約25分</span><p>高野山の総門。晴れた日には、遠く淡路島まで見渡せることもあります。</p></li>
+          </ul>
+          <p class="walk-note">徒歩の時間は、地図上の距離から割り出した目安です。図は位置関係をあらわした模式図です。奥の院へはバス（奥の院前・奥の院口）も便利です。</p>
+          <div class="kippu">
+            <p class="kippu-k">高野山へは、おトクなきっぷで</p>
+            <h4>高野山・世界遺産デジタルきっぷ（南海電鉄）</h4>
+            <ul>
+              <li>対象駅〜高野山駅の往復乗車券</li>
+              <li>高野山内の南海りんかんバスが2日間乗り放題</li>
+              <li>山内の対象施設で使える割引クーポン</li>
+            </ul>
+            <p>連続2日間使えるので、宿坊に泊まる1泊2日の旅にぴったりです。紙のきっぷ「高野山・世界遺産きっぷ」もあります。料金や購入方法は南海電鉄のページでご確認ください。</p>
+            <a class="lk ink" href="https://www.nankai.co.jp/traffic/digital/koyasan.html" target="_blank" rel="noopener">南海電鉄のページを見る →</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

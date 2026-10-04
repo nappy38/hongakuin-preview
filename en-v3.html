@@ -460,6 +460,34 @@ html.motion .ph-yoru::before{animation:twinkle 7s ease-in-out infinite alternate
 .faq .a::before{content:'答';flex:none;font-size:15px;color:var(--gold-d);line-height:2.1;}
 @media(min-width:900px){.faq summary{font-size:18px;min-height:72px;}.faq .a{font-size:17px;}}
 
+/* ── 本覚院から歩いて巡る高野山（模式図＋一覧）・おトクなきっぷ ── */
+.walk{margin-top:56px;}
+.walk-map{position:relative;height:120px;margin:8px 4px 24px;}
+.walk-map::before{content:'';position:absolute;left:0;right:0;top:50%;height:1px;background:var(--gold);}
+.walk-map .pt{position:absolute;top:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;}
+.walk-map .pt::before{content:'';width:9px;height:9px;border:1px solid var(--gold);background:var(--washi-d);transform:rotate(45deg);}
+.walk-map .pt span{position:absolute;bottom:18px;white-space:nowrap;font-size:13px;letter-spacing:.04em;line-height:1.4;color:var(--text);text-align:center;}
+.walk-map .pt.lo span{bottom:auto;top:18px;}
+.walk-map .pt.me::before{width:14px;height:14px;background:var(--shu);border-color:var(--shu);}
+.walk-map .pt.me span{font-weight:500;color:var(--shu);}
+.walk-map .dir{position:absolute;bottom:-4px;font-size:12px;color:var(--text-2);letter-spacing:.06em;}
+.walk-map .dir.w{left:0;} .walk-map .dir.e{right:0;}
+.walk-list{list-style:none;border-top:1px solid var(--sumi);}
+.walk-list li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:16px 2px;border-bottom:1px solid var(--line);}
+.walk-list b{font-weight:500;font-size:18px;letter-spacing:.08em;color:var(--sumi);line-height:1.6;}
+.walk-list .t{font-size:15px;color:var(--gold-d);white-space:nowrap;font-variant-numeric:lining-nums;line-height:1.9;}
+.walk-list p{grid-column:1/-1;font-size:15px;line-height:1.9;color:var(--text);}
+.walk-note{font-size:13px;line-height:1.8;color:var(--text-2);margin-top:12px;}
+.kippu{margin-top:40px;padding:28px 24px;border:1px solid var(--gold);background:rgba(243,236,225,.6);}
+.kippu-k{font-size:13px;letter-spacing:.2em;color:var(--gold-d);}
+.kippu h4{font-size:20px;font-weight:500;letter-spacing:.08em;line-height:1.6;color:var(--sumi);margin:6px 0 12px;}
+.kippu ul{list-style:none;margin:12px 0;}
+.kippu li{position:relative;padding-left:20px;font-size:15px;line-height:1.9;}
+.kippu li::before{content:'';position:absolute;left:2px;top:.8em;width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg);}
+.kippu p{font-size:15px;line-height:1.9;}
+.kippu a.lk{display:inline-flex;align-items:center;min-height:48px;margin-top:6px;font-size:15px;letter-spacing:.08em;}
+@media(max-width:899px){.info-wrap>div+div{margin-top:64px;}}
+
 /* 聲明を聴く */
 .kiku{margin-top:48px;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:22px 24px;}
 .kiku-btn{position:relative;width:92px;height:92px;border:0;border-radius:50%;cursor:pointer;
@@ -1081,6 +1109,36 @@ footer p{letter-spacing:.04em;}
         </ol>
         <p class="addr rv">618 Koyasan, Koya-cho, Ito-gun, Wakayama 648-0211, Japan<br>Tel <a class="ink" href="tel:+81736562711">+81-736-56-2711</a> (9:00 am – 5:00 pm JST)</p>
         <p class="map-link rv"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Koyasan+Hongakuin" target="_blank" rel="noopener">Open in Google Maps<span class="arw"></span></a></p>
+        <div class="walk rv">
+          <h3 class="h3">Walking from Hongakuin</h3>
+          <div class="walk-map" aria-hidden="true">
+            <span class="pt lo" style="left:2%"><span>Daimon</span></span>
+            <span class="pt" style="left:19%"><span>Danjō Garan</span></span>
+            <span class="pt lo" style="left:29%"><span>Kongōbu-ji</span></span>
+            <span class="pt me" style="left:39%"><span>Hongakuin</span></span>
+            <span class="pt lo" style="left:60%"><span>Ichi-no-hashi</span></span>
+            <span class="pt" style="left:97%"><span>Okunoin</span></span>
+            <span class="dir w">← West</span><span class="dir e">East →</span>
+          </div>
+          <ul class="walk-list">
+            <li><b>Kongōbu-ji</b><span class="t">about 6 min</span><p>Head temple of Kōyasan Shingon Buddhism.</p></li>
+            <li><b>Danjō Garan</b><span class="t">about 12 min</span><p>The sacred complex Kōbō Daishi founded first, crowned by the vermilion Konpon Daitō pagoda.</p></li>
+            <li><b>Okunoin (Ichi-no-hashi)</b><span class="t">about 13 min</span><p>The entrance to Okunoin. From here, a 2 km path through ancient cedars leads to Kōbō Daishi's mausoleum (about 30 minutes).</p></li>
+            <li><b>Daimon Gate</b><span class="t">about 25 min</span><p>The great gate of Kōyasan. On clear days, the view can reach as far as Awaji Island.</p></li>
+          </ul>
+          <p class="walk-note">Walking times are estimates based on map distance; the diagram is schematic. Buses also run to Okunoin.</p>
+          <div class="kippu">
+            <p class="kippu-k">Getting to Kōyasan</p>
+            <h4>Koyasan World Heritage Ticket (Nankai Railway)</h4>
+            <ul>
+              <li>Round-trip train from Osaka (Namba and other stations) to Kōyasan</li>
+              <li>Unlimited Nankai Rinkan buses on the mountain for two days</li>
+              <li>Discounts at selected sights</li>
+            </ul>
+            <p>Valid for two consecutive days — ideal for an overnight temple stay. Available as a digital or paper ticket; see Nankai Railway for prices and how to buy.</p>
+            <a class="lk ink" href="https://www.nankai.co.jp/traffic/digital/koyasan.html" target="_blank" rel="noopener">Nankai Railway (Japanese) →</a>
+          </div>
+        </div>
       </div>
       <div>
         <h3 class="h3 rv">Facilities</h3>
