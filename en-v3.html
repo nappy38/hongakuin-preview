@@ -725,6 +725,32 @@ footer p{letter-spacing:.04em;}
 .monk-text .monk-name{font-family:var(--display-en);font-size:36px;line-height:1.2;color:var(--sumi);margin-bottom:20px;}
 @media(min-width:900px){.monk-text .monk-name{font-size:48px;}}
 
+/* ── Kōyasan clock & time-of-day tint ── */
+.en-tint{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity 2s;}
+.t-dawn .en-tint{opacity:1;background:linear-gradient(rgba(120,150,200,.34),rgba(170,185,210,.12) 60%,rgba(21,12,21,0));mix-blend-mode:soft-light;}
+.t-dusk .en-tint{opacity:1;background:linear-gradient(rgba(230,170,90,.42),rgba(150,70,40,.3));mix-blend-mode:soft-light;}
+.t-night .en-tint{opacity:1;background:radial-gradient(ellipse at 50% 92%,rgba(255,186,110,.22),rgba(255,186,110,0) 55%),linear-gradient(rgba(18,20,52,.62),rgba(18,14,36,.5));}
+.t-night .en-hero-img{filter:saturate(.7) brightness(.82);}
+.kt{display:flex;flex-direction:column;align-items:center;gap:2px;margin:-8px auto 32px;padding-top:16px;max-width:560px;position:relative;font-family:var(--display-en);}
+.kt::before{content:'';position:absolute;top:0;left:50%;width:48px;height:1px;background:var(--gold-l);transform:translateX(-50%);}
+.kt-time{font-size:26px;letter-spacing:.06em;color:var(--gold-l);font-variant-numeric:lining-nums;line-height:1.3;}
+.kt-on{font-size:13px;letter-spacing:.3em;text-transform:uppercase;opacity:.8;font-family:var(--serif-en);}
+.kt-msg{font-size:19px;font-style:italic;line-height:1.5;margin-top:6px;min-height:1.5em;transition:opacity .8s;}
+@media(min-width:900px){.kt-time{font-size:30px;}.kt-msg{font-size:21px;}}
+
+/* ── Floating sutra with English (while the chant plays) ── */
+.kiku-wrap{position:relative;overflow:hidden;isolation:isolate;}
+.sutra{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden;}
+.sutra-col{position:absolute;display:flex;flex-direction:row-reverse;gap:10px;animation:sutraCol 16s linear forwards;}
+.sutra-col .kj{writing-mode:vertical-rl;font-family:var(--mincho);font-size:clamp(20px,2vw,28px);letter-spacing:.5em;line-height:1;color:var(--gold-l);text-shadow:0 0 18px rgba(201,177,131,.35);}
+.sutra-col .kj i{font-style:normal;opacity:0;animation:sutraChar 1.6s ease-out forwards;}
+.sutra-col .tr{writing-mode:vertical-rl;font-family:var(--display-en);font-style:italic;font-size:15px;letter-spacing:.08em;color:rgba(243,236,225,.85);opacity:0;animation:sutraChar 2.4s ease-out forwards;}
+@keyframes sutraChar{from{opacity:0;filter:blur(5px);}to{opacity:1;filter:blur(0);}}
+@keyframes sutraCol{0%{opacity:.32;transform:translateY(16px);}70%{opacity:.28;}100%{opacity:0;transform:translateY(-40px);filter:blur(3px);}}
+.t-dawn .en-tint{background:linear-gradient(rgba(80,110,175,.42),rgba(150,165,205,.18) 65%,rgba(21,12,21,0));mix-blend-mode:normal;}
+.t-dusk .en-tint{background:linear-gradient(rgba(215,140,60,.34),rgba(140,60,35,.3));mix-blend-mode:normal;}
+.en-hero::before{background:radial-gradient(ellipse 46% 42% at 50% 56%,rgba(21,12,21,.42),rgba(21,12,21,0)),linear-gradient(rgba(21,12,21,.25),rgba(21,12,21,.15) 40%,rgba(21,12,21,.78));}
+
 </style>
 </head>
 <body>
@@ -782,12 +808,14 @@ footer p{letter-spacing:.04em;}
 
 <!-- HERO -->
 <section class="en-hero on-dark" id="top">
+  <div class="en-tint" aria-hidden="true"></div>
   <img class="en-hero-img" src="images/photos/teien-mado-4.webp" alt="A moss-and-stone garden by Shigemori Mirei, framed by the temple's wooden window" width="1600" height="1200" fetchpriority="high">
   <div class="en-hero-mark">
     <img class="en-crest" src="images/mon-white.png" alt="" width="64" height="64">
     <p class="en-jp" lang="ja">高野山 別格本山 本覚院</p>
     <h1>Koyasan Hongakuin</h1>
     <p class="en-tag">A night inside a temple founded in 1190,<br class="pc"> on the sacred mountain of Kōyasan.</p>
+    <p class="kt" id="kt"><span class="kt-time" id="ktTime">&nbsp;</span><span class="kt-on">on Mount Kōya</span><span class="kt-msg" id="ktMsg">&nbsp;</span></p>
     <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn btn-shu" target="_blank" rel="noopener">Book Your Stay<span class="arw"></span></a>
   </div>
 </section>
@@ -1012,6 +1040,7 @@ footer p{letter-spacing:.04em;}
     </div>
 
     <div class="kiku-wrap">
+      <div class="sutra" id="sutra" aria-hidden="true"></div>
       <div class="kiku rv" id="kiku">
         <button class="kiku-btn" type="button" aria-label="Listen to the chant" aria-pressed="false">
           <span class="kiku-ring" aria-hidden="true"></span><span class="kiku-ring r2" aria-hidden="true"></span>
@@ -1019,15 +1048,15 @@ footer p{letter-spacing:.04em;}
         </button>
         <div>
           <p class="kiku-t">Listen to the chant<span class="kiku-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span></p>
-          <p class="kiku-s"><span class="kiku-s1">The voice of the head priest</span><span class="kiku-s1">from <i>THE SHŌMYŌ — Furui</i></span></p>
+          <p class="kiku-s"><span class="kiku-s1">The voice of the head priest</span><span class="kiku-s1">from <i>THE SHO-MYO — Furui</i></span></p>
         </div>
-        <div class="kiku-player" id="kiku-player"><iframe title="THE SHŌMYŌ — Kōyasan Nanzanshin School, Furui (Spotify)" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <div class="kiku-player" id="kiku-player"><iframe title="THE SHO-MYO — Kōyasan Nanzanshin School, Furui (Spotify)" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
         <p class="kiku-hint">If it doesn't start, tap ▶ on the player above.</p>
       </div>
       <p class="cd-line rv">His recordings were released by Victor Entertainment. A special two-disc edition is available only at Hongakuin.</p>
       <div class="am-btns rv">
-        <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-furui/1828860466" target="_blank" rel="noopener"><span class="am-t">THE SHŌMYŌ — Furui</span><span class="am-s">Apple Music →</span></a>
-        <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-iyashi/1828860904" target="_blank" rel="noopener"><span class="am-t">THE SHŌMYŌ — Iyashi</span><span class="am-s">Apple Music →</span></a>
+        <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-furui/1828860466" target="_blank" rel="noopener"><span class="am-t">THE SHO-MYO — Furui</span><span class="am-s">Apple Music →</span></a>
+        <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-iyashi/1828860904" target="_blank" rel="noopener"><span class="am-t">THE SHO-MYO — Iyashi</span><span class="am-s">Apple Music →</span></a>
       </div>
     </div>
 
@@ -1199,11 +1228,76 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
 })();
 </script>
 <script>
+/* Kōyasan clock: the time on the mountain (JST) and what the temple is doing now */
+(function () {
+  var hero = document.getElementById('top'), t = document.getElementById('ktTime'), m = document.getElementById('ktMsg');
+  if (!hero || !t) return;
+  var lines = [
+    [0, 4, 't-night', 'The gate has closed. The mountain is silent.'],
+    [4, 6, 't-dawn', 'Dawn is breaking. Soon the monks will gather in the main hall.'],
+    [6, 8, 't-dawn', 'Morning has come. In the main hall, the day begins with chanting.'],
+    [8, 10, 't-day', 'Morning light in the garden. Guests set out for Okunoin.'],
+    [10, 15, 't-day', 'Midday. The temple rests, waiting for tonight’s guests.'],
+    [15, 17, 't-dusk', 'Guests are arriving. Beyond the gate, the town falls away.'],
+    [17, 19, 't-dusk', 'Evening falls. The baths are open, and dinner awaits.'],
+    [19, 21, 't-night', 'Night has come. Lanterns glow along the corridors.'],
+    [21, 22, 't-night', 'The gate closes at ten. The mountain grows still.'],
+    [22, 24, 't-night', 'The gate has closed. The mountain is silent.']
+  ];
+  var q = location.search.match(/[?&]jst=(\d+)/); // 確認用：?jst=21 でその時刻の表示を見られる
+  var last = '';
+  function tick() {
+    var now = new Date(Date.now() + (new Date().getTimezoneOffset() + 540) * 60000);
+    var h = q ? +q[1] % 24 : now.getHours(), mi = q ? 0 : now.getMinutes();
+    var ap = h < 12 ? 'am' : 'pm', h12 = h % 12 || 12;
+    t.textContent = h12 + ':' + (mi < 10 ? '0' : '') + mi + ' ' + ap;
+    for (var i = 0; i < lines.length; i++) {
+      var L = lines[i];
+      if (h >= L[0] && h < L[1]) {
+        if (last !== L[3]) {
+          hero.classList.remove('t-dawn', 't-day', 't-dusk', 't-night'); hero.classList.add(L[2]);
+          if (!last) { m.textContent = L[3]; }
+          else { m.style.opacity = 0; setTimeout(function (s) { return function () { m.textContent = s; m.style.opacity = 1; }; }(L[3]), 600); }
+          last = L[3];
+        }
+        break;
+      }
+    }
+  }
+  tick(); setInterval(tick, 20000);
+})();
+</script>
+<script>
+/* While the chant plays: lines of the Rishu-kyō rise in kanji, with English beside them */
+(function () {
+  var host = document.getElementById('sutra'), box = host && host.parentNode; if (!host) return;
+  if (!document.documentElement.classList.contains('motion')) return;
+  var text = [['如是我聞','Thus have I heard'],['一時薄伽梵','At one time, the Blessed One'],['成就殊勝','perfected in excellence'],['一切如来','of all the Tathāgatas'],['金剛加持','empowered by the vajra'],['三摩耶智','the wisdom of samaya'],['灌頂宝冠','the jeweled crown of consecration'],['為三界主','lord of the three realms'],['皆悉円満','all fulfilled, all complete'],['金剛大毘盧遮那如来','Vajra Mahāvairocana Tathāgata']];
+  var idx = 0, timer = null, lastX = -1;
+  function spawn() {
+    var r = box.getBoundingClientRect(); if (r.bottom < 0 || r.top > innerHeight) return;
+    var p = text[idx++ % text.length], col = document.createElement('span'); col.className = 'sutra-col';
+    var kj = document.createElement('span'); kj.className = 'kj';
+    for (var i = 0; i < p[0].length; i++) { var c = document.createElement('i'); c.textContent = p[0][i]; c.style.animationDelay = (i * .55) + 's'; kj.appendChild(c); }
+    var tr = document.createElement('span'); tr.className = 'tr'; tr.textContent = p[1]; tr.style.animationDelay = (p[0].length * .55) + 's';
+    col.appendChild(kj); col.appendChild(tr);
+    var w = box.clientWidth, x; do { x = Math.random() * (w - 90) + 20; } while (lastX >= 0 && Math.abs(x - lastX) < w * .2); lastX = x;
+    col.style.left = x + 'px'; col.style.top = (16 + Math.random() * Math.max(10, box.clientHeight - 420)) + 'px';
+    host.appendChild(col); setTimeout(function () { col.remove(); }, 17000);
+  }
+  window.sutraFlow = function (on) {
+    if (on && !timer) { spawn(); timer = setInterval(spawn, innerWidth < 900 ? 4200 : 3000); }
+    else if (!on && timer) { clearInterval(timer); timer = null; }
+  };
+})();
+</script>
+
+<script>
 /* 聲明を聴く：Spotify iFrame API で大きなボタンから再生 */
 (function(){
   var box=document.getElementById('kiku'); if(!box) return;
   var btn=box.querySelector('.kiku-btn'), ctl=null, playing=false, pending=false, loaded=false;
-  function set(){ box.classList.toggle('is-playing',playing); btn.setAttribute('aria-pressed',playing?'true':'false'); btn.setAttribute('aria-label',playing?'Pause the chant':'Listen to the chant'); if(playing) box.classList.remove('need-tap'); }
+  function set(){ if(window.sutraFlow) sutraFlow(playing); box.classList.toggle('is-playing',playing); btn.setAttribute('aria-pressed',playing?'true':'false'); btn.setAttribute('aria-label',playing?'Pause the chant':'Listen to the chant'); if(playing) box.classList.remove('need-tap'); }
   function toggle(){ var was=playing; ctl.togglePlay(); setTimeout(function(){ if(!was && !playing) box.classList.add('need-tap'); },2500); }
   window.onSpotifyIframeApiReady=function(API){
     var el=document.getElementById('kiku-player'); el.innerHTML='<div></div>';
