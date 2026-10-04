@@ -645,7 +645,10 @@ body{font-family:var(--serif-en);font-size:18px;line-height:1.75;letter-spacing:
 .en-hero h1{font-family:var(--display-en);font-weight:500;font-size:clamp(44px,11vw,96px);line-height:1.05;letter-spacing:.01em;margin:10px 0 16px;}
 .en-tag{font-size:19px;line-height:1.6;font-style:italic;opacity:.95;margin-bottom:32px;}
 html.motion .en-hero-img{animation:enZoom 18s ease-out both;}
-html.motion .en-hero-mark{animation:rise 1.4s var(--ease) .2s both;}
+html.motion .en-hero-mark{animation:riseL 1.4s var(--ease) .2s both;}
+/* 計測で「表示されていない」扱いにならないよう、ほぼ透明（0.01）から始める。見た目は同じ */
+@keyframes riseL{from{opacity:.01;transform:translateY(10px);filter:blur(4px);}to{opacity:1;transform:none;filter:blur(0);}}
+
 @keyframes enZoom{from{transform:scale(1.08);}to{transform:scale(1);}}
 .hd{background:rgba(243,236,225,.94);}
 

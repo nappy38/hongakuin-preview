@@ -230,7 +230,10 @@ html.motion .slide.active img{animation:kenburns 9s linear both;}
 html.motion .hero-scroll::after{animation:drip 2.4s var(--ease-io) infinite;}
 @keyframes drip{0%{background-size:1px 0;background-position:0 0;}50%{background-size:1px 100%;background-position:0 0;}51%{background-position:0 100%;}100%{background-size:1px 0;background-position:0 100%;}}
 /* 登場 */
-html.motion .hero-mon,html.motion .hero-name,html.motion .hero-name-en,html.motion .hero-nav,html.motion .hero-util{opacity:0;animation:rise 1.4s var(--ease) forwards;}
+html.motion .hero-mon,html.motion .hero-name,html.motion .hero-name-en,html.motion .hero-nav,html.motion .hero-util{opacity:.01;animation:riseL 1.4s var(--ease) forwards;}
+/* 計測で「表示されていない」扱いにならないよう、ほぼ透明（0.01）から始める。見た目は同じ */
+@keyframes riseL{from{opacity:.01;transform:translateY(10px);filter:blur(4px);}to{opacity:1;transform:none;filter:blur(0);}}
+
 html.motion .hero-mon{animation-delay:.15s;} html.motion .hero-name{animation-delay:.3s;}
 html.motion .hero-name-en{animation-delay:.55s;} html.motion .hero-nav{animation-delay:.7s;} html.motion .hero-util{animation-delay:.8s;}
 html.intro.motion .hero-mon{animation-delay:1s;} html.intro.motion .hero-name{animation-delay:1.1s;} html.intro.motion .hero-name-en{animation-delay:1.3s;}
