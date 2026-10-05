@@ -646,6 +646,46 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
 
 .stay-price{margin-top:14px;font-size:16px;letter-spacing:.06em;color:var(--sumi);font-variant-numeric:lining-nums;}
 .stay-price small{font-size:13px;color:var(--text-2);margin-left:4px;}
+
+/* ══ 間奏：千二百年の祈り ══ */
+.interlude{position:relative;overflow:hidden;isolation:isolate;min-height:78vh;display:flex;align-items:flex-end;padding:0 var(--gut) 64px;}
+.il-img{position:absolute;inset:-12% 0;z-index:-2;}
+.il-img img{width:100%;height:100%;object-fit:cover;object-position:center 60%;will-change:transform;}
+.interlude::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(21,12,21,.15),rgba(21,12,21,.05) 35%,rgba(21,12,21,.78));}
+@media(min-width:900px){.interlude::before{background:linear-gradient(90deg,rgba(21,12,21,0) 45%,rgba(21,12,21,.62)),linear-gradient(rgba(21,12,21,.1),rgba(21,12,21,.35));}.il-text{justify-content:flex-start;}}
+.il-text{max-width:var(--max);width:100%;margin:0 auto;color:#f3ece1;}
+.il-v{font-size:clamp(28px,7.4vw,40px);font-weight:500;letter-spacing:.18em;line-height:1.7;text-shadow:0 2px 24px rgba(0,0,0,.5);}
+.il-s{margin-top:18px;font-size:15px;letter-spacing:.1em;line-height:2;color:rgba(243,236,225,.9);text-shadow:0 1px 12px rgba(0,0,0,.6);}
+@media(min-width:900px){
+  .interlude{min-height:92vh;align-items:center;padding:0 56px;}
+  .il-text{display:flex;flex-direction:row-reverse;align-items:flex-start;gap:56px;}
+  .il-v{writing-mode:vertical-rl;font-size:clamp(40px,3.6vw,56px);letter-spacing:.32em;line-height:1.9;}
+  .il-s{writing-mode:vertical-rl;margin:0;padding-top:4.2em;font-size:16px;letter-spacing:.24em;line-height:2.4;}
+}
+
+/* ══ 三つの魅力：大きな漢数字を、金の輪郭で写真に重ねる ══ */
+@media(min-width:900px){
+  .ft{position:relative;}
+  .ft-n{position:absolute;top:-0.62em;font-size:clamp(150px,13vw,210px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(145,124,80,.7);margin:0;z-index:2;pointer-events:none;font-weight:400;}
+  .ft:nth-child(1) .ft-n{left:calc(66.6% - .32em);}
+  .ft:nth-child(2) .ft-n{left:calc(33.3% - .22em);}
+  .ft:nth-child(3) .ft-n{left:calc(75% - .5em);}
+  .ft-text h3{margin-top:0;}
+}
+@media(max-width:899px){.ft-n{font-size:64px;color:transparent;-webkit-text-stroke:1px var(--gold);margin-bottom:8px;}}
+
+/* ══ 七福神の帯（お参り・ご供養） ══ */
+.fuku-band{display:grid;grid-template-columns:132px 1fr;gap:18px;align-items:center;margin-top:48px;padding:14px;border:1px solid rgba(201,177,131,.45);background:rgba(243,236,225,.04);transition:background .4s,border-color .4s;}
+.fuku-band:hover{background:rgba(243,236,225,.08);border-color:var(--gold-l);}
+.fb-imgs{display:grid;grid-template-columns:1fr 1fr;gap:4px;}
+.fb-imgs img{width:100%;aspect-ratio:3/4;object-fit:cover;}
+.fb-text{display:flex;flex-direction:column;gap:4px;position:relative;padding-right:28px;}
+.fb-text small{font-size:13px;letter-spacing:.2em;color:var(--gold-l);}
+.fb-text b{font-weight:500;font-size:17px;letter-spacing:.1em;color:var(--washi);line-height:1.6;}
+.fb-text em{font-style:normal;font-size:14px;line-height:1.8;color:rgba(243,236,225,.78);}
+.fb-arw{position:absolute;right:4px;top:50%;width:18px;height:1px;background:var(--gold-l);}
+.fb-arw::after{content:'';position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid var(--gold-l);border-right:1px solid var(--gold-l);transform:rotate(45deg);}
+@media(min-width:900px){.fuku-band{grid-template-columns:220px 1fr;gap:32px;padding:18px 28px 18px 18px;margin-top:64px;}.fb-text b{font-size:20px;}.fb-text em{font-size:15px;}}
 </style>
 </head>
 <body class="at-top">
@@ -774,6 +814,15 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
   <div class="more"><a href="about.html" class="btn" aria-label="本覚院について詳しく見る">詳しく見る<span class="arw"></span></a></div>
 </section>
 
+<!-- 間奏：千二百年の祈り -->
+<section class="interlude on-dark" aria-label="千二百年の祈り">
+  <div class="il-img"><img src="images/photos/shojingu.webp" srcset="images/photos/shojingu-960.webp 960w, images/photos/shojingu.webp 1147w" sizes="100vw" alt="奥の院の御廟橋を、お大師さまへのお食事を担いでわたる僧侶たち" width="1147" height="860" loading="lazy" data-px></div>
+  <div class="il-text">
+    <p class="il-v rv">千二百年、<br>祈りの絶えない山で。</p>
+    <p class="il-s rv rv-d1">奥の院では、いまも毎日二度、<br class="sp-br">お大師さまへお食事が運ばれています。<br>本覚院は、その高野山の真ん中にあります。</p>
+  </div>
+</section>
+
 <!-- 二 本覚院ならではの3つの魅力 -->
 <section class="sec features" id="features">
   <div class="sec-in sec-grid">
@@ -782,7 +831,7 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
       <article class="ft">
         <figure class="ft-fig rv-img"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂天井に残る250年前の極彩色天井絵" width="1600" height="1067" loading="lazy"></figure>
         <div class="ft-text rv">
-          <span class="ft-n" aria-hidden="true">一</span>
+          <span class="ft-n" aria-hidden="true">壱</span>
           <h3>250年を超える<br class="pc">江戸の芸術</h3>
           <p>本堂天井には250年前の絵師による極彩色の天井絵が残り、大広間には狩野派の貴重な障壁画をご覧いただけます。</p>
         </div>
@@ -790,7 +839,7 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
       <article class="ft">
         <figure class="ft-fig rv-img"><img src="images/rooms/kutenbo.webp" alt="苔と石組の庭。重森三玲の庭を間近に望む" width="1000" height="750" loading="lazy" style="object-position:center 60%"></figure>
         <div class="ft-text rv">
-          <span class="ft-n" aria-hidden="true">二</span>
+          <span class="ft-n" aria-hidden="true">弐</span>
           <h3>重森三玲設計の<br class="pc">5つの庭園</h3>
           <p>昭和の名作庭家・重森三玲による石庭を含む5つの庭園。季節ごとに表情を変える苔と岩の世界をお楽しみください。</p>
         </div>
@@ -798,7 +847,7 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
       <article class="ft">
         <figure class="ft-fig rv-img"><img src="images/insta-nenki.webp" srcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="花と灯明に囲まれた本堂で、お経をおとなえする僧侶" width="1280" height="1273" loading="lazy" style="object-position:center 78%"></figure>
         <div class="ft-text rv">
-          <span class="ft-n" aria-hidden="true">三</span>
+          <span class="ft-n" aria-hidden="true">参</span>
           <h3>祈りの声に<br class="pc">包まれる朝</h3>
           <p>毎朝、本堂で副住職をはじめ僧侶がお勤めをいたします。どなたでもご参加いただけ、高野山に受け継がれる読経の響きに包まれるひとときをお過ごしいただけます。</p>
         </div>
@@ -834,6 +883,10 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
           </div>
         </article>
       </div>
+      <a class="fuku-band rv" href="kuyo.html#fuku">
+        <span class="fb-imgs"><img src="images/photos/benzaiten-960.webp" alt="" width="960" height="720" loading="lazy"><img src="images/photos/daikokuten-960.webp" alt="" width="960" height="720" loading="lazy"></span>
+        <span class="fb-text"><small>高野七福神めぐり</small><b>弁財天・大黒天をお祀りしています</b><em>鎌倉時代の八臂弁財天と、西生院に伝わる大黒さま。七福神めぐりの御朱印もいただけます。</em><i class="fb-arw" aria-hidden="true"></i></span>
+      </a>
       <div class="phone rv">
         <p class="phone-label">ご供養のご相談はお電話で</p>
         <a href="tel:0736562711" class="phone-num">0736-56-2711</a>
