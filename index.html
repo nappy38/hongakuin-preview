@@ -757,6 +757,50 @@ main{position:relative;}
   .hero-nav{padding-top:14px;}
   .hero-nav a{font-size:14px;letter-spacing:.1em;padding:0 9px;}
 }
+
+/* 院内のご案内（4枚） */
+.gl4{display:grid;grid-template-columns:1fr 1fr;gap:24px 10px;}
+.gl4 figure{grid-column:auto !important;margin-top:0 !important;}
+.gl4 img{width:100%;aspect-ratio:4/5;height:auto !important;object-fit:cover;}
+@media(min-width:900px){.gl4{grid-template-columns:repeat(4,1fr);gap:24px;}.gl4 figure:nth-child(even){margin-top:56px !important;}}
+/* 住職より：スマホは写真を小さく横並び */
+@media(max-width:899px){
+  .priest .body{display:grid;grid-template-columns:38% 1fr;gap:18px;align-items:start;}
+  .priest-fig{margin:0;}
+  .priest .priest-msg p:first-child{font-size:16px;}
+  .priest .more{grid-column:1 / -1;}
+}
+
+/* トップを短く：余白と写真の高さを詰める */
+.sec{padding-top:72px;padding-bottom:72px;}
+.ft-list{gap:44px;}
+.ft-fig img{aspect-ratio:16/9;}
+.kuyo-card img{aspect-ratio:16/9 !important;}
+@media(max-width:899px){
+  .kuyo-grid .kuyo-card:nth-child(2) figure{display:none;}
+  .sns{padding-top:56px;padding-bottom:48px;}
+}
+@media(min-width:900px){
+  .sec{padding-top:120px;padding-bottom:120px;}
+  .ft-list{gap:80px;}
+  .ft-fig img{aspect-ratio:3/2;}
+  .ft:nth-child(2) .ft-fig img{aspect-ratio:3/2;}
+  .sns{padding-top:88px;padding-bottom:72px;}
+}
+
+@media(max-width:899px){
+  /* 三つの魅力：写真と文字を横並びに */
+  .ft{display:grid;grid-template-columns:40% 1fr;gap:16px;align-items:start;}
+  .ft-fig{margin:0;}
+  .ft-fig img{aspect-ratio:1/1;}
+  .ft-text{padding-top:0;}
+  .ft-n{font-size:40px !important;margin-bottom:4px !important;}
+  .ft h3{font-size:17px;margin-bottom:6px;}
+  .ft p{font-size:14px;line-height:1.85;}
+  .ft-list{gap:28px;}
+  .gl4 img{aspect-ratio:1/1;}
+  .ig-grid{grid-template-columns:repeat(4,1fr);gap:4px;}
+}
 </style>
 </head>
 <body class="at-top">
@@ -856,10 +900,10 @@ main{position:relative;}
     <li><a href="#about"><span>本覚院について</span><b>一</b></a></li>
     <li><a href="#features"><span>三つの魅力</span><b>二</b></a></li>
     <li><a href="#kuyo"><span>お参り・ご供養</span><b>三</b></a></li>
-    <li><a href="#priest"><span>住職より</span><b>四</b></a></li>
-    <li><a href="#news"><span>新着情報</span><b>五</b></a></li>
-    <li><a href="#stay"><span>宿坊</span><b>六</b></a></li>
-    <li><a href="#gallery"><span>院内のご案内</span><b>七</b></a></li>
+    <li><a href="#stay"><span>宿坊</span><b>四</b></a></li>
+    <li><a href="#priest"><span>住職より</span><b>五</b></a></li>
+    <li><a href="#gallery"><span>院内のご案内</span><b>六</b></a></li>
+    <li><a href="#news"><span>新着情報</span><b>七</b></a></li>
     <li><a href="#access"><span>アクセス</span><b>八</b></a></li>
     <li class="bar" aria-hidden="true"></li>
   </ol>
@@ -883,7 +927,7 @@ main{position:relative;}
       </figure>
     </div>
   </div>
-  <div class="more"><a href="about.html" class="btn" aria-label="本覚院について詳しく見る">詳しく見る<span class="arw"></span></a></div>
+  <div class="more"><a href="shukubo.html#mido" class="btn" aria-label="院内の見どころをもっと見る">院内の見どころをもっと見る<span class="arw"></span></a></div>
 </section>
 
 <!-- 間奏：千二百年の祈り -->
@@ -969,18 +1013,54 @@ main{position:relative;}
   </div>
 </section>
 
+<!-- 六 宿坊 -->
+<section class="sec stay" id="stay">
+  <div class="stay-wrap">
+    <figure class="stay-hero rv-img"><img src="images/photos/kyakushitsu-niwa.webp" srcset="images/photos/kyakushitsu-niwa-960.webp 960w, images/photos/kyakushitsu-niwa.webp 1600w" sizes="(max-width: 899px) 100vw, 80vw" alt="障子を開けると、石灯籠のある庭に面した広縁。床の間に掛軸のある客室の和室" loading="lazy" width="1600" height="1200" data-px><figcaption>庭を望む客室</figcaption></figure>
+    <div class="stay-card">
+      <header class="sh rv"><span class="sh-num" aria-hidden="true">四</span><span class="sh-line"></span><h2 class="sh-title">宿坊</h2></header>
+      <p class="rv">昔ながらの和室から、重森三玲の庭を望む特別室まで。精進料理と朝のお勤めで、高野山の一夜をお過ごしください。</p>
+      <p class="rv stay-price">1泊2食付き　おひとり様 21,000円〜<small>（北翠観・2名1室の場合）</small></p>
+      <div class="stay-btns rv">
+        <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn btn-shu btn-reserve-outline" target="_blank" rel="noopener">宿坊のご予約<span class="arw"></span></a>
+        <a href="shukubo.html" class="btn" aria-label="宿坊について詳しく見る">詳しく見る<span class="arw"></span></a>
+      </div>
+    </div>
+    <div class="stay-thumbs rv">
+      <figure><img src="images/rooms/wakasugi.webp" alt="お風呂・トイレ付きの和室「若杉」" loading="lazy" width="1000" height="750"><figcaption class="cap">和室「若杉」</figcaption></figure>
+      <figure><img src="images/rooms/tenporin.webp" alt="特別室「転法輪」。格天井の和室と、重森三玲の庭を望む窓" loading="lazy" width="1000" height="750"><figcaption class="cap">特別室「転法輪」</figcaption></figure>
+      <figure><img src="images/rooms/hokusuikan.webp" alt="新館「北翠観」の和室" loading="lazy" width="1000" height="750"><figcaption class="cap">新館「北翠観」</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <!-- 四 PRIEST -->
 <section class="sec priest" id="priest">
   <div class="sec-in sec-grid">
-    <header class="sh rv"><span class="sh-num" aria-hidden="true">四</span><span class="sh-line"></span><h2 class="sh-title">住職より<br class="pc">ご挨拶</h2></header>
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">五</span><span class="sh-line"></span><h2 class="sh-title">住職より<br class="pc">ご挨拶</h2></header>
     <div class="body">
       <figure class="priest-fig rv-img"><img src="images/priest-tate.webp" alt="黒の法衣に白の襟、扇を手にした本覚院 住職 稲葉法研" class="priest-img" loading="lazy" width="850" height="1276"></figure>
       <div class="priest-msg rv">
         <p>皆様におかれましては、益々ご健勝のこととお慶び申し上げます。</p>
-        <p>私が仏様、お大師様にお仕えするようになってから早いもので半世紀が過ぎました。いまだに、僧侶として宗団のひとりとして資質は如何に？間違った行いはないか？と自問自答する毎日です。</p>
         <p class="priest-sig">高野山 別格本山 本覚院　住職<br><span class="pi-name"><ruby>稲葉<rt>いなば</rt></ruby>　<ruby>法研<rt>ほうけん</rt></ruby></span></p>
-        <div class="more"><a href="priest.html" class="btn" aria-label="住職・僧侶について詳しく見る">詳しく見る<span class="arw"></span></a></div>
       </div>
+        <div class="more pm-more"><a href="priest.html" class="btn" aria-label="住職・僧侶について詳しく見る">詳しく見る<span class="arw"></span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 七 院内のご案内 -->
+<section class="sec gallery" id="gallery">
+  <div class="sec-in sec-grid">
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">六</span><span class="sh-line"></span><h2 class="sh-title">院内のご案内</h2></header>
+    <div class="body">
+      <div class="gl gl4">
+        <figure><div class="im rv-img"><img src="images/photos/koi-niwa-2.webp" srcset="images/photos/koi-niwa-2-960.webp 960w, images/photos/koi-niwa-2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200"></div><figcaption>池泉庭</figcaption></figure>
+        <figure><div class="im rv-img"><img src="images/photos/benzaiten-960.webp" alt="金色の厨子にお祀りされた八臂弁財天" loading="lazy" width="960" height="720"></div><figcaption>弁財天（高野七福神）</figcaption></figure>
+        <figure><div class="im rv-img"><img src="images/photos/sando-hiru.webp" srcset="images/photos/sando-hiru-960.webp 960w, images/photos/sando-hiru.webp 1500w" sizes="(max-width: 899px) 100vw, 40vw" alt="石灯籠と植え込みに沿って、本堂へと続く石畳の参道" loading="lazy" width="1500" height="1125"></div><figcaption>本堂への道</figcaption></figure>
+        <figure><div class="im rv-img"><img src="images/photos/ohiroma-960.webp" alt="狩野派の襖絵に囲まれた大広間" loading="lazy" width="960" height="640"></div><figcaption>大広間</figcaption></figure>
+      </div>
+      <div class="more"><a href="about.html" class="btn" aria-label="本覚院について詳しく見る">詳しく見る<span class="arw"></span></a></div>
     </div>
   </div>
 </section>
@@ -988,7 +1068,7 @@ main{position:relative;}
 <!-- 五 新着情報（microCMS＋news-archive.json） -->
 <section class="sec news" id="news">
   <div class="sec-in sec-grid">
-    <header class="sh rv"><span class="sh-num" aria-hidden="true">五</span><span class="sh-line"></span><h2 class="sh-title">新着情報</h2></header>
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">七</span><span class="sh-line"></span><h2 class="sh-title">新着情報</h2></header>
     <div class="body">
       <div class="news-cards">
         <div class="news-card">
@@ -1031,47 +1111,6 @@ main{position:relative;}
       </div>
       <div class="news-archive" id="newsArchive"></div>
       <button class="news-more-btn" id="newsMoreBtn" onclick="toggleArchive()">もっと見る ＋</button>
-    </div>
-  </div>
-</section>
-
-<!-- 六 宿坊 -->
-<section class="sec stay" id="stay">
-  <div class="stay-wrap">
-    <figure class="stay-hero rv-img"><img src="images/photos/kyakushitsu-niwa.webp" srcset="images/photos/kyakushitsu-niwa-960.webp 960w, images/photos/kyakushitsu-niwa.webp 1600w" sizes="(max-width: 899px) 100vw, 80vw" alt="障子を開けると、石灯籠のある庭に面した広縁。床の間に掛軸のある客室の和室" loading="lazy" width="1600" height="1200" data-px><figcaption>庭を望む客室</figcaption></figure>
-    <div class="stay-card">
-      <header class="sh rv"><span class="sh-num" aria-hidden="true">六</span><span class="sh-line"></span><h2 class="sh-title">宿坊</h2></header>
-      <p class="rv">昔ながらの和室から、重森三玲の庭を望む特別室まで。精進料理と朝のお勤めで、高野山の一夜をお過ごしください。</p>
-      <p class="rv stay-price">1泊2食付き　おひとり様 21,000円〜<small>（北翠観・2名1室の場合）</small></p>
-      <div class="stay-btns rv">
-        <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn btn-shu btn-reserve-outline" target="_blank" rel="noopener">宿坊のご予約<span class="arw"></span></a>
-        <a href="shukubo.html" class="btn" aria-label="宿坊について詳しく見る">詳しく見る<span class="arw"></span></a>
-      </div>
-    </div>
-    <div class="stay-thumbs rv">
-      <figure><img src="images/rooms/wakasugi.webp" alt="お風呂・トイレ付きの和室「若杉」" loading="lazy" width="1000" height="750"><figcaption class="cap">和室「若杉」</figcaption></figure>
-      <figure><img src="images/rooms/tenporin.webp" alt="特別室「転法輪」。格天井の和室と、重森三玲の庭を望む窓" loading="lazy" width="1000" height="750"><figcaption class="cap">特別室「転法輪」</figcaption></figure>
-      <figure><img src="images/photos/ohiroma.webp" srcset="images/photos/ohiroma-960.webp 960w, images/photos/ohiroma.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="狩野派の襖絵に囲まれた大広間" loading="lazy" width="1600" height="1067"><figcaption class="cap">大広間</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- 七 院内のご案内 -->
-<section class="sec gallery" id="gallery">
-  <div class="sec-in sec-grid">
-    <header class="sh rv"><span class="sh-num" aria-hidden="true">七</span><span class="sh-line"></span><h2 class="sh-title">院内のご案内</h2></header>
-    <div class="body">
-      <div class="gl">
-        <figure class="g1 wide"><div class="im rv-img"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本覚院の極彩色の天井絵と、灯りのともる灯籠" loading="lazy" width="1600" height="1067"></div><figcaption>本堂天井絵</figcaption></figure>
-        <figure class="g2"><div class="im rv-img"><img src="images/photos/fusuma-kanoha.webp" srcset="images/photos/fusuma-kanoha-960.webp 960w, images/photos/fusuma-kanoha.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="狩野派による金地の襖絵（唐人物図）" loading="lazy" width="1600" height="1200"></div><figcaption>狩野派の襖絵</figcaption></figure>
-        <figure class="g3"><div class="im rv-img"><img src="images/photos/teien-mado-3.webp" srcset="images/photos/teien-mado-3-960.webp 960w, images/photos/teien-mado-3.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="1200"></div><figcaption>重森三玲の石庭</figcaption></figure>
-        <figure class="g4"><div class="im rv-img"><img src="images/photos/koi-niwa-2.webp" srcset="images/photos/koi-niwa-2-960.webp 960w, images/photos/koi-niwa-2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200"></div><figcaption>池泉庭</figcaption></figure>
-        <figure class="g5"><div class="im rv-img"><img src="images/photos/benzaiten-960.webp" alt="金色の厨子にお祀りされた八臂弁財天" loading="lazy" width="960" height="720"></div><figcaption>弁財天（高野七福神）</figcaption></figure>
-        <figure class="g6 wide"><div class="im rv-img"><img src="images/fudo-myoo.webp" srcset="images/fudo-myoo-960.webp 960w, images/fudo-myoo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="護摩堂にお祀りする修身不動明王" loading="lazy" width="1600" height="1200"></div><figcaption>護摩堂の修身不動明王</figcaption></figure>
-        <figure class="g7"><div class="im rv-img"><img src="images/photos/sando-hiru.webp" srcset="images/photos/sando-hiru-960.webp 960w, images/photos/sando-hiru.webp 1500w" sizes="(max-width: 899px) 100vw, 40vw" alt="石灯籠と植え込みに沿って、本堂へと続く石畳の参道" loading="lazy" width="1500" height="1125"></div><figcaption>本堂への道</figcaption></figure>
-        <figure class="g8"><div class="im rv-img"><img src="images/photos/odaki-jizo-960.webp" alt="赤い毛糸の帽子と前掛けをつけた、お抱え地蔵さま" loading="lazy" width="960" height="720" style="object-position:40% center"></div><figcaption>だっこ地蔵さん</figcaption></figure>
-      </div>
-      <div class="more"><a href="about.html" class="btn" aria-label="本覚院について詳しく見る">詳しく見る<span class="arw"></span></a></div>
     </div>
   </div>
 </section>
@@ -1237,7 +1276,7 @@ document.querySelector('.news-cards').addEventListener('keydown', function (e) {
   if (h && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); toggleCard(h); }
 });
 
-const NEWS_PER_PAGE = 5;       // PC：1ページ5本＋ページ番号
+const NEWS_PER_PAGE = 3;       // PC：1ページ5本＋ページ番号
 const NEWS_MOBILE_FIRST = 3;   // スマホ：最初は3本
 const NEWS_MOBILE_STEP = 5;    // スマホ：「もっと見る」で5本ずつ
 let newsMobileShown = NEWS_MOBILE_FIRST;
