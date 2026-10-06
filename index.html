@@ -689,6 +689,14 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
 
 footer .f-pv{margin-top:10px;font-size:14px;}
 footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
+
+/* スマホの冒頭は文字を減らす：英字名を隠し、お勤めは一行に */
+@media(max-width:899px){
+  .hero-name-en{display:none;}
+  .otsu{margin-top:28px;}
+  .otsu-k{display:none;}
+  .otsu-m{font-size:15px;letter-spacing:.1em;}
+}
 </style>
 </head>
 <body class="at-top">
@@ -1439,7 +1447,7 @@ function toggleArchive() {
     if (tm >= 390 && tm < 450) { box.classList.add('now'); m.textContent = 'ただいま、朝のお勤めの最中です'; return; }
     box.classList.remove('now');
     var d = (390 - tm + 1440) % 1440, h = Math.floor(d / 60), mi = d % 60;
-    m.textContent = '次のお勤めまで　あと ' + (h ? h + '時間' : '') + mi + '分';
+    m.textContent = (innerWidth < 900 ? '朝のお勤め 6:30〜　あと ' : '次のお勤めまで　あと ') + (h ? h + '時間' : '') + mi + '分';
   }
   tick(); setInterval(tick, 20000);
 })();
