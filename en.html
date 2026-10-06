@@ -823,6 +823,12 @@ html.motion .oe-dot{animation:oeBreath 3.6s ease-in-out infinite;}
 .oe-k b{font-weight:400;text-transform:none;letter-spacing:.04em;color:var(--text-2);font-size:15px;}
 .oe-m{font-family:var(--display-en);font-style:italic;font-size:18px;color:var(--sumi);}
 @media(max-width:899px){.oe-k b{display:none;}.oe-m{font-size:16px;}}
+
+/* 英語の冒頭：中身が減ったので、ブロックを画面の中央に（日本語のスマホ冒頭と同じ置き方） */
+.en-hero{align-items:center !important;padding:72px var(--gut) !important;min-height:calc(100svh - 64px) !important;}
+.en-hero::before{background:radial-gradient(ellipse 80% 55% at 50% 50%,rgba(21,12,21,.42),rgba(21,12,21,.08) 75%),linear-gradient(rgba(21,12,21,.15),rgba(21,12,21,.25)) !important;}
+.en-hero .btn{margin-top:36px !important;}
+@media(max-width:899px){.en-hero h1{font-size:clamp(40px,10.5vw,64px);}.en-hero{min-height:calc(100svh - 64px - 58px) !important;}}
 </style>
 </head>
 <body>
