@@ -809,6 +809,18 @@ main{position:relative;}
 .ig-grid{margin-bottom:24px;}
 .ig-big{padding:10px 28px;min-height:48px;}
 @media(min-width:900px){.sns{padding-top:64px !important;padding-bottom:56px !important;}.ig-grid{max-width:880px;}}
+
+/* 七福神の帯（宿坊の後ろ・和紙色の上） */
+.fuku-wrap{padding:0 var(--gut) 56px;}
+.fuku-in{max-width:var(--max);margin:0 auto;}
+.fuku-wrap .fuku-band{margin-top:0;background:var(--washi-d);border-color:rgba(145,124,80,.5);}
+.fuku-wrap .fuku-band:hover{background:#e6dccb;border-color:var(--gold);}
+.fuku-wrap .fb-text small{color:var(--gold-d);}
+.fuku-wrap .fb-text b{color:var(--sumi);}
+.fuku-wrap .fb-text em{color:var(--text-2);}
+.fuku-wrap .fb-arw,.fuku-wrap .fb-arw::after{background:var(--gold);border-color:var(--gold);}
+.fuku-wrap .fb-arw::after{background:none;}
+@media(min-width:900px){.fuku-wrap{padding:0 56px 96px;}.fuku-in{max-width:880px;}}
 </style>
 </head>
 <body class="at-top">
@@ -1007,10 +1019,6 @@ main{position:relative;}
           </div>
         </article>
       </div>
-      <a class="fuku-band rv" href="kuyo.html#fuku">
-        <span class="fb-imgs"><img src="images/photos/benzaiten-960.webp" alt="" width="960" height="720" loading="lazy"><img src="images/photos/daikokuten-960.webp" alt="" width="960" height="720" loading="lazy"></span>
-        <span class="fb-text"><small>高野七福神めぐり</small><b>弁財天・大黒天をお祀りしています</b><em>鎌倉時代の八臂弁財天と、西生院に伝わる大黒さま。七福神めぐりの御朱印もいただけます。</em><i class="fb-arw" aria-hidden="true"></i></span>
-      </a>
       <div class="phone rv">
         <p class="phone-label">ご供養のご相談はお電話で</p>
         <a href="tel:0736562711" class="phone-num">0736-56-2711</a>
@@ -1041,6 +1049,15 @@ main{position:relative;}
     </div>
   </div>
 </section>
+
+<!-- 高野七福神の帯 -->
+<div class="fuku-wrap">
+  <div class="fuku-in">      <a class="fuku-band rv" href="kuyo.html#fuku">
+        <span class="fb-imgs"><img src="images/photos/benzaiten-960.webp" alt="" width="960" height="720" loading="lazy"><img src="images/photos/daikokuten-960.webp" alt="" width="960" height="720" loading="lazy"></span>
+        <span class="fb-text"><small>高野七福神めぐり</small><b>弁財天・大黒天をお祀りしています</b><em>鎌倉時代の八臂弁財天と、西生院に伝わる大黒さま。七福神めぐりの御朱印もいただけます。</em><i class="fb-arw" aria-hidden="true"></i></span>
+      </a>
+  </div>
+</div>
 
 <!-- 四 PRIEST -->
 <section class="sec priest" id="priest">
