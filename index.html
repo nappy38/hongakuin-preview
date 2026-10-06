@@ -821,6 +821,17 @@ main{position:relative;}
 .fuku-wrap .fb-arw,.fuku-wrap .fb-arw::after{background:var(--gold);border-color:var(--gold);}
 .fuku-wrap .fb-arw::after{background:none;}
 @media(min-width:900px){.fuku-wrap{padding:0 56px 96px;}.fuku-in{max-width:880px;}}
+
+/* PCの間奏：写真（3人が全員入る）を左、文字は右の墨地に分ける */
+@media(min-width:900px){
+  .interlude{display:grid;grid-template-columns:64% 1fr;min-height:0 !important;height:min(86vh,760px);padding:0 !important;background:var(--ink);align-items:stretch;}
+  .interlude::before{display:none;}
+  .il-img{position:relative;inset:auto;height:100%;overflow:hidden;}
+  .il-img img{height:100%;object-position:50% 62%;transform:none !important;}
+  .il-text{display:flex;flex-direction:row-reverse;justify-content:center;align-items:center;gap:40px;padding:48px 32px;max-width:none;}
+  .il-v{text-shadow:none;}
+  .il-s{text-shadow:none;color:rgba(243,236,225,.82);}
+}
 </style>
 </head>
 <body class="at-top">
