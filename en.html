@@ -79,7 +79,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript>
-<link rel="preload" as="image" href="images/photos/teien-mado-4.webp" imagesrcset="images/photos/teien-mado-4-960.webp 960w, images/photos/teien-mado-4.webp 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="images/photos/soryo-fusuma-2.webp" imagesrcset="images/photos/soryo-fusuma-2-960.webp 960w, images/photos/soryo-fusuma-2.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <style>
 /* Koyasan Hongakuin — English v3. Same design language as the Japanese v3 pages (washi, sumi, gold; vermilion only for booking). */
 :root{
@@ -829,6 +829,37 @@ html.motion .oe-dot{animation:oeBreath 3.6s ease-in-out infinite;}
 .en-hero::before{background:radial-gradient(ellipse 80% 55% at 50% 50%,rgba(21,12,21,.42),rgba(21,12,21,.08) 75%),linear-gradient(rgba(21,12,21,.15),rgba(21,12,21,.25)) !important;}
 .en-hero .btn{margin-top:36px !important;}
 @media(max-width:899px){.en-hero h1{font-size:clamp(40px,10.5vw,64px);}.en-hero{min-height:calc(100svh - 64px - 58px) !important;}}
+
+/* 英語の冒頭も日本語と同じスライドに */
+.en-slides{position:absolute;inset:0;z-index:-2;overflow:hidden;}
+.en-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s var(--ease);}
+.en-slide.active{opacity:1;}
+.en-slide img{width:100%;height:100%;object-fit:cover;}
+html.motion .en-slide.active img{animation:kenburnsEn 5.5s linear both;}
+@keyframes kenburnsEn{from{transform:scale(1.02);}to{transform:scale(1.1);}}
+.t-night .en-slide img{filter:saturate(.7) brightness(.82);}
+
+/* ══ English hero, redesigned to match the Japanese top ══ */
+.en-hero{align-items:center !important;}
+.en-hero::before{background:radial-gradient(ellipse 60% 50% at 50% 48%,rgba(0,0,0,.34),rgba(0,0,0,.04) 72%),linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,0) 22%,rgba(0,0,0,0) 62%,rgba(0,0,0,.5)) !important;}
+.en-hero-mark{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.en-crest{width:60px !important;height:60px !important;margin:0 0 26px !important;filter:drop-shadow(0 0 14px rgba(0,0,0,.45));}
+.en-vname{position:relative;writing-mode:vertical-rl;font-family:var(--mincho);color:#fff;text-shadow:0 0 28px rgba(0,0,0,.55);letter-spacing:0 !important;}
+.ev-main{display:block;font-size:58px;letter-spacing:.14em;line-height:1;font-weight:500;}
+.ev-sub{position:absolute;top:0;left:100%;margin-left:14px;font-size:15px;letter-spacing:.2em;line-height:1;padding-top:.4em;white-space:nowrap;}
+.en-name{font-family:var(--display-en) !important;font-weight:500 !important;font-size:20px !important;letter-spacing:.32em !important;text-transform:uppercase;line-height:1.6 !important;margin:28px 0 0 !important;padding-left:.32em;text-shadow:0 0 12px rgba(0,0,0,.6);}
+.en-sub{font-family:var(--display-en);font-style:italic;font-size:17px;letter-spacing:.04em;margin-top:6px;opacity:.92;text-shadow:0 0 10px rgba(0,0,0,.6);}
+.en-meta{position:absolute;left:var(--gut);bottom:22px;font-family:var(--display-en);font-size:15px;letter-spacing:.3em;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.6);}
+.en-scroll{position:absolute;right:var(--gut);bottom:24px;display:flex;flex-direction:column;align-items:center;gap:10px;font-family:var(--display-en);font-size:12px;letter-spacing:.3em;writing-mode:vertical-rl;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.6);}
+.en-scroll::after{content:'';width:1px;height:56px;background:rgba(255,255,255,.9);}
+html.motion .en-hero-mark{animation:riseL 1.4s var(--ease) .2s both;}
+@media(min-width:900px){
+  .ev-main{font-size:clamp(64px,5.2vw,84px);letter-spacing:.2em;}
+  .ev-sub{font-size:16px;margin-left:20px;}
+  .en-name{font-size:22px !important;margin-top:34px !important;}
+  .en-sub{font-size:19px;}
+  .en-meta{left:40px;bottom:32px;} .en-scroll{right:40px;bottom:32px;}
+}
 </style>
 </head>
 <body>
@@ -887,13 +918,21 @@ html.motion .oe-dot{animation:oeBreath 3.6s ease-in-out infinite;}
 <!-- HERO -->
 <section class="en-hero on-dark" id="top">
   <div class="en-tint" aria-hidden="true"></div>
-  <img class="en-hero-img" src="images/photos/teien-mado-4.webp" srcset="images/photos/teien-mado-4-960.webp 960w, images/photos/teien-mado-4.webp 1600w" sizes="100vw" alt="A moss-and-stone garden by Shigemori Mirei, framed by the temple's wooden window" width="1600" height="1200" fetchpriority="high">
+  <div class="en-slides" aria-hidden="true">
+    <div class="en-slide slide active" data-cap="Room of painted screens"><img src="images/photos/soryo-fusuma-2.webp" srcset="images/photos/soryo-fusuma-2-960.webp 960w, images/photos/soryo-fusuma-2.webp 1600w" sizes="100vw" alt="" fetchpriority="high" width="1600" height="1014" style="object-position:40% center"></div>
+    <div class="en-slide slide" data-cap="The garden from a guest room"><img loading="lazy" src="images/photos/kyakushitsu-toro-2.webp" srcset="images/photos/kyakushitsu-toro-2-960.webp 960w, images/photos/kyakushitsu-toro-2.webp 1600w" sizes="100vw" alt="" width="1600" height="1066" style="object-position:55% center"></div>
+    <div class="en-slide slide" data-cap="A service in the main hall"><img loading="lazy" src="images/insta-nenki.webp" srcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" sizes="100vw" alt="" width="1280" height="1273" style="object-position:62% 70%"></div>
+    <div class="en-slide slide" data-cap="The garden through the window"><img loading="lazy" src="images/photos/teien-mado-slide.webp" srcset="images/photos/teien-mado-slide-960.webp 960w, images/photos/teien-mado-slide.webp 1400w" sizes="100vw" alt="" width="1400" height="1050" ></div>
+    <div class="en-slide slide" data-cap="The temple gate at night"><img loading="lazy" src="images/photos/sanmon-yoru.webp" alt="" width="1600" height="1067"></div>
+  </div>
   <div class="en-hero-mark">
     <img class="en-crest" src="images/mon-white.png" alt="" width="64" height="64">
-    <p class="en-jp" lang="ja">高野山 別格本山 本覚院</p>
-    <h1>Koyasan Hongakuin</h1>
-    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn btn-shu" target="_blank" rel="noopener">Book Your Stay<span class="arw"></span></a>
+    <p class="en-vname" lang="ja" aria-hidden="true"><span class="ev-main">本覚院</span><span class="ev-sub">高野山 別格本山</span></p>
+    <h1 class="en-name">Koyasan Hongakuin</h1>
+    <p class="en-sub">Temple lodging since 1190 · Mount Kōya</p>
   </div>
+  <div class="en-meta" aria-hidden="true"><span id="enCount">I / V</span></div>
+  <div class="en-scroll" aria-hidden="true">scroll</div>
 </section>
 
 <!-- Morning service band (same as the Japanese top) -->
@@ -1479,6 +1518,18 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
     }, { rootMargin: '-40% 0px -55% 0px' });
     items.forEach(function (x) { var el = document.getElementById(x.id); if (el) io.observe(el); });
   }
+})();
+</script>
+<script>
+/* English hero slideshow (same photos as the Japanese top) */
+(function(){
+  var sl=document.querySelectorAll('.en-slide'); if(sl.length<2) return;
+  if(document.documentElement.classList.contains('static')) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var cur=0;
+  addEventListener('load',function(){ sl.forEach(function(x){var i=x.querySelector('img'); if(i) i.loading='eager';}); });
+  var R=['I','II','III','IV','V'], c=document.getElementById('enCount');
+  setInterval(function(){ sl[cur].classList.remove('active'); cur=(cur+1)%sl.length; sl[cur].classList.add('active'); if(c) c.textContent=R[cur]+' / '+R[sl.length-1]; },4000);
 })();
 </script>
 </body>
