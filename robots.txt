@@ -1,0 +1,8 @@
+# 本番（www.hongakuin.jp）用。確認用サイトでは各ページの noindex で検索に出ないようにしている
+User-agent: *
+Allow: /
+Disallow: /*-v1.html
+Disallow: /*-v2.html
+Disallow: /*-v3.html
+
+Sitemap: https://www.hongakuin.jp/sitemap.xml
