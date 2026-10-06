@@ -832,6 +832,13 @@ main{position:relative;}
   .il-v{text-shadow:none;}
   .il-s{text-shadow:none;color:rgba(243,236,225,.82);}
 }
+
+/* お勤めのカウントダウン：冒頭から外し、三つの魅力「祈りの声に包まれる朝」の下へ */
+.ft .otsu{margin:18px 0 0 !important;padding:12px 0 0;text-align:left;color:var(--sumi);text-shadow:none;border-top:1px solid var(--line);opacity:1 !important;animation:none !important;}
+.ft .otsu::before{display:none;}
+.ft .otsu-k{display:block !important;font-size:13px;letter-spacing:.14em;color:var(--gold-d);}
+.ft .otsu-m{font-size:15px;letter-spacing:.08em;color:var(--sumi);}
+.ft .otsu.now .otsu-m{color:var(--gold-d);}
 </style>
 </head>
 <body class="at-top">
@@ -898,7 +905,6 @@ main{position:relative;}
       <h1 class="hero-name"><span class="hero-name-sub">高野山 別格本山</span><span class="hero-name-main">本覚院</span></h1>
       <span class="hero-name-en" lang="en">Koyasan<br>Hongakuin</span>
     </div>
-    <p class="otsu" id="otsu"><span class="otsu-k">朝のお勤め　毎朝6:30〜 本堂にて</span><span class="otsu-m" id="otsuMsg">&nbsp;</span></p>
     <nav class="hero-nav" aria-label="メインメニュー（トップ）">
       <a href="about.html">本覚院について</a>
       <a href="priest.html">住職・僧侶</a>
@@ -997,6 +1003,7 @@ main{position:relative;}
           <span class="ft-n" aria-hidden="true">参</span>
           <h3>祈りの声に<br class="pc">包まれる朝</h3>
           <p>毎朝、本堂で副住職をはじめ僧侶がお勤めをいたします。どなたでもご参加いただけ、高野山に受け継がれる読経の響きに包まれるひとときをお過ごしいただけます。</p>
+          <p class="otsu" id="otsu"><span class="otsu-k">毎朝6:30〜 本堂にて</span><span class="otsu-m" id="otsuMsg">&nbsp;</span></p>
         </div>
       </article>
     </div>
@@ -1583,7 +1590,7 @@ function toggleArchive() {
     if (tm >= 390 && tm < 450) { box.classList.add('now'); m.textContent = 'ただいま、朝のお勤めの最中です'; return; }
     box.classList.remove('now');
     var d = (390 - tm + 1440) % 1440, h = Math.floor(d / 60), mi = d % 60;
-    m.textContent = (innerWidth < 900 ? '朝のお勤め 6:30〜　あと ' : '次のお勤めまで　あと ') + (h ? h + '時間' : '') + mi + '分';
+    m.textContent = '次のお勤めまで　あと ' + (h ? h + '時間' : '') + mi + '分';
   }
   tick(); setInterval(tick, 20000);
 })();
