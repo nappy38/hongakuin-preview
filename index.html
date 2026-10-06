@@ -867,6 +867,19 @@ html.motion .otsu-dot{animation:otsuBreath 3.6s ease-in-out infinite;}
 }
 
 .nw{white-space:nowrap;}
+
+/* スマホ：住職よりの文字がはみ出さないように */
+.sp-only-br{display:none;}
+@media(max-width:899px){
+  .sp-only-br{display:inline;}
+  .priest .body{grid-template-columns:38% minmax(0,1fr) !important;}
+  .priest .body>*{min-width:0;max-width:100%;}
+  .priest .pm-more .btn{width:100%;}
+  .priest-msg{min-width:0;overflow-wrap:anywhere;}
+  .priest .priest-msg p:first-child{font-size:15px;letter-spacing:.04em;line-height:1.95;word-break:normal;}
+  .priest-sig{margin-top:16px;padding-top:14px;font-size:13px;letter-spacing:.08em;}
+  .pi-name{font-size:21px;letter-spacing:.12em;}
+}
 </style>
 </head>
 <body class="at-top">
@@ -1020,7 +1033,7 @@ html.motion .otsu-dot{animation:otsuBreath 3.6s ease-in-out infinite;}
         <figure class="ft-fig rv-img"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂天井に残る250年前の極彩色天井絵" width="1600" height="1067" loading="lazy"></figure>
         <div class="ft-text rv">
           <span class="ft-n" aria-hidden="true">壱</span>
-          <h3>250年を超える<br class="pc">江戸の芸術</h3>
+          <h3>250年を超える<br>江戸の芸術</h3>
           <p>本堂天井には250年前の絵師による極彩色の天井絵が残り、狩野派の絵師による貴重な襖絵もご覧いただけます。</p>
         </div>
       </article>
@@ -1033,7 +1046,7 @@ html.motion .otsu-dot{animation:otsuBreath 3.6s ease-in-out infinite;}
         </div>
       </article>
       <article class="ft">
-        <figure class="ft-fig rv-img"><img src="images/photos/gongyo-hondo.webp" srcset="images/photos/gongyo-hondo-960.webp 960w, images/photos/gongyo-hondo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂でお経を唱える僧侶たち（朝のお勤め）" width="1600" height="1067" loading="lazy"></figure>
+        <figure class="ft-fig rv-img"><img src="images/photos/ekou-naijin.webp" srcset="images/photos/ekou-naijin-960.webp 960w, images/photos/ekou-naijin.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明のともる本堂の内陣で、お経をおとなえする僧侶" width="1280" height="1400" loading="lazy" style="object-position:center 45%"></figure>
         <div class="ft-text rv">
           <span class="ft-n" aria-hidden="true">参</span>
           <h3>祈りの声に<br class="pc">包まれる朝</h3>
@@ -1057,7 +1070,7 @@ html.motion .otsu-dot{animation:otsuBreath 3.6s ease-in-out infinite;}
       </dl>
       <div class="kuyo-grid">
         <article class="kuyo-card">
-          <figure class="rv-img"><img src="images/photos/ekou-naijin.webp" srcset="images/photos/ekou-naijin-960.webp 960w, images/photos/ekou-naijin.webp 1280w" sizes="(max-width: 899px) 100vw, 45vw" alt="灯明のともる内陣で、ご廻向をおつとめする僧侶" loading="lazy" width="1280" height="1400" style="object-position:center 45%"></figure>
+          <figure class="rv-img"><img src="images/photos/hondo-kigan.webp" srcset="images/photos/hondo-kigan-960.webp 960w, images/photos/hondo-kigan.webp 1600w" sizes="(max-width: 899px) 100vw, 45vw" alt="ろうそくの灯る本堂で、ご廻向をおつとめする僧侶" loading="lazy" width="1600" height="1200"></figure>
           <div class="rv">
             <h3>ご廻向</h3>
             <p>金剛峯寺で行われる法要と同じく、前讃から各種のお経、後讃までをおつとめし、最後にご法楽として般若心経とご真言を参列の皆さまとご一緒にお唱えします。所要はおよそ1時間です。</p>
@@ -1118,8 +1131,8 @@ html.motion .otsu-dot{animation:otsuBreath 3.6s ease-in-out infinite;}
     <div class="body">
       <figure class="priest-fig rv-img"><img src="images/priest-tate.webp" alt="黒の法衣に白の襟、扇を手にした本覚院 住職 稲葉法研" class="priest-img" loading="lazy" width="850" height="1276"></figure>
       <div class="priest-msg rv">
-        <p>皆様におかれましては、益々ご健勝のこととお慶び申し上げます。</p>
-        <p class="priest-sig">高野山 別格本山 本覚院　住職<br><span class="pi-name"><ruby>稲葉<rt>いなば</rt></ruby>　<ruby>法研<rt>ほうけん</rt></ruby></span></p>
+        <p>皆様におかれましては、<br>益々ご健勝のことと<br>お慶び申し上げます。</p>
+        <p class="priest-sig">高野山 別格本山<br class="sp-only-br">本覚院　住職<br><span class="pi-name"><ruby>稲葉<rt>いなば</rt></ruby>　<ruby>法研<rt>ほうけん</rt></ruby></span></p>
       </div>
         <div class="more pm-more"><a href="priest.html" class="btn" aria-label="住職・僧侶について詳しく見る">詳しく見る<span class="arw"></span></a></div>
     </div>
