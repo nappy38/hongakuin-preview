@@ -720,15 +720,6 @@ main{position:relative;}
   .kin-ito i::after{content:'';position:sticky;top:50vh;display:block;width:7px;height:7px;margin-left:-3px;border:1px solid var(--gold);background:var(--washi);transform:rotate(45deg);}
   html:not(.motion) .kin-ito i{transform:none;}
 }
-/* ══ 冒頭のスライド：墨がにじむように現れる ══ */
-html.motion .slide.active{animation:inkSlide 2s cubic-bezier(.45,0,.2,1) both;}
-@keyframes inkSlide{
-  from{clip-path:circle(0% at 50% 58%);filter:blur(10px) brightness(.8);}
-  60%{filter:blur(2px) brightness(.95);}
-  to{clip-path:circle(120% at 50% 58%);filter:blur(0) brightness(1);}
-}
-.slide.prev{opacity:1;z-index:0;}
-.slide.active{z-index:1;}
 /* ══ 新着情報：最新の1本を大きく ══ */
 @media(min-width:900px){
   .news-cards .news-card:first-child:not(.open) .news-card-header{grid-template-columns:1fr 360px 48px;padding:36px 0 40px;}
@@ -1170,8 +1161,7 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 function runProg() { progEl.classList.remove('run'); void progEl.offsetWidth; if (!heroPaused) progEl.classList.add('run'); }
 function goSlide(n) {
   if (!slides.length) return;
-  slides.forEach(function (x) { x.classList.remove('prev'); });
-  slides[cur].classList.remove('active'); slides[cur].classList.add('prev');
+  slides[cur].classList.remove('active');
   cur = (n + slides.length) % slides.length;
   slides[cur].classList.add('active');
   capEl.textContent = slides[cur].dataset.cap || '';
