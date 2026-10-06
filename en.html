@@ -811,6 +811,18 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
 
 .moment.nofig{display:block !important;max-width:40em;}
 @media(min-width:900px){.moment.nofig{margin-left:auto;margin-right:auto;text-align:center;}}
+
+/* 英語の冒頭を日本語に合わせて簡潔に：お勤めは冒頭の下の細い帯へ */
+.en-hero .btn{margin-top:28px;}
+.en-hero h1{margin-bottom:0;}
+.otsu-en{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 18px;padding:16px var(--gut);background:var(--washi);background-image:var(--fiber),var(--paper);border-bottom:1px solid var(--line);text-align:center;}
+.oe-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none;}
+html.motion .oe-dot{animation:oeBreath 3.6s ease-in-out infinite;}
+@keyframes oeBreath{0%,100%{opacity:.35;transform:scale(.8);}50%{opacity:1;transform:scale(1.15);}}
+.oe-k{display:inline-flex;align-items:baseline;gap:10px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d);}
+.oe-k b{font-weight:400;text-transform:none;letter-spacing:.04em;color:var(--text-2);font-size:15px;}
+.oe-m{font-family:var(--display-en);font-style:italic;font-size:18px;color:var(--sumi);}
+@media(max-width:899px){.oe-k b{display:none;}.oe-m{font-size:16px;}}
 </style>
 </head>
 <body>
@@ -874,11 +886,16 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
     <img class="en-crest" src="images/mon-white.png" alt="" width="64" height="64">
     <p class="en-jp" lang="ja">高野山 別格本山 本覚院</p>
     <h1>Koyasan Hongakuin</h1>
-    <p class="en-tag">A night inside a temple founded in 1190,<br class="pc"> on the sacred mountain of Kōyasan.</p>
-    <p class="kt" id="kt"><span class="kt-time" id="ktTime">&nbsp;</span><span class="kt-on">on Mount Kōya · Morning service daily at 6:30</span><span class="kt-msg" id="ktMsg">&nbsp;</span></p>
     <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn btn-shu" target="_blank" rel="noopener">Book Your Stay<span class="arw"></span></a>
   </div>
 </section>
+
+<!-- Morning service band (same as the Japanese top) -->
+<div class="otsu-en" role="note" aria-label="Morning service">
+  <span class="oe-dot" aria-hidden="true"></span>
+  <span class="oe-k">Morning service<b>daily at 6:30 am · main hall</b></span>
+  <span class="oe-m"><span id="ktTime" hidden>&nbsp;</span><span id="ktMsg">&nbsp;</span></span>
+</div>
 
 <!-- YOUR STAY -->
 <section class="intro" aria-label="Your stay">
