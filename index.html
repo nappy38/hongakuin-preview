@@ -650,7 +650,9 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
 /* ══ 間奏：千二百年の祈り ══ */
 .interlude{position:relative;overflow:hidden;isolation:isolate;min-height:78vh;display:flex;align-items:flex-end;padding:0 var(--gut) 64px;}
 .il-img{position:absolute;inset:-12% 0;z-index:-2;}
+.il-img picture{display:block;width:100%;height:100%;}
 .il-img img{width:100%;height:100%;object-fit:cover;object-position:center 60%;will-change:transform;}
+@media(max-width:899px){.il-img img{object-position:center 70%;}}
 .interlude::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(21,12,21,.15),rgba(21,12,21,.05) 35%,rgba(21,12,21,.78));}
 @media(min-width:900px){.interlude::before{background:linear-gradient(90deg,rgba(21,12,21,0) 45%,rgba(21,12,21,.62)),linear-gradient(rgba(21,12,21,.1),rgba(21,12,21,.35));}.il-text{justify-content:flex-start;}}
 .il-text{max-width:var(--max);width:100%;margin:0 auto;color:#f3ece1;}
@@ -696,6 +698,17 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
   .otsu{margin-top:28px;}
   .otsu-k{display:none;}
   .otsu-m{font-size:15px;letter-spacing:.1em;}
+}
+
+/* スマホの間奏：写真（3人が入る縦長）を上に、文字は下の墨地に */
+@media(max-width:899px){
+  .interlude{display:block;min-height:0;padding:0;background:var(--ink);}
+  .interlude::before{display:none;}
+  .il-img{position:relative;inset:auto;}
+  .il-img img{height:auto;aspect-ratio:1014/1288;transform:none !important;}
+  .il-text{padding:32px var(--gut) 56px;}
+  .il-v{font-size:26px;letter-spacing:.14em;text-shadow:none;}
+  .il-s{text-shadow:none;}
 }
 </style>
 </head>
@@ -827,7 +840,7 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
 
 <!-- 間奏：千二百年の祈り -->
 <section class="interlude on-dark" aria-label="千二百年の祈り">
-  <div class="il-img"><img src="images/photos/shojingu.webp" srcset="images/photos/shojingu-960.webp 960w, images/photos/shojingu.webp 1147w" sizes="100vw" alt="奥の院の御廟橋を、お大師さまへのお食事を担いでわたる僧侶たち" width="1147" height="860" loading="lazy" data-px></div>
+  <div class="il-img"><picture><source media="(max-width:899px)" srcset="images/photos/shojingu-tate.webp" width="1014" height="1288"><img src="images/photos/shojingu.webp" srcset="images/photos/shojingu-960.webp 960w, images/photos/shojingu.webp 1147w" sizes="100vw" alt="奥の院の御廟橋を、お大師さまへのお食事を担いでわたる僧侶たち" width="1147" height="860" loading="lazy" data-px></picture></div>
   <div class="il-text">
     <p class="il-v rv">千二百年、<br>祈りの絶えない山で。</p>
     <p class="il-s rv rv-d1">奥の院では、いまも毎日二度、<br class="sp-br">お大師さまへお食事が運ばれています。<br>本覚院は、その高野山の真ん中にあります。</p>
