@@ -839,6 +839,32 @@ main{position:relative;}
 .ft .otsu-k{display:block !important;font-size:13px;letter-spacing:.14em;color:var(--gold-d);}
 .ft .otsu-m{font-size:15px;letter-spacing:.08em;color:var(--sumi);}
 .ft .otsu.now .otsu-m{color:var(--gold-d);}
+
+/* ══ 朝のお勤め：冒頭の下の細い帯 ══ */
+.otsu{display:flex !important;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 18px;margin:0 !important;padding:16px var(--gut) !important;
+  background:var(--washi);background-image:var(--fiber),var(--paper);color:var(--sumi);text-shadow:none !important;text-align:center;border-bottom:1px solid var(--line);opacity:1 !important;animation:none !important;}
+.otsu::before{display:none !important;}
+.otsu-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex:none;}
+html.motion .otsu-dot{animation:otsuBreath 3.6s ease-in-out infinite;}
+@keyframes otsuBreath{0%,100%{opacity:.35;transform:scale(.8);}50%{opacity:1;transform:scale(1.15);}}
+.otsu-k{display:inline-flex !important;align-items:baseline;gap:12px;font-size:13px !important;letter-spacing:.2em;color:var(--gold-d) !important;}
+.otsu-k b{font-weight:400;color:var(--text-2);letter-spacing:.12em;}
+.otsu-m{display:inline !important;font-size:16px !important;letter-spacing:.12em !important;color:var(--sumi) !important;margin:0 !important;font-variant-numeric:lining-nums;}
+.otsu.now{background:var(--ink);color:var(--washi);border-bottom-color:transparent;}
+.otsu.now .otsu-k b{color:rgba(243,236,225,.75);}
+.otsu.now .otsu-m{color:#f1dfb4 !important;}
+.otsu.now .otsu-dot{background:#f1dfb4;}
+@media(max-width:899px){.otsu{padding:14px var(--gut) !important;}.otsu-k b{display:none;}.otsu-m{font-size:15px !important;}}
+@media(min-width:900px){.otsu{padding:20px 40px !important;gap:6px 28px;}.otsu-m{font-size:17px !important;}}
+
+/* スマホの三つの魅力：数字を外し、写真を左右交互に */
+@media(max-width:899px){
+  .ft-n{display:none !important;}
+  .ft:nth-child(even) .ft-fig{order:2;}
+  .ft{padding-bottom:28px;border-bottom:1px solid var(--line);}
+  .ft:last-child{border-bottom:0;padding-bottom:0;}
+  .ft h3{font-size:18px;letter-spacing:.12em;margin-bottom:8px;padding-top:2px;}
+}
 </style>
 </head>
 <body class="at-top">
@@ -925,6 +951,13 @@ main{position:relative;}
   <a href="#main" class="hero-scroll" aria-label="本文へ">scroll</a>
 </section>
 
+<!-- 朝のお勤め（冒頭の下） -->
+<div class="otsu" id="otsu" role="note" aria-label="朝のお勤め">
+  <span class="otsu-dot" aria-hidden="true"></span>
+  <span class="otsu-k">朝のお勤め<b>毎朝 6:30〜　本堂にて</b></span>
+  <span class="otsu-m" id="otsuMsg">&nbsp;</span>
+</div>
+
 <!-- NOTICE -->
 <a class="notice" href="#news">
   <span class="notice-tag">お知らせ</span>
@@ -1003,7 +1036,6 @@ main{position:relative;}
           <span class="ft-n" aria-hidden="true">参</span>
           <h3>祈りの声に<br class="pc">包まれる朝</h3>
           <p>毎朝、本堂で副住職をはじめ僧侶がお勤めをいたします。どなたでもご参加いただけ、高野山に受け継がれる読経の響きに包まれるひとときをお過ごしいただけます。</p>
-          <p class="otsu" id="otsu"><span class="otsu-k">毎朝6:30〜 本堂にて</span><span class="otsu-m" id="otsuMsg">&nbsp;</span></p>
         </div>
       </article>
     </div>
