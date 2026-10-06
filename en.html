@@ -57,7 +57,7 @@
     { "@type": "Question", "name": "Can I stay alone?", "acceptedAnswer": { "@type": "Answer", "text": "Solo travelers are welcome. However, if no other guests are staying on a given night, we may be unable to accept a single guest. Please check availability by phone." } },
     { "@type": "Question", "name": "How do I make a reservation?", "acceptedAnswer": { "@type": "Answer", "text": "Stays can be booked online at any time via the “Book your stay” button on this page. You can also reserve by phone (+81-736-56-2711, 9:00 am - 5:00 pm JST)." } },
     { "@type": "Question", "name": "What are check-in and check-out times?", "acceptedAnswer": { "@type": "Answer", "text": "Check-in is from 3:00 pm, and check-out is by 10:00 am." } },
-    { "@type": "Question", "name": "Is there a curfew?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the gate closes at 10:00 pm. The mountain grows quiet in the evening, so please return by then." } },
+    { "@type": "Question", "name": "Is there a curfew?", "acceptedAnswer": { "@type": "Answer", "text": "No. The front door is closed at 7:30 pm, but guests may come and go freely after that. The mountain is very quiet at night, so please take care when you go out." } },
     { "@type": "Question", "name": "Is the food shōjin ryōri? Can you accommodate food allergies?", "acceptedAnswer": { "@type": "Answer", "text": "We serve shōjin ryōri, including dishes such as kōya-dōfu (freeze-dried tofu) and goma-dōfu (sesame tofu). Please note that we are unable to accommodate individual food allergies." } },
     { "@type": "Question", "name": "Can anyone join the morning prayer service? Is it required?", "acceptedAnswer": { "@type": "Answer", "text": "The morning service begins at 6:30 am in the main hall. All guests are welcome to join. Attendance is optional, not required. It lasts roughly 45 minutes to an hour." } },
     { "@type": "Question", "name": "Can international guests stay? Is English support available?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, guests from overseas are warmly welcome. Our staff can assist you in simple English." } }
@@ -908,7 +908,7 @@ html.motion .oe-dot{animation:oeBreath 3.6s ease-in-out infinite;}
   <ul class="facts rv rv-d1">
     <li><b>Check-in</b><span>15:00</span></li>
     <li><b>Check-out</b><span>10:00</span></li>
-    <li><b>Gate closes</b><span>22:00</span></li>
+    <li><b>Curfew</b><span>None</span></li>
     <li><b>Parking</b><span>Free · 15</span></li>
   </ul>
   <ul class="incl rv">
@@ -1102,9 +1102,9 @@ html.motion .oe-dot{animation:oeBreath 3.6s ease-in-out infinite;}
       <article class="moment">
         <figure class="rv-img"><img src="images/photos/sanmon-yoru.webp" alt="The temple gate at night, lit by stone lanterns" width="1600" height="1067" loading="lazy"></figure>
         <div class="rv">
-          <p class="m-time"><b>10:00 pm</b><small>Gate closes</small></p>
+          <p class="m-time"><b>Night</b></p>
           <h3 class="m-title">Mountain silence</h3>
-          <p class="m-text">Night on Kōyasan is astonishingly quiet. Once the gate closes, only the glow of the lanterns remains.</p>
+          <p class="m-text">Night on Kōyasan is astonishingly quiet, lit only by lanterns — a lovely time for a gentle walk. The front door closes at 7:30 pm, but guests may come and go freely.</p>
         </div>
       </article>
     </div>
@@ -1209,7 +1209,7 @@ html.motion .oe-dot{animation:oeBreath 3.6s ease-in-out infinite;}
         <details><summary>Can I stay alone?</summary><p class="a">Solo travelers are welcome. However, if no other guests are staying on a given night, we may be unable to accept a single guest. Please check availability by phone.</p></details>
         <details><summary>How do I make a reservation?</summary><p class="a">Stays can be booked online at any time via the "Book your stay" button on this page. You can also reserve by phone (+81-736-56-2711, 9:00 am&ndash;5:00 pm JST).</p></details>
         <details><summary>What are check-in and check-out times?</summary><p class="a">Check-in is from 3:00 pm, and check-out is by 10:00 am.</p></details>
-        <details><summary>Is there a curfew?</summary><p class="a">Yes, the gate closes at 10:00 pm. The mountain grows quiet in the evening, so please return by then.</p></details>
+        <details><summary>Is there a curfew?</summary><p class="a">No. The front door is closed at 7:30 pm, but guests may come and go freely after that. The mountain is very quiet at night, so please take care when you go out.</p></details>
         <details><summary>Is the food shōjin ryōri? Can you accommodate food allergies?</summary><p class="a">We serve shōjin ryōri, including dishes such as kōya-dōfu (freeze-dried tofu) and goma-dōfu (sesame tofu). We are unable to accommodate individual food allergies.</p></details>
         <details><summary>Can anyone join the morning prayer service? Is it required?</summary><p class="a">The morning service begins at 6:30 am in the main hall. All guests are welcome to join. Attendance is optional, not required. It lasts roughly 45 minutes to an hour.</p></details>
         <details><summary>Can international guests stay? Is English support available?</summary><p class="a">Yes, guests from overseas are warmly welcome. Our staff can assist you in simple English.</p></details>
@@ -1342,7 +1342,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
   if (!hero || !t) return;
   // [開始(分), 終了(分), 色, 文]  高野山の時刻（日本時間）
   var lines = [
-    [0, 240, 't-night', 'The gate has closed. The mountain is silent.'],
+    [0, 240, 't-night', 'The temple is asleep. The mountain is silent.'],
     [240, 360, 't-dawn', 'Dawn is breaking. At 6:30, the monks will gather in the main hall.'],
     [360, 390, 't-dawn', 'The morning service begins at 6:30 in the main hall.'],
     [390, 450, 't-dawn', 'The morning service is under way. Chanting fills the main hall.'],
@@ -1351,8 +1351,8 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
     [900, 1020, 't-dusk', 'Guests are arriving. Beyond the gate, the town falls away.'],
     [1020, 1140, 't-dusk', 'Evening falls. The baths are open, and dinner awaits.'],
     [1140, 1260, 't-night', 'Night has come. Lanterns glow along the corridors.'],
-    [1260, 1320, 't-night', 'The gate closes at ten. The mountain grows still.'],
-    [1320, 1440, 't-night', 'The gate has closed. The mountain is silent.']
+    [1260, 1320, 't-night', 'Night deepens. The mountain grows still.'],
+    [1320, 1440, 't-night', 'The temple is asleep. The mountain is silent.']
   ];
   var q = location.search.match(/[?&]jst=(\d+)(?::(\d+))?/); // 確認用：?jst=21 や ?jst=6:45 でその時刻の表示を見られる
   var last = '';
