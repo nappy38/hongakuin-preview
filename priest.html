@@ -554,9 +554,30 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
 
 footer .f-pv{margin-top:10px;font-size:14px;}
 footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
+
+/* ── 聲明を聴きながら（ページ上部） ── */
+.kiku-sec{background:var(--ink);padding:40px var(--gut) 48px;border-top:1px solid rgba(201,177,131,.2);}
+.kiku-in{max-width:760px;margin:0 auto;}
+.kiku-lead{font-size:16px;letter-spacing:.14em;color:rgba(243,236,225,.85);margin-bottom:20px;line-height:1.9;}
+.kiku-sec .kiku{margin-top:0;}
+.kiku-tip{grid-column:1/-1;font-size:14px;color:rgba(243,236,225,.72);line-height:1.8;margin-top:-6px;}
+@media(min-width:900px){.kiku-sec{padding:56px 56px 64px;}.kiku-tip{display:none;}}
+.sm-note{margin-top:24px;font-size:15px;color:var(--gold-l);letter-spacing:.06em;}
+/* 再生中の小さなボタン（どこからでも止められる） */
+.kiku-mini{position:fixed;left:12px;bottom:calc(70px + env(safe-area-inset-bottom));z-index:870;display:none;align-items:center;gap:8px;min-height:44px;padding:0 16px 0 12px;border-radius:22px;
+  background:rgba(21,12,21,.86);color:#f1dfb4;font-size:14px;letter-spacing:.14em;border:1px solid rgba(201,177,131,.6);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);}
+.kiku-mini i{width:12px;height:12px;background:linear-gradient(90deg,currentColor 0 35%,transparent 35% 65%,currentColor 65%);}
+body.kiku-on .kiku-mini{display:inline-flex;}
+@media(min-width:900px){.kiku-mini{left:24px;bottom:28px;}}
+/* 浮かぶ文字：画面に固定、左右の余白だけに出す */
+.sutra{position:fixed !important;inset:0 !important;z-index:860 !important;pointer-events:none;overflow:hidden;}
+.sutra-col{color:#a8915f !important;text-shadow:0 0 12px rgba(201,177,131,.25) !important;}
+@media(max-width:899px){.sutra-col{font-size:14px !important;letter-spacing:.3em !important;}}
 </style>
 </head>
 <body>
+<div class="sutra" id="sutra" aria-hidden="true"></div>
+<button class="kiku-mini" id="kikuMini" type="button" aria-label="聲明を一時停止"><i aria-hidden="true"></i>聲明</button>
 <a class="skip" href="#main">本文へ移動</a>
 
 <!-- HEADER -->
@@ -643,6 +664,26 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
   </figure>
 </section>
 
+<!-- 聲明を聴きながら -->
+<section class="kiku-sec on-dark" aria-label="住職の聲明を聴く">
+  <div class="kiku-in">
+    <p class="kiku-lead">住職の聲明を流しながら、<br class="sp-br">ご覧ください。</p>
+      <div class="kiku" id="kiku">
+      <button class="kiku-btn" type="button" aria-label="聲明を聴く" aria-pressed="false">
+        <span class="kiku-ring" aria-hidden="true"></span><span class="kiku-ring r2" aria-hidden="true"></span>
+        <span class="kiku-ico" aria-hidden="true"></span>
+      </button>
+      <div>
+        <p class="kiku-t">聲明を聴く<span class="kiku-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span></p>
+        <p class="kiku-s"><span class="kiku-s1">住職・稲葉法研の声</span><span class="kiku-s1">CD『THE 聲明 奮』より</span></p>
+      </div>
+      <div class="kiku-player" id="kiku-player"><iframe title="THE 聲明～高野山 南山進流～ 奮（Spotify）" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <p class="kiku-hint">再生が始まらないときは、上のプレーヤーの ▶ を押してください。</p>
+      <p class="kiku-tip">スマートフォンでは、プレーヤーの ▶ を押すと流れます。流したまま、下へお進みください。</p>
+    </div>
+  </div>
+</section>
+
 <!-- 一 住職 -->
 <section class="sec profile" id="profile">
   <div class="sec-in sec-grid">
@@ -693,25 +734,13 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
 <!-- 三 聲明の継承 -->
 <section class="sec shomyo on-dark" id="shomyo">
   <span class="smoke" aria-hidden="true"></span>
-  <div class="sutra" id="sutra" aria-hidden="true"></div>
   <div class="sec-in sec-grid">
     <header class="sh rv"><span class="sh-num" aria-hidden="true">三</span><span class="sh-line"></span><h2 class="sh-title"><ruby>聲明<rt>しょうみょう</rt></ruby>の継承</h2></header>
     <div class="body">
       <p class="sm-lead rv">住職・稲葉法研上綱は、元高野山真言宗管長で南山聲明の泰斗・稲葉義猛猊下に若年より師事し、その奥義を継承しました。真言密教の中院流法要の儀式ならびに聲明の継承者であり、高野山専修学院の監事を長年にわたり務め、学院生に中院流の法要の儀礼と聲明を指導してまいりました。声明能化を2期8年つとめ、毎年約80名、計約640名の僧侶を送り出し、南山進流声明の徹底した指導にあたりました。</p>
       <p class="sm-src rv">（聲明CD推薦文・略歴より）</p>
 
-      <div class="kiku rv" id="kiku">
-        <button class="kiku-btn" type="button" aria-label="聲明を聴く" aria-pressed="false">
-          <span class="kiku-ring" aria-hidden="true"></span><span class="kiku-ring r2" aria-hidden="true"></span>
-          <span class="kiku-ico" aria-hidden="true"></span>
-        </button>
-        <div>
-          <p class="kiku-t">聲明を聴く<span class="kiku-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span></p>
-          <p class="kiku-s"><span class="kiku-s1">住職・稲葉法研の声</span><span class="kiku-s1">CD『THE 聲明 奮』より</span></p>
-        </div>
-        <div class="kiku-player" id="kiku-player"><iframe title="THE 聲明～高野山 南山進流～ 奮（Spotify）" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-        <p class="kiku-hint">再生が始まらないときは、上のプレーヤーの ▶ を押してください。</p>
-      </div>
+      <p class="sm-note rv">住職の聲明は、ページ上部の「聲明を聴く」から、ご覧になりながらお聴きいただけます。</p>
 
       <div class="cd">
         <figure class="cd-fig rv"><img src="images/photos/shomyo-cd.webp" alt="住職 稲葉法研による聲明CD『THE 聲明（SHO-MYO）～高野山 南山進流～』" loading="lazy" width="240" height="360"></figure>
@@ -933,7 +962,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
 (function(){
   var box=document.getElementById('kiku'); if(!box) return;
   var btn=box.querySelector('.kiku-btn'), ctl=null, playing=false, pending=false, loaded=false;
-  function set(){ if(window.sutraFlow) sutraFlow(playing); box.classList.toggle('is-playing',playing); btn.setAttribute('aria-pressed',playing?'true':'false'); btn.setAttribute('aria-label',playing?'聲明を一時停止':'聲明を聴く'); if(playing) box.classList.remove('need-tap'); }
+  function set(){ if(window.sutraFlow) sutraFlow(playing); document.body.classList.toggle('kiku-on',playing); box.classList.toggle('is-playing',playing); btn.setAttribute('aria-pressed',playing?'true':'false'); btn.setAttribute('aria-label',playing?'聲明を一時停止':'聲明を聴く'); if(playing) box.classList.remove('need-tap'); }
   function toggle(){ var was=playing; ctl.togglePlay(); setTimeout(function(){ if(!was && !playing) box.classList.add('need-tap'); },2500); }
   window.onSpotifyIframeApiReady=function(API){
     var el=document.getElementById('kiku-player'); el.innerHTML='<div></div>';
@@ -945,23 +974,27 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
   };
   function load(){ if(loaded) return; loaded=true; var s=document.createElement('script'); s.src='https://open.spotify.com/embed/iframe-api/v1'; s.async=true; document.body.appendChild(s); }
   btn.addEventListener('click',function(){ if(ctl) toggle(); else { pending=true; load(); } });
-  if('IntersectionObserver' in window){ var io=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ load(); io.disconnect(); } },{rootMargin:'600px 0px'}); io.observe(box); } else load();
+  var mini=document.getElementById('kikuMini');
+  if(mini) mini.addEventListener('click',function(){ if(!ctl) return; ctl.togglePlay(); setTimeout(function(){ if(playing){ box.scrollIntoView({behavior:'smooth',block:'center'}); } },1500); });
+  load(); // ページ上部にあるので、最初から読み込んでおく（プレーヤーの ▶ で直接再生できるように）
 })();
 </script>
 <script>
 /* 理趣経の冒頭を、読経の速さで一文字ずつ縦に浮かべる（再生中のみ・動きを減らす設定では出さない） */
 (function(){
-  var host=document.getElementById('sutra'), sec=document.getElementById('shomyo'); if(!host||!sec) return;
+  var host=document.getElementById('sutra'); if(!host) return;
   if(!document.documentElement.classList.contains('motion')) return;
   var text='如是我聞 一時薄伽梵 成就殊勝 一切如来 金剛加持 三摩耶智 已得一切如来 灌頂宝冠 為三界主 已証一切如来 一切智智 瑜伽自在 能作一切如来 一切印平等 種種事業 於無尽無余 一切衆生界 一切意願作業 皆悉円満 常恒三世 一切時 身語意業 金剛大毘盧遮那如来'.split(' ');
   var idx=0, timer=null, lastX=-1;
   function spawn(){
-    var r=sec.getBoundingClientRect(); if(r.bottom<0||r.top>innerHeight) return;
+    var vw=innerWidth, side=(vw-1180)/2, x;
     var phrase=text[idx++%text.length], col=document.createElement('span'); col.className='sutra-col';
     for(var i=0;i<phrase.length;i++){ var c=document.createElement('i'); c.textContent=phrase[i]; c.style.animationDelay=(i*.55)+'s'; col.appendChild(c); }
-    var w=sec.clientWidth, x; do{ x=Math.random()*(w-60)+20; }while(lastX>=0&&Math.abs(x-lastX)<w*.18); lastX=x;
-    var top=Math.max(0,-r.top)+innerHeight*(.08+Math.random()*.3);
-    col.style.left=x+'px'; col.style.top=Math.min(top,sec.clientHeight-400)+'px';
+    if(vw<900){ x=vw-22; }                                   // スマホ：右の余白に一列
+    else if(side>90){ var L=Math.random()<.5; x=L? 20+Math.random()*(side-80) : vw-side+20+Math.random()*Math.max(0,side-150); }
+    else { x=(idx%2)? 14 : vw-60; }
+    if(lastX>=0&&Math.abs(x-lastX)<30&&vw>=900) x=(x<vw/2)? x+40 : x-40; lastX=x;
+    col.style.left=x+'px'; col.style.top=(innerHeight*(.1+Math.random()*.35))+'px';
     host.appendChild(col); setTimeout(function(){ col.remove(); },17000);
   }
   window.sutraFlow=function(on){
