@@ -710,6 +710,37 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
   .il-v{font-size:26px;letter-spacing:.14em;text-shadow:none;}
   .il-s{text-shadow:none;}
 }
+
+/* ══ 金の糸：トップ全体を一本の巻物に（PC） ══ */
+main{position:relative;}
+.kin-ito{display:none;}
+@media(min-width:900px){
+  .kin-ito{display:block;position:absolute;left:28px;top:0;bottom:0;width:1px;background:rgba(145,124,80,.18);z-index:5;pointer-events:none;}
+  .kin-ito i{display:block;width:1px;height:100%;background:linear-gradient(var(--gold),var(--gold-l));transform-origin:top;transform:scaleY(var(--ip,0));}
+  .kin-ito i::after{content:'';position:sticky;top:50vh;display:block;width:7px;height:7px;margin-left:-3px;border:1px solid var(--gold);background:var(--washi);transform:rotate(45deg);}
+  html:not(.motion) .kin-ito i{transform:none;}
+}
+/* ══ 冒頭のスライド：墨がにじむように現れる ══ */
+html.motion .slide.active{animation:inkSlide 2s cubic-bezier(.45,0,.2,1) both;}
+@keyframes inkSlide{
+  from{clip-path:circle(0% at 50% 58%);filter:blur(10px) brightness(.8);}
+  60%{filter:blur(2px) brightness(.95);}
+  to{clip-path:circle(120% at 50% 58%);filter:blur(0) brightness(1);}
+}
+.slide.prev{opacity:1;z-index:0;}
+.slide.active{z-index:1;}
+/* ══ 新着情報：最新の1本を大きく ══ */
+@media(min-width:900px){
+  .news-cards .news-card:first-child:not(.open) .news-card-header{grid-template-columns:1fr 360px 48px;padding:36px 0 40px;}
+  .news-cards .news-card:first-child:not(.open) .news-card-img{width:360px;height:240px;}
+  .news-cards .news-card:first-child .news-card-title{font-size:24px;line-height:1.6;}
+  .news-cards .news-card:first-child .news-card-excerpt{font-size:16px;-webkit-line-clamp:3;}
+}
+@media(max-width:899px){
+  .news-cards .news-card:first-child:not(.open) .news-card-header{grid-template-columns:1fr 40px;}
+  .news-cards .news-card:first-child:not(.open) .news-card-img{grid-column:1 / -1;width:100%;height:auto;aspect-ratio:3/2;}
+  .news-cards .news-card:first-child .news-card-title{font-size:19px;}
+}
 </style>
 </head>
 <body class="at-top">
@@ -819,6 +850,7 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
 </nav>
 
 <main id="main">
+<div class="kin-ito" aria-hidden="true"><i id="kinIto"></i></div>
 
 <!-- 一 ABOUT -->
 <section class="sec about" id="about">
@@ -1018,10 +1050,10 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
         <figure class="g2"><div class="im rv-img"><img src="images/photos/fusuma-kanoha.webp" srcset="images/photos/fusuma-kanoha-960.webp 960w, images/photos/fusuma-kanoha.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="狩野派による金地の襖絵（唐人物図）" loading="lazy" width="1600" height="1200"></div><figcaption>狩野派の襖絵</figcaption></figure>
         <figure class="g3"><div class="im rv-img"><img src="images/photos/teien-mado-3.webp" srcset="images/photos/teien-mado-3-960.webp 960w, images/photos/teien-mado-3.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="窓越しに眺める重森三玲設計の石庭" loading="lazy" width="1600" height="1200"></div><figcaption>重森三玲の石庭</figcaption></figure>
         <figure class="g4"><div class="im rv-img"><img src="images/photos/koi-niwa-2.webp" srcset="images/photos/koi-niwa-2-960.webp 960w, images/photos/koi-niwa-2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="錦鯉が泳ぐ池と石橋のある庭" loading="lazy" width="1600" height="1200"></div><figcaption>池泉庭</figcaption></figure>
-        <figure class="g5"><div class="im rv-img"><img src="images/photos/gongyo-hondo.webp" srcset="images/photos/gongyo-hondo-960.webp 960w, images/photos/gongyo-hondo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂でお経を唱える僧侶たち（朝の勤行）" loading="lazy" width="1600" height="1067"></div><figcaption>本堂</figcaption></figure>
+        <figure class="g5"><div class="im rv-img"><img src="images/photos/benzaiten-960.webp" alt="金色の厨子にお祀りされた八臂弁財天" loading="lazy" width="960" height="720"></div><figcaption>弁財天（高野七福神）</figcaption></figure>
         <figure class="g6 wide"><div class="im rv-img"><img src="images/fudo-myoo.webp" srcset="images/fudo-myoo-960.webp 960w, images/fudo-myoo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="護摩堂にお祀りする修身不動明王" loading="lazy" width="1600" height="1200"></div><figcaption>護摩堂の修身不動明王</figcaption></figure>
         <figure class="g7"><div class="im rv-img"><img src="images/photos/mon-tobira-jimon.webp" alt="寺紋が金色に輝く山門の扉と、奥へ続く石畳" loading="lazy" width="1600" height="1200"></div><figcaption>本堂への道</figcaption></figure>
-        <figure class="g8"><div class="im rv-img"><img src="images/gallery-mado.webp" alt="窓越しに見る庭園の眺め" loading="lazy" width="900" height="1200"></div><figcaption>窓越しの庭園</figcaption></figure>
+        <figure class="g8"><div class="im rv-img"><img src="images/photos/odaki-jizo-960.webp" alt="赤い毛糸の帽子と前掛けをつけた、お抱え地蔵さま" loading="lazy" width="960" height="720" style="object-position:40% center"></div><figcaption>だっこ地蔵さん</figcaption></figure>
       </div>
       <div class="more"><a href="about.html" class="btn" aria-label="本覚院について詳しく見る">詳しく見る<span class="arw"></span></a></div>
     </div>
@@ -1138,7 +1170,8 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 function runProg() { progEl.classList.remove('run'); void progEl.offsetWidth; if (!heroPaused) progEl.classList.add('run'); }
 function goSlide(n) {
   if (!slides.length) return;
-  slides[cur].classList.remove('active');
+  slides.forEach(function (x) { x.classList.remove('prev'); });
+  slides[cur].classList.remove('active'); slides[cur].classList.add('prev');
   cur = (n + slides.length) % slides.length;
   slides[cur].classList.add('active');
   capEl.textContent = slides[cur].dataset.cap || '';
@@ -1502,6 +1535,14 @@ function toggleArchive() {
     }, { rootMargin: '-40% 0px -55% 0px' });
     items.forEach(function (x) { var el = document.getElementById(x.id); if (el) io.observe(el); });
   }
+})();
+</script>
+<script>
+/* 金の糸：読み進めた分だけ伸びる */
+(function(){
+  var i=document.getElementById('kinIto'), m=document.getElementById('main'); if(!i||!m) return;
+  function f(){ var r=m.getBoundingClientRect(), p=(innerHeight*.5-r.top)/r.height; i.style.setProperty('--ip',Math.max(0,Math.min(1,p)).toFixed(4)); }
+  addEventListener('scroll',f,{passive:true}); addEventListener('resize',f); f();
 })();
 </script>
 </body>
