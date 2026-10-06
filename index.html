@@ -732,6 +732,31 @@ main{position:relative;}
   .news-cards .news-card:first-child:not(.open) .news-card-img{grid-column:1 / -1;width:100%;height:auto;aspect-ratio:3/2;}
   .news-cards .news-card:first-child .news-card-title{font-size:19px;}
 }
+
+/* PC：高さの低い画面（ノートパソコン）で、左の欄の文字が切れないように詰める */
+@media(min-width:900px){
+  .hero{height:auto;min-height:max(100vh,680px);}
+  .hero-panel{gap:clamp(20px,4vh,80px);padding:clamp(24px,4vh,48px) 24px;}
+}
+@media(min-width:900px) and (max-height:860px){
+  .hero-mon-sumi{width:46px;height:46px;margin-bottom:18px;}
+  .hero-name-main{font-size:clamp(44px,7.4vh,76px);}
+  .hero-nav a{font-size:15px;letter-spacing:.18em;padding:0 11px;}
+  .otsu{margin-top:-16px;}
+}
+
+@media(min-width:900px) and (max-height:720px){
+  .hero{height:100vh !important;min-height:0 !important;}
+  .hero-media,.hero-panel{height:100vh;}
+  .hero-panel{gap:14px;padding:20px 20px;}
+  .hero-mon-sumi{width:38px;height:38px;margin-bottom:12px;}
+  .hero-name-main{font-size:42px;}
+  .hero-name-sub{font-size:13px;}
+  .otsu{margin-top:-10px;padding-top:10px;}
+  .otsu-k{font-size:12px;} .otsu-m{font-size:15px;}
+  .hero-nav{padding-top:14px;}
+  .hero-nav a{font-size:14px;letter-spacing:.1em;padding:0 9px;}
+}
 </style>
 </head>
 <body class="at-top">
