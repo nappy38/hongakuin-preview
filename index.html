@@ -885,48 +885,6 @@ html.motion .otsu-dot{animation:otsuBreath 3.6s ease-in-out infinite;}
 
 @media(max-width:899px){.interlude .il-img{height:auto !important;inset:auto !important;}.interlude .il-img img{width:100% !important;height:auto !important;aspect-ratio:792/1288 !important;object-fit:cover;object-position:50% 50% !important;}}
 
-/* ══ 巻物がひらく：スクロールに合わせて、写真が中央から左右へ開いていく ══ */
-.interlude.mk{display:block !important;height:260vh;min-height:0 !important;padding:0 !important;background:var(--ink) !important;}
-.interlude.mk::before{display:none !important;}
-.mk-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;}
-.interlude.mk .il-img{position:absolute !important;inset:0 !important;height:auto !important;
-  clip-path:inset(0 calc(50% - var(--e,0)*50%) 0 calc(50% - var(--e,0)*50%));}
-.interlude.mk .il-img picture{display:block;width:100%;height:100%;}
-.interlude.mk .il-img img{width:100% !important;height:100% !important;aspect-ratio:auto !important;object-fit:cover;object-position:50% 60% !important;
-  transform:scale(calc(1.18 - var(--e,0)*.18)) !important;}
-.mk-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(rgba(21,12,21,0) 40%,rgba(21,12,21,.78));opacity:var(--t,0);}
-/* 軸（巻物の木の棒） */
-.mk-roll{position:absolute;top:5%;bottom:5%;width:14px;border-radius:7px;z-index:3;pointer-events:none;
-  background:linear-gradient(90deg,#2a1a10,#6b4a2c 35%,#a07a4c 50%,#6b4a2c 65%,#2a1a10);box-shadow:0 0 18px rgba(0,0,0,.6);
-  opacity:calc(1 - var(--t,0)*1.4);}
-.mk-roll::before,.mk-roll::after{content:'';position:absolute;left:-4px;right:-4px;height:18px;border-radius:4px;background:linear-gradient(90deg,#6f5d36,#e3cfa3,#917c50);}
-.mk-roll::before{top:-14px;} .mk-roll::after{bottom:-14px;}
-.mk-roll.l{left:calc(50% - var(--e,0)*50% - 7px);} .mk-roll.r{left:calc(50% + var(--e,0)*50% - 7px);}
-/* 文字：開ききったあとに現れる */
-.interlude.mk .il-text{position:absolute !important;left:0;right:0;bottom:0;z-index:4;padding:0 var(--gut) 80px !important;max-width:none !important;
-  opacity:var(--t,0);transform:translateY(calc((1 - var(--t,0))*24px));display:block !important;text-align:left;}
-.interlude.mk .il-v,.interlude.mk .il-s{opacity:1 !important;transform:none !important;writing-mode:horizontal-tb !important;color:#f3ece1;text-shadow:0 2px 18px rgba(0,0,0,.6) !important;}
-.interlude.mk .il-v{font-size:clamp(26px,7vw,34px) !important;}
-.interlude.mk .il-s{font-size:15px !important;margin-top:14px !important;padding:0 !important;}
-@media(min-width:900px){
-  .interlude.mk .il-text{left:auto;top:0;bottom:0;right:6vw;display:flex !important;flex-direction:row-reverse;align-items:center;gap:40px;padding:0 !important;}
-  .interlude.mk .il-v{writing-mode:vertical-rl !important;font-size:clamp(34px,min(3.4vw,5.6vh),54px) !important;letter-spacing:.28em !important;white-space:nowrap;}
-  .interlude.mk .il-s{writing-mode:vertical-rl !important;font-size:16px !important;letter-spacing:.2em !important;line-height:2.4 !important;white-space:nowrap;margin:0 !important;padding-top:3.4em !important;}
-  .mk-shade{background:linear-gradient(90deg,rgba(21,12,21,0) 40%,rgba(21,12,21,.72));}
-}
-
-@media(min-width:900px){
-  /* PC：開ききったら写真を左へ寄せ、右の墨地に文字 */
-  .interlude.mk .il-img{clip-path:inset(0 calc(50% - var(--e,0)*50% + var(--t,0)*38%) 0 calc(50% - var(--e,0)*50%)) !important;}
-  .interlude.mk .il-img img{transform:translateX(calc(var(--t,0)*-19%)) scale(calc(1.18 - var(--e,0)*.18)) !important;}
-  .mk-shade{display:none;}
-  .interlude.mk .il-text{right:0 !important;width:38%;justify-content:center;}
-  .interlude.mk .il-v,.interlude.mk .il-s{text-shadow:none !important;}
-}
-/* 動きを減らす設定・確認用：最初から開いた状態 */
-html:not(.motion) .interlude.mk{height:auto;}
-html:not(.motion) .mk-stage{position:relative;}
-html:not(.motion) .interlude.mk{--e:1;--t:1;}
 
 /* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
 main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
@@ -1066,15 +1024,11 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 </section>
 
 <!-- 間奏：千二百年の祈り -->
-<section class="interlude mk on-dark" aria-label="千二百年の祈り">
-  <div class="mk-stage">
-  <div class="il-img"><picture><source media="(max-width:899px)" srcset="images/photos/shojingu-tate.webp" width="792" height="1288"><img src="images/photos/shojingu.webp" srcset="images/photos/shojingu-960.webp 960w, images/photos/shojingu.webp 1033w" sizes="100vw" alt="奥の院の御廟橋を、お大師さまへのお食事を担いでわたる僧侶たち" width="1033" height="860" loading="lazy"></picture></div>
-  <div class="mk-shade" aria-hidden="true"></div>
-  <span class="mk-roll l" aria-hidden="true"></span><span class="mk-roll r" aria-hidden="true"></span>
+<section class="interlude on-dark" aria-label="千二百年の祈り">
+  <div class="il-img"><picture><source media="(max-width:899px)" srcset="images/photos/shojingu-tate.webp" width="792" height="1288"><img src="images/photos/shojingu.webp" srcset="images/photos/shojingu-960.webp 960w, images/photos/shojingu.webp 1033w" sizes="100vw" alt="奥の院の御廟橋を、お大師さまへのお食事を担いでわたる僧侶たち" width="1033" height="860" loading="lazy" data-px></picture></div>
   <div class="il-text">
     <p class="il-v rv">千二百年、<br>祈りの絶えない山で。</p>
     <p class="il-s rv rv-d1">奥の院では、いまも毎日二度、<br class="sp-br">お大師さまへお食事が運ばれています。<br>本覚院は、その高野山の真ん中にあります。</p>
-  </div>
   </div>
 </section>
 
@@ -1743,23 +1697,6 @@ function toggleArchive() {
   addEventListener('scroll',f,{passive:true}); addEventListener('resize',f); f();
 })();
 </script>
-<script>
-/* 巻物がひらく：スクロール量を --e（開き具合）と --t（文字）に */
-(function(){
-  var sec=document.querySelector('.interlude.mk'); if(!sec) return;
-  if(!document.documentElement.classList.contains('motion')) return;
-  var ease=function(x){return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;};
-  var on=false;
-  function f(){
-    on=false;
-    var r=sec.getBoundingClientRect(), len=r.height-innerHeight;
-    var p=len>0?Math.min(1,Math.max(0,-r.top/len)):1;
-    var e=ease(Math.min(1,p/0.62)), t=Math.min(1,Math.max(0,(p-0.62)/0.25));
-    sec.style.setProperty('--e',e.toFixed(4)); sec.style.setProperty('--t',t.toFixed(4));
-  }
-  addEventListener('scroll',function(){ if(!on){on=true;requestAnimationFrame(f);} },{passive:true});
-  addEventListener('resize',f); f();
-})();
-</script>
+
 </body>
 </html>
