@@ -624,6 +624,9 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
 @media(max-width:899px){.ph-toc a{font-size:13px !important;letter-spacing:0 !important;white-space:nowrap;}}
 
 @media(max-width:899px){.worry p{font-size:18px;letter-spacing:.06em;}}
+
+/* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
+main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
 </style>
 </head>
 

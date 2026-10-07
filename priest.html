@@ -580,6 +580,9 @@ body.kiku-on .kiku-mini{display:inline-flex;}
 .fuku-lead img{width:100%;height:auto;}
 .fuku-lead figcaption{font-size:13px;letter-spacing:.1em;color:var(--text-2);margin-top:8px;padding:0 var(--gut);}
 @media(min-width:900px){.fuku-lead{margin:0 0 48px;}.fuku-lead figcaption{padding:0;}}
+
+/* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
+main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
 </style>
 </head>
 <body>

@@ -520,6 +520,9 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
 .gate-band img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 60%;}
 .gate-band figcaption{position:absolute;right:16px;bottom:12px;font-size:13px;letter-spacing:.16em;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.7);}
 @media(min-width:900px){.gate-band img{aspect-ratio:auto;height:min(80vh,760px);}}
+
+/* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
+main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
 </style>
 </head>
 

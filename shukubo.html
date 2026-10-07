@@ -748,6 +748,9 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
 .walk,.info-wrap>div,.access{min-width:0;}
 .kippu,.walk-map{max-width:100%;}
 @media(min-width:900px){.walk-list li.has-img{grid-template-columns:110px minmax(0,1fr) !important;}.walk-list li.has-img>div b{font-size:18px;}.walk-list li.has-img>div p{font-size:15px;}}
+
+/* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
+main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
 </style>
 </head>
 

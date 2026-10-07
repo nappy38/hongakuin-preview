@@ -927,6 +927,9 @@ html.motion .otsu-dot{animation:otsuBreath 3.6s ease-in-out infinite;}
 html:not(.motion) .interlude.mk{height:auto;}
 html:not(.motion) .mk-stage{position:relative;}
 html:not(.motion) .interlude.mk{--e:1;--t:1;}
+
+/* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
+main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
 </style>
 </head>
 <body class="at-top">
