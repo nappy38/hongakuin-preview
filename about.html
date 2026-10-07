@@ -513,6 +513,11 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
 
 footer .f-pv{margin-top:10px;font-size:14px;}
 footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
+
+.gate-band{margin:0;position:relative;overflow:hidden;}
+.gate-band img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 60%;}
+.gate-band figcaption{position:absolute;right:16px;bottom:12px;font-size:13px;letter-spacing:.16em;color:#fff;text-shadow:0 0 8px rgba(0,0,0,.7);}
+@media(min-width:900px){.gate-band img{aspect-ratio:auto;height:min(80vh,760px);}}
 </style>
 </head>
 
@@ -639,6 +644,9 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
     </div>
   </div>
 </section>
+
+<!-- 時の流れの前：夕暮れの山門 -->
+<figure class="gate-band rv-img"><img src="images/photos/sanmon-yugure2.webp" srcset="images/photos/sanmon-yugure2-960.webp 960w, images/photos/sanmon-yugure2.webp 1600w" sizes="100vw" alt="夕暮れに提灯のともる本覚院の山門" width="1600" height="1200" loading="lazy"><figcaption>夕暮れの山門</figcaption></figure>
 
 <!-- 二 時の流れ -->
 <section class="sec tone" id="nen">
