@@ -864,6 +864,12 @@ html.motion .en-hero-mark{animation:riseL 1.4s var(--ease) .2s both;}
 /* 冒頭の写真を日本語のトップと同じ大きさに（画面いっぱい） */
 .en-hero{min-height:100svh !important;}
 @media(min-width:900px){.en-hero{min-height:max(100vh,900px) !important;}}
+
+/* 冒頭の写真に重ねていたフィルター（暗さ・時間帯の色）を外す */
+.en-hero::before{display:none !important;}
+.en-tint{display:none !important;}
+.en-slide img{filter:none !important;}
+.en-vname,.en-name,.en-sub{text-shadow:0 0 18px rgba(0,0,0,.65),0 0 4px rgba(0,0,0,.4) !important;}
 </style>
 </head>
 <body>
