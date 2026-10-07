@@ -582,7 +582,7 @@ body.kiku-on .kiku-mini{display:inline-flex;}
 @media(min-width:900px){.fuku-lead{margin:0 0 48px;}.fuku-lead figcaption{padding:0;}}
 
 /* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
-main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
+main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
 
 </style>
 </head>
@@ -979,13 +979,14 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
   window.onSpotifyIframeApiReady=function(API){
     var el=document.getElementById('kiku-player'); el.innerHTML='<div></div>';
     API.createController(el.firstChild,{uri:'spotify:album:1UExgUP38O4lbdstKeMkPf',width:'100%',height:152},function(c){
-      ctl=c;
+      ctl=c; var f=document.querySelector('#kiku-player iframe'); if(f) f.removeAttribute('loading');
       c.addListener('playback_update',function(e){ playing=!e.data.isPaused; set(); });
-      if(pending){ pending=false; toggle(); }
+      c.addListener('ready',function(){ ready=true; if(pending){ pending=false; toggle(); } });
     });
   };
   function load(){ if(loaded) return; loaded=true; var s=document.createElement('script'); s.src='https://open.spotify.com/embed/iframe-api/v1'; s.async=true; document.body.appendChild(s); }
-  btn.addEventListener('click',function(){ if(ctl) toggle(); else { pending=true; load(); } });
+  var ready=false;
+  btn.addEventListener('click',function(){ if(ctl&&ready) toggle(); else { pending=true; load(); } });
   var mini=document.getElementById('kikuMini');
   if(mini) mini.addEventListener('click',function(){ if(!ctl) return; ctl.togglePlay(); setTimeout(function(){ if(playing){ box.scrollIntoView({behavior:'smooth',block:'center'}); } },1500); });
   load(); // ページ上部にあるので、最初から読み込んでおく（プレーヤーの ▶ で直接再生できるように）
