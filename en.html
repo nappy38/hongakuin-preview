@@ -941,13 +941,6 @@ html.motion .en-hero-mark{animation:riseL 1.4s var(--ease) .2s both;}
 /* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
 main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
 
-/* スマホ：金の丸ボタンからは再生できないため、プレーヤーの ▶ を主役に */
-@media (hover:none) and (pointer:coarse){
-  .kiku-btn{display:none !important;}
-  .kiku{grid-template-columns:1fr !important;}
-  .kiku-hint{display:none !important;}
-  .kiku-tip{display:block !important;font-size:15px !important;color:var(--gold-l) !important;margin-top:4px !important;}
-}
 </style>
 </head>
 <body>

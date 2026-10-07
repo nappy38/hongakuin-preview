@@ -584,13 +584,6 @@ body.kiku-on .kiku-mini{display:inline-flex;}
 /* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
 main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
 
-/* スマホ：金の丸ボタンからは再生できないため、プレーヤーの ▶ を主役に */
-@media (hover:none) and (pointer:coarse){
-  .kiku-btn{display:none !important;}
-  .kiku{grid-template-columns:1fr !important;}
-  .kiku-hint{display:none !important;}
-  .kiku-tip{display:block !important;font-size:15px !important;color:var(--gold-l) !important;margin-top:4px !important;}
-}
 </style>
 </head>
 <body>
@@ -697,7 +690,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
       </div>
       <div class="kiku-player" id="kiku-player"><iframe title="THE 聲明～高野山 南山進流～ 奮（Spotify）" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
       <p class="kiku-hint">再生が始まらないときは、上のプレーヤーの ▶ を押してください。</p>
-      <p class="kiku-tip">上のプレーヤーの ▶ を押すと流れます。流したまま、下へお進みください。</p>
+      <p class="kiku-tip">金色のボタンで流れないときは、プレーヤーの ▶ を押してください。流したまま、下へお進みいただけます。</p>
     </div>
   </div>
 </section>
