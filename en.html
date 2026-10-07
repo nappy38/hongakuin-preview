@@ -860,6 +860,10 @@ html.motion .en-hero-mark{animation:riseL 1.4s var(--ease) .2s both;}
   .en-sub{font-size:19px;}
   .en-meta{left:40px;bottom:32px;} .en-scroll{right:40px;bottom:32px;}
 }
+
+/* 冒頭の写真を日本語のトップと同じ大きさに（画面いっぱい） */
+.en-hero{min-height:100svh !important;}
+@media(min-width:900px){.en-hero{min-height:max(100vh,900px) !important;}}
 </style>
 </head>
 <body>
