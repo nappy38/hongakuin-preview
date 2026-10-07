@@ -627,6 +627,28 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
 
 /* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
 main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
+
+/* ══ ご廻向：読み進めるほど、灯明が一つずつ灯る ══ */
+#ekou{isolation:isolate;}
+#ekou::after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(ellipse 70% 50% at 50% 60%,rgba(255,170,80,.16),rgba(255,170,80,0) 70%);opacity:var(--glow,0);transition:opacity 1.6s ease;}
+.flow .hi{position:absolute;left:12px;top:-34px;width:15px;height:30px;pointer-events:none;opacity:0;transform:scale(.4);transform-origin:50% 100%;transition:opacity 1.2s ease,transform 1.2s cubic-bezier(.2,.8,.2,1);}
+.flow .hi::before{content:'';position:absolute;left:50%;bottom:-10px;width:70px;height:70px;margin-left:-35px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,190,110,.45),rgba(255,160,70,.12) 45%,rgba(255,160,70,0) 70%);}
+.flow .hi i{position:absolute;inset:0;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;
+  background:radial-gradient(ellipse at 50% 80%,#fff8e1 0 22%,#ffd27a 40%,#f29a3a 68%,rgba(220,90,30,0) 72%);filter:blur(.4px);}
+.flow li.lit .hi{opacity:1;transform:scale(1);}
+html.motion .flow li.lit .hi i{animation:flicker 2.6s ease-in-out infinite;}
+html.motion .flow li.lit .hi::before{animation:halo 3.4s ease-in-out infinite;}
+.flow li:nth-child(3) .hi i{animation-delay:-.7s !important;} .flow li:nth-child(4) .hi i{animation-delay:-1.3s !important;} .flow li:nth-child(5) .hi i{animation-delay:-2s !important;}
+@keyframes flicker{0%,100%{transform:scaleY(1) skewX(0);}22%{transform:scaleY(1.07) skewX(-2deg);}48%{transform:scaleY(.95) skewX(1.5deg);}71%{transform:scaleY(1.04) skewX(-1deg);}}
+@keyframes halo{0%,100%{opacity:.85;}50%{opacity:1;}}
+.flow li.lit .n{box-shadow:0 0 18px rgba(255,180,90,.45);}
+.ekou-kotoba{margin:44px 0 0;text-align:center;font-size:22px;letter-spacing:.3em;color:#f1dfb4;opacity:0;transform:translateY(10px);transition:opacity 2s ease .3s,transform 2s ease .3s;}
+#ekou.all-lit .ekou-kotoba{opacity:1;transform:none;}
+html:not(.motion) .flow .hi{opacity:1;transform:none;}
+html:not(.motion) .ekou-kotoba{opacity:1;transform:none;}
+@media(min-width:900px){.flow .hi{left:13px;top:-36px;}.ekou-kotoba{font-size:28px;margin-top:64px;}}
 </style>
 </head>
 
@@ -774,11 +796,12 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
       <p class="ekou-lead rv">本覚院のご廻向は、高野山の金剛峯寺で行われる法要と同様の流れで、およそ1時間かけておつとめいたします。僧侶が朗々と音階のついたお経（聲明）をおとなえする姿や声は、ご先祖さまだけでなく、参列される方の心も清々しく癒してくれることでしょう。</p>
       <ol class="flow" id="flow">
         <li class="prog" aria-hidden="true"></li>
-        <li><span class="n" aria-hidden="true">一</span><b>前讃</b><span>お経の種類のひとつ。ご廻向はここからはじまります。</span></li>
-        <li><span class="n" aria-hidden="true">二</span><b>各種のお経</b><span>僧侶が音階のついたお経（聲明）をおとなえします。</span></li>
-        <li><span class="n" aria-hidden="true">三</span><b>後讃</b><span>お経の種類のひとつ。法要を締めくくります。</span></li>
-        <li><span class="n" aria-hidden="true">四</span><b>ご法楽</b><span>般若心経とご真言を、参列の皆さまもご一緒にお唱えいただきます。</span></li>
+        <li><span class="hi" aria-hidden="true"><i></i></span><span class="n" aria-hidden="true">一</span><b>前讃</b><span>お経の種類のひとつ。ご廻向はここからはじまります。</span></li>
+        <li><span class="hi" aria-hidden="true"><i></i></span><span class="n" aria-hidden="true">二</span><b>各種のお経</b><span>僧侶が音階のついたお経（聲明）をおとなえします。</span></li>
+        <li><span class="hi" aria-hidden="true"><i></i></span><span class="n" aria-hidden="true">三</span><b>後讃</b><span>お経の種類のひとつ。法要を締めくくります。</span></li>
+        <li><span class="hi" aria-hidden="true"><i></i></span><span class="n" aria-hidden="true">四</span><b>ご法楽</b><span>般若心経とご真言を、参列の皆さまもご一緒にお唱えいただきます。</span></li>
       </ol>
+      <p class="ekou-kotoba" aria-hidden="true">ご先祖さまへ、四つの灯を。</p>
       <div class="ekou-after">
         <p class="rv">ご先祖さまのために、お霊供膳を御位牌や法名を記した証文の前にお供えしております。</p>
         <div class="rv">
@@ -1039,7 +1062,10 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
     var r = flow.getBoundingClientRect(), h = innerHeight;
     var p = Math.max(0, Math.min(1, (h * 0.75 - r.top) / (r.height + h * 0.2)));
     flow.style.setProperty('--fp', p.toFixed(3));
-    items.forEach(function (li, k) { li.classList.toggle('lit', p >= k / items.length + 0.02); });
+    var n = 0;
+    items.forEach(function (li) { var on = li.getBoundingClientRect().top < h * 0.62; li.classList.toggle('lit', on); if (on) n++; });
+    var sec = document.getElementById('ekou');
+    if (sec) { sec.style.setProperty('--glow', (n / items.length).toFixed(2)); sec.classList.toggle('all-lit', n === items.length); }
   }
   addEventListener('scroll', f, { passive: true }); addEventListener('resize', f); f();
 })();
