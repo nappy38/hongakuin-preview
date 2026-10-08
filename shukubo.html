@@ -780,6 +780,11 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 /* 改行：文の途中で切れないように */
 .nw{display:inline-block;}
 .mido figcaption span{word-break:normal;line-break:strict;}
+
+/* 歩いて巡る高野山：一夜の流れの前に独立 */
+.walk-sec .walk{margin:0 auto;max-width:880px;}
+.walk-kippu{margin-top:48px;}
+@media(min-width:900px){.walk-list li.no-img{grid-template-columns:minmax(0,1fr) !important;}}
 </style>
 </head>
 
@@ -1016,6 +1021,31 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
   </div>
 </section>
 
+<!-- 歩いて巡る高野山（一夜の流れの前に） -->
+<section class="sec walk-sec" id="walk" aria-label="本覚院から歩いて巡る高野山">
+  <div class="sec-in">
+    <div class="walk rv">
+          <h3 class="h3">本覚院から歩いて巡る高野山</h3>
+          <div class="walk-map" aria-hidden="true">
+            <span class="pt lo" style="left:2%"><span>大門</span></span>
+            <span class="pt" style="left:19%"><span>壇上伽藍</span></span>
+            <span class="pt lo" style="left:29%"><span>金剛峯寺</span></span>
+            <span class="pt me" style="left:39%"><span>本覚院</span></span>
+            <span class="pt lo" style="left:60%"><span>一の橋</span></span>
+            <span class="pt" style="left:97%"><span>奥の院</span></span>
+            <span class="dir w">← 西</span><span class="dir e">東 →</span>
+          </div>
+          <ul class="walk-list">
+            <li class="has-img"><img class="w-img" src="images/photos/walk-kongobuji.webp" alt="金剛峯寺の石庭「蟠龍庭」" width="480" height="480" loading="lazy"><div><b>金剛峯寺</b><span class="t">徒歩 約6分</span><p>高野山真言宗の総本山。</p></div></li>
+            <li class="has-img"><img class="w-img" src="images/photos/walk-garan.webp" alt="夜の根本大塔" width="480" height="480" loading="lazy"><div><b>壇上伽藍（根本大塔・金堂）</b><span class="t">徒歩 約12分</span><p>弘法大師が最初に開かれた聖地。朱色の根本大塔は高野山のシンボルです。</p></div></li>
+            <li class="has-img"><img class="w-img" src="images/photos/walk-okunoin.webp" alt="奥の院の御廟橋を渡る僧侶" width="480" height="480" loading="lazy"><div><b>奥の院 一の橋</b><span class="t">徒歩 約16分</span><p>奥の院参道の入口。弘法大師御廟までは、杉木立の参道を約2km歩きます（本覚院から御廟橋まで、歩いて約36分）。毎日6時と10時30分には、お大師さまへお食事を運ぶ「生身供」が行われます。</p></div></li>
+            <li class="has-img no-img"><span class="w-img w-blank" aria-hidden="true"></span><div><b>大門</b><span class="t">徒歩 約25分</span><p>高野山の総門。晴れた日には、遠く淡路島まで見渡せることもあります。</p></div></li>
+          </ul>
+          <p class="walk-note">徒歩の時間は、地図上の距離から割り出した目安です。図は位置関係をあらわした模式図です。奥の院へはバス（奥の院前・奥の院口）も便利です。</p>
+    </div>
+  </div>
+</section>
+
 <!-- 四 一夜の流れ -->
 <section class="sec night" id="ichiya">
   <div class="sec-in">
@@ -1150,24 +1180,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         </ol>
         <p class="addr rv">〒648-0211 和歌山県伊都郡高野町高野山618<br>お電話 <a class="ink" href="tel:0736562711">0736-56-2711</a>（受付 9:00〜17:00）</p>
         <p class="map-link rv"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%AB%98%E9%87%8E%E5%B1%B1+%E6%9C%AC%E8%A6%9A%E9%99%A2" target="_blank" rel="noopener">地図をひらく<span class="arw"></span></a></p>
-        <div class="walk rv">
-          <h3 class="h3">本覚院から歩いて巡る高野山</h3>
-          <div class="walk-map" aria-hidden="true">
-            <span class="pt lo" style="left:2%"><span>大門</span></span>
-            <span class="pt" style="left:19%"><span>壇上伽藍</span></span>
-            <span class="pt lo" style="left:29%"><span>金剛峯寺</span></span>
-            <span class="pt me" style="left:39%"><span>本覚院</span></span>
-            <span class="pt lo" style="left:60%"><span>一の橋</span></span>
-            <span class="pt" style="left:97%"><span>奥の院</span></span>
-            <span class="dir w">← 西</span><span class="dir e">東 →</span>
-          </div>
-          <ul class="walk-list">
-            <li class="has-img"><img class="w-img" src="images/photos/walk-kongobuji.webp" alt="金剛峯寺の石庭「蟠龍庭」" width="480" height="480" loading="lazy"><div><b>金剛峯寺</b><span class="t">徒歩 約6分</span><p>高野山真言宗の総本山。</p></div></li>
-            <li class="has-img"><img class="w-img" src="images/photos/walk-garan.webp" alt="夜の根本大塔" width="480" height="480" loading="lazy"><div><b>壇上伽藍（根本大塔・金堂）</b><span class="t">徒歩 約12分</span><p>弘法大師が最初に開かれた聖地。朱色の根本大塔は高野山のシンボルです。</p></div></li>
-            <li class="has-img"><img class="w-img" src="images/photos/walk-okunoin.webp" alt="奥の院の御廟橋を渡る僧侶" width="480" height="480" loading="lazy"><div><b>奥の院 一の橋</b><span class="t">徒歩 約16分</span><p>奥の院参道の入口。弘法大師御廟までは、杉木立の参道を約2km歩きます（本覚院から御廟橋まで、歩いて約36分）。毎日6時と10時30分には、お大師さまへお食事を運ぶ「生身供」が行われます。</p></div></li>
-            <li class="has-img no-img"><span class="w-img w-blank" aria-hidden="true"></span><div><b>大門</b><span class="t">徒歩 約25分</span><p>高野山の総門。晴れた日には、遠く淡路島まで見渡せることもあります。</p></div></li>
-          </ul>
-          <p class="walk-note">徒歩の時間は、地図上の距離から割り出した目安です。図は位置関係をあらわした模式図です。奥の院へはバス（奥の院前・奥の院口）も便利です。</p>
+        <div class="walk-kippu rv">
           <div class="kippu">
             <p class="kippu-k">高野山へは、おトクなきっぷで</p>
             <h4>高野山・世界遺産デジタルきっぷ（南海電鉄）</h4>
