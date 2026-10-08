@@ -983,6 +983,18 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
 .pron{font-size:.78em;letter-spacing:.04em;color:var(--text-2);font-style:normal;white-space:nowrap;}
 @media(min-width:900px){.moment.nofig .m-time{justify-content:center;}}
 .mido figcaption span{word-break:normal;}
+
+/* ヒーローの一行 */
+.en-hook{margin-top:22px;font-family:var(--display-en);font-size:22px;line-height:1.3;letter-spacing:.01em;color:#fff;text-shadow:0 0 20px rgba(0,0,0,.7),0 0 4px rgba(0,0,0,.5);}
+html.motion .en-hook{opacity:0;animation:riseL 1.6s var(--ease) 1s forwards;}
+@media(min-width:900px){.en-hook{font-size:34px;margin-top:30px;}}
+/* 用語のミニ辞書：触れると意味が出る */
+.gl{position:relative;cursor:help;border-bottom:1px dotted currentColor;outline:none;}
+.gl-def{position:absolute;left:50%;bottom:calc(100% + 10px);z-index:50;width:max-content;max-width:min(260px,70vw);transform:translate(-50%,6px);
+  padding:10px 14px;background:var(--sumi,#1c1714);color:#f3ece1;font-family:var(--display-en);font-style:normal;font-size:15px;line-height:1.45;letter-spacing:0;
+  border:1px solid rgba(201,177,131,.5);box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s,transform .25s,visibility .25s;}
+.gl-def::after{content:'';position:absolute;left:50%;top:100%;margin-left:-5px;border:5px solid transparent;border-top-color:var(--sumi,#1c1714);}
+.gl:hover .gl-def,.gl:focus .gl-def,.gl:focus-within .gl-def{opacity:1;visibility:visible;transform:translate(-50%,0);}
 </style>
 </head>
 <body>
@@ -1053,6 +1065,7 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
     <p class="en-vname" lang="ja" aria-hidden="true"><span class="ev-main">本覚院</span><span class="ev-sub">高野山 別格本山</span></p>
     <h1 class="en-name">Koyasan Hongakuin</h1>
     <p class="en-sub">Temple lodging since 1190 · Mount Kōya</p>
+    <p class="en-hook">Spend a night inside a living temple.</p>
   </div>
   <div class="en-meta" aria-hidden="true"><span id="enCount">I / V</span></div>
   <div class="en-scroll" aria-hidden="true">into the night</div>
@@ -1069,12 +1082,12 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
 <section class="ts" aria-label="What is a temple stay?">
   <div class="ts-in">
     <h2 class="ts-h">What is a temple stay?</h2>
-    <p class="ts-lead">A <i>shukubo</i> <span class="pron">(shoo-koo-boh)</span> is a Buddhist temple that welcomes overnight guests. At Hongakuin, you don't stay near the temple — you stay <b>in</b> it.</p>
+    <p class="ts-lead">A <span class="gl" tabindex="0"><i>shukubo</i><span class="gl-def" role="tooltip">Temple lodging — a Buddhist temple that welcomes overnight guests.</span></span> <span class="pron">(shoo-koo-boh)</span> is a Buddhist temple that welcomes overnight guests. At Hongakuin, you don't stay near the temple — you stay <b>in</b> it.</p>
     <ul class="ts-list">
       <li><b>Stay</b><span>in a working Buddhist temple, founded in 1190</span></li>
-      <li><b>Eat</b><span>traditional vegetarian cuisine, <i>shōjin ryōri</i></span></li>
+      <li><b>Eat</b><span>traditional vegetarian cuisine, <span class="gl" tabindex="0"><i>shōjin ryōri</i><span class="gl-def" role="tooltip">Buddhist vegetarian cuisine, made without meat or fish.</span></span></span></li>
       <li><b>Join</b><span>the monks' morning prayer at 6:30 am</span></li>
-      <li><b>Write</b><span>a Buddhist sutra with brush and ink, <i>shakyō</i></span></li>
+      <li><b>Write</b><span>a Buddhist sutra with brush and ink, <span class="gl" tabindex="0"><i>shakyō</i><span class="gl-def" role="tooltip">Copying a Buddhist sutra by hand, as a quiet form of practice.</span></span></span></li>
       <li><b>Feel</b><span>the quiet of Mount Kōya, a UNESCO World Heritage site</span></li>
     </ul>
   </div>
@@ -1237,7 +1250,7 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
           <p class="kiku-t">Listen to the chant<span class="kiku-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span></p>
           <p class="kiku-s"><span class="kiku-s1">The voice of the head priest</span><span class="kiku-s1">from <i>THE SHO-MYO — Furui</i></span></p>
         </div>
-        <div class="kiku-player" id="kiku-player"><iframe title="THE SHO-MYO — Kōyasan Nanzanshin School, Furui (Spotify)" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <div class="kiku-player" id="kiku-player"><iframe title="THE SHO-MYO — Kōyasan Nanzanshin School, Furui (Spotify)" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?theme=0&amp;utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
         <p class="kiku-hint">If it doesn't start, tap ▶ on the player above.</p>
         <p class="kiku-tip" style="display:none">On a phone, tap ▶ on the player above to listen, then keep scrolling.</p>
       </div>
@@ -1351,7 +1364,7 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
           <p class="m-time"><b>10:00 am</b><small>Check-out</small></p>
           <h3 class="m-title">On to Okunoin</h3>
           <p class="m-text">After you leave, walk on to Okunoin, where Kōbō Daishi rests among ancient cedars.</p>
-          <p class="m-note">Twice a day, at 6:00 and 10:30 am, monks still carry a meal to Kōbō Daishi at his mausoleum — a ritual called <i>shōjingu</i>. From Hongakuin, Gobyō-bashi bridge at the mausoleum is about a 36-minute walk.</p>
+          <p class="m-note">Twice a day, at 6:00 and 10:30 am, monks still carry a meal to Kōbō Daishi at his mausoleum — a ritual called <span class="gl" tabindex="0"><i>shōjingu</i><span class="gl-def" role="tooltip">The daily offering of meals to Kōbō Daishi, carried by monks to his mausoleum.</span></span>. From Hongakuin, Gobyō-bashi bridge at the mausoleum is about a 36-minute walk.</p>
         </div>
       </article>
     </div>
@@ -1705,5 +1718,20 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
 })();
 </script>
 
+<script>
+/* Glossary: keep the tooltip inside the screen */
+(function () {
+  function fit(g) {
+    var d = g.querySelector('.gl-def'); if (!d) return;
+    d.style.marginLeft = '0px';
+    var r = d.getBoundingClientRect(), pad = 12, w = document.documentElement.clientWidth, shift = 0;
+    if (r.left < pad) shift = pad - r.left; else if (r.right > w - pad) shift = (w - pad) - r.right;
+    d.style.marginLeft = shift + 'px';
+  }
+  document.querySelectorAll('.gl').forEach(function (g) {
+    ['mouseenter', 'focus', 'touchstart'].forEach(function (ev) { g.addEventListener(ev, function () { requestAnimationFrame(function () { fit(g); }); }, { passive: true }); });
+  });
+})();
+</script>
 </body>
 </html>
