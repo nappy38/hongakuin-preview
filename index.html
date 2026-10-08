@@ -906,6 +906,20 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 @keyframes sumiMon{0%{opacity:0;transform:scale(.9);filter:blur(10px) drop-shadow(0 0 14px rgba(0,0,0,.45));}100%{opacity:1;transform:none;filter:blur(0) drop-shadow(0 0 14px rgba(0,0,0,.45));}}
 html.motion .hero-mon{animation:sumiMon 1.6s var(--ease) .1s both;}
 html.motion .hero-name{animation:sumiIn 2s var(--ease) .35s both;}
+
+/* ══ 見る：灯りをかざして天井絵を見上げる ══ */
+@property --lr{syntax:'<percentage>';inherits:true;initial-value:30%;}
+.lantern{position:relative;overflow:hidden;--lx:30%;--ly:70%;--lr:30%;}
+.lantern .lt-dark{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity 1.2s ease;
+  background:radial-gradient(circle at var(--lx) var(--ly),rgba(0,0,0,0) 0,rgba(0,0,0,0) calc(var(--lr) * .6),rgba(12,7,9,.7) calc(var(--lr) * 1.05),rgba(10,6,8,.96) calc(var(--lr) * 1.4),rgba(8,5,6,.97) 100%);}
+.lantern .lt-dark::after{content:'';position:absolute;inset:0;mix-blend-mode:screen;background:radial-gradient(circle at var(--lx) var(--ly),rgba(255,170,90,.38) 0,rgba(255,150,70,.12) calc(var(--lr) * .5),rgba(255,150,70,0) calc(var(--lr) * .9));}
+html.motion .lantern.on .lt-dark{opacity:1;}
+html.motion .lantern.on{animation:lflick 3.2s ease-in-out infinite;}
+@keyframes lflick{0%,100%{--lr:34%;}30%{--lr:36.5%;}55%{--lr:33%;}80%{--lr:35.5%;}}
+.lantern.lit .lt-dark{opacity:0 !important;transition:opacity 2.4s ease;}
+.lt-hint{position:absolute;left:14px;bottom:12px;font-size:13px;letter-spacing:.24em;color:rgba(243,236,225,.85);text-shadow:0 0 8px rgba(0,0,0,.8);opacity:0;transition:opacity 1s;pointer-events:none;}
+html.motion .lantern.on:not(.lit) .lt-hint{opacity:1;}
+@media(max-width:899px){.lt-hint{display:none;}}
 </style>
 </head>
 <body class="at-top">
@@ -1055,7 +1069,7 @@ html.motion .hero-name{animation:sumiIn 2s var(--ease) .35s both;}
     <header class="sh rv"><span class="sh-num" aria-hidden="true">二</span><span class="sh-line"></span><h2 class="sh-title">本覚院で過ごす、<br>三つの時間</h2></header>
     <div class="body ft-list">
       <article class="ft">
-        <figure class="ft-fig rv-img"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂天井に残る250年前の極彩色天井絵" width="1600" height="1067" loading="lazy"></figure>
+        <figure class="ft-fig rv-img lantern" id="lantern"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂天井に残る250年前の極彩色天井絵" width="1600" height="1067" loading="lazy"><span class="lt-dark" aria-hidden="true"></span><span class="lt-hint" aria-hidden="true">灯りをかざして、見上げる</span></figure>
         <div class="ft-text rv">
           <span class="ft-n" aria-hidden="true">壱</span>
           <p class="ft-verb">見る</p>
@@ -1719,5 +1733,41 @@ function toggleArchive() {
 })();
 </script>
 
+<script>
+/* 見る：灯りをかざして天井絵を見上げる（スクロールで灯りが絵の上を渡り、最後に絵全体が明るむ。PCはカーソルでも） */
+(function () {
+  var el = document.getElementById('lantern'); if (!el) return;
+  if (!document.documentElement.classList.contains('motion')) return;
+  el.classList.add('on');
+  var path = [[18, 78], [36, 46], [52, 24], [66, 36], [84, 70]];
+  var hover = false, tk = false;
+  function at(t) {
+    t = Math.max(0, Math.min(1, t)) * (path.length - 1);
+    var i = Math.min(path.length - 2, Math.floor(t)), f = t - i, a = path[i], b = path[i + 1];
+    f = f * f * (3 - 2 * f);
+    return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
+  }
+  function f() {
+    tk = false; if (hover) return;
+    var r = el.getBoundingClientRect(), h = innerHeight;
+    if (r.bottom < 0 || r.top > h) return;
+    var p = (h * 0.92 - r.top) / (h * 0.92 - h * 0.12 + r.height * 0.2);
+    var q = at(p / 0.85);
+    el.style.setProperty('--lx', q[0].toFixed(1) + '%'); el.style.setProperty('--ly', q[1].toFixed(1) + '%');
+    el.classList.toggle('lit', p > 0.98);
+  }
+  addEventListener('scroll', function () { if (!tk) { tk = true; requestAnimationFrame(f); } }, { passive: true });
+  addEventListener('resize', f); addEventListener('load', f);
+  if (matchMedia('(hover:hover)').matches) {
+    el.addEventListener('pointermove', function (e) {
+      hover = true; var r = el.getBoundingClientRect();
+      el.classList.remove('lit');
+      el.style.setProperty('--lx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+      el.style.setProperty('--ly', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+    });
+    el.addEventListener('pointerleave', function () { hover = false; f(); });
+  }
+})();
+</script>
 </body>
 </html>
