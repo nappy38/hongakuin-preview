@@ -136,7 +136,7 @@ h1,h2,h3,.cap,figcaption,.cta-lead,.ig-lead,.phone-label,.name-title{word-break:
 /* ══ HEADER（index-v3 と同じ。このページは最初から和紙の帯） ══ */
 .hd{position:fixed;inset:0 0 auto 0;z-index:900;height:64px;display:flex;align-items:center;justify-content:space-between;
   padding:0 8px 0 var(--gut);color:var(--sumi);
-  background:rgba(243,236,225,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  background:rgba(243,236,225,.98);
   border-bottom:1px solid var(--line);}
 .hd-logo{display:flex;align-items:center;gap:10px;min-height:48px;}
 .hd-logo img{width:30px;height:30px;}
@@ -788,7 +788,7 @@ footer p{letter-spacing:.04em;}
 /* ── 章のしおり（スマホ・タブレット）：いま読んでいる章を上部に出し、押すと章の一覧 ── */
 .shiori{position:fixed;left:0;right:0;top:64px;z-index:880;transform:translateY(-120%);opacity:0;transition:transform .45s var(--ease),opacity .3s;pointer-events:none;}
 body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
-.shiori-btn{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:0 var(--gut);background:rgba(243,236,225,.96);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+.shiori-btn{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:0 var(--gut);background:rgba(243,236,225,.99);
   border-bottom:1px solid var(--line);font-size:15px;letter-spacing:.1em;color:var(--sumi);text-align:left;}
 .shiori-btn b{font-weight:500;color:var(--gold-d);min-width:1.2em;}
 .shiori-btn span{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -1640,7 +1640,8 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
     inks.forEach(function (s) { var r = s.getBoundingClientRect(); if (r.top < mid && r.bottom > mid) onInk = true; });
     b.classList.toggle('on-ink', onInk);
   }
-  window.addEventListener('scroll', f, { passive: true }); window.addEventListener('resize', f); f();
+  var tk = false; function q() { if (!tk) { tk = true; requestAnimationFrame(function () { tk = false; f(); }); } }
+  window.addEventListener('scroll', q, { passive: true }); window.addEventListener('resize', q); addEventListener('load', q);
 
   // 目次：いま読んでいる章に印
   var links = document.querySelectorAll('.sidx a');
@@ -1676,11 +1677,12 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
       if (r.top < h * 0.98) el.classList.add('in');
     });
   }
-  addEventListener('scroll', sweep, { passive: true });
-  addEventListener('resize', sweep);
+  var sw = false; function sweepQ() { if (!sw) { sw = true; setTimeout(function () { sw = false; sweep(); }, 200); } }
+  addEventListener('scroll', sweepQ, { passive: true });
+  addEventListener('resize', sweepQ);
   addEventListener('load', sweep);
   setTimeout(sweep, 1500);
-  document.addEventListener('scroll', sweep, { passive: true, capture: true });
+  document.addEventListener('scroll', sweepQ, { passive: true, capture: true });
   document.querySelectorAll('details').forEach(function (dt) { dt.addEventListener('toggle', sweep); });
 })();
 </script>
@@ -1905,7 +1907,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
     if (cur) { var l = label(cur); tK.textContent = l[0]; tT.textContent = l[1]; }
   }
   function req() { if (!ticking) { ticking = true; requestAnimationFrame(f); } }
-  addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); f();
+  addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); addEventListener('load', req);
 })();
 </script>
 </body>
