@@ -899,6 +899,10 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 
 /* PC：ご廻向の写真を僧侶に寄せる */
 @media(min-width:900px){.kuyo-grid .kuyo-card:first-child figure{overflow:hidden;}.kuyo-grid .kuyo-card:first-child img{transform:scale(1.55);transform-origin:52% 62%;}}
+
+/* 聴く → 住職ページの聲明へ */
+.ft-listen{display:inline-flex;align-items:center;gap:10px;margin-top:14px;padding:6px 0;font-size:15px;letter-spacing:.14em;color:var(--gold-d);border-bottom:1px solid rgba(145,124,80,.45);transition:color .3s,gap .4s;}
+.ft-listen:hover{color:var(--sumi);gap:14px;}
 </style>
 </head>
 <body class="at-top">
@@ -1073,6 +1077,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
           <p class="ft-verb">聴く</p>
           <h3>祈りの声に<br class="pc">包まれる朝</h3>
           <p>毎朝6時30分、本堂に読経の声が響きます。ご宿泊の方はどなたでもご参加いただけます。高野山に受け継がれる祈りの声に包まれるひとときをお過ごしいただけます。</p>
+          <a class="ft-listen" href="priest.html#kiku"><span aria-hidden="true">♪</span>住職の聲明を聴く<span class="arw" aria-hidden="true">→</span></a>
         </div>
       </article>
     </div>
