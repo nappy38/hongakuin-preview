@@ -1011,6 +1011,32 @@ html.motion .en-hook{opacity:0;animation:riseL 1.6s var(--ease) 1s forwards;}
 .kippu-btn:hover{background:var(--sumi);color:var(--washi);}
 .kippu-btn:hover small{color:inherit;}
 @media(min-width:900px){.kippu{padding:32px;}.kippu h4{font-size:28px;}}
+
+/* Only at Hongakuin */
+.only{padding:72px var(--gut) 8px;}
+.only-in{max-width:var(--max);margin:0 auto;}
+.only-k{font-family:var(--display-en);font-style:italic;font-size:16px;letter-spacing:.06em;color:var(--gold-d);}
+.only-h{font-family:var(--display-en);font-weight:500;font-size:30px;line-height:1.2;color:var(--sumi);margin:8px 0 28px;max-width:18em;}
+.only-list{list-style:none;display:grid;gap:14px;}
+.only-list a{display:grid;grid-template-columns:104px 1fr;gap:16px;align-items:start;padding-bottom:14px;border-bottom:1px solid var(--line);color:inherit;}
+.only-img{display:block;overflow:hidden;aspect-ratio:1/1;background:var(--ink);}
+.only-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
+.only-tx{display:flex;flex-direction:column;gap:4px;}
+.only-n{font-family:var(--display-en);font-weight:500;font-size:14px;letter-spacing:.2em;color:var(--gold-d);}
+.only-tx strong{font-family:var(--display-en);font-weight:500;font-size:21px;line-height:1.25;color:var(--sumi);}
+.only-tx span{font-size:15px;line-height:1.6;color:var(--text-2);}
+.only-tx em{font-style:normal;font-size:14px;letter-spacing:.04em;color:var(--gold-d);margin-top:4px;}
+.only-list a:hover img{transform:scale(1.05);}
+.only-list a:hover strong{color:var(--gold-d);}
+@media(min-width:900px){
+  .only{padding:130px 56px 20px;}
+  .only-h{font-size:46px;margin-bottom:48px;}
+  .only-list{grid-template-columns:repeat(3,1fr);gap:32px;}
+  .only-list a{grid-template-columns:1fr;gap:20px;border-bottom:0;padding:0;}
+  .only-img{aspect-ratio:4/5;}
+  .only-tx strong{font-size:26px;}
+  .only-tx span{font-size:16px;}
+}
 </style>
 </head>
 <body>
@@ -1093,6 +1119,28 @@ html.motion .en-hook{opacity:0;animation:riseL 1.6s var(--ease) 1s forwards;}
   <span class="oe-k">Morning service<b>daily at 6:30 am · main hall</b></span>
   <span class="oe-m"><span id="ktTime" hidden>&nbsp;</span><span id="ktMsg">&nbsp;</span></span>
 </div>
+
+<!-- Only at Hongakuin: three reasons -->
+<section class="only" aria-labelledby="only-h">
+  <div class="only-in">
+    <p class="only-k rv">Only at Hongakuin</p>
+    <h2 class="only-h rv" id="only-h">Three things you won't find anywhere else on the mountain.</h2>
+    <ol class="only-list">
+      <li class="rv"><a href="#temple">
+        <span class="only-img"><img src="images/photos/teien-mado-3-960.webp" alt="" width="960" height="720" loading="lazy"></span>
+        <span class="only-tx"><b class="only-n" aria-hidden="true">I</b><strong>A garden by Shigemori Mirei</strong><span>The great 20th-century garden designer laid out our moss and rock garden. Sleep beside it, and wake to it.</span><em>See the gardens →</em></span>
+      </a></li>
+      <li class="rv"><a href="#dalai">
+        <span class="only-img"><img src="images/photos/dalailama-kinen.webp" alt="" width="1000" height="1000" loading="lazy" style="object-position:center 35%"></span>
+        <span class="only-tx"><b class="only-n" aria-hidden="true">II</b><strong>Where the Dalai Lama stayed</strong><span>On November 10, 1980, His Holiness the 14th Dalai Lama spent the night at Hongakuin.</span><em>Read the story →</em></span>
+      </a></li>
+      <li class="rv"><a href="#monks">
+        <span class="only-img"><img src="images/priest-tate.webp" alt="" width="850" height="1276" loading="lazy" style="object-position:center 30%"></span>
+        <span class="only-tx"><b class="only-n" aria-hidden="true">III</b><strong>A head priest you can hear</strong><span>Our head priest's chant was recorded by Victor Entertainment. Listen here, then join the monks' morning chant in the main hall.</span><em>Listen to the chant →</em></span>
+      </a></li>
+    </ol>
+  </div>
+</section>
 
 <!-- What is a temple stay? -->
 <section class="ts" aria-label="What is a temple stay?">
@@ -1222,7 +1270,7 @@ html.motion .en-hook{opacity:0;animation:riseL 1.6s var(--ease) 1s forwards;}
           <p>Legend tells that Kōbō Daishi sensed six Jizō bodhisattvas appear on this very spot. Centuries later, the monk Gyōkū climbed the mountain at the request of the poet Matsuyoi no Kojijū. As he chanted here, Jizō appeared in a blaze of light and said: <q>Dwell in this place.</q></p>
           <p>Over the centuries the temple has welcomed imperial princes, feudal lords and the great Kanō-school painter Kanō Tan'yū.</p>
         </div>
-        <figure class="dl-fig rv">
+        <figure class="dl-fig rv" id="dalai">
           <img src="images/photos/dalailama-kinen.webp" alt="A framed photograph commemorating the stay of His Holiness the 14th Dalai Lama at Hongakuin, displayed in the temple" width="1000" height="1000" loading="lazy">
           <figcaption><b>November 10, 1980</b>His Holiness the 14th Dalai Lama stayed at Hongakuin. This commemorative photograph still hangs in the temple today.</figcaption>
         </figure>
@@ -1396,7 +1444,7 @@ html.motion .en-hook{opacity:0;animation:riseL 1.6s var(--ease) 1s forwards;}
       <div class="access" id="access">
         <h3 class="h3 rv">Getting here</h3>
         <ol class="route rv">
-          <li><b>From Osaka</b>About 2 hours from Namba Station by train and cable car.</li>
+          <li><b>From Osaka</b>About 2½ hours from Namba Station by train, cable car and bus.</li>
           <li><b>By train</b>Nankai Kōya Line to Gokurakubashi Station, then the cable car to Kōyasan Station.</li>
           <li><b>By bus</b>Nankai Rinkan bus toward Okunoin or Daimon; get off at Keisatsusho-mae (about 10 minutes).</li>
           <li><b>On foot</b>About 2–3 minutes from the bus stop, along a tree-lined approach.</li>
