@@ -896,6 +896,9 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 .hero-scroll{letter-spacing:.32em !important;font-family:var(--mincho) !important;}
 
 .kuyo-card picture{display:block;}
+
+/* PC：ご廻向の写真を僧侶に寄せる */
+@media(min-width:900px){.kuyo-grid .kuyo-card:first-child figure{overflow:hidden;}.kuyo-grid .kuyo-card:first-child img{transform:scale(1.55);transform-origin:52% 62%;}}
 </style>
 </head>
 <body class="at-top">
