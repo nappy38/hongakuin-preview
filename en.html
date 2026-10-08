@@ -370,7 +370,7 @@ html.motion .ph-yoru::before{animation:twinkle 7s ease-in-out infinite alternate
 
 /* ══ 三 お部屋 ══ */
 .rooms .body{min-width:0;}
-.room{padding-bottom:64px;margin-bottom:64px;border-bottom:1px solid var(--line);}
+.room{padding-bottom:44px;margin-bottom:48px;border-bottom:1px solid var(--line);}
 .room:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0;}
 .room-fig{margin:0 calc(-1*var(--gut));overflow:hidden;position:relative;}
 .room-fig img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:opacity .5s var(--ease);}
@@ -995,6 +995,22 @@ html.motion .en-hook{opacity:0;animation:riseL 1.6s var(--ease) 1s forwards;}
   border:1px solid rgba(201,177,131,.5);box-shadow:0 10px 30px rgba(0,0,0,.25);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s,transform .25s,visibility .25s;}
 .gl-def::after{content:'';position:absolute;left:50%;top:100%;margin-left:-5px;border:5px solid transparent;border-top-color:var(--sumi,#1c1714);}
 .gl:hover .gl-def,.gl:focus .gl-def,.gl:focus-within .gl-def{opacity:1;visibility:visible;transform:translate(-50%,0);}
+
+/* Rail pass box */
+.kippu{padding:26px 20px;}
+.kippu h4{font-family:var(--display-en);font-size:24px;letter-spacing:.01em;line-height:1.25;margin:8px 0 4px;}
+.kippu-by{font-size:14px !important;color:var(--text-2);margin-bottom:14px;}
+.kippu ul{margin:0 0 16px;border-top:1px solid var(--line);}
+.kippu li{display:grid;grid-template-columns:4.2em 1fr;gap:10px;align-items:baseline;padding:11px 2px;border-bottom:1px solid var(--line);font-size:16px;line-height:1.6;}
+.kippu li::before{display:none;}
+.kippu li b{font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d);}
+.kippu-note{font-size:15px !important;line-height:1.7 !important;color:var(--text-2);}
+.kippu-btn{display:flex;align-items:center;gap:10px;min-height:52px;margin-top:16px;padding:0 18px;border:1px solid var(--sumi);font-size:16px;transition:background .3s,color .3s;}
+.kippu-btn small{font-size:12px;color:var(--text-2);}
+.kippu-btn span{margin-left:auto;}
+.kippu-btn:hover{background:var(--sumi);color:var(--washi);}
+.kippu-btn:hover small{color:inherit;}
+@media(min-width:900px){.kippu{padding:32px;}.kippu h4{font-size:28px;}}
 </style>
 </head>
 <body>
@@ -1407,14 +1423,15 @@ html.motion .en-hook{opacity:0;animation:riseL 1.6s var(--ease) 1s forwards;}
           <p class="walk-note">Walking times are estimates based on map distance; the diagram is schematic. Buses also run to Okunoin.</p>
           <div class="kippu">
             <p class="kippu-k">Getting to Kōyasan</p>
-            <h4>Koyasan World Heritage Ticket (Nankai Railway)</h4>
+            <h4>Koyasan World Heritage Ticket</h4>
+            <p class="kippu-by">Nankai Railway · digital or paper</p>
             <ul>
-              <li>Round-trip train from Osaka (Namba and other stations) to Kōyasan</li>
-              <li>Unlimited Nankai Rinkan buses on the mountain for two days</li>
-              <li>Discounts at selected sights</li>
+              <li><b>Train</b><span>Round trip from Osaka (Namba and other stations)</span></li>
+              <li><b>Bus</b><span>Unlimited mountain buses for two days</span></li>
+              <li><b>Extras</b><span>Discounts at selected sights</span></li>
             </ul>
-            <p>Valid for two consecutive days — ideal for an overnight temple stay. Available as a digital or paper ticket; see Nankai Railway for prices and how to buy.</p>
-            <a class="lk ink" href="https://www.nankai.co.jp/traffic/digital/koyasan.html" target="_blank" rel="noopener">Nankai Railway (Japanese) →</a>
+            <p class="kippu-note">Valid for two consecutive days — made for an overnight temple stay.</p>
+            <a class="kippu-btn" href="https://www.nankai.co.jp/traffic/digital/koyasan.html" target="_blank" rel="noopener">Prices &amp; how to buy<small>Nankai Railway · Japanese</small><span aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
