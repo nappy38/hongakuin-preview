@@ -902,7 +902,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 .ft-listen:hover{color:var(--sumi);gap:14px;}
 
 /* 幕なし：写真の上に、寺紋と名前が墨のにじむように現れる */
-@keyframes sumiIn{0%{opacity:0;filter:blur(12px);letter-spacing:.3em;}60%{opacity:.85;}100%{opacity:1;filter:blur(0);}}
+@keyframes sumiIn{0%{opacity:0;filter:blur(12px);}60%{opacity:.85;}100%{opacity:1;filter:blur(0);}}
 @keyframes sumiMon{0%{opacity:0;transform:scale(.9);filter:blur(10px) drop-shadow(0 0 14px rgba(0,0,0,.45));}100%{opacity:1;transform:none;filter:blur(0) drop-shadow(0 0 14px rgba(0,0,0,.45));}}
 html.motion .hero-mon{animation:sumiMon 1.6s var(--ease) .1s both;}
 html.motion .hero-name{animation:sumiIn 2s var(--ease) .35s both;}
