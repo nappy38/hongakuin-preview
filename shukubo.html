@@ -296,7 +296,7 @@ h1,h2,h3,.cap,figcaption,.cta-lead,.ig-lead,.phone-label,.name-title{word-break:
 .ph-en{display:block;font-family:var(--latin);font-size:14px;letter-spacing:.36em;color:var(--gold-d);text-transform:uppercase;margin-bottom:6px;}
 .ph h1{font-size:34px;font-weight:500;letter-spacing:.2em;line-height:1.4;color:var(--sumi);font-feature-settings:"palt";}
 .ph-sub{display:block;font-size:15px;letter-spacing:.2em;color:var(--text-2);margin-top:8px;}
-.ph-toc{list-style:none;display:grid;grid-template-columns:repeat(6,1fr);margin-top:32px;border-top:1px solid var(--sumi);border-bottom:1px solid var(--line);}
+.ph-toc{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);margin-top:32px;border-top:1px solid var(--sumi);border-bottom:1px solid var(--line);}
 .ph-toc li+li{border-left:1px solid var(--line);}
 .ph-toc a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:72px;padding:8px 2px;font-size:15px;letter-spacing:.08em;line-height:1.4;text-align:center;}
 .ph-toc b{font-weight:500;font-size:14px;color:var(--gold-d);}
@@ -729,6 +729,7 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
 
 .moment.nofig{display:block !important;max-width:40em;}
 @media(min-width:900px){.moment.nofig{margin-left:auto;margin-right:auto;text-align:center;}}
+@media(min-width:900px){.moment.nofig .m-time{justify-content:center;}}
 
 /* 歩いて巡る：写真つき */
 .walk-list li.has-img{display:grid;grid-template-columns:88px 1fr;gap:14px;align-items:start;}
@@ -854,10 +855,9 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
   <ol>
     <li><a href="#rooms"><span>お部屋</span><b>一</b></a></li>
     <li><a href="#mido"><span>院内の見どころ</span><b>二</b></a></li>
-    <li><a href="#shugyo"><span>修行体験</span><b>三</b></a></li>
-    <li><a href="#ichiya"><span>一夜の流れ</span><b>四</b></a></li>
-    <li><a href="#info"><span>ご利用案内・アクセス</span><b>五</b></a></li>
-    <li><a href="#faq"><span>よくあるご質問</span><b>六</b></a></li>
+    <li><a href="#ichiya"><span>一夜の流れ</span><b>三</b></a></li>
+    <li><a href="#info"><span>ご利用案内・アクセス</span><b>四</b></a></li>
+    <li><a href="#faq"><span>よくあるご質問</span><b>五</b></a></li>
     <li class="bar" aria-hidden="true"></li>
   </ol>
 </nav>
@@ -877,10 +877,9 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
       <ol class="ph-toc" aria-label="このページの章">
         <li><a href="#rooms"><b aria-hidden="true">一</b>お部屋</a></li>
         <li><a href="#mido"><b aria-hidden="true">二</b>見どころ</a></li>
-        <li><a href="#shugyo"><b aria-hidden="true">三</b>修行</a></li>
-        <li><a href="#ichiya"><b aria-hidden="true">四</b>一夜</a></li>
-        <li><a href="#info"><b aria-hidden="true">五</b>ご案内</a></li>
-        <li><a href="#faq"><b aria-hidden="true">六</b>ご質問</a></li>
+        <li><a href="#ichiya"><b aria-hidden="true">三</b>一夜</a></li>
+        <li><a href="#info"><b aria-hidden="true">四</b>ご案内</a></li>
+        <li><a href="#faq"><b aria-hidden="true">五</b>ご質問</a></li>
       </ol>
     </div>
   </div>
@@ -1014,31 +1013,6 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
   </div>
 </section>
 
-<!-- 三 修行体験（旧サイト「修行体験」より） -->
-<section class="sec tone" id="shugyo">
-  <div class="sec-in sec-grid">
-    <header class="sh rv"><span class="sh-num" aria-hidden="true">三</span><span class="sh-line"></span><h2 class="sh-title">修行体験</h2></header>
-    <div class="body">
-      <div class="sg-lead rv">
-        <p>本来、僧侶の修行とは、自身の生命をかけた過酷なものです。忍耐し、真剣に神仏と対峙し、自身の心を磨くこと。本覚院でまなぶ僧侶は、常にこのことを念頭において日々精進いたしております。</p>
-        <p>みなさまも体験とはいえ、日常とはちがった緊張感の中で心を研ぎ澄ましていただけましたら、明日からの活力となるかと存じます。所作や作法など、難しいことは申しません。僧侶が丁寧にご指導いたしますので、ご安心ください。</p>
-      </div>
-      <article class="sg-card rv">
-        <p class="sg-words" aria-hidden="true">ひと文字ひと文字に<br>願いを込めて</p>
-        <div class="sg-body">
-          <h3 class="sg-title"><ruby>写経<rt>しゃきょう</rt></ruby>修行</h3>
-          <p>写経修行とは、経典を書き写すことです。私たちが言葉を話して意思の疎通を図るように、経典は仏さまのお言葉です。ひと文字ひと文字に願いを込めて書き写すことで、私たちは仏さまと会話させていただけるのです。</p>
-          <p>当院では、初心者の方にも取り組みやすいよう、般若心経の経典をなぞっていただいています。写経用紙・筆・筆ペン・墨・硯はご用意しておりますので、いつでもお申し付けください。</p>
-        </div>
-      </article>
-      <div class="sg-notes">
-        <p class="rv">辰巳出版のムック『ハート美人になれる宿坊ガイド』で、とことん「修行」ができる宿坊として紹介されました。</p>
-        <p class="rv">当院には尼僧もおります。女性の方も、気軽に安心して修行体験なさってください。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- 歩いて巡る高野山（一夜の流れの前に） -->
 <section class="sec walk-sec" id="walk" aria-label="本覚院から歩いて巡る高野山">
   <div class="sec-in">
@@ -1064,10 +1038,10 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
   </div>
 </section>
 
-<!-- 四 一夜の流れ -->
+<!-- 三 一夜の流れ -->
 <section class="sec night" id="ichiya">
   <div class="sec-in">
-    <header class="sh rv"><span class="sh-num" aria-hidden="true">四</span><span class="sh-line"></span><h2 class="sh-title">一夜の流れ</h2></header>
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">三</span><span class="sh-line"></span><h2 class="sh-title">一夜の流れ</h2></header>
     <p class="ichiya-lead rv">宿坊での一夜は、旅館とは少し違います。山門をくぐってから、翌朝お発ちになるまで。高野山の時間の流れに、身をあずけてみてください。</p>
   </div>
 
@@ -1090,6 +1064,14 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
           <h3 class="m-title">庭をながめる</h3>
           <p class="m-mono">時間が、ゆっくりになる。</p>
           <p class="m-text">重森三玲が手がけた苔と石の庭を、窓越しに。</p>
+        </div>
+      </article>
+      <article class="moment nofig" id="shakyo">
+        <div class="rv">
+          <p class="m-time"><b>ご滞在中</b><small>いつでも</small></p>
+          <h3 class="m-title">写経をする</h3>
+          <p class="m-mono">筆をとり、一字ずつ。</p>
+          <p class="m-text">般若心経を、お手本の上からなぞって書き写します。初めての方も安心してどうぞ。写経用紙・筆・筆ペン・墨・硯はご用意しています。お気軽にお申し付けください。</p>
         </div>
       </article>
     </div>
@@ -1167,10 +1149,10 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
   <div class="night-cta"><p>この一夜を、本覚院で。</p><a class="cta-line" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">宿坊を予約する<span class="arw" aria-hidden="true"></span></a></div>
 </section>
 
-<!-- 五 ご利用案内・アクセス -->
+<!-- 四 ご利用案内・アクセス -->
 <section class="sec tone" id="info">
   <div class="sec-in sec-grid">
-    <header class="sh rv"><span class="sh-num" aria-hidden="true">五</span><span class="sh-line"></span><h2 class="sh-title">ご利用案内</h2></header>
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">四</span><span class="sh-line"></span><h2 class="sh-title">ご利用案内</h2></header>
     <div class="body info-wrap">
       <div>
         <h3 class="h3 rv">設備・サービス</h3>
@@ -1217,10 +1199,10 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
   </div>
 </section>
 
-<!-- 六 よくあるご質問 -->
+<!-- 五 よくあるご質問 -->
 <section class="sec" id="faq">
   <div class="sec-in sec-grid">
-    <header class="sh rv"><span class="sh-num" aria-hidden="true">六</span><span class="sh-line"></span><h2 class="sh-title">よくあるご質問</h2></header>
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">五</span><span class="sh-line"></span><h2 class="sh-title">よくあるご質問</h2></header>
     <div class="body">
       <div class="faq rv">
         <details><summary>お一人でも宿泊できますか？</summary><p class="a">お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。</p></details>
