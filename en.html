@@ -941,6 +941,34 @@ html.motion .en-hero-mark{animation:riseL 1.4s var(--ease) .2s both;}
 /* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
 main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
 
+
+/* 客室：比べやすい情報 */
+.room-who{font-size:15px;letter-spacing:.08em;color:var(--gold-d);margin:14px 0 4px;padding-left:14px;border-left:1px solid var(--gold);line-height:1.8;}
+.room-dl{margin:14px 0 0;border-top:1px solid var(--line);}
+.room-dl div{display:grid;grid-template-columns:7.5em 1fr;gap:10px;padding:9px 2px;border-bottom:1px solid var(--line);}
+.room-dl dt{font-size:14px;letter-spacing:.1em;color:var(--text-2);}
+.room-dl dd{font-size:15px;line-height:1.7;color:var(--sumi);}
+.room-common{margin-top:56px;padding:28px 24px;border:1px solid rgba(145,124,80,.5);background:rgba(243,236,225,.6);text-align:center;}
+.room-common p{font-size:16px;line-height:2;}
+.room-common b{font-weight:500;color:var(--sumi);}
+/* 章の終わりの予約の一行 */
+.cta-line{display:inline-flex;align-items:center;gap:14px;min-height:52px;margin-top:14px;padding:0 26px;background:var(--shu);color:#fff;font-size:16px;letter-spacing:.16em;transition:background .3s;}
+.cta-line:hover{background:var(--shu-d);}
+.cta-line .arw{display:inline-block;width:24px;height:1px;background:#fff;position:relative;}
+.cta-line .arw::after{content:'';position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid #fff;border-right:1px solid #fff;transform:rotate(45deg);}
+.night-cta{text-align:center;padding:16px var(--gut) 88px;background:linear-gradient(var(--washi),var(--washi));}
+.night-cta p{font-size:19px;letter-spacing:.24em;color:var(--sumi);}
+@media(min-width:900px){.room-dl div{grid-template-columns:9em 1fr;}.room-common{margin-top:80px;padding:36px;}.night-cta{padding-bottom:120px;}.night-cta p{font-size:22px;}}
+
+.ts{padding:72px var(--gut) 24px;}
+.ts-in{max-width:var(--max);margin:0 auto;}
+.ts-h{font-family:var(--display-en);font-weight:500;font-size:34px;line-height:1.2;color:var(--sumi);}
+.ts-lead{font-size:19px;line-height:1.75;margin-top:14px;max-width:34em;}
+.ts-list{list-style:none;margin-top:28px;border-top:1px solid var(--sumi);display:grid;}
+.ts-list li{display:grid;grid-template-columns:4.2em 1fr;gap:12px;align-items:baseline;padding:14px 2px;border-bottom:1px solid var(--line);}
+.ts-list b{font-family:var(--display-en);font-weight:500;font-size:22px;color:var(--gold-d);}
+.ts-list span{font-size:18px;line-height:1.6;}
+@media(min-width:900px){.ts{padding:120px 56px 24px;}.ts-in{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:start;}.ts-h{font-size:48px;}.ts-list{margin-top:0;grid-row:1 / span 2;grid-column:2;}.ts-lead{font-size:20px;}}
 </style>
 </head>
 <body>
@@ -1023,6 +1051,20 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
   <span class="oe-m"><span id="ktTime" hidden>&nbsp;</span><span id="ktMsg">&nbsp;</span></span>
 </div>
 
+<!-- What is a temple stay? -->
+<section class="ts" aria-label="What is a temple stay?">
+  <div class="ts-in">
+    <h2 class="ts-h">What is a temple stay?</h2>
+    <p class="ts-lead">A <i>shukubo</i> is a Buddhist temple that welcomes overnight guests. At Hongakuin, you don't stay near the temple — you stay <b>in</b> it.</p>
+    <ul class="ts-list">
+      <li><b>Stay</b><span>in a working Buddhist temple, founded in 1190</span></li>
+      <li><b>Eat</b><span>traditional vegetarian cuisine, <i>shōjin ryōri</i></span></li>
+      <li><b>Join</b><span>the monks' morning prayer at 6:30 am</span></li>
+      <li><b>Feel</b><span>the quiet of Mount Kōya, a UNESCO World Heritage site</span></li>
+    </ul>
+  </div>
+</section>
+
 <!-- YOUR STAY -->
 <section class="intro" aria-label="Your stay">
   <div class="rv">
@@ -1066,8 +1108,9 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
           <span class="room-k">Three rooms facing the garden</span>
           <h3 class="room-name">Special Rooms</h3>
           <p class="room-text">Tenpōrin, Hōkaigū and Kūtenbō — three distinctive rooms on the ground floor, each facing the garden.</p>
-          <ul class="room-spec"><li>Ground floor · garden side</li><li>Private bath (Tenpōrin, Hōkaigū)</li></ul>
-          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">Check availability</span><span class="arw" aria-hidden="true"></span></a>
+          <p class="room-who">For a special night with the garden almost to yourself</p>
+          <dl class="room-dl"><div><dt>Location</dt><dd>Main building, ground floor, garden side</dd></div><div><dt>Bath</dt><dd>Private bath in Tenpōrin and Hōkaigū</dd></div><div><dt>View</dt><dd>The Shigemori Mirei garden</dd></div><div><dt>Note</dt><dd>Kūtenbō is a private guest house with a tea room</dd></div></dl>
+          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">Check this room</span><span class="arw" aria-hidden="true"></span></a>
         </div>
       </article>
       <article class="room rev">
@@ -1076,8 +1119,9 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
           <span class="room-k">With private bath &amp; toilet</span>
           <h3 class="room-name">Wakasugi &amp; Karin</h3>
           <p class="room-text">Tatami rooms in the main building, each with its own bath and toilet, overlooking the garden. Wakasugi is on the ground floor; Karin is upstairs.</p>
-          <ul class="room-spec"><li>8 + 3 tatami mats</li><li>Up to 3 guests</li></ul>
-          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">Check availability</span><span class="arw" aria-hidden="true"></span></a>
+          <p class="room-who">For couples and families who want privacy</p>
+          <dl class="room-dl"><div><dt>Size</dt><dd>8 + 3 tatami mats</dd></div><div><dt>Guests</dt><dd>Up to 3</dd></div><div><dt>Bath &amp; toilet</dt><dd>In the room (shared baths also available)</dd></div><div><dt>View</dt><dd>The Shigemori Mirei garden</dd></div></dl>
+          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">Check this room</span><span class="arw" aria-hidden="true"></span></a>
         </div>
       </article>
       <article class="room">
@@ -1086,8 +1130,9 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
           <span class="room-k">The new wing</span>
           <h3 class="room-name">Hokusuikan</h3>
           <p class="room-text">Ten rooms on two floors, with views of the garden through every season. Shared baths only.</p>
-          <ul class="room-spec"><li>10 tatami mats</li><li>Up to 4 guests</li></ul>
-          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">Check availability</span><span class="arw" aria-hidden="true"></span></a>
+          <p class="room-who">For a first, easygoing temple stay</p>
+          <dl class="room-dl"><div><dt>Size</dt><dd>10 tatami mats</dd></div><div><dt>Guests</dt><dd>Up to 4</dd></div><div><dt>Bath &amp; toilet</dt><dd>Shared</dd></div><div><dt>View</dt><dd>Seasonal garden</dd></div><div><dt>Rate</dt><dd>From ¥21,000 per person (2 guests)</dd></div></dl>
+          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">Check this room</span><span class="arw" aria-hidden="true"></span></a>
         </div>
       </article>
       <article class="room rev">
@@ -1101,9 +1146,14 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
           <span class="room-k">Traditional tatami rooms</span>
           <h3 class="room-name">Main Building</h3>
           <p class="room-text">Quiet, traditional rooms, unchanged over the years. Upstairs rooms look out over the garden; adjoining rooms are available for groups.</p>
-          <ul class="room-spec"><li>TV &amp; air conditioning</li><li>Adjoining rooms</li></ul>
+          <p class="room-who">For groups, and those who love an old-style temple room</p>
+          <dl class="room-dl"><div><dt>Location</dt><dd>Main building, 1F and 2F</dd></div><div><dt>Facilities</dt><dd>TV, air conditioning</dd></div><div><dt>View</dt><dd>Upstairs rooms overlook the garden</dd></div><div><dt>Note</dt><dd>Adjoining rooms for groups</dd></div></dl>
         </div>
       </article>
+      <div class="room-common rv">
+        <p>Every stay includes <b>dinner and breakfast (shōjin ryōri)</b> and the chance to join the <b>6:30 am morning service</b>.</p>
+        <a class="cta-line" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">Book your stay<span class="arw" aria-hidden="true"></span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -1278,6 +1328,7 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
       </article>
     </div>
   </div>
+  <div class="night-cta"><p>Spend this night at Hongakuin.</p><a class="cta-line" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">Book your stay<span class="arw" aria-hidden="true"></span></a></div>
 </section>
 
 <!-- 五 ACCESS & FAQ -->

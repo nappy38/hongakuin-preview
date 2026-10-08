@@ -755,6 +755,24 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 .m-mono{font-size:19px;letter-spacing:.18em;color:var(--gold-d);margin:10px 0 2px;line-height:1.7;}
 .ph-yoru .m-mono{color:#f1dfb4;}
 @media(min-width:900px){.m-mono{font-size:22px;}}
+
+/* 客室：比べやすい情報 */
+.room-who{font-size:15px;letter-spacing:.08em;color:var(--gold-d);margin:14px 0 4px;padding-left:14px;border-left:1px solid var(--gold);line-height:1.8;}
+.room-dl{margin:14px 0 0;border-top:1px solid var(--line);}
+.room-dl div{display:grid;grid-template-columns:7.5em 1fr;gap:10px;padding:9px 2px;border-bottom:1px solid var(--line);}
+.room-dl dt{font-size:14px;letter-spacing:.1em;color:var(--text-2);}
+.room-dl dd{font-size:15px;line-height:1.7;color:var(--sumi);}
+.room-common{margin-top:56px;padding:28px 24px;border:1px solid rgba(145,124,80,.5);background:rgba(243,236,225,.6);text-align:center;}
+.room-common p{font-size:16px;line-height:2;}
+.room-common b{font-weight:500;color:var(--sumi);}
+/* 章の終わりの予約の一行 */
+.cta-line{display:inline-flex;align-items:center;gap:14px;min-height:52px;margin-top:14px;padding:0 26px;background:var(--shu);color:#fff;font-size:16px;letter-spacing:.16em;transition:background .3s;}
+.cta-line:hover{background:var(--shu-d);}
+.cta-line .arw{display:inline-block;width:24px;height:1px;background:#fff;position:relative;}
+.cta-line .arw::after{content:'';position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid #fff;border-right:1px solid #fff;transform:rotate(45deg);}
+.night-cta{text-align:center;padding:16px var(--gut) 88px;background:linear-gradient(var(--washi),var(--washi));}
+.night-cta p{font-size:19px;letter-spacing:.24em;color:var(--sumi);}
+@media(min-width:900px){.room-dl div{grid-template-columns:9em 1fr;}.room-common{margin-top:80px;padding:36px;}.night-cta{padding-bottom:120px;}.night-cta p{font-size:22px;}}
 </style>
 </head>
 
@@ -885,8 +903,9 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
           <span class="room-k">庭を望む、3つの特別なお部屋</span>
           <h3 class="room-name">特別室</h3>
           <p class="room-text">最高格の特別室「転法輪」、和モダンスイート「法界宮」、茶室付きの一棟貸し「空点房」。どれも1階の庭側で、静かな時間をお過ごしいただけます。</p>
-          <ul class="room-spec"><li>1階・庭側</li><li>転法輪・法界宮は専用バスルーム付き</li></ul>
-          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">空室・料金を見る</span><span class="arw" aria-hidden="true"></span></a>
+          <p class="room-who">庭を独り占めして、特別な一夜を過ごしたい方へ</p>
+          <dl class="room-dl"><div><dt>建物</dt><dd>本館 1階・庭側</dd></div><div><dt>お風呂</dt><dd>転法輪・法界宮は専用バスルーム付き</dd></div><div><dt>眺め</dt><dd>重森三玲の庭</dd></div><div><dt>特徴</dt><dd>空点房は茶室付きの一棟貸し</dd></div></dl>
+          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">この部屋の空室・料金を見る</span><span class="arw" aria-hidden="true"></span></a>
         </div>
       </article>
 
@@ -898,8 +917,9 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
           <span class="room-k">お風呂・トイレ付きの和室</span>
           <h3 class="room-name"><ruby>若杉<rt>わかすぎ</rt></ruby>・<ruby>花梨<rt>かりん</rt></ruby></h3>
           <p class="room-text">お風呂とトイレを備えた、本館の和室です。重森三玲が手がけた庭を眺めながらおくつろぎいただけます。若杉は1階で館内の移動もしやすく、花梨は2階のお部屋です。</p>
-          <ul class="room-spec"><li>和室8畳＋3畳</li><li>定員3名</li><li>大浴場もご利用可</li></ul>
-          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">空室・料金を見る</span><span class="arw" aria-hidden="true"></span></a>
+          <p class="room-who">お部屋でゆっくりくつろぎたい方・ご家族へ</p>
+          <dl class="room-dl"><div><dt>広さ</dt><dd>和室8畳＋3畳</dd></div><div><dt>定員</dt><dd>3名</dd></div><div><dt>お風呂・トイレ</dt><dd>お部屋にあり（大浴場もご利用可）</dd></div><div><dt>眺め</dt><dd>重森三玲の庭</dd></div><div><dt>階</dt><dd>若杉 1階／花梨 2階</dd></div></dl>
+          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">この部屋の空室・料金を見る</span><span class="arw" aria-hidden="true"></span></a>
         </div>
       </article>
 
@@ -911,8 +931,9 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
           <span class="room-k">新館の和室</span>
           <h3 class="room-name"><ruby>北翠観<rt>ほくすいかん</rt></ruby></h3>
           <p class="room-text">四季折々の庭を眺めながらおくつろぎいただける、新館の和室です。1階・2階に全10部屋。お部屋にお風呂・トイレはなく、大浴場をご利用いただきます。</p>
-          <ul class="room-spec"><li>和室10畳</li><li>定員4名</li><li>全10部屋</li></ul>
-          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">空室・料金を見る</span><span class="arw" aria-hidden="true"></span></a>
+          <p class="room-who">はじめての宿坊に、気軽に泊まりたい方へ</p>
+          <dl class="room-dl"><div><dt>広さ</dt><dd>和室10畳</dd></div><div><dt>定員</dt><dd>4名</dd></div><div><dt>お風呂・トイレ</dt><dd>共用（大浴場をご利用）</dd></div><div><dt>眺め</dt><dd>四季の庭</dd></div><div><dt>料金の目安</dt><dd>おひとり様 21,000円〜（2名1室）</dd></div></dl>
+          <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">この部屋の空室・料金を見る</span><span class="arw" aria-hidden="true"></span></a>
         </div>
       </article>
 
@@ -927,10 +948,15 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
           <span class="room-k">昔ながらの畳の和室</span>
           <h3 class="room-name">本館の和室</h3>
           <p class="room-text">昔から変わらない、落ち着いた畳の和室です。2階のお部屋からは庭園を望めます。隣室との続き部屋としてもご利用いただけます。</p>
-          <ul class="room-spec"><li>テレビ・エアコン完備</li><li>続き部屋対応</li></ul>
+          <p class="room-who">昔ながらの宿坊の空気を味わいたい方・グループへ</p>
+          <dl class="room-dl"><div><dt>建物</dt><dd>本館 1階・2階</dd></div><div><dt>設備</dt><dd>テレビ・エアコン</dd></div><div><dt>眺め</dt><dd>2階は庭園を望む</dd></div><div><dt>特徴</dt><dd>隣室との続き部屋に対応</dd></div></dl>
         </div>
       </article>
 
+      <div class="room-common rv">
+        <p>どのお部屋も、<b>1泊2食（精進料理）付き</b>。毎朝6時30分からの<b>朝のお勤め</b>にご参加いただけます。</p>
+        <a class="cta-line" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">宿坊を予約する<span class="arw" aria-hidden="true"></span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -1082,6 +1108,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
       </article>
     </div>
   </div>
+  <div class="night-cta"><p>この一夜を、本覚院で。</p><a class="cta-line" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">宿坊を予約する<span class="arw" aria-hidden="true"></span></a></div>
 </section>
 
 <!-- 五 ご利用案内・アクセス -->
