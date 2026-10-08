@@ -785,6 +785,23 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 .walk-sec .walk{margin:0 auto;max-width:880px;}
 .walk-kippu{margin-top:48px;}
 @media(min-width:900px){.walk-list li.no-img{grid-template-columns:minmax(0,1fr) !important;}}
+
+/* デジタルきっぷ：見やすく */
+.kippu{padding:26px 20px;}
+.kippu-k{font-size:13px;letter-spacing:.12em;}
+.kippu h4{font-size:21px;letter-spacing:.04em;line-height:1.5;margin:8px 0 2px;}
+.kippu-by{font-size:13px !important;letter-spacing:.1em;color:var(--text-2);margin-bottom:14px;}
+.kippu ul{margin:0 0 16px;border-top:1px solid var(--line);}
+.kippu li{display:grid;grid-template-columns:3.2em 1fr;gap:10px;align-items:baseline;padding:11px 2px;border-bottom:1px solid var(--line);font-size:15px;line-height:1.7;letter-spacing:.03em;}
+.kippu li::before{display:none;}
+.kippu li b{font-weight:500;font-size:13px;letter-spacing:.12em;color:var(--gold-d);}
+.kippu-note{font-size:14px !important;line-height:1.85 !important;letter-spacing:.03em;color:var(--text-2);}
+.kippu-btn{display:flex;align-items:center;gap:10px;min-height:52px;margin-top:16px;padding:0 18px;border:1px solid var(--sumi);font-size:15px;letter-spacing:.06em;transition:background .3s,color .3s;}
+.kippu-btn small{font-size:12px;color:var(--text-2);letter-spacing:.06em;}
+.kippu-btn span{margin-left:auto;}
+.kippu-btn:hover{background:var(--sumi);color:var(--washi);}
+.kippu-btn:hover small{color:inherit;}
+@media(min-width:900px){.kippu{padding:32px 32px;}.kippu h4{font-size:23px;}}
 </style>
 </head>
 
@@ -1183,14 +1200,15 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         <div class="walk-kippu rv">
           <div class="kippu">
             <p class="kippu-k">高野山へは、おトクなきっぷで</p>
-            <h4>高野山・世界遺産デジタルきっぷ（南海電鉄）</h4>
+            <h4><span class="nw">高野山・世界遺産</span><span class="nw">デジタルきっぷ</span></h4>
+            <p class="kippu-by">南海電鉄</p>
             <ul>
-              <li>対象駅〜高野山駅の往復乗車券</li>
-              <li>高野山内の南海りんかんバスが2日間乗り放題</li>
-              <li>山内の対象施設で使える割引クーポン</li>
+              <li><b>電車</b><span>対象駅〜高野山駅の往復</span></li>
+              <li><b>バス</b><span>山内の南海りんかんバスが<span class="nw">2日間乗り放題</span></span></li>
+              <li><b>特典</b><span>山内の対象施設の割引クーポン</span></li>
             </ul>
-            <p>連続2日間使えるので、宿坊に泊まる1泊2日の旅にぴったりです。紙のきっぷ「高野山・世界遺産きっぷ」もあります。料金や購入方法は南海電鉄のページでご確認ください。</p>
-            <a class="lk ink" href="https://www.nankai.co.jp/traffic/digital/koyasan.html" target="_blank" rel="noopener">南海電鉄のページを見る →</a>
+            <p class="kippu-note">2日間使えるので、宿坊1泊の旅にぴったりです。紙のきっぷ「高野山・世界遺産きっぷ」もあります。</p>
+            <a class="kippu-btn" href="https://www.nankai.co.jp/traffic/digital/koyasan.html" target="_blank" rel="noopener">料金・購入方法を見る<small>南海電鉄</small><span aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
