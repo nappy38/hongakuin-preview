@@ -773,6 +773,9 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 .night-cta{text-align:center;padding:16px var(--gut) 88px;background:linear-gradient(var(--washi),var(--washi));}
 .night-cta p{font-size:19px;letter-spacing:.24em;color:var(--sumi);}
 @media(min-width:900px){.room-dl div{grid-template-columns:9em 1fr;}.room-common{margin-top:80px;padding:36px;}.night-cta{padding-bottom:120px;}.night-cta p{font-size:22px;}}
+
+/* 本館の和室：PCも1階・2階を横長の写真で上下に */
+@media(min-width:900px){.room .pair{grid-template-columns:1fr !important;gap:12px !important;}.room .pair img{aspect-ratio:4/3 !important;}}
 </style>
 </head>
 

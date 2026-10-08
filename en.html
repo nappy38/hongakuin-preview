@@ -976,6 +976,9 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
 .dl-fig figcaption{font-size:16px;line-height:1.7;color:rgba(243,236,225,.88);}
 .dl-fig figcaption b{display:block;font-family:var(--display-en);font-weight:500;font-size:20px;color:var(--gold-l);margin-bottom:4px;}
 @media(min-width:900px){.dl-fig{grid-column:1 / -1;grid-template-columns:180px 1fr;gap:32px;max-width:760px;}.dl-fig img{width:180px;height:180px;}.dl-fig figcaption{font-size:18px;}}
+
+/* 本館の和室：PCも1階・2階を横長の写真で上下に */
+@media(min-width:900px){.room .pair{grid-template-columns:1fr !important;gap:12px !important;}.room .pair img{aspect-ratio:4/3 !important;}}
 </style>
 </head>
 <body>
