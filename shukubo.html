@@ -776,6 +776,10 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 
 /* 本館の和室：PCも1階・2階を横長の写真で上下に */
 @media(min-width:900px){.room .pair{grid-template-columns:1fr !important;gap:12px !important;}.room .pair img{aspect-ratio:4/3 !important;}}
+
+/* 改行：文の途中で切れないように */
+.nw{display:inline-block;}
+.mido figcaption span{word-break:normal;line-break:strict;}
 </style>
 </head>
 
@@ -935,7 +939,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
           <h3 class="room-name"><ruby>北翠観<rt>ほくすいかん</rt></ruby></h3>
           <p class="room-text">四季折々の庭を眺めながらおくつろぎいただける、新館の和室です。1階・2階に全10部屋。お部屋にお風呂・トイレはなく、大浴場をご利用いただきます。</p>
           <p class="room-who">はじめての宿坊に、気軽に泊まりたい方へ</p>
-          <dl class="room-dl"><div><dt>広さ</dt><dd>和室10畳</dd></div><div><dt>定員</dt><dd>4名</dd></div><div><dt>お風呂・トイレ</dt><dd>共用（大浴場をご利用）</dd></div><div><dt>眺め</dt><dd>四季の庭</dd></div><div><dt>料金の目安</dt><dd>おひとり様 21,000円〜（2名1室）</dd></div></dl>
+          <dl class="room-dl"><div><dt>広さ</dt><dd>和室10畳</dd></div><div><dt>定員</dt><dd>4名</dd></div><div><dt>お風呂・トイレ</dt><dd>共用（大浴場をご利用）</dd></div><div><dt>眺め</dt><dd>四季の庭</dd></div><div><dt>料金の目安</dt><dd><span class="nw">おひとり様 21,000円〜</span><span class="nw">（2名1室）</span></dd></div></dl>
           <a class="room-link" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">この部屋の空室・料金を見る</span><span class="arw" aria-hidden="true"></span></a>
         </div>
       </article>
@@ -957,7 +961,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
       </article>
 
       <div class="room-common rv">
-        <p>どのお部屋も、<b>1泊2食（精進料理）付き</b>。毎朝6時30分からの<b>朝のお勤め</b>にご参加いただけます。</p>
+        <p><span class="nw">どのお部屋も、</span><span class="nw"><b>1泊2食（精進料理）付き</b>。</span><span class="nw">毎朝6時30分からの</span><span class="nw"><b>朝のお勤め</b>に</span><span class="nw">ご参加いただけます。</span></p>
         <a class="cta-line" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">宿坊を予約する<span class="arw" aria-hidden="true"></span></a>
       </div>
     </div>
