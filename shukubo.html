@@ -803,6 +803,10 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 .kippu-btn:hover{background:var(--sumi);color:var(--washi);}
 .kippu-btn:hover small{color:inherit;}
 @media(min-width:900px){.kippu{padding:32px 32px;}.kippu h4{font-size:23px;}}
+
+/* 夜のさんぽ：縦の写真を2枚並べる */
+.moment figure.duo{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.moment figure.duo img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;}
 </style>
 </head>
 
@@ -1108,6 +1112,15 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
           <h3 class="m-title">山の静けさ</h3>
           <p class="m-mono">音が、消える。</p>
           <p class="m-text">夜の高野山は、驚くほど静かです。灯籠の明かりだけが残る山内を、そっと歩いてみるのもおすすめです。玄関の扉は19:30に閉まりますが、ご宿泊の方は自由にお出入りいただけます。</p>
+        </div>
+      </article>
+      <article class="moment rev">
+        <figure class="rv-img duo"><img src="images/photos/okunoin-yoru.webp" srcset="images/photos/okunoin-yoru-720.webp 720w, images/photos/okunoin-yoru.webp 1200w" sizes="(max-width: 899px) 50vw, 30vw" alt="灯籠の明かりが濡れた石畳に映る、夜の奥の院の参道と橋" width="1200" height="1600" loading="lazy"><img src="images/photos/garan-yoru.webp" srcset="images/photos/garan-yoru-720.webp 720w, images/photos/garan-yoru.webp 1200w" sizes="(max-width: 899px) 50vw, 30vw" alt="ライトアップされた夜の根本大塔" width="1200" height="1600" loading="lazy"></figure>
+        <div class="rv">
+          <p class="m-time"><b>〜21:00</b><small>夜のさんぽ</small></p>
+          <h3 class="m-title">灯りの山をあるく</h3>
+          <p class="m-mono">昼とは、別の山になる。</p>
+          <p class="m-text">夜の奥の院は、杉木立に灯籠の明かりが浮かび、昼とはまったく違う表情を見せます。壇上伽藍では、根本大塔や中門のライトアップが闇に朱色を浮かび上がらせます（消灯は21時）。玄関は19時30分に閉まりますが、出入りは自由です。足もとにお気をつけてどうぞ。</p>
         </div>
       </article>
     </div>

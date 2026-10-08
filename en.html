@@ -1076,6 +1076,10 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
 /* Ebisu: zoom in so both statues appear the same size */
 .mido img.zoom-e{transform:scale(1.4);transform-origin:50% 52%;}
 .mido figure:hover img.zoom-e{transform:scale(1.44);}
+
+/* 夜のさんぽ：縦の写真を2枚並べる */
+.moment figure.duo{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.moment figure.duo img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;}
 </style>
 </head>
 <body>
@@ -1436,6 +1440,14 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
           <p class="m-time"><b>Night</b></p>
           <h3 class="m-title">Mountain silence</h3>
           <p class="m-text">Night on Kōyasan is astonishingly quiet, lit only by lanterns — a lovely time for a gentle walk. The front door closes at 7:30 pm, but guests may come and go freely.</p>
+        </div>
+      </article>
+      <article class="moment rev">
+        <figure class="rv-img duo"><img src="images/photos/okunoin-yoru.webp" srcset="images/photos/okunoin-yoru-720.webp 720w, images/photos/okunoin-yoru.webp 1200w" sizes="(max-width: 899px) 50vw, 30vw" alt="Lanterns reflected on the wet stone path and bridge at Okunoin at night" width="1200" height="1600" loading="lazy"><img src="images/photos/garan-yoru.webp" srcset="images/photos/garan-yoru-720.webp 720w, images/photos/garan-yoru.webp 1200w" sizes="(max-width: 899px) 50vw, 30vw" alt="The Konpon Daitō pagoda lit up at night" width="1200" height="1600" loading="lazy"></figure>
+        <div class="rv">
+          <p class="m-time"><b>Until 9 pm</b><small>Night walk</small></p>
+          <h3 class="m-title">Walk the mountain by lantern light</h3>
+          <p class="m-text">After dark, Okunoin becomes another place — lantern light floating among the ancient cedars. At Danjō Garan, the vermilion Konpon Daitō pagoda and the Chūmon gate glow against the night until the lights go out at 9 pm. The front door closes at 7:30 pm, but you are free to come and go. Watch your step on the paths.</p>
         </div>
       </article>
     </div>
