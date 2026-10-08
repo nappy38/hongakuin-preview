@@ -751,6 +751,10 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
 
 /* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
 main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
+
+.m-mono{font-size:19px;letter-spacing:.18em;color:var(--gold-d);margin:10px 0 2px;line-height:1.7;}
+.ph-yoru .m-mono{color:#f1dfb4;}
+@media(min-width:900px){.m-mono{font-size:22px;}}
 </style>
 </head>
 
@@ -774,7 +778,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
   <div class="hd-actions">
     <a href="tel:0736562711" class="hd-tel-pc">☎ 0736-56-2711</a>
     <a href="en.html" class="hd-lang" lang="en">EN</a>
-    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="hd-book reserve-btn" target="_blank" rel="noopener">ご予約</a>
+    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="hd-book reserve-btn" target="_blank" rel="noopener">宿坊を予約する</a>
     <a href="tel:0736562711" class="hd-ic" aria-label="電話をかける 0736-56-2711"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.6 20.1 3.9 13.4 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></svg></a>
     <button class="menu-btn" id="menuBtn" aria-controls="drawer" aria-expanded="false" aria-label="メニューを開く"><i></i><i></i><em aria-hidden="true">メニュー</em></button>
   </div>
@@ -993,7 +997,8 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         <div class="rv">
           <p class="m-time"><b>15:00</b><small>ご到着</small></p>
           <h3 class="m-title">山門をくぐる</h3>
-          <p class="m-text">山門をくぐると、町の音がすっと遠のきます。お部屋に荷物を置いたら、まずはお茶を一服どうぞ。</p>
+          <p class="m-mono">町の音が、遠のく。</p>
+          <p class="m-text">お部屋に荷物を置いたら、まずはお茶を一服どうぞ。</p>
         </div>
       </article>
       <article class="moment rev">
@@ -1001,7 +1006,8 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         <div class="rv">
           <p class="m-time"><b>夕刻</b><small>ゆうこく</small></p>
           <h3 class="m-title">庭をながめる</h3>
-          <p class="m-text">昭和の名作庭家・重森三玲が手がけた庭を、窓越しに。苔と石の庭は、時間とともに表情を変えていきます。</p>
+          <p class="m-mono">時間が、ゆっくりになる。</p>
+          <p class="m-text">重森三玲が手がけた苔と石の庭を、窓越しに。</p>
         </div>
       </article>
     </div>
@@ -1017,6 +1023,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         <div class="rv">
           <p class="m-time"><b>夕餉</b><small>ゆうげ</small></p>
           <h3 class="m-title">精進料理をいただく</h3>
+          <p class="m-mono">一膳を、ていねいに。</p>
           <p class="m-text">弘法大師・空海が伝えた精進料理。旬のもの、地のものを、お膳のしきたりに沿って丁寧に。金地の襖絵に囲まれていただく一膳です。</p>
           <p class="m-note">個別の食物アレルギーへの対応は行っておりません。</p>
         </div>
@@ -1026,6 +1033,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         <div class="rv">
           <p class="m-time"><b>17:00〜21:00</b></p>
           <h3 class="m-title">湯で、ほどく</h3>
+          <p class="m-mono">一日の疲れが、ほどけていく。</p>
           <p class="m-text">大浴場・中浴場で、一日の疲れをゆっくりと。シャンプーやタオル、ドライヤー、歯ブラシなど、ひと通りそろっています。</p>
         </div>
       </article>
@@ -1034,6 +1042,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         <div class="rv">
           <p class="m-time"><b>夜</b><small>よる</small></p>
           <h3 class="m-title">山の静けさ</h3>
+          <p class="m-mono">音が、消える。</p>
           <p class="m-text">夜の高野山は、驚くほど静かです。灯籠の明かりだけが残る山内を、そっと歩いてみるのもおすすめです。玄関の扉は19:30に閉まりますが、ご宿泊の方は自由にお出入りいただけます。</p>
         </div>
       </article>
@@ -1050,6 +1059,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         <div class="rv">
           <p class="m-time"><b>6:30</b><small>朝のお勤め</small></p>
           <h3 class="m-title">朝のお勤め</h3>
+          <p class="m-mono">朝、聲明が響く。</p>
           <p class="m-text">本堂で、副住職をはじめ僧侶がお勤めをいたします。高野山に受け継がれる読経の響きに包まれる、一日のはじまりです。</p>
           <p class="m-note">毎朝6時30分から、45分〜1時間ほど。ご参加は自由です。</p>
         </div>

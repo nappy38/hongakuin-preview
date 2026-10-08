@@ -888,6 +888,12 @@ html.motion .otsu-dot{animation:otsuBreath 3.6s ease-in-out infinite;}
 
 /* 画面外の章は、見えるまで描画を後回しにする（表示を速く） */
 main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{content-visibility:auto;contain-intrinsic-size:auto 1200px;}
+
+/* 三つの魅力：見る・眺める・聴く */
+.ft-verb{font-size:14px;letter-spacing:.5em;color:var(--gold-d);margin:0 0 6px;padding-left:.1em;}
+.ft-verb::before{content:'';display:inline-block;width:22px;height:1px;background:var(--gold);vertical-align:middle;margin-right:12px;}
+@media(min-width:900px){.ft-verb{font-size:15px;margin-bottom:10px;}}
+.hero-scroll{letter-spacing:.32em !important;font-family:var(--mincho) !important;}
 </style>
 </head>
 <body class="at-top">
@@ -912,7 +918,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
   <div class="hd-actions">
     <a href="tel:0736562711" class="hd-tel-pc">☎ 0736-56-2711</a>
     <a href="en.html" class="hd-lang" lang="en">EN</a>
-    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="hd-book reserve-btn" target="_blank" rel="noopener">ご予約</a>
+    <a href="https://tabichat.jp/engine/hotels/hongakuin" class="hd-book reserve-btn" target="_blank" rel="noopener">宿坊を予約する</a>
     <a href="tel:0736562711" class="hd-ic" aria-label="電話をかける 0736-56-2711"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.6 20.1 3.9 13.4 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></svg></a>
     <button class="menu-btn" id="menuBtn" aria-controls="drawer" aria-expanded="false" aria-label="メニューを開く"><i></i><i></i><em aria-hidden="true">メニュー</em></button>
   </div>
@@ -971,7 +977,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
     <button class="hero-pause" id="heroPause" aria-label="スライドを一時停止" aria-pressed="false"><svg viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><rect x="2" y="1" width="3" height="12"/><rect x="9" y="1" width="3" height="12"/></svg></button>
   </div>
   <div class="hero-prog" aria-hidden="true"><i id="heroProg"></i></div>
-  <a href="#main" class="hero-scroll" aria-label="本文へ">scroll</a>
+  <a href="#main" class="hero-scroll" aria-label="本文へ">山の一夜へ</a>
 </section>
 
 <!-- 朝のお勤め（冒頭の下） -->
@@ -1041,24 +1047,27 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         <figure class="ft-fig rv-img"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="本堂天井に残る250年前の極彩色天井絵" width="1600" height="1067" loading="lazy"></figure>
         <div class="ft-text rv">
           <span class="ft-n" aria-hidden="true">壱</span>
+          <p class="ft-verb">見る</p>
           <h3>250年を超える<br>江戸の芸術</h3>
-          <p>本堂天井には250年前の絵師による極彩色の天井絵が残り、狩野派の絵師による貴重な襖絵もご覧いただけます。</p>
+          <p>見上げれば、250年前の絵師による極彩色の天井絵。狩野派の絵師が描いた襖絵とともに、江戸の筆の跡に出会えます。</p>
         </div>
       </article>
       <article class="ft">
         <figure class="ft-fig rv-img"><img src="images/photos/teien-mado-2.webp" srcset="images/photos/teien-mado-2-960.webp 960w, images/photos/teien-mado-2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="座敷の窓越しに眺める、苔と石組、松の庭" width="1600" height="1200" loading="lazy"></figure>
         <div class="ft-text rv">
           <span class="ft-n" aria-hidden="true">弐</span>
+          <p class="ft-verb">眺める</p>
           <h3>重森三玲設計の<br class="pc">5つの庭園</h3>
-          <p>昭和の名作庭家・重森三玲による石庭を含む5つの庭園。季節ごとに表情を変える苔と岩の世界をお楽しみください。</p>
+          <p>昭和の名作庭家・重森三玲の石庭を含む、5つの庭。窓辺に座り、季節とともに表情を変える苔と石を、心ゆくまで眺めてください。</p>
         </div>
       </article>
       <article class="ft">
         <figure class="ft-fig rv-img"><img src="images/photos/ekou-naijin.webp" srcset="images/photos/ekou-naijin-960.webp 960w, images/photos/ekou-naijin.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明のともる本堂の内陣で、お経をおとなえする僧侶" width="1280" height="1400" loading="lazy" style="object-position:center 45%"></figure>
         <div class="ft-text rv">
           <span class="ft-n" aria-hidden="true">参</span>
+          <p class="ft-verb">聴く</p>
           <h3>祈りの声に<br class="pc">包まれる朝</h3>
-          <p>毎朝、本堂で副住職をはじめ僧侶がお勤めをいたします。どなたでもご参加いただけ、高野山に受け継がれる読経の響きに包まれるひとときをお過ごしいただけます。</p>
+          <p>毎朝6時30分、本堂に読経の声が響きます。ご宿泊の方はどなたでもご参加いただけます。高野山に受け継がれる祈りの声に包まれるひとときをお過ごしいただけます。</p>
         </div>
       </article>
     </div>
