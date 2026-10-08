@@ -1037,6 +1037,41 @@ html.motion .en-hook{opacity:0;animation:riseL 1.6s var(--ease) 1s forwards;}
   .only-tx strong{font-size:26px;}
   .only-tx span{font-size:16px;}
 }
+
+/* ══ A Night at the Temple：スクロールで空が移ろう ══ */
+/* 夕焼け・夜明けの空 */
+.dusk{background:linear-gradient(rgba(243,236,225,0),#efd2ac 22%,#d99a6c 42%,#8a4f55 66%,#3a2633 86%,var(--ink)) !important;}
+.dawn{background:linear-gradient(var(--ink),#1f2546 22%,#4a5b8c 46%,#c7a3a6 72%,#e9e3d8) !important;}
+@media(min-width:900px){.dusk,.dawn{height:340px !important;}}
+/* 星：夜を読み進めるほど、ひとつずつ灯る */
+.ph-yoru{position:relative;overflow:hidden;}
+.ph-yoru .phase-in{position:relative;z-index:1;}
+.stars{position:absolute;inset:0;pointer-events:none;z-index:0;}
+.stars i{position:absolute;width:var(--z,2px);height:var(--z,2px);border-radius:50%;background:#fff6e2;box-shadow:0 0 6px rgba(255,240,210,.8);opacity:0;transform:scale(.4);transition:opacity 1.4s ease,transform 1.4s ease;}
+.stars i.on{opacity:var(--o,.8);transform:none;}
+html.motion .stars i.on{animation:tw var(--d,4s) ease-in-out infinite alternate;}
+@keyframes tw{from{opacity:var(--o,.8);}to{opacity:.2;}}
+html:not(.motion) .stars i{opacity:.6;transform:none;}
+.moon{position:absolute;right:7%;top:64px;width:64px;height:64px;border-radius:50%;pointer-events:none;z-index:0;
+  background:radial-gradient(circle at 38% 36%,#fffaf0,#efe3c6 55%,#d9c9a3 72%);box-shadow:0 0 40px 12px rgba(255,236,190,.22),0 0 120px 40px rgba(255,226,170,.08);
+  opacity:var(--mo,0);transform:translateY(calc((1 - var(--mo,0)) * 60px));transition:opacity .6s linear;}
+.shoot{position:absolute;left:20%;top:16%;width:140px;height:1px;pointer-events:none;z-index:0;opacity:0;
+  background:linear-gradient(90deg,rgba(255,246,226,0),rgba(255,246,226,.95));transform:rotate(-18deg);}
+.shoot.go{animation:shoot 1.3s ease-out forwards;}
+@keyframes shoot{0%{opacity:0;transform:rotate(-18deg) translateX(0);}15%{opacity:1;}100%{opacity:0;transform:rotate(-18deg) translateX(380px);}}
+@media(max-width:899px){.moon{width:44px;height:44px;right:7%;top:80px;}}
+/* 空の時計（PC）：太陽と月が弧を渡る */
+.sky-dial{display:none;}
+@media(min-width:900px){
+  .sky-dial{display:block;position:fixed;left:28px;bottom:32px;z-index:700;width:120px;pointer-events:none;opacity:0;transition:opacity .6s;}
+  .sky-dial.show{opacity:1;}
+  .sky-dial svg{display:block;width:120px;height:66px;overflow:visible;}
+  .sky-dial .arc{fill:none;stroke:currentColor;stroke-width:1;opacity:.35;stroke-dasharray:2 4;}
+  .sky-dial .orb{transition:fill .8s;}
+  .sky-dial p{margin-top:6px;text-align:center;font-family:var(--display-en);font-size:15px;letter-spacing:.06em;line-height:1.2;}
+  .sky-dial small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.7;}
+  .sky-dial{color:var(--sumi);} body.on-ink .sky-dial{color:var(--washi);}
+}
 </style>
 </head>
 <body>
@@ -1090,6 +1125,7 @@ html.motion .en-hook{opacity:0;animation:riseL 1.6s var(--ease) 1s forwards;}
   </ol>
 </nav>
 
+<div class="sky-dial" id="skyDial" aria-hidden="true"><svg viewBox="0 0 120 66"><path class="arc" d="M6 62 A54 54 0 0 1 114 62"/><circle class="orb" id="skyOrb" r="6" cx="6" cy="62" fill="#d9a441"/></svg><p><small id="skyK">Afternoon</small><span id="skyT">3:00 pm</span></p></div>
 <main id="main">
 
 <!-- HERO -->
@@ -1796,6 +1832,61 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
   document.querySelectorAll('.gl').forEach(function (g) {
     ['mouseenter', 'focus', 'touchstart'].forEach(function (ev) { g.addEventListener(ev, function () { requestAnimationFrame(function () { fit(g); }); }, { passive: true }); });
   });
+})();
+</script>
+<script>
+/* A Night at the Temple: the sky moves as you scroll */
+(function () {
+  var night = document.getElementById('night'), yoru = document.getElementById('yoru'); if (!night || !yoru) return;
+  var motion = document.documentElement.classList.contains('motion');
+  // stars
+  var box = document.createElement('div'); box.className = 'stars'; box.setAttribute('aria-hidden', 'true');
+  var html = '', N = window.innerWidth < 900 ? 46 : 80;
+  for (var i = 0; i < N; i++) {
+    html += '<i data-t="' + (Math.random() * 0.85).toFixed(3) + '" style="left:' + (Math.random() * 100).toFixed(2) + '%;top:' + (Math.pow(Math.random(), 1.6) * 100).toFixed(2) + '%;--z:' + (1 + Math.random() * 1.8).toFixed(1) + 'px;--o:' + (0.45 + Math.random() * 0.5).toFixed(2) + ';--d:' + (2.5 + Math.random() * 4).toFixed(1) + 's;animation-delay:-' + (Math.random() * 4).toFixed(1) + 's"></i>';
+  }
+  box.innerHTML = html + '';
+  var moon = document.createElement('div'); moon.className = 'moon'; moon.setAttribute('aria-hidden', 'true');
+  var shoot = document.createElement('div'); shoot.className = 'shoot'; shoot.setAttribute('aria-hidden', 'true');
+  yoru.insertBefore(shoot, yoru.firstChild); yoru.insertBefore(moon, yoru.firstChild); yoru.insertBefore(box, yoru.firstChild);
+  var stars = box.querySelectorAll('i'), shot = false;
+  if (!motion) { yoru.style.setProperty('--mo', 1); stars.forEach(function (s) { s.classList.add('on'); }); }
+  // sky dial (PC)
+  var dial = document.getElementById('skyDial'), orb = document.getElementById('skyOrb'), tK = document.getElementById('skyK'), tT = document.getElementById('skyT');
+  var moments = night.querySelectorAll('.moment');
+  function label(el) {
+    var ph = el.closest('.phase'), k = ph ? ph.querySelector('.phase-k') : null, b = el.querySelector('.m-time b');
+    return [k ? k.textContent.trim() : '', b ? b.textContent.trim() : ''];
+  }
+  var ticking = false;
+  function f() {
+    ticking = false;
+    var h = innerHeight;
+    // stars + moon
+    var r = yoru.getBoundingClientRect();
+    var p = Math.max(0, Math.min(1, (h * 0.85 - r.top) / (r.height * 0.9)));
+    if (motion) {
+      yoru.style.setProperty('--mo', Math.min(1, p * 1.6).toFixed(3));
+      stars.forEach(function (s) { s.classList.toggle('on', p > +s.dataset.t); });
+      if (!shot && p > 0.45 && r.top < h && r.bottom > 0) { shot = true; shoot.classList.add('go'); }
+    }
+    // dial
+    if (!dial) return;
+    var nr = night.getBoundingClientRect();
+    var inView = nr.top < h * 0.5 && nr.bottom > h * 0.5;
+    dial.classList.toggle('show', inView);
+    if (!inView) return;
+    var q = Math.max(0, Math.min(1, (h * 0.5 - nr.top) / nr.height));
+    var a = Math.PI * (1 - q), cx = 60 + 54 * Math.cos(a), cy = 62 - 54 * Math.sin(a);
+    orb.setAttribute('cx', cx.toFixed(1)); orb.setAttribute('cy', cy.toFixed(1));
+    var onNight = r.top < h * 0.5 && r.bottom > h * 0.5;
+    orb.setAttribute('fill', onNight ? '#f3ead2' : '#d9a441');
+    var cur = null;
+    moments.forEach(function (m) { if (m.getBoundingClientRect().top < h * 0.6) cur = m; });
+    if (cur) { var l = label(cur); tK.textContent = l[0]; tT.textContent = l[1]; }
+  }
+  function req() { if (!ticking) { ticking = true; requestAnimationFrame(f); } }
+  addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); f();
 })();
 </script>
 </body>
