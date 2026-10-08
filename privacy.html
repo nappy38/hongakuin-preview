@@ -59,7 +59,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap"></noscript>
-<link rel="preload" as="image" href="images/photos/rokujizo-ushiro.webp" imagesrcset="images/photos/rokujizo-ushiro-960.webp 960w, images/photos/rokujizo-ushiro.webp 1600w" imagesizes="100vw" fetchpriority="high">
 <style>
 /* ══════════════════════════════════════════════════════════
    本覚院 本覚院について v3 ──「由緒の巻」
@@ -543,7 +542,7 @@ footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
       <a href="index.html#news"><i>五</i>新着情報</a>
       <a href="index.html#access"><i>六</i>アクセス</a>
     </nav>
-    <a href="#cta" class="drawer-reserve" data-close>ご予約・お問合せ</a>
+    <a href="index.html#cta" class="drawer-reserve" data-close>ご予約・お問合せ</a>
     <a href="tel:0736562711" class="drawer-phone">☎ 0736-56-2711<small>受付 9:00〜17:00</small></a>
     <a href="en.html" class="drawer-lang" lang="en">English</a>
   </div>
@@ -664,7 +663,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
       bar.style.setProperty('--p', max > 0 ? Math.min(1, y / max).toFixed(4) : 0);
     }
     var mid = innerHeight / 2, onInk = false;
-    inks.forEach(function (s) { var r = s.getBoundingClientRect(); if (r.top < mid && r.bottom > mid) onInk = true; });
+    inks.forEach(function (s) { if (!s) return; var r = s.getBoundingClientRect(); if (r.top < mid && r.bottom > mid) onInk = true; });
     b.classList.toggle('on-ink', onInk);
   }
   window.addEventListener('scroll', f, { passive: true }); window.addEventListener('resize', f); f();

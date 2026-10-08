@@ -922,7 +922,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
       bar.style.setProperty('--p', max > 0 ? Math.min(1, y / max).toFixed(4) : 0);
     }
     var mid = innerHeight / 2, onInk = false;
-    inks.forEach(function (s) { var r = s.getBoundingClientRect(); if (r.top < mid && r.bottom > mid) onInk = true; });
+    inks.forEach(function (s) { if (!s) return; var r = s.getBoundingClientRect(); if (r.top < mid && r.bottom > mid) onInk = true; });
     b.classList.toggle('on-ink', onInk);
   }
   window.addEventListener('scroll', f, { passive: true }); window.addEventListener('resize', f); f();
@@ -981,7 +981,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
     API.createController(el.firstChild,{uri:'spotify:album:1UExgUP38O4lbdstKeMkPf',width:'100%',height:152},function(c){
       ctl=c; var f=document.querySelector('#kiku-player iframe'); if(f) f.removeAttribute('loading');
       c.addListener('playback_update',function(e){ playing=!e.data.isPaused; set(); });
-      c.addListener('ready',function(){ ready=true; if(pending){ pending=false; toggle(); } });
+      c.addListener('ready',function(){ ready=true; var f=el.querySelector('iframe'); if(f&&!f.title) f.title='住職の聲明（Spotify）'; if(pending){ pending=false; toggle(); } });
     });
   };
   function load(){ if(loaded) return; loaded=true; var s=document.createElement('script'); s.src='https://open.spotify.com/embed/iframe-api/v1'; s.async=true; document.body.appendChild(s); }

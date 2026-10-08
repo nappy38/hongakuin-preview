@@ -1323,7 +1323,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
       bar.style.setProperty('--p', max > 0 ? Math.min(1, y / max).toFixed(4) : 0);
     }
     var mid = innerHeight / 2, onInk = false;
-    inks.forEach(function (s) { var r = s.getBoundingClientRect(); if (r.top < mid && r.bottom > mid) onInk = true; });
+    inks.forEach(function (s) { if (!s) return; var r = s.getBoundingClientRect(); if (r.top < mid && r.bottom > mid) onInk = true; });
     b.classList.toggle('on-ink', onInk);
   }
   window.addEventListener('scroll', f, { passive: true }); window.addEventListener('resize', f); f();
