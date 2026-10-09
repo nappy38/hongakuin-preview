@@ -1080,6 +1080,15 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
 /* 夜のさんぽ：縦の写真を2枚並べる */
 .moment figure.duo{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .moment figure.duo img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;}
+
+/* Things to experience */
+.taiken{margin:48px 0 0;}
+.tk-list{list-style:none;border-top:1px solid var(--sumi);margin-top:16px;}
+.tk-list li{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:16px 2px;border-bottom:1px solid var(--line);}
+.tk-list b{font-weight:500;font-size:18px;color:var(--sumi);}
+.tk-where{font-size:13px;letter-spacing:.04em;color:var(--gold-d);align-self:center;text-align:right;}
+.tk-list p{grid-column:1/-1;font-size:16px;line-height:1.7;color:var(--text-2);}
+.tk-list p a{display:inline-block;margin-top:4px;}
 </style>
 </head>
 <body>
@@ -1525,6 +1534,14 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
             <li class="has-img no-img"><span class="w-img w-blank" aria-hidden="true"></span><div><b>Daimon Gate</b><span class="t">about 25 min</span><p>The great gate of Kōyasan. On clear days, the view can reach as far as Awaji Island.</p></div></li>
           </ul>
           <p class="walk-note">Walking times are estimates based on map distance; the diagram is schematic. Buses also run to Okunoin.</p>
+          <div class="taiken">
+            <h3 class="h3">Things to experience on Kōyasan</h3>
+            <ul class="tk-list">
+              <li><b>Morning service</b><span class="tk-where">At Hongakuin</span><p>Every morning at 6:30 am in the main hall. All guests are welcome to join.</p></li>
+              <li><b>Sutra copying</b><span class="tk-where">At Hongakuin</span><p>Anytime during your stay. Trace the Heart Sutra with brush and ink (¥1,500).</p></li>
+              <li><b>Ajikan meditation</b><span class="tk-where">Kongōbu-ji · 6 min walk</span><p>The breathing and meditation practice of Shingon Buddhism, guided at the head temple of Kōyasan. Seasonal; reservation required. <a class="ink" href="https://www.koyasan.or.jp/en/experience/#ajikan" target="_blank" rel="noopener">Details &amp; booking (Kongōbu-ji) →</a></p></li>
+            </ul>
+          </div>
           <div class="kippu">
             <p class="kippu-k">Getting to Kōyasan</p>
             <h4>Koyasan World Heritage Ticket</h4>
