@@ -921,12 +921,16 @@ html.motion .lantern.on{animation:lflick 3.2s ease-in-out infinite;}
 html.motion .lantern.on:not(.lit) .lt-hint{opacity:1;}
 @media(max-width:899px){.lt-hint{display:none;}}
 
-/* 住職より（PC）：写真 → 文字の順に縦並び */
+
+/* トップの寺名：扁額の書（巌谷修 題） */
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+.hero-name-main .sho{display:block;width:auto;height:clamp(150px,22vh,210px);}
+.hero-name-main .sho-w{filter:drop-shadow(0 0 18px rgba(0,0,0,.6));}
+.hero-name-main .sho-k{display:none;}
 @media(min-width:900px){
-  .priest .body{display:flex !important;flex-direction:column;align-items:flex-start;gap:40px;}
-  .priest-fig{width:min(440px,100%);}
-  .priest-img{aspect-ratio:auto !important;height:auto;object-fit:contain;}
-  .priest-msg{max-width:34em;}
+  .hero-name-main .sho{height:clamp(190px,26vh,260px);}
+  .hero-name-main .sho-w{display:none;}
+  .hero-name-main .sho-k{display:block;}
 }
 </style>
 </head>
@@ -990,7 +994,7 @@ html.motion .lantern.on:not(.lit) .lt-hint{opacity:1;}
     <div class="hero-titleblock">
       <img class="hero-mon hero-mon-sumi" src="images/mon-sumi.png" alt="本覚院の寺紋" width="400" height="400">
       <img class="hero-mon hero-mon-white" src="images/mon-white.png" alt="" width="400" height="400">
-      <h1 class="hero-name"><span class="hero-name-sub">高野山 別格本山</span><span class="hero-name-main">本覚院</span></h1>
+      <h1 class="hero-name"><span class="hero-name-sub">高野山 別格本山</span><span class="hero-name-main"><span class="vh">本覚院</span><img class="sho sho-w" src="images/hongakuin-sho-white.webp" alt="" width="282" height="799" aria-hidden="true"><img class="sho sho-k" src="images/hongakuin-sho-ink.webp" alt="" width="282" height="799" aria-hidden="true"></span></h1>
       <span class="hero-name-en" lang="en">Koyasan<br>Hongakuin</span>
     </div>
     <nav class="hero-nav" aria-label="メインメニュー（トップ）">
