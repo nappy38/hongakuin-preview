@@ -920,6 +920,14 @@ html.motion .lantern.on{animation:lflick 3.2s ease-in-out infinite;}
 .lt-hint{position:absolute;left:14px;bottom:12px;font-size:13px;letter-spacing:.24em;color:rgba(243,236,225,.85);text-shadow:0 0 8px rgba(0,0,0,.8);opacity:0;transition:opacity 1s;pointer-events:none;}
 html.motion .lantern.on:not(.lit) .lt-hint{opacity:1;}
 @media(max-width:899px){.lt-hint{display:none;}}
+
+/* 住職より（PC）：写真 → 文字の順に縦並び */
+@media(min-width:900px){
+  .priest .body{display:flex !important;flex-direction:column;align-items:flex-start;gap:40px;}
+  .priest-fig{width:min(440px,100%);}
+  .priest-img{aspect-ratio:auto !important;height:auto;object-fit:contain;}
+  .priest-msg{max-width:34em;}
+}
 </style>
 </head>
 <body class="at-top">
