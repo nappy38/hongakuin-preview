@@ -1177,6 +1177,23 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
 /* 寺名：扁額の書 */
 .ev-main .sho{display:block;width:auto;height:clamp(160px,24vh,220px);filter:drop-shadow(0 0 18px rgba(0,0,0,.6));}
 @media(min-width:900px){.ev-main .sho{height:clamp(200px,28vh,280px);}}
+
+/* ══ The Temple：3列のタイル組み（大きい写真は2列ぶん）。比率をそろえて短く ══ */
+@media(min-width:900px){
+  #temple .sec-in{max-width:1240px;}
+  #temple .mido{grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:56px 28px !important;grid-auto-flow:dense;align-items:start;}
+  #temple .mido figure{grid-column:auto;}
+  #temple .mido figure.w{grid-column:span 2 !important;}
+  #temple .mido img{aspect-ratio:4/5 !important;}
+  #temple .mido figure.w img{aspect-ratio:auto !important;height:auto;}
+  #temple .mido figure.w{display:flex;flex-direction:column;}
+  #temple .mido figure.w>img{aspect-ratio:8/5 !important;}
+  #temple .mido figcaption b{font-size:16px;}
+  #temple .mido figcaption span{font-size:14px;line-height:1.8;}
+  #temple .mido img.zoom-e{transform:none !important;object-position:50% 45%;}
+}
+/* 一夜の流れ：場面の間を少し詰める */
+@media(min-width:900px){.night .moment+.moment{margin-top:128px !important;}}
 </style>
 </head>
 <body>
