@@ -1211,6 +1211,8 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
 .on-dark .mb{color:var(--gold-l);}
 #temple .mb-row{grid-column:1/-1;text-align:center;margin-top:0;}
 @media(min-width:900px){html.js #temple .mido:not(.mg-opened) .mg-last{grid-column:1/-1 !important;}html.js #temple .mido:not(.mg-opened) .mg-last img{aspect-ratio:21/9 !important;}}
+
+.night-mb{text-align:center;margin:8px 0 48px;padding:0 var(--gut);}
 </style>
 </head>
 <body>
@@ -1548,7 +1550,7 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
         </div>
         <figure class="rv-img m-after m-big"><img src="images/photos/teien-niwa-yu.webp" srcset="images/photos/teien-niwa-yu-960.webp 960w, images/photos/teien-niwa-yu.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The moss and rock garden by Shigemori Mirei, framed by the windows of a quiet room" width="1600" height="840" loading="lazy"></figure>
       </article>
-      <article class="moment rev" id="shakyo">
+      <article data-mg="night" class="moment rev" id="shakyo">
         <figure class="rv-img"><img src="images/photos/shakyo.webp" srcset="images/photos/shakyo-960.webp 960w, images/photos/shakyo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="People copying sutras at low desks before mandala paintings and a portrait of Kōbō Daishi" width="1600" height="1200" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>Anytime</b><small>during your stay</small></p>
@@ -1574,7 +1576,7 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
         </div>
         <figure class="rv-img m-after"><img src="images/photos/yuushoku-toko.webp" srcset="images/photos/yuushoku-toko-960.webp 960w, images/photos/yuushoku-toko.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Vermilion lacquered trays set before an alcove with a hanging scroll and gold walls" width="1600" height="1200" loading="lazy"></figure>
       </article>
-      <article class="moment rev">
+      <article data-mg="night" class="moment rev">
         <figure class="rv-img"><img src="images/photos/daiyokujo-onna.webp" srcset="images/photos/daiyokujo-onna-960.webp 960w, images/photos/daiyokujo-onna.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The large shared bath, with stone floor and a wide tub" width="1600" height="1200" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>5:00 – 9:00 pm</b></p>
@@ -1590,7 +1592,7 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
           <p class="m-text">Night on Kōyasan is astonishingly quiet, lit only by lanterns — a lovely time for a gentle walk. The front door closes at 7:30 pm, but guests may come and go freely.</p>
         </div>
       </article>
-      <article class="moment rev">
+      <article data-mg="night" class="moment rev">
         <figure class="rv-img duo"><img src="images/photos/okunoin-yoru.webp" srcset="images/photos/okunoin-yoru-720.webp 720w, images/photos/okunoin-yoru.webp 1200w" sizes="(max-width: 899px) 50vw, 30vw" alt="Lanterns reflected on the wet stone path and bridge at Okunoin at night" width="1200" height="1600" loading="lazy"><img src="images/photos/garan-yoru.webp" srcset="images/photos/garan-yoru-720.webp 720w, images/photos/garan-yoru.webp 1200w" sizes="(max-width: 899px) 50vw, 30vw" alt="The Konpon Daitō pagoda lit up at night" width="1200" height="1600" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>Until 9 pm</b><small>Night walk</small></p>
@@ -1615,14 +1617,14 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
           <p class="m-note">Every morning at 6:30 · optional · about 45 minutes to an hour</p>
         </div>
       </article>
-      <article class="moment rev nofig">
+      <article data-mg="night" class="moment rev nofig">
         <div class="rv">
           <p class="m-time"><b>7:20 am</b><small>approx.</small></p>
           <h3 class="m-title">Breakfast</h3>
           <p class="m-text">After the service, a shōjin ryōri breakfast — a gentle, plant-based meal to begin your day on the mountain.</p>
         </div>
       </article>
-      <article class="moment">
+      <article data-mg="night" class="moment">
         <figure class="rv-img"><img src="images/photos/shojingu.webp" srcset="images/photos/shojingu-960.webp 960w, images/photos/shojingu.webp 1033w" sizes="(max-width: 899px) 100vw, 60vw" alt="Monks carrying the meal for Kōbō Daishi across the bridge at Okunoin (shōjingu)" width="1033" height="860" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>10:00 am</b><small>Check-out</small></p>
@@ -1633,6 +1635,7 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
       </article>
     </div>
   </div>
+  <p class="mb-row night-mb"><button type="button" class="mb" data-mb="night" aria-expanded="false">Every moment of the night<span aria-hidden="true">+</span></button></p>
   <div class="night-cta"><p>Spend this night at Hongakuin.</p><a class="cta-line" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">Book your stay<span class="arw" aria-hidden="true"></span></a></div>
 </section>
 
