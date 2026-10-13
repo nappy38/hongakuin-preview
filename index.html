@@ -943,6 +943,17 @@ html.motion .lantern.on:not(.lit) .lt-hint{opacity:1;}
 @media(min-width:900px){
   .ft .ft-n{position:static !important;display:block;font-size:110px !important;line-height:1;margin:0 0 18px -.04em !important;left:auto !important;top:auto !important;color:transparent;-webkit-text-stroke:1px rgba(145,124,80,.6);}
 }
+
+/* 宿坊（PC）：写真と案内の枠を重ねず、横に並べる。写真の上の縦書きの説明は下へ */
+@media(min-width:900px){
+  .stay-hero{grid-column:1 / 8 !important;align-self:start;}
+  .stay-card{grid-column:8 / 13 !important;grid-row:1 / span 2 !important;align-self:start !important;margin:0 !important;box-shadow:none !important;padding:8px 0 0 48px !important;background:none !important;}
+  .stay-hero figcaption{position:static !important;writing-mode:horizontal-tb !important;color:var(--text-2) !important;text-shadow:none !important;font-size:13px !important;letter-spacing:.14em !important;margin-top:10px;}
+  .stay-hero{overflow:visible !important;}
+  .stay-hero img{position:static !important;height:auto !important;aspect-ratio:16/10;top:auto !important;transform:none !important;}
+  .stay-thumbs{grid-column:1 / 8 !important;grid-row:2 !important;padding:0 !important;margin-top:28px !important;position:relative;z-index:1;}
+  .stay-hero{height:auto !important;aspect-ratio:auto !important;max-height:none !important;}
+}
 </style>
 </head>
 <body class="at-top">
