@@ -46,4 +46,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+  <url>
+    <loc>https://www.hongakuin.jp/en-stay.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.hongakuin.jp/shukubo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hongakuin.jp/en-stay.html"/>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

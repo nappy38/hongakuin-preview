@@ -1230,6 +1230,9 @@ html.js #temple .mido:not(.mg-opened) .mg-last{grid-column:1/-1 !important;}
 html.js .interlude{display:none;}
 @media(min-width:900px){.dusk,.dawn{height:220px !important;}}
 .rooms .room-text{display:none;}
+
+.night-more{text-align:center;margin:8px 0 64px;padding:0 var(--gut);}
+.mb-link{display:inline-flex;align-items:center;gap:12px;min-height:48px;font-family:var(--display-en);font-size:19px;color:var(--gold-d);border-bottom:1px solid currentColor;}
 </style>
 </head>
 <body>
@@ -1243,9 +1246,9 @@ html.js .interlude{display:none;}
   <nav class="hd-nav" aria-label="Main menu">
     <a href="#rooms"><span>Rooms</span></a>
     <a href="#temple"><span>The Temple</span></a>
-    <a href="#monks"><span>The Monks</span></a>
     <a href="#night"><span>A Night Here</span></a>
-    <a href="#info"><span>Access &amp; FAQ</span></a>
+    <a href="en-stay.html#monks"><span>The Monks</span></a>
+    <a href="en-stay.html#info"><span>Access &amp; FAQ</span></a>
   </nav>
   <div class="hd-actions">
     <a href="index.html" class="hd-lang" lang="ja">日本語</a>
@@ -1262,9 +1265,9 @@ html.js .interlude{display:none;}
     <nav>
       <a href="#rooms" data-close><i>一</i>Rooms</a>
       <a href="#temple" data-close><i>二</i>The Temple</a>
-      <a href="#monks" data-close><i>三</i>The Monks</a>
-      <a href="#night" data-close><i>四</i>A Night Here</a>
-      <a href="#info" data-close><i>五</i>Access &amp; FAQ</a>
+      <a href="#night" data-close><i>三</i>A Night Here</a>
+      <a href="en-stay.html#monks"><i>四</i>The Monks</a>
+      <a href="en-stay.html#info"><i>五</i>Access &amp; FAQ</a>
     </nav>
     <a href="https://tabichat.com/engine/hotels/hongakuin" class="drawer-reserve" target="_blank" rel="noopener">Book your stay</a>
     <a href="tel:+81736562711" class="drawer-phone">+81-736-56-2711<small>9:00 am – 5:00 pm JST</small></a>
@@ -1276,9 +1279,7 @@ html.js .interlude{display:none;}
   <ol>
     <li><a href="#rooms"><span>Rooms</span><b>一</b></a></li>
     <li><a href="#temple"><span>The Temple</span><b>二</b></a></li>
-    <li><a href="#monks"><span>The Monks</span><b>三</b></a></li>
-    <li><a href="#night"><span>A Night Here</span><b>四</b></a></li>
-    <li><a href="#info"><span>Access &amp; FAQ</span><b>五</b></a></li>
+    <li><a href="#night"><span>A Night Here</span><b>三</b></a></li>
     <li class="bar" aria-hidden="true"></li>
   </ol>
 </nav>
@@ -1447,17 +1448,10 @@ html.js .interlude{display:none;}
         <p>Every stay includes <b>dinner and breakfast (shōjin ryōri)</b> and the chance to join the <b>6:30 am morning service</b>.</p>
         <p class="book-note">Dinner is served to all guests together at 6:00 pm. If you expect to arrive late, please call +81-736-56-2711.<!-- TODO: confirm with temple … latest arrival time for dinner --><br>Booking directly on our official site gives you the best rate.</p>
         <a class="cta-line" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">Book your stay<span class="arw" aria-hidden="true"></span></a>
+      
+        <p class="night-more" style="margin:18px 0 0"><a class="mb-link" href="en-stay.html#info">Stay guide: access, facilities &amp; FAQ<span aria-hidden="true">→</span></a></p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Interlude: 1,200 years of prayer -->
-<section class="interlude on-dark" aria-label="1,200 years of prayer">
-  <div class="il-img"><picture><source media="(max-width:899px)" srcset="images/photos/shojingu-tate.webp" width="792" height="1288"><img src="images/photos/shojingu.webp" srcset="images/photos/shojingu-960.webp 960w, images/photos/shojingu.webp 1033w" sizes="100vw" alt="Monks carrying the meal for Kōbō Daishi across the bridge at Okunoin" width="1033" height="860" loading="lazy" data-px></picture></div>
-  <div class="il-text">
-    <p class="il-v rv">For 1,200 years,<br>prayers have never<br>ceased on this mountain.</p>
-    <p class="il-s rv rv-d1">Twice every day at Okunoin, monks still carry a meal to Kōbō Daishi. Hongakuin stands at the heart of this sacred mountain.</p>
   </div>
 </section>
 
@@ -1493,56 +1487,10 @@ html.js .interlude{display:none;}
   </div>
 </section>
 
-<!-- 三 THE MONKS -->
-<section class="sec" id="monks">
-  <div class="sec-in">
-    <header class="sh rv"><span class="sh-num" aria-hidden="true">三</span><span class="sh-line"></span><h2 class="sh-title">The Monks</h2></header>
-    <div class="body monks">
-      <figure class="monk-fig rv-img"><img src="images/priest-1.webp" alt="The head priest in vermilion robes, conducting a service in the inner sanctuary" width="800" height="645" loading="lazy"></figure>
-      <div class="monk-text">
-        <p class="monk-name rv"><span>Head Priest</span>Inaba Hōken</p>
-        <div class="rv">
-          <p>At nine years old, he lay unconscious with peritonitis. His father prayed to Kōbō Daishi: “I will give my son to Mount Kōya — please save his life.” The next day, the boy recovered. At fifteen he entered Mount Kōya, and has served the Buddha ever since.</p>
-          <p class="mb-row"><button type="button" class="mb" data-mb="bio" aria-expanded="false">Read more<span aria-hidden="true">+</span></button></p>
-          <p data-mg="bio">He studied <em>shōmyō</em> — the Buddhist chant of Kōyasan's Nanzanshin school — under a former Chief Abbot of Kōyasan Shingon Buddhism, and for eight years trained some 640 young monks in its chanting.</p>
-        </div>
-        <blockquote class="monk-quote rv">“More than half a century has passed since I began serving the Buddha and Kōbō Daishi. Even now, I ask myself every day: am I worthy as a priest?”</blockquote>
-      </div>
-    </div>
-
-    <div class="kiku-wrap">
-      <div class="sutra" id="sutra" aria-hidden="true"></div>
-      <div class="kiku rv" id="kiku">
-        <button class="kiku-btn" type="button" aria-label="Listen to the chant" aria-pressed="false">
-          <span class="kiku-ring" aria-hidden="true"></span><span class="kiku-ring r2" aria-hidden="true"></span>
-          <span class="kiku-ico" aria-hidden="true"></span>
-        </button>
-        <div>
-          <p class="kiku-t">Listen to the chant<span class="kiku-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span></p>
-          <p class="kiku-s"><span class="kiku-s1">The voice of the head priest</span><span class="kiku-s1">from <i>THE SHO-MYO — Furui</i></span></p>
-        </div>
-        <div class="kiku-player" id="kiku-player"><iframe title="THE SHO-MYO — Kōyasan Nanzanshin School, Furui (Spotify)" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?theme=0&amp;utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-        <p class="kiku-hint">If it doesn't start, tap ▶ on the player above.</p>
-        <p class="kiku-tip" style="display:none">On a phone, tap ▶ on the player above to listen, then keep scrolling.</p>
-      </div>
-      <p class="cd-line rv">His recordings were released by Victor Entertainment. A special two-disc edition is available only at Hongakuin.</p>
-      <div class="am-btns rv">
-        <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-furui/1828860466" target="_blank" rel="noopener"><span class="am-t">THE SHO-MYO — Furui</span><span class="am-s">Apple Music →</span></a>
-        <a class="am-btn" href="https://music.apple.com/jp/album/the-sho-myo-koyasan-nanzanshin-ryu-iyashi/1828860904" target="_blank" rel="noopener"><span class="am-t">THE SHO-MYO — Iyashi</span><span class="am-s">Apple Music →</span></a>
-      </div>
-    </div>
-
-    <ul class="others">
-      <li class="rv"><b>Koga Hōken — Vice Head Priest</b><span>Leads the morning service in the main hall, which every guest is welcome to join.</span></li>
-      <li class="rv"><b>A Buddhist nun</b><span>A nun also serves at Hongakuin. Women travelers, including those traveling alone, are warmly welcome.</span></li>
-    </ul>
-  </div>
-</section>
-
 <!-- 四 A NIGHT HERE -->
 <section class="sec night" id="night">
   <div class="sec-in">
-    <header class="sh rv"><span class="sh-num" aria-hidden="true">四</span><span class="sh-line"></span><h2 class="sh-title">A Night at the Temple</h2></header>
+    <header class="sh rv"><span class="sh-num" aria-hidden="true">三</span><span class="sh-line"></span><h2 class="sh-title">A Night at the Temple</h2></header>
     <p class="ichiya-lead rv">A temple stay is not quite like a hotel. From the moment you pass through the gate until you leave the next morning, let the rhythm of the mountain carry you.</p>
   </div>
 
@@ -1555,24 +1503,6 @@ html.js .interlude{display:none;}
           <p class="m-time"><b>3:00 pm</b><small>Arrival</small></p>
           <h3 class="m-title">Through the gate</h3>
           <p class="m-text">Step through the gate and the sounds of town fall away. Settle into your room with a cup of green tea.</p>
-        </div>
-        <figure data-mg="night" class="rv-img m-after"><img src="images/photos/sanmon-kuguru.webp" srcset="images/photos/sanmon-kuguru-960.webp 960w, images/photos/sanmon-kuguru.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Looking through the temple gate, its door marked with the temple crest, to the stone-paved grounds and lanterns" width="1600" height="1200" loading="lazy"></figure>
-      </article>
-      <article data-mg="night" class="moment rev">
-        <figure class="rv-img"><img src="images/photos/rouka-sou2.webp" srcset="images/photos/rouka-sou2-960.webp 960w, images/photos/rouka-sou2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A monk in black robes walking down a corridor with the moss garden outside the windows" width="1600" height="1067" loading="lazy"></figure>
-        <div class="rv">
-          <p class="m-time"><b>Late afternoon</b></p>
-          <h3 class="m-title">Gaze at the garden</h3>
-          <p class="m-text">Five gardens surround the temple, including a rock garden by Shigemori Mirei, one of Japan's great 20th-century garden designers. Moss and stone change with every hour of light.</p>
-        </div>
-        <figure data-mg="night" class="rv-img m-after m-big"><img src="images/photos/teien-niwa-yu.webp" srcset="images/photos/teien-niwa-yu-960.webp 960w, images/photos/teien-niwa-yu.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The moss and rock garden by Shigemori Mirei, framed by the windows of a quiet room" width="1600" height="840" loading="lazy"></figure>
-      </article>
-      <article data-mg="night" class="moment rev" id="shakyo">
-        <figure class="rv-img"><img src="images/photos/shakyo.webp" srcset="images/photos/shakyo-960.webp 960w, images/photos/shakyo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="People copying sutras at low desks before mandala paintings and a portrait of Kōbō Daishi" width="1600" height="1200" loading="lazy"></figure>
-        <div class="rv">
-          <p class="m-time"><b>Anytime</b><small>during your stay</small></p>
-          <h3 class="m-title">Copy a sutra</h3>
-          <p class="m-text">In the quiet of your own room, trace the Heart Sutra, one character at a time, over a model sheet — a quiet practice called <i>shakyō</i>. No experience needed: paper, brushes, brush pens, ink and inkstone are all provided. Just ask our staff (¥1,500).</p>
         </div>
       </article>
     </div>
@@ -1591,15 +1521,6 @@ html.js .interlude{display:none;}
           <p class="m-text">Kōyasan’s Buddhist vegetarian cuisine, made without meat or fish, served on traditional trays. Some evenings, dinner is laid out before gilded screen paintings.</p>
           <p class="m-note">Dinner is served to all guests together at 6:00 pm. We are unable to accommodate individual food allergies.</p>
         </div>
-        <figure data-mg="night" class="rv-img m-after"><img src="images/photos/yuushoku-toko.webp" srcset="images/photos/yuushoku-toko-960.webp 960w, images/photos/yuushoku-toko.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Vermilion lacquered trays set before an alcove with a hanging scroll and gold walls" width="1600" height="1200" loading="lazy"></figure>
-      </article>
-      <article data-mg="night" class="moment rev">
-        <figure class="rv-img"><img src="images/photos/daiyokujo-onna.webp" srcset="images/photos/daiyokujo-onna-960.webp 960w, images/photos/daiyokujo-onna.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The large shared bath, with stone floor and a wide tub" width="1600" height="1200" loading="lazy"></figure>
-        <div class="rv">
-          <p class="m-time"><b>5:00 – 9:00 pm</b></p>
-          <h3 class="m-title">The bath</h3>
-          <p class="m-text">Unwind in the large or medium shared bath. Shampoo, towels, hair dryers and toothbrushes are all provided.</p>
-        </div>
       </article>
       <article class="moment m-cine">
         <figure class="rv-img"><img src="images/photos/sando-yoru.webp" srcset="images/photos/sando-yoru-960.webp 960w, images/photos/sando-yoru.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The stone-paved approach at night, lit by a lantern and soft lights along the path" width="1600" height="1200" loading="lazy"></figure>
@@ -1607,14 +1528,6 @@ html.js .interlude{display:none;}
           <p class="m-time"><b>Night</b></p>
           <h3 class="m-title">Mountain silence</h3>
           <p class="m-text">Night on Kōyasan is astonishingly quiet, lit only by lanterns — a lovely time for a gentle walk. The front door closes at 7:30 pm, but guests may come and go freely.</p>
-        </div>
-      </article>
-      <article data-mg="night" class="moment rev">
-        <figure class="rv-img duo"><img src="images/photos/okunoin-yoru.webp" srcset="images/photos/okunoin-yoru-720.webp 720w, images/photos/okunoin-yoru.webp 1200w" sizes="(max-width: 899px) 50vw, 30vw" alt="Lanterns reflected on the wet stone path and bridge at Okunoin at night" width="1200" height="1600" loading="lazy"><img src="images/photos/garan-yoru.webp" srcset="images/photos/garan-yoru-720.webp 720w, images/photos/garan-yoru.webp 1200w" sizes="(max-width: 899px) 50vw, 30vw" alt="The Konpon Daitō pagoda lit up at night" width="1200" height="1600" loading="lazy"></figure>
-        <div class="rv">
-          <p class="m-time"><b>Until 9 pm</b><small>Night walk</small></p>
-          <h3 class="m-title">Walk the mountain by lantern light</h3>
-          <p class="m-text">At Danjō Garan, the vermilion Konpon Daitō pagoda and the Chūmon gate glow against the night until the lights go out at 9 pm. The front door closes at 7:30 pm, but you are free to come and go — watch your step on the paths. And then there is Okunoin after dark: lantern light floating among the ancient cedars, a different place entirely from the one you see by day.</p>
         </div>
       </article>
     </div>
@@ -1634,122 +1547,10 @@ html.js .interlude{display:none;}
           <p class="m-note">Every morning at 6:30 · optional · about 45 minutes to an hour</p>
         </div>
       </article>
-      <article data-mg="night" class="moment rev nofig">
-        <div class="rv">
-          <p class="m-time"><b>7:20 am</b><small>approx.</small></p>
-          <h3 class="m-title">Breakfast</h3>
-          <p class="m-text">After the service, a shōjin ryōri breakfast — a gentle, plant-based meal to begin your day on the mountain.</p>
-        </div>
-      </article>
-      <article data-mg="night" class="moment">
-        <figure class="rv-img"><img src="images/photos/shojingu.webp" srcset="images/photos/shojingu-960.webp 960w, images/photos/shojingu.webp 1033w" sizes="(max-width: 899px) 100vw, 60vw" alt="Monks carrying the meal for Kōbō Daishi across the bridge at Okunoin (shōjingu)" width="1033" height="860" loading="lazy"></figure>
-        <div class="rv">
-          <p class="m-time"><b>10:00 am</b><small>Check-out</small></p>
-          <h3 class="m-title">On to Okunoin</h3>
-          <p class="m-text">After you leave, walk on to Okunoin, where Kōbō Daishi rests among ancient cedars.</p>
-          <p class="m-note">Twice a day, at 6:00 and 10:30 am, monks still carry a meal to Kōbō Daishi at his mausoleum — a ritual called <span class="gl" tabindex="0"><i>shōjingu</i><span class="gl-def" role="tooltip">The daily offering of meals to Kōbō Daishi, carried by monks to his mausoleum.</span></span>. From Hongakuin, Gobyō-bashi bridge at the mausoleum is about a 36-minute walk.</p>
-        </div>
-      </article>
     </div>
   </div>
-  <p class="mb-row night-mb"><button type="button" class="mb" data-mb="night" aria-expanded="false">Every moment of the night<span aria-hidden="true">+</span></button></p>
+  <p class="night-more"><a class="mb-link" href="en-stay.html#night">See every moment of the night<span aria-hidden="true">→</span></a></p>
   <div class="night-cta"><p>Spend this night at Hongakuin.</p><a class="cta-line" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">Book your stay<span class="arw" aria-hidden="true"></span></a></div>
-</section>
-
-<!-- 五 ACCESS & FAQ -->
-<section class="sec tone" id="info">
-  <div class="sec-in">
-    <header class="sh rv"><span class="sh-num" aria-hidden="true">五</span><span class="sh-line"></span><h2 class="sh-title">Access &amp; Good to Know</h2></header>
-    <div class="body info-wrap">
-      <div class="access" id="access">
-        <h3 class="h3 rv">Getting here</h3>
-        <ol class="route rv">
-          <li><b>From Osaka</b>About 2½ hours from Namba Station by train, cable car and bus.</li>
-          <li><b>By train</b>Nankai Kōya Line to Gokurakubashi Station, then the cable car to Kōyasan Station.</li>
-          <li><b>By bus</b>Nankai Rinkan bus toward Okunoin or Daimon; get off at Keisatsusho-mae (about 10 minutes).</li>
-          <li><b>On foot</b>About 2–3 minutes from the bus stop, along a tree-lined approach.</li>
-        </ol>
-        <p class="addr rv">618 Koyasan, Koya-cho, Ito-gun, Wakayama 648-0211, Japan<br>Tel <a class="ink" href="tel:+81736562711">+81-736-56-2711</a> (9:00 am – 5:00 pm JST)</p>
-        <p class="map-link rv"><a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Koyasan+Hongakuin" target="_blank" rel="noopener">Open in Google Maps<span class="arw"></span></a></p>
-        <div class="walk rv">
-          <h3 class="h3">Walking from Hongakuin</h3>
-          <div class="walk-map" aria-hidden="true">
-            <span class="pt lo" style="left:2%"><span>Daimon</span></span>
-            <span class="pt" style="left:19%"><span>Danjō Garan</span></span>
-            <span class="pt lo" style="left:29%"><span>Kongōbu-ji</span></span>
-            <span class="pt me" style="left:39%"><span>Hongakuin</span></span>
-            <span class="pt lo" style="left:60%"><span>Ichi-no-hashi</span></span>
-            <span class="pt" style="left:97%"><span>Okunoin</span></span>
-            <span class="dir w">← West</span><span class="dir e">East →</span>
-          </div>
-          <p class="mb-row"><button type="button" class="mb" data-mb="area" aria-expanded="false">Walking times &amp; things to do<span aria-hidden="true">+</span></button></p>
-          <div data-mg="area"><ul class="walk-list">
-            <li class="has-img"><img class="w-img" src="images/photos/walk-kongobuji.webp" alt="Banryūtei rock garden at Kongōbu-ji" width="480" height="480" loading="lazy"><div><b>Kongōbu-ji</b><span class="t">about 6 min</span><p>Head temple of Kōyasan Shingon Buddhism.</p></div></li>
-            <li class="has-img"><img class="w-img" src="images/photos/walk-garan.webp" alt="The Konpon Daitō pagoda at night" width="480" height="480" loading="lazy"><div><b>Danjō Garan</b><span class="t">about 12 min</span><p>The sacred complex Kōbō Daishi founded first, crowned by the vermilion Konpon Daitō pagoda.</p></div></li>
-            <li class="has-img"><img class="w-img" src="images/photos/walk-okunoin.webp" alt="Monks crossing the bridge at Okunoin" width="480" height="480" loading="lazy"><div><b>Okunoin (Ichi-no-hashi)</b><span class="t">about 16 min</span><p>The entrance to Okunoin. From here, a 2 km path through ancient cedars leads to Kōbō Daishi's mausoleum (Gobyō-bashi bridge is about 36 minutes on foot from Hongakuin). At 6:00 and 10:30 am daily, monks carry his meal there (<i>shōjingu</i>).</p></div></li>
-            <li class="has-img"><img class="w-img" src="images/photos/walk-daimon-2.webp" alt="The vermilion Daimon Gate of Kōyasan" width="480" height="480" loading="lazy"><div><b>Daimon Gate</b><span class="t">about 25 min</span><p>The great gate of Kōyasan, famous for its sunsets. On clear days, the view can reach as far as Awaji Island.</p></div></li>
-          </ul>
-          <p class="walk-note">Walking times are estimates based on map distance; the diagram is schematic. Buses also run to Okunoin.</p>
-          <div class="taiken">
-            <h3 class="h3">Things to experience on Kōyasan</h3>
-            <ul class="tk-list">
-              <li><b>Morning service</b><span class="tk-where">At Hongakuin</span><p>Every morning at 6:30 am in the main hall. All guests are welcome to join.</p></li>
-              <li><b>Sutra copying</b><span class="tk-where">At Hongakuin</span><p>Anytime during your stay. Trace the Heart Sutra with brush and ink (¥1,500).</p></li>
-              <li><b>Ajikan meditation</b><span class="tk-where">Kongōbu-ji · 6 min walk</span><p>The breathing and meditation practice of Shingon Buddhism, guided at the head temple of Kōyasan. Seasonal; reservation required. <a class="ink" href="https://www.koyasan.or.jp/en/experience/#ajikan" target="_blank" rel="noopener">Details &amp; booking (Kongōbu-ji) →</a></p></li>
-            </ul>
-            <p class="tk-more">More Kōyasan experiences can be booked online in English. <a class="ink" href="https://morekoyasan.com/%E4%BB%8A%E3%81%99%E3%81%90%E4%BA%88%E7%B4%84%E3%81%99%E3%82%8B_%E8%8B%B1%E8%AA%9E/" target="_blank" rel="noopener">Book experiences (More Koyasan) →</a></p>
-          </div>
-          </div>
-          <div class="kippu">
-            <p class="kippu-k">Getting to Kōyasan</p>
-            <h4>Koyasan World Heritage Ticket</h4>
-            <p class="kippu-by">Nankai Railway · digital or paper</p>
-            <ul>
-              <li><b>Train</b><span>Round trip from Osaka (Namba and other stations)</span></li>
-              <li><b>Bus</b><span>Unlimited mountain buses for two days</span></li>
-              <li><b>Extras</b><span>Discounts at selected sights</span></li>
-            </ul>
-            <p class="kippu-note">Valid for two consecutive days — made for an overnight temple stay.</p>
-            <a class="kippu-btn" href="https://www.nankai.co.jp/en_railway" target="_blank" rel="noopener">Tickets &amp; timetables<small>Nankai Railway · English</small><span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </div>
-      <div>
-        <h3 class="h3 rv">Facilities</h3>
-        <dl class="info rv">
-          <div><dt>Rooms</dt><dd>All Japanese-style, with heating, air conditioning and TV. There are steps within the buildings — please ask our staff for help.</dd></div>
-          <div><dt>Amenities</dt><dd>Towels, hair dryer, toothbrush, slippers, body soap, shampoo, conditioner</dd></div>
-          <div><dt>Loungewear</dt><dd>Yukata (one size, LL only)</dd></div>
-          <div><dt>Baths</dt><dd>Large and medium shared baths, 17:00–21:00</dd></div>
-          <div data-mg="fac"><dt>Toilets</dt><dd>Western-style, heated seats with bidet</dd></div>
-          <div data-mg="fac"><dt>Accessibility</dt><dd>One wheelchair-accessible toilet; wheelchairs available to borrow</dd></div>
-          <div data-mg="fac"><dt>Parking</dt><dd>15 spaces, free, first come first served</dd></div>
-          <div data-mg="fac"><dt>Pets</dt><dd>Not permitted at this time</dd></div>
-          <div data-mg="fac"><dt>Wi-Fi</dt><dd>Free Wi-Fi</dd></div>
-          <div data-mg="fac"><dt>Payment</dt><dd>Cash or credit card</dd></div>
-        </dl>
-        <p class="mb-row"><button type="button" class="mb" data-mb="fac" aria-expanded="false">All facilities<span aria-hidden="true">+</span></button></p>
-      </div>
-    </div>
-    <div class="faq-block">
-      <h3 class="h3 rv">FAQ</h3>
-      <div class="faq rv">
-        <details><summary>Can I stay alone?</summary><p class="a">Solo travelers are welcome. On some nights, however, we may be unable to accept a single guest, so please check availability by phone.</p></details>
-        <details><summary>How do I make a reservation?</summary><p class="a">Stays can be booked online at any time via the "Book your stay" button on this page. You can also reserve by phone (+81-736-56-2711, 9:00 am&ndash;5:00 pm JST).</p></details>
-        <details><summary>What are check-in and check-out times?</summary><p class="a">Check-in is from 3:00 pm, and check-out is by 10:00 am.</p></details>
-        <details><summary>What time is dinner? What if I arrive late?</summary><p class="a">Dinner is served to all guests together at 6:00 pm. If you expect to arrive late, please call +81-736-56-2711. If you arrive too late, we may be unable to serve dinner.<!-- TODO: confirm with temple … latest arrival time for dinner --></p></details>
-        <details><summary>Can I leave my luggage?</summary><p class="a">Yes. We can keep your luggage both before check-in and after check-out.</p></details>
-        <details data-mg="faq"><summary>Is there a cancellation fee?</summary><p class="a">Cancellation fees are shown on the booking page. <a class="ink" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">See the booking page →</a></p></details>
-        <details data-mg="faq"><summary>Do I need to be Buddhist?</summary><p class="a">Not at all. Guests of every faith, or none, are welcome. Joining the morning service is optional.</p></details>
-        <details data-mg="faq"><summary>What is the weather like?</summary><p class="a">Kōyasan sits about 800 m above sea level, so mornings and evenings are cool even in summer. Bring a light layer.</p></details>
-        <details data-mg="faq"><summary>Is there a curfew?</summary><p class="a">No. The front door is closed at 7:30 pm, but guests may come and go freely after that. The mountain is very quiet at night, so please take care when you go out.</p></details>
-        <details data-mg="faq"><summary>Is the food shōjin ryōri? Can you accommodate food allergies?</summary><p class="a">We serve shōjin ryōri, including dishes such as kōya-dōfu (freeze-dried tofu) and goma-dōfu (sesame tofu). We are unable to accommodate individual food allergies.</p></details>
-        <details data-mg="faq"><summary>Can anyone join the morning prayer service? Is it required?</summary><p class="a">The morning service begins at 6:30 am in the main hall. All guests are welcome to join. Attendance is optional, not required. It lasts roughly 45 minutes to an hour.</p></details>
-        <details data-mg="faq"><summary>Can international guests stay? Is English support available?</summary><p class="a">Yes, guests from overseas are warmly welcome. Our staff can assist you in simple English.</p></details>
-      </div>
-      <p class="mb-row"><button type="button" class="mb" data-mb="faq" aria-expanded="false">More questions<span aria-hidden="true">+</span></button></p>
-    </div>
-  </div>
 </section>
 
 <!-- BOOK -->
