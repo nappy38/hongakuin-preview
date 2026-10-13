@@ -1246,6 +1246,28 @@ html.js .interlude{display:none;}
 @media(min-width:900px){.sp-ph{min-height:74vh;}.sp-ph-in{padding:160px 56px 72px;}.sp-ph h1{font-size:72px;}.sp-ph-lead{font-size:20px;}}
 
 .vp-img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;margin-bottom:14px;}
+
+/* Vice head priest first */
+.vp{margin-bottom:72px;padding-bottom:64px;border-bottom:1px solid var(--line);}
+.vp-lead{margin:0 calc(-1*var(--gut)) 24px;}
+.vp-lead img{width:100%;height:auto;display:block;}
+.vp-lead figcaption{font-size:13px;color:var(--text-2);margin-top:8px;padding:0 var(--gut);}
+.vp-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px;}
+.vp-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+.vp-text{margin-top:28px;max-width:40em;}
+.vp-text p{font-size:18px;line-height:1.75;}
+.vp-text p+p{margin-top:1em;}
+.vp-src{font-size:14px !important;color:var(--text-2);}
+.monks{margin-top:8px;}
+@media(min-width:900px){
+  .vp{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto auto 1fr;column-gap:28px;align-items:start;margin-bottom:96px;padding-bottom:88px;}
+  .vp-lead{grid-column:1/span 7;grid-row:1/span 3;margin:0;}
+  .vp-lead figcaption{padding:0;}
+  .vp .monk-name{grid-column:9/span 4;grid-row:1;}
+  .vp-text{grid-column:9/span 4;grid-row:2 / span 3;margin-top:16px;}
+  .vp-photos{grid-row:4;}
+  .vp-photos{grid-column:1/span 7;margin-top:24px;gap:24px;}
+}
 </style>
 </head>
 <body>
@@ -1431,6 +1453,23 @@ html.js .interlude{display:none;}
 <section class="sec" id="monks">
   <div class="sec-in">
     <header class="sh rv"><span class="sh-num" aria-hidden="true">二</span><span class="sh-line"></span><h2 class="sh-title">The Monks</h2></header>
+
+    <!-- Vice head priest (the one guests meet) -->
+    <div class="vp">
+      <figure class="vp-lead rv-img"><img src="images/photos/fuku-saishoko.webp" alt="The vice head priest in scarlet robes at the Go-Saishōkō ceremony, Sannō-in hall, Danjō Garan" width="1280" height="960" loading="lazy"><figcaption>At the Go-Saishōkō ceremony, Sannō-in hall, Danjō Garan</figcaption></figure>
+      <p class="monk-name rv"><span>Vice Head Priest</span>Koga Hōken</p>
+      <div class="vp-photos">
+        <figure class="rv-img"><img src="images/photos/fuku-seiza-960.webp" alt="The vice head priest, seated in green robes before the inner sanctuary of the main hall" width="960" height="720" loading="lazy"></figure>
+        <figure class="rv-img rv-d1"><img src="images/photos/fukujushoku-kigan-960.webp" alt="The vice head priest praying with prayer beads before candlelight" width="960" height="720" loading="lazy"></figure>
+      </div>
+      <div class="vp-text rv">
+        <p>The vice head priest is the monk you are most likely to meet during your stay, and he leads the morning service in the main hall.</p>
+        <p>What he cares about most is that guests savor the time itself. The main hall dates from the mid-Edo period, and buildings from the Meiji, Taishō and Shōwa eras stand side by side; the temple keeps Edo-period screen paintings and a hanging scroll that goes back to the Muromachi period. Together with the rock garden Shigemori Mirei made in 1953, he hopes you will walk slowly and feel that history.</p>
+        <p>Everyone is welcome at the morning service. Listening to the monks chant is, he says, a moment that quietly resets the mind.</p>
+        <p class="vp-src">(From an interview with the vice head priest on Wakayama Prefecture's official tourism site.)</p>
+      </div>
+    </div>
+
     <div class="body monks">
       <figure class="monk-fig rv-img"><img src="images/priest-1.webp" alt="The head priest in vermilion robes, conducting a service in the inner sanctuary" width="800" height="645" loading="lazy"></figure>
       <div class="monk-text">
@@ -1466,7 +1505,6 @@ html.js .interlude{display:none;}
     </div>
 
     <ul class="others">
-      <li class="rv"><img class="vp-img" src="images/photos/fuku-seiza-960.webp" alt="The vice head priest, seated in green robes before the inner sanctuary of the main hall" width="960" height="720" loading="lazy"><b>Koga Hōken — Vice Head Priest</b><span>Leads the morning service in the main hall, which every guest is welcome to join.</span></li>
       <li class="rv"><b>A Buddhist nun</b><span>A nun also serves at Hongakuin. Women travelers, including those traveling alone, are warmly welcome.</span></li>
     </ul>
   </div>
