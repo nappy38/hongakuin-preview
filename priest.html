@@ -591,7 +591,9 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
 @media(max-width:899px){.greet-fig{width:72%;margin:0 auto 32px;}}
 @media(min-width:900px){
   .greet-wrap{flex-direction:row-reverse;justify-content:flex-start !important;align-items:flex-start;gap:56px;}
-  .greet-fig{flex:none;width:400px;margin:0;}
+  .greet-fig{flex:none;width:clamp(200px,17vw,260px);margin:0;}
+  .greet-wrap{overflow:visible !important;gap:40px;}
+  .greet{height:760px !important;font-size:18px !important;}
 }
 </style>
 </head>
