@@ -75,7 +75,7 @@
    "name": "お一人でも宿泊できますか？",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。"
+    "text": "お一人旅も歓迎いたします。ただし、日によってはお受けできない場合がございますので、空室状況とあわせてお電話にてご確認ください。"
    }
   },
   {
@@ -830,6 +830,9 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 
 /* 縦書きで文字が左右にずれないように（palt は横書き用） */
 @media(min-width:900px){.ph h1,.sh-title,.cta h2,.ph-title h1,.hero-name,.greet{font-feature-settings:normal !important;}}
+
+.book-note{margin-top:14px;font-size:14px;line-height:1.9;color:var(--text-2);}
+.cta .book-note{color:rgba(243,236,225,.8);text-align:center;}
 </style>
 </head>
 
@@ -1010,6 +1013,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 
       <div class="room-common rv">
         <p><span class="nw">どのお部屋も、</span><span class="nw"><b>1泊2食（精進料理）付き</b>。</span><span class="nw">毎朝6時30分からの</span><span class="nw"><b>朝のお勤め</b>に</span><span class="nw">ご参加いただけます。</span></p>
+        <p class="book-note">夕食は18:00より皆さま一斉にお出しします。到着が遅れる場合は必ずお電話ください（0736-56-2711）。<!-- TODO: 要確認（寺側）… 最終到着時刻（何時までに着けば夕食に間に合うか） --><br>公式サイトからのご予約が最もお得です。</p>
         <a class="cta-line" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">宿坊を予約する<span class="arw" aria-hidden="true"></span></a>
       </div>
     </div>
@@ -1124,11 +1128,11 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
       <article class="moment">
         <figure class="rv-img"><img src="images/photos/fusuma-shojin.webp" srcset="images/photos/fusuma-shojin-960.webp 960w, images/photos/fusuma-shojin.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="金地の襖絵の前に並ぶ精進料理のお膳" width="1600" height="1200" loading="lazy"></figure>
         <div class="rv">
-          <p class="m-time"><b>夕餉</b><small>ゆうげ</small></p>
+          <p class="m-time"><b>18:00</b><small>夕餉</small></p>
           <h3 class="m-title">精進料理をいただく</h3>
           <p class="m-mono">一膳を、ていねいに。</p>
           <p class="m-text">肉や魚を使わない、高野山の精進料理をお膳でご用意します。金地の襖絵の間でいただく日もあります。</p>
-          <p class="m-note">個別の食物アレルギーへの対応は行っておりません。</p>
+          <p class="m-note">夕食は18:00より、皆さま一斉にお出しします。個別の食物アレルギーへの対応は行っておりません。</p>
         </div>
         <figure class="rv-img m-after"><img src="images/photos/yuushoku-toko.webp" srcset="images/photos/yuushoku-toko-960.webp 960w, images/photos/yuushoku-toko.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="掛軸と金地の壁の床の間を前に、朱塗りのお膳が並ぶ客間" width="1600" height="1200" loading="lazy"></figure>
       </article>
@@ -1172,7 +1176,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         <div class="rv">
           <p class="m-time"><b>6:30</b><small>朝のお勤め</small></p>
           <h3 class="m-title">朝のお勤め</h3>
-          <p class="m-mono">朝、聲明が響く。</p>
+          <p class="m-mono">朝、読経の声が響く。</p>
           <p class="m-text">本堂で、副住職をはじめ僧侶がお勤めをいたします。高野山に受け継がれる読経の響きに包まれる、一日のはじまりです。</p>
           <p class="m-note">毎朝6時30分から、45分〜1時間ほど。ご参加は自由です。</p>
         </div>
@@ -1259,6 +1263,9 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
         <details><summary>お一人でも宿泊できますか？</summary><p class="a">お一人でのご宿泊も承っております。ただし、その日に他のご宿泊のお客様がいらっしゃらず、お一人のみとなる場合は、恐れ入りますがお受けできないことがございます。空室状況とあわせて、お電話にてご確認ください。</p></details>
         <details><summary>予約方法を教えてください。</summary><p class="a">ご宿泊は予約サイト（ページ内の「宿坊のご予約はこちら」から）で24時間承っております。お電話（0736-56-2711／受付9:00〜17:00）でもご予約いただけます。</p></details>
         <details><summary>チェックイン・チェックアウトは何時ですか？</summary><p class="a">チェックインは15:00から、チェックアウトは10:00まででございます。</p></details>
+        <details><summary>夕食は何時ですか？到着が遅れそうな場合は？</summary><p class="a">夕食は18:00より、皆さま一斉にお出しします。到着が遅れる場合は必ずお電話ください（0736-56-2711）。到着が遅くなると、夕食をご用意できない場合がございます。<!-- TODO: 要確認（寺側）… 最終到着時刻（何時までに着けば夕食に間に合うか） --></p></details>
+        <details><summary>荷物を預けられますか？</summary><p class="a">チェックイン前・チェックアウト後とも、お荷物をお預かりいたします。</p></details>
+        <details><summary>キャンセル料はかかりますか？</summary><p class="a">キャンセル料は予約画面に記載しております。<a class="ink" href="https://tabichat.jp/engine/hotels/hongakuin" target="_blank" rel="noopener">予約画面を見る →</a></p></details>
         <details><summary>門限はありますか？</summary><p class="a">門限はございません。玄関の扉は19:30に閉まりますが、その後もご宿泊の方は自由にお出入りいただけます。夜は山内が静かになりますので、お気をつけてお出かけください。</p></details>
         <details><summary>食事は精進料理ですか？アレルギーの対応はできますか？</summary><p class="a">高野豆腐や胡麻豆腐をはじめとする精進料理をご用意しております。なお、個別の食物アレルギーへの対応は行っておりませんので、あらかじめご了承ください。</p></details>
         <details><summary>朝の勤行には誰でも参加できますか？必須ですか？</summary><p class="a">朝のお勤めは、毎朝6時30分から本堂で行います。ご宿泊の方はどなたでもご参加いただけます。参加は自由で、必須ではございません。所要時間は45分〜1時間ほどです。</p></details>
@@ -1282,6 +1289,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
     <a href="https://tabichat.jp/engine/hotels/hongakuin" class="btn btn-shu btn-reserve-main" target="_blank" rel="noopener">宿坊のご予約はこちら<span class="arw"></span></a>
     <a href="tel:0736562711" class="cta-tel"><small>お電話</small>0736-56-2711</a>
     <p class="cta-hours">受付時間 9:00〜17:00</p>
+    <p class="book-note">公式サイトからのご予約が最もお得です。</p>
   </div>
 </section>
 

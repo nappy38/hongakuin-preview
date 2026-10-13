@@ -54,7 +54,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Can I stay alone?", "acceptedAnswer": { "@type": "Answer", "text": "Solo travelers are welcome. However, if no other guests are staying on a given night, we may be unable to accept a single guest. Please check availability by phone." } },
+    { "@type": "Question", "name": "Can I stay alone?", "acceptedAnswer": { "@type": "Answer", "text": "Solo travelers are welcome. On some nights, however, we may be unable to accept a single guest, so please check availability by phone." } },
     { "@type": "Question", "name": "How do I make a reservation?", "acceptedAnswer": { "@type": "Answer", "text": "Stays can be booked online at any time via the “Book your stay” button on this page. You can also reserve by phone (+81-736-56-2711, 9:00 am - 5:00 pm JST)." } },
     { "@type": "Question", "name": "What are check-in and check-out times?", "acceptedAnswer": { "@type": "Answer", "text": "Check-in is from 3:00 pm, and check-out is by 10:00 am." } },
     { "@type": "Question", "name": "Is there a curfew?", "acceptedAnswer": { "@type": "Answer", "text": "No. The front door is closed at 7:30 pm, but guests may come and go freely after that. The mountain is very quiet at night, so please take care when you go out." } },
@@ -1098,6 +1098,9 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
 /* 写真→文→写真 */
 .moment .m-after{order:3;}
 @media(min-width:900px){.moment .m-after{grid-column:1/-1;width:58%;margin-top:8px;}.moment.rev .m-after{margin-left:auto;}}
+
+.book-note{margin-top:14px;font-size:14px;line-height:1.9;color:var(--text-2);}
+.cta .book-note{color:rgba(243,236,225,.8);text-align:center;}
 </style>
 </head>
 <body>
@@ -1229,6 +1232,7 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
   </div>
   <ul class="facts rv rv-d1">
     <li><b>Check-in</b><span>15:00</span></li>
+    <li><b>Dinner</b><span>18:00</span></li>
     <li><b>Check-out</b><span>10:00</span></li>
     <li><b>Curfew</b><span>None</span></li>
     <li><b>Parking</b><span>Free · 15</span></li>
@@ -1307,6 +1311,7 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
       </article>
       <div class="room-common rv">
         <p>Every stay includes <b>dinner and breakfast (shōjin ryōri)</b> and the chance to join the <b>6:30 am morning service</b>.</p>
+        <p class="book-note">Dinner is served to all guests together at 6:00 pm. If you expect to arrive late, please call +81-736-56-2711.<!-- TODO: confirm with temple … latest arrival time for dinner --><br>Booking directly on our official site gives you the best rate.</p>
         <a class="cta-line" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">Book your stay<span class="arw" aria-hidden="true"></span></a>
       </div>
     </div>
@@ -1444,10 +1449,10 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
       <article class="moment">
         <figure class="rv-img"><img src="images/photos/fusuma-shojin.webp" srcset="images/photos/fusuma-shojin-960.webp 960w, images/photos/fusuma-shojin.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Shōjin ryōri trays set before gilded sliding-door paintings" width="1600" height="1200" loading="lazy"></figure>
         <div class="rv">
-          <p class="m-time"><b>Dinner</b></p>
+          <p class="m-time"><b>6:00 pm</b><small>Dinner</small></p>
           <h3 class="m-title">Shōjin ryōri</h3>
           <p class="m-text">Kōyasan’s Buddhist vegetarian cuisine, made without meat or fish, served on traditional trays. Some evenings, dinner is laid out before gilded screen paintings.</p>
-          <p class="m-note">We are unable to accommodate individual food allergies.</p>
+          <p class="m-note">Dinner is served to all guests together at 6:00 pm. We are unable to accommodate individual food allergies.</p>
         </div>
         <figure class="rv-img m-after"><img src="images/photos/yuushoku-toko.webp" srcset="images/photos/yuushoku-toko-960.webp 960w, images/photos/yuushoku-toko.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Vermilion lacquered trays set before an alcove with a hanging scroll and gold walls" width="1600" height="1200" loading="lazy"></figure>
       </article>
@@ -1588,9 +1593,14 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
     <div class="faq-block">
       <h3 class="h3 rv">FAQ</h3>
       <div class="faq rv">
-        <details><summary>Can I stay alone?</summary><p class="a">Solo travelers are welcome. However, if no other guests are staying on a given night, we may be unable to accept a single guest. Please check availability by phone.</p></details>
+        <details><summary>Can I stay alone?</summary><p class="a">Solo travelers are welcome. On some nights, however, we may be unable to accept a single guest, so please check availability by phone.</p></details>
         <details><summary>How do I make a reservation?</summary><p class="a">Stays can be booked online at any time via the "Book your stay" button on this page. You can also reserve by phone (+81-736-56-2711, 9:00 am&ndash;5:00 pm JST).</p></details>
         <details><summary>What are check-in and check-out times?</summary><p class="a">Check-in is from 3:00 pm, and check-out is by 10:00 am.</p></details>
+        <details><summary>What time is dinner? What if I arrive late?</summary><p class="a">Dinner is served to all guests together at 6:00 pm. If you expect to arrive late, please call +81-736-56-2711. If you arrive too late, we may be unable to serve dinner.<!-- TODO: confirm with temple … latest arrival time for dinner --></p></details>
+        <details><summary>Can I leave my luggage?</summary><p class="a">Yes. We can keep your luggage both before check-in and after check-out.</p></details>
+        <details><summary>Is there a cancellation fee?</summary><p class="a">Cancellation fees are shown on the booking page. <a class="ink" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">See the booking page →</a></p></details>
+        <details><summary>Do I need to be Buddhist?</summary><p class="a">Not at all. Guests of every faith, or none, are welcome. Joining the morning service is optional.</p></details>
+        <details><summary>What is the weather like?</summary><p class="a">Kōyasan sits about 800 m above sea level, so mornings and evenings are cool even in summer. Bring a light layer.</p></details>
         <details><summary>Is there a curfew?</summary><p class="a">No. The front door is closed at 7:30 pm, but guests may come and go freely after that. The mountain is very quiet at night, so please take care when you go out.</p></details>
         <details><summary>Is the food shōjin ryōri? Can you accommodate food allergies?</summary><p class="a">We serve shōjin ryōri, including dishes such as kōya-dōfu (freeze-dried tofu) and goma-dōfu (sesame tofu). We are unable to accommodate individual food allergies.</p></details>
         <details><summary>Can anyone join the morning prayer service? Is it required?</summary><p class="a">The morning service begins at 6:30 am in the main hall. All guests are welcome to join. Attendance is optional, not required. It lasts roughly 45 minutes to an hour.</p></details>
@@ -1610,6 +1620,7 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
     <a href="https://tabichat.com/engine/hotels/hongakuin" class="btn btn-shu btn-reserve-main" target="_blank" rel="noopener">Book your stay<span class="arw"></span></a>
     <a href="tel:+81736562711" class="cta-tel"><small>Tel</small>+81-736-56-2711</a>
     <p class="cta-hours">9:00 am – 5:00 pm JST</p>
+    <p class="book-note">Booking directly on our official site gives you the best rate.</p>
   </div>
 </section>
 
