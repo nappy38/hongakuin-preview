@@ -1194,6 +1194,13 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
 }
 /* 一夜の流れ：場面の間を少し詰める */
 @media(min-width:900px){.night .moment+.moment{margin-top:128px !important;}}
+
+/* スライドの下の線（日本語トップと同じ） */
+.en-prog{position:absolute;left:0;bottom:0;height:2px;width:100%;background:rgba(255,255,255,.18);z-index:3;}
+.en-prog i{display:block;height:100%;width:100%;background:rgba(255,255,255,.85);transform:scaleX(0);transform-origin:left;}
+.en-prog i.run{animation:enprog 4s linear forwards;}
+@keyframes enprog{to{transform:scaleX(1);}}
+html:not(.motion) .en-prog,html.static .en-prog{display:none;}
 </style>
 </head>
 <body>
@@ -1268,6 +1275,7 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
     <p class="en-hook">Spend a night inside a living temple.</p>
   </div>
   <div class="en-meta" aria-hidden="true"><span id="enCount">I / V</span></div>
+  <div class="en-prog" aria-hidden="true"><i id="enProg"></i></div>
   <div class="en-scroll" aria-hidden="true">into the night</div>
 </section>
 
@@ -1974,7 +1982,10 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
   var cur=0;
   addEventListener('load',function(){ sl.forEach(function(x){var i=x.querySelector('img'); if(i) i.loading='eager';}); });
   var R=['I','II','III','IV','V'], c=document.getElementById('enCount');
-  setInterval(function(){ sl[cur].classList.remove('active'); cur=(cur+1)%sl.length; sl[cur].classList.add('active'); if(c) c.textContent=R[cur]+' / '+R[sl.length-1]; },4000);
+  var pg=document.getElementById('enProg');
+  function run(){ if(!pg) return; pg.classList.remove('run'); void pg.offsetWidth; pg.classList.add('run'); }
+  run();
+  setInterval(function(){ sl[cur].classList.remove('active'); cur=(cur+1)%sl.length; sl[cur].classList.add('active'); if(c) c.textContent=R[cur]+' / '+R[sl.length-1]; run(); },4000);
 })();
 </script>
 
