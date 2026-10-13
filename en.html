@@ -1213,6 +1213,23 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
 @media(min-width:900px){html.js #temple .mido:not(.mg-opened) .mg-last{grid-column:1/-1 !important;}html.js #temple .mido:not(.mg-opened) .mg-last img{aspect-ratio:21/9 !important;}}
 
 .night-mb{text-align:center;margin:8px 0 48px;padding:0 var(--gut);}
+
+/* ══ 英語ページを短く：お部屋を2列のカードに ══ */
+@media(min-width:900px){
+  .rooms .body{display:grid !important;grid-template-columns:1fr 1fr;gap:72px 40px;}
+  .rooms .room{display:block !important;padding:0 !important;margin:0 !important;border:0 !important;}
+  .rooms .room-head{margin-top:22px !important;}
+  .rooms .room-common{grid-column:1/-1;margin-top:0 !important;}
+  .rooms .room .pair{gap:0 !important;}
+}
+@media(max-width:899px){.rooms .room{padding-bottom:36px !important;margin-bottom:36px !important;}}
+.rooms .room-name{font-size:28px !important;}
+html.js #temple .mido:not(.mg-opened) .mg-last{grid-column:1/-1 !important;}
+@media(min-width:900px){html.js .night:not(.night-open) .moment+.moment{margin-top:112px !important;}}
+
+html.js .interlude{display:none;}
+@media(min-width:900px){.dusk,.dawn{height:220px !important;}}
+.rooms .room-text{display:none;}
 </style>
 </head>
 <body>
@@ -1414,7 +1431,7 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
         <div class="room-media">
           <div class="pair rv-img">
             <figure><img src="images/photos/kyakushitsu-honkan-1f.webp" srcset="images/photos/kyakushitsu-honkan-1f-960.webp 960w, images/photos/kyakushitsu-honkan-1f.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A ground-floor tatami room in the main building" width="1600" height="1200" loading="lazy"><figcaption>1F</figcaption></figure>
-            <figure><img src="images/photos/kyakushitsu-honkan-2f.webp" srcset="images/photos/kyakushitsu-honkan-2f-960.webp 960w, images/photos/kyakushitsu-honkan-2f.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="An upstairs tatami room in the main building, with chairs by the window" width="1600" height="1200" loading="lazy"><figcaption>2F</figcaption></figure>
+            <figure data-mg="room4"><img src="images/photos/kyakushitsu-honkan-2f.webp" srcset="images/photos/kyakushitsu-honkan-2f-960.webp 960w, images/photos/kyakushitsu-honkan-2f.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="An upstairs tatami room in the main building, with chairs by the window" width="1600" height="1200" loading="lazy"><figcaption>2F</figcaption></figure>
           </div>
         </div>
         <div class="room-head rv">
@@ -1463,9 +1480,9 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
       <div class="mido">
         <figure class="w rv-img"><img src="images/photos/tenjoue.webp" srcset="images/photos/tenjoue-960.webp 960w, images/photos/tenjoue.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Painted ceiling panels in the main hall" width="1600" height="1067" loading="lazy" style="object-position:center 15%"><figcaption class="rv"><b>Painted ceiling</b><span>Richly colored panels in the main hall, still vivid some 250 years after they were painted.</span></figcaption></figure>
         <figure class="rv-img"><img src="images/photos/fusuma-kanoha.webp" srcset="images/photos/fusuma-kanoha-960.webp 960w, images/photos/fusuma-kanoha.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Gold-leaf sliding-door paintings by Kanō-school artists" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Kanō-school screens</b><span>Sliding-door paintings by artists of the Kanō school, official painters to the shoguns.</span></figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/koi-niwa-2.webp" srcset="images/photos/koi-niwa-2-960.webp 960w, images/photos/koi-niwa-2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A pond garden with koi and a stone bridge" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Pond garden</b><span>Water, birdsong and koi — one of the temple's five gardens.</span></figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/odaki-jizo.webp" srcset="images/photos/odaki-jizo-960.webp 960w, images/photos/odaki-jizo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A small stone Jizō in a red knitted cap and bib, seated on a red cushion" width="1600" height="1538" loading="lazy" style="object-position:center 12%"><figcaption class="rv"><b>The lifting Jizō</b><span>Lift this small stone Jizō, cushion and all. Make a wish, then lift again — if it feels lighter the second time, the wish is said to come true.</span></figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/ebisu.webp" srcset="images/photos/ebisu-960.webp 960w, images/photos/ebisu.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A carved wooden statue of Ebisu, enshrined at eye level" width="1600" height="1200" loading="lazy" class="zoom-e"><figcaption class="rv"><b>Ebisu at eye level</b><span>Ebisu, the god of good fortune. Sacred statues usually sit above you, but this one is placed at eye level, so you can meet his smiling face straight on.</span></figcaption></figure>
+        <figure data-mg="temple" class="rv-img"><img src="images/photos/koi-niwa-2.webp" srcset="images/photos/koi-niwa-2-960.webp 960w, images/photos/koi-niwa-2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A pond garden with koi and a stone bridge" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Pond garden</b><span>Water, birdsong and koi — one of the temple's five gardens.</span></figcaption></figure>
+        <figure data-mg="temple" class="rv-img"><img src="images/photos/odaki-jizo.webp" srcset="images/photos/odaki-jizo-960.webp 960w, images/photos/odaki-jizo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A small stone Jizō in a red knitted cap and bib, seated on a red cushion" width="1600" height="1538" loading="lazy" style="object-position:center 12%"><figcaption class="rv"><b>The lifting Jizō</b><span>Lift this small stone Jizō, cushion and all. Make a wish, then lift again — if it feels lighter the second time, the wish is said to come true.</span></figcaption></figure>
+        <figure data-mg="temple" class="rv-img"><img src="images/photos/ebisu.webp" srcset="images/photos/ebisu-960.webp 960w, images/photos/ebisu.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A carved wooden statue of Ebisu, enshrined at eye level" width="1600" height="1200" loading="lazy" class="zoom-e"><figcaption class="rv"><b>Ebisu at eye level</b><span>Ebisu, the god of good fortune. Sacred statues usually sit above you, but this one is placed at eye level, so you can meet his smiling face straight on.</span></figcaption></figure>
         <figure class="w rv-img mg-last"><img src="images/photos/teien-mado-3.webp" srcset="images/photos/teien-mado-3-960.webp 960w, images/photos/teien-mado-3.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The moss and rock garden by Shigemori Mirei, seen through a window" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Shigemori Mirei's rock garden</b><span>Walk the corridor and the stones seem to shift left and right, up and down — an illusion built into the design. A tea house looks down over the garden.</span></figcaption></figure>
         <figure data-mg="temple" class="w rv-img"><img src="images/photos/jizo-boshi.webp" srcset="images/photos/jizo-boshi-960.webp 960w, images/photos/jizo-boshi.webp 1280w" sizes="(max-width: 899px) 100vw, 80vw" alt="Stone Jizō statues bundled up in knitted hats, scarves and flower-print capes" width="1280" height="548" loading="lazy" style="object-position:center 30%"><figcaption class="rv"><b>Jizō, bundled up for winter</b><span>Knitted hats, scarves and flower-print capes: in the cold months, even the stone Jizō are dressed warmly to greet you.</span></figcaption></figure>
         <figure data-mg="temple" class="rv-img"><img src="images/photos/benzaiten.webp" srcset="images/photos/benzaiten-960.webp 960w, images/photos/benzaiten.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="An eight-armed Benzaiten enshrined in a gilded shrine, with a torii gate on her head" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Benzaiten, eight-armed</b><span>One of the Seven Lucky Gods. This Benzaiten wears a tiny torii gate on her head, is said to date from the Kamakura period, and was long kept hidden from view. She watches over the arts — and love.</span></figcaption></figure>
@@ -1539,16 +1556,16 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
           <h3 class="m-title">Through the gate</h3>
           <p class="m-text">Step through the gate and the sounds of town fall away. Settle into your room with a cup of green tea.</p>
         </div>
-        <figure class="rv-img m-after"><img src="images/photos/sanmon-kuguru.webp" srcset="images/photos/sanmon-kuguru-960.webp 960w, images/photos/sanmon-kuguru.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Looking through the temple gate, its door marked with the temple crest, to the stone-paved grounds and lanterns" width="1600" height="1200" loading="lazy"></figure>
+        <figure data-mg="night" class="rv-img m-after"><img src="images/photos/sanmon-kuguru.webp" srcset="images/photos/sanmon-kuguru-960.webp 960w, images/photos/sanmon-kuguru.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Looking through the temple gate, its door marked with the temple crest, to the stone-paved grounds and lanterns" width="1600" height="1200" loading="lazy"></figure>
       </article>
-      <article class="moment rev">
+      <article data-mg="night" class="moment rev">
         <figure class="rv-img"><img src="images/photos/rouka-sou2.webp" srcset="images/photos/rouka-sou2-960.webp 960w, images/photos/rouka-sou2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A monk in black robes walking down a corridor with the moss garden outside the windows" width="1600" height="1067" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>Late afternoon</b></p>
           <h3 class="m-title">Gaze at the garden</h3>
           <p class="m-text">Five gardens surround the temple, including a rock garden by Shigemori Mirei, one of Japan's great 20th-century garden designers. Moss and stone change with every hour of light.</p>
         </div>
-        <figure class="rv-img m-after m-big"><img src="images/photos/teien-niwa-yu.webp" srcset="images/photos/teien-niwa-yu-960.webp 960w, images/photos/teien-niwa-yu.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The moss and rock garden by Shigemori Mirei, framed by the windows of a quiet room" width="1600" height="840" loading="lazy"></figure>
+        <figure data-mg="night" class="rv-img m-after m-big"><img src="images/photos/teien-niwa-yu.webp" srcset="images/photos/teien-niwa-yu-960.webp 960w, images/photos/teien-niwa-yu.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The moss and rock garden by Shigemori Mirei, framed by the windows of a quiet room" width="1600" height="840" loading="lazy"></figure>
       </article>
       <article data-mg="night" class="moment rev" id="shakyo">
         <figure class="rv-img"><img src="images/photos/shakyo.webp" srcset="images/photos/shakyo-960.webp 960w, images/photos/shakyo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="People copying sutras at low desks before mandala paintings and a portrait of Kōbō Daishi" width="1600" height="1200" loading="lazy"></figure>
@@ -1574,7 +1591,7 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
           <p class="m-text">Kōyasan’s Buddhist vegetarian cuisine, made without meat or fish, served on traditional trays. Some evenings, dinner is laid out before gilded screen paintings.</p>
           <p class="m-note">Dinner is served to all guests together at 6:00 pm. We are unable to accommodate individual food allergies.</p>
         </div>
-        <figure class="rv-img m-after"><img src="images/photos/yuushoku-toko.webp" srcset="images/photos/yuushoku-toko-960.webp 960w, images/photos/yuushoku-toko.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Vermilion lacquered trays set before an alcove with a hanging scroll and gold walls" width="1600" height="1200" loading="lazy"></figure>
+        <figure data-mg="night" class="rv-img m-after"><img src="images/photos/yuushoku-toko.webp" srcset="images/photos/yuushoku-toko-960.webp 960w, images/photos/yuushoku-toko.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="Vermilion lacquered trays set before an alcove with a hanging scroll and gold walls" width="1600" height="1200" loading="lazy"></figure>
       </article>
       <article data-mg="night" class="moment rev">
         <figure class="rv-img"><img src="images/photos/daiyokujo-onna.webp" srcset="images/photos/daiyokujo-onna-960.webp 960w, images/photos/daiyokujo-onna.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The large shared bath, with stone floor and a wide tub" width="1600" height="1200" loading="lazy"></figure>
@@ -1665,7 +1682,8 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
             <span class="pt" style="left:97%"><span>Okunoin</span></span>
             <span class="dir w">← West</span><span class="dir e">East →</span>
           </div>
-          <ul class="walk-list">
+          <p class="mb-row"><button type="button" class="mb" data-mb="area" aria-expanded="false">Walking times &amp; things to do<span aria-hidden="true">+</span></button></p>
+          <div data-mg="area"><ul class="walk-list">
             <li class="has-img"><img class="w-img" src="images/photos/walk-kongobuji.webp" alt="Banryūtei rock garden at Kongōbu-ji" width="480" height="480" loading="lazy"><div><b>Kongōbu-ji</b><span class="t">about 6 min</span><p>Head temple of Kōyasan Shingon Buddhism.</p></div></li>
             <li class="has-img"><img class="w-img" src="images/photos/walk-garan.webp" alt="The Konpon Daitō pagoda at night" width="480" height="480" loading="lazy"><div><b>Danjō Garan</b><span class="t">about 12 min</span><p>The sacred complex Kōbō Daishi founded first, crowned by the vermilion Konpon Daitō pagoda.</p></div></li>
             <li class="has-img"><img class="w-img" src="images/photos/walk-okunoin.webp" alt="Monks crossing the bridge at Okunoin" width="480" height="480" loading="lazy"><div><b>Okunoin (Ichi-no-hashi)</b><span class="t">about 16 min</span><p>The entrance to Okunoin. From here, a 2 km path through ancient cedars leads to Kōbō Daishi's mausoleum (Gobyō-bashi bridge is about 36 minutes on foot from Hongakuin). At 6:00 and 10:30 am daily, monks carry his meal there (<i>shōjingu</i>).</p></div></li>
@@ -1680,6 +1698,7 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
               <li><b>Ajikan meditation</b><span class="tk-where">Kongōbu-ji · 6 min walk</span><p>The breathing and meditation practice of Shingon Buddhism, guided at the head temple of Kōyasan. Seasonal; reservation required. <a class="ink" href="https://www.koyasan.or.jp/en/experience/#ajikan" target="_blank" rel="noopener">Details &amp; booking (Kongōbu-ji) →</a></p></li>
             </ul>
             <p class="tk-more">More Kōyasan experiences can be booked online in English. <a class="ink" href="https://morekoyasan.com/%E4%BB%8A%E3%81%99%E3%81%90%E4%BA%88%E7%B4%84%E3%81%99%E3%82%8B_%E8%8B%B1%E8%AA%9E/" target="_blank" rel="noopener">Book experiences (More Koyasan) →</a></p>
+          </div>
           </div>
           <div class="kippu">
             <p class="kippu-k">Getting to Kōyasan</p>
@@ -1720,14 +1739,15 @@ html.js [data-mg]:not(.mg-open){display:none !important;}
         <details><summary>What are check-in and check-out times?</summary><p class="a">Check-in is from 3:00 pm, and check-out is by 10:00 am.</p></details>
         <details><summary>What time is dinner? What if I arrive late?</summary><p class="a">Dinner is served to all guests together at 6:00 pm. If you expect to arrive late, please call +81-736-56-2711. If you arrive too late, we may be unable to serve dinner.<!-- TODO: confirm with temple … latest arrival time for dinner --></p></details>
         <details><summary>Can I leave my luggage?</summary><p class="a">Yes. We can keep your luggage both before check-in and after check-out.</p></details>
-        <details><summary>Is there a cancellation fee?</summary><p class="a">Cancellation fees are shown on the booking page. <a class="ink" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">See the booking page →</a></p></details>
-        <details><summary>Do I need to be Buddhist?</summary><p class="a">Not at all. Guests of every faith, or none, are welcome. Joining the morning service is optional.</p></details>
-        <details><summary>What is the weather like?</summary><p class="a">Kōyasan sits about 800 m above sea level, so mornings and evenings are cool even in summer. Bring a light layer.</p></details>
-        <details><summary>Is there a curfew?</summary><p class="a">No. The front door is closed at 7:30 pm, but guests may come and go freely after that. The mountain is very quiet at night, so please take care when you go out.</p></details>
-        <details><summary>Is the food shōjin ryōri? Can you accommodate food allergies?</summary><p class="a">We serve shōjin ryōri, including dishes such as kōya-dōfu (freeze-dried tofu) and goma-dōfu (sesame tofu). We are unable to accommodate individual food allergies.</p></details>
-        <details><summary>Can anyone join the morning prayer service? Is it required?</summary><p class="a">The morning service begins at 6:30 am in the main hall. All guests are welcome to join. Attendance is optional, not required. It lasts roughly 45 minutes to an hour.</p></details>
-        <details><summary>Can international guests stay? Is English support available?</summary><p class="a">Yes, guests from overseas are warmly welcome. Our staff can assist you in simple English.</p></details>
+        <details data-mg="faq"><summary>Is there a cancellation fee?</summary><p class="a">Cancellation fees are shown on the booking page. <a class="ink" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">See the booking page →</a></p></details>
+        <details data-mg="faq"><summary>Do I need to be Buddhist?</summary><p class="a">Not at all. Guests of every faith, or none, are welcome. Joining the morning service is optional.</p></details>
+        <details data-mg="faq"><summary>What is the weather like?</summary><p class="a">Kōyasan sits about 800 m above sea level, so mornings and evenings are cool even in summer. Bring a light layer.</p></details>
+        <details data-mg="faq"><summary>Is there a curfew?</summary><p class="a">No. The front door is closed at 7:30 pm, but guests may come and go freely after that. The mountain is very quiet at night, so please take care when you go out.</p></details>
+        <details data-mg="faq"><summary>Is the food shōjin ryōri? Can you accommodate food allergies?</summary><p class="a">We serve shōjin ryōri, including dishes such as kōya-dōfu (freeze-dried tofu) and goma-dōfu (sesame tofu). We are unable to accommodate individual food allergies.</p></details>
+        <details data-mg="faq"><summary>Can anyone join the morning prayer service? Is it required?</summary><p class="a">The morning service begins at 6:30 am in the main hall. All guests are welcome to join. Attendance is optional, not required. It lasts roughly 45 minutes to an hour.</p></details>
+        <details data-mg="faq"><summary>Can international guests stay? Is English support available?</summary><p class="a">Yes, guests from overseas are warmly welcome. Our staff can assist you in simple English.</p></details>
       </div>
+      <p class="mb-row"><button type="button" class="mb" data-mb="faq" aria-expanded="false">More questions<span aria-hidden="true">+</span></button></p>
     </div>
   </div>
 </section>
