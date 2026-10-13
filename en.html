@@ -1201,6 +1201,16 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
 .en-prog i.run{animation:enprog 4s linear forwards;}
 @keyframes enprog{to{transform:scaleX(1);}}
 html:not(.motion) .en-prog,html.static .en-prog{display:none;}
+
+/* More：押すと開く（JSが動かないときは全部表示） */
+html.js [data-mg]:not(.mg-open){display:none !important;}
+.mb-row{margin-top:14px;}
+.mb{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0;background:none;border:0;border-bottom:1px solid currentColor;color:var(--gold-d);font-family:var(--display-en);font-size:17px;letter-spacing:.04em;cursor:pointer;}
+.mb span{font-size:18px;line-height:1;transition:transform .3s;}
+.mb[aria-expanded="true"] span{transform:rotate(45deg);}
+.on-dark .mb{color:var(--gold-l);}
+#temple .mb-row{grid-column:1/-1;text-align:center;margin-top:0;}
+@media(min-width:900px){html.js #temple .mido:not(.mg-opened) .mg-last{grid-column:1/-1 !important;}html.js #temple .mido:not(.mg-opened) .mg-last img{aspect-ratio:21/9 !important;}}
 </style>
 </head>
 <body>
@@ -1369,7 +1379,8 @@ html:not(.motion) .en-prog,html.static .en-prog{display:none;}
           <h3 class="room-name">Special Rooms</h3>
           <p class="room-text">Tenpōrin, Hōkaigū and Kūtenbō — three distinctive rooms on the ground floor, each facing the garden.</p>
           <p class="room-who">For a special night with the garden almost to yourself</p>
-          <dl class="room-dl"><div><dt>Location</dt><dd>Main building, ground floor, garden side</dd></div><div><dt>Bath</dt><dd>Private bath in Tenpōrin and Hōkaigū</dd></div><div><dt>View</dt><dd>The Shigemori Mirei garden</dd></div><div><dt>Note</dt><dd>Kūtenbō is a private guest house with a tea room</dd></div></dl>
+          <p class="mb-row"><button type="button" class="mb" data-mb="room1" aria-expanded="false">Room details<span aria-hidden="true">+</span></button></p>
+          <dl data-mg="room1" class="room-dl"><div><dt>Location</dt><dd>Main building, ground floor, garden side</dd></div><div><dt>Bath</dt><dd>Private bath in Tenpōrin and Hōkaigū</dd></div><div><dt>View</dt><dd>The Shigemori Mirei garden</dd></div><div><dt>Note</dt><dd>Kūtenbō is a private guest house with a tea room</dd></div></dl>
           <a class="room-link" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">Check this room</span><span class="arw" aria-hidden="true"></span></a>
         </div>
       </article>
@@ -1380,7 +1391,8 @@ html:not(.motion) .en-prog,html.static .en-prog{display:none;}
           <h3 class="room-name">Wakasugi &amp; Karin</h3>
           <p class="room-text">Tatami rooms in the main building, each with its own bath and toilet, overlooking the garden. Wakasugi is on the ground floor; Karin is upstairs.</p>
           <p class="room-who">For couples and families who want privacy</p>
-          <dl class="room-dl"><div><dt>Size</dt><dd>8 + 3 tatami mats</dd></div><div><dt>Guests</dt><dd>Up to 3</dd></div><div><dt>Bath &amp; toilet</dt><dd>In the room (shared baths also available)</dd></div><div><dt>View</dt><dd>The Shigemori Mirei garden</dd></div></dl>
+          <p class="mb-row"><button type="button" class="mb" data-mb="room2" aria-expanded="false">Room details<span aria-hidden="true">+</span></button></p>
+          <dl data-mg="room2" class="room-dl"><div><dt>Size</dt><dd>8 + 3 tatami mats</dd></div><div><dt>Guests</dt><dd>Up to 3</dd></div><div><dt>Bath &amp; toilet</dt><dd>In the room (shared baths also available)</dd></div><div><dt>View</dt><dd>The Shigemori Mirei garden</dd></div></dl>
           <a class="room-link" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">Check this room</span><span class="arw" aria-hidden="true"></span></a>
         </div>
       </article>
@@ -1391,7 +1403,8 @@ html:not(.motion) .en-prog,html.static .en-prog{display:none;}
           <h3 class="room-name">Hokusuikan</h3>
           <p class="room-text">Ten rooms on two floors, with views of the garden through every season. Shared baths only.</p>
           <p class="room-who">For a first, easygoing temple stay</p>
-          <dl class="room-dl"><div><dt>Size</dt><dd>10 tatami mats</dd></div><div><dt>Guests</dt><dd>Up to 4</dd></div><div><dt>Bath &amp; toilet</dt><dd>Shared</dd></div><div><dt>Facilities</dt><dd>TV, air conditioning</dd></div><div><dt>View</dt><dd>Seasonal garden</dd></div><div><dt>Rate</dt><dd>From ¥21,000 per person (2 guests)</dd></div></dl>
+          <p class="mb-row"><button type="button" class="mb" data-mb="room3" aria-expanded="false">Room details<span aria-hidden="true">+</span></button></p>
+          <dl data-mg="room3" class="room-dl"><div><dt>Size</dt><dd>10 tatami mats</dd></div><div><dt>Guests</dt><dd>Up to 4</dd></div><div><dt>Bath &amp; toilet</dt><dd>Shared</dd></div><div><dt>Facilities</dt><dd>TV, air conditioning</dd></div><div><dt>View</dt><dd>Seasonal garden</dd></div><div><dt>Rate</dt><dd>From ¥21,000 per person (2 guests)</dd></div></dl>
           <a class="room-link" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener"><span class="ink">Check this room</span><span class="arw" aria-hidden="true"></span></a>
         </div>
       </article>
@@ -1407,7 +1420,8 @@ html:not(.motion) .en-prog,html.static .en-prog{display:none;}
           <h3 class="room-name">Main Building</h3>
           <p class="room-text">Quiet, traditional rooms, unchanged over the years, looking out over the garden. Adjoining rooms are available for groups.</p>
           <p class="room-who">For groups, and those who love an old-style temple room</p>
-          <dl class="room-dl"><div><dt>Location</dt><dd>Main building, 1F and 2F</dd></div><div><dt>Facilities</dt><dd>TV, air conditioning</dd></div><div><dt>View</dt><dd>Garden view</dd></div><div><dt>Note</dt><dd>Adjoining rooms for groups</dd></div></dl>
+          <p class="mb-row"><button type="button" class="mb" data-mb="room4" aria-expanded="false">Room details<span aria-hidden="true">+</span></button></p>
+          <dl data-mg="room4" class="room-dl"><div><dt>Location</dt><dd>Main building, 1F and 2F</dd></div><div><dt>Facilities</dt><dd>TV, air conditioning</dd></div><div><dt>View</dt><dd>Garden view</dd></div><div><dt>Note</dt><dd>Adjoining rooms for groups</dd></div></dl>
         </div>
       </article>
       <div class="room-common rv">
@@ -1450,10 +1464,11 @@ html:not(.motion) .en-prog,html.static .en-prog{display:none;}
         <figure class="rv-img"><img src="images/photos/koi-niwa-2.webp" srcset="images/photos/koi-niwa-2-960.webp 960w, images/photos/koi-niwa-2.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A pond garden with koi and a stone bridge" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Pond garden</b><span>Water, birdsong and koi — one of the temple's five gardens.</span></figcaption></figure>
         <figure class="rv-img"><img src="images/photos/odaki-jizo.webp" srcset="images/photos/odaki-jizo-960.webp 960w, images/photos/odaki-jizo.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A small stone Jizō in a red knitted cap and bib, seated on a red cushion" width="1600" height="1538" loading="lazy" style="object-position:center 12%"><figcaption class="rv"><b>The lifting Jizō</b><span>Lift this small stone Jizō, cushion and all. Make a wish, then lift again — if it feels lighter the second time, the wish is said to come true.</span></figcaption></figure>
         <figure class="rv-img"><img src="images/photos/ebisu.webp" srcset="images/photos/ebisu-960.webp 960w, images/photos/ebisu.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A carved wooden statue of Ebisu, enshrined at eye level" width="1600" height="1200" loading="lazy" class="zoom-e"><figcaption class="rv"><b>Ebisu at eye level</b><span>Ebisu, the god of good fortune. Sacred statues usually sit above you, but this one is placed at eye level, so you can meet his smiling face straight on.</span></figcaption></figure>
-        <figure class="w rv-img"><img src="images/photos/jizo-boshi.webp" srcset="images/photos/jizo-boshi-960.webp 960w, images/photos/jizo-boshi.webp 1280w" sizes="(max-width: 899px) 100vw, 80vw" alt="Stone Jizō statues bundled up in knitted hats, scarves and flower-print capes" width="1280" height="548" loading="lazy" style="object-position:center 30%"><figcaption class="rv"><b>Jizō, bundled up for winter</b><span>Knitted hats, scarves and flower-print capes: in the cold months, even the stone Jizō are dressed warmly to greet you.</span></figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/benzaiten.webp" srcset="images/photos/benzaiten-960.webp 960w, images/photos/benzaiten.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="An eight-armed Benzaiten enshrined in a gilded shrine, with a torii gate on her head" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Benzaiten, eight-armed</b><span>One of the Seven Lucky Gods. This Benzaiten wears a tiny torii gate on her head, is said to date from the Kamakura period, and was long kept hidden from view. She watches over the arts — and love.</span></figcaption></figure>
-        <figure class="rv-img"><img src="images/photos/daikokuten.webp" srcset="images/photos/daikokuten-960.webp 960w, images/photos/daikokuten.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A carved wooden Daikokuten with a lucky mallet and a sack, standing on rice bales" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Daikokuten</b><span>Handed down from a branch temple of Hongakuin, Daikoku smiles atop rice bales, holding a lucky mallet and a sack — god of good harvests and prosperity. Hongakuin is one stop on the Kōyasan Seven Lucky Gods pilgrimage: four temples, about half a day on foot.</span></figcaption></figure>
-        <figure class="w rv-img"><img src="images/photos/teien-mado-3.webp" srcset="images/photos/teien-mado-3-960.webp 960w, images/photos/teien-mado-3.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The moss and rock garden by Shigemori Mirei, seen through a window" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Shigemori Mirei's rock garden</b><span>Walk the corridor and the stones seem to shift left and right, up and down — an illusion built into the design. A tea house looks down over the garden.</span></figcaption></figure>
+        <figure class="w rv-img mg-last"><img src="images/photos/teien-mado-3.webp" srcset="images/photos/teien-mado-3-960.webp 960w, images/photos/teien-mado-3.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="The moss and rock garden by Shigemori Mirei, seen through a window" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Shigemori Mirei's rock garden</b><span>Walk the corridor and the stones seem to shift left and right, up and down — an illusion built into the design. A tea house looks down over the garden.</span></figcaption></figure>
+        <figure data-mg="temple" class="w rv-img"><img src="images/photos/jizo-boshi.webp" srcset="images/photos/jizo-boshi-960.webp 960w, images/photos/jizo-boshi.webp 1280w" sizes="(max-width: 899px) 100vw, 80vw" alt="Stone Jizō statues bundled up in knitted hats, scarves and flower-print capes" width="1280" height="548" loading="lazy" style="object-position:center 30%"><figcaption class="rv"><b>Jizō, bundled up for winter</b><span>Knitted hats, scarves and flower-print capes: in the cold months, even the stone Jizō are dressed warmly to greet you.</span></figcaption></figure>
+        <figure data-mg="temple" class="rv-img"><img src="images/photos/benzaiten.webp" srcset="images/photos/benzaiten-960.webp 960w, images/photos/benzaiten.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="An eight-armed Benzaiten enshrined in a gilded shrine, with a torii gate on her head" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Benzaiten, eight-armed</b><span>One of the Seven Lucky Gods. This Benzaiten wears a tiny torii gate on her head, is said to date from the Kamakura period, and was long kept hidden from view. She watches over the arts — and love.</span></figcaption></figure>
+        <figure data-mg="temple" class="rv-img"><img src="images/photos/daikokuten.webp" srcset="images/photos/daikokuten-960.webp 960w, images/photos/daikokuten.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="A carved wooden Daikokuten with a lucky mallet and a sack, standing on rice bales" width="1600" height="1200" loading="lazy"><figcaption class="rv"><b>Daikokuten</b><span>Handed down from a branch temple of Hongakuin, Daikoku smiles atop rice bales, holding a lucky mallet and a sack — god of good harvests and prosperity. Hongakuin is one stop on the Kōyasan Seven Lucky Gods pilgrimage: four temples, about half a day on foot.</span></figcaption></figure>
+        <p class="mb-row"><button type="button" class="mb" data-mb="temple" aria-expanded="false">More of the temple<span aria-hidden="true">+</span></button></p>
       </div>
     </div>
   </div>
@@ -1469,7 +1484,8 @@ html:not(.motion) .en-prog,html.static .en-prog{display:none;}
         <p class="monk-name rv"><span>Head Priest</span>Inaba Hōken</p>
         <div class="rv">
           <p>At nine years old, he lay unconscious with peritonitis. His father prayed to Kōbō Daishi: “I will give my son to Mount Kōya — please save his life.” The next day, the boy recovered. At fifteen he entered Mount Kōya, and has served the Buddha ever since.</p>
-          <p>He studied <em>shōmyō</em> — the Buddhist chant of Kōyasan's Nanzanshin school — under a former Chief Abbot of Kōyasan Shingon Buddhism, and for eight years trained some 640 young monks in its chanting.</p>
+          <p class="mb-row"><button type="button" class="mb" data-mb="bio" aria-expanded="false">Read more<span aria-hidden="true">+</span></button></p>
+          <p data-mg="bio">He studied <em>shōmyō</em> — the Buddhist chant of Kōyasan's Nanzanshin school — under a former Chief Abbot of Kōyasan Shingon Buddhism, and for eight years trained some 640 young monks in its chanting.</p>
         </div>
         <blockquote class="monk-quote rv">“More than half a century has passed since I began serving the Buddha and Kōbō Daishi. Even now, I ask myself every day: am I worthy as a priest?”</blockquote>
       </div>
@@ -1683,13 +1699,14 @@ html:not(.motion) .en-prog,html.static .en-prog{display:none;}
           <div><dt>Amenities</dt><dd>Towels, hair dryer, toothbrush, slippers, body soap, shampoo, conditioner</dd></div>
           <div><dt>Loungewear</dt><dd>Yukata (one size, LL only)</dd></div>
           <div><dt>Baths</dt><dd>Large and medium shared baths, 17:00–21:00</dd></div>
-          <div><dt>Toilets</dt><dd>Western-style, heated seats with bidet</dd></div>
-          <div><dt>Accessibility</dt><dd>One wheelchair-accessible toilet; wheelchairs available to borrow</dd></div>
-          <div><dt>Parking</dt><dd>15 spaces, free, first come first served</dd></div>
-          <div><dt>Pets</dt><dd>Not permitted at this time</dd></div>
-          <div><dt>Wi-Fi</dt><dd>Free Wi-Fi</dd></div>
-          <div><dt>Payment</dt><dd>Cash or credit card</dd></div>
+          <div data-mg="fac"><dt>Toilets</dt><dd>Western-style, heated seats with bidet</dd></div>
+          <div data-mg="fac"><dt>Accessibility</dt><dd>One wheelchair-accessible toilet; wheelchairs available to borrow</dd></div>
+          <div data-mg="fac"><dt>Parking</dt><dd>15 spaces, free, first come first served</dd></div>
+          <div data-mg="fac"><dt>Pets</dt><dd>Not permitted at this time</dd></div>
+          <div data-mg="fac"><dt>Wi-Fi</dt><dd>Free Wi-Fi</dd></div>
+          <div data-mg="fac"><dt>Payment</dt><dd>Cash or credit card</dd></div>
         </dl>
+        <p class="mb-row"><button type="button" class="mb" data-mb="fac" aria-expanded="false">All facilities<span aria-hidden="true">+</span></button></p>
       </div>
     </div>
     <div class="faq-block">
@@ -2058,6 +2075,18 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
   function req() { if (!ticking) { ticking = true; requestAnimationFrame(f); } }
   addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); addEventListener('load', req);
 })();
+</script>
+<script>
+/* More buttons */
+document.querySelectorAll('.mb').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var k = b.getAttribute('data-mb'), open = b.getAttribute('aria-expanded') !== 'true';
+    document.querySelectorAll('[data-mg="' + k + '"]').forEach(function (e) { e.classList.toggle('mg-open', open); if (open) e.querySelectorAll('.rv,.rv-img').forEach(function (x) { x.classList.add('in'); }); if (open && (e.classList.contains('rv') || e.classList.contains('rv-img'))) e.classList.add('in'); });
+    var g = b.closest('.mido'); if (g) g.classList.toggle('mg-opened', open);
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    var t = b.firstChild; if (t && t.nodeType === 3) { if (!b.dataset.l) b.dataset.l = t.nodeValue; t.nodeValue = open ? 'Close' : b.dataset.l; }
+  });
+});
 </script>
 </body>
 </html>
