@@ -835,6 +835,60 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 .cta .book-note{color:rgba(243,236,225,.8);text-align:center;}
 
 @media(min-width:900px){.moment .m-after.m-big{width:100%;}}
+
+/* ══ 一夜の流れ：雑誌の見開きのような組み（v2） ══ */
+.night .moment{position:relative;}
+.night .moment+.moment{margin-top:104px !important;}
+.night .moment>figure img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;display:block;}
+.night .moment .m-time b{font-family:var(--latin);font-size:40px;font-weight:400;letter-spacing:.02em;line-height:1;color:var(--gold-d);}
+.night .ph-yoru .moment .m-time b{color:var(--gold-l);}
+.night .moment .m-time small{font-size:13px;letter-spacing:.3em;color:var(--text-2);}
+.night .ph-yoru .moment .m-time small{color:rgba(243,236,225,.7);}
+.night .moment .m-time{padding-bottom:14px;border-bottom:1px solid currentColor;border-color:rgba(145,124,80,.35);}
+/* スマホ */
+@media(max-width:899px){
+  .night .moment{display:flex !important;flex-direction:column;gap:0 !important;}
+  .night .moment>figure:not(.m-after){order:1;margin:0 calc(-1*var(--gut)) !important;}
+  .night .moment>figure:not(.m-after) img{aspect-ratio:4/3;}
+  .night .moment>div.rv{order:2;padding-top:26px;}
+  .night .moment .m-after{order:3;width:74% !important;margin:36px 0 0 auto !important;}
+  .night .moment.rev .m-after{margin:36px auto 0 0 !important;}
+  .night .moment .m-after img{aspect-ratio:4/5 !important;}
+  .night .moment .m-after.m-big{width:auto !important;margin:36px calc(-1*var(--gut)) 0 !important;}
+  .night .moment .m-after.m-big img{aspect-ratio:16/9 !important;}
+  .night .moment figure.duo img{aspect-ratio:3/4 !important;}
+  .night .moment.m-cine>figure img{aspect-ratio:4/5;}
+  .night .moment.nofig>div.rv{padding-top:0;text-align:left;}
+}
+/* PC：12列の見開き。主役の写真＋文字（写真の下端にそろえる）＋脇役の写真（重ねて下へずらす） */
+@media(min-width:900px){
+  .night .phase-in{max-width:1240px;}
+  .night .moment{display:grid !important;grid-template-columns:repeat(12,minmax(0,1fr)) !important;column-gap:28px !important;row-gap:0 !important;align-items:end !important;}
+  .night .moment+.moment{margin-top:168px !important;}
+  .night .moment>figure:not(.m-after){grid-column:1/span 7;grid-row:1;order:0 !important;margin:0;}
+  .night .moment>div.rv{grid-column:9/span 4;grid-row:1;align-self:end;padding-bottom:6px;}
+  .night .moment.rev>figure:not(.m-after){grid-column:6/span 7;}
+  .night .moment.rev>div.rv{grid-column:1/span 4;}
+  .night .moment .m-after{grid-row:2;grid-column:8/span 4 !important;width:auto !important;margin:-120px 0 0 !important;position:relative;z-index:2;align-self:start;}
+  .night .moment.rev .m-after{grid-column:2/span 4 !important;}
+  .night .moment .m-after img{aspect-ratio:4/5 !important;box-shadow:0 0 0 12px var(--washi);}
+  .night .ph-yoru .moment .m-after img{box-shadow:0 0 0 12px var(--ink);}
+  .night .moment .m-after.m-big{grid-column:2/span 11 !important;margin:56px 0 0 !important;}
+  .night .moment.rev .m-after.m-big{grid-column:1/span 11 !important;}
+  .night .moment .m-after.m-big img{aspect-ratio:21/9 !important;box-shadow:none;}
+  .night .moment figure.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .night .moment figure.duo img{aspect-ratio:3/4 !important;}
+  .night .moment .m-time b{font-size:52px;}
+  /* 山場：夜の参道は横幅いっぱい、文字は写真の上に */
+  .night .moment.m-cine{display:block !important;margin-left:calc(50% - 50vw + 8px);margin-right:calc(50% - 50vw + 8px);}
+  .night .moment.m-cine>figure img{aspect-ratio:21/9;}
+  .night .moment.m-cine>figure::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,7,9,.78),rgba(12,7,9,.35) 45%,rgba(12,7,9,0) 70%);pointer-events:none;}
+  .night .moment.m-cine>figure{position:relative;}
+  .night .moment.m-cine>div.rv{position:absolute;left:max(56px,calc(50vw - 600px));bottom:56px;max-width:30em;z-index:2;}
+  .night .moment.nofig{display:block !important;max-width:34em !important;margin-left:auto !important;margin-right:auto !important;text-align:center;}
+  .night .moment:has(.m-after:not(.m-big))>div.rv{align-self:start;padding-top:12px;}
+  .night .moment .m-after:not(.m-big){margin-top:-150px !important;}
+}
 </style>
 </head>
 
@@ -1148,7 +1202,7 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
           <p class="m-text">大浴場・中浴場で、一日の疲れをゆっくりと。シャンプーやタオル、ドライヤー、歯ブラシなど、ひと通りそろっています。</p>
         </div>
       </article>
-      <article class="moment">
+      <article class="moment m-cine">
         <figure class="rv-img"><img src="images/photos/sando-yoru.webp" srcset="images/photos/sando-yoru-960.webp 960w, images/photos/sando-yoru.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯籠と足もとの明かりに照らされた、夜の石畳の参道" width="1600" height="1200" loading="lazy"></figure>
         <div class="rv">
           <p class="m-time"><b>夜</b><small>よる</small></p>
