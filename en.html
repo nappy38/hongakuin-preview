@@ -1173,6 +1173,10 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
   .rooms .pair{display:grid !important;grid-template-columns:1fr !important;gap:14px !important;}
   .rooms .pair img{aspect-ratio:3/2 !important;}
 }
+
+/* 寺名：扁額の書 */
+.ev-main .sho{display:block;width:auto;height:clamp(160px,24vh,220px);filter:drop-shadow(0 0 18px rgba(0,0,0,.6));}
+@media(min-width:900px){.ev-main .sho{height:clamp(200px,28vh,280px);}}
 </style>
 </head>
 <body>
@@ -1241,7 +1245,7 @@ html:not(.motion) .stars i{opacity:.6;transform:none;}
   </div>
   <div class="en-hero-mark">
     <img class="en-crest" src="images/mon-white.png" alt="" width="64" height="64">
-    <p class="en-vname" lang="ja" aria-hidden="true"><span class="ev-main">本覚院</span><span class="ev-sub">高野山 別格本山</span></p>
+    <p class="en-vname" lang="ja" aria-hidden="true"><span class="ev-main"><img class="sho" src="images/hongakuin-sho-white.webp" alt="" width="282" height="799"></span><span class="ev-sub">高野山 別格本山</span></p>
     <h1 class="en-name">Koyasan Hongakuin</h1>
     <p class="en-sub">Temple lodging since 1190 · Mount Kōya</p>
     <p class="en-hook">Spend a night inside a living temple.</p>
