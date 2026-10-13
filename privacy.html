@@ -500,6 +500,9 @@ body.past-hero .shiori{transform:none;opacity:1;pointer-events:auto;}
 
 footer .f-pv{margin-top:10px;font-size:14px;}
 footer .f-pv a{text-decoration:underline;text-underline-offset:4px;}
+
+/* 縦書きで文字が左右にずれないように（palt は横書き用） */
+@media(min-width:900px){.ph h1,.sh-title,.cta h2,.ph-title h1,.hero-name,.greet{font-feature-settings:normal !important;}}
 </style>
 </head>
 

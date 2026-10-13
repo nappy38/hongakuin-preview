@@ -932,6 +932,9 @@ html.motion .lantern.on:not(.lit) .lt-hint{opacity:1;}
   .hero-name-main .sho-w{display:none;}
   .hero-name-main .sho-k{display:block;}
 }
+
+/* 縦書きで文字が左右にずれないように（palt は横書き用） */
+@media(min-width:900px){.ph h1,.sh-title,.cta h2,.ph-title h1,.hero-name,.greet{font-feature-settings:normal !important;}}
 </style>
 </head>
 <body class="at-top">

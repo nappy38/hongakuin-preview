@@ -602,6 +602,9 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
 @media(min-width:900px){#shomyo{padding-bottom:80px !important;}.closing-wrap{padding:56px 56px 80px !important;}}
 
 .kigan-solo{grid-column:1/-1 !important;width:100%;max-width:640px;margin-top:0 !important;}
+
+/* 縦書きで文字が左右にずれないように（palt は横書き用） */
+@media(min-width:900px){.ph h1,.sh-title,.cta h2,.ph-title h1,.hero-name,.greet{font-feature-settings:normal !important;}}
 </style>
 </head>
 <body>

@@ -710,6 +710,9 @@ html.motion .flow li.ign .hi u{animation:ring 2.6s cubic-bezier(.2,.6,.3,1);}
 #ekou::after{background:radial-gradient(ellipse 80% 60% at 50% 55%,rgba(190,120,50,.14),rgba(120,70,30,.06) 50%,rgba(0,0,0,0) 75%) !important;transition:opacity 3s ease !important;}
 .ekou-kotoba{text-shadow:none !important;color:#e9d6ac !important;letter-spacing:.34em !important;transition:opacity 3s ease .6s,transform 3s ease .6s !important;}
 .nw{display:inline-block;}
+
+/* 縦書きで文字が左右にずれないように（palt は横書き用） */
+@media(min-width:900px){.ph h1,.sh-title,.cta h2,.ph-title h1,.hero-name,.greet{font-feature-settings:normal !important;}}
 </style>
 </head>
 
