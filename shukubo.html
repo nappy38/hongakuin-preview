@@ -975,6 +975,8 @@ html.motion .okyo-q:not(.on) .ln{animation:okpulse 3.2s ease-in-out infinite;}
 .okyo-q{max-width:400px !important;}
 
 .ph-note{margin-top:8px;font-size:12.5px;line-height:1.7;letter-spacing:.06em;color:var(--text-2);}
+
+html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visible !important;}
 </style>
 </head>
 
@@ -1633,6 +1635,31 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
     a.addEventListener('pause', function () { set(false); });
     a.addEventListener('ended', function () { set(false); a.currentTime = 0; });
   });
+})();
+</script>
+<script>
+/* ページ内リンク：省略表示を解いてから、正しい位置へ移動（スマホで行き先がずれるのを防ぐ） */
+(function () {
+  var d = document.documentElement;
+  function go(id, smooth) {
+    var t = document.getElementById(id); if (!t) return false;
+    d.classList.add('cv-off');
+    setTimeout(function () {
+      var hd = document.querySelector('.hd'), off = hd ? hd.getBoundingClientRect().height : 0;
+      var sh = document.querySelector('.shiori'); if (sh && getComputedStyle(sh).position === 'fixed') off += sh.getBoundingClientRect().height;
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - off - 8, behavior: smooth ? 'smooth' : 'auto' });
+    }, 30);
+    return true;
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="#"]'); if (!a) return;
+    var u = new URL(a.href, location.href);
+    if (u.pathname !== location.pathname || !u.hash || u.hash === '#') return;
+    var id = decodeURIComponent(u.hash.slice(1));
+    if (id === 'main' || id === 'top') return;
+    if (go(id, !matchMedia('(prefers-reduced-motion: reduce)').matches)) { e.preventDefault(); history.replaceState(null, '', u.hash); }
+  }, true);
+  if (location.hash.length > 1) addEventListener('load', function () { go(decodeURIComponent(location.hash.slice(1)), false); });
 })();
 </script>
 </body>
