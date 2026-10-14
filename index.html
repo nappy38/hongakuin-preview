@@ -954,6 +954,9 @@ html.motion .lantern.on:not(.lit) .lt-hint{opacity:1;}
   .stay-thumbs{grid-column:1 / 8 !important;grid-row:2 !important;padding:0 !important;margin-top:28px !important;position:relative;z-index:1;}
   .stay-hero{height:auto !important;aspect-ratio:auto !important;max-height:none !important;}
 }
+
+.pg-next{margin-left:18px;min-height:44px;padding:0 4px;background:none;border:0;border-bottom:1px solid var(--gold);color:var(--gold-d);font-family:inherit;font-size:15px;letter-spacing:.12em;cursor:pointer;}
+.pg-next:hover{color:var(--sumi);}
 </style>
 </head>
 <body class="at-top">
@@ -1445,7 +1448,7 @@ document.querySelector('.news-cards').addEventListener('keydown', function (e) {
   if (h && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); toggleCard(h); }
 });
 
-const NEWS_PER_PAGE = 3;       // PC：1ページ5本＋ページ番号
+const NEWS_PER_PAGE = 5;       // PC：1ページ5本＋ページ番号
 const NEWS_MOBILE_FIRST = 3;   // スマホ：最初は3本
 const NEWS_MOBILE_STEP = 5;    // スマホ：「もっと見る」で5本ずつ
 let newsMobileShown = NEWS_MOBILE_FIRST;
@@ -1491,6 +1494,12 @@ function newsPage(p) {
     if (i === p) a.setAttribute('aria-current', 'page');
     a.onclick = function () { newsPage(i); document.getElementById('news').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }); };
     nav.appendChild(a); last = i;
+  }
+  if (p < pages) {
+    const nx = document.createElement('button');
+    nx.type = 'button'; nx.className = 'pg-next'; nx.textContent = '過去の記事を見る →';
+    nx.onclick = function () { newsPage(p + 1); document.getElementById('news').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' }); };
+    nav.appendChild(nx);
   }
 }
 window.matchMedia('(max-width:768px)').addEventListener('change', function () { newsPage(1); });
