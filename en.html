@@ -1353,6 +1353,24 @@ html.motion .otsu-play:not(.on) i{animation:okpulse 3.2s ease-in-out infinite;}
 .okyo-q.on::after{opacity:1;animation:okbreath 3.6s ease-in-out infinite;}
 @keyframes okbreath{0%,100%{opacity:.25;transform:scale(.8);}50%{opacity:1;transform:scale(1);}}
 @media(max-width:899px){.otsu-play{margin:6px auto 0 !important;border-left:0 !important;padding-left:2px !important;}.okyo-q{grid-template-columns:40px 1fr auto !important;}}
+
+/* ══ Stay guide カード：箱の中の箱をやめ、静かな見開きに（v2） ══ */
+.guide-card{border:0 !important;background:none !important;box-shadow:none !important;}
+.guide-card:hover{background:none !important;box-shadow:none !important;}
+.gc-tx{padding:24px 0 0 !important;}
+.gc-tx em{background:none !important;color:var(--sumi) !important;padding:0 0 4px !important;border-bottom:1px solid var(--gold);letter-spacing:.06em !important;font-size:17px !important;}
+.guide-card:hover .gc-tx em{color:var(--gold-d) !important;}
+.gc-tx small{letter-spacing:.04em;}
+.guide-band{padding:8px 0 24px;}
+.guide-ed{max-width:1240px;margin:0 auto 40px !important;}
+@media(min-width:900px){
+  .guide-card{grid-template-columns:7fr 5fr !important;column-gap:56px;align-items:center !important;}
+  .gc-tx{padding:0 !important;}
+  .gc-img{min-height:0 !important;aspect-ratio:3/2 !important;}
+  .gc-tx strong{font-size:40px !important;}
+  .guide-ed .guide-card{grid-template-columns:5fr 7fr !important;}
+  .guide-ed .gc-img{order:2;}
+}
 </style>
 </head>
 <body>
@@ -1570,11 +1588,14 @@ html.motion .otsu-play:not(.on) i{animation:okpulse 3.2s ease-in-out infinite;}
         <p class="book-note">Dinner is served to all guests together at 6:00 pm. If you expect to arrive late, please call +81-736-56-2711.<!-- TODO: confirm with temple … latest arrival time for dinner --><br>Booking directly on our official site gives you the best rate.</p>
         <a class="cta-line" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">Book your stay<span class="arw" aria-hidden="true"></span></a>
       
-        <div class="guide-wrap guide-in"><a class="guide-card" href="en-stay.html#info"><span class="gc-img" aria-hidden="true"><img src="images/photos/sando-hyoseki2-960.webp" alt="" width="960" height="720" loading="lazy"></span><span class="gc-tx"><small>Before you come</small><strong>Access, facilities &amp; FAQ</strong><span>How to get here from Osaka, walking times, rail passes, room facilities, and answers to common questions.</span><em>Open the Stay guide <i aria-hidden="true">→</i></em></span></a></div>
+        
       </div>
     </div>
   </div>
 </section>
+
+<!-- Stay guide (after rooms) -->
+<div class="guide-band"><div class="guide-wrap guide-ed"><a class="guide-card" href="en-stay.html#info"><span class="gc-img" aria-hidden="true"><img src="images/photos/sando-hyoseki2-960.webp" alt="" width="960" height="720" loading="lazy"></span><span class="gc-tx"><small>Before you come</small><strong>Access, facilities &amp; FAQ</strong><span>How to get here from Osaka, walking times, rail passes, room facilities, and answers to common questions.</span><em>Open the Stay guide <i aria-hidden="true">→</i></em></span></a></div></div>
 
 <!-- 二 THE TEMPLE -->
 <section class="sec on-dark" id="temple">
