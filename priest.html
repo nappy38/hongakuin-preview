@@ -629,6 +629,13 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
 
 .fuku-kotoba{font-size:20px !important;line-height:2 !important;letter-spacing:.14em;color:var(--sumi) !important;padding-left:18px;border-left:1px solid var(--gold);margin-bottom:1.6em !important;}
 @media(min-width:900px){.fuku-kotoba{font-size:23px !important;}}
+
+/* 一文のあとに祈りの写真 */
+.fuku-photos .fuku-por{width:100%;}
+@media(min-width:900px){.fuku-photos .fuku-por{grid-column:1/-1 !important;}}
+.fuku-inline{margin:4px 0 2em;}
+.fuku-inline img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:60% 50%;}
+@media(min-width:900px){.fuku-inline{max-width:640px;}}
 </style>
 </head>
 <body>
@@ -800,10 +807,10 @@ main>section:not(:first-of-type):not(.interlude):not(.kiku-sec):not(#monks),main
       </p>
       <div class="fuku-photos">
         <figure class="fuku-por rv-img"><img src="images/photos/fuku-seiza-hondo.webp" srcset="images/photos/fuku-seiza-hondo-960.webp 960w, images/photos/fuku-seiza-hondo.webp 1600w" sizes="(max-width: 899px) 100vw, 50vw" alt="本堂の内陣を背に、緑の法衣で正座する副住職" width="1600" height="1200" loading="lazy"></figure>
-        <figure class="kigan rv-img rv-d1"><img src="images/photos/fukujushoku-kigan.webp" srcset="images/photos/fukujushoku-kigan-960.webp 960w, images/photos/fukujushoku-kigan.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明の前で数珠を手に祈る副住職" loading="lazy" width="1280" height="948"></figure>
       </div>
       <div class="fuku-text rv">
         <p class="fuku-kotoba">一人ひとりの方の思いに寄り添い、<br class="pc">ともに手を合わせることを大切にしています。</p>
+        <figure class="fuku-inline rv-img"><img src="images/photos/fukujushoku-kigan.webp" srcset="images/photos/fukujushoku-kigan-960.webp 960w, images/photos/fukujushoku-kigan.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明の前で数珠を手に祈る副住職" loading="lazy" width="1280" height="948"></figure>
         <p>ご宿泊の際に、お会いすることの多い僧侶です。朝のお勤めも、副住職がつとめることが多くあります。</p>
         <p>副住職が大切にしているのは、本覚院で過ごす時間そのものを味わっていただくことです。江戸時代中期に建てられた本堂をはじめ、明治・大正・昭和の建物が重なり合う院内には、江戸時代の襖絵や、室町時代にさかのぼる掛軸も伝わっています。昭和28年に重森三玲が手がけた石庭とあわせて、ゆっくりと歩きながら歴史を感じていただけたらと話します。</p>
         <p>朝のお勤めは、どなたでもご参加いただけます。僧侶の読経に耳を傾けるひとときは、気持ちが切り替わるような体験になるはずです。</p>
