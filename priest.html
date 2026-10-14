@@ -742,7 +742,7 @@ html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visibl
         <p class="kiku-t">聲明を聴く<span class="kiku-wave" aria-hidden="true"><i></i><i></i><i></i><i></i></span></p>
         <p class="kiku-s"><span class="kiku-s1">住職・稲葉法研の声</span><span class="kiku-s1">CD『THE 聲明 奮』より</span></p>
       </div>
-      <div class="kiku-player" id="kiku-player"><iframe title="THE 聲明～高野山 南山進流～ 奮（Spotify）" src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      <div class="kiku-player" id="kiku-player"><iframe title="THE 聲明～高野山 南山進流～ 奮（Spotify）" data-src="https://open.spotify.com/embed/album/1UExgUP38O4lbdstKeMkPf?utm_source=generator&amp;theme=0" width="100%" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
       <p class="kiku-hint">再生が始まらないときは、上のプレーヤーの ▶ を押してください。</p>
       <p class="kiku-tip">金色のボタンで流れないときは、プレーヤーの ▶ を押してください。流したまま、下へお進みいただけます。</p>
     </div>
@@ -1047,7 +1047,8 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
   btn.addEventListener('click',function(){ if(ctl&&ready) toggle(); else { pending=true; load(); } });
   var mini=document.getElementById('kikuMini');
   if(mini) mini.addEventListener('click',function(){ if(!ctl) return; ctl.togglePlay(); setTimeout(function(){ if(playing){ box.scrollIntoView({behavior:'smooth',block:'center'}); } },1500); });
-  load(); // ページ上部にあるので、最初から読み込んでおく（プレーヤーの ▶ で直接再生できるように）
+  // ページの表示が済んでから読み込む（最初の表示を速くするため）
+  if (document.readyState === 'complete') setTimeout(load, 1200); else addEventListener('load', function () { setTimeout(load, 1200); });
 })();
 </script>
 <script>
