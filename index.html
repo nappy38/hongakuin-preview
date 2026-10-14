@@ -1020,6 +1020,33 @@ html.motion .otsu-play:not(.on) i{animation:okpulse 3.2s ease-in-out infinite;}
 @keyframes okpulse{0%,100%{box-shadow:0 0 0 0 rgba(201,177,131,0);}50%{box-shadow:0 0 0 6px rgba(201,177,131,.2);}}
 
 .news-card-body.old-img img{width:auto !important;max-width:min(320px,100%) !important;}
+
+/* ══ お勤めの声：厳粛で上品に（v3）。枠・脈打つ光・波の印をやめ、細い線と明朝だけで ══ */
+.otsu-play{border:0 !important;border-radius:0 !important;background:none !important;padding:0 2px !important;margin-left:14px;gap:12px !important;min-height:44px;font-family:var(--mincho) !important;font-size:14px !important;letter-spacing:.32em !important;color:var(--sumi) !important;border-left:1px solid rgba(145,124,80,.55) !important;padding-left:16px !important;}
+.otsu-play:hover{background:none !important;}
+.otsu-play:hover span{color:var(--gold-d);}
+.otsu-play i,.okyo-q .ln{animation:none !important;box-shadow:none !important;}
+.otsu-play i{width:26px !important;height:26px !important;border:1px solid rgba(145,124,80,.7) !important;}
+.otsu-play i::before{left:10px !important;top:8px !important;border-left:7px solid var(--gold-d) !important;border-top:5px solid transparent !important;border-bottom:5px solid transparent !important;}
+.otsu-play.on i::before{left:9px !important;top:8px !important;width:2px !important;height:9px !important;border:0 !important;background:var(--gold-d) !important;box-shadow:5px 0 0 var(--gold-d) !important;}
+.otsu-play span{border-bottom:1px solid rgba(145,124,80,.45);padding-bottom:2px;transition:color .4s;}
+
+.okyo-q{font-family:var(--mincho) !important;letter-spacing:.24em !important;grid-template-columns:40px 1fr auto !important;padding:18px 2px !important;background:none !important;}
+.okyo-q:hover{background:none !important;}
+.okyo-q .ln{width:40px !important;height:40px !important;border:1px solid rgba(145,124,80,.7) !important;background:none !important;}
+.okyo-q:hover .ln,.okyo-q.on .ln{background:none !important;border-color:var(--gold-d) !important;}
+.okyo-q .ln::before{left:16px !important;top:13px !important;border-left:10px solid var(--gold-d) !important;border-top:7px solid transparent !important;border-bottom:7px solid transparent !important;}
+.okyo-q.on .ln::before{left:14px !important;top:13px !important;width:3px !important;height:13px !important;border:0 !important;background:var(--gold-d) !important;box-shadow:8px 0 0 var(--gold-d) !important;}
+.okyo-q .lb{font-size:16px !important;letter-spacing:.3em !important;}
+.okyo-q small{letter-spacing:.14em !important;}
+.okyo-q .wv{display:none !important;}
+.okyo-q::after{content:'';grid-column:3;grid-row:1/span 2;width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:0;transition:opacity .8s;}
+.okyo-q.on::after{opacity:1;animation:okbreath 3.6s ease-in-out infinite;}
+@keyframes okbreath{0%,100%{opacity:.25;transform:scale(.8);}50%{opacity:1;transform:scale(1);}}
+@media(max-width:899px){.otsu-play{margin:6px auto 0 !important;border-left:0 !important;padding-left:2px !important;}.okyo-q{grid-template-columns:40px 1fr auto !important;}}
+
+.okyo-q small{white-space:nowrap;}
+.okyo-q{max-width:400px !important;}
 </style>
 </head>
 <body class="at-top">
@@ -1194,7 +1221,7 @@ html.motion .otsu-play:not(.on) i{animation:okpulse 3.2s ease-in-out infinite;}
           <p class="ft-verb">聴く</p>
           <h3>祈りの声に<br class="pc">包まれる朝</h3>
           <p>毎朝6時30分、本堂に読経の声が響きます。ご宿泊の方はどなたでもご参加いただけます。高野山に受け継がれる祈りの声に包まれるひとときをお過ごしいただけます。</p>
-          <button type="button" class="okyo-q" data-a="okyoTopA" data-fig="okyoFig" aria-pressed="false"><span class="ln" aria-hidden="true"></span><span class="lb">朝のお勤めを聴く</span><small>副住職の読経（四智梵語）</small><span class="wv" aria-hidden="true"><b></b><b></b><b></b><b></b></span></button>
+          <button type="button" class="okyo-q" data-a="okyoTopA" data-fig="okyoFig" aria-pressed="false"><span class="ln" aria-hidden="true"></span><span class="lb">朝のお勤めを聴く</span><small>副住職の読経　四智梵語</small><span class="wv" aria-hidden="true"><b></b><b></b><b></b><b></b></span></button>
           <audio id="okyoTopA" preload="none" src="audio/shichi-bongo.m4a"></audio>
           <a class="ft-listen" href="priest.html#kiku"><span aria-hidden="true">♪</span>住職の聲明を聴く<span class="arw" aria-hidden="true">→</span></a>
         </div>
