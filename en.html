@@ -81,6 +81,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap"></noscript>
+<link rel="preload" as="image" href="images/hongakuin-sho-white.webp" fetchpriority="high">
 <link rel="preload" as="image" href="images/insta-nenki.webp" imagesrcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" imagesizes="100vw" fetchpriority="high">
 <style>
 /* Koyasan Hongakuin — English v3. Same design language as the Japanese v3 pages (washi, sumi, gold; vermilion only for booking). */
@@ -1821,7 +1822,7 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
   if(document.documentElement.classList.contains('static')) return;
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var cur=0;
-  addEventListener('load',function(){ sl.forEach(function(x){var i=x.querySelector('img'); if(i) i.loading='eager';}); });
+  addEventListener('load',function(){ setTimeout(function(){ sl.forEach(function(x){var i=x.querySelector('img'); if(i) i.loading='eager';}); },2500); });
   var R=['I','II','III','IV','V'], c=document.getElementById('enCount');
   var pg=document.getElementById('enProg');
   function run(){ if(!pg) return; pg.classList.remove('run'); void pg.offsetWidth; pg.classList.add('run'); }

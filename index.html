@@ -65,10 +65,10 @@
 })();
 </script>
 <style>@font-face{font-family:'Shippori Mincho B1';src:url('fonts/shippori-b1-sub.woff2') format('woff2');font-weight:400 700;font-style:normal;font-display:swap;}</style>
-<link rel="preload" href="fonts/shippori-b1-sub.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap"></noscript>
+<link rel="preload" as="image" href="images/hongakuin-sho-white.webp" fetchpriority="high">
 <link rel="preload" as="image" href="images/insta-nenki.webp" imagesrcset="images/insta-nenki-960.webp 960w, images/insta-nenki.webp 1280w" imagesizes="100vw" fetchpriority="high">
 <style>
 /* ══════════════════════════════════════════════════════════
@@ -1414,7 +1414,7 @@ function setPaused(p) {
 pauseBtn.addEventListener('click', function () { setPaused(!heroPaused); });
 if (slides.length > 1 && !staticMode) { if (reduceMotion) setPaused(true); else startHero(); }
 // 2枚目以降の写真は、最初の写真が出たあとに読み込む
-window.addEventListener('load', function () { slides.forEach(function (s) { var i = s.querySelector('img'); if (i) i.loading = 'eager'; }); });
+window.addEventListener('load', function () { setTimeout(function () { slides.forEach(function (s) { var i = s.querySelector('img'); if (i) i.loading = 'eager'; }); }, 2500); });
 
 /* ── 新着情報 ── */
 // 記事の本文を組み立てる（画像は縮小版のURLにしてから入れる）
