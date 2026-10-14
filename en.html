@@ -1293,6 +1293,33 @@ html.motion .okyo-q:not(.on) .ln{animation:okpulse 3.2s ease-in-out infinite;}
   .okyo-q .lb{font-size:15px !important;letter-spacing:.08em !important;white-space:normal !important;}
   .ft .okyo-q{margin-left:calc(-40% - 16px);width:calc(140% + 16px);max-width:none;}
 }
+
+/* Stay guide への案内：見落とさないカード */
+.guide-wrap{max-width:1000px;margin:24px auto 72px;padding:0 var(--gut);}
+.guide-in{margin:28px 0 0;padding:0;text-align:left;}
+.guide-card{display:grid;grid-template-columns:1fr;border:1px solid var(--gold);background:rgba(255,255,255,.45);color:inherit;overflow:hidden;transition:background .4s,box-shadow .4s;}
+.guide-card:hover{background:rgba(255,255,255,.8);box-shadow:0 18px 40px -26px rgba(21,12,21,.45);}
+.gc-img{display:block;overflow:hidden;aspect-ratio:16/9;}
+.gc-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease);}
+.guide-card:hover .gc-img img{transform:scale(1.04);}
+.gc-tx{display:flex;flex-direction:column;gap:6px;padding:22px 22px 24px;}
+.gc-tx small{font-family:var(--display-en);font-style:italic;font-size:15px;color:var(--gold-d);}
+.gc-tx strong{font-family:var(--display-en);font-weight:500;font-size:28px;line-height:1.15;color:var(--sumi);}
+.gc-tx span{font-size:16px;line-height:1.6;color:var(--text-2);}
+.gc-tx em{font-style:normal;display:inline-flex;align-items:center;gap:10px;width:fit-content;margin-top:10px;padding:12px 20px;background:var(--sumi);color:var(--washi);font-family:var(--display-en);font-size:16px;letter-spacing:.04em;}
+.gc-tx em i{font-style:normal;transition:transform .3s;}
+.guide-card:hover .gc-tx em i{transform:translateX(4px);}
+@media(min-width:900px){
+  .guide-card{grid-template-columns:5fr 6fr;align-items:stretch;}
+  .gc-img{aspect-ratio:auto;min-height:260px;}
+  .gc-tx{padding:36px 40px;justify-content:center;}
+  .gc-tx strong{font-size:36px;}
+  .guide-in .guide-card{grid-template-columns:2fr 3fr;}
+  .guide-in .gc-img{min-height:180px;}
+  .guide-in .gc-tx{padding:24px 28px;}
+  .guide-in .gc-tx strong{font-size:26px;}
+}
+.ph-asa .guide-wrap{margin-bottom:72px;}
 </style>
 </head>
 <body>
@@ -1307,7 +1334,7 @@ html.motion .okyo-q:not(.on) .ln{animation:okpulse 3.2s ease-in-out infinite;}
     <a href="#rooms"><span>Rooms</span></a>
     <a href="#temple"><span>The Temple</span></a>
     <a href="#night"><span>A Night Here</span></a>
-    <a href="en-stay.html#monks"><span>The Monks</span></a>
+    <a href="en-stay.html"><span>Stay guide</span></a>
     <a href="en-stay.html#info"><span>Access &amp; FAQ</span></a>
   </nav>
   <div class="hd-actions">
@@ -1509,7 +1536,7 @@ html.motion .okyo-q:not(.on) .ln{animation:okpulse 3.2s ease-in-out infinite;}
         <p class="book-note">Dinner is served to all guests together at 6:00 pm. If you expect to arrive late, please call +81-736-56-2711.<!-- TODO: confirm with temple … latest arrival time for dinner --><br>Booking directly on our official site gives you the best rate.</p>
         <a class="cta-line" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">Book your stay<span class="arw" aria-hidden="true"></span></a>
       
-        <p class="night-more" style="margin:18px 0 0"><a class="mb-link" href="en-stay.html#info">Stay guide: access, facilities &amp; FAQ<span aria-hidden="true">→</span></a></p>
+        <div class="guide-wrap guide-in"><a class="guide-card" href="en-stay.html#info"><span class="gc-img" aria-hidden="true"><img src="images/photos/sando-hyoseki2-960.webp" alt="" width="960" height="720" loading="lazy"></span><span class="gc-tx"><small>Before you come</small><strong>Access, facilities &amp; FAQ</strong><span>How to get here from Osaka, walking times, rail passes, room facilities, and answers to common questions.</span><em>Open the Stay guide <i aria-hidden="true">→</i></em></span></a></div>
       </div>
     </div>
   </div>
@@ -1611,7 +1638,7 @@ html.motion .okyo-q:not(.on) .ln{animation:okpulse 3.2s ease-in-out infinite;}
       </article>
     </div>
   </div>
-  <p class="night-more"><a class="mb-link" href="en-stay.html#night">See every moment of the night<span aria-hidden="true">→</span></a></p>
+  <div class="guide-wrap"><a class="guide-card" href="en-stay.html#night"><span class="gc-img" aria-hidden="true"><img src="images/photos/sanmon-kuguru-960.webp" alt="" width="960" height="720" loading="lazy"></span><span class="gc-tx"><small>Stay guide · page 2</small><strong>Every moment of the night</strong><span>Sutra copying, the bath, the lantern-lit night walk, breakfast and Okunoin — the full evening and morning, scene by scene.</span><em>Open the Stay guide <i aria-hidden="true">→</i></em></span></a></div>
   <div class="night-cta"><p>Spend this night at Hongakuin.</p><a class="cta-line" href="https://tabichat.com/engine/hotels/hongakuin" target="_blank" rel="noopener">Book your stay<span class="arw" aria-hidden="true"></span></a></div>
 </section>
 
