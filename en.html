@@ -1245,9 +1245,13 @@ html.js .interlude{display:none;}
 .en-name{margin-top:6px;}
 
 /* 寺名の書と「高野山 別格本山」を重ねずに並べる */
-.en-vname{writing-mode:horizontal-tb !important;display:flex !important;flex-direction:row;align-items:flex-start;justify-content:center;gap:12px;margin-bottom:26px !important;}
-.en-vname .ev-main{display:block;margin-left:calc(1em + 12px);}
-.en-vname .ev-sub{position:static !important;writing-mode:vertical-rl;margin:0 !important;padding-top:.2em !important;line-height:1 !important;}
+.en-vname{writing-mode:horizontal-tb !important;display:block !important;position:relative;width:max-content;margin:0 auto 26px !important;}
+.en-vname .ev-main{display:block;margin:0;}
+.en-vname .ev-sub{position:absolute !important;left:100% !important;top:0 !important;margin:0 0 0 12px !important;writing-mode:vertical-rl;padding-top:.2em !important;line-height:1 !important;}
+@media(max-width:599px){
+  .en-name{font-size:17px !important;letter-spacing:.22em !important;padding-left:.22em !important;white-space:nowrap;}
+  .en-hook{font-size:20px !important;}
+}
 </style>
 </head>
 <body>
