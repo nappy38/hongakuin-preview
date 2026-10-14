@@ -1379,6 +1379,14 @@ html.motion .otsu-play:not(.on) i{animation:okpulse 3.2s ease-in-out infinite;}
 .otsu-play{font-family:var(--display-en) !important;letter-spacing:.04em !important;font-size:15px !important;}
 
 html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visible !important;}
+
+/* Stay guide への常設の入口（トップの帯の下） */
+.plan-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 26px;padding:14px var(--gut);border-bottom:1px solid var(--line);font-family:var(--display-en);font-size:16px;background:var(--washi);}
+.plan-bar .pb-k{font-style:italic;color:var(--gold-d);}
+.plan-bar a{display:inline-flex;align-items:center;min-height:40px;color:var(--sumi);border-bottom:1px solid rgba(145,124,80,.45);transition:color .3s,border-color .3s;}
+.plan-bar a:hover{color:var(--gold-d);border-color:var(--gold);}
+.plan-bar .pb-all{font-weight:500;border-bottom-color:var(--gold);}
+@media(max-width:599px){.plan-bar{gap:2px 18px;font-size:15px;}.plan-bar .pb-k{flex-basis:100%;text-align:center;}}
 </style>
 </head>
 <body>
@@ -1462,6 +1470,13 @@ html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visibl
   <span class="oe-m"><span id="ktTime" hidden>&nbsp;</span><span id="ktMsg">&nbsp;</span></span>
   <button type="button" class="otsu-play" data-a="okyoAsaA" data-l="Listen to the chant" data-s="Stop" aria-pressed="false"><i aria-hidden="true"></i><span>Listen to the chant</span></button>
 </div>
+<nav class="plan-bar" aria-label="Plan your stay">
+  <span class="pb-k">Planning your stay?</span>
+  <a href="en-stay.html#info">Getting here</a>
+  <a href="en-stay.html#faq">FAQ</a>
+  <a href="en-stay.html#info">Facilities</a>
+  <a class="pb-all" href="en-stay.html">Full Stay guide <span aria-hidden="true">→</span></a>
+</nav>
 
 <!-- Only at Hongakuin: three reasons -->
 <section class="only" aria-labelledby="only-h">
