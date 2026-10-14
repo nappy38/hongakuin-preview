@@ -1805,5 +1805,9 @@ function toggleArchive() {
   }
 })();
 </script>
+<script>
+/* 念のため：寺紋と寺名が、動きのあとに必ず見えるように（iPhone対策） */
+setTimeout(function () { document.querySelectorAll('.hero-mon,.hero-name').forEach(function (e) { e.style.animation = 'none'; e.style.opacity = '1'; e.style.transform = 'none'; e.style.filter = e.classList.contains('hero-mon') ? 'drop-shadow(0 0 14px rgba(0,0,0,.45))' : 'none'; }); }, 2600);
+</script>
 </body>
 </html>
