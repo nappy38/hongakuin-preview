@@ -1234,6 +1234,20 @@ html.js .interlude{display:none;}
 
 .night-more{text-align:center;margin:8px 0 64px;padding:0 var(--gut);}
 .mb-link{display:inline-flex;align-items:center;gap:12px;min-height:48px;font-family:var(--display-en);font-size:19px;color:var(--gold-d);border-bottom:1px solid currentColor;}
+
+/* 仕上げ（スマホ）：寺の写真を1列に、寺名と欧文の間をあける、案内リンクを整える */
+@media(max-width:899px){
+  #temple .mido{grid-template-columns:1fr !important;gap:32px !important;}
+  #temple .mido img{aspect-ratio:3/2 !important;}
+  .en-vname{margin-bottom:22px !important;}
+  .room-common .night-more .mb-link{font-size:16px;text-align:left;}
+}
+.en-name{margin-top:6px;}
+
+/* 寺名の書と「高野山 別格本山」を重ねずに並べる */
+.en-vname{writing-mode:horizontal-tb !important;display:flex !important;flex-direction:row;align-items:flex-start;justify-content:center;gap:12px;margin-bottom:26px !important;}
+.en-vname .ev-main{display:block;margin-left:calc(1em + 12px);}
+.en-vname .ev-sub{position:static !important;writing-mode:vertical-rl;margin:0 !important;padding-top:.2em !important;line-height:1 !important;}
 </style>
 </head>
 <body>
