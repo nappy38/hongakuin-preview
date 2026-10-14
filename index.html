@@ -957,6 +957,31 @@ html.motion .lantern.on:not(.lit) .lt-hint{opacity:1;}
 
 .pg-next{margin-left:18px;min-height:44px;padding:0 4px;background:none;border:0;border-bottom:1px solid var(--gold);color:var(--gold-d);font-family:inherit;font-size:15px;letter-spacing:.12em;cursor:pointer;}
 .pg-next:hover{color:var(--sumi);}
+
+/* ══ デモ：副住職のお勤めの声（控えめな文字のボタン） ══ */
+.okyo-q{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 12px;text-align:left;min-height:48px;margin-top:14px;padding:0;background:none;border:0;border-bottom:1px solid rgba(145,124,80,.55);color:var(--gold-d);font-family:inherit;font-size:15px;letter-spacing:.16em;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.okyo-q .ln{display:inline-block;width:22px;height:1px;background:currentColor;}
+.okyo-q .lb{white-space:nowrap;}
+.okyo-q small{order:5;flex-basis:100%;padding-left:34px;font-size:12px;letter-spacing:.06em;color:var(--text-2);text-align:left;}
+.okyo-q .wv{display:inline-flex;gap:3px;align-items:flex-end;height:12px;margin-left:2px;}
+.okyo-q .wv b{width:2px;height:3px;background:currentColor;opacity:.75;}
+.okyo-q.on .wv b{animation:okw 1.2s ease-in-out infinite;}
+.okyo-q .wv b:nth-child(2){animation-delay:-.3s !important;}.okyo-q .wv b:nth-child(3){animation-delay:-.6s !important;}.okyo-q .wv b:nth-child(4){animation-delay:-.9s !important;}
+.okyo-q .st::before{content:'聴く';}
+.okyo-q.on .st::before{content:'止める';}
+@keyframes okw{0%,100%{height:3px;}50%{height:12px;}}
+.on-dark .okyo-q,.ph-asa .okyo-q{}
+
+.okyo-fig{position:relative;}
+.okyo-fig img{transition:filter 6s ease;}
+.okyo-fig .dawnlight{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;transition:opacity 6s ease;mix-blend-mode:screen;
+  background:radial-gradient(ellipse 85% 70% at 50% 100%,rgba(255,196,120,.5),rgba(255,160,80,.14) 45%,rgba(255,160,80,0) 75%);}
+.okyo-fig.on .dawnlight{opacity:1;}
+.okyo-fig.on img{filter:brightness(1.1) saturate(1.06);}
+.okyo-fig .lamps{position:absolute;left:0;right:0;bottom:10%;display:flex;justify-content:center;gap:12%;z-index:3;pointer-events:none;}
+.okyo-fig .lamps i{width:7px;height:13px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:radial-gradient(ellipse at 50% 80%,#fff8e1 0 22%,#ffd27a 45%,rgba(240,140,50,0) 72%);box-shadow:0 0 16px 5px rgba(255,190,100,.45);opacity:0;transform:scale(.4);transition:opacity 1.6s ease,transform 1.6s ease;}
+.okyo-fig.on .lamps i.lit{opacity:1;transform:none;animation:lflk 2.4s ease-in-out infinite;}
+@keyframes lflk{0%,100%{transform:scaleY(1);}50%{transform:scaleY(1.12);}}
 </style>
 </head>
 <body class="at-top">
@@ -1124,12 +1149,14 @@ html.motion .lantern.on:not(.lit) .lt-hint{opacity:1;}
         </div>
       </article>
       <article class="ft">
-        <figure class="ft-fig rv-img"><img src="images/photos/ekou-naijin.webp" srcset="images/photos/ekou-naijin-960.webp 960w, images/photos/ekou-naijin.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明のともる本堂の内陣で、お経をおとなえする僧侶" width="1280" height="1400" loading="lazy" style="object-position:center 45%"></figure>
+        <figure class="ft-fig rv-img okyo-fig" id="okyoFig"><span class="dawnlight" aria-hidden="true"></span><span class="lamps" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><img src="images/photos/ekou-naijin.webp" srcset="images/photos/ekou-naijin-960.webp 960w, images/photos/ekou-naijin.webp 1280w" sizes="(max-width: 899px) 100vw, 60vw" alt="灯明のともる本堂の内陣で、お経をおとなえする僧侶" width="1280" height="1400" loading="lazy" style="object-position:center 45%"></figure>
         <div class="ft-text rv">
           <span class="ft-n" aria-hidden="true">参</span>
           <p class="ft-verb">聴く</p>
           <h3>祈りの声に<br class="pc">包まれる朝</h3>
           <p>毎朝6時30分、本堂に読経の声が響きます。ご宿泊の方はどなたでもご参加いただけます。高野山に受け継がれる祈りの声に包まれるひとときをお過ごしいただけます。</p>
+          <button type="button" class="okyo-q" data-a="okyoTopA" data-fig="okyoFig" aria-pressed="false"><span class="ln" aria-hidden="true"></span><span class="lb">朝のお勤めを<span class="st"></span></span><small>副住職の読経（四智梵語）</small><span class="wv" aria-hidden="true"><b></b><b></b><b></b><b></b></span></button>
+          <audio id="okyoTopA" preload="none" src="audio/shichi-bongo.m4a"></audio>
           <a class="ft-listen" href="priest.html#kiku"><span aria-hidden="true">♪</span>住職の聲明を聴く<span class="arw" aria-hidden="true">→</span></a>
         </div>
       </article>
@@ -1817,6 +1844,27 @@ function toggleArchive() {
 <script>
 /* 念のため：寺紋と寺名が、動きのあとに必ず見えるように（iPhone対策） */
 setTimeout(function () { document.querySelectorAll('.hero-mon,.hero-name').forEach(function (e) { e.style.animation = 'none'; e.style.opacity = '1'; e.style.transform = 'none'; e.style.filter = e.classList.contains('hero-mon') ? 'drop-shadow(0 0 14px rgba(0,0,0,.45))' : 'none'; }); }, 2600);
+</script>
+<script>
+/* 副住職のお勤めの声（押したときだけ流れる） */
+(function () {
+  document.querySelectorAll('.okyo-q').forEach(function (b) {
+    var a = document.getElementById(b.getAttribute('data-a')), fig = b.getAttribute('data-fig') ? document.getElementById(b.getAttribute('data-fig')) : null, timers = [];
+    if (!a) return;
+    function set(on) {
+      b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (!fig) return;
+      fig.classList.toggle('on', on); timers.forEach(clearTimeout); timers = [];
+      fig.querySelectorAll('.lamps i').forEach(function (l, i) { if (on) timers.push(setTimeout(function () { l.classList.add('lit'); }, 1200 + i * 1800)); else l.classList.remove('lit'); });
+    }
+    b.addEventListener('click', function () {
+      document.querySelectorAll('audio').forEach(function (x) { if (x !== a && !x.paused) x.pause(); });
+      if (a.paused) { a.play(); set(true); } else { a.pause(); set(false); }
+    });
+    a.addEventListener('pause', function () { set(false); });
+    a.addEventListener('ended', function () { set(false); a.currentTime = 0; });
+  });
+})();
 </script>
 </body>
 </html>

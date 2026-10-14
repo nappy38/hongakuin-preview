@@ -905,6 +905,20 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
   .rooms .pair{display:grid !important;grid-template-columns:1fr !important;gap:14px !important;}
   .rooms .pair img{aspect-ratio:3/2 !important;}
 }
+
+/* ══ デモ：副住職のお勤めの声（控えめな文字のボタン） ══ */
+.okyo-q{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 12px;text-align:left;min-height:48px;margin-top:14px;padding:0;background:none;border:0;border-bottom:1px solid rgba(145,124,80,.55);color:var(--gold-d);font-family:inherit;font-size:15px;letter-spacing:.16em;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.okyo-q .ln{display:inline-block;width:22px;height:1px;background:currentColor;}
+.okyo-q .lb{white-space:nowrap;}
+.okyo-q small{order:5;flex-basis:100%;padding-left:34px;font-size:12px;letter-spacing:.06em;color:var(--text-2);text-align:left;}
+.okyo-q .wv{display:inline-flex;gap:3px;align-items:flex-end;height:12px;margin-left:2px;}
+.okyo-q .wv b{width:2px;height:3px;background:currentColor;opacity:.75;}
+.okyo-q.on .wv b{animation:okw 1.2s ease-in-out infinite;}
+.okyo-q .wv b:nth-child(2){animation-delay:-.3s !important;}.okyo-q .wv b:nth-child(3){animation-delay:-.6s !important;}.okyo-q .wv b:nth-child(4){animation-delay:-.9s !important;}
+.okyo-q .st::before{content:'聴く';}
+.okyo-q.on .st::before{content:'止める';}
+@keyframes okw{0%,100%{height:3px;}50%{height:12px;}}
+.on-dark .okyo-q,.ph-asa .okyo-q{}
 </style>
 </head>
 
@@ -1252,6 +1266,8 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
           <p class="m-mono">朝、読経の声が響く。</p>
           <p class="m-text">本堂で、副住職をはじめ僧侶がお勤めをいたします。高野山に受け継がれる読経の響きに包まれる、一日のはじまりです。</p>
           <p class="m-note">毎朝6時30分から、45分〜1時間ほど。ご参加は自由です。</p>
+          <button type="button" class="okyo-q" data-a="okyoAsaA" aria-pressed="false"><span class="ln" aria-hidden="true"></span><span class="lb">この声を<span class="st"></span></span><small>副住職と僧侶のお勤め（次唱禮・五大願）</small><span class="wv" aria-hidden="true"><b></b><b></b><b></b><b></b></span></button>
+          <audio id="okyoAsaA" preload="none" src="audio/asa-otsutome.m4a"></audio>
         </div>
       </article>
       <article class="moment rev nofig">
@@ -1539,6 +1555,27 @@ document.addEventListener('keydown', function (e) { if (e.key === 'Escape') clos
     }, { rootMargin: '-40% 0px -55% 0px' });
     items.forEach(function (x) { var el = document.getElementById(x.id); if (el) io.observe(el); });
   }
+})();
+</script>
+<script>
+/* 副住職のお勤めの声（押したときだけ流れる） */
+(function () {
+  document.querySelectorAll('.okyo-q').forEach(function (b) {
+    var a = document.getElementById(b.getAttribute('data-a')), fig = b.getAttribute('data-fig') ? document.getElementById(b.getAttribute('data-fig')) : null, timers = [];
+    if (!a) return;
+    function set(on) {
+      b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      if (!fig) return;
+      fig.classList.toggle('on', on); timers.forEach(clearTimeout); timers = [];
+      fig.querySelectorAll('.lamps i').forEach(function (l, i) { if (on) timers.push(setTimeout(function () { l.classList.add('lit'); }, 1200 + i * 1800)); else l.classList.remove('lit'); });
+    }
+    b.addEventListener('click', function () {
+      document.querySelectorAll('audio').forEach(function (x) { if (x !== a && !x.paused) x.pause(); });
+      if (a.paused) { a.play(); set(true); } else { a.pause(); set(false); }
+    });
+    a.addEventListener('pause', function () { set(false); });
+    a.addEventListener('ended', function () { set(false); a.currentTime = 0; });
+  });
 })();
 </script>
 </body>
