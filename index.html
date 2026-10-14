@@ -1018,6 +1018,8 @@ html.motion .okyo-q:not(.on) .ln{animation:okpulse 3.2s ease-in-out infinite;}
 .otsu-play.on i::before{left:11px;top:10px;width:3px;height:13px;border:0;background:var(--gold-d);box-shadow:7px 0 0 var(--gold-d);}
 html.motion .otsu-play:not(.on) i{animation:okpulse 3.2s ease-in-out infinite;}
 @keyframes okpulse{0%,100%{box-shadow:0 0 0 0 rgba(201,177,131,0);}50%{box-shadow:0 0 0 6px rgba(201,177,131,.2);}}
+
+.news-card-body.old-img img{width:auto !important;max-width:min(320px,100%) !important;}
 </style>
 </head>
 <body class="at-top">
@@ -1643,6 +1645,8 @@ function toggleArchive() {
 
     const body = document.createElement('div');
     body.className = 'news-card-body';
+    // 2019.03.11より前の記事は元の写真が小さいので、大きく引き伸ばさない
+    if (item.publishedAt && item.publishedAt.slice(0, 10) < '2019-03-11') { body.classList.add('old-img'); card.classList.add('old-img'); }
     // 本文は、▼で開いたときに初めて組み立てる（最初の表示を軽くするため）
     body._content = item.content || '';
 
