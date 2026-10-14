@@ -2020,8 +2020,9 @@ document.querySelectorAll('.mb').forEach(function (b) {
     }
     b.addEventListener('click', function () {
       document.querySelectorAll('audio').forEach(function (x) { if (x !== a && !x.paused) x.pause(); });
-      if (a.paused) { a.play(); set(true); } else { a.pause(); set(false); }
+      if (a.paused) { a.play(); } else { a.pause(); }
     });
+    a.addEventListener('play', function () { set(true); });
     a.addEventListener('pause', function () { set(false); });
     a.addEventListener('ended', function () { set(false); a.currentTime = 0; });
   });

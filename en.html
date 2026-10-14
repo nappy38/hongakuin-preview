@@ -1320,6 +1320,15 @@ html.motion .okyo-q:not(.on) .ln{animation:okpulse 3.2s ease-in-out infinite;}
   .guide-in .gc-tx strong{font-size:26px;}
 }
 .ph-asa .guide-wrap{margin-bottom:72px;}
+
+/* 朝のお勤めの帯から、その場で聴く */
+.otsu-play{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px 0 4px;margin-left:6px;border:1px solid rgba(145,124,80,.55);border-radius:999px;background:rgba(255,255,255,.4);color:var(--sumi);font-family:inherit;font-size:14px;letter-spacing:.12em;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .3s,border-color .3s;}
+.otsu-play:hover{background:rgba(255,255,255,.8);border-color:var(--gold);}
+.otsu-play i{position:relative;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);flex:none;}
+.otsu-play i::before{content:'';position:absolute;left:13px;top:10px;border-left:10px solid var(--gold-d);border-top:7px solid transparent;border-bottom:7px solid transparent;}
+.otsu-play.on i::before{left:11px;top:10px;width:3px;height:13px;border:0;background:var(--gold-d);box-shadow:7px 0 0 var(--gold-d);}
+html.motion .otsu-play:not(.on) i{animation:okpulse 3.2s ease-in-out infinite;}
+@keyframes okpulse{0%,100%{box-shadow:0 0 0 0 rgba(201,177,131,0);}50%{box-shadow:0 0 0 6px rgba(201,177,131,.2);}}
 </style>
 </head>
 <body>
@@ -1401,6 +1410,7 @@ html.motion .okyo-q:not(.on) .ln{animation:okpulse 3.2s ease-in-out infinite;}
   <span class="oe-dot" aria-hidden="true"></span>
   <span class="oe-k">Morning service<b>daily at 6:30 am · main hall</b></span>
   <span class="oe-m"><span id="ktTime" hidden>&nbsp;</span><span id="ktMsg">&nbsp;</span></span>
+  <button type="button" class="otsu-play" data-a="okyoAsaA" data-l="Listen" data-s="Stop" aria-pressed="false"><i aria-hidden="true"></i><span>Listen</span></button>
 </div>
 
 <!-- Only at Hongakuin: three reasons -->
@@ -2015,11 +2025,28 @@ document.querySelectorAll('.mb').forEach(function (b) {
     }
     b.addEventListener('click', function () {
       document.querySelectorAll('audio').forEach(function (x) { if (x !== a && !x.paused) x.pause(); });
-      if (a.paused) { a.play(); set(true); } else { a.pause(); set(false); }
+      if (a.paused) { a.play(); } else { a.pause(); }
     });
+    a.addEventListener('play', function () { set(true); });
     a.addEventListener('pause', function () { set(false); });
     a.addEventListener('ended', function () { set(false); a.currentTime = 0; });
   });
+})();
+</script>
+<script>
+/* 帯のボタン：お勤めの声を流す（三つの時間のボタンと同じ音源） */
+(function () {
+  var b = document.querySelector('.otsu-play'); if (!b) return;
+  var a = document.getElementById(b.getAttribute('data-a')); if (!a) return;
+  var L = b.getAttribute('data-l'), S = b.getAttribute('data-s');
+  function set(on) { b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.querySelector('span').textContent = on ? S : L; }
+  b.addEventListener('click', function () {
+    document.querySelectorAll('audio').forEach(function (x) { if (x !== a && !x.paused) x.pause(); });
+    if (a.paused) { a.play(); } else { a.pause(); }
+  });
+  a.addEventListener('play', function () { set(true); });
+  a.addEventListener('pause', function () { set(false); });
+  a.addEventListener('ended', function () { set(false); });
 })();
 </script>
 </body>
