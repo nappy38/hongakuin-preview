@@ -1387,6 +1387,13 @@ html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visibl
 .plan-bar a:hover{color:var(--gold-d);border-color:var(--gold);}
 .plan-bar .pb-all{font-weight:500;border-bottom-color:var(--gold);}
 @media(max-width:599px){.plan-bar{gap:2px 18px;font-size:15px;}.plan-bar .pb-k{flex-basis:100%;text-align:center;}}
+
+/* 脇役の写真が文字に重ならないように（PC） */
+@media(min-width:900px){
+  .night .moment .m-after:not(.m-big){margin-top:40px !important;}
+  .night .moment:has(.m-after:not(.m-big))>div.rv{align-self:start !important;}
+  .night .moment>div.rv{position:relative;z-index:3;}
+}
 </style>
 </head>
 <body>
