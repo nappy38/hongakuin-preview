@@ -54,4 +54,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.hongakuin.jp/th.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.hongakuin.jp/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hongakuin.jp/en.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://www.hongakuin.jp/th.html"/>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
