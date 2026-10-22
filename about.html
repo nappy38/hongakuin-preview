@@ -528,6 +528,13 @@ main>section:not(:first-of-type):not(.interlude),main>nav.next,.sns,footer{conte
 @media(min-width:900px){.ph h1,.sh-title,.cta h2,.ph-title h1,.hero-name,.greet{font-feature-settings:normal !important;}}
 
 html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visible !important;}
+
+/* スマホでも右上に言語の切り替え */
+@media(max-width:899px){
+  .hd-actions .hd-lang{display:inline-flex !important;align-items:center;min-width:0 !important;min-height:44px;padding:0 7px !important;font-size:13px !important;letter-spacing:.04em !important;}
+  .hd-actions .hd-lang+.hd-lang::before{height:11px;margin-top:-5.5px;}
+}
+@media(max-width:359px){.hd-actions .hd-lang{padding:0 4px !important;font-size:12px !important;}}
 </style>
 </head>
 

@@ -1368,6 +1368,13 @@ html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visibl
 /* 言語の切り替え：スマホも間をあける */
 .hd-actions .hd-lang{padding:0 12px !important;position:relative;}
 .hd-actions .hd-lang+.hd-lang::before{content:'';position:absolute;left:0;top:50%;width:1px;height:14px;margin-top:-7px;background:currentColor;opacity:.35;}
+
+/* スマホでも右上に言語の切り替え */
+@media(max-width:899px){
+  .hd-actions .hd-lang{display:inline-flex !important;align-items:center;min-width:0 !important;min-height:44px;padding:0 7px !important;font-size:13px !important;letter-spacing:.04em !important;}
+  .hd-actions .hd-lang+.hd-lang::before{height:11px;margin-top:-5.5px;}
+}
+@media(max-width:359px){.hd-actions .hd-lang{padding:0 4px !important;font-size:12px !important;}}
 </style>
 </head>
 <body>
@@ -1695,7 +1702,7 @@ html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visibl
         <details><summary>How do I make a reservation?</summary><p class="a">Stays can be booked online at any time via the "Book your stay" button on this page. You can also reserve by phone (+81-736-56-2711, 9:00 am&ndash;5:00 pm JST).</p></details>
         <details><summary>What are check-in and check-out times?</summary><p class="a">Check-in is from 3:00 pm, and check-out is by 10:00 am.</p></details>
         <details><summary>What time is dinner? What if I arrive late?</summary><p class="a">Dinner is served to all guests together at 6:00 pm. If you expect to arrive late, please call +81-736-56-2711 or contact us through the booking site. If you arrive too late, we may be unable to serve dinner.<!-- TODO: confirm with temple … latest arrival time for dinner --></p></details>
-        <details><summary>What is shōjin ryōri?</summary><p class="a">Shōjin ryōri is the Buddhist vegetarian cuisine that monks eat — made without meat or fish, using simple, seasonal ingredients. It is light and delicate rather than rich. Many dishes are prepared in advance and served at room temperature, as is the tradition, so please don't expect every dish to arrive piping hot.</p></details>
+        <details><summary>What is shōjin ryōri?</summary><p class="a">Shōjin ryōri is the Buddhist vegetarian cuisine that monks eat — made without meat or fish, using simple, seasonal ingredients. It is light and delicate rather than rich. Because dinner is served to all guests together, the trays are prepared in advance, so many dishes are served at room temperature rather than piping hot.</p></details>
         <details><summary>How do I use the shared bath?</summary><p class="a">Japanese shared baths have a few simple rules: wash and rinse your body at the washing area before getting into the tub; no swimsuits; keep your small towel out of the water; and tie up long hair. The baths are open 5:00–9:00 pm.</p></details>
         <details><summary>Can I use the shared bath during my period?</summary><p class="a">Please refrain from using the shared bath during your period. If your stay may fall during your period, we recommend booking a room with its own private bath (Tenpōrin, Hōkaigū, Wakasugi or Karin). Feel free to contact us if you have any questions.</p></details>
         <details><summary>Can I leave my luggage?</summary><p class="a">Yes. We can keep your luggage both before check-in and after check-out.</p></details>

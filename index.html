@@ -1061,6 +1061,13 @@ html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visibl
   .news-cards .news-card:first-child:not(.open) .news-card-img{width:100% !important;height:auto !important;}
   .news-card-body img{max-width:100% !important;}
 }
+
+/* スマホでも右上に言語の切り替え */
+@media(max-width:899px){
+  .hd-actions .hd-lang{display:inline-flex !important;align-items:center;min-width:0 !important;min-height:44px;padding:0 7px !important;font-size:13px !important;letter-spacing:.04em !important;}
+  .hd-actions .hd-lang+.hd-lang::before{height:11px;margin-top:-5.5px;}
+}
+@media(max-width:359px){.hd-actions .hd-lang{padding:0 4px !important;font-size:12px !important;}}
 </style>
 </head>
 <body class="at-top">
