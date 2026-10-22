@@ -1050,6 +1050,16 @@ html.motion .otsu-play:not(.on) i{animation:okpulse 3.2s ease-in-out infinite;}
 .okyo-q{max-width:400px !important;}
 
 html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visible !important;}
+
+/* スマホ：新着の写真を大きく */
+@media(max-width:768px){
+  .news-card-header{grid-template-columns:120px 1fr 36px !important;gap:14px !important;}
+  .news-card-header.no-img{grid-template-columns:1fr 36px !important;}
+  .news-card-img{width:120px !important;height:90px !important;}
+  .news-cards .news-card:first-child:not(.open) .news-card-header{grid-template-columns:1fr 36px !important;}
+  .news-cards .news-card:first-child:not(.open) .news-card-img{width:100% !important;height:auto !important;}
+  .news-card-body img{max-width:100% !important;}
+}
 </style>
 </head>
 <body class="at-top">
