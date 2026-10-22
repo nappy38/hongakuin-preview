@@ -43,6 +43,9 @@ h1{font-weight:400;font-size:30px;letter-spacing:.2em;line-height:1.6;margin:10p
 footer{background:var(--ink);color:rgba(243,236,225,.75);text-align:center;padding:24px 20px;font-size:13px;letter-spacing:.12em;}
 @media(min-width:900px){h1{font-size:36px;}main{padding:96px 40px;}}
 @media(prefers-reduced-motion:no-preference){.box{animation:in 1.2s var(--ease) both;}@keyframes in{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}}
+
+/* 横はみ出し防止（自動翻訳で文字が伸びても画面が縮まないように） */
+html,body{overflow-x:clip;}
 </style>
 </head>
 <body>
