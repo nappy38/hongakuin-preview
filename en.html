@@ -1395,6 +1395,17 @@ html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visibl
   .night .moment:has(.m-after:not(.m-big))>div.rv{align-self:start !important;}
   .night .moment>div.rv{position:relative;z-index:3;}
 }
+
+/* 言語の切り替え：日本語・EN・ไทย の間をあけ、細い線で区切る */
+@media(min-width:900px){
+  .hd-actions .hd-lang{padding:0 14px !important;margin:0 !important;position:relative;}
+  .hd-actions .hd-lang+.hd-lang::before{content:'';position:absolute;left:0;top:50%;width:1px;height:14px;margin-top:-7px;background:currentColor;opacity:.35;}
+}
+.drawer-lang+.drawer-lang{margin-top:4px !important;}
+
+/* 言語の切り替え：スマホも間をあける */
+.hd-actions .hd-lang{padding:0 12px !important;position:relative;}
+.hd-actions .hd-lang+.hd-lang::before{content:'';position:absolute;left:0;top:50%;width:1px;height:14px;margin-top:-7px;background:currentColor;opacity:.35;}
 </style>
 </head>
 <body>

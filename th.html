@@ -1399,6 +1399,11 @@ html[lang="th"] .menu-btn em{letter-spacing:0 !important;}
 .th-help p{font-size:14px;line-height:1.8;color:var(--text-2);margin-top:8px;}
 .cta .th-help{background:rgba(255,255,255,.06);border-color:rgba(201,177,131,.45);}
 .cta .th-help b,.cta .th-help ol,.cta .th-help p{color:rgba(243,236,225,.9);}
+
+/* 言語の切り替え：間をあけ、細い線で区切る */
+.hd-actions .hd-lang{padding:0 12px !important;position:relative;}
+.hd-actions .hd-lang+.hd-lang::before{content:'';position:absolute;left:0;top:50%;width:1px;height:14px;margin-top:-7px;background:currentColor;opacity:.35;}
+.drawer-lang+.drawer-lang{margin-top:4px !important;}
 </style>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;500&display=swap">
@@ -1419,8 +1424,8 @@ html[lang="th"] .menu-btn em{letter-spacing:0 !important;}
     <a href="th-stay.html#info"><span>การเดินทางและคำถามที่พบบ่อย</span></a>
   </nav>
   <div class="hd-actions">
-    <a href="index.html" class=" notranslate" translate="no" lang="ja">日本語</a>
-    <a href="en.html" class=" notranslate" translate="no" lang="en">EN</a>
+    <a href="index.html" class="hd-lang notranslate" translate="no" lang="ja">日本語</a>
+    <a href="en.html" class="hd-lang notranslate" translate="no" lang="en">EN</a>
     <a href="https://tabichat.com/engine/hotels/hongakuin" class="hd-book reserve-btn" target="_blank" rel="noopener">จองที่พัก</a>
     <a href="tel:+81736562711" class="hd-ic" aria-label="โทร +81-736-56-2711"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M5 3.5h3.2l1.6 4.2-2.1 1.4a11 11 0 0 0 7.2 7.2l1.4-2.1 4.2 1.6V19a1.6 1.6 0 0 1-1.7 1.6C10.6 20.1 3.9 13.4 3.4 5.2A1.6 1.6 0 0 1 5 3.5z"/></svg></a>
     <button class="menu-btn" id="menuBtn" aria-controls="drawer" aria-expanded="false" aria-label="เปิดเมนู"><i></i><i></i><em aria-hidden="true">เมนู</em></button>
@@ -1440,8 +1445,8 @@ html[lang="th"] .menu-btn em{letter-spacing:0 !important;}
     </nav>
     <a href="https://tabichat.com/engine/hotels/hongakuin" class="drawer-reserve" target="_blank" rel="noopener">จองที่พัก</a>
     <a href="tel:+81736562711" class="drawer-phone">+81-736-56-2711<small>9:00–17:00 น. (เวลาญี่ปุ่น)</small></a>
-    <a href="index.html" class=" notranslate" translate="no" lang="ja">日本語</a>
-    <a href="en.html" class=" notranslate" translate="no" lang="en">English</a>
+    <a href="index.html" class="drawer-lang notranslate" translate="no" lang="ja">日本語</a>
+    <a href="en.html" class="drawer-lang notranslate" translate="no" lang="en">English</a>
   </div>
 </div>
 
