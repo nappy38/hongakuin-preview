@@ -1657,6 +1657,7 @@ function toggleArchive() {
       thumb.className = 'news-card-img';
       const fsrc = firstImg.getAttribute('src') || '';
       thumb.src = (fsrc.indexOf('images.microcms-assets.io') !== -1 && fsrc.indexOf('?') === -1) ? fsrc + '?w=300&q=75&auto=format' : firstImg.src;
+      if (firstImg.getAttribute('data-pos')) thumb.style.objectPosition = firstImg.getAttribute('data-pos');
       thumb.alt = '';
       thumb.loading = 'lazy';
       header.appendChild(thumb);
