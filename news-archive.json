@@ -1,5 +1,45 @@
 [
  {
+  "id": "old-id1-53",
+  "title": "今だけ見れる景色",
+  "publishedAt": "2026-11-22T14:12:23+09:00",
+  "category": {
+   "name": "お知らせ"
+  },
+  "smallImg": true,
+  "content": "<img src=\"images/news/chirimomiji.webp\" alt=\"\" loading=\"lazy\" /><span>境内の庭に、もみじの葉が散り敷いています。</span><p>石灯籠のまわりも、苔の上も、飛び石のあいだも、一面が紅く染まりました。見上げれば、枝にはまだ紅や黄の葉が残り、空と足もとの両方が秋の色に包まれています。</p><p>散りもみじと、残るもみじ。その両方を眺められるのは、ほんのわずかな間だけです。</p><p>今年の秋の名残を、どうぞ心にとどめてお帰りください</p><div></div>"
+ },
+ {
+  "id": "old-id1-52",
+  "title": "初雪",
+  "publishedAt": "2026-11-20T13:05:42+09:00",
+  "category": {
+   "name": "お知らせ"
+  },
+  "smallImg": true,
+  "content": "<img src=\"images/news/hatsuyuki.webp\" alt=\"\" loading=\"lazy\" /><span>今朝、高野山に初雪が降りました。</span><div>&nbsp;</div><div>窓の外には、紅や黄に色づいたもみじと、うっすらと白く染まった庭。苔の上には散ったもみじの葉が重なり、秋と冬がひとつになった、この時期だけの景色です。</div><div>&nbsp;</div><div>空気はきりりと冷たく、境内はいつにも増して静けさに包まれています。</div><div>&nbsp;</div><div>高野山は、これから本格的な冬を迎えます。お越しの際は、どうぞ暖かくしておいでください。</div><div></div>"
+ },
+ {
+  "id": "old-id1-51",
+  "title": "心と身を清める塗香",
+  "publishedAt": "2026-11-15T16:48:33+09:00",
+  "category": {
+   "name": "コラム"
+  },
+  "smallImg": true,
+  "content": "<img src=\"images/news/zuko.webp\" alt=\"\" loading=\"lazy\" /><div>金色の器の中に入っているのは、塗香（ずこう）です。白檀などの香木を細かい粉にしたお香で、火はつけずに、少しだけ手のひらにとって両手にすり込みます。</div><div>&nbsp;</div><div>真言宗では、お勤めや写経の前に塗香で身を清めます。ふわりと立ちのぼるやさしい香りが、心を落ち着け、仏さまの前に向かう準備を整えてくれます。小さなひとつまみに、心を新たにする力が込められています。</div><div></div>"
+ },
+ {
+  "id": "old-id1-50",
+  "title": "中庭の紅葉",
+  "publishedAt": "2026-11-14T17:00:38+09:00",
+  "category": {
+   "name": "お知らせ"
+  },
+  "smallImg": true,
+  "content": "<img src=\"images/news/nakaniwa-koyo.webp\" alt=\"\" loading=\"lazy\" /><div>本覚院の中庭が、いま見頃を迎えています。</div><div>&nbsp;</div><div>池をかこむように、深い紅に染まったもみじと、明るい黄色の木々。苔むした石や石橋が、その色をいっそう引き立てています。</div><div>&nbsp;</div><div>雨にしっとりと濡れた庭は、晴れの日とはまた違う、落ち着いた美しさです。上の階から見下ろすと、庭の全体が一枚の絵のように広がります。</div><div>&nbsp;</div><div>移ろう秋の色を、ゆっくりとお楽しみください。</div><div></div>"
+ },
+ {
   "id": "old-id1-49",
   "title": "お不動さまの炎と剣",
   "publishedAt": "2026-10-28T15:56:53+09:00",
