@@ -1000,6 +1000,10 @@ html.cv-off main>*,html.cv-off .sns,html.cv-off footer{content-visibility:visibl
 
 /* 横はみ出し防止（自動翻訳で文字が伸びても画面が縮まないように） */
 html,body{overflow-x:clip;}
+
+/* 2枚目を横長で見せる（精進料理のお膳） */
+@media(max-width:899px){.night .moment .m-after.m-yoko{width:88% !important;}.night .moment .m-after.m-yoko img{aspect-ratio:4/3 !important;}}
+@media(min-width:900px){.night .moment .m-after.m-yoko{grid-column:7/span 6 !important;}.night .moment.rev .m-after.m-yoko{grid-column:1/span 6 !important;}.night .moment .m-after.m-yoko img{aspect-ratio:4/3 !important;}}
 </style>
 </head>
 
@@ -1304,7 +1308,7 @@ html,body{overflow-x:clip;}
           <p class="m-text">肉や魚を使わない、高野山の精進料理をお膳でご用意します。金地の襖絵の間でいただく日もあります。</p>
           <p class="m-note">夕食は18:00より、皆さま一斉にお出しします。個別の食物アレルギーへの対応は行っておりません。</p>
         </div>
-        <figure class="rv-img m-after"><img src="images/photos/yuushoku-zen.webp" srcset="images/photos/yuushoku-zen-960.webp 960w, images/photos/yuushoku-zen.webp 1477w" sizes="(max-width: 899px) 100vw, 60vw" alt="朱塗りのお膳に並ぶ精進料理。ごま豆腐、天ぷら、炊き合わせ、白ごはんとお吸い物" width="1477" height="1108" loading="lazy"></figure>
+        <figure class="rv-img m-after m-yoko"><img src="images/photos/yuushoku-zen.webp" srcset="images/photos/yuushoku-zen-960.webp 960w, images/photos/yuushoku-zen.webp 1477w" sizes="(max-width: 899px) 100vw, 60vw" alt="朱塗りのお膳に並ぶ精進料理。ごま豆腐、天ぷら、炊き合わせ、白ごはんとお吸い物" width="1477" height="1108" loading="lazy"></figure>
       </article>
       <article class="moment rev">
         <figure class="rv-img"><img src="images/photos/daiyokujo-onna.webp" srcset="images/photos/daiyokujo-onna-960.webp 960w, images/photos/daiyokujo-onna.webp 1600w" sizes="(max-width: 899px) 100vw, 60vw" alt="石張りの床と広い浴槽のある大浴場" width="1600" height="1200" loading="lazy"></figure>
