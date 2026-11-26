@@ -792,7 +792,8 @@ main{position:relative;}
 
 @media(max-width:899px){
   /* 三つの魅力：写真と文字を横並びに */
-  .ft{display:grid;grid-template-columns:40% 1fr;gap:16px;align-items:start;}
+  .ft{display:grid;grid-template-columns:40% minmax(0,1fr);gap:16px;align-items:start;}
+  .ft-text{min-width:0;}
   .ft-fig{margin:0;}
   .ft-fig img{aspect-ratio:1/1;}
   .ft-text{padding-top:0;}
